@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% PREAMBLE (DO NOT CHANGE!)
+% INFORMATION (DO NOT CHANGE!)
 %
-% Doctoral Thesis University of Würzburg
+% Doctoral Thesis (Chapter Based) University of Würzburg
 % LaTeX Class
 % Version 1.0 (03.2024)
 %
