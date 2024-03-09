@@ -132,7 +132,7 @@
 
 
 % == Hyperlinks ========================================================
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref} % > For clickable links, [remove boxes]
 \hypersetup{
     colorlinks=false,
     linkcolor=black,
@@ -305,6 +305,14 @@ literate=*{+}{{{\color{operatorcolor}+}}}1
 \bibliographystyle{apacite}
 \let\fullcite\cite % > Rename \cite to \fullcite
 \let\cite\shortcite % > Rename \shortcite to \cite
+
+% ## Define the bibliography style
+\let\oldthebibliography=\thebibliography
+\renewcommand{\thebibliography}[1]{
+  \oldthebibliography{#1}
+  \setlength{\itemsep}{0pt}
+  \footnotesize
+}
 
 % == PDF Files =========================================================
 \usepackage{pdfpages} % > For including PDF files

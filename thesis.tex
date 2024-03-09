@@ -19,26 +19,14 @@
 
 \documentclass[12pt]{doctoral_thesis_uniwue} 
 
-
-\begin{document}
-
-
 % :: Include only the parts during work for quicker compilation
-% !! Doesn't work for some reason
-% \includeonly{
-%     PARTS/1_ABSTRACT,
-%     PARTS/2_INTRODUCTION,
-%     }
+\includeonly{PARTS/2_INTRODUCTION}
 
-% \includeonly{
-%     PARTS/1_ABSTRACT, 
-    % PARTS/2_INTRODUCTION, 
-    % PARTS/3_CHAPTERS, 
-    % PARTS/4_SUMMARISING_DISCUSSION, 
-    % PARTS/5_APPENDIX, 
-    % PARTS/6_DECLARATION,
-    % }
 
+
+% ==============
+\begin{document}
+% ==============
 
 
 
@@ -55,13 +43,14 @@
 % == Abstract
 % ======================================================================
 % ## Change page numbering to roman numerals
-\setcounter{page}{1} % Reset page counter to 1
+\setcounter{page}{1} % > Reset page counter to 1
 \pagenumbering{roman}
 
 % ## Treat this like a section
 \addcontentsline{toc}{section}{Summary} % Add to Table of Contents
-\markboth{Summary}{} % Mark this section for headers
+\markboth{Summary}{} % > Mark this section for headers
 
+% > Include ABSTRACT.tex
 \include{PARTS/1_ABSTRACT}
 
 \newpage
@@ -111,7 +100,6 @@ ipsum
 % ======================================================================
 % == Chapters
 % ======================================================================
-
 % > Include CHAPTERS.tex
 \include{PARTS/3_CHAPTERS}
 
@@ -121,7 +109,6 @@ ipsum
 % ======================================================================
 % == Summarising Discussion
 % ======================================================================
-
 % > Include SUMMARISING_DISCUSSION.tex
 \include{PARTS/4_SUMMARISING_DISCUSSION}
 
@@ -131,6 +118,7 @@ ipsum
 % ======================================================================
 % == References
 % ======================================================================
+
 \bibliography{/Users/martinkuric/Zotero/BetterBibtex_updated_Library/MK_Zotero_Library.bib}
 
 \newpage
@@ -139,28 +127,12 @@ ipsum
 % ======================================================================
 % == Appendix
 % ======================================================================
-
-% ## Fill out forms, export as .pdf and include here
-
-% == Blank page ========================================================
-% > Make a page to mark start of appendix
-\unnsection{Appendix}
+% > Include APPENDIX.tex
+\include{PARTS/5_APPENDIX}
 
 
-% == Contributions to Research Projects ================================
-\addpdf{Author Contributions to Research Projects}{APPENDIX/Statement_on_ind_author_contributions_4-2022.pdf}
 
 
-% == Contributions to Figures and Tables ===============================
-\addpdf{Author Contributions to Figures and Tables}{APPENDIX/Statement_of_individual_author_contributions_to_figures_tables_4-2022.pdf}
-
-
-% == Affidavit / Eidestattliche Erklärung ==============================
-\addpdf{Affidavit}{APPENDIX/Affidavit.pdf}
-
-
-% == CV ===============================================================
-\addpdf{Curriculum Vitae}{APPENDIX/CV Martin Kuric (eng).pdf}
-
-
+% ============
 \end{document}
+% ============
