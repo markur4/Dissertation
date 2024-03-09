@@ -1,0 +1,123 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PREAMBLE (DO NOT CHANGE!)
+%
+% Doctoral Thesis University of Würzburg
+% LaTeX Class
+% Version 1.0 (03.2024)
+%
+% Author of Latex Template: 
+% Martin Kuric 
+% 
+% Cover page is based on a template by the University of Würzburg
+%
+% This template is licensed under the GNU Public License v3.0
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ======================================================================
+% == Preamble
+% ======================================================================
+
+\documentclass[12pt]{doctoral_thesis_uniwue} 
+
+
+\begin{document}
+
+
+% ## Include only the parts during work for quicker compilation
+% \includeonly{PARTS/2_INTRODUCTION}
+
+
+% ======================================================================
+% == Title Page + Submission + Project Institute 
+% ======================================================================
+\input{PARTS/0_TITLEPAGE}
+
+\newpage
+
+
+% ======================================================================
+% == Abstract
+% ======================================================================
+\input{PARTS/1_ABSTRACT}
+
+\newpage
+
+
+% ======================================================================
+% == Acknowledgements
+% ======================================================================
+
+\unnsection{Acknowledgements}
+Lorem Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
+amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
+rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
+ipsum
+
+\newpage
+
+
+% ======================================================================
+% == Table of Contents
+% ======================================================================
+
+\tableofcontents
+
+\newpage
+
+
+% ======================================================================
+% == Introduction
+% ======================================================================
+
+% > Change page numbering to arabic numerals
+\pagenumbering{arabic}
+\setcounter{page}{1} % > Reset page counter to 1
+
+% > Include INTRODUCTION.tex
+\input{PARTS/2_INTRODUCTION}
+
+\newpage
+
+
+% ======================================================================
+% == Chapters
+% ======================================================================
+
+% > Include CHAPTERS.tex
+\input{PARTS/3_CHAPTERS}
+
+\newpage
+
+
+% ======================================================================
+% == Summarising Discussion
+% ======================================================================
+
+% > Include SUMMARISING_DISCUSSION.tex
+\input{PARTS/4_SUMMARISING_DISCUSSION}
+
+\newpage
+
+
+% ======================================================================
+% == References
+% ======================================================================
+\bibliography{/Users/martinkuric/Zotero/BetterBibtex_updated_Library/MK_Zotero_Library.bib}
+
+\newpage
+
+
+% ======================================================================
+% == Appendix
+% ======================================================================
+
+\input{PARTS/5_APPENDIX}
+
+
+
+\end{document}

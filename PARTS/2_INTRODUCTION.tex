@@ -1,0 +1,630 @@
+
+
+\unnsection{Introduction}
+To provide a comprehensive background for the following chapters that
+focus on the interaction of human mesenchymal
+stromal cells (hMSCs) with multiple myeloma (MM) cells, this
+
+% From paper 1 (AACR):
+% Multiple myeloma arises from clonal expansion of malignant plasma cells
+% in the bone marrow (BM). At diagnosis, myeloma cells have disseminated
+% to multiple sites in the skeleton and, in some cases, to “virtually any
+% tissue” (1,2). However, the mechanism through which myeloma cells
+% initially disseminate remains unclear.
+
+% Dissemination is a multistep process involving invasion, intravasation,
+% intravascular arrest, extravasation, and colonization (3). To initiate
+% dissemination, myeloma cells overcome adhesion, retention, and
+% dependency on the BM microenvironment, which could involve the loss of
+% adhesion factors such as CD138 (4,5). BM retention is mediated by
+% multiple factors: First, chemokines (CXCL12 and CXCL8) produced by
+% mesenchymal stromal cells (MSCs), which attract plasma cells and prime
+% their cytoskeleton and integrins for adhesion (6,7). Second, myeloma
+% cells must overcome the anchorage and physical boundaries of the
+% extracellular matrix (ECM), consisting of e.g. fibronectin, collagens,
+% and proteoglycans such as decorin (8–11). Simultaneously, ECM provides
+% signals inducing myeloma cell cycle arrest or progression the cell cycle
+% (8,11). ECM is also prone to degradation, which is common in several
+% osteotropic cancers, and is the cause of osteolytic bone disease. This
+% is driven by a ‘vicious cycle’ that maximizes bone destruction by
+% extracting growth factors (EGF and TGF-β) that are stored in calcified
+% tissues (12). Third, direct contact with MSCs physically anchors myeloma
+% cells to the BM (3,13). Fourth, to disseminate to distant sites, myeloma
+% cells require, at least partially, independence from essential growth
+% and survival signals provided by MSCs in the form of soluble factors or
+% cell adhesion signaling (5,14,15). For example, the VLA4 (Myeloma)–VCAM1
+% (MSC)-interface activates NF-κB in both myeloma and MSCs, inducing IL-6
+% expression in MSCs. The independence from MSCs is then acquired through
+% autocrine survival signaling (16,17). In short, anchorage of myeloma
+% cells to MSCs or ECM is a ‘double-edged sword’: adhesion counteracts
+% dissemination, but also presents signaling cues for growth, survival,
+% and drug resistance (18).
+
+% To address this ambiguity, we developed an in vitro co-culture system
+% modeling diverse adhesion modalities to study dissemination, growth, and
+% survival of myeloma cells and hMSCs. Co-cultures of hMSCs and the
+% myeloma cell line INA-6 replicated tight interactions and aggregate
+% growth, akin to "microtumors" in Ghobrial’s metastasis concept (19). We
+% characterized the growth conformations of hMSCs and INA­6 as homotypic
+% aggregation vs. heterotypic hMSC adherence and their effects on myeloma
+% cell survival. We tracked INA­6 detachments from aggregates and hMSCs,
+% thereby identifying a potential "disseminated" subpopulation lacking
+% strong adhesion. We developed innovative techniques (V-well adhesion
+% assay and well plate sandwich centrifugation) to separate weakly and
+% strongly adherent subpopulations for the subsequent analysis of
+% differential gene expression and cell survival. Notably, our strategy
+% resolves the differences in gene expression and growth behavior between
+% cells of one cell population in "direct" contact with MSCs. In contrast,
+% previous methods differentiated between "direct" and "indirect"
+% cell-cell contact using transwell inserts (20). To evaluate whether
+% genes mediating adhesion and growth characteristics of INA-6 were
+% associated with patient survival, we analyzed publicly available
+% datasets (21,22).
+
+
+
+% ======================================================================
+\unnsubsection{Human Mesenchymal Stem/Stromal Cells}
+
+Explaining what a mesenchymal stromal cell (MSC) is, is not such an easy
+task as one might expect. MSCs are derived from multiple\ MSCs
+different sources, serve a wide array of functions and are always
+isolated as a heterogenous group of cells. This makes it particularly
+challenging to find a consensus on their exact definition, nomenclature,
+exact function and \textit{in vivo} differentiation potential.
+Therefore, the most effective approach to describe hMSCs is to present
+their historical context.
+
+hMSCs first gained popularity as a stem cell. Stem cells lay the
+foundation of multicellular organisms. Embryonic stem cells orchestrate
+the growth and patterning during embryonic development, while adult stem
+cells are responsible for regeneration during adulthood. The classical
+definition of a stem cell is that of a relatively undifferentiated cell
+that divides asymmetrically, producing another stem cell and a
+differentiated cell~\cite{cooperCellMolecularApproach2000,
+    shenghuiMechanismsStemCell2009}. Because of their significance in
+biology and regenerative medicine, stem cells have become a prominent
+subject in modern research. Especially human mesenchymal stromal cells
+(hMSCs) have proven to be a promising candidate in this context~\cite{ullahHumanMesenchymalStem2015}.
+
+Mesenchyme first appears in embryonic development during gastrulation.
+There, cells that are committed to a mesodermal fate, lose their cell
+junctions and exit the epithelial layer in order to migrate freely. This
+process is called epithelial-mesenchymal transition
+\cite{tamFormationMesodermalTissues1987,nowotschinCellularDynamicsEarly2010}.
+Hence, the term mesenchyme describes non-epithelial embryonic tissue
+differentiating into mesodermal lineages such as bone, muscles and
+blood. Interestingly, it was shown nearly twenty years earlier that
+cells within adult bone marrow seemed to have mesenchymal properties as
+they were able to differentiate into bone tissue
+\cite{friedensteinOsteogenesisTransplantsBone1966,friedensteinOsteogenicPrecursorCells1971,biancoMesenchymalStemCells2014}.
+This was the origin of the ``mesengenic process''-hypothesis: This concept
+states that mesenchymal stem cells serve as progenitors for multiple
+mesodermal tissues (bone, cartilage, muscle, marrow stroma, tendon, fat,
+dermis and connective tissue) during both adulthood and embryonic
+development~\cite{caplanMesenchymalStemCells1991,caplanMesengenicProcess1994}. The mesenchymal nature of
+these cells (termed bone marrow stromal cells: BMSCs) was confirmed
+later when they were shown to differentiate into adipocytic (fat) and
+chondrocytic (cartilage) lineages~\cite{pittengerMultilineagePotentialAdult1999}.
+Since then, the
+term ``mesenchymal stem cell'' (MSC) has grown popular as an adult
+multipotent precursor to a couple of mesodermal tissues. hMSCs derived
+from bone marrow (hMSCs) were shown to differentiate into osteocytes,
+chondrocytes, adipocytes and cardiomyocytes
+\cite{gronthosSTRO1FractionAdult1994,muruganandanAdipocyteDifferentiationBone2009,xuMesenchymalStemCells2004}
+Most impressively, these cells also exhibited
+ectodermal and endodermal differentiation potential, as they produced
+neuronal cells, pancreatic cells and hepatocytes
+\cite{barzilayLentiviralDeliveryLMX1a2009,wilkinsHumanBoneMarrowderived2009,gabrInsulinproducingCellsAdult2013,stockHumanBoneMarrow2014}.
+
+Furthermore, cultures with MSC properties can be established from
+``virtually every post-natal organs and tissues'', and not just bone
+marrow~\cite{dasilvameirellesMesenchymalStemCells2006}. However, it has
+to be noted that hMSCs can differ greatly in their transcription profile
+and \textit{in vivo} differentiation potential depending on which tissue
+they originated from
+\cite{jansenFunctionalDifferencesMesenchymal2010,sacchettiNoIdenticalMesenchymal2016}.
+
+Since ``hMSCs"
+are a heterogenous group of cells, they were defined by their \textit{in
+    vitro} characteristics. A minimal set of criteria are the following
+\cite{dominiciMinimalCriteriaDefining2006}
+: First, hMSCs must be plastic adherent. Second, they
+must express or lack a set of specific surface antigens (positive for
+CD73, CD90, CD105; negative for CD45, CD34, CD11b, CD19). Third, hMSCs
+must differentiate to osteoblasts, adipocytes and chondroblasts
+\textit{in vitro}. Together, hMSCs exhibit diverse differentiation
+potentials and can be isolated from multiple sources of the body. This
+offers great opportunity for regenerative medicine, if the particular
+hMSC-subtype is properly characterized.
+
+
+% ======================================================================
+\unnsubsection{Multiple Myeloma}
+Multiple myeloma arises from clonal expansion of malignant plasma cells
+in the bone marrow (BM). At diagnosis, myeloma cells have disseminated
+to multiple sites in the skeleton and, in some cases, to virtually any
+tissue~\cite{rajkumarMultipleMyelomaCurrent2020,
+    bladeExtramedullaryDiseaseMultiple2022}.
+
+
+% ======================================================================
+\unnsubsection{Myeloma-hMSC Interactions}
+Since plasma cells can not survive outside the bone marrow, MM cells
+also require survival signals for growth and disease progression. These
+signals are produced by the bone marrow microenvironment, including ECM,
+MSCs and ACs~\cite{kiblerAdhesiveInteractionsHuman1998,
+    garcia-ortizRoleTumorMicroenvironment2021}.
+
+
+% ======================================================================
+\unnsubsection{Myeloma Bone Disease}
+Bone is a two-phase system in which the mineral phase provides the
+stiffness and the collagen fibers provide the ductility and ability to
+absorb energy~\cite{viguet-carrinRoleCollagenBone2006}. On a molecular
+level, bone tissue is composed of extracellular matrix (ECM) proteins
+that are calcified by hydroxyapatite crystals. This ECM consists mostly
+of collagen type I, but also components with major regulatory activity,
+such as fibronectin and proteoglycans that are essential for healthy
+bone physiology~\cite{alcorta-sevillanoDecipheringRelevanceBone2020}.
+Bone tissue is actively remodeled by bone-forming osteoblasts and
+bone-degrading osteoclasts. Osteoblasts are derived from mesenchymal
+stromal cells (MSCs) that reside in the bone marrow~\cite{friedensteinOsteogenesisTransplantsBone1966,
+    pittengerMultilineagePotentialAdult1999}. MSCs also give rise to
+adipocytes (ACs) to form Bone Marrow Adipose Tissue (BMAT), which can
+account for up to 70\% of bone marrow volume~\cite{fazeliMarrowFatBone2013}.
+
+MM indirectly degrades bone tissue by stimulating osteoclasts and
+inhibiting osteoblast differentiation, which leads to MM-related bone
+disease (MBD)~\cite{glaveyProteomicCharacterizationHuman2017}. MBD is
+present in 80\% of patients at diagnosis and is characterized by
+osteolytic lesions, osteopenia and pathological fractures.
+\cite{terposPathogenesisBoneDisease2018}
+
+
+% ======================================================================
+\unnsubsection{Dissemination of Myeloma Cells}
+dissemination is still widely unclear
+- multistep process
+- invasion, intravasation, intravascular arrest, extravasation,
+colonization
+- overcome adhesion, retention, and dependency on the BM
+microenvironment
+- loss of adhesion factors such as CD138
+
+% > New Page to separate biological part from the technical part 
+\newpage
+
+
+% ======================================================================
+% == Coding part
+% ======================================================================
+
+% ======================================================================
+\unnsubsection{The Increasing Role of Software in Biomedicine}
+The increasing importance of software in biomedicine is a direct
+consequence of the increasing complexity of biological data. The
+biological community has been producing more data in shorter time,
+posing new challenges \cite{yangScalabilityValidationBig2017}.
+- RNAseq
+- single cell rnaseq
+- sequence
+
+Artificial intelligence (AI) has been a game changer in the field of
+biomedicine. The early development of AI itself was driven by radiology,
+where it was designed to detect pathologies in medical images.
+
+
+% ======================================================================
+\unnsubsection{Code Quality Ensures Scientific Reproducibility}
+A main reason to write software is to define re-usable instructions for
+task automation~\cite{narztReusabilityConceptProcess1998}. However, the
+complexity of the code makes it prone to errors and can prevent usage by
+persons other than the author himself. This is a problem for the general
+scientific community, as the software is often the only way to reproduce
+the results of a study~\cite{sandveTenSimpleRules2013}. Hence, modern
+journals aim to enforce standards to software development, including
+software written and used by biological
+researchers~\cite{smithJournalOpenSource2018}. Here, we provide a brief
+overview of the standards utilized by \texttt{plotastic} that to ensure
+its reliability and reproducibility by the scientific community.
+
+Modern software development is a long-term commitment of maintaining and
+improving code after initial release~\cite{boswellArtReadableCode2011}.
+Hence, it is good practice to write the software such that it is
+scalable, maintainable and usable. Scalability or, to be precise,
+structural scalability means that the software can easily be expanded
+with new features without major modifications to its architecture
+\cite{bondiCharacteristicsScalabilityTheir2000}. This is achieved by
+writing the software in a modular fashion, where each module is
+responsible for a single function. Maintainability means that the
+software can easily be fixed from bugs and adapted to new requirements
+\cite{kazmanMaintainability2020}. This is achieved by writing the code
+in a clear and readable manner, and by writing tests that ensure that
+the code works as expected~\cite{boswellArtReadableCode2011}. Usability
+is hard to define~\cite{brookeSUSQuickDirty1996}, yet one can consider a
+software as usable if the commands have intuitive names and if the
+software's manual, termed ``documentation'', is up-to-date and easy to
+understand for new users with minimal coding experience. A software
+package that has not received an update for a long time (approx. one
+year) could be considered abandoned. Abandoned software is unlikely to
+be fully functional, since it relies on other software (dependencies)
+that has changed in functionality or introduce bugs that were not
+expected by the developers of all dependencies. Together, software
+that's scalable, maintainable and usable requires continuous changes to
+its codebase. There are best practices that standardize the continuous
+change of the codebase, including version control, continuous
+integration (often referred to as CI), and software testing.
+
+Version control is a system that records changes to the codebase line by
+line, allowing the documentation of the history of the codebase,
+including who made which changes and when. This is required to isolate
+new and experimental features into newer versions and away from the
+stable version that's known to work. The most popular version control
+system is Git, which is considered the industry standard for software
+development~\cite{chaconGitBook2024}. Git can use GitHub.com as a
+platform to store and host codebases in the form of software
+repositories. GitHub's most famous feature is called ``pull request''. A
+pull request is a request from anyone registered on GitHub to include
+their changes to the codebase (as in ``please pull this into your main
+code''). One could see pull requests as the identifying feature of the
+open source community, since it exposes the codebase to potentially
+thousands of independent developers, reaching a workforce that is
+impossible to achieve with closed source models used by paid software
+companies.
+
+Continuous integration (CI) is a software development practice in which
+developers integrate code changes into a shared repository several times
+a day \cite{duvall2007continuous}. Each integration triggers the test
+suite, aiming to detect errors as soon as possible. The test suite
+includes building the software, setting up an environment for the
+software to run and then executing the programmed tests, ensuring that
+the software runs as a whole. Continuous integration is often used
+together with software branches. Branches are independent copies of the
+codebase that are meant to be merged back into the original code once
+the changes are finished. Since branches accumulate multiple changes
+over time, this can lead to minor incompatibilities between the branches
+of all developers (integration conflicts), which is something that CI
+helps to prevent.
+
+Continuous integration especially relies on a thorough software testing
+suite. Software testing is the practice of writing code that checks if
+the codebase works as expected~\cite{10.5555/2161638}. The main type of software testing is
+unit testing, which tests the smallest units of the codebase (functions
+and classes) in isolation (\autoref{lst:unit_test}). The quality of the
+software testing suite is measured by the code coverage, the precision
+of the tests, and the number of test-cases that are checked. The code
+coverage is the percentage of the codebase that is called by the testing
+functions, which should be as close to 100\% as possible, although it
+does not measure how well the code is tested. The precision of the test
+is not a measurable quantity, but it represents if the tests truly
+checks if the code works as expected. The number of test-cases is the
+number of different scenarios that are checked by the testing functions,
+for example testing every possible option or combinations of options for
+functions that have multiple options. The most popular software testing
+framework for python is \texttt{pytest}, which is utilized by
+\texttt{plotastic}~\cite{pytestx.y}.
+
+\def\mycaption{ Example of an arbitrary python function and its
+    respective unit test function. The first function simply returns the
+    number 5. The second function tests if the first function indeed returns
+    the number 5. The test function is named with the prefix
+    ``\texttt{test\_}'' and is placed in a file that ends with the suffix
+    ``\texttt{\_test.py}''. The test function is executed by the testing
+    framework \texttt{pytest}.}
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    label=lst:unit_test, 
+    caption=\mycaption,
+    ]
+    # Define a function called "give_me_five" that returns the number 5
+    def give_me_five():
+        return 5
+    # Define a test function asserting that "give_me_five" returns 5
+    def test_give_me_five():
+        assert give_me_five() == 5 
+\end{lstlisting}
+
+
+% ======================================================================
+\unnsubsection{Python as a Programming Language}
+Here, we provide a general overview of the python programming language,
+explaining terms like ``type'', ``method'', etc., in order to prepare
+readers without prior programming experience for the following chapters.
+We also describe the design principles of python to lay out the key
+concepts that differentiate python compared to other programming
+languages.
+
+Languages such as python are considered ``high-level'', which means that
+it is designed to be easy to read and write, but also independent of
+hardware~\cite{PythonLanguageReference}. A key principle of python is
+the emphasis on implementing a syntax that is concise and close to human
+language (\autoref{lst:readable}, \autoref{lst:not_readable}).
+
+\def\mycaption{ Example of readable python code. This one-line code
+    returns the words (string) \texttt{"Hello, World!"} when executed. The command
+    is straightforward and easy to understand.}
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    label=lst:readable,
+    caption=\mycaption
+    ]
+    print("Hello, World!")
+    # Output: Hello, World!
+\end{lstlisting}
+
+\def\mycaption{ Example of less readable code written in the low-level
+    programming language C. This code is doing exactly the same as the
+    python code in \autoref{lst:readable}. The command is harder to
+    understand because more steps are needed to access the same
+    functionality, including the definition of a function}
+\begin{lstlisting}[
+    language=C, 
+    style=defaultstyle,
+    label=lst:not_readable, 
+    caption=\mycaption
+    ]
+    #include <stdio.h>
+    int main() {
+        printf("Hello, World!");
+        return 0;
+    }
+\end{lstlisting}
+
+Furthermore, python is an interpreted language, which means that the
+code is executed line by line. This makes coding easier because the
+programmer can see the results of the code immediately after writing it.
+This is in contrast to compiled languages, where the code has to be
+compiled into machine code before it can be executed. The advantage of
+compiled languages is that the code runs faster, because the machine
+code is optimized for the hardware.
+
+Python automates tasks that would otherwise require an advanced
+understanding of computer hardware, like the need for manual allocation
+of memory space. This is achieved by using a technique called ``garbage
+collection'', which automatically frees memory space that is no longer
+needed by the program. This is a feature that is not present in
+low-level programming languages like C or C++, that were designed to
+maximize control over hardware.
+
+Another hallmark of python is its dynamic typing system. In python the
+type  is inferred automatically during code execution
+(\autoref{lst:dynamic_typing}). This is in contrast to statically typed
+languages like C, where the type of a variable has to be declared
+explicitly and cannot be changed during code execution
+(\autoref{lst:static_typing})~\cite{PythonLanguageReference}. This makes
+python a very beginner-friendly language, since one does not have to
+keep track of the type of each variable. However, this also makes python
+a slower language, because the interpreter has to check the type of each
+variable during code execution. Also, dynamic typing systems are more
+prone to bugs, because they allow for implicit type conversions, making
+mistakes, and require disciplined programming conventions. One such
+convention are type hints, which are a way to declare the type of a
+variable in python, and are used to make the code more readable and
+understandable for other developers
+(\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
+
+
+\def\mycaption{ Example of dynamic typing in python. The variable ``\texttt{a}''
+    is assigned the value 5, which is an integer. The variable ``\texttt{a}'' is then
+    assigned the value ``\texttt{Hello, World!}'', which is a string. Note that code
+    after ``\texttt{\#}'' is considered a comment and not executed.}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyle,
+    label=lst:dynamic_typing,
+    caption=\mycaption,
+    ]
+    a = 5  # Type integer
+    a = "Hello, World!"  # Type string
+    a = 5.0  # Type float
+    a = True  # Type boolean
+    a = False  # Type boolean
+    a = [1, 2, 3]  # Type list of integers
+    a = {"name": "Regina"}  # Type dictionary
+\end{lstlisting}
+\def\mycaption{ Example of static typing in C. The variable ``a'' is
+    declared as an integer, and can only store integers. The variable ``a''
+    is then assigned the value 5, which is an integer. The variable ``a'' is
+    then assigned the value ``Hello, World!'', which is a string. This
+    results in a compilation error, because the variable ``a'' can only
+    store integers.}
+\begin{lstlisting}[
+    language=C,
+    style=defaultstyle,
+    label=lst:static_typing,
+    caption=\mycaption,
+    ]
+    int a;  // Declare type as integer
+    a = 5;
+    a = "Hello, World!";  // Compilation error!
+\end{lstlisting}
+\def\mycaption{ Example of type hints used in python. Explicitly stating
+    the type of the variable is optional and does not change the behavior of
+    the code.}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyle,
+    label=lst:type_hint,
+    caption=\mycaption,
+    ]
+    a: int = 5
+    a: str = "Hello, World!"
+\end{lstlisting}
+
+
+Python supports both functional and object-oriented programming
+paradigms. In functional programming, the code is written in a way that
+the program is a sequence of function calls, where each function call
+returns a value that is used for the next function call
+(\autoref{lst:functional}). This approach is useful when multiple
+actions have to be performed on the same data and the structure of the
+data is relatively simple, for example a string of a gene.
+
+\def\mycaption{Example of functional programming in Python. The code
+    defines three functions: ``\texttt{create\_person}'',
+    ``\texttt{say\_hello}'', and ``\texttt{introduce}''.
+    ``\texttt{create\_person}'' creates a dictionary representing a person,
+    ``\texttt{say\_hello}'' prints a greeting, and ``\texttt{introduce}''
+    uses the other two functions to introduce a person.}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyle,
+    label=lst:functional,
+    caption=\mycaption,
+    ]
+    
+    gene1 = "TGAGCTGAGCTGATGCGCTATATTTAGGCG"
+    
+    def find_restriction_site(gene: str):
+        return gene.find("GCGC")
+    
+    def cut(gene: str):
+        position = find_restriction_site(gene)
+        return gene[position:]   
+        
+    gene1_cut = cut(gene1)
+    print(gene1_cut)
+    # Output: GCGCTATATTTAGGCG
+    
+    
+\end{lstlisting}
+
+% # Define a function to introduce a person
+% def introduce(person):
+%     say_hello()
+%     print("I am " + person['name'] + "!")
+
+% # Create a person
+% marie = create_person("Marie")
+
+% # Introduce the person
+% introduce(marie)
+
+% # Output: Hello, I am Marie!
+
+However, when the data itself gains in complexity, an
+object-oriented approach is more suitable (\autoref{lst:oop}). Object-oriented programming
+is a programming paradigm that uses objects and classes. An object is a
+collection of both data and functions, and a class is a blueprint for
+creating objects. Functions that are associated with a class are called
+methods.
+
+The main benefit of using an object oriented versus a
+functional approach is that every method has access to the data of the
+object
+
+\def\mycaption{ Example of a class in python. The class is called
+    \texttt{Person} and has two functions, ``\texttt{\_\_init\_\_}'' and
+    ``\texttt{say\_hello}''. The function ``\texttt{\_\_init\_\_}'' is
+    called when creating (``initializing'') an object and fills the object
+    with data. The parameter ``\texttt{self}'' is used to reference the
+    object itself internally. The function ``\texttt{say\_hello}'' is a
+    method that prints the string ``Hello!'' when called. The method
+    ``\texttt{introduce}'' is a method that calls the method
+    ``\texttt{say\_hello}'' and comines the string ``I am'' with the name of
+    the object. }
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyle,
+    label=lst:oop,
+    caption=\mycaption,
+    ]
+    class Gene:
+        def __init__(self, sequence: str, organism: str, exons: list):
+            self.sequence: str = sequence
+            self.organism: str = organism
+            self.exons: list = exons
+            self.promotor: str = self.find_promotor()
+        def find_promotor(self):
+            return self.sequence.find("TATA")
+        def find_restriction_site(self):
+            return self.sequence.find("GCGC")
+        def cut(self):
+            position = self.find_restriction_site()
+            return self.sequence[position:]
+            
+    gene1 = Gene(
+        sequence="TGAGCTGAGCTGATGCGCTATATTTAGGCG", 
+        organism="Human"
+        )
+    gene1_cut = gene1.cut()
+    print(gene1_cut)
+    # Output: GCGCTATATTTAGGCG
+\end{lstlisting}
+% # Define a class called "Person"
+% class Person:
+%     def __init__(self, name: str):
+%         self.name: str = name
+%     def say_hello(self):
+%         print(f"Hello!")
+%     def introduce(self):
+%         self.say_hello()
+%         print("I am " + self.name + "!")
+
+% regina = Person("Regina")  # Create an object of the class Person
+% regina.introduce()  # Call the method introduce
+
+% # Output: Hello, I am Regina!
+
+Initially, object-oriented programming was designed to
+be used when the functions rely on the state of the data and
+modifications of such state.
+
+This state could be for example a Table
+containing data, and the functions could be the operations that modify
+the table. When designing software, both paradigms can be used together, where
+object oriented programming is often used to design the overall
+architecture of the software, and functional programming is used to
+write the code that implements the functionalities.
+
+
+
+
+% ======================================================================
+\unnsubsection{Data Science with Python}
+the ease of use has made python a very popular language \cite{rayhanRisePythonSurvey2023}
+
+Like any other programming language, python alone does not provide
+specialized tools like those used for data analysis
+\cite{PythonLanguageReference}. However, python was designed to be
+extended by packages developed by its users. A python package consists
+of multiple python modules, where each module is a text-file with a
+\texttt{.py} ending containing python code. Famous examples of such
+packages are \texttt{pytorch} and \texttt{tensorflows}, that are used to
+build models of artificial intelligence, including ChatGPT
+\cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
+    radfordLanguageModelsAre2019}.
+Here, we outlay the most important packages used for \texttt{plotastic}.
+
+Interactive Python
+- Jupyter
+
+Python overcame the issues of interpreted language by utilizing Code
+written in C
+numpy:
+- Acceleration,
+- SIMD instructions
+
+Tabular operations
+- pandas
+
+Data visualization
+- matplotlib
+- seaborn
+
+
+Inferential Statistics
+- pingouin
+
+AI:
+- pytorch and tensorflow
+- example: VGG19 is just a few lines of code (\autoref{lst:vgg19}) asdfdf
+
+
+% ======================================================================
+\unnsubsection{Convolutional Neural Networks}
+This work greatly benefited from the use of convolutional neural
+networks provided by the Zeiss ZEN software. Here, we provide a brief
