@@ -125,7 +125,7 @@ Since ``hMSCs" are a heterogenous group of cells, they were defined by their
 adherent. Second, they must express or lack a set of specific surface antigens
 (positive for CD73, CD90, CD105; negative for CD45, CD34, CD11b, CD19). Third,
 hMSCs must differentiate to osteoblasts, adipocytes and chondroblasts \textit{in
-vitro}. Together, hMSCs exhibit diverse differentiation potentials and can be
+    vitro}. Together, hMSCs exhibit diverse differentiation potentials and can be
 isolated from multiple sources of the body. This offers great opportunity for
 regenerative medicine, if the particular hMSC-subtype is properly characterized.
 
@@ -136,7 +136,7 @@ Multiple myeloma arises from clonal expansion of malignant plasma cells in the
 bone marrow (BM). At diagnosis, myeloma cells have disseminated to multiple
 sites in the skeleton and, in some cases, to virtually any
 tissue~\cite{rajkumarMultipleMyelomaCurrent2020,
-bladeExtramedullaryDiseaseMultiple2022}.
+    bladeExtramedullaryDiseaseMultiple2022}.
 
 
 % ======================================================================
@@ -145,7 +145,7 @@ Since plasma cells can not survive outside the bone marrow, MM cells also
 require survival signals for growth and disease progression. These signals are
 produced by the bone marrow microenvironment, including ECM, MSCs and
 ACs~\cite{kiblerAdhesiveInteractionsHuman1998,
-garcia-ortizRoleTumorMicroenvironment2021}.
+    garcia-ortizRoleTumorMicroenvironment2021}.
 
 
 % ======================================================================
@@ -161,7 +161,7 @@ physiology~\cite{alcorta-sevillanoDecipheringRelevanceBone2020}. Bone tissue is
 actively remodeled by bone-forming osteoblasts and bone-degrading osteoclasts.
 Osteoblasts are derived from mesenchymal stromal cells (MSCs) that reside in the
 bone marrow~\cite{friedensteinOsteogenesisTransplantsBone1966,
-pittengerMultilineagePotentialAdult1999}. MSCs also give rise to adipocytes
+    pittengerMultilineagePotentialAdult1999}. MSCs also give rise to adipocytes
 (ACs) to form Bone Marrow Adipose Tissue (BMAT), which can account for up to
 70\% of bone marrow volume~\cite{fazeliMarrowFatBone2013}.
 
@@ -273,18 +273,7 @@ Continuous integration especially relies on a thorough software testing suite.
 Software testing is the practice of writing code that checks if the codebase
 works as expected~\cite{10.5555/2161638}. The main type of software testing is
 unit testing, which tests the smallest units of the codebase (functions and
-classes) in isolation (\autoref{lst:unit_test}). The quality of the software
-testing suite is measured by the code coverage, the precision of the tests, and
-the number of test-cases that are checked. The code coverage is the percentage
-of the codebase that is called by the testing functions, which should be as
-close to 100\% as possible, although it does not measure how well the code is
-tested. The precision of the test is not a measurable quantity, but it
-represents if the tests truly checks if the code works as expected. The number
-of test-cases is the number of different scenarios that are checked by the
-testing functions, for example testing every possible option or combinations of
-options for functions that have multiple options. The most popular software
-testing framework for python is \texttt{pytest}, which is utilized by
-\texttt{plotastic}~\cite{pytestx.y}.
+classes) in isolation (\autoref{lst:unit_test}).
 
 \def\mycaption{ Example of an arbitrary python function and its respective unit
     test function. The first function simply returns the number 5. The second
@@ -299,13 +288,26 @@ testing framework for python is \texttt{pytest}, which is utilized by
     label=lst:unit_test, 
     caption=\mycaption,
     ]
-    # Define a function called "give_me_five" that returns the number 5
-    def give_me_five():
-        return 5
-    # Define a test function asserting that "give_me_five" returns 5
-    def test_give_me_five():
-        assert give_me_five() == 5 
+# Define a function called "give_me_five" that returns the number 5
+def give_me_five():
+    return 5
+# Define a test function asserting that "give_me_five" returns 5
+def test_give_me_five():
+    assert give_me_five() == 5 
 \end{lstlisting}
+
+The quality of the software testing suite is measured by the code coverage, the
+precision of the tests, and the number of test-cases that are checked. The code
+coverage is the percentage of the codebase that is called by the testing
+functions, which should be as close to 100\% as possible, although it does not
+measure how well the code is tested. The precision of the test is not a
+measurable quantity, but it represents if the tests truly checks if the code
+works as expected. The number of test-cases is the number of different scenarios
+that are checked by the testing functions, for example testing every possible
+option or combinations of options for functions that have multiple options. The
+most popular software testing framework for python is \texttt{pytest}, which is
+utilized by \texttt{plotastic}~\cite{pytestx.y}.
+
 
 
 % ======================================================================
@@ -321,7 +323,6 @@ designed to be easy to read and write, but also independent of
 hardware~\cite{PythonLanguageReference}. A key principle of python is the
 emphasis on implementing a syntax that is concise and close to human language
 (\autoref{lst:readable}, \autoref{lst:not_readable}).
-
 \def\mycaption{ Example of readable python code. This one-line code
     returns the words (string) \texttt{"Hello, World!"} when executed. The command
     is straightforward and easy to understand.}
@@ -331,8 +332,8 @@ emphasis on implementing a syntax that is concise and close to human language
     label=lst:readable,
     caption=\mycaption
     ]
-    print("Hello, World!")
-    # Output: Hello, World!
+print("Hello, World!")
+# Output: Hello, World!
 \end{lstlisting}
 
 \def\mycaption{ Example of less readable code written in the low-level
@@ -346,12 +347,12 @@ emphasis on implementing a syntax that is concise and close to human language
     label=lst:not_readable, 
     caption=\mycaption
     ]
-    #include <stdio.h>
-    int main() {
-        printf("Hello, World!");
-        return 0;
-    }
-    // Output: Hello, World!
+#include <stdio.h>
+int main() {
+    printf("Hello, World!");
+    return 0;
+}
+// Output: Hello, World!
 \end{lstlisting}
 
 Furthermore, python is an interpreted language, which means that the code is
@@ -373,20 +374,7 @@ Another hallmark of python is its dynamic typing system. In python the type  is
 inferred automatically during code execution (\autoref{lst:dynamic_typing}).
 This is in contrast to statically typed languages like C, where the type of a
 variable has to be declared explicitly and cannot be changed during code
-execution (\autoref{lst:static_typing})~\cite{PythonLanguageReference}. This
-makes python a very beginner-friendly language, since one does not have to keep
-track of the type of each variable. However, this also makes python a slower
-language, because the interpreter has to check the type of each variable during
-code execution. Also, developing code with dynamic typing systems is prone to
-introducing bugs (``type errors''), because implicit type conversions can lead
-to unexpected behavior. Hence, larger python projects require disciplined
-adherence to programming conventions. One such convention is type hinting, which
-is a way to explicitly state the type of a variable, and is used to make the
-code more readable and understandable for other developers, and allows for
-development software to detect type errors before execution.
-(\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
-
-
+execution (\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
 \def\mycaption{ Example of dynamic typing in python. The variable ``\texttt{a}''
     is assigned the value 5, which is an integer. The variable ``\texttt{a}'' is
     then assigned the value ``\texttt{Hello, World!}'', which is a string.
@@ -398,14 +386,15 @@ development software to detect type errors before execution.
     label=lst:dynamic_typing,
     caption=\mycaption,
     ]
-    a = 5  # Type integer
-    a = 5.0  # Type float
-    a = "Hello, World!"  # Type string
-    a = True  # Type boolean
-    a = False  # Type boolean
-    a = [1, 2, 3]  # Type list of integers
-    a = {"name": "Regina"}  # Type dictionary
+a = 5  # Type integer
+a = 5.0  # Type float
+a = "Hello, World!"  # Type string
+a = True  # Type boolean
+a = False  # Type boolean
+a = [1, 2, 3]  # Type list of integers
+a = {"name": "Regina"}  # Type dictionary
 \end{lstlisting}
+
 \def\mycaption{ Example of static typing in C. The variable ``a'' is declared as
     an integer, and can only store integers. The variable ``a'' is then assigned
     the value 5, which is an integer. The variable ``a'' is then assigned the
@@ -417,21 +406,32 @@ development software to detect type errors before execution.
     label=lst:static_typing,
     caption=\mycaption,
     ]
-    int a;  // Declare type as integer
-    a = 5;
-    a = "Hello, World!";  // Compilation error!
+int a;  // Declare type as integer
+a = 5;
+a = "Hello, World!";  // Compilation error!
 \end{lstlisting}
-\def\mycaption{ Example of type hints used in python. Explicitly stating
-    the type of the variable is optional and does not change the
-    behavior of the code as shown in \autoref{lst:dynamic_typing}.}
+This makes python a very beginner-friendly language, since one does not have to
+keep track of the type of each variable. However, this also makes python a
+slower language, because the interpreter has to check the type of each variable
+during code execution. Also, developing code with dynamic typing systems is
+prone to introducing bugs (``type errors''), because implicit type conversions
+can lead to unexpected behavior. Hence, larger python projects require
+disciplined adherence to programming conventions. One such convention is type
+hinting, which is a way to explicitly state the type of a variable, and is used
+to make the code more readable and understandable for other developers, and
+allows for development software to detect type errors before execution.
+(\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}. \def\mycaption{
+    Example of type hints used in python. Explicitly stating the type of the
+    variable is optional and does not change the behavior of the code as shown in
+    \autoref{lst:dynamic_typing}.}
 \begin{lstlisting}[
     language=Python,
     style=pythonstyle,
     label=lst:type_hint,
     caption=\mycaption,
     ]
-    a: int = 5
-    a: str = "Hello, World!"
+a: int = 5
+a: str = "Hello, World!"
 \end{lstlisting}
 
 
@@ -453,109 +453,103 @@ structure of the data is relatively simple, for example a string of a gene.
     label=lst:functional,
     caption=\mycaption,
     ]
-    gene1 = "TGAGCTGAGCTGATGCGCTATATTTAGGCG"
+def find_restriction_site(gene: str):
+    return gene.find("GCGC")
     
-    def find_restriction_site(gene: str):
-        return gene.find("GCGC")
+def cut(gene: str):
+    position = find_restriction_site(gene)
+    return gene[position:]   
     
-    def cut(gene: str):
-        position = find_restriction_site(gene)
-        return gene[position:]   
-        
-    gene1_cut = cut(gene1)
-    print(gene1_cut)
-    # Output: GCGCTATATTTAGGCG
+gene1 = "TGAGCTGAGCTGATGCGCTATATTTAGGCG"
+gene1_cut = cut(gene1)
+print(gene1_cut)
+# Output: GCGCTATATTTAGGCG
     
     
 \end{lstlisting}
 
-% # Define a function to introduce a person
-% def introduce(person):
-%     say_hello()
-%     print("I am " + person['name'] + "!")
 
-% # Create a person
-% marie = create_person("Marie")
-
-% # Introduce the person
-% introduce(marie)
-
-% # Output: Hello, I am Marie!
-
-When the data itself gains in complexity, an object-oriented approach is more
-suitable (\autoref{lst:oop}). Object-oriented programming is a programming
-paradigm that uses objects and classes. An object is a collection of both data
-and functions, and a class is a blueprint for creating objects. Functions that
-are associated with a class are called methods.
+When the data itself gains in complexity, for example when associating the
+promotor with a gene sequence, an object-oriented approach is more suitable
+(\autoref{lst:oop}). Object-oriented programming is a programming paradigm that
+uses objects and classes. An object is a collection of both data and functions,
+and a class is a blueprint for creating objects. The data of an object is stored
+as attributes. Functions that are associated with an object are called methods.
+A major benefit of using an object oriented versus a functional approach is that
+the data itself programmable, enabling the programmer to define the behavior of
+the data itself through methods. This is achieved by using the keyword
+``\texttt{self}'' to reference the object itself inside the class. For example,
+one could extend the class ``\texttt{Gene}'' with a method that finds the
+promotor of the gene and stores it as an attribute (\autoref{lst:oop}).
 
 
-The main benefit of using an object oriented versus a
-functional approach is that every method has access to the data of the
-object
-
-\def\mycaption{ Example of a class in python. The class is called
-    \texttt{Person} and has two functions, ``\texttt{\_\_init\_\_}'' and
-    ``\texttt{say\_hello}''. The function ``\texttt{\_\_init\_\_}'' is called
-    when creating (``initializing'') an object and fills the object with data.
-    The parameter ``\texttt{self}'' is used to reference the object itself
-    internally. The function ``\texttt{say\_hello}'' is a method that prints the
-    string ``Hello!'' when called. The method ``\texttt{introduce}'' is a method
-    that calls the method ``\texttt{say\_hello}'' and comines the string ``I
-    am'' with the name of the object. }
+\def\mycaption{ Example of object oriented programming in python. The class is
+    called ``\texttt{Gene}'' and has four methods, ``\texttt{\_\_init\_\_}'',
+    ``\texttt{find\_promotor}'', ``\texttt{find\_restriction\_site}'' and
+    ``\texttt{cut}''. The function ``\texttt{\_\_init\_\_}'' is called when
+    creating (``initializing'') an object, which fills the object with
+    user-defined data. The parameter ``\texttt{self}'' is used to reference the
+    object itself internally. ``\texttt{find\_promotor}'' is a
+    method that finds the position of the promotor in the gene and is called
+    during object initialization. }
 \begin{lstlisting}[
     language=Python,
     style=pythonstyle,
     label=lst:oop,
     caption=\mycaption,
     ]
-    class Gene:
-        def __init__(self, sequence: str, organism: str, exons: list):
-            self.sequence: str = sequence
-            self.organism: str = organism
-            self.exons: list = exons
-            self.promotor: str = self.find_promotor()
-        def find_promotor(self):
-            return self.sequence.find("TATA")
-        def find_restriction_site(self):
-            return self.sequence.find("GCGC")
-        def cut(self):
-            position = self.find_restriction_site()
-            return self.sequence[position:]
-            
-    gene1 = Gene(
-        sequence="TGAGCTGAGCTGATGCGCTATATTTAGGCG", 
-        organism="Human"
-        )
-    gene1_cut = gene1.cut()
-    print(gene1_cut)
-    # Output: GCGCTATATTTAGGCG
+class Gene:
+    def __init__(self, sequence: str):
+        self.sequence: str = sequence # Save sequence as attribute
+        self.promotor: str = self.find_promotor() 
+    def find_promotor(self):
+        return self.sequence.find("TATA")
+    def find_restriction_site(self):
+        return self.sequence.find("GCGC")
+    def cut(self):
+        position = self.find_restriction_site()
+        return self.sequence[position:]
+
+gene1 = Gene(sequence="TGAGCTGAGCTGATGCGCTATATTTAGGCG") # Create object
+gene1_cut = gene1.cut() # Call the method cut
+print(gene1_cut) # Show result
+# Output: GCGCTATATTTAGGCG
 \end{lstlisting}
-% # Define a class called "Person"
-% class Person:
-%     def __init__(self, name: str):
-%         self.name: str = name
-%     def say_hello(self):
-%         print(f"Hello!")
-%     def introduce(self):
-%         self.say_hello()
-%         print("I am " + self.name + "!")
-
-% regina = Person("Regina")  # Create an object of the class Person
-% regina.introduce()  # Call the method introduce
-
-% # Output: Hello, I am Regina!
-
-Initially, object-oriented programming was designed to
-be used when the functions rely on the state of the data and
-modifications of such state.
-
-This state could be for example a Table containing data, and the functions could
-be the operations that modify the table. When designing software, both paradigms
-can be used together, where object oriented programming is often used to design
-the overall architecture of the software, and functional programming is used to
-write the code that implements the functionalities.
 
 
+When designing software, both functional and object oriented programming can be
+used together, where object oriented programming is often used to design the
+program's overall architecture, and functional programming is used to implement
+the algorithms of the program's features. This allows for scalability of the
+software, as every single class is extended through the addition of new methods.
+Furthermore, classes can be expanded in their functionalities through
+inheritance. Inheritance is a feature of object-oriented programming that allows
+a class to access every attribute and method of a parent class. For example, one
+could extend the class ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by
+writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''
+(\autoref{lst:inheritance}). \def\mycaption{ Example of inheritance in python.
+    The class ``\texttt{mRNA}'' inherits from the class ``\texttt{Gene}''. The class
+    ``\texttt{mRNA}'' has two methods, ``\texttt{\_\_init\_\_}'' and
+    ``\texttt{find\_stopcodon}''. The method ``\texttt{find\_stopcodon}'' finds the
+    position of stop codons. }
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyle,
+    label=lst:inheritance,
+    caption=\mycaption,
+    ]
+# Define a class called mRNA inheriting from the class Gene
+class mRNA(Gene):
+    def __init__(self, sequence: str):
+        super().__init__(sequence)  # Get attributes from parent class
+        self.sequence.replace("T", "U")  # Replace thymine with uracil
+    def find_stopcodons(self):
+        return self.sequence.find("UGA")
+        
+mrna1 = mRNA(sequence="TGAGCTGAGCTGATGCGCTATATTTAGGCG") # Create object
+print(mrna1.find_stopcodons())  # Call the method translate
+# Output: [0, 5, 10]
+\end{lstlisting}
 
 
 % ======================================================================
@@ -570,7 +564,7 @@ with a \texttt{.py} ending containing python code. Famous examples of such
 packages are \texttt{pytorch} and \texttt{tensorflows}, that are used to build
 models of artificial intelligence, including ChatGPT
 \cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
-radfordLanguageModelsAre2019}. Here, we outlay the most important packages used
+    radfordLanguageModelsAre2019}. Here, we outlay the most important packages used
 for \texttt{plotastic}.
 
 Interactive Python

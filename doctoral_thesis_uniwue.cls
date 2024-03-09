@@ -36,6 +36,8 @@
 % == Universal Packages ================================================
 \usepackage{float} % needed for e.g. forced precise image positioning
 
+% > adjust float spacing
+\setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
 % ======================================================================
 % == Document Layout
@@ -90,6 +92,11 @@
 \usepackage{tabto} % > For Tabbing
 \TabPositions{0.49in,0.98in,1.47in,1.96in,2.45in,2.94in,3.43in,3.92in,4.41in,4.9in,5.39in,5.88in,}
 
+% ## Define marings
+\newlength{\leftm}
+\setlength{\leftm}{1.5cm}
+\newlength{\rightm}
+\setlength{\rightm}{1.5cm}
 
 % == Sections ==========================================================
 % ## Define functions to create unnumbered sections
@@ -156,100 +163,36 @@
 \definecolor{operatorcolor}{RGB}{170,35,255}  % > Purple
 \definecolor{typecolor}{RGB}{0,85,170}  % > Blue
 
+
 % ## Define the default style
 \lstdefinestyle{defaultstyle}{
+    float, % > Prevent page breaks
+    floatplacement=H, % > Place the listing at exactly this position
+    frame=single, % > add a frame
+    xleftmargin=\leftm,
+    xrightmargin=\rightm,
+    basewidth=0.5em,
+    numbers=left,  % > Show line numbers
+    numbersep=5pt,  % > Move line numbers slightly to the right
+    basicstyle=\linespread{1}\color{variablecolor}\ttfamily\small,  % > Variables are black
+    showstringspaces=false,  % > Don't highlight spaces within strings
     keywordstyle=\color{keywordcolor}\bfseries,  % > Keywords are green
-    basicstyle=\color{variablecolor}\ttfamily\small,  % > Variables are black
     commentstyle=\color{commentcolor},  % > Comments are green
     stringstyle=\color{stringcolor},  % > Strings are red
-    showstringspaces=false,  % > Don't highlight spaces within strings
-    numbers=left,  % > Show line numbers at the left
-    numbersep=5pt,  % > Move line numbers slightly to the right
-    xleftmargin=1cm,
-    xrightmargin=1cm,
-    basewidth=0.5em,
     classoffset=0,  % > Restoring normal class
-    literate=*{+}{{{\color{operatorcolor}+}}}1
-    {=}{{{\color{operatorcolor}=}}}1
-    {-}{{{\color{operatorcolor}-}}}1
-    {*}{{{\color{operatorcolor}*}}}1
-    {\ /\ }{{{\color{operatorcolor}\ /\ }}}1
-    % {//}{{{\color{operatorcolor}//}}}1 % !! This is a comment in C
-    {\%}{{{\color{operatorcolor}\%}}}1
-    {**}{{{\color{operatorcolor}**}}}1
-    {\&}{{{\color{operatorcolor}\&}}}1
-    {|}{{{\color{operatorcolor}|}}}1
-    {^}{{{\color{operatorcolor}^}}}1
-    {~}{{{\color{operatorcolor}~}}}1
-    {<<}{{{\color{operatorcolor}<<}}}1
-    {>>}{{{\color{operatorcolor}>>}}}1
-    {==}{{{\color{operatorcolor}==}}}1
-    {!=}{{{\color{operatorcolor}!=}}}1
-    {\ <\ }{{{\color{operatorcolor}\ <\ }}}1
-    {<=}{{{\color{operatorcolor}<=}}}1
-    {\ >\ }{{{\color{operatorcolor}\ >\ }}}1
-    {>=}{{{\color{operatorcolor}>=}}}1
-    {<>}{{{\color{operatorcolor}<>}}}1
-    {+=}{{{\color{operatorcolor}+=}}}1
-    {-=}{{{\color{operatorcolor}-=}}}1
-    {*=}{{{\color{operatorcolor}*=}}}1
-    {/=}{{{\color{operatorcolor}/=}}}1
-    {//=}{{{\color{operatorcolor}//=}}}1
-    {\%=}{{{\color{operatorcolor}\%=}}}1
-    {**=}{{{\color{operatorcolor}**=}}}1
-    {&=}{{{\color{operatorcolor}\&=}}}1
-    {|=}{{{\color{operatorcolor}|=}}}1
-    {^=}{{{\color{operatorcolor}^=}}}1
-    {~=}{{{\color{operatorcolor}~=}}}1
-    {<<=}{{{\color{operatorcolor}<<=}}}1
-    {>>=}{{{\color{operatorcolor}>>=}}}1
 }
 
 % ## Define the Python style
 \lstdefinestyle{pythonstyle}{
-style=defaultstyle,  % > Use the default style
-language=Python,  % > Set the language to Python
-morekeywords={assert},  % > Add Python-specific keywords
-classoffset=1,  % > Starting new class of keywords
-keywordstyle=\color{typecolor},  % > Type built-in functions are blue
-classoffset=2,  % > Starting new class of keywords
-keywords={True, False, None},  % > Add Python-specific keywords
-keywordstyle=\color{keywordcolor},  % > Keywords are green
-classoffset=0,  % > Restoring normal class
-literate=*{+}{{{\color{operatorcolor}+}}}1
-{=}{{{\color{operatorcolor}=}}}1
-{-}{{{\color{operatorcolor}-}}}1
-{*}{{{\color{operatorcolor}*}}}1
-{/}{{{\color{operatorcolor}/}}}1
-{//}{{{\color{operatorcolor}//}}}1 % !! This is a comment in C
-{\%}{{{\color{operatorcolor}\%}}}1
-{**}{{{\color{operatorcolor}**}}}1
-{\&}{{{\color{operatorcolor}\&}}}1
-{|}{{{\color{operatorcolor}|}}}1
-{^}{{{\color{operatorcolor}^}}}1
-{~}{{{\color{operatorcolor}~}}}1
-{<<}{{{\color{operatorcolor}<<}}}1
-{>>}{{{\color{operatorcolor}>>}}}1
-{==}{{{\color{operatorcolor}==}}}1
-{!=}{{{\color{operatorcolor}!=}}}1
-{<}{{{\color{operatorcolor}<}}}1
-{<=}{{{\color{operatorcolor}<=}}}1
-{>}{{{\color{operatorcolor}>}}}1
-{>=}{{{\color{operatorcolor}>=}}}1
-{<>}{{{\color{operatorcolor}<>}}}1
-{+=}{{{\color{operatorcolor}+=}}}1
-{-=}{{{\color{operatorcolor}-=}}}1
-{*=}{{{\color{operatorcolor}*=}}}1
-{/=}{{{\color{operatorcolor}/=}}}1
-{//=}{{{\color{operatorcolor}//=}}}1
-{\%=}{{{\color{operatorcolor}\%=}}}1
-{**=}{{{\color{operatorcolor}**=}}}1
-{&=}{{{\color{operatorcolor}\&=}}}1
-{|=}{{{\color{operatorcolor}|=}}}1
-{^=}{{{\color{operatorcolor}^=}}}1
-{~=}{{{\color{operatorcolor}~=}}}1
-{<<=}{{{\color{operatorcolor}<<=}}}1
-{>>=}{{{\color{operatorcolor}>>=}}}1
+    style=defaultstyle,  % > Use the default style
+    language=Python,  % > Set the language to Python
+    morekeywords={assert},  % > Add Python-specific keywords
+    classoffset=1,  % > Starting new class of keywords
+    keywordstyle=\color{typecolor},  % > Type built-in functions are blue
+    classoffset=2,  % > Starting new class of keywords
+    keywords={True, False, None},  % > Add Python-specific keywords
+    keywordstyle=\color{keywordcolor},  % > Keywords are green
+    classoffset=0,  % > Restoring normal class
 }
 
 
@@ -281,7 +224,12 @@ literate=*{+}{{{\color{operatorcolor}+}}}1
 
 % == Captions ==========================================================
 % ## Import captions and define sans-serif font
-\usepackage[font={sf, footnotesize}]{caption}
+\usepackage[
+    font={sf, footnotesize},
+    singlelinecheck=false,
+    margin=\leftm]
+{caption}
+% \usepackage[font={sf, footnotesize}]{caption}
 
 \DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
 
@@ -309,9 +257,9 @@ literate=*{+}{{{\color{operatorcolor}+}}}1
 % ## Define the bibliography style
 \let\oldthebibliography=\thebibliography
 \renewcommand{\thebibliography}[1]{
-  \oldthebibliography{#1}
-  \setlength{\itemsep}{0pt}
-  \footnotesize
+    \oldthebibliography{#1}
+    \setlength{\itemsep}{0pt}
+    \footnotesize
 }
 
 % == PDF Files =========================================================
