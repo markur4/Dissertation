@@ -119,7 +119,7 @@ noted that hMSCs can differ greatly in their transcription profile and
 originated from
 \cite{jansenFunctionalDifferencesMesenchymal2010,sacchettiNoIdenticalMesenchymal2016}.
 
-Since ``hMSCs" are a heterogenous group of cells, they were defined by their
+Since ``hMSCs' are a heterogenous group of cells, they were defined by their
 \textit{in vitro} characteristics. A minimal set of criteria are the following
 \cite{dominiciMinimalCriteriaDefining2006}: First, hMSCs must be plastic
 adherent. Second, they must express or lack a set of specific surface antigens
@@ -192,11 +192,63 @@ microenvironment
 
 % ======================================================================
 \unnsubsection{The Increasing Role of Software in Biomedicine}
-The increasing importance of software in biomedicine is a direct consequence of
-the increasing complexity of biological data. The biological community has been
-producing more data in shorter time, posing new
-challenges~\cite{yangScalabilityValidationBig2017}. - RNAseq - single cell
-rnaseq - sequence
+In the last decades, biosciences have made significant progress in generating
+vast amounts of data in shorter time spans
+~\cite{yangScalabilityValidationBig2017}. Here, it is argued that research reliant
+on software more than ever. Moreso, 
+
+
+
+
+
+
+Modern methods in molecular biology, biochemistry, and biomedicine, such as
+next-generation sequencing, mass spectrometry, and high-throughput screening,
+generate large volumes of data that require sophisticated software tools for
+analysis. For instance, bioinformatics software is essential for analyzing
+genomic and proteomic data, while image analysis software is routinely used in
+microscopy.
+
+
+Moreover, the rise of systems biology and integrative biomedicine, which aim to
+understand biological systems as a whole, has led to the development of complex
+computational models and simulation software. These tools are used to integrate
+and analyze diverse data types, from molecular to physiological data, and to
+predict the behavior of biological systems.
+
+
+In addition, software plays a crucial role in the management and sharing of
+biomedical data. Databases and data repositories are essential for storing,
+retrieving, and sharing data, while data standards and ontologies, which are
+often implemented as software libraries, are used to ensure that data is
+interoperable and reusable.
+
+
+Given this landscape, it is clear that researchers in the biosciences are
+confronted with complex software on a daily basis. Therefore, there is a growing
+need for researchers to acquire computational skills. Learning a programming
+language like Python can greatly benefit researchers by enabling them to
+automate tasks, analyze data more efficiently, and develop their own tools. This
+not only increases productivity but also fosters reproducibility and open
+science.
+
+
+In conclusion, the increasing role of software in biomedicine underscores the
+importance of computational skills for modern researchers. As the field
+continues to evolve, the ability to work with software will become even more
+critical.
+
+
+
+% and have become increasingly reliant on software. This is
+% due to the increasing complexity of biological data produced in shorter
+% time-spans. Here, we summarize how The increasing importance of software in
+% biomedicine is a direct consequence of the increasing complexity of biological
+% data. The biological community has been producing more data in shorter time,
+% posing new challenges~\cite{yangScalabilityValidationBig2017}. 
+
+- RNAseq - single
+cell rnaseq - sequence
 
 Artificial intelligence (AI) has been a game changer in the field of
 biomedicine. The early development of AI itself was driven by radiology,
@@ -311,21 +363,23 @@ utilized by \texttt{plotastic}~\cite{pytestx.y}.
 
 
 % ======================================================================
+% ======================================================================
 \unnsubsection{Python as a Programming Language}
 Here, we provide a general overview of the python programming language,
-explaining terms like ``type'', ``method'', etc., in order to prepare readers
-without prior programming experience for the following chapters. We also
-describe the design principles of python to lay out the key concepts that
-differentiate python compared to other programming languages.
+explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
+prepare readers without prior programming experience for the following chapters.
+We also describe the design principles of python to lay out the key concepts
+that differentiate python compared to other programming languages.
 
-Languages such as python are considered ``high-level'', which means that it is
-designed to be easy to read and write, but also independent of
-hardware~\cite{PythonLanguageReference}. A key principle of python is the
+Languages such as python are considered \textit{``high-level''}, which means
+that it is designed to be easy to read and write, but also independent of
+hardware by hiding (\textit{``abstracting''}) underlying
+details~\cite{PythonLanguageReference}. A key principle of python is the
 emphasis on implementing a syntax that is concise and close to human language
-(\autoref{lst:readable}, \autoref{lst:not_readable}).
-\def\mycaption{ Example of readable python code. This one-line code
-    returns the words (string) \texttt{"Hello, World!"} when executed. The command
-    is straightforward and easy to understand.}
+(\autoref{lst:readable}, \autoref{lst:not_readable}). \def\mycaption{ Example of
+    readable python code. This one-line code returns the words (string)
+    \texttt{'Hello, World!'} when executed. The command is straightforward and easy
+    to understand.}
 \begin{lstlisting}[
     language=Python, 
     style=pythonstyle,
@@ -355,24 +409,24 @@ int main() {
 // Output: Hello, World!
 \end{lstlisting}
 
-Furthermore, python is an interpreted language, which means that the code is
-executed line by line. This makes coding easier because the programmer can see
-the results of the code immediately after writing it, and error messages point
-to the exact line where the error occurred. This is in contrast to compiled
-languages, where the code has to be compiled into machine code before it can be
-executed. The advantage of compiled languages is that the code runs faster,
-because the machine code is optimized for the hardware.
+Furthermore, python is an \textit{interpreted} language, which means that the
+code is executed line by line. This makes coding easier because the programmer
+can see the results of the code immediately after writing it, and error messages
+point to the exact line where the error occurred. This is in contrast to
+\textit{compiled} languages, where the code has to be compiled into machine code
+before it can be executed. The advantage of compiled languages is that the code
+runs faster, because the machine code is optimized for the hardware.
 
 Python automates tasks that would otherwise require an advanced understanding of
 computer hardware, like the need for manual allocation of memory space. This is
-achieved by using a technique called ``garbage collection'', which automatically
-frees memory space that is no longer needed by the program. This is a feature
-that is not present in low-level programming languages like C or C++, that were
-designed to maximize control over hardware.
+achieved by using a technique called \textit{``garbage collection''}, which
+automatically frees memory space that is no longer needed by the program. This
+is a feature that is not present in low-level programming languages like C or
+C++, that were designed to maximize control over hardware.
 
-Another hallmark of python is its dynamic typing system. In python the type  is
+Another hallmark of python is its \textit{dynamic typing system}. In python the type  is
 inferred automatically during code execution (\autoref{lst:dynamic_typing}).
-This is in contrast to statically typed languages like C, where the type of a
+This is in contrast to \textit{statically} typed languages like C, where the type of a
 variable has to be declared explicitly and cannot be changed during code
 execution (\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
 \def\mycaption{ Example of dynamic typing in python. The variable ``\texttt{a}''
@@ -388,18 +442,18 @@ execution (\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
     ]
 a = 5  # Type integer
 a = 5.0  # Type float
-a = "Hello, World!"  # Type string
+a = 'Hello, World!'  # Type string
 a = True  # Type boolean
 a = False  # Type boolean
 a = [1, 2, 3]  # Type list of integers
-a = {"name": "Regina"}  # Type dictionary
+a = {'name': 'Regina'}  # Type dictionary
 \end{lstlisting}
 
-\def\mycaption{ Example of static typing in C. The variable ``a'' is declared as
-    an integer, and can only store integers. The variable ``a'' is then assigned
-    the value 5, which is an integer. The variable ``a'' is then assigned the
-    value ``Hello, World!'', which is a string. This results in a compilation
-    error, because the variable ``a'' can only store integers.}
+\def\mycaption{ Example of static typing in C. The variable ``\texttt{a}'' is declared as
+    an integer, and can only store integers. The variable ``\texttt{a}'' is then assigned
+    the value 5, which is an integer. The variable ``\texttt{a}'' is then assigned the
+    value \texttt{'Hello, World!'}, which is a string. This results in a compilation
+    error, because the variable ``\texttt{a}'' can only store integers.}
 \begin{lstlisting}[
     language=C,
     style=defaultstyle,
@@ -408,19 +462,23 @@ a = {"name": "Regina"}  # Type dictionary
     ]
 int a;  // Declare type as integer
 a = 5;
-a = "Hello, World!";  // Compilation error!
+a = 'Hello, World!';  // Compilation error!
 \end{lstlisting}
-This makes python a very beginner-friendly language, since one does not have to
-keep track of the type of each variable. However, this also makes python a
-slower language, because the interpreter has to check the type of each variable
-during code execution. Also, developing code with dynamic typing systems is
-prone to introducing bugs (``type errors''), because implicit type conversions
-can lead to unexpected behavior. Hence, larger python projects require
-disciplined adherence to programming conventions. One such convention is type
-hinting, which is a way to explicitly state the type of a variable, and is used
-to make the code more readable and understandable for other developers, and
-allows for development software to detect type errors before execution.
-(\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}. \def\mycaption{
+Dynamic typing makes python a very beginner-friendly language, since one does
+not have to keep track of the type of each variable. However, this also makes
+python a slower language, because the interpreter has to check the type of each
+variable during code execution. Also, developing code with dynamic typing
+systems is prone to introducing bugs (``type errors''), because it allows
+unexperienced developers to convert variables from one type to another without
+noticing, leading to unexpected behavior. Hence, larger python projects require
+disciplined adherence to programming conventions. One such convention is
+\textit{type hinting}, which is a way to explicitly note the type of a
+variable. Type hinting does not have an effect on the code, but it makes the
+code more readable and understandable for other developers, and allows for
+development environments to detect type errors before execution.
+(\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
+
+\def\mycaption{
     Example of type hints used in python. Explicitly stating the type of the
     variable is optional and does not change the behavior of the code as shown in
     \autoref{lst:dynamic_typing}.}
@@ -431,9 +489,10 @@ allows for development software to detect type errors before execution.
     caption=\mycaption,
     ]
 a: int = 5
-a: str = "Hello, World!"
+a: str = 'Hello, World!'
 \end{lstlisting}
 
+%%%%%%%%%%%%%%%%%%%%%%%%
 
 Python supports both functional and object-oriented programming paradigms. In
 functional programming, the code is written in a way that the program is a
@@ -454,13 +513,13 @@ structure of the data is relatively simple, for example a string of a gene.
     caption=\mycaption,
     ]
 def find_restriction_site(gene: str):
-    return gene.find("GCGC")
+    return gene.find('GCGC')
     
 def cut(gene: str):
     position = find_restriction_site(gene)
     return gene[position:]   
     
-gene1 = "TGAGCTGAGCTGATGCGCTATATTTAGGCG"
+gene1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'
 gene1_cut = cut(gene1)
 print(gene1_cut)
 # Output: GCGCTATATTTAGGCG
@@ -475,13 +534,6 @@ promotor with a gene sequence, an object-oriented approach is more suitable
 uses objects and classes. An object is a collection of both data and functions,
 and a class is a blueprint for creating objects. The data of an object is stored
 as attributes. Functions that are associated with an object are called methods.
-A major benefit of using an object oriented versus a functional approach is that
-the data itself programmable, enabling the programmer to define the behavior of
-the data itself through methods. This is achieved by using the keyword
-``\texttt{self}'' to reference the object itself inside the class. For example,
-one could extend the class ``\texttt{Gene}'' with a method that finds the
-promotor of the gene and stores it as an attribute (\autoref{lst:oop}).
-
 
 \def\mycaption{ Example of object oriented programming in python. The class is
     called ``\texttt{Gene}'' and has four methods, ``\texttt{\_\_init\_\_}'',
@@ -503,19 +555,25 @@ class Gene:
         self.sequence: str = sequence # Save sequence as attribute
         self.promotor: str = self.find_promotor() 
     def find_promotor(self):
-        return self.sequence.find("TATA")
+        return self.sequence.find('TATA')
     def find_restriction_site(self):
-        return self.sequence.find("GCGC")
+        return self.sequence.find('GCGC')
     def cut(self):
         position = self.find_restriction_site()
         return self.sequence[position:]
 
-gene1 = Gene(sequence="TGAGCTGAGCTGATGCGCTATATTTAGGCG") # Create object
+gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create object
 gene1_cut = gene1.cut() # Call the method cut
 print(gene1_cut) # Show result
 # Output: GCGCTATATTTAGGCG
 \end{lstlisting}
 
+A major benefit of using an object oriented versus a functional approach is that
+the data itself programmable, enabling the programmer to define the behavior of
+the data itself through methods. This is achieved by using the keyword
+``\texttt{self}'' to reference the object itself inside the class. For example,
+one could extend the class ``\texttt{Gene}'' with a method that finds the
+promotor of the gene and stores it as an attribute (\autoref{lst:oop}).
 
 When designing software, both functional and object oriented programming can be
 used together, where object oriented programming is often used to design the
@@ -523,11 +581,10 @@ program's overall architecture, and functional programming is used to implement
 the algorithms of the program's features. This allows for scalability of the
 software, as every single class is extended through the addition of new methods.
 Furthermore, classes can be expanded in their functionalities through
-inheritance. Inheritance is a feature of object-oriented programming that allows
-a class to access every attribute and method of a parent class. For example, one
-could extend the class ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by
-writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''
-(\autoref{lst:inheritance}). \def\mycaption{ Example of inheritance in python.
+inheritance (\autoref{lst:inheritance}).
+
+
+\def\mycaption{ Example of inheritance in python.
     The class ``\texttt{mRNA}'' inherits from the class ``\texttt{Gene}''. The class
     ``\texttt{mRNA}'' has two methods, ``\texttt{\_\_init\_\_}'' and
     ``\texttt{find\_stopcodon}''. The method ``\texttt{find\_stopcodon}'' finds the
@@ -542,15 +599,23 @@ writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''
 class mRNA(Gene):
     def __init__(self, sequence: str):
         super().__init__(sequence)  # Get attributes from parent class
-        self.sequence.replace("T", "U")  # Replace thymine with uracil
+        self.sequence.replace('T', 'U')  # Replace thymine with uracil
     def find_stopcodons(self):
-        return self.sequence.find("UGA")
-        
-mrna1 = mRNA(sequence="TGAGCTGAGCTGATGCGCTATATTTAGGCG") # Create object
+        return self.sequence.find('UGA')
+
+mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create object
 print(mrna1.find_stopcodons())  # Call the method translate
 # Output: [0, 5, 10]
 \end{lstlisting}
 
+Inheritance is a feature of object-oriented programming that allows
+a class to access every attribute and method of a parent class. For example, one
+could extend the class ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by
+writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
+
+Together, python is not just beginner-friendly, but also well respected for its
+ease n development, which is why it is widely used in professional settings for
+web development, data analysis, machine learning, and more.
 
 % ======================================================================
 \unnsubsection{Data Science with Python}

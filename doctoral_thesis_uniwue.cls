@@ -64,7 +64,7 @@
 
 % == Fonts =============================================================
 \usepackage{fontspec} % > for custom fonts
-
+\setmonofont{inconsolata} % > Overrides monospaced font
 
 % > Use Fontsizes by extarticle
 % > \small \Small \footnotesize \scriptsize \tiny 
@@ -160,18 +160,21 @@
 \definecolor{commentcolor}{RGB}{64,128,128}  % > Green
 \definecolor{stringcolor}{RGB}{186,34,32}  % > Red
 \definecolor{variablecolor}{RGB}{33,33,33}  % > Black
-\definecolor{operatorcolor}{RGB}{170,35,255}  % > Purple
+\definecolor{operatorcolor}{RGB}{170,35,255}  % > light Purple
 \definecolor{typecolor}{RGB}{0,85,170}  % > Blue
-
+\definecolor{darkpurple}{RGB}{119, 0, 134}  % > dark purple
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
 
 % ## Define the default style
 \lstdefinestyle{defaultstyle}{
-    float, % > Prevent page breaks
-    floatplacement=H, % > Place the listing at exactly this position
+    float = h, % > Prevent page breaks & Place at exactly this position
     frame=single, % > add a frame
     xleftmargin=\leftm,
     xrightmargin=\rightm,
-    basewidth=0.5em,
+    basewidth=0.5em, % > Reduce the width of each characters
+    belowskip=0pt, % > Remove space after listing
+    abovecaptionskip=-3pt, % > Remove space before caption
     numbers=left,  % > Show line numbers
     numbersep=5pt,  % > Move line numbers slightly to the right
     basicstyle=\linespread{1}\color{variablecolor}\ttfamily\small,  % > Variables are black
@@ -192,6 +195,12 @@
     classoffset=2,  % > Starting new class of keywords
     keywords={True, False, None},  % > Add Python-specific keywords
     keywordstyle=\color{keywordcolor},  % > Keywords are green
+    classoffset=3,
+    keywords={self},  % > Self
+    keywordstyle=\color{darkpurple},  % > Keywords are green
+    classoffset=4,
+    keywords={__init__},  % > function names
+    keywordstyle=\color{darkpurple},  % > Emphasized text is deep red
     classoffset=0,  % > Restoring normal class
 }
 
