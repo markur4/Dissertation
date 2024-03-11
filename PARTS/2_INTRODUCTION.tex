@@ -57,10 +57,9 @@ stromal cells (hMSCs) with multiple myeloma (MM) cells, this
 % analyzed publicly available datasets (21,22).
 
 
-
+% ======================================================================
 % ======================================================================
 \unnsubsection{Human Mesenchymal Stem/Stromal Cells}
-
 Explaining what a mesenchymal stromal cell (MSC) is, is not such an easy task as
 one might expect. MSCs are derived from multiple\ MSCs different sources, serve
 a wide array of functions and are always isolated as a heterogenous group of
@@ -131,6 +130,7 @@ regenerative medicine, if the particular hMSC-subtype is properly characterized.
 
 
 % ======================================================================
+% ======================================================================
 \unnsubsection{Multiple Myeloma}
 Multiple myeloma arises from clonal expansion of malignant plasma cells in the
 bone marrow (BM). At diagnosis, myeloma cells have disseminated to multiple
@@ -140,6 +140,7 @@ tissue~\cite{rajkumarMultipleMyelomaCurrent2020,
 
 
 % ======================================================================
+% ======================================================================
 \unnsubsection{Myeloma-hMSC Interactions}
 Since plasma cells can not survive outside the bone marrow, MM cells also
 require survival signals for growth and disease progression. These signals are
@@ -148,6 +149,7 @@ ACs~\cite{kiblerAdhesiveInteractionsHuman1998,
     garcia-ortizRoleTumorMicroenvironment2021}.
 
 
+% ======================================================================
 % ======================================================================
 \unnsubsection{Myeloma Bone Disease}
 Bone is a two-phase system in which the mineral phase provides the stiffness and
@@ -186,73 +188,234 @@ microenvironment
 \newpage
 
 
+
+
 % ======================================================================
 % == Coding part
 % ======================================================================
 
 % ======================================================================
-\unnsubsection{The Increasing Role of Software in Biomedicine}
-In the last decades, biosciences have made significant progress in generating
-vast amounts of data in shorter time spans
-~\cite{yangScalabilityValidationBig2017}. Here, it is argued that research reliant
-on software more than ever. Moreso, 
+\unnsubsection{The Role of Coding in Modern Biosciences}
+% Over the past few decades, biosciences have made significant strides in
+% generating vast amounts of data in shorter time spans
+% ~\cite{yangScalabilityValidationBig2017}. This progress has made research
+% increasingly reliant on software that can be both complex and difficult to use.
+% Here, the author argues that the role of a modern independent researcher is now
+% intertwined with coding skills. This becomes evident when summarizing how the
+% standard tools of biosciences today all require a code interface to efficiently
+% process data.
+
+In recent years, the biosciences have evolved dramatically, with a marked
+increase in the volume and complexity of data generated
+~\cite{yangScalabilityValidationBig2017,ekmekciIntroductionProgrammingBioscientists2016}.
+This transformation necessitates robust software tools, many of which require
+coding skills to use effectively.
+
+Statistical analysis in biosciences, traditionally reliant on user-friendly
+tools like Prism, increasingly demands more sophisticated approaches as data
+sets grow in size and complexity. R and Python scripts offer more efficient and
+versatile solutions, enabling complex analyses with a few lines of code. For
+instance, Python's integration into Excel has made advanced statistical
+computations more accessible within a widely used platform.
+
+% A potential use-case for coding is statistical analysis. Most users rely on tools
+% like Prism.
+% However, Prism becomes impractical with large and complex datasets,
+% as manual re-analysis is time-consuming. In contrast, scripts in R or Python
+% allow for a single click to re-analyze the data. Recognizing this trend,
+% Microsoft has recently implemented a Python interpreter into Excel, allowing
+% execution of python code within cells. R, in particular, offers more advanced
+% statistical models than Prism or Excel, which has led to R's widespread
+% adoption.
+
+Next-generation sequencing, such as bulk RNAseq, has become affordable, allowing
+for larger sample sets during a single PhD project. This technology offers
+advanced tools that are most efficiently used through scripting in R or Python.
+In the absence of a dedicated statistician, researchers are compelled to learn
+coding.
+
+In gene ontology, tools such as Metascape facilitate the integration of vast
+datasets and outputs multiple useful data visualizations. Metascape also
+provides multiple excel sheets, containing all results, sometimes in a nested
+format, which provides even further information that's adaptable for specific
+hypotheses, but given the sheer amount of data, is impractical to analyze
+manually.
+
+since Metascape
+returns large Excel sheets with complex nested information, a researcher without
+coding skills requires manual work to adapt the results to specific research
+hypotheses.
+
+its true potential is unlocked only when researchers can
+manipulate and analyze these data through scripting.
+
+Modern gene ontology tools like Metascape offer powerful graphical user
+interfaces. However, their effectiveness is only possible through standardizing
+multiple large datasets.
+
+The output from Metascape, large Excel sheets with
+complex nested information, is more efficiently analyzed through scripting,
+which is often necessary to adapt metascape results to specific research
+hypotheses.
 
 
 
+Image analysis is another area where coding skills are essential. ImageJ/FIJI, a
+standard tool in the field, requires scripting for batch processing of multiple
+images and automating multiple processing steps into a pipeline. While macros
+can be recorded, understanding the underlying code is necessary for
+troubleshooting and adapting the macro to new datasets.
+
+In the field of protein structural biology, Pymol is a standard tool that also
+has a Python command interface. Similarly, artificial intelligence (AI), a
+game-changer in biomedicine, primarily uses Python due to its extensive
+libraries for machine learning and scientific computing. Python is also a
+standard for integrative biomedicine simulations.
+
+Coding skills enhance a researcher's understanding of the software they use.
+This understanding allows them to decipher the underlying algorithms and
+assumptions of the software. Complex proprietary software like Zen, Imaris,
+FlowJo, etc., often operate as black boxes. When confronted with issues,
+researchers must determine if the error is on their side or the software's. This
+decision-making process is facilitated by a good understanding of the software.
+Basic coding skills also open the door to open-source software, which offers
+state-of-the-art analysis techniques not available in proprietary software.
+
+Finally, databases and repositories are essential for storing, retrieving, and
+sharing data. Researchers need to understand common file formats to adhere to
+standards that ensure re-usability and interoperability. Scripting helps
+automate the process of formatting data for submission to these databases.
+
+In conclusion, it is highly questionable whether future scientists will be able
+to perform their role as independent researchers without minimum coding skills.
+The increasing role of software in biomedicine underscores the importance of
+computational skills for modern researchers. As the field continues to evolve,
+the ability to work with software will become even more critical.
+
+% In the last decades, biosciences have made significant progress in generating
+% vast amounts of data in shorter time spans
+% ~\cite{yangScalabilityValidationBig2017}. Here, it is argued that research reliant
+% on software more than ever. More so, the author of the thesis highly doubts that
+% every modern researcher will be confronted with executing at least some lines of
+% code during their career, or maybe even collect multiple commands in a
+% self-written script.
+
+
+% - The question is, can a modern PhD student fulfill their role as an independent
+% researcher without coding skills? This is highly questionable, given that
+% standard tools in the biosciences require a code interface:
+
+
+% - Statistics? No. Requires Prism, but Prism becomes unpractical with large and
+% complex datasets, since manual re-analysis has to be repeated manually, while
+% scripts would allow for a single click to re-analyze the data. Hence, R or
+% Python have become a standard, with R offering more advanced statistical models
+% than Prism or Excel. Excel has recognized this development and
+% introduced Python support
+
+% - Next generation sequencing? Rnaseq has become cheap (bulk RNAseq), allowing for growing
+% samplesets during one PhD project, while gaining in remarkable
+% precision, even at single-cell level. It offers advanced tools, that are only
+% used efficiently scripting in R or Python. If
+% there's no dedicated statistician, researchers have no choice but to learn
+% coding
+
+% - Gene ontology: Modern tools like metascape offer a surprisingly powerful
+% graphical user interface. Still this achievement is only possible through
+% standardizing multiple large datasets. Also the output of metascape are large
+% excel sheets with highly complex nested information. These that are unpractical
+% to analyze manually by excel and are more efficiently analyzed through scripting
+% to adapt to specific needs of research hypotheses.
+
+% - Image analysis? ImageJ/FIJI is standard. However, there are bugs. Also,
+% scripting is required for both batch processing of multiple images and also
+% automating multiple processing steps into a pipeline. Of course, macros can be
+% recorded, yet an understanding of the underlying code is required to
+% troubleshoot and adapt the macro to new datasets.
+
+% - Protein structurual biologists? Pymol is standard and also has a python
+% command interface
+
+% - Artificial intelligence (AI) has been a game changer in the field of
+% biomedicine. The early development of AI itself was driven by radiology, where
+% it was designed to detect pathologies in medical images. Today, Python is a
+% standard because of its extensive libraries for machine learning and scientific
+% computing.
+
+
+% - Integrative biomedicine simulations? Python is a standard
+
+% - In general, coding skills help improve a researchers general understanding of
+% every software he uses. This is because the researcher can understand the
+% underlying algorithms and assumptions of the software. Complex proprietary
+% software to use state-of-the-art equipment (Zen, Imaris, FlowJo, etc.) are often
+% black boxes. The researcher will be confronted with issues and has to make
+% constant decisions if the error is on his side, or on the software side in order
+% to think of feasable troubleshooting strategies. This is only possible if the
+% researcher has a good understanding of the software. A basic understanding of
+% code also opens the door to open-source software, allowing for state-of-the-art
+% analysis techniques that are not available in proprietary software, but their
+% installation and usage is often overestimated by researchers without coding
+% skills, while coding skills allow for adaptations of this software to the
+% specific needs of the researcher.
+
+% - Furthermore, databases and repositories are essential for storing, retrieving,
+% and sharing data. In order to adhere to standards that ensure re-usability and
+% interoparability, researchers need to have an understanding of common file
+% formats. Scripting also helps to automate the process of formatting data for
+% submitting to these databases.
+
+% Together, it remains highly questionable, if future scientists will be able to
+% perform their role as independent researchers without minimum coding skills.
+% In conclusion, the increasing role of software in biomedicine underscores the
+% importance of computational skills for modern researchers. As the field
+% continues to evolve, the ability to work with software will become even more
+% critical.
+
+%%%%%%%%%%%%%%%%
 
 
 
-Modern methods in molecular biology, biochemistry, and biomedicine, such as
-next-generation sequencing, mass spectrometry, and high-throughput screening,
-generate large volumes of data that require sophisticated software tools for
-analysis. For instance, bioinformatics software is essential for analyzing
-genomic and proteomic data, while image analysis software is routinely used in
-microscopy.
+% Modern methods in molecular biology, biochemistry, and biomedicine, such as
+% next-generation sequencing, mass spectrometry, and high-throughput screening,
+% generate large volumes of data that require sophisticated software tools for
+% analysis. For instance, bioinformatics software is essential for analyzing
+% genomic and proteomic data, while image analysis software is routinely used in
+% microscopy.
 
 
-Moreover, the rise of systems biology and integrative biomedicine, which aim to
-understand biological systems as a whole, has led to the development of complex
-computational models and simulation software. These tools are used to integrate
-and analyze diverse data types, from molecular to physiological data, and to
-predict the behavior of biological systems.
+% Moreover, the rise of systems biology and integrative biomedicine, which aim to
+% understand biological systems as a whole, has led to the development of complex
+% computational models and simulation software. These tools are used to integrate
+% and analyze diverse data types, from molecular to physiological data, and to
+% predict the behavior of biological systems.
 
 
-In addition, software plays a crucial role in the management and sharing of
-biomedical data. Databases and data repositories are essential for storing,
-retrieving, and sharing data, while data standards and ontologies, which are
-often implemented as software libraries, are used to ensure that data is
-interoperable and reusable.
+% In addition, software plays a crucial role in the management and sharing of
+% biomedical data. Databases and data repositories are essential for storing,
+% retrieving, and sharing data, while data standards and ontologies, which are
+% often implemented as software libraries, are used to ensure that data is
+% interoperable and reusable.
 
 
-Given this landscape, it is clear that researchers in the biosciences are
-confronted with complex software on a daily basis. Therefore, there is a growing
-need for researchers to acquire computational skills. Learning a programming
-language like Python can greatly benefit researchers by enabling them to
-automate tasks, analyze data more efficiently, and develop their own tools. This
-not only increases productivity but also fosters reproducibility and open
-science.
+% Given this landscape, it is clear that researchers in the biosciences are
+% confronted with complex software on a daily basis. Therefore, there is a growing
+% need for researchers to acquire computational skills.
+
+% Learning a programming
+% language like Python can greatly benefit researchers by enabling them to
+% automate tasks, analyze data more efficiently, and develop their own tools. This
+% not only increases productivity but also fosters reproducibility and open
+% science.
 
 
-In conclusion, the increasing role of software in biomedicine underscores the
-importance of computational skills for modern researchers. As the field
-continues to evolve, the ability to work with software will become even more
-critical.
+% In conclusion, the increasing role of software in biomedicine underscores the
+% importance of computational skills for modern researchers. As the field
+% continues to evolve, the ability to work with software will become even more
+% critical.
 
 
 
-% and have become increasingly reliant on software. This is
-% due to the increasing complexity of biological data produced in shorter
-% time-spans. Here, we summarize how The increasing importance of software in
-% biomedicine is a direct consequence of the increasing complexity of biological
-% data. The biological community has been producing more data in shorter time,
-% posing new challenges~\cite{yangScalabilityValidationBig2017}. 
-
-- RNAseq - single
-cell rnaseq - sequence
-
-Artificial intelligence (AI) has been a game changer in the field of
-biomedicine. The early development of AI itself was driven by radiology,
-where it was designed to detect pathologies in medical images.
 
 
 % ======================================================================
@@ -369,7 +532,10 @@ Here, we provide a general overview of the python programming language,
 explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
 prepare readers without prior programming experience for the following chapters.
 We also describe the design principles of python to lay out the key concepts
-that differentiate python compared to other programming languages.
+that differentiate python compared to other programming languages. A more
+detailed tutorial on python that's specialized for bioscientists is found
+in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}
+
 
 Languages such as python are considered \textit{``high-level''}, which means
 that it is designed to be easy to read and write, but also independent of
@@ -614,8 +780,8 @@ could extend the class ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by
 writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
 
 Together, python is not just beginner-friendly, but also well respected for its
-ease n development, which is why it is widely used in professional settings for
-web development, data analysis, machine learning, and more.
+ease in development, which is why it is widely used in professional settings for
+web development, data analysis, machine learning, biosciences and more \cite{ekmekciIntroductionProgrammingBioscientists2016}.
 
 % ======================================================================
 \unnsubsection{Data Science with Python}

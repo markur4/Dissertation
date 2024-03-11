@@ -168,7 +168,7 @@
 
 % ## Define the default style
 \lstdefinestyle{defaultstyle}{
-    float = h, % > Prevent page breaks & Place at exactly this position
+    float=h, % > Prevent page breaks & Place at exactly this position
     frame=single, % > add a frame
     xleftmargin=\leftm,
     xrightmargin=\rightm,
@@ -270,6 +270,11 @@
     \setlength{\itemsep}{0pt}
     \footnotesize
 }
+\usepackage{natbib} % > For citations without parentheses 
+% \citeauthor*{jon90} --> Jones, Baker, and Williams
+% \citet*{jon90} --> Jones, Baker, and Williams (1990)
+% \citep*{jon90} --> (Jones, Baker, and Williams, 1990)
+% \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
 % == PDF Files =========================================================
 \usepackage{pdfpages} % > For including PDF files
