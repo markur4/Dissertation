@@ -20,13 +20,14 @@
 \documentclass[12pt]{doctoral_thesis_uniwue} 
 
 % :: Include only the parts during work for quicker compilation
-\includeonly{PARTS/2_INTRODUCTION}
+% \includeonly{PARTS/2_INTRO_CODING}
+\includeonly{PARTS/3_CHAPTER2}
 
 
-
+% ==============
 % ==============
 \begin{document}
-% ==============
+
 
 
 
@@ -79,7 +80,7 @@ ipsum
 % ======================================================================
 
 \begin{spacing}{0.01}
-\footnotesize \tableofcontents
+    \footnotesize \tableofcontents
 \end{spacing}
 
 \newpage
@@ -88,23 +89,55 @@ ipsum
 % ======================================================================
 % == Introduction
 % ======================================================================
-
 % > Change page numbering to arabic numerals
 \pagenumbering{arabic}
 \setcounter{page}{1} % > Reset page counter to 1
 
-% > Include INTRODUCTION.tex
-\include{PARTS/2_INTRODUCTION}
+\unnsection{Introduction}
+To provide a comprehensive background for the following chapters that focus on
+the interaction of human mesenchymal stromal cells (hMSCs) with multiple myeloma
+(MM) cells, this
+
+
+% > Include 2_INTRO_CANCER.tex
+\include{PARTS/2_INTRO_CANCER}
+
+% > Include 2_INTRO_CODING.tex
+\include{PARTS/2_INTRO_CODING}
 
 \newpage
 
 
 % ======================================================================
+% == Aims
+% ======================================================================
+\unnsection{Aims}
+This project defines these aims:
+
+
+\begin{itemize}
+    \item Characterise the interaction between myeloma cells and mesenchymal stromal cells
+    \item Aim 2
+    \item Aim 3
+
+\end{itemize}
+
+\newpage
+
+
+
+% ======================================================================
 % == Chapters
 % ======================================================================
-% > Include CHAPTERS.tex
-\include{PARTS/3_CHAPTERS}
+\unnsection{Chapter 1: Modelling Myeloma Dissemination \textit{in vitro}}
+% Title: Keep it Together: Modelling Myeloma Dissemination in vitro with
+% hMSC- Interacting Subpopulations of INA-6 Cells and their
+% Aggregation/Detachment Dynamics 
+\include{PARTS/3_CHAPTER1}
 
+
+\unnsection{Chapter 2: Semi-Automation of Data Analysis}
+\include{PARTS/3_CHAPTER2}
 \newpage
 
 

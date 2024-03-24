@@ -135,7 +135,7 @@
 % == Text Objects 
 % ======================================================================
 
-\usepackage{ulem} % > For underlining with dots for handwriting
+\usepackage[normalem]{ulem} % > For underlining with dots for handwriting
 
 
 % == Hyperlinks ========================================================
@@ -260,8 +260,16 @@
 % == Citations =========================================================
 \usepackage{apacite}
 \bibliographystyle{apacite}
+
 \let\fullcite\cite % > Rename \cite to \fullcite
-\let\cite\shortcite % > Rename \shortcite to \cite
+% \let\cite\shortcite % > Rename \shortcite to \cite
+
+\usepackage{natbib} % > For citations without parentheses 
+\let\cite\citep % > Rename \citep to \cite
+% \citeauthor*{jon90} --> Jones, Baker, and Williams
+% \citet*{jon90} --> Jones, Baker, and Williams (1990)
+% \citep*{jon90} --> (Jones, Baker, and Williams, 1990)
+% \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
 % ## Define the bibliography style
 \let\oldthebibliography=\thebibliography
@@ -270,11 +278,6 @@
     \setlength{\itemsep}{0pt}
     \footnotesize
 }
-\usepackage{natbib} % > For citations without parentheses 
-% \citeauthor*{jon90} --> Jones, Baker, and Williams
-% \citet*{jon90} --> Jones, Baker, and Williams (1990)
-% \citep*{jon90} --> (Jones, Baker, and Williams, 1990)
-% \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
 % == PDF Files =========================================================
 \usepackage{pdfpages} % > For including PDF files
