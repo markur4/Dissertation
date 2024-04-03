@@ -39,6 +39,8 @@
 % > adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
+
+
 % ======================================================================
 % == Document Layout
 % ======================================================================
@@ -166,6 +168,8 @@
 \definecolor{deepblue}{rgb}{0,0,0.5}
 \definecolor{deepred}{rgb}{0.6,0,0}
 
+
+
 % ## Define the default style
 \lstdefinestyle{defaultstyle}{
     float=h, % > Prevent page breaks & Place at exactly this position
@@ -174,7 +178,7 @@
     xrightmargin=\rightm,
     basewidth=0.5em, % > Reduce the width of each characters
     belowskip=0pt, % > Remove space after listing
-    abovecaptionskip=-3pt, % > Remove space before caption
+    % abovecaptionskip=-3pt, % > Remove space before caption
     numbers=left,  % > Show line numbers
     numbersep=5pt,  % > Move line numbers slightly to the right
     basicstyle=\linespread{1}\color{variablecolor}\ttfamily\small,  % > Variables are black
@@ -206,6 +210,7 @@
 
 
 
+
 % == Units & Numbers ===================================================
 %\usepackage[version=3]{mhchem} % > Package for chemical equation typesetting
 %\usepackage{amsmath} % > normal font for math environment
@@ -230,6 +235,16 @@
 \usepackage{longtable} % > For proper tables
 \usepackage{multirow} % > For rows conatining two lines
 
+% ## Define a command to include an image
+\newcommand{\includeimage}[4]{
+    \begin{figure}[ht]
+    \centering
+    \includegraphics[width=#2\textwidth]{#1}
+    \caption{#3}
+    \label{#4}
+    \end{figure}
+}
+
 
 % == Captions ==========================================================
 % ## Import captions and define sans-serif font
@@ -251,7 +266,7 @@
 \captionsetup[lstlisting]{labelformat=listing,
     font={sf, footnotesize, oneandhalfspacing}}
 \captionsetup[figure]{labelformat=figure,
-    font={sf, footnotesize, oneandhalfspacing}}
+    font={sf, footnotesize, oneandhalfspacing}, belowskip=\vhalf}
 \captionsetup[table]{labelformat=table,
     font={sf, footnotesize, oneandhalfspacing}}
 
