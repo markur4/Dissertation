@@ -172,13 +172,12 @@
 
 % ## Define the default style
 \lstdefinestyle{defaultstyle}{
-    float=h, % > Prevent page breaks & Place at exactly this position
     frame=single, % > add a frame
     xleftmargin=\leftm,
     xrightmargin=\rightm,
     basewidth=0.5em, % > Reduce the width of each characters
-    belowskip=0pt, % > Remove space after listing
-    % abovecaptionskip=-3pt, % > Remove space before caption
+    belowskip=3pt, % > Space after listing
+    abovecaptionskip=0pt, % > Remove space before caption
     numbers=left,  % > Show line numbers
     numbersep=5pt,  % > Move line numbers slightly to the right
     basicstyle=\linespread{1}\color{variablecolor}\ttfamily\small,  % > Variables are black
@@ -206,6 +205,18 @@
     keywords={__init__},  % > function names
     keywordstyle=\color{darkpurple},  % > Emphasized text is deep red
     classoffset=0,  % > Restoring normal class
+}
+
+
+
+% ## Define styles that prevents page breaks
+\lstdefinestyle{defaultstyleNonbreaking}{
+    float=h, % > Prevent page breaks & Place at exactly this position
+    style=defaultstyle,  % > Use the default style
+}
+\lstdefinestyle{pythonstyleNonbreaking}{
+    float=h, % > Prevent page breaks & Place at exactly this position
+    style=pythonstyle,  % > Use the Python style
 }
 
 
@@ -238,10 +249,10 @@
 % ## Define a command to include an image
 \newcommand{\includeimage}[4]{
     \begin{figure}[ht]
-    \centering
-    \includegraphics[width=#2\textwidth]{#1}
-    \caption{#3}
-    \label{#4}
+        \centering
+        \includegraphics[width=#2\textwidth]{#1}
+        \caption{#3}
+        \label{#4}
     \end{figure}
 }
 

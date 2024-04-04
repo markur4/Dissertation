@@ -7,8 +7,8 @@ Beschreibe die Situation.
 - Big Data in Biosciences
 - what is big data, examples
 - Define citable challenges:
-    - reproducibility crisis
-    - lack of tools
+- reproducibility crisis
+- lack of tools
 
 % - Semi big data
 % - What is that: At the edge of managability
@@ -420,21 +420,24 @@ automatically frees memory space that is no longer needed by the program. This
 is a feature that is not present in low-level programming languages like C or
 C++, that were designed to maximize control over hardware.
 
-Another hallmark of python is its \textit{dynamic typing system}. In python the type  is
-inferred automatically during code execution (\autoref{lst:dynamic_typing}).
-This is in contrast to \textit{statically} typed languages like C, where the type of a
-variable has to be declared explicitly and cannot be changed during code
-execution (\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
+Another hallmark of python is its \textit{dynamic typing system}. In python the
+type  is inferred automatically during code execution
+(\autoref{lst:dynamic_typing}). This is in contrast to \textit{statically} typed
+languages like C, where the type of a variable has to be declared explicitly and
+cannot be changed during code execution
+(\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
+
 \def\mycaption{ Example of dynamic typing in python. The variable ``\texttt{a}''
-    is assigned the value 5, which is an integer. The variable ``\texttt{a}'' is
-    then assigned the value ``\texttt{Hello, World!}'', which is a string.
-    Python allows  Note that code after ``\texttt{\#}'' is considered a comment
-    and won't be executed.}
+    is assigned the value 5, which is of type integer. The variable ``\texttt{a}''
+    is then assigned the value ``\texttt{Hello, World!}'', which is of type string.
+    Python allows dynamic re-assignment of variables with different types. Note that
+    code after ``\texttt{\#}'' is considered a comment and won't be executed.}
 \begin{lstlisting}[
     language=Python,
-    style=pythonstyle,
+    style=pythonstyleNonbreaking,
     label=lst:dynamic_typing,
     caption=\mycaption,
+    belowskip=-\vhalf % > Remove space because two listings are close
     ]
 a = 5  # Type integer
 a = 5.0  # Type float
@@ -445,21 +448,24 @@ a = [1, 2, 3]  # Type list of integers
 a = {'name': 'Regina'}  # Type dictionary
 \end{lstlisting}
 
-\def\mycaption{ Example of static typing in C. The variable ``\texttt{a}'' is declared as
-    an integer, and can only store integers. The variable ``\texttt{a}'' is then assigned
-    the value 5, which is an integer. The variable ``\texttt{a}'' is then assigned the
-    value \texttt{'Hello, World!'}, which is a string. This results in a compilation
-    error, because the variable ``\texttt{a}'' can only store integers.}
+\def\mycaption{ Example of static typing in C. The variable ``\texttt{a}'' is
+    declared as an integer (\texttt{int}), and can only store integers. The
+    variable ``\texttt{a}'' is then assigned the value 5, which is an integer.
+    The variable ``\texttt{a}'' is then assigned the value \texttt{'Hello,
+        World!'}, which is a string. This results in a compilation error, because
+    the variable ``\texttt{a}'' can only store integers. Note that code after
+    ``\texttt{//}'' is considered a comment and won't be executed. }
 \begin{lstlisting}[
     language=C,
-    style=defaultstyle,
+    style=defaultstyleNonbreaking,
     label=lst:static_typing,
     caption=\mycaption,
     ]
-int a;  // Declare type as integer
+int a;  // Declare type as integer (int)
 a = 5;
 a = 'Hello, World!';  // Compilation error!
 \end{lstlisting}
+
 Dynamic typing makes python a very beginner-friendly language, since one does
 not have to keep track of the type of each variable. However, this also makes
 python a slower language, because the interpreter has to check the type of each
@@ -471,7 +477,7 @@ disciplined adherence to programming conventions. One such convention is
 \textit{type hinting}, which is a way to explicitly note the type of a
 variable. Type hinting does not have an effect on the code, but it makes the
 code more readable and understandable for other developers, and allows for
-development environments to detect type errors before execution.
+development environments to detect type errors before execution
 (\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
 
 \def\mycaption{
@@ -480,7 +486,7 @@ development environments to detect type errors before execution.
     \autoref{lst:dynamic_typing}.}
 \begin{lstlisting}[
     language=Python,
-    style=pythonstyle,
+    style=pythonstyleNonbreaking,
     label=lst:type_hint,
     caption=\mycaption,
     ]
@@ -495,7 +501,8 @@ functional programming, the code is written in a way that the program is a
 sequence of function calls, where each function call returns a value that is
 used in the next function call (\autoref{lst:functional}). This approach is
 useful when multiple actions have to be performed on the same data and the
-structure of the data is relatively simple, for example a string of a gene.
+structure of the data is relatively simple, for example a string of a gene
+sequence.
 
 \def\mycaption{ Example of functional programming in Python. The code
     defines a function called ``\texttt{find\_restriction\_site}'' that
@@ -504,7 +511,7 @@ structure of the data is relatively simple, for example a string of a gene.
     to cut the gene at the restriction site.}
 \begin{lstlisting}[
     language=Python,
-    style=pythonstyle,
+    style=pythonstyleNonbreaking,
     label=lst:functional,
     caption=\mycaption,
     ]
@@ -524,12 +531,13 @@ print(gene1_cut)
 \end{lstlisting}
 
 
-When the data itself gains in complexity, for example when associating the
-promotor with a gene sequence, an object-oriented approach is more suitable
-(\autoref{lst:oop}). Object-oriented programming is a programming paradigm that
-uses objects and classes. An object is a collection of both data and functions,
-and a class is a blueprint for creating objects. The data of an object is stored
-as attributes. Functions that are associated with an object are called methods.
+When the data itself gains in complexity, for example when storing not just the
+gene sequence, but also the promotor sequence, an object-oriented approach is
+more suitable (\autoref{lst:oop}). Object-oriented programming is a programming
+paradigm that uses objects and classes. An object is a collection of both data
+and functions, and a class is a blueprint for creating objects. The data of an
+object is stored as attributes. Functions that are associated with an object are
+called methods.
 
 \def\mycaption{ Example of object oriented programming in python. The class is
     called ``\texttt{Gene}'' and has four methods, ``\texttt{\_\_init\_\_}'',
@@ -622,7 +630,7 @@ tools like those used for data analysis \cite{PythonLanguageReference}. However,
 python was designed to be extended by packages developed by its users. A python
 package consists of multiple python modules, where each module is a text-file
 with a \texttt{.py} ending containing python code. Famous examples of such
-packages are \texttt{pytorch} and \texttt{tensorflows}, that are used to build
+packages are \texttt{pytorch} and \texttt{tensorflow}, that are used to build
 models of artificial intelligence, including ChatGPT
 \cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
     radfordLanguageModelsAre2019}. Here, we outlay the most important packages used

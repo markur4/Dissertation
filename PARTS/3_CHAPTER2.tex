@@ -34,6 +34,8 @@
 \unnsection{Chapter 2: Semi-Automation of Data Analysis}
 \vspace{-\baselineskip} % > Remove space made by empty lines
 
+\setcounter{figure}{0} % > Reset figure counter so each chapter starts at 1
+
 % ======================================================================
 % == Abstract
 % ======================================================================
@@ -253,21 +255,18 @@ manuscripts into the formatting of the thesis
 % == Statement of Need
 % ======================================================================
 \unnsubsection{Statement of Need}
-\
-
-Python's data science ecosystem provides powerful tools for both
-visualization and statistical testing. However, the transition from
-exploratory data analysis to hypothesis testing can be cumbersome,
-requiring users to switch between libraries and adapt to different
-syntaxes. \texttt{seaborn} has become a popular choice for plotting in Python,
-offering an intuitive interface. Its statistical functionality focuses
-on descriptive plots and bootstrapped confidence intervals
-      [@waskomSeabornStatisticalData2021]. The library \texttt{pingouin} offers an
-extensive set of statistical tests, but it lacks integration with common
-plotting capabilities [@vallatPingouinStatisticsPython2018].
+\ Python's data science ecosystem provides powerful tools for both visualization
+and statistical testing. However, the transition from exploratory data analysis
+to hypothesis testing can be cumbersome, requiring users to switch between
+libraries and adapt to different syntaxes.~\texttt{seaborn} has become a popular
+choice for plotting in Python, offering an intuitive interface. Its statistical
+functionality focuses on descriptive plots and bootstrapped confidence
+intervals~\cite{waskomSeabornStatisticalData2021}. The library \texttt{pingouin}
+offers an extensive set of statistical tests, but it lacks integration with
+common plotting capabilities~\cite{vallatPingouinStatisticsPython2018}.
 \texttt{statannotations} integrates statistical testing with plot annotations,
-but uses a complex interface and is limited to pairwise comparisons
-      [@charlierTrevismdStatannotationsV02022].
+but uses a complex interface and is limited to pairwise
+comparisons~\cite{charlierTrevismdStatannotationsV02022}.
 
 \texttt{plotastic} addresses this gap by offering a unified environment for
 plotting and statistical analysis. With an emphasis on user-friendly
@@ -287,17 +286,13 @@ visualization.
 \unnsubsection{Example}
 \
 The following code demonstrates how \texttt{plotastic} analyzes the
-example dataset "fmri", similar to \citet{waskomSeabornStatisticalData2021}
+example dataset ``fmri'', similar to \citet{waskomSeabornStatisticalData2021}
 (\autoref{fig:examplefmri}).
-
-
 
 \begin{lstlisting}[
     language=Python, 
     style=pythonstyle,
     xrightmargin=0.03\textwidth,
-%     breaklines=true, % > not working
-%     float=!, 
     ]
 ### IMPORT PLOTASTIC
 import plotastic as plst
@@ -336,47 +331,6 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 
 
 
-
-
-
-% ```python
-% ### IMPORT PLOTASTIC
-% import plotastic as plst
-
-% # IMPORT EXAMPLE DATA
-% DF, _dims = plst.load_dataset("fmri", verbose = False)
-
-% # EXPLICITLY DEFINE DIMENSIONS TO FACET BY
-% dims = dict(
-%     y = "signal",    # y-axis, dependent variable
-%     x = "timepoint", # x-axis, independent variable (within-subject factor)
-%     hue = "event",   # color,  independent variable (within-subject factor)
-%     col = "region"   # axes,   grouping variable
-% )
-
-% # INITIALIZE DATAANALYSIS OBJECT
-% DA = plst.DataAnalysis(
-%     data=DF,           # Dataframe, long format
-%     dims=dims,         # Dictionary with y, x, hue, col, row 
-%     subject="subject", # Datapoints are paired by subject (optional)
-%     verbose=False,     # Print out info about the Data (optional)
-% )
-
-% # STATISTICAL TESTS
-% DA.check_normality()   # Check Normality
-% DA.check_sphericity()  # Check Sphericity
-% DA.omnibus_rm_anova()  # Perform RM-ANOVA
-% DA.test_pairwise()     # Perform Posthoc Analysis
-
-% # PLOTTING
-% (DA
-%  .plot_box_strip()   # Pre-built plotting function initializes plot
-%  .annotate_pairwise( # Annotate results from DA.test_pairwise()
-%      include="__HUE" # Use only significant pairs across each hue
-%      ) 
-% )
-% ```
-
 \includeimage{FIGS/C2_fmri2.png}{0.9}
 {
       Example figure of \texttt{plotastic} (version 0.1). Image style was set
@@ -398,6 +352,21 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 % | 'parietal', 'cue'  | True    | 1.20e+20 | -452.9 |    44 |      1 |            10 | [14] |
 % | 'parietal', 'stim' | True    | 2.44e+13 | -301.9 |    44 |      1 |            10 | [14] |
 
+\begin{table}[ht]
+      \centering
+      \caption{Results from \texttt{DA.check\_sphericity()}. \texttt{plotastic} assesses sphericity after grouping the data by all grouping dimensions (hue, row, col). For example, \texttt{DA.check\_sphericity()} grouped the 'fmri' dataset by "region" (col) and "event" (hue), performing four subsequent sphericity tests for four datasets.}
+      \begin{tabular}{lccccccc}
+            \hline
+            'region', 'event'  & spher & W        & chi2   & dof & pval & group count & n per group \\
+            \hline
+            'frontal', 'cue'   & True  & 3.26e+20 & -462.7 & 44  & 1    & 10          & [14]        \\
+            'frontal', 'stim'  & True  & 2.45e+17 & -392.2 & 44  & 1    & 10          & [14]        \\
+            'parietal', 'cue'  & True  & 1.20e+20 & -452.9 & 44  & 1    & 10          & [14]        \\
+            'parietal', 'stim' & True  & 2.44e+13 & -301.9 & 44  & 1    & 10          & [14]        \\
+            \hline
+      \end{tabular}
+      \label{tab:sphericity}
+\end{table}
 
 
 % :Results of \texttt{DA.omnibus_rm_anova()}. \texttt{plotastic} performs one two-factor
@@ -417,29 +386,46 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 % | 'frontal'  | event             | 0.240 |       1 |      13 | 0.240  | 23.44  | 3.21e-4 | ***      |
 % | 'frontal'  | timepoint * event | 0.242 |       9 |     117 | 0.026 | 13.031 | 3.23e-14 | ****     |
 
+\begin{table}[ht]
+      \centering
+      \caption{Results of \texttt{DA.omnibus\_rm\_anova()}. \texttt{plotastic} performs one two-factor RM-ANOVA per axis (grouping the data by row and col dimensions) using x and hue as the within-factors. For this example, \texttt{DA.omnibus\_rm\_anova()} grouped the 'fmri' dataset by "region" (col), performing two subsequent two-factor RM-ANOVAs. Within-factors are "timepoint" (x) and "event" (hue). For conciseness, GG-Correction and effect sizes are not shown.}
+      \begin{tabular}{lcccccccc}
+            \hline
+            'region'   & Source            & SS    & ddof1 & ddof2 & MS    & F      & p-unc    & stars \\
+            \hline
+            'parietal' & timepoint         & 1.583 & 9     & 117   & 0.175 & 26.20  & 3.40e-24 & ****  \\
+            'parietal' & event             & 0.770 & 1     & 13    & 0.770 & 85.31  & 4.48e-07 & ****  \\
+            'parietal' & timepoint * event & 0.623 & 9     & 117   & 0.069 & 29.54  & 3.26e-26 & ****  \\
+            'frontal'  & timepoint         & 0.686 & 9     & 117   & 0.076 & 15.98  & 8.28e-17 & ****  \\
+            'frontal'  & event             & 0.240 & 1     & 13    & 0.240 & 23.44  & 3.21e-4  & ***   \\
+            'frontal'  & timepoint * event & 0.242 & 9     & 117   & 0.026 & 13.031 & 3.23e-14 & ****  \\
+            \hline
+      \end{tabular}
+      \label{tab:RMANOVA}
+\end{table}
 
 
 % ======================================================================
 % == Overview
 % ======================================================================
 \unnsubsection{Overview}
-\
-The functionality of \texttt{plotastic} revolves around a seamless integration
+\ The functionality of \texttt{plotastic} revolves around a seamless integration
 of statistical analysis and plotting, leveraging the capabilities of
-\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and \texttt{statannotations}
-[@vallatPingouinStatisticsPython2018; @waskomSeabornStatisticalData2021;
-      @hunterMatplotlib2DGraphics2007;
-      @charlierTrevismdStatannotationsV02022]. It utilizes long-format
-\texttt{pandas} \texttt{DataFrames} as its primary input, aligning with the
-conventions of \texttt{seaborn} and ensuring compatibility with existing data
-structures [@wickhamTidyData2014a; @reback2020pandas; @mckinneyDataStructuresStatistical2010].
+\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
+\texttt{statannotations} \cite{vallatPingouinStatisticsPython2018,
+      waskomSeabornStatisticalData2021, hunterMatplotlib2DGraphics2007,
+      charlierTrevismdStatannotationsV02022}. It utilizes long-format \texttt{pandas}
+\texttt{DataFrames} as its primary input, aligning with the conventions of
+\texttt{seaborn} and ensuring compatibility with existing data
+structures~\cite{wickhamTidyData2014a, reback2020pandas,
+      mckinneyDataStructuresStatistical2010}.
 
 \texttt{plotastic} was inspired by \texttt{seaborn} using the same set of intuitive
 and consistent parameters (y, x, hue, row, col) found in each of its
-plotting functions [@waskomSeabornStatisticalData2021]. These parameters
-intuitively delineate the data dimensions plotted, yielding 'facetted'
+plotting functions \cite{waskomSeabornStatisticalData2021}. These parameters
+intuitively delineate the data dimensions plotted, yielding `facetted'
 subplots, each presenting y against x. This allows for rapid and
-insightful exploration of multidimensional relationships. \texttt{plotastic}
+insightful exploration of multidimensional relationships.~\texttt{plotastic}
 extends this principle to statistical analysis by storing these
 \texttt{seaborn} parameters (referred to as dimensions) in a \texttt{DataAnalysis}
 object and intelligently passing them to statistical functions of the
@@ -489,7 +475,7 @@ to override \texttt{plotastic} settings. Figures are exported using
 
 \texttt{plotastic} also focuses on annotating statistical information within
 plots, seamlessly incorporating p-values from pairwise comparisons using
-\texttt{statannotations} [@charlierTrevismdStatannotationsV02022]. This
+\texttt{statannotations} \cite{charlierTrevismdStatannotationsV02022}. This
 integration simplifies the interface and enables options for pair
 selection in multidimensional plots, enhancing both user experience and
 interpretability.
