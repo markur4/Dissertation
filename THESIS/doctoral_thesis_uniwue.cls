@@ -217,7 +217,14 @@
 \definecolor{operatorcolor}{RGB}{170,35,255}  % > light Purple
 \definecolor{typecolor}{RGB}{0,85,170}  % > Blue
 \definecolor{darkpurple}{RGB}{119, 0, 134}  % > dark purple
-\definecolor{deepblue}{rgb}{0,0,0.5}
+
+\definecolor{parentheses}{rgb}{1,0.5,0}
+
+\definecolor{deepblue}{rgb}{0,0,0.7}
+\definecolor{darkyellow}{RGB}{200,150,0}
+\definecolor{deeporange}{rgb}{0.6,0.3,0}
+\definecolor{orange}{rgb}{1,0.5,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
 \definecolor{deepred}{rgb}{0.6,0,0}
 
 
@@ -238,6 +245,13 @@
     commentstyle=\color{commentcolor},  % > Comments are green
     stringstyle=\color{stringcolor},  % > Strings are red
     classoffset=0,  % > Restoring normal class
+    literate={ ( }{{{\color{parentheses}(}}}1
+    { ) }{{{\color{parentheses})}}}1
+    { ] }{{{\color{parentheses}]}}}1
+    { [ }{{{\color{parentheses}[}}}1
+    { \{ }{{{\color{parentheses}\{}}}1  % Color opening curly braces in dark yellow
+    { \} }{{{\color{parentheses}\}}}}1  
+    { = }{{{\color{operatorcolor}=}}}1,
 }
 
 % ## Define the Python style
@@ -254,8 +268,8 @@
     keywords={self},  % > Self
     keywordstyle=\color{darkpurple},  % > Keywords are green
     classoffset=4,
-    keywords={__init__},  % > function names
-    keywordstyle=\color{darkpurple},  % > Emphasized text is deep red
+    % keywords={__init__},  % > function names
+    % keywordstyle=\color{darkpurple},  % > Emphasized text is deep red
     classoffset=0,  % > Restoring normal class
 }
 
