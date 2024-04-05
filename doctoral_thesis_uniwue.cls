@@ -361,6 +361,14 @@
     \fi
     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
 }
+% > Same as above, but for sections
+\newcommand{\eachpagesection}[1]{
+    \thispagestyle{headersfooters} % > Set page style
+    \ifnum\value{includepdfpage}=1 % > If first page
+        \addcontentsline{toc}{section}{#1} % > Add to TOC
+    \fi
+    \stepcounter{includepdfpage} % > Increment the includepdfpage counter
+}
 
 % ## Define a new command to include a PDF and add a table of contents entry for it
 % > First argument is the name of the toc section
@@ -373,6 +381,19 @@
         pages=-, % > Include all pages of the PDF
         scale=#1,  % > Scale the PDF to 98% of the text width
         pagecommand={\eachpage{#2}}, % > Execute command for each page
+    ]{#3}
+}
+% ## Command that makes a main section from a PDF
+\newcommand{\addpdfsection}[3][.98]{
+    \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
+    % \phantomsection % > Prevents sections occupying the same page
+    % \addcontentsline{toc}{section}{#2} % > Add a line to TOC
+    % \unnsection{#2}
+    \markboth{#2}{}
+    \includepdf[
+        pages=-, % > Include all pages of the PDF
+        scale=#1,  % > Scale the PDF to 98% of the text width
+        pagecommand={\eachpagesection{#2}}, % > Execute command for each page
     ]{#3}
 }
 
