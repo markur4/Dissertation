@@ -34,19 +34,40 @@
 \unnsection{Chapter 2: Semi-Automation of Data Analysis}
 \vspace{-\baselineskip} % > Remove space made by empty lines
 
-\setcounter{figure}{0} % > Reset figure counter so each chapter starts at 1
+% ## Reset reference counters of figs, tabs, so each chapter starts at 1
+\setcounter{figure}{0} 
+\setcounter{table}{0} 
+
 
 % ======================================================================
 % == Abstract
 % ======================================================================
-% \unnsubsection{Abstract}
-% \
-\addcontentsline{toc}{subsection}{Abstract} % Add to Table of Contents
-% \markboth{Abstract}{} % > Mark this section for headers
+% \addcontentsline{toc}{subsection}{Abstract} % > Add to Table of Contents
 
-% > in the paper, it's called summary, but I rename it into abstract
-\renewcommand{\abstractname}{Abstract}
-\begin{abstract}
+% % > In the paper, it's called summary, but I rename it into abstract
+% \renewcommand{\abstractname}{Abstract} % > Rename what is displayed
+% \begin{abstract}
+%       \texttt{plotastic} addresses the challenges of transitioning from
+%       exploratory data analysis to hypothesis testing in Python's data science
+%       ecosystem. Bridging the gap between \texttt{seaborn} and
+%       \texttt{pingouin}, this library offers a unified environment for plotting
+%       and statistical analysis. It simplifies the workflow with user-friendly
+%       syntax and seamless integration with familiar \texttt{seaborn} parameters
+%       (y, x, hue, row, col). Inspired by \texttt{seaborn}'s consistency,
+%       \texttt{plotastic} utilizes a \texttt{DataAnalysis} object to
+%       intelligently pass parameters to \texttt{pingouin} statistical functions.
+%       Hence, statistics and plotting are performed on the same set of
+%       parameters, so that the strength of \texttt{seaborn} in visualizing
+%       multidimensional data is extended onto statistical analysis. In essence,
+%       \texttt{plotastic} translates \texttt{seaborn} parameters into statistical
+%       terms, configures statistical protocols based on intuitive plotting syntax
+%       and returns a \texttt{matplotlib} figure with known customization options
+%       and more. This approach streamlines data analysis, allowing researchers to
+%       focus on correct statistical testing and less about specific syntax and
+%       implementations.
+% \end{abstract}
+
+\customabstract{c2:abstract}{Abstract}{
       \texttt{plotastic} addresses the challenges of transitioning from
       exploratory data analysis to hypothesis testing in Python's data science
       ecosystem. Bridging the gap between \texttt{seaborn} and
@@ -65,16 +86,14 @@
       and more. This approach streamlines data analysis, allowing researchers to
       focus on correct statistical testing and less about specific syntax and
       implementations.
-\end{abstract}
+}
+
 
 
 % ======================================================================
 % == Introduction
 % ======================================================================
-
-
-% \unnsubsection{Introduction: Making Statistics Accessible to Biologists and Accelerating Laboratory Workflows}
-\unnsubsection{Introduction}
+\unnsubsection[C2:introduction]{Introduction}
 \
 The reproducibility crisis in research highlights a significant challenge in
 contemporary biosciences, where a substantial portion of studies faces
@@ -240,11 +259,11 @@ shortly Describe Main Packages in more detail:
 - pingouin: It's a statistical package
 
 
-% ======================================================================
-% == Paper 2 as pdf
-% ======================================================================
-% ## You could import .pdf here, but chapter based theses should apply the 
-manuscripts into the formatting of the thesis
+
+
+% == Paper as pdf ======================================================
+% > You could import .pdf here, but chapter based theses should apply the 
+% > manuscripts into the formatting of the thesis
 % \addpdf[.93]
 % {Software Article: Journal of Open Source Software}
 % {PUBLICATIONS/§-kuricPlotasticBridgingPlotting2024.pdf}
@@ -339,18 +358,6 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 {fig:examplefmri}
 
 
-% :Results from \texttt{DA.check_sphericity()}. \texttt{plotastic} assesses sphericity
-% after grouping the data by all grouping dimensions (hue, row, col). For
-% example, \texttt{DA.check_sphericity()} grouped the 'fmri' dataset by "region"
-% (col) and "event" (hue), performing four subsequent sphericity tests for
-% four datasets. []{label="tab:sphericity"} \label{tab:sphericity}
-
-% |    'region', 'event'                   | spher   |        W |     chi2 |   dof |   pval |   group count | n per group                              |
-% |:--------------------------------|:--------|------------:|------------:|------:|-------:|--------------:|:---------------------|
-% | 'frontal', 'cue'   | True    | 3.26e+20 | -462.7 |    44 |      1 |            10 | [14] |
-% | 'frontal', 'stim'  | True    | 2.45e+17 | -392.2  |    44 |      1 |            10 | [14] |
-% | 'parietal', 'cue'  | True    | 1.20e+20 | -452.9 |    44 |      1 |            10 | [14] |
-% | 'parietal', 'stim' | True    | 2.44e+13 | -301.9 |    44 |      1 |            10 | [14] |
 
 \begin{table}[ht]
       \centering
@@ -396,13 +403,13 @@ DA.test_pairwise()     # Perform Posthoc Analysis
             \hline
       \end{tabular}
       \label{tab:RMANOVA}
+      \vspace{\vfull} % > Add vertical space since a caption is next
 \end{table}
 
 
 % ======================================================================
 % == Overview
 % ======================================================================
-\vspace{\vdouble}
 \unnsubsection{Overview}
 \
 The functionality of \texttt{plotastic} revolves around a seamless integration
@@ -501,7 +508,7 @@ analysis and visualization.
 % ======================================================================
 % == Sub-Discussion 
 % ======================================================================
-\unnsubsection{Discussion}
+\unnsubsection[c2:discussion]{Discussion}
 \
 Is plotastic tested? Coverage? Does it cover every feature? What is not covered
 

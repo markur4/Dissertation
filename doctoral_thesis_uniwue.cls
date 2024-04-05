@@ -100,19 +100,62 @@
 \newlength{\rightm}
 \setlength{\rightm}{1.5cm}
 
+
 % == Sections ==========================================================
-% ## Define functions to create unnumbered sections
+% > Unnumbered
+
+% ## Main Sections ====================================================
 \newcommand{\unnsection}[1]{ % > Unnumbered section
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
     \mbox{} % > Add empty line to avoid warnings
     \markboth{#1}{} % > Mark section manually for headers
 }
-\newcommand{\unnsubsection}[1]{ % > Unnumbered subsection
-    \subsection*{#1}
-    \addcontentsline{toc}{subsection}{#1}
-    \mbox{} % > Add empty line to avoid warnings
-    % \markboth{#1}{} % > Mark subsection manually for headers
+
+% ## Sub Sections ====================================================
+
+% \newcommand{\unnsubsection}[1]{ % > Unnumbered subsection
+%     \subsection*{#1}
+%     \addcontentsline{toc}{subsection}{#1}
+%     \mbox{} % > Add empty line to avoid warnings
+%     % \markboth{#1}{} % > Mark subsection manually for headers
+% }
+
+\makeatletter % > Make @ a valid character for use in command names
+% > Define a new command \unnsubsection
+\newcommand{\unnsubsection}{
+\@ifnextchar[ % > Check if the next character is [
+\unnsubsection@withopt % > If the next character is [, call the \unnsubsection@withopt command
+\unnsubsection@withoutopt % > If the next character is not [, call the \unnsubsection@withoutopt command
+}
+% > Define a new command \unnsubsection@withopt that takes two arguments
+\def\unnsubsection@withopt[#1]#2{
+    \subsection*{#2} % > Create a new unnumbered subsection with a name #2
+    \addcontentsline{toc}{subsection}{#2}% > Add the subsection to the table of contents
+    \label{#1} % > Create a unique identifier for the subsection
+    \mbox{} % > Add an empty line to avoid warnings
+}
+% > Define a new command \unnsubsection@withoutopt that takes one argument
+\newcommand{\unnsubsection@withoutopt}[1]{
+    \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
+    \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
+    \mbox{} % > Add an empty line to avoid warnings
+}
+\makeatother % > Change the category code of @ back to its original value
+
+% == Abstracts =========================================================
+
+\newcommand{\customabstract}[3]{
+    % > #1 argument is the label
+    % > #2 argument is the header name
+    % > #3 argument is the abstract text
+    \phantomsection % > Create a new, invisible section
+    \label{#1} % > Create a unique identifier for the abstract
+    \addcontentsline{toc}{subsection}{#2} % > Add the header name to the table of contents
+    \renewcommand{\abstractname}{#2} % > Rename the abstract
+    \begin{abstract}
+        #3 % > Insert the abstract text
+    \end{abstract}
 }
 
 

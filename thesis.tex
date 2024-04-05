@@ -20,7 +20,9 @@
 \documentclass[12pt]{doctoral_thesis_uniwue} 
 
 % :: Include only the parts during work for quicker compilation
+% \includeonly{PARTS/2_INTRO_CANCER}
 % \includeonly{PARTS/2_INTRO_CODING}
+% \includeonly{PARTS/3_CHAPTER1}
 \includeonly{PARTS/3_CHAPTER2}
 
 
@@ -46,10 +48,6 @@
 % ## Change page numbering to roman numerals
 \setcounter{page}{1} % > Reset page counter to 1
 \pagenumbering{roman}
-
-% ## Treat this like a section
-\addcontentsline{toc}{section}{Summary} % Add to Table of Contents
-\markboth{Summary}{} % > Mark this section for headers
 
 % > Include ABSTRACT.tex
 \include{PARTS/1_ABSTRACT}
@@ -156,6 +154,7 @@ This project defines these aims:
 % ======================================================================
 % == Appendix
 % ======================================================================
+
 % > Include APPENDIX.tex
 \include{PARTS/5_APPENDIX}
 
