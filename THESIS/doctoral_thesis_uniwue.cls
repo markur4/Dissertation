@@ -102,7 +102,7 @@
 
 
 % == Table of Contents =================================================
-\usepackage{tocloft}
+\usepackage{tocloft} % > For customizing the table of contents
 
 \renewcommand{\cftbeforesecskip}{0.9ex} % Adjust this value as needed
 \renewcommand{\cftbeforesubsecskip}{0.2ex} % Adjust this value as needed
