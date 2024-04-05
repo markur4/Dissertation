@@ -90,7 +90,7 @@
 \setlength{\vhalf}{.35cm}
 
 
-% == Horizontal Spacing ===============================================
+% == Horizontal Spacing ================================================
 \usepackage{tabto} % > For Tabbing
 \TabPositions{0.49in,0.98in,1.47in,1.96in,2.45in,2.94in,3.43in,3.92in,4.41in,4.9in,5.39in,5.88in,}
 
@@ -101,10 +101,19 @@
 \setlength{\rightm}{1.5cm}
 
 
+% == Table of Contents =================================================
+\usepackage{tocloft}
+
+\renewcommand{\cftbeforesecskip}{0.9ex} % Adjust this value as needed
+\renewcommand{\cftbeforesubsecskip}{0.2ex} % Adjust this value as needed
+\renewcommand{\cftbeforesubsubsecskip}{0.1ex} % Adjust this value as needed
+
+
+
 % == Sections ==========================================================
 % > Unnumbered
 
-% ## Main Sections ====================================================
+% ## Main Sections =================================================
 \newcommand{\unnsection}[1]{ % > Unnumbered section
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
@@ -112,7 +121,7 @@
     \markboth{#1}{} % > Mark section manually for headers
 }
 
-% ## Sub Sections ====================================================
+% ## Sub Sections =================================================
 
 % \newcommand{\unnsubsection}[1]{ % > Unnumbered subsection
 %     \subsection*{#1}
@@ -361,7 +370,7 @@
     \fi
     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
 }
-% > Same as above, but for sections
+% > Same as above, but for main sections
 \newcommand{\eachpagesection}[1]{
     \thispagestyle{headersfooters} % > Set page style
     \ifnum\value{includepdfpage}=1 % > If first page
@@ -370,7 +379,7 @@
     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
 }
 
-% ## Define a new command to include a PDF and add a table of contents entry for it
+% ## Command that makes a subsection from a PDF
 % > First argument is the name of the toc section
 % > Second argument is the name of the file
 % > Scale of each pdf page is set to 0.98 by default

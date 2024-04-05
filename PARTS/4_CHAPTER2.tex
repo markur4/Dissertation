@@ -1,0 +1,563 @@
+
+
+% ======================================================================
+% == Chapter 2 ========================================================
+% ======================================================================
+% Zusätzliche Einleitung und Diskussion: Herr Kuric soll bitte eine ergänzende
+% Einleitung und Diskussion in dem Kapitel zu seiner JOSS-Publikation
+% hinzufügen, die folgende Informationen enthalten:
+
+% Darstellung von Umfeld, Aufgabenstellung und Signifikanz für die
+% biomedizinische Anwendung
+% (warum braucht es die Biomedizin?)
+
+% Darstellung der Anforderungen an die Programmierung: Integration von
+% Informationen, die die spezifischen Anforderungen verdeutlichen,
+% welche die Programmierung der Software erforderlich gemacht haben.
+% (warum habe ich es gebraucht?) 
+
+% Darstellung der Nutzbarkeit für Naturwissenschaftler: Klare und auch
+% für Nicht-Informatiker verständliche Darstellung, welche konkreten
+% Anwendungsmöglichkeiten die Software für Naturwissenschaftler bietet.
+% (warum ist es nützlich?)
+
+% Mit einer angemessenen Einleitung und Diskussion würde zum einen den
+% Guidelines der GSLS entsprochen, die für alle zugrunde gelegt werden.
+% Zum anderen würde es auch dem großen Anteil von Nicht-Informatikern in
+% der GSLS erlauben, den Hintergrund und die Signifikanz und
+% Verwendungsmöglichkeiten des entwickelten Codes besser zu verstehen.
+% Die GSLS hat sich mit der Aufnahme von informatischen Projekten
+% interdisziplinär geöffnet. Gleichzeitig erwarten wir damit aber auch
+% von den Doktorierenden den Willen, die Arbeit in einer
+% interdisziplinären Form in der Thesis zu präsentieren.
+
+\unnsection{Chapter 2: Semi-Automation of Data Analysis}
+\vspace{-\baselineskip} % > Remove space made by empty lines
+
+% ## Reset reference counters of figs, tabs, so each chapter starts at 1
+\setcounter{figure}{0} 
+\setcounter{table}{0} 
+
+
+% ======================================================================
+% == Abstract
+% ======================================================================
+% \addcontentsline{toc}{subsection}{Abstract} % > Add to Table of Contents
+
+% % > In the paper, it's called summary, but I rename it into abstract
+% \renewcommand{\abstractname}{Abstract} % > Rename what is displayed
+% \begin{abstract}
+%       \texttt{plotastic} addresses the challenges of transitioning from
+%       exploratory data analysis to hypothesis testing in Python's data science
+%       ecosystem. Bridging the gap between \texttt{seaborn} and
+%       \texttt{pingouin}, this library offers a unified environment for plotting
+%       and statistical analysis. It simplifies the workflow with user-friendly
+%       syntax and seamless integration with familiar \texttt{seaborn} parameters
+%       (y, x, hue, row, col). Inspired by \texttt{seaborn}'s consistency,
+%       \texttt{plotastic} utilizes a \texttt{DataAnalysis} object to
+%       intelligently pass parameters to \texttt{pingouin} statistical functions.
+%       Hence, statistics and plotting are performed on the same set of
+%       parameters, so that the strength of \texttt{seaborn} in visualizing
+%       multidimensional data is extended onto statistical analysis. In essence,
+%       \texttt{plotastic} translates \texttt{seaborn} parameters into statistical
+%       terms, configures statistical protocols based on intuitive plotting syntax
+%       and returns a \texttt{matplotlib} figure with known customization options
+%       and more. This approach streamlines data analysis, allowing researchers to
+%       focus on correct statistical testing and less about specific syntax and
+%       implementations.
+% \end{abstract}
+
+\customabstract{c2:abstract}{Abstract}{
+      \texttt{plotastic} addresses the challenges of transitioning from
+      exploratory data analysis to hypothesis testing in Python's data science
+      ecosystem. Bridging the gap between \texttt{seaborn} and
+      \texttt{pingouin}, this library offers a unified environment for plotting
+      and statistical analysis. It simplifies the workflow with user-friendly
+      syntax and seamless integration with familiar \texttt{seaborn} parameters
+      (y, x, hue, row, col). Inspired by \texttt{seaborn}'s consistency,
+      \texttt{plotastic} utilizes a \texttt{DataAnalysis} object to
+      intelligently pass parameters to \texttt{pingouin} statistical functions.
+      Hence, statistics and plotting are performed on the same set of
+      parameters, so that the strength of \texttt{seaborn} in visualizing
+      multidimensional data is extended onto statistical analysis. In essence,
+      \texttt{plotastic} translates \texttt{seaborn} parameters into statistical
+      terms, configures statistical protocols based on intuitive plotting syntax
+      and returns a \texttt{matplotlib} figure with known customization options
+      and more. This approach streamlines data analysis, allowing researchers to
+      focus on correct statistical testing and less about specific syntax and
+      implementations.
+}
+
+
+
+% ======================================================================
+% == Introduction
+% ======================================================================
+\unnsubsection[C2:introduction]{Introduction}
+\
+The reproducibility crisis in research highlights a significant challenge in
+contemporary biosciences, where a substantial portion of studies faces
+reproducibility issues~\cite{begleyReproducibilityScienceImproving2015}. One
+critical yet often overlooked aspect contributing to this crisis is data
+management. The literature most often refers to \textit{big data} as the main
+challenge~\cite{gomez-cabreroDataIntegrationEra2014}. However, these challenges
+are also present in smaller datasets, which the author refers to as
+\textit{semi-big data}. This term describes datasets that, while not extensive
+enough to necessitate advanced computational tools typically reserved for
+\textit{big data}, are sufficiently large to render manual analysis very
+time-intensive.~\textit{Semi-big data} is often generated by methods like
+automated microscopy or multiplex qPCR, which produce volumes of data that are
+manageable on a surface level, but pose substantial barriers for in-depth,
+manual reproducibility~\cite{bustinReproducibilityBiomedicalResearch2014}. This
+is further complicated by the complexity inherent in multidimensional datasets.
+For example, the qPCR experiment from Chapter 1, Fig. 4 involves the analysis of
+19 genes across in three subpopulations, including eleven biological and three
+technical replicates, resulting in a total of 1881 data points that are all
+assigned to a complex set of experimental variables. Without a clearly
+documented data analysis protocol and standardized data formats, the
+reproduction of such analysis becomes extremely challenging, if not
+impossible~\cite{bustinReproducibilityBiomedicalResearch2014}.
+
+
+The evolving standards in data analysis advocate for the standardization of
+analytical pipelines, rationalization of sample sizes, and enhanced
+infrastructure for data storage, addressing some of these
+challenges~\cite{goodmanWhatDoesResearch2016,wilkinsonFAIRGuidingPrinciples2016}.
+However, these advancements can place undue pressure on researchers,
+particularly those with limited training in statistics, underscoring the need
+for intuitive, user-friendly analytical
+tools~\cite{gosselinInsufficientTransparencyStatistical2021,armstrongWhenUseBonferroni2014,gomez-lopezPrecisionMedicineNeeds2019}
+
+In this context, \texttt{plotastic} emerges as a tool designed to democratize access to
+sophisticated statistical analysis, offering a user-centric interface that
+caters to researchers across varying levels of statistical proficiency. By
+integrating robust statistical methodologies within an accessible framework,
+\texttt{plotastic} aims to contribute to enhancing the reproducibility and
+integrity of research in the biosciences~\cite{gomez-cabreroDataIntegrationEra2014}.
+
+
+
+initially, the need to develop \texttt{plotastic} arose during this project. The
+first is to address the author's need for a tool that could handle the complex,
+multidimensional data generated by e.g. qPCR experiments. These experiments
+typically involve the analysis of multiple genes across several time points and
+biological replicates, resulting in datasets that are challenging to analyze
+manually. The author's experience with traditional statistical software, such
+as Prism, revealed that these tools required extensive manual input, making
+them unsuitable for the efficient analysis of complex, multidimensional data. -
+The second was to increase speed. THis is required for developing methods
+
+
+Since \texttt{plotastic} optimizes the analysis of \textit{semi-big data}, we
+introduce the term \textit{semi-automation} to distinguish itself from the fully
+automated pipelines used for \textit{big data}. Semi-automation is
+defined as the following aspects:
+\begin{enumerate}
+      \item \textbf{Semi-big input:} The input size is oriented towards
+            \textit{semi-big data}, which is characterized as being manageable by
+            manual analysis, yet highly time inefficient, and probably impossible
+            to re-analyse by someone else than the researcher.
+      \item \textbf{Standardized input} The input follows a standardized format (e.g. long-format)
+      \item \textbf{Minimize user configuration:} User configuration is strictly
+            minimized. The user is never asked to pass the same parameters twice. This
+            reduces the risk of human error and time spent on configuration.
+      \item \textbf{Default configuration provides acceptable results:} If the
+            user does not provide any manual configuration, the pipeline should
+            provide acceptable results. Options should be provided to allow a
+            level of flexibility to adapt the pipeline to the user's needs.
+      \item \textbf{Small Reviewable Processing Steps:} The analysis steps are
+            structured into small processes that can be combined to form a
+            complete analysis pipeline. That way, each step can act as a stage for
+            quality control to improve error detection and troubleshooting. For a
+            statistical analysis, that means the processing steps are separated
+            into 3 steps, those being assumption testing, factor analysis and
+            post-hoc testing.
+      \item \textbf{Isolated Steps:} Processing steps should work independently
+            from another, in the best case only depending on the raw data input.
+            If a processing step depends on the output from other steps, the
+            software should tell the user what exact steps it expects.
+      \item \textbf{Human readable outputs:} Every processing step may provide
+            an output that is not necessarily standardized, but is required to be
+            human readable to ensure reviewability.
+
+\end{enumerate}
+
+% NOT found, don't care
+% Marino, S., et al. (2018). Big Data and Models of Culture: Ongoing Challenges and Possible Solutions. Big Data & Society, 5(2).
+
+% NOT FOUND, required
+% Lynch, C., et al. (2019). Big data: How do we measure up? Current Opinion in Systems Biology, 15, 77-84.
+
+% Wrong citation
+% Ioannidis, J. P., Fanelli, D., Dunne, D. D., & Goodman, S. N. (2014). Meta-research: Evaluation and Improvement of Research Methods and Practices. PLoS Biol, 12(10), e1002016.
+% Peng, R. D. (2011). Reproducible research in computational science. Science, 334(6060), 1226-1227.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+Challenges:
+- Reproducibility crisis?
+- Data is exploding
+- Demands for rigorous statistical analysis are increasing
+- Biologists are not trained in statistics
+
+
+The demands are rising: \cite{moreno-indiasStatisticalMachineLearning2021}
+% Nevertheless, although many statistics and machine learning approaches and tools
+% have been developed, new techniques are needed to deal with emerging
+% applications and the vast heterogeneity of microbiome data. We review and
+% discuss emerging applications of statistical and machine learning techniques in
+% human microbiome studies and introduce the COST Action CA18131 “ML4Microbiome”
+% that brings together microbiome researchers and machine learning experts to
+% address current challenges such as standardization of analysis pipelines for
+% reproducibility of data analysis results, benchmarking, improvement, or
+% development of existing and new tools and ontologies.
+% sample size, open source will be critical
+
+
+
+As laid out in the introduction, one can doubt if a PhD student without coding
+skillsis at its max efficiency.
+
+Why does Biomedicine need plotastic?:
+- Thorough analysis has become a standard, with assumption testing, omnibus
+tests and post-hoc analyses for every experiment.
+- But data is increasing
+- Example of my data?
+- The number of dedicated statisticians is limited
+- The know-how of statistics in biology is limited, for example, Some authors
+ignored the problem of multiple testing while others used the method
+uncritically with no rationale or discussion \cite{pernegerWhatWrongBonferroni1998,armstrongWhenUseBonferroni2014}
+
+
+Why did I need plotastic?
+
+Why do biologists need plotastic?
+- Assays output more data in shorter time, e.g. multiplex qPCR
+- example: 20 genes, 3 timepoints, 11 biological replicates, (all 3
+technical replicates already averaged)
+- 20 * 3 * 11 = 660 data points
+
+this is multidimensional data:  660 data points spread across two dimensions: time
+and gene
+
+-in manual analysis e.g. in Excel, the user has to manually select the
+data, copy it, paste it into a new sheet, and then perform the
+statistical test. In Prism, the user has to select the data, click on
+the statistical test, and then select the data again. This is not only
+time-consuming, but also prone to
+
+- Re-Analysis: The user has to repeat the process for every gene and
+timepoint. This is not only time-consuming, but also prone to errors.
+
+shortly Describe Main Packages in more detail:
+- seaborn: It multidimensional data
+- pingouin: It's a statistical package
+
+
+
+
+% == Paper as pdf ======================================================
+% > You could import .pdf here, but chapter based theses should apply the 
+% > manuscripts into the formatting of the thesis
+% \addpdf[.93]
+% {Software Article: Journal of Open Source Software}
+% {PUBLICATIONS/§-kuricPlotasticBridgingPlotting2024.pdf}
+
+
+
+% ======================================================================
+% == Statement of Need
+% ======================================================================
+\unnsubsection{Statement of Need}
+\ Python's data science ecosystem provides powerful tools for both visualization
+and statistical testing. However, the transition from exploratory data analysis
+to hypothesis testing can be cumbersome, requiring users to switch between
+libraries and adapt to different syntaxes.~\texttt{seaborn} has become a popular
+choice for plotting in Python, offering an intuitive interface. Its statistical
+functionality focuses on descriptive plots and bootstrapped confidence
+intervals~\cite{waskomSeabornStatisticalData2021}. The library \texttt{pingouin}
+offers an extensive set of statistical tests, but it lacks integration with
+common plotting capabilities~\cite{vallatPingouinStatisticsPython2018}.
+\texttt{statannotations} integrates statistical testing with plot annotations,
+but uses a complex interface and is limited to pairwise
+comparisons~\cite{charlierTrevismdStatannotationsV02022}.
+
+\texttt{plotastic} addresses this gap by offering a unified environment for
+plotting and statistical analysis. With an emphasis on user-friendly
+syntax and integration of familiar \texttt{seaborn} parameters, it simplifies
+the process for users already comfortable with \texttt{seaborn}. The library
+ensures a smooth workflow, from data import to hypothesis testing and
+visualization.
+
+
+
+
+
+
+% ======================================================================
+% == Example
+% ======================================================================
+\unnsubsection{Example}
+\
+The following code demonstrates how \texttt{plotastic} analyzes the
+example dataset ``fmri'', similar to \citet{waskomSeabornStatisticalData2021}
+(\autoref{fig:examplefmri}).
+
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    xrightmargin=0.03\textwidth,
+    ]
+### IMPORT PLOTASTIC
+import plotastic as plst
+
+# IMPORT EXAMPLE DATA
+DF, _dims = plst.load_dataset("fmri", verbose = False)
+
+# EXPLICITLY DEFINE DIMENSIONS TO FACET BY
+dims = dict(
+      y = "signal",    # y-axis, dependent variable
+      x = "timepoint", # x-axis, independent variable (within-subject factor)
+      hue = "event",   # color,  independent variable (within-subject factor)
+      col = "region"   # axes,   grouping variable
+)
+# INITIALIZE DATAANALYSIS OBJECT
+DA = plst.DataAnalysis(
+      data=DF,           # Dataframe, long format
+      dims=dims,         # Dictionary with y, x, hue, col, row 
+      subject="subject", # Datapoints are paired by subject (optional)
+      verbose=False,     # Print out info about the Data (optional)
+)
+# STATISTICAL TESTS
+DA.check_normality()   # Check Normality
+DA.check_sphericity()  # Check Sphericity
+DA.omnibus_rm_anova()  # Perform RM-ANOVA
+DA.test_pairwise()     # Perform Posthoc Analysis
+
+# PLOTTING
+(DA
+.plot_box_strip()     # Pre-built plotting function initializes plot
+.annotate_pairwise(   # Annotate results from DA.test_pairwise()
+      include="__HUE" # Use only significant pairs across each hue
+      ) 
+)
+\end{lstlisting}
+
+
+
+\includeimage{FIGS/C2_fmri2.png}{0.9}
+{
+      Example figure of \texttt{plotastic} (version 0.1). Image style was set
+      by \texttt{plt.style.use(``ggplot'')}
+}
+{fig:examplefmri}
+
+
+
+\begin{table}[ht]
+      \centering
+      \caption{Results from \texttt{DA.check\_sphericity()}. \texttt{plotastic}
+            assesses sphericity after grouping the data by all grouping dimensions
+            (hue, row, col). For example, \texttt{DA.check\_sphericity()} grouped the
+            `fmri' dataset by ``region'' (col) and ``event'' (hue), performing four
+            subsequent sphericity tests for four datasets.}
+      \begin{tabular}{llcccccc}
+            \hline
+            `region', `event'  & spher & W        & chi2   & dof & pval & group count & n per group \\
+            \hline
+            `frontal', `cue'   & True  & 3.26e+20 & -462.7 & 44  & 1    & 10          & [14]        \\
+            `frontal', `stim'  & True  & 2.45e+17 & -392.2 & 44  & 1    & 10          & [14]        \\
+            `parietal', `cue'  & True  & 1.20e+20 & -452.9 & 44  & 1    & 10          & [14]        \\
+            `parietal', `stim' & True  & 2.44e+13 & -301.9 & 44  & 1    & 10          & [14]        \\
+            \hline
+      \end{tabular}
+      \label{tab:sphericity}
+\end{table}
+
+
+
+\begin{table}[ht]
+      \centering
+      \caption{Results of \texttt{DA.omnibus\_rm\_anova()}. \texttt{plotastic}
+            performs one two-factor RM-ANOVA per axis (grouping the data by row and
+            col dimensions) using x and hue as the within-factors. For this example,
+            \texttt{DA.omnibus\_rm\_anova()} grouped the `fmri' dataset by ``region''
+            (col), performing two subsequent two-factor RM-ANOVAs. Within-factors are
+            ``timepoint'' (x) and ``event'' (hue). For conciseness, GG-Correction and
+            effect sizes are not shown.}
+      \begin{tabular}{llccccccc}
+            \hline
+            `region'   & Source            & SS    & ddof1 & ddof2 & MS    & F      & p-unc    & stars \\
+            \hline
+            `parietal' & timepoint         & 1.583 & 9     & 117   & 0.175 & 26.20  & 3.40e-24 & ****  \\
+            `parietal' & event             & 0.770 & 1     & 13    & 0.770 & 85.31  & 4.48e-07 & ****  \\
+            `parietal' & timepoint * event & 0.623 & 9     & 117   & 0.069 & 29.54  & 3.26e-26 & ****  \\
+            `frontal'  & timepoint         & 0.686 & 9     & 117   & 0.076 & 15.98  & 8.28e-17 & ****  \\
+            `frontal'  & event             & 0.240 & 1     & 13    & 0.240 & 23.44  & 3.21e-4  & ***   \\
+            `frontal'  & timepoint * event & 0.242 & 9     & 117   & 0.026 & 13.031 & 3.23e-14 & ****  \\
+            \hline
+      \end{tabular}
+      \label{tab:RMANOVA}
+      \vspace{\vfull} % > Add vertical space since a caption is next
+\end{table}
+
+
+% ======================================================================
+% == Overview
+% ======================================================================
+\unnsubsection{Overview}
+\
+The functionality of \texttt{plotastic} revolves around a seamless integration
+of statistical analysis and plotting, leveraging the capabilities of
+\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
+\texttt{statannotations} \cite{vallatPingouinStatisticsPython2018,
+      waskomSeabornStatisticalData2021, hunterMatplotlib2DGraphics2007,
+      charlierTrevismdStatannotationsV02022}. It utilizes long-format \texttt{pandas}
+\texttt{DataFrames} as its primary input, aligning with the conventions of
+\texttt{seaborn} and ensuring compatibility with existing data
+structures~\cite{wickhamTidyData2014a, reback2020pandas,
+      mckinneyDataStructuresStatistical2010}.
+
+\texttt{plotastic} was inspired by \texttt{seaborn} using the same set of intuitive
+and consistent parameters (y, x, hue, row, col) found in each of its
+plotting functions \cite{waskomSeabornStatisticalData2021}. These parameters
+intuitively delineate the data dimensions plotted, yielding `facetted'
+subplots, each presenting y against x. This allows for rapid and
+insightful exploration of multidimensional relationships.~\texttt{plotastic}
+extends this principle to statistical analysis by storing these
+\texttt{seaborn} parameters (referred to as dimensions) in a \texttt{DataAnalysis}
+object and intelligently passing them to statistical functions of the
+\texttt{pingouin} library. This approach is based on the impression that most
+decisions during statistical analysis can be derived from how the user
+decides to arrange the data in a plot. This approach also prevents code
+repetition and streamlines statistical analysis. For example, the
+subject keyword is specified only once during \texttt{DataAnalysis}
+initialisation, and \texttt{plotastic} selects the appropriate paired or
+unpaired version of the test. Using \texttt{pingouin} alone requires the user
+to manually pick the correct test and to repeatedly specify the subject
+keyword in each testing function.
+
+In essence, \texttt{plotastic} translates plotting parameters into their
+statistical counterparts. This translation minimizes user input and also
+ensures a coherent and logical connection between plotting and
+statistical analysis. The goal is to allow the user to focus on choosing
+the correct statistical test (e.g. parametric vs. non-parametric) and
+worry less about specific implementations.
+
+At its core, \texttt{plotastic} employs iterators to systematically group data
+based on various dimensions, aligning the analysis with the distinct
+requirements of tests and plots. Normality testing is performed on each
+individual sample, which is achieved by splitting the data by all
+grouping dimensions and also the x-axis (hue, row, col, x). Sphericity
+and homoscedasticity testing is performed on a complete sampleset listed
+on the x-axis, which is achieved by splitting the data by all grouping
+dimensions (hue, row, col)  (\autoref{tab:sphericity}). For omnibus and
+posthoc analyses, data is grouped by the row and col dimensions in
+parallel to the \texttt{matplotlib} axes, before performing one two-factor
+analysis per axis using x and hue as the within/between-factors.
+(\autoref{tab:RMANOVA}).
+
+\texttt{DataAnalysis} visualizes data through predefined plotting functions
+designed for drawing multi-layered plots. A notable emphasis within
+\texttt{plotastic} is placed on showcasing individual datapoints alongside
+aggregated means or medians. In detail, each plotting function
+initializes a \texttt{matplotlib} figure and axes using \texttt{plt.subplots()} while
+returning a \texttt{DataAnalysis} object for method chaining. Axes are
+populated by \texttt{seaborn} plotting functions (e.g., \texttt{sns.boxplot()}),
+leveraging automated aggregation and error bar displays. Keyword
+arguments are passed to these \texttt{seaborn} functions, ensuring the same
+degree of customization. Users can further customize plots
+by chaining \texttt{DataAnalysis} methods or by applying common \texttt{matplotlib} code
+to override \texttt{plotastic} settings. Figures are exported using
+\texttt{plt.savefig()}.
+
+\texttt{plotastic} also focuses on annotating statistical information within
+plots, seamlessly incorporating p-values from pairwise comparisons using
+\texttt{statannotations} \cite{charlierTrevismdStatannotationsV02022}. This
+integration simplifies the interface and enables options for pair
+selection in multidimensional plots, enhancing both user experience and
+interpretability.
+
+For statistics, \texttt{plotastic} integrates with the \texttt{pingouin} library
+to support classical assumption and hypothesis testing, covering
+parametric/non-parametric and paired/non-paired variants. Assumptions such as
+normality, homoscedasticity, and sphericity are tested. Omnibus tests include
+two-factor RM-ANOVA, ANOVA, Friedman, and Kruskal-Wallis. Posthoc tests are
+% implemented through \texttt{pingouin.pairwise_tests()}, offering (paired)
+t-tests, Wilcoxon, and Mann-Whitney-U.
+
+To sum up, \texttt{plotastic} stands as a unified and user-friendly solution
+catering to the needs of researchers and data scientists, seamlessly
+integrating statistical analysis with the power of plotting in Python.
+It streamlines the workflow, translates \texttt{seaborn} parameters into
+statistical terms, and supports extensive customization options for both
+analysis and visualization.
+
+
+
+
+
+
+
+
+% ======================================================================
+% == Sub-Discussion 
+% ======================================================================
+\unnsubsection[c2:discussion]{Discussion}
+\
+Is plotastic tested? Coverage? Does it cover every feature? What is not covered
+
+Is plotastic USABLE for biologists?
+- Yes but use is limited by minimal knowledge of Python
+- However, that is subject to change as Python is becoming more popular
+in biology and AI assisted coding decreased the barrier to entry
+significantly. Tools like github copilot are able to generate code, fix
+bugs and suggest improvements. This is a game changer for biologists
+that are not familiar with programming.
+- Furthermore, installing and using plotastic for biologists is overestimated. These
+steps re needed:
+- Install anaconda from the internet
+- Open the terminal
+- Type \texttt{pip install plotastic}
+- Check Rea
+
+
+The evaluation of plotastic within this thesis reflects its potential to address
+key challenges in the field of data analysis. The software integrates a
+comprehensive suite of statistical tests, such as ANOVA and t-tests, designed
+for adaptability and ease of use, leveraging the functionalities of pingouin.
+
+In the context of the reproducibility crisis in scientific research, plotastic
+offers noteworthy contributions, though it is not positioned as a universal
+remedy. The tool's unique approach to integrating statistical analysis with
+visual representation establishes a new paradigm, promoting methodological
+transparency. By mandating that statistical analyses accompany relevant
+graphical outputs, plotastic ensures that analyses are not only conducted with
+proper scientific rigor but also documented in a manner that facilitates
+replication, provided the user possesses proficiency in Python.
+
+Usability is a critical attribute of analytical software, particularly as
+researchers confront increasingly complex datasets. While the developer's
+intimate familiarity with plotastic may bias perceptions of its ease of use, it
+is recognized that novices may initially encounter challenges. Nevertheless,
+plotastic is distinguished by its user-friendly interface, enabling users with
+minimal statistical training to perform sophisticated analyses by intuitively
+mapping plotting concepts to statistical operations.
+
+The transition to a new analytical framework, especially one that incorporates
+coding, presents a learning curve. However, the advantages of plotastic in terms
+of analytical clarity, speed, and depth are anticipated to outweigh these
+initial challenges. Support mechanisms, such as assistance from advanced AI like
+ChatGPT, are available to mitigate these hurdles, supporting users across
+varying levels of expertise.
+
+In conclusion, plotastic is posited as a valuable tool in the landscape of
+scientific research, offering a means to enhance the reproducibility and
+efficiency of data analysis. Its development ethos emphasizes simplifying
+complex analytical tasks, thereby contributing to the broader goal of fostering
+transparent and reproducible research practices.
