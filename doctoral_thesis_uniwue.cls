@@ -262,7 +262,7 @@
 \usepackage[
     font={sf, footnotesize},
     singlelinecheck=false,
-    margin=\leftm]
+    margin=0.5\leftm]
 {caption}
 % \usepackage[font={sf, footnotesize}]{caption}
 

@@ -334,7 +334,7 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 \includeimage{FIGS/C2_fmri2.png}{0.9}
 {
       Example figure of \texttt{plotastic} (version 0.1). Image style was set
-      by \texttt{plt.style.use("ggplot")}
+      by \texttt{plt.style.use(``ggplot'')}
 }
 {fig:examplefmri}
 
@@ -354,51 +354,45 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 
 \begin{table}[ht]
       \centering
-      \caption{Results from \texttt{DA.check\_sphericity()}. \texttt{plotastic} assesses sphericity after grouping the data by all grouping dimensions (hue, row, col). For example, \texttt{DA.check\_sphericity()} grouped the 'fmri' dataset by "region" (col) and "event" (hue), performing four subsequent sphericity tests for four datasets.}
-      \begin{tabular}{lccccccc}
+      \caption{Results from \texttt{DA.check\_sphericity()}. \texttt{plotastic}
+            assesses sphericity after grouping the data by all grouping dimensions
+            (hue, row, col). For example, \texttt{DA.check\_sphericity()} grouped the
+            `fmri' dataset by ``region'' (col) and ``event'' (hue), performing four
+            subsequent sphericity tests for four datasets.}
+      \begin{tabular}{llcccccc}
             \hline
-            'region', 'event'  & spher & W        & chi2   & dof & pval & group count & n per group \\
+            `region', `event'  & spher & W        & chi2   & dof & pval & group count & n per group \\
             \hline
-            'frontal', 'cue'   & True  & 3.26e+20 & -462.7 & 44  & 1    & 10          & [14]        \\
-            'frontal', 'stim'  & True  & 2.45e+17 & -392.2 & 44  & 1    & 10          & [14]        \\
-            'parietal', 'cue'  & True  & 1.20e+20 & -452.9 & 44  & 1    & 10          & [14]        \\
-            'parietal', 'stim' & True  & 2.44e+13 & -301.9 & 44  & 1    & 10          & [14]        \\
+            `frontal', `cue'   & True  & 3.26e+20 & -462.7 & 44  & 1    & 10          & [14]        \\
+            `frontal', `stim'  & True  & 2.45e+17 & -392.2 & 44  & 1    & 10          & [14]        \\
+            `parietal', `cue'  & True  & 1.20e+20 & -452.9 & 44  & 1    & 10          & [14]        \\
+            `parietal', `stim' & True  & 2.44e+13 & -301.9 & 44  & 1    & 10          & [14]        \\
             \hline
       \end{tabular}
       \label{tab:sphericity}
 \end{table}
 
 
-% :Results of \texttt{DA.omnibus_rm_anova()}. \texttt{plotastic} performs one two-factor
-% RM-ANOVA per axis (grouping the data by row and col dimensions) using x
-% and hue as the within-factors. For this example, \texttt{DA.omnibus_rm_anova()}
-% grouped the 'fmri' dataset by "region" (col), performing two subsequent
-% two-factor RM-ANOVAs. Within-factors are "timepoint" (x) and "event"
-% (hue). For conciceness, GG-Correction and effect sizes are not shown.
-% []{label="tab:RMANOVA"} \label{tab:RMANOVA}
-
-% |     'region'          | Source                   |       SS | ddof1 | ddof2 |        MS |       F |       p-unc     | stars     |
-% |:----------------------|:-------------------------|---------:|------:|------:|----------:|--------:|----------------:|:-----------|
-% | 'parietal' | timepoint         | 1.583  |       9 |     117 | 0.175  | 26.20 | 3.40e-24 | ****    |
-% | 'parietal' | event             | 0.770 |       1 |      13 | 0.770  | 85.31 | 4.48e-07 | ****    |
-% | 'parietal' | timepoint * event | 0.623 |       9 |     117 | 0.069 | 29.54 | 3.26e-26 | ****     |
-% | 'frontal'  | timepoint         | 0.686 |       9 |     117 | 0.076 | 15.98 | 8.28e-17 | ****    |
-% | 'frontal'  | event             | 0.240 |       1 |      13 | 0.240  | 23.44  | 3.21e-4 | ***      |
-% | 'frontal'  | timepoint * event | 0.242 |       9 |     117 | 0.026 | 13.031 | 3.23e-14 | ****     |
 
 \begin{table}[ht]
       \centering
-      \caption{Results of \texttt{DA.omnibus\_rm\_anova()}. \texttt{plotastic} performs one two-factor RM-ANOVA per axis (grouping the data by row and col dimensions) using x and hue as the within-factors. For this example, \texttt{DA.omnibus\_rm\_anova()} grouped the 'fmri' dataset by "region" (col), performing two subsequent two-factor RM-ANOVAs. Within-factors are "timepoint" (x) and "event" (hue). For conciseness, GG-Correction and effect sizes are not shown.}
-      \begin{tabular}{lcccccccc}
+      \caption{Results of \texttt{DA.omnibus\_rm\_anova()}. \texttt{plotastic}
+            performs one two-factor RM-ANOVA per axis (grouping the data by row and
+            col dimensions) using x and hue as the within-factors. For this example,
+            \texttt{DA.omnibus\_rm\_anova()} grouped the `fmri' dataset by ``region''
+            (col), performing two subsequent two-factor RM-ANOVAs. Within-factors are
+            ``timepoint'' (x) and ``event'' (hue). For conciseness, GG-Correction and
+            effect sizes are not shown.}
+      \begin{tabular}{llccccccc}
             \hline
-            'region'   & Source            & SS    & ddof1 & ddof2 & MS    & F      & p-unc    & stars \\
+            `region'   & Source            & SS    & ddof1 & ddof2 & MS    & F      & p-unc    & stars \\
             \hline
-            'parietal' & timepoint         & 1.583 & 9     & 117   & 0.175 & 26.20  & 3.40e-24 & ****  \\
-            'parietal' & event             & 0.770 & 1     & 13    & 0.770 & 85.31  & 4.48e-07 & ****  \\
-            'parietal' & timepoint * event & 0.623 & 9     & 117   & 0.069 & 29.54  & 3.26e-26 & ****  \\
-            'frontal'  & timepoint         & 0.686 & 9     & 117   & 0.076 & 15.98  & 8.28e-17 & ****  \\
-            'frontal'  & event             & 0.240 & 1     & 13    & 0.240 & 23.44  & 3.21e-4  & ***   \\
-            'frontal'  & timepoint * event & 0.242 & 9     & 117   & 0.026 & 13.031 & 3.23e-14 & ****  \\
+            `parietal' & timepoint         & 1.583 & 9     & 117   & 0.175 & 26.20  & 3.40e-24 & ****  \\
+            `parietal' & event             & 0.770 & 1     & 13    & 0.770 & 85.31  & 4.48e-07 & ****  \\
+            `parietal' & timepoint * event & 0.623 & 9     & 117   & 0.069 & 29.54  & 3.26e-26 & ****  \\
+            `frontal'  & timepoint         & 0.686 & 9     & 117   & 0.076 & 15.98  & 8.28e-17 & ****  \\
+            `frontal'  & event             & 0.240 & 1     & 13    & 0.240 & 23.44  & 3.21e-4  & ***   \\
+            `frontal'  & timepoint * event & 0.242 & 9     & 117   & 0.026 & 13.031 & 3.23e-14 & ****  \\
             \hline
       \end{tabular}
       \label{tab:RMANOVA}
@@ -408,8 +402,10 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 % ======================================================================
 % == Overview
 % ======================================================================
+\vspace{\vdouble}
 \unnsubsection{Overview}
-\ The functionality of \texttt{plotastic} revolves around a seamless integration
+\
+The functionality of \texttt{plotastic} revolves around a seamless integration
 of statistical analysis and plotting, leveraging the capabilities of
 \texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
 \texttt{statannotations} \cite{vallatPingouinStatisticsPython2018,
