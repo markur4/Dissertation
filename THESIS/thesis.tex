@@ -19,11 +19,12 @@
 
 \documentclass[12pt]{doctoral_thesis_uniwue} 
 
-% :: Include only the parts during work for quicker compilation
+% :: Include only one part to work on for quicker compilation
 % \includeonly{PARTS/2_INTRO_CANCER}
 % \includeonly{PARTS/2_INTRO_CODING}
 % \includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/3_CHAPTER2}
+% \includeonly{PARTS/6_APPENDIX}
 
 
 % ==============
@@ -154,10 +155,15 @@ This project defines these aims:
 % == References
 % ======================================================================
 \addcontentsline{toc}{section}{References} % > Add to TOC
-% \renewcommand{\refname}{} % > Make \bibliography not print a header
+\fancyhead[C]{References} % > Prevent duplication of "References" in page head
+
+% \renewcommand{\refname}{} % > Make \bibliography not use a heading
 % \unnsection{References}
 % \vspace{-2\vdouble} 
+
 \bibliography{/Users/martinkuric/Zotero/BetterBibtex_updated_Library/MK_Zotero_Library.bib}
+
+\pagestyle{headersfooters} % > Reset the page style to headersfooters
 
 \newpage
 
@@ -166,6 +172,7 @@ This project defines these aims:
 % ======================================================================
 \addpdfsection{Curriculum Vitae}{APPENDIX/CV Martin Kuric (eng).pdf}
 
+\newpage
 
 % ======================================================================
 % == Affidavit / Eidestattliche Erklärung 
@@ -179,19 +186,8 @@ This project defines these aims:
 % == Appendix
 % ======================================================================
 
-% > Include APPENDIX.tex
-% ## Fill out forms, export as .pdf and include here
 
-% == Blank page ========================================================
-% > Make a page to mark start of appendix
-\unnsection{Appendix}
-
-% == Contributions to Research Projects ================================
-\addpdf{Author Contributions to Research Projects}{APPENDIX/Statement_on_ind_author_contributions_4-2022.pdf}
-
-
-% == Contributions to Figures and Tables ===============================
-\addpdf{Author Contributions to Figures and Tables}{APPENDIX/Statement_of_individual_author_contributions_to_figures_tables_4-2022.pdf}
+\include{PARTS/6_APPENDIX}
 
 
 

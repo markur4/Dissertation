@@ -34,7 +34,8 @@
 \LoadClass{extarticle}
 
 % == Universal Packages ================================================
-\usepackage{float} % needed for e.g. forced precise image positioning
+\usepackage{float} % > For e.g. forced precise image positioning
+\usepackage{etoolbox} % > List processing
 
 % > adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
@@ -65,12 +66,19 @@
 }
 
 % == Fonts =============================================================
-\usepackage{fontspec} % > for custom fonts
+\usepackage{fontspec} % > For custom fonts
+\usepackage{xcolor} % > Required for \definecolor
+
 \setmonofont{inconsolata} % > Overrides monospaced font
 
 % > Use Fontsizes by extarticle
 % > \small \Small \footnotesize \scriptsize \tiny 
 % > \normalsize \large \Large \LARGE \huge \Huge
+
+% ## Colors of fonts
+\definecolor{darkgray}{gray}{0.3}
+\let\oldtexttt\texttt
+\renewcommand{\texttt}[1]{{\color{darkgray}\oldtexttt{#1}}}
 
 
 % == Vertical Spacing ==================================================
@@ -174,7 +182,7 @@
 % > Define a new page style
 \fancypagestyle{headersfooters}{
     \fancyhf{} % > Clear all headers and footers
-    \fancyhead[C]{\nouppercase{\leftmark}} % > Centered header
+    \fancyhead[C]{\nouppercase{\leftmark}\nouppercase{\rightmark}} % > Centered header
     \fancyfoot[C]{\thepage} % > Centered footer with page number
     \renewcommand{\headrulewidth}{0.2pt} % > Adjust header line width
     \renewcommand{\footrulewidth}{0.2pt} % > Add line above footer
@@ -207,13 +215,13 @@
 
 % == Code Syntax Highlighting ==========================================
 \usepackage{listings} % > For code listings
-\usepackage{xcolor}  % Required for \definecolor
 
 % ## Define the colors
 \definecolor{keywordcolor}{RGB}{0,128,0}  % > Green
 \definecolor{commentcolor}{RGB}{64,128,128}  % > Green
 \definecolor{stringcolor}{RGB}{186,34,32}  % > Red
-\definecolor{variablecolor}{RGB}{33,33,33}  % > Black
+% \definecolor{variablecolor}{RGB}{33,33,33}  % > Black
+
 \definecolor{operatorcolor}{RGB}{170,35,255}  % > light Purple
 \definecolor{typecolor}{RGB}{0,85,170}  % > Blue
 \definecolor{darkpurple}{RGB}{119, 0, 134}  % > dark purple
@@ -231,27 +239,27 @@
 
 % ## Define the default style
 \lstdefinestyle{defaultstyle}{
-    frame=single, % > add a frame
-    xleftmargin=\leftm,
-    xrightmargin=\rightm,
-    basewidth=0.5em, % > Reduce the width of each characters
-    belowskip=3pt, % > Space after listing
-    abovecaptionskip=0pt, % > Remove space before caption
-    numbers=left,  % > Show line numbers
-    numbersep=5pt,  % > Move line numbers slightly to the right
-    basicstyle=\linespread{1}\color{variablecolor}\ttfamily\small,  % > Variables are black
-    showstringspaces=false,  % > Don't highlight spaces within strings
-    keywordstyle=\color{keywordcolor}\bfseries,  % > Keywords are green
-    commentstyle=\color{commentcolor},  % > Comments are green
-    stringstyle=\color{stringcolor},  % > Strings are red
-    classoffset=0,  % > Restoring normal class
-    literate={ ( }{{{\color{parentheses}(}}}1
-    { ) }{{{\color{parentheses})}}}1
-    { ] }{{{\color{parentheses}]}}}1
-    { [ }{{{\color{parentheses}[}}}1
-    { \{ }{{{\color{parentheses}\{}}}1  % Color opening curly braces in dark yellow
-    { \} }{{{\color{parentheses}\}}}}1  
-    { = }{{{\color{operatorcolor}=}}}1,
+frame=single, % > add a frame
+xleftmargin=\leftm,
+xrightmargin=\rightm,
+basewidth=0.5em, % > Reduce the width of each characters
+belowskip=3pt, % > Space after listing
+abovecaptionskip=0pt, % > Remove space before caption
+numbers=left,  % > Show line numbers
+numbersep=5pt,  % > Move line numbers slightly to the right
+basicstyle=\linespread{1}\color{darkgray}\ttfamily\small,  % > Variables are black
+showstringspaces=false,  % > Don't highlight spaces within strings
+keywordstyle=\color{keywordcolor}\bfseries,  % > Keywords are green
+commentstyle=\color{commentcolor},  % > Comments are green
+stringstyle=\color{stringcolor},  % > Strings are red
+classoffset=0,  % > Restoring normal class
+literate={ ( }{{{\color{parentheses}(}}}1
+        { ) }{{{\color{parentheses})}}}1
+{ ] }{{{\color{parentheses}]}}}1
+{ [ }{{{\color{parentheses}[}}}1
+{ \{ }{{{\color{parentheses}\{}}}1  % Color opening curly braces in dark yellow
+{ \} }{{{\color{parentheses}\}}}}1
+{ = }{{{\color{operatorcolor}=}}}1,
 }
 
 % ## Define the Python style
@@ -274,7 +282,6 @@
 }
 
 
-
 % ## Define styles that prevents page breaks
 \lstdefinestyle{defaultstyleNonbreaking}{
     float=h, % > Prevent page breaks & Place at exactly this position
@@ -284,8 +291,6 @@
     float=h, % > Prevent page breaks & Place at exactly this position
     style=pythonstyle,  % > Use the Python style
 }
-
-
 
 
 % == Units & Numbers ===================================================
@@ -330,14 +335,20 @@
     singlelinecheck=false,
     margin=0.5\leftm]
 {caption}
-% \usepackage[font={sf, footnotesize}]{caption}
+\usepackage{chngcntr} % > For 
 
 \DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
 
-% > Make all caption labels bold
+% ## Caption styles
+% > Listings
 \DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
+% > Figures
 \DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
+\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix Figure #2}}
+\newcommand{\refappendixfig}[1]{Appendix Figure~\ref{#1}}
+% > Tables
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
+
 
 % > Set the caption format for each type of object
 \captionsetup[lstlisting]{labelformat=listing,
@@ -371,6 +382,7 @@
     \footnotesize
 }
 
+
 % == PDF Files =========================================================
 \usepackage{pdfpages} % > For including PDF files
 
@@ -394,18 +406,21 @@
 }
 
 % ## Command that makes a subsection from a PDF
-% > First argument is the name of the toc section
-% > Second argument is the name of the file
-% > Scale of each pdf page is set to 0.98 by default
+% > #1 is the scale of each pdf page, defaults to 98% (.98)
+% > #2 {} argument is the name of the toc section
+% > #3 {} argument is the name of the file
 \newcommand{\addpdf}[3][.98]{
     \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
     \phantomsection % > Prevents sections occupying the same page
     \includepdf[
         pages=-, % > Include all pages of the PDF
-        scale=#1,  % > Scale the PDF to 98% of the text width
+        scale=#1,  % > Scale the PDF to e.g. 98% of the text width
         pagecommand={\eachpage{#2}}, % > Execute command for each page
     ]{#3}
 }
+
+
+
 % ## Command that makes a main section from a PDF
 \newcommand{\addpdfsection}[3][.98]{
     \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
@@ -419,122 +434,4 @@
         pagecommand={\eachpagesection{#2}}, % > Execute command for each page
     ]{#3}
 }
-
-% !! Doesn't work, because it enumerates subsections in TOC
-% \newcommand{\addpdf}[3][.98]{
-%     \includepdf[
-%         pages=-,
-%         scale=#1,
-%         % pagecommand={\pdfpagestyle},
-%         pagecommand={
-%                 \thispagestyle{headersfooters}\subsection*{#2}\addcontentsline{toc}{subsection}{#2}
-%             },
-%         % addtotoc={
-%         %         1, % > Page number relative to the first page of the pdf
-%         %         subsection, % > Level for TOC entry
-%         %         2, % > Depth of the section (1 for section, 2 for subsection, etc.)
-%         %         #2, % > Label for the section
-%         %         % sec:#2 % > Label for the section
-%         % }
-%     ]{#3}
-% }
-
-
-
-
-
-
-%% OLD STUFF ==========================================================
-
-% % \documentclass[12pt]{article}
-% \usepackage{amsmath}
-% \usepackage{latexsym}
-% \usepackage{amsfonts}
-% \usepackage[normalem]{ulem}
-% \usepackage{array}
-% \usepackage{amssymb}
-% \usepackage{graphicx}
-% % \usepackage[backend=biber,
-% % style=numeric,
-% % sorting=none,
-% % isbn=false,
-% % doi=false,
-% % url=false,
-% % ]{biblatex}\addbibresource{bibliography.bib}
-
-% \usepackage{subfig}
-% \usepackage{wrapfig}
-% \usepackage{wasysym}
-% \usepackage{enumitem}
-% \usepackage{adjustbox}
-% \usepackage{ragged2e}
-% \usepackage[svgnames,table]{xcolor}
-% \usepackage{tikz}
-% \usepackage{longtable}
-% \usepackage{changepage}
-% \usepackage{setspace}
-% \usepackage{hhline}
-% \usepackage{multicol}
-% \usepackage{tabto}
-% \usepackage{float}
-% \usepackage{multirow}
-% \usepackage{makecell}
-% \usepackage{fancyhdr}
-% \usepackage[toc,page]{appendix}
-% \usepackage[hidelinks]{hyperref}
-% \usetikzlibrary{shapes.symbols,shapes.geometric,shadows,arrows.meta}
-% \tikzset{>={Latex[width=1.5mm,length=2mm]}}
-% \usepackage{flowchart}
-% \usepackage[utf8]{inputenc}
-% \usepackage[T1]{fontenc}
-% \TabPositions{0.49in,0.98in,1.47in,1.96in,2.45in,2.94in,3.43in,3.92in,4.41in,4.9in,5.39in,5.88in,}
-
-% \urlstyle{same}
-
-% % == Page layout ======================================================
-% \usepackage[
-% 	paperheight=11.69in,
-% 	paperwidth=8.27in,
-% 	left=0.98in,
-% 	right=0.98in,
-% 	top=0.98in,
-% 	bottom=0.79in,
-% 	headheight=1in]{geometry}
-
-
-
-% % 
-
-
-%  %%%%%%%%%%%%  Set Depths for Nested Lists created by \begin{enumerate}  %%%%%%%%%%%%%%
-
-
-% \setlistdepth{9}
-% \renewlist{enumerate}{enumerate}{9}
-% 		\setlist[enumerate,1]{label=\arabic*)}
-% 		\setlist[enumerate,2]{label=\alph*)}
-% 		\setlist[enumerate,3]{label=(\roman*)}
-% 		\setlist[enumerate,4]{label=(\arabic*)}
-% 		\setlist[enumerate,5]{label=(\Alph*)}
-% 		\setlist[enumerate,6]{label=(\Roman*)}
-% 		\setlist[enumerate,7]{label=\arabic*}
-% 		\setlist[enumerate,8]{label=\alph*}
-% 		\setlist[enumerate,9]{label=\roman*}
-
-% \renewlist{itemize}{itemize}{9}
-% 		\setlist[itemize]{label=$\cdot$}
-% 		\setlist[itemize,1]{label=\textbullet}
-% 		\setlist[itemize,2]{label=$\circ$}
-% 		\setlist[itemize,3]{label=$\ast$}
-% 		\setlist[itemize,4]{label=$\dagger$}
-% 		\setlist[itemize,5]{label=$\triangleright$}
-% 		\setlist[itemize,6]{label=$\bigstar$}
-% 		\setlist[itemize,7]{label=$\blacklozenge$}
-% 		\setlist[itemize,8]{label=$\prime$}
-
-% \setlength{\topsep}{0pt}\setlength{\parindent}{0pt}
-% \renewcommand{\arraystretch}{1.3}
-
-
-
 
