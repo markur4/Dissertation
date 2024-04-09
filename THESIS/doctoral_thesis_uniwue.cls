@@ -35,7 +35,7 @@
 
 % == Universal Packages ================================================
 \usepackage{float} % > For e.g. forced precise image positioning
-\usepackage{etoolbox} % > List processing
+% \usepackage{etoolbox} % > List processing
 
 % > adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
@@ -113,8 +113,8 @@
 \usepackage{tocloft} % > For customizing the table of contents
 
 \renewcommand{\cftbeforesecskip}{0.9ex} % Adjust this value as needed
-\renewcommand{\cftbeforesubsecskip}{0.2ex} % Adjust this value as needed
-\renewcommand{\cftbeforesubsubsecskip}{0.1ex} % Adjust this value as needed
+\renewcommand{\cftbeforesubsecskip}{0.0ex} % Adjust this value as needed
+\renewcommand{\cftbeforesubsubsecskip}{0.0ex} % Adjust this value as needed
 
 
 
@@ -184,8 +184,8 @@
     \fancyhf{} % > Clear all headers and footers
     \fancyhead[C]{\nouppercase{\leftmark}\nouppercase{\rightmark}} % > Centered header
     \fancyfoot[C]{\thepage} % > Centered footer with page number
-    \renewcommand{\headrulewidth}{0.2pt} % > Adjust header line width
-    \renewcommand{\footrulewidth}{0.2pt} % > Add line above footer
+    \renewcommand{\headrulewidth}{0.3pt} % > Adjust header line width
+    \renewcommand{\footrulewidth}{0.3pt} % > Add line above footer
 }
 \pagestyle{headersfooters} % > Set the new page style as default
 \setlength{\headheight}{15pt} % > Adjust headheight to avoid warnings
@@ -345,7 +345,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > Figures
 \DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
 \DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix Figure #2}}
-\newcommand{\refappendixfig}[1]{Appendix Figure~\ref{#1}}
+\newcommand{\refappendixfig}[1]{Appendix A Figure~\ref{#1}}
 % > Tables
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
 
@@ -396,14 +396,14 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \fi
     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
 }
-% > Same as above, but for main sections
-\newcommand{\eachpagesection}[1]{
-    \thispagestyle{headersfooters} % > Set page style
-    \ifnum\value{includepdfpage}=1 % > If first page
-        \addcontentsline{toc}{section}{#1} % > Add to TOC
-    \fi
-    \stepcounter{includepdfpage} % > Increment the includepdfpage counter
-}
+% % > Same as above, but for main sections
+% \newcommand{\eachpagesection}[1]{
+%     \thispagestyle{headersfooters} % > Set page style
+%     \ifnum\value{includepdfpage}=1 % > If first page
+%         \addcontentsline{toc}{section}{#1} % > Add to TOC
+%     \fi
+%     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
+% }
 
 % ## Command that makes a subsection from a PDF
 % > #1 is the scale of each pdf page, defaults to 98% (.98)
@@ -421,17 +421,17 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 
-% ## Command that makes a main section from a PDF
-\newcommand{\addpdfsection}[3][.98]{
-    \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
-    % \phantomsection % > Prevents sections occupying the same page
-    % \addcontentsline{toc}{section}{#2} % > Add a line to TOC
-    % \unnsection{#2}
-    \markboth{#2}{}
-    \includepdf[
-        pages=-, % > Include all pages of the PDF
-        scale=#1,  % > Scale the PDF to 98% of the text width
-        pagecommand={\eachpagesection{#2}}, % > Execute command for each page
-    ]{#3}
-}
+% % ## Command that makes a main section from a PDF
+% \newcommand{\addpdfsection}[3][.98]{
+%     \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
+%     % \phantomsection % > Prevents sections occupying the same page
+%     % \addcontentsline{toc}{section}{#2} % > Add a line to TOC
+%     % \unnsection{#2}
+%     \markboth{#2}{}
+%     \includepdf[
+%         pages=-, % > Include all pages of the PDF
+%         scale=#1,  % > Scale the PDF to 98% of the text width
+%         pagecommand={\eachpagesection{#2}}, % > Execute command for each page
+%     ]{#3}
+% }
 

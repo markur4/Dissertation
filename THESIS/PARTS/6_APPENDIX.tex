@@ -1,7 +1,7 @@
 
 
 % ======================================================================
-% == Appendix
+% == Appendix A
 % ======================================================================
 
 % ## Captionstyle
@@ -14,20 +14,11 @@
 
 % == Blank page ========================================================
 % > Make a page to mark start of appendix
-\markboth{Appendix}{}
-\unnsection{Appendix}
-
-
-
-% == Contributions to Research Projects ================================
-\markboth{Appendix}{: Author Contributions}
-\addpdf{Author Contributions to Research Projects}{APPENDIX/Statement_on_ind_author_contributions_4-2022.pdf}
+\def\appendixa{Appendix A}
+\markboth{\appendixa}{}
+\unnsection{\appendixa}
 \newpage
 
-
-% == Contributions to Figures and Tables ===============================
-\addpdf{Author Contributions to Figures and Tables}{APPENDIX/Statement_of_individual_author_contributions_to_figures_tables_4-2022.pdf}
-\newpage
 
 
 
@@ -35,7 +26,7 @@
 \def\mytitle{Class Diagram of \texttt{plotastic}}
 \unnsubsection{\mytitle}
 \vspace{-\vfull}
-\markboth{Appendix}{: \mytitle}
+\markboth{\appendixa}{: \mytitle}
 
 % > Save re-used text in a macro
 \def\umlconvention{Arrow shapes follow the UML (unified modeling
@@ -51,7 +42,7 @@
     page. \umlconvention }
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.18]{APPENDIX/classdiagr_dataframe.png}
+    \includegraphics[scale=.18]{APPENDIX_A/classdiagr_dataframe.png}
     \caption{\mycap}
     \label{fig:classdiagr}
 \end{figure}
@@ -66,10 +57,9 @@
     \umlconvention }
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.20]{APPENDIX/classdiagr_plot+stats.png}
+    \includegraphics[scale=.20]{APPENDIX_A/classdiagr_plot+stats.png}
     \caption{\mycap}
 \end{figure}
-
 
 
 % == Readme from plotastic (PyPi) ======================================
@@ -83,7 +73,7 @@ The following pages are the \texttt{README.md} of \texttt{plotastic} found in
 the Python Package Index (PyPi) (\url{pypi.org/project/plotastic}), and on
 GitHub (\url{github.com/markur4/plotastic}).
 
-\addpdf[.93]{\mytitle}{APPENDIX/README_pypi.pdf}
+\addpdf[.93]{\mytitle}{APPENDIX_A/README_pypi.pdf}
 \newpage
 
 
@@ -101,5 +91,42 @@ The following pages are a jupyter notebook from an example analysis using
 The Dataset is derived from Chapter 1 qPCR of this thesis, exchanging the
 original gene names with random ones, while preserving gene classes. 
 
-\addpdf[.97]{\mytitle}{APPENDIX/qpcr.pdf}
+\addpdf[.97]{\mytitle}{APPENDIX_A/qpcr.pdf}
+\newpage
+
+
+
+% ======================================================================
+% == Appendix B
+% ======================================================================
+
+% == Blank page ========================================================
+% > Make a page to mark start of appendix
+\def\appendixb{Appendix B} % > Define the appendix title to be reused
+\markboth{\appendixb}{}
+\unnsection{\appendixb}
+\newpage
+
+
+
+% == Author Contributions ==============================================
+\markboth{\appendixb}{: Author Contributions}
+\addpdf{Author Contributions to Research Projects}{APPENDIX_B/Statement_on_ind_author_contributions_4-2022.pdf}
+\newpage
+
+\addpdf{Author Contributions to Figures and Tables}{APPENDIX_B/Statement_of_individual_author_contributions_to_figures_tables_4-2022.pdf}
+\newpage
+
+
+
+
+% == Affidavit / Eidestattliche Erklärung ==============================
+% \unnsection{Affidavit}
+% \markboth{Affidavit}{}
+\addpdf{Affidavit}{APPENDIX_B/Affidavit.pdf}
+\newpage
+
+
+% == CV ================================================================
+\addpdf{Curriculum Vitae}{APPENDIX_B/CV Martin Kuric (eng).pdf}
 \newpage
