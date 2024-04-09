@@ -154,18 +154,23 @@ This project defines these aims:
 % ======================================================================
 % == References
 % ======================================================================
-\addcontentsline{toc}{section}{References} % > Add to TOC
-\fancyhead[C]{References} % > Prevent duplication of "References" in page head
+\unnsection{References}
+\renewcommand{\refname}{} % > Replace \bibliography heading with nothing
+\vspace{-2\vdouble} % > Remove space from \bibliography inserting empty header
 
-% \renewcommand{\refname}{} % > Make \bibliography not use a heading
-% \unnsection{References}
-% \vspace{-2\vdouble} 
-
+% > Handle page head and References
+\fancyhead[C]{References} % > Override \bibliography messing with page heads
 \bibliography{/Users/martinkuric/Zotero/BetterBibtex_updated_Library/MK_Zotero_Library.bib}
-
 \pagestyle{headersfooters} % > Reset the page style to headersfooters
+\markboth{References}{} % > For some reason, the last page need this
 
 \newpage
+
+% ======================================================================
+% == Appendix
+% ======================================================================
+\include{PARTS/6_APPENDIX}
+
 
 % ======================================================================
 % == CV 
@@ -182,12 +187,6 @@ This project defines these aims:
 \addpdfsection{Affidavit}{APPENDIX/Affidavit.pdf}
 
 
-% ======================================================================
-% == Appendix
-% ======================================================================
-
-
-\include{PARTS/6_APPENDIX}
 
 
 

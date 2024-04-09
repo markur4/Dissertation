@@ -77,6 +77,7 @@
 \def\mytitle{Readme of \texttt{plotastic}}
 \markboth{Appendix}{: \mytitle}
 \subsection*{\mytitle}
+\label{subsec:readme}
 \ %
 The following pages are the \texttt{README.md} of \texttt{plotastic} found in
 the Python Package Index (PyPi) (\url{pypi.org/project/plotastic}), and on
@@ -89,3 +90,16 @@ GitHub (\url{github.com/markur4/plotastic}).
 
 
 % == Example Analyses plotastic =======================================
+% > Make an empty page with the section title
+\def\mytitle{Example Analysis ``qpcr'' using \texttt{plotastic}}
+\markboth{Appendix}{: \mytitle}
+\subsection*{\mytitle}
+\label{subsec:example_analysis}
+\ %
+The following pages are a jupyter notebook from an example analysis using
+\texttt{plotastic} that's found on GitHub (\url{github.com/markur4/plotastic}).
+The Dataset is derived from Chapter 1 qPCR of this thesis, exchanging the
+original gene names with random ones, while preserving gene classes. 
+
+\addpdf[.97]{\mytitle}{APPENDIX/qpcr.pdf}
+\newpage
