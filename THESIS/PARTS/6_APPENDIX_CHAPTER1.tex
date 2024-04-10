@@ -15,77 +15,126 @@
 
 
 
-% ## Tab S1
+% % ## Tab S1
+
+
 {\footnotesize
-    \begin{longtable}{|p{1.5cm}|p{1cm}|p{1cm}|p{1cm}|p{2cm}|p{6cm}|p{1.7cm}|}
-        \caption{
+    \newcommand{\myheader}{
+        \hline
+        \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} & \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} & \textbf{Experiment(s)}                                                                                   & \textbf{Figures}                        \\
+        \hline
+
+    }
+    \begin{longtable}{|>{\bfseries}p{1.5cm}|>{\bfseries}p{1.2cm}|p{1cm}|p{1cm}|p{2.3cm}|p{6cm}|p{1.7cm}|}
+        \caption{%
             lorem ipsum dolor sit amet consectetur adipiscing elit sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
             veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
             commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
             esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-        } \label{tab:your_label_here} \\
-        
-        \hline
-        \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} & \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} & \textbf{Experiment(s)}                                                                                   & \textbf{Figures}   \\
-        \hline
-
+        }\label{tab:your_label}
+        \\
+        \myheader
         \endfirsthead
 
         \multicolumn{7}{c}%
-        {\tablename\ \thetable\ -- \textit{Continued from previous page}}                                                                                                                                                                                                 \\
-        \hline
-        \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} & \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} & \textbf{Experiment(s)}                                                                                   & \textbf{Figures}   \\
-        \hline
-
+        {Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}}                                                                                                               \\
+        \myheader
         \endhead
 
-        \hline \multicolumn{7}{r}{\textit{Continued on next page}}                                                                                                                                                                                                        \\
-        \endfoot
-        \endlastfoot
-        Myeloma Cell Line  & INA-6                 & 80                  & m                  & 09.02.22                                  & All                                                                                                      & All                \\
-                           & U266                  &                     &                    & 10.10.22                                  & - Validation of V-Well Adhesion Assay                                                                    & S1E                \\
-                           & MM1.S                 &                     &                    & 24.02.22                                  &                                                                                                          &                    \\
-        hMSC               & 1639                  & 49                  & m                  & not tested                                & - Validation of V-Well Adhesion Assay                                                                    & S1E                \\
-                           &                       &                     &                    &                                           & - Time-lapse: INA-6 on dispersed hMSC                                                                    & 1D; 2[A-E]         \\
-                           & 1571                  & 72                  & m                  & not tested                                & - Saturation of hMSCs                                                                                    & 1[A-B]             \\
-                           & 1573                  & 47                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1578                  & 82                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1842                  & 63                  & m                  & not tested                                & - INA-6 Viability dep. on time and hMSC adhesion surface (INA not washed off)                            & 1E right           \\
-                           & 1843                  & 60                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1537                  & 77                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1794                  & 82                  & m                  & not tested                                & - INA-6 Viability dep. on time and hMSC adhesion surface (INA washed off)                                & 1[C, E left]       \\
-                           & 1779                  & 61                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1849                  & 69                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1854                  & 80                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1605                  & 71                  & f                  & not tested                                & - Time-lapse: INA-6 on dispersed hMSC                                                                    & 1D; 2[A-E]         \\
-                           & 1650                  & 57                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1859                  & 64                  & f                  & not tested                                & - Time-lapse: INA-6 on confluent hMSC                                                                    & 2[G-I]             \\
-                           & 1863                  & 79                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1861                  & 52                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1818                  & 81                  & f                  & not tested                                & - Cell Cycle Profiling after V-well assay                                                                & 3C                 \\
-                           & 1824                  & 82                  & f                  & not tested                                & (Donor measured twice, different passages)                                                               &                    \\
-                           &                       &                     &                    &                                           & - V-well adhesion assay of mitotically blocked INA-6 followed by Cell Cycle Profiling after V-well assay & 3[B,C]             \\
-                           & 1827                  & 56                  & m                  & not tested                                & - V-well adhesion assay of mitotically blocked INA-6 followed by Cell Cycle Profiling after V-well assay &                    \\
-                           & 1501                  & 59                  & m                  & not tested                                & - INA-6 AI-assisted count during WPSC (INA-6 stained with celltracker green)                             & 4B                 \\
-                           & 1643                  & 75                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1718                  & 67                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1720                  & 58                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1653                  & 65                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1591                  & 78                  & m                  & not tested                                & - WPSC (MACS) followed by RNAseq, Metascape analysis and qPCR validation                                 & 4[A,C,D,E]; 5[A-C] \\
-                           &                       &                     &                    &                                           & - WPSC (Wash) followed by qPCR-Validation and Luminescent Viability assays                               & 4[C-E], 4F         \\
-                           & 1654                  & 74                  & m                  & not tested                                & - WPSC (MACS) followed by RNAseq, Metascape analysis and qPCR validation                                 & 4[A,C,D,E]; 5[A-C] \\
-                           &                       &                     &                    &                                           & - WPSC (Wash) followed by qPCR-Validation and Luminescent Viability assays                               & 4[C-E], 4F         \\
-                           & 1655                  & 78                  & f                  & not tested                                & - WPSC (MACS) followed by RNAseq, Metascape analysis and qPCR validation                                 & 4[A,C,D,E]; 5[A-C] \\
-                           & 1668                  & 80                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1670                  & 66                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1701                  & 81                  & m                  & not tested                                & - WPSC (Wash) followed by qPCR-Validation and Luminescent Viability assays                               & 4[C-E], 4F         \\
-                           & 1702                  & 79                  & f                  & not tested                                &                                                                                                          &                    \\
-                           & 1600                  & 77                  & m                  & not tested                                &                                                                                                          &                    \\
-                           & 1681                  & 56                  & m                  & not tested                                & - WPSC (Wash) followed by Luminescent Viability assays                                                   & 4F                 \\
-                           & 1672                  & 65                  & m                  & not tested                                & - WPSC (Wash) followed by qPCR-Validation                                                                & 4[C-E]             \\
         \hline
-    \end{longtable}}
+        \multicolumn{7}{r}{\textit{Continued on next page}}                                                                                                                                                  \\
+        \endfoot
+
+        \endlastfoot
+
+        Myeloma Cell Line & INA-6 & 80 & m & 09.02.22   & All                                                                                                      & All                                     \\
+        \hhline{~------}
+                          & U266  &    &   & 10.10.22   & - Validation of V-Well Adhesion Assay                                                                    & S1E                                     \\
+        \hhline{~----~~}
+                          & MM1.S &    &   & 24.02.22   &                                                                                                          &                                         \\
+        \hline
+        hMSC              & 1639  & 49 & m & not tested & - Validation of V-Well Adhesion Assay                                                                    & S1E                                     \\
+        \hhline{~~~~~--}
+                          &       &    &   &            & - Time-lapse: INA-6 on dispersed hMSC                                                                    & 1D; 2[A-E]                              \\
+        \hhline{~------}
+                          & 1571  & 72 & m & not tested & - Saturation of hMSCs                                                                                    & 1[A-B]                                  \\
+        \hhline{~----~~}
+                          & 1573  & 47 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1578  & 82 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+                          & 1842  & 63 & m & not tested & - INA-6 Viability dependent on time and hMSC adhesion surface (INA not washed off)                       & 1E right                                \\
+        \hhline{~----~~}
+                          & 1843  & 60 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1537  & 77 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+                          & 1794  & 82 & m & not tested & - INA-6 Viability dependent on time and hMSC adhesion surface (INA washed off)                           & 1[C, E left]                            \\
+        \hhline{~----~~}
+                          & 1779  & 61 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1849  & 69 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1854  & 80 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+                          & 1605  & 71 & f & not tested & - Time-lapse: INA-6 on dispersed hMSC                                                                    & 1D; 2[A-E]                              \\
+        \hhline{~----~~}
+                          & 1650  & 57 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+                          & 1859  & 64 & f & not tested & - Time-lapse: INA-6 on confluent hMSC                                                                    & 2[G-I]                                  \\
+        \hhline{~----~~}
+                          & 1863  & 79 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1861  & 52 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+                          & 1818  & 81 & f & not tested & - Cell Cycle Profiling after V-well assay                                                                & 3C                                      \\
+        \hhline{~------}
+                          & 1824  & 82 & f & not tested & (Donor measured twice, different passages)                                                               & 3[B,C]                                  \\
+                          &       &    &   &            & - V-well adhesion assay of mitotically blocked INA-6 followed by Cell Cycle Profiling after V-well assay &                                         \\
+        \hhline{~----~~}
+                          & 1827  & 56 & m & not tested & - V-well adhesion assay of mitotically blocked INA-6 followed by Cell Cycle Profiling after V-well assay & 3[B,C]                                  \\
+        \hhline{~------}
+                          & 1501  & 59 & m & not tested & - INA-6 AI-assisted count during WPSC (INA-6 stained with celltracker green)                             & 4B                                      \\
+        \hhline{~----~~}
+                          & 1643  & 75 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1718  & 67 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1720  & 58 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1653  & 65 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+                          & 1591  & 78 & m & not tested & - WPSC (MACS) followed by RNAseq, Metascape analysis, and qPCR validation                                & 4[A,C,D,E]; 5[A-C]                      \\
+        \hhline{~~~~~--}
+                          &       &    &   &            & - WPSC (Wash) followed by qPCR-Validation and Luminescent Viability assays                               & 4[C-E], 4F                              \\
+        \hhline{~------}
+                          & 1654  & 74 & m & not tested & - WPSC (MACS) followed by RNAseq, Metascape analysis, and qPCR validation                                & 4[A,C,D,E]; 5[A-C]                      \\
+        \hhline{~~~~~--}
+                          &       &    &   &            & - WPSC (Wash) followed by qPCR-Validation and Luminescent Viability assays                               & 4[C-E], 4F                              \\
+        \hhline{~------}
+        % Rows for Donor 1655, 1668, 1670 with shared experiment and figure cells
+                          & 1655  & 78 & f & not tested & \multirow{3}{6cm}{- WPSC (MACS) followed by RNAseq, Metascape analysis, and qPCR validation}             & \multirow{3}{1.7cm}{4[A,C,D,E]; 5[A-C]} \\
+        \hhline{~----~~}
+                          & 1668  & 80 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1670  & 66 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+        % Rows with shared experiment and figure cells
+                          & 1701  & 81 & m & not tested & \multirow{3}{6cm}{- WPSC (Wash) followed by qPCR-Validation and Luminescent Viability assays}            & \multirow{3}{1.7cm}{4[C-E], 4F}         \\
+        \hhline{~----~~}
+                          & 1702  & 79 & f & not tested &                                                                                                          &                                         \\
+        \hhline{~----~~}
+                          & 1600  & 77 & m & not tested &                                                                                                          &                                         \\
+        \hhline{~------}
+
+        % Row 37-39
+                          & 1681  & 56 & m & not tested & - WPSC (Wash) followed by Luminescent Viability assays                                                   & 4F                                      \\
+        \hhline{~------}
+                          & 1672  & 65 & m & not tested & - WPSC (Wash) followed by qPCR-Validation                                                                & 4[C-E]                                  \\
+        \hline
+    \end{longtable}
+}
 
 
 
@@ -167,6 +216,60 @@
     esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
 }{fig:S6}
 \newpage
+
+
+
+% ## Tab S2
+{\footnotesize
+    \newcommand{\myheader}{
+        \hline
+        \textbf{Regulation during disease progression} & \textbf{Gene} & Ensemble ID & \textbf{Progression Free / Overall Survival} & \textbf{Better Prognosis with high/low expression} & \multicolumn{2}{p{3cm}|}{\textbf{Association of expression with survival}}                    \\
+        \hhline{~~~~~--}
+        &               &                      &                                              &                                                    & \textbf{[p-unc]}                                                      & \textbf{[p-adj]} \\
+        \hline
+
+    }
+
+    \begin{longtable}{|>{\bfseries}p{3cm}|>{\bfseries}p{1.5cm}|p{3cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+        \caption{%
+            lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+            veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+            esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+        }\label{tab:your_label}                                                                                                      \\
+        \myheader
+        \endfirsthead
+
+        \multicolumn{7}{c}%
+        {Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}}                                       \\
+        \myheader
+        \endhead
+
+        \hline
+        \multicolumn{7}{r}{\textit{Continued on next page}}                                                                          \\
+        \endfoot
+
+        \endlastfoot
+
+        \hline
+
+
+        Not downregulated or overall low expression             & CCDC80 & ENSG00000091986 & Prog. Free & high & 2.04E-03 & 1.58E-02 \\
+        \hhline{~------}
+                                                                & CCN2   & ENSG00000118523 & Overall    & high & 2.89E-03 & 2.43E-02 \\
+        \hhline{~------}
+        % ... more rows
+        \hline
+        %%%
+        Continuously downregulated (PC > MGUS > sMM > MM > MMR) & ACTN1  & ENSG00000072110 & Overall    & high & 7.73E-03 & 3.55E-02 \\
+        \hhline{~------}
+                                                                & AEBP1  & ENSG00000106624 & Prog. Free & high & 1.08E-02 & 4.62E-02 \\
+        % ... more rows
+        \hline
+    \end{longtable}
+}
+
 
 
 

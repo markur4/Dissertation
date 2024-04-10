@@ -343,6 +343,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % == Images & Tables ===================================================
 \usepackage{graphicx} % > For the inclusion of images
 \usepackage{longtable} % > For proper tables
+\usepackage{hhline} % > For better lines in tables
 \usepackage{multirow} % > For rows conatining two lines
 \usepackage[ % > Import captions and define sans-serif font
     font={sf, footnotesize},
@@ -395,6 +396,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
 \DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesection~Figure #2}}
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
+\DeclareCaptionLabelFormat{appendixtable}{\textbf{Appendix \thesection~Table #2}}
 
 % > Set the caption format for each type of object
 \captionsetup[lstlisting]{labelformat=listing,
@@ -404,7 +406,12 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \captionsetup[table]{labelformat=table,
     font={sf, footnotesize, oneandhalfspacing}}
 
-    
+% ## Command for resetting counters for figures and tables to 0
+\newcommand{\resetcounters}{
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+}
+
 
 % == Referencing Images, Tables, etc. ==================================
 

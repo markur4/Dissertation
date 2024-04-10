@@ -174,19 +174,19 @@ This project defines these aims:
 
 % ## Configure Figure captions for this appendix section
 \captionsetup[figure]{labelformat=appendixfigure} % > Add Appendix to Caption
+\captionsetup[table]{labelformat=appendixtable} % > Add Appendix to Caption
 
 \begin{appendices}
     \pagestyle{appendix} % > Change page heads and foots
     
-    \setcounter{figure}{0} % > Reset figure counter
+    \resetcounters % > Reset fig and tab counter
     \include{PARTS/6_APPENDIX_CHAPTER1}
     \newpage
     
-    \setcounter{figure}{0} % > Reset figure counter
+    \resetcounters % > Reset fig and tab counter
     \include{PARTS/6_APPENDIX_CHAPTER2}
     \newpage
     
-    \setcounter{figure}{0} % > Reset figure counter
     \include{PARTS/6_APPENDIX_FORMS}
     \newpage
 
