@@ -33,9 +33,13 @@
 % Load the base class
 \LoadClass{extarticle}
 
+
+% ======================================================================
 % == Universal Packages ================================================
 \usepackage{float} % > For e.g. forced precise image positioning
 % \usepackage{etoolbox} % > List processing
+\usepackage{xparse} % > For advanced command definitions
+\usepackage{xstring}
 
 % > adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
@@ -317,13 +321,21 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \usepackage{longtable} % > For proper tables
 \usepackage{multirow} % > For rows conatining two lines
 
+
 % ## Define a command to include an image
-\newcommand{\includeimage}[4]{
+% > #1 is the path to the image
+% > #2 is the width of the image (optional, default is 0.99)
+% > #3 is the crop option (optional, default is no cropping)
+% > #4 is the caption of the image
+% > #5 is the label of the image
+\NewDocumentCommand{\includeimage}{O{0.99} O{} m m m}{
     \begin{figure}[ht]
         \centering
-        \includegraphics[width=#2\textwidth]{#1}
-        \caption{#3}
-        \label{#4}
+        \IfStrEq{#2}{}
+            {\includegraphics[width=#1\textwidth]{#3}}
+            {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
+        \caption{#4}
+        \label{#5}
     \end{figure}
 }
 
