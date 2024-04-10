@@ -4,20 +4,42 @@
 % == Appendices for Chapter 1
 % ======================================================================
 
-% \section{Appendices for Chapter 1}
+% ## Example of including Figures
+% > \includeimage[scale][left bottom right top]{
+% >     path/to/picture.pdf/.png/.jpg
+% > }{caption}{label}
 
-% Supplementary Figures
+% == Supplementary Figures and Tables ==================================
 \section{Supplementary Figures \& Tables}
+\label{sec:sup_figtabs}
 
-\def\mycaption{lorem ipsum}
-\includeimage[.70][1cm 1cm 1cm 1cm]{APPENDIX_CHAPTER1/figures8_supplemental1.pdf}{\mycaption}{fig:supp1}
-
-
-
-
+% ## Fig. S1
+\includeimage[0.99][{\fmleft} 1.8in {\fmright} {\fmtop}]{
+    APPENDIX_CHAPTER1/figures8_supplemental1.pdf
+}{
+    lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+}{fig:S1}
 \newpage
 
-% Supplementary Materials and Methods
+% ## Fig. S2
+\includeimage[0.97][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
+    APPENDIX_CHAPTER1/figures8_supplemental2.pdf
+}{
+    lorem ipsum dolor sit amet consectetur adipiscing elit sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+    veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
+    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+}{fig:S2}
+\newpage
+
+
+
+% == Supplementary Materials and Methods ===============================
 \section{Supplementary Materials and Methods}
 Lorem ipsum dolor
 

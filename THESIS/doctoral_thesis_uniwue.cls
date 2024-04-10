@@ -36,10 +36,13 @@
 
 % ======================================================================
 % == Universal Packages ================================================
+% ======================================================================
 \usepackage{float} % > For e.g. forced precise image positioning
-% \usepackage{etoolbox} % > List processing
 \usepackage{xparse} % > For advanced command definitions
-\usepackage{xstring}
+\usepackage{xstring} % > For string processing e.g. \IfStrEq
+% \usepackage{etoolbox} % > List processing
+% \usepackage{refcount}
+\usepackage{appendix}  % > For appendices
 
 % > adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
@@ -180,20 +183,37 @@
 }
 
 
-% == Header and Footer =================================================
+% == Page Head and Foot =================================================
 \usepackage{fancyhdr}
 
-% > Define a new page style
+% ## Default Page Style
 \fancypagestyle{headersfooters}{
     \fancyhf{} % > Clear all headers and footers
-    \fancyhead[C]{\nouppercase{\leftmark}\nouppercase{\rightmark}} % > Centered header
+    % \fancyhead[C]{\nouppercase{\leftmark}\nouppercase{\rightmark}} % > Centered header
+    \fancyhead[C]{\nouppercase{\leftmark}} % > Centered header
     \fancyfoot[C]{\thepage} % > Centered footer with page number
     \renewcommand{\headrulewidth}{0.3pt} % > Adjust header line width
     \renewcommand{\footrulewidth}{0.3pt} % > Add line above footer
 }
+% ## Set the pagestyle
 \pagestyle{headersfooters} % > Set the new page style as default
 \setlength{\headheight}{15pt} % > Adjust headheight to avoid warnings
 
+
+% ## Pagestyle for Appendix
+\fancypagestyle{appendix}{
+    % > Reuse the default page style
+    % > Add APPENDIX to the header
+    \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
+}
+
+
+% ## Keeping track of the current pagestyle for multipage pdf imports
+\newcommand{\currentpagestyle}{plain} % > Initialize with the default page style
+
+% > Redefine \pagestyle to also update \currentpagestyle
+\let\oldpagestyle\pagestyle
+\renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
 
 
 
@@ -320,7 +340,11 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \usepackage{graphicx} % > For the inclusion of images
 \usepackage{longtable} % > For proper tables
 \usepackage{multirow} % > For rows conatining two lines
-
+\usepackage[ % > Import captions and define sans-serif font
+    font={sf, footnotesize},
+    singlelinecheck=false,
+    margin=0.5\leftm]{caption}
+\usepackage{needspace}
 
 % ## Define a command to include an image
 % > #1 is the path to the image
@@ -328,26 +352,37 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #3 is the crop option (optional, default is no cropping)
 % > #4 is the caption of the image
 % > #5 is the label of the image
+% ## Example:
+% > \includeimage[scale][left bottom right top]{
+% >     pathtopicture
+% > }{caption}{label}
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m m m}{
-    \begin{figure}[ht]
+    \begin{minipage}{\textwidth}
         \centering
         \IfStrEq{#2}{}
-            {\includegraphics[width=#1\textwidth]{#3}}
-            {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
-        \caption{#4}
-        \label{#5}
-    \end{figure}
+        {\includegraphics[width=#1\textwidth]{#3}}
+        {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
+    \end{minipage}
+    \needspace{4\baselineskip}
+    \captionof{figure}{#4}
+    \label{#5}
+    \newpage
 }
 
+% ## Save margins that I used for making my images to be cropped away when included
+\newlength{\fmtop}
+\newlength{\fmright}
+\newlength{\fmbottom}
+\newlength{\fmleft}
+\setlength{\fmtop}{0.9in}
+\setlength{\fmright}{0.78in}
+\setlength{\fmbottom}{0.98in}
+\setlength{\fmleft}{0.78in}
 
-% == Captions ==========================================================
-% ## Import captions and define sans-serif font
-\usepackage[
-    font={sf, footnotesize},
-    singlelinecheck=false,
-    margin=0.5\leftm]
-{caption}
-\usepackage{chngcntr} % > For 
+
+
+% == Caption Styles ====================================================
+\usepackage{chngcntr} % > For continuous numbering of figures and tables
 
 \DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
 
@@ -356,8 +391,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
 % > Figures
 \DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
-\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix Figure #2}}
-\newcommand{\refappendixfig}[1]{Appendix A Figure~\ref{#1}}
+% \DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix Figure #2}}
+% \newcommand{\refappendixfig}[1]{Appendix A Figure~\ref{#1}}
 % > Tables
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
 
@@ -371,6 +406,19 @@ literate={ ( }{{{\color{parentheses}(}}}1
     font={sf, footnotesize, oneandhalfspacing}}
 
 
+% == Referencing Images, Tables, etc. ==================================
+
+% ## Shorten referencing to Figures in Appendix
+% > \refappendix{appendixlabel}{figlabel}
+% > Example:
+% ' \refappendix{sec:sup_figtabs}{fig:S1}
+% > For multiple figures: 
+% ' \refappendix{sec:sup_figtabs}{fig:S1}, \ref{fig:S2}
+\newcommand{\refapdx}[2]{%
+    \autoref{#1}: \autoref{#2}%
+}
+
+
 
 % == Citations =========================================================
 \usepackage{apacite}
@@ -381,10 +429,11 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 \usepackage{natbib} % > For citations without parentheses 
 \let\cite\citep % > Rename \citep to \cite
-% \citeauthor*{jon90} --> Jones, Baker, and Williams
-% \citet*{jon90} --> Jones, Baker, and Williams (1990)
-% \citep*{jon90} --> (Jones, Baker, and Williams, 1990)
-% \citealt{jon90} --> Jones, Baker, and Williams, 1990
+% > Examples:
+% ' \citeauthor*{jon90} --> Jones, Baker, and Williams
+% ' \citet*{jon90} --> Jones, Baker, and Williams (1990)
+% ' \citep*{jon90} --> (Jones, Baker, and Williams, 1990)
+% ' \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
 % ## Define the bibliography style
 \let\oldthebibliography=\thebibliography
@@ -402,7 +451,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > Define a new counter to keep track of the current page number of the included PDF
 \newcounter{includepdfpage}
 \newcommand{\eachpage}[1]{
-    \thispagestyle{headersfooters} % > Set page style
+    \thispagestyle{\currentpagestyle} % > Set page style
     \ifnum\value{includepdfpage}=1 % > If first page
         \addcontentsline{toc}{subsection}{#1} % > Add to TOC
     \fi
@@ -448,5 +497,64 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % }
 
 
-% == Appendices ========================================================
-\usepackage{appendix}
+
+
+
+% % == Appendices ========================================================
+% \usepackage{appendix}
+
+
+% % > \refappendix{appendixlabel}{figlabel}
+% % > e.g.: \refappendix{sec:sup_figs_tables}{fig:S2}
+% \newcommand{\refappendix}[2]{
+% \autoref{#1}: \autoref{#2}
+% }
+
+% \NewDocumentCommand{\refappendix}{m >{\SplitList{,}}m}{
+%     \autoref{#1}:
+%     \ProcessList{#2}{\singlefigure}
+% }
+
+% \newcommand{\singlefigure}[1]{
+%     \autoref{#1},
+% }
+
+% \NewDocumentCommand{\refappendix}{m >{\SplitList{,}}m}{
+%     \autoref{#1}: Figure
+%     \ProcessList{#2}{\singlefigure}
+% }
+
+% \newcommand{\singlefigure}[1]{
+%     \getrefnumber{#1}\iflastitem{}{,}
+% }
+
+% \NewDocumentCommand{\refappendix}{m >{\SplitList{,}}m}{
+%     \autoref{#1}: Figure
+%     \setcounter{itemnum}{0}%
+%     \setcounter{totalitems}{\clist_count:n{#2}}%
+%     \ProcessList{#2}{\singlefigure}
+% }
+
+% \newcounter{itemnum}
+% \newcounter{totalitems}
+
+% \newcommand{\singlefigure}[1]{
+%     \stepcounter{itemnum}%
+%     \getrefnumber{#1}\ifnum\value{itemnum}<\value{totalitems},\fi
+% }
+
+% \NewDocumentCommand{\refappendix}{m m}{
+%     \autoref{#1}: Figure
+%     \def\listfigures{#2}
+%     \def\temp{}%
+%     \forcsvlist{\processfigure}{\listfigures}
+%     \temp
+% }
+
+% \newcommand{\processfigure}[1]{
+%     \ifnum\listcount<\listtotal
+%         \edef\temp{\temp\getrefnumber{#1}, }%
+%     \else
+%         \edef\temp{\temp\getrefnumber{#1}}%
+%     \fi
+% }
