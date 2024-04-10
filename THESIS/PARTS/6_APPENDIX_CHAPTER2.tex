@@ -60,15 +60,14 @@
 % == Readme from plotastic (PyPi) ======================================
 % > Make an empty page with the section title
 \def\mytitle{Readme}
-% \markboth{Appendix}{: \mytitle}
 \subsection{\mytitle}
-% \label{subsec:readme}
+\label{subsec:readme}
 \ %
 The following pages are the \texttt{README.md} of \texttt{plotastic} found in
 the Python Package Index (PyPi) (\url{pypi.org/project/plotastic}), and on
 GitHub (\url{github.com/markur4/plotastic}).
 
-\addpdf[.93]{\mytitle}{APPENDIX_CHAPTER2/README_pypi.pdf}
+\addpdf*[.93]{\mytitle}{APPENDIX_CHAPTER2/README_pypi.pdf}
 \newpage
 
 
@@ -86,5 +85,5 @@ The following pages are a jupyter notebook from an example analysis using
 The Dataset is derived from Chapter 1 qPCR of this thesis, exchanging the
 original gene names with random ones, while preserving gene classes.
 
-\addpdf[.97]{\mytitle}{APPENDIX_CHAPTER2/qpcr.pdf}
+\addpdf*[.97]{\mytitle}{APPENDIX_CHAPTER2/qpcr.pdf}
 \newpage

@@ -204,7 +204,11 @@
 \fancypagestyle{appendix}{
     % > Reuse the default page style
     % > Add APPENDIX to the header
-    \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
+    % \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
+    % \fancyhead[C]{APPENDIX \nouppercase{\leftmark} \nouppercase{\rightmark}} 
+    \fancyhead[L]{APPENDIX \nouppercase{\leftmark}} % Left-aligned
+    \fancyhead[R]{\nouppercase{\rightmark}} % Right-aligned
+    \fancyhead[C]{} % Clear center header
 }
 
 
@@ -396,7 +400,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > Tables
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
 
-
 % > Set the caption format for each type of object
 \captionsetup[lstlisting]{labelformat=listing,
     font={sf, footnotesize, oneandhalfspacing}}
@@ -405,6 +408,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \captionsetup[table]{labelformat=table,
     font={sf, footnotesize, oneandhalfspacing}}
 
+    
 
 % == Referencing Images, Tables, etc. ==================================
 
@@ -452,32 +456,27 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \newcounter{includepdfpage}
 \newcommand{\eachpage}[1]{
     \thispagestyle{\currentpagestyle} % > Set page style
-    \ifnum\value{includepdfpage}=1 % > If first page
-        \addcontentsline{toc}{subsection}{#1} % > Add to TOC
-    \fi
     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
 }
-% % > Same as above, but for main sections
-% \newcommand{\eachpagesection}[1]{
-%     \thispagestyle{headersfooters} % > Set page style
-%     \ifnum\value{includepdfpage}=1 % > If first page
-%         \addcontentsline{toc}{section}{#1} % > Add to TOC
-%     \fi
-%     \stepcounter{includepdfpage} % > Increment the includepdfpage counter
-% }
+
 
 % ## Command that makes a subsection from a PDF
-% > #1 is the scale of each pdf page, defaults to 98% (.98)
-% > #2 {} argument is the name of the toc section
-% > #3 {} argument is the name of the file
-\newcommand{\addpdf}[3][.98]{
-    \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
-    \phantomsection % > Prevents sections occupying the same page
+% > #1 is a boolean argument, if starred, no entry in TOC is made
+% > #2 is the scale of each pdf page, defaults to 98% (.98)
+% > #3 {} argument is the name of the toc section
+% > #4 {} argument is the name of the file
+
+\NewDocumentCommand{\addpdf}{sO{.98}mm}{
+    \setcounter{includepdfpage}{1} % Reset the includepdfpage counter to 1
+    \IfBooleanTF{#1}{}{
+        \phantomsection
+        \addcontentsline{toc}{subsection}{#1} % > Add to TOC
+        } % Prevents sections occupying the same page only if not starred
     \includepdf[
-        pages=-, % > Include all pages of the PDF
-        scale=#1,  % > Scale the PDF to e.g. 98% of the text width
-        pagecommand={\eachpage{#2}}, % > Execute command for each page
-    ]{#3}
+        pages=-, % Include all pages of the PDF
+        scale=#2,  % Scale the PDF to e.g. 98% of the text width
+        pagecommand={\eachpage{#3}}, % Execute command for each page
+    ]{#4}
 }
 
 
