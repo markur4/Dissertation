@@ -116,6 +116,7 @@
 \setlength{\rightm}{1.5cm}
 
 
+
 % == Table of Contents =================================================
 \usepackage{tocloft} % > For customizing the table of contents
 
@@ -183,6 +184,7 @@
 }
 
 
+
 % == Page Head and Foot =================================================
 \usepackage{fancyhdr}
 
@@ -211,10 +213,8 @@
     \fancyhead[C]{} % Clear center header
 }
 
-
 % ## Keeping track of the current pagestyle for multipage pdf imports
 \newcommand{\currentpagestyle}{plain} % > Initialize with the default page style
-
 % > Redefine \pagestyle to also update \currentpagestyle
 \let\oldpagestyle\pagestyle
 \renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
@@ -391,13 +391,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
 
 % ## Caption styles
-% > Listings
 \DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
-% > Figures
 \DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
-% \DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix Figure #2}}
-% \newcommand{\refappendixfig}[1]{Appendix A Figure~\ref{#1}}
-% > Tables
+\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesection~Figure #2}}
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
 
 % > Set the caption format for each type of object
@@ -413,13 +409,14 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % == Referencing Images, Tables, etc. ==================================
 
 % ## Shorten referencing to Figures in Appendix
-% > \refappendix{appendixlabel}{figlabel}
-% > Example:
-% ' \refappendix{sec:sup_figtabs}{fig:S1}
-% > For multiple figures: 
-% ' \refappendix{sec:sup_figtabs}{fig:S1}, \ref{fig:S2}
-\newcommand{\refapdx}[2]{%
-    \autoref{#1}: \autoref{#2}%
+% > \refapdx{appendixlabel}{figlabel}
+% > Examples:
+% ' \refapdx{sec:figtabs} --> Appendix A
+% ' \refapdx{sec:figtabs}{fig:S1} --> Appendix A: Figure 1
+% ' \refapdx{sec:sup_figtabs}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
+
+\NewDocumentCommand{\refapdx}{m g}{%
+    Appendix \ref{#1}\IfValueT{#2}{: \autoref{#2}}%
 }
 
 

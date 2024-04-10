@@ -24,7 +24,7 @@
 % \includeonly{PARTS/2_INTRO_CODING}
 % \includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/3_CHAPTER2}
-% \includeonly{PARTS/6_APPENDIX_CHAPTER1}
+\includeonly{PARTS/6_APPENDIX_CHAPTER1}
 
 
 % ==============
@@ -171,16 +171,22 @@ This project defines these aims:
 \appendixpage
 \addappheadtotoc
 
-% \unnsection{APPENDICES}
+
+% ## Configure Figure captions for this appendix section
+\captionsetup[figure]{labelformat=appendixfigure} % > Add Appendix to Caption
 
 \begin{appendices}
-    \pagestyle{appendix}
+    \pagestyle{appendix} % > Change page heads and foots
+    
+    \setcounter{figure}{0} % > Reset figure counter
     \include{PARTS/6_APPENDIX_CHAPTER1}
     \newpage
-
+    
+    \setcounter{figure}{0} % > Reset figure counter
     \include{PARTS/6_APPENDIX_CHAPTER2}
     \newpage
-
+    
+    \setcounter{figure}{0} % > Reset figure counter
     \include{PARTS/6_APPENDIX_FORMS}
     \newpage
 

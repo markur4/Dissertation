@@ -19,11 +19,13 @@
 % \newpage
 
 \section{Documentation of \texttt{plotastic}}
+\label{apdx:plotastic_docs}
 
 
 
 % == Class Diagramm of plotastic =======================================
 \subsection{Class Diagram}
+\label{subapdx:classdiagr}
 
 % ## Save re-used text in a macro
 \def\umlconvention{Arrow shapes follow the UML (unified modeling
@@ -31,7 +33,7 @@
     filled diamond indicates composition (\textit{``has~a''}). }
 
 % ## Upper part
-\includeimage[0.4]{
+\includeimage[0.422]{
     APPENDIX_CHAPTER2/classdiagr_dataframe.png
 }{
     \textbf{Class diagram of \texttt{plotastic} (upper part):} The
@@ -40,7 +42,7 @@
     dimensions to group the data (y, x, hue, col, row). This diagram ends with the
     classes \texttt{SubPlot} and \texttt{StatTest} and is continued on the next
     page. \umlconvention
-}{fig:classdiagr}
+}{fig:S_classdiagr}
 \newpage
 \setcounter{figure}{0} % > Reset figure counter
 % ## Lower Part
@@ -61,7 +63,7 @@
 % > Make an empty page with the section title
 \def\mytitle{Readme}
 \subsection{\mytitle}
-\label{subsec:readme}
+\label{subapdx:readme}
 \ %
 The following pages are the \texttt{README.md} of \texttt{plotastic} found in
 the Python Package Index (PyPi) (\url{pypi.org/project/plotastic}), and on
@@ -78,7 +80,7 @@ GitHub (\url{github.com/markur4/plotastic}).
 \def\mytitle{Example Analysis ``qpcr''}
 % \markboth{Appendix}{: \mytitle}
 \subsection{\mytitle}
-\label{subsec:example_analysis}
+\label{subapdx:example_analysis}
 \ %
 The following pages are a jupyter notebook from an example analysis using
 \texttt{plotastic} that's found on GitHub (\url{github.com/markur4/plotastic}).
