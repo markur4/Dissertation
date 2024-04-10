@@ -112,7 +112,7 @@
 % == Table of Contents =================================================
 \usepackage{tocloft} % > For customizing the table of contents
 
-\renewcommand{\cftbeforesecskip}{0.9ex} % Adjust this value as needed
+\renewcommand{\cftbeforesecskip}{1.1ex} % Adjust this value as needed
 \renewcommand{\cftbeforesubsecskip}{0.0ex} % Adjust this value as needed
 \renewcommand{\cftbeforesubsubsecskip}{0.0ex} % Adjust this value as needed
 
@@ -435,3 +435,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 %     ]{#3}
 % }
 
+
+% == Appendices ========================================================
+\usepackage{appendix}
