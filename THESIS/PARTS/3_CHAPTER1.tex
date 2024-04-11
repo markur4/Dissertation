@@ -133,7 +133,7 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-}{fig:5} 
+}{fig:5}
 
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -147,17 +147,100 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-}{fig:6} 
+}{fig:6}
 
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 
 
+    % ## Tab. 1
+    {
+        \footnotesize
+        \newcommand{\myheader}{
+            \hline
+            \textbf{Regulation during disease progression} & \textbf{Gene} & \textbf{Ensemble ID} & \textbf{Progression Free / Overall Survival} & \textbf{Better Prognosis with high/low expression} & \multicolumn{2}{p{3cm}|}{\textbf{Association of expression with survival}}                    \\
+            \hhline{~~~~~--}
+            &               &                      &                                              &                                                    & \textbf{[p-unc]}                                                      & \textbf{[p-adj]} \\
+            \hline
+        }
 
-% ## Tab. 1
+        \begin{longtable}{|>{\bfseries}p{3cm}|>{\bfseries}p{1.9cm}|p{3cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+            \caption{%
+            Adhesion and ECM genes (shown in \autoref{fig:6}A) were filtered by
+            their association with patient survival (p-adj. < 0.01) and were
+            categorized as continuously downregulated during disease
+            progression. The complete list is presented in \refapdx{subapdx:figtabs}{tab:S2}.
+            Bone Marrow Plasma Cells (BMPC), Monoclonal Gammopathy of
+            Undetermined Significance (MGUS), smoldering Multiple Myeloma (sMM),
+            Multiple Myeloma (MM), and Multiple Myeloma Relapse (MMR). p-unc =
+            unadjusted p-values; p-adj: p-values adjusted using the
+            Benjamini-Hochberg method with 101 genes. }\label{tab:1}
+            \\
+            \myheader
+            \endfirsthead
+
+            \multicolumn{7}{c}%
+            {Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+            \myheader
+            \endhead
+
+            \hline
+            \multicolumn{7}{r}{\textit{Continued on next page}}                                    \\
+            \endfoot
+
+            \endlastfoot
+
+            \hline
+
+            \multirowcell{3}{3cm}{Not Downregulated (or overall low expression)}
+             & CCNE2  & ENSG00000175305 & Overall    & low  & 5.34E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & MMP2   & ENSG00000087245 & Prog. Free & high & 2.29E-05 & 2.32E-03                  \\
+            \hhline{~------}
+             & OSMR   & ENSG00000145623 & Prog. Free & high & 5.67E-04 & 7.15E-03                  \\
+            \hhline{~------}
+            \hline
+
+            \multirowcell{17}{2.7cm}{Continuously Downregulated (BMPC > MGUS > sMM > MM > MMR)}
+             & AXL    & ENSG00000167601 & Overall    & high & 3.64E-05 & 1.84E-03                  \\
+            \hhline{~------}
+             & COL1A1 & ENSG00000108821 & Prog. Free & high & 3.03E-04 & 4.37E-03                  \\
+            \hhline{~~~----}
+             &        &                 & Overall    & high & 5.93E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & CXCL12 & ENSG00000107562 & Prog. Free & high & 1.16E-04 & 2.93E-03                  \\
+            \hhline{~~~----}
+             &        &                 & Overall    & high & 6.48E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03                  \\
+            \hhline{~------}
+             & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03                  \\
+            \hhline{~------}
+             & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03                  \\
+            \hhline{~------}
+             & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03                  \\
+            \hhline{~------}
+             & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03                  \\
+            \hhline{~------}
+             & MFAP5  & ENSG00000197614 & Prog. Free & high & 2.43E-04 & 4.09E-03                  \\
+            \hhline{~------}
+             & MMP14  & ENSG00000157227 & Prog. Free & high & 6.93E-05 & 2.93E-03                  \\
+            \hhline{~------}
+             & MYL9   & ENSG00000101335 & Prog. Free & high & 1.46E-04 & 2.95E-03                  \\
+            \hhline{~~~----}
+             &        &                 & Overall    & high & 1.56E-05 & 1.57E-03                  \\
 
 
+            \hline
+        \end{longtable}
+    }
 
 
 
@@ -169,7 +252,7 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-}{fig:7} 
+}{fig:7}
 
 
 

@@ -340,11 +340,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ======================================================================
 
 
-% == Images & Tables ===================================================
+% == Images ============================================================
 \usepackage{graphicx} % > For the inclusion of images
-\usepackage{longtable} % > For proper tables
-\usepackage{hhline} % > For better lines in tables
-\usepackage{multirow} % > For rows conatining two lines
 \usepackage[ % > Import captions and define sans-serif font
     font={sf, footnotesize},
     singlelinecheck=false,
@@ -362,8 +359,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % >     pathtopicture
 % > }{caption}{label}
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m m m}{
-\vspace{\vfull}
-\begin{minipage}{\textwidth}
+    \vspace{\vfull}
+    \begin{minipage}{\textwidth}
         \centering
         \IfStrEq{#2}{}
         {\includegraphics[width=#1\textwidth]{#3}}
@@ -385,6 +382,18 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \setlength{\fmbottom}{0.98in}
 \setlength{\fmleft}{0.78in}
 
+% == Tables ============================================================
+\usepackage{longtable} % > For proper tables
+\usepackage{hhline} % > For better lines in tables
+\usepackage{multirow} % > For rows conatining two lines
+
+% ## For cells spanning multiple rows
+\newcommand{\multirowcell}[3]{
+    \multirow{#1}{*}[-0.5ex]{
+
+        \parbox{#2}{\noindent #3}
+    }
+}
 
 
 % == Caption Styles ====================================================
@@ -476,13 +485,17 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \IfBooleanTF{#1}{}{
         \phantomsection
         \addcontentsline{toc}{subsection}{#1} % > Add to TOC
-        } % Prevents sections occupying the same page only if not starred
+    } % Prevents sections occupying the same page only if not starred
     \includepdf[
         pages=-, % Include all pages of the PDF
         scale=#2,  % Scale the PDF to e.g. 98% of the text width
         pagecommand={\eachpage{#3}}, % Execute command for each page
     ]{#4}
 }
+
+
+
+
 
 
 
