@@ -177,15 +177,39 @@ This project defines these aims:
 \begin{appendices}
     \pagestyle{appendix} % > Change page heads and foots
     
+    % == Chapter 1 Supplementary =======================================
+    \section{Chapter 1 Supplementary}\label{apdx:supplemental}
     \resetcounters % > Reset fig and tab counter
-    \include{PARTS/6_APPENDIX_CHAPTER1}
+
+    % ## Figures
+    \subsection{Figures}\label{subapdx:figs}
+    \newpage
+    \include{PARTS/6_APPENDIX_CHAPTER1_FIGURES}
     \newpage
     
-    \resetcounters % > Reset fig and tab counter
-    \include{PARTS/6_APPENDIX_CHAPTER2}
+    % ## Tables
+    \subsection{Tables}\label{subapdx:tabs}
+    \newpage
+    \include{PARTS/6_APPENDIX_CHAPTER1_TABLES}
     \newpage
     
-    \include{PARTS/6_APPENDIX_FORMS}
+    % ## Materials & Methods
+    \subsection{Materials \& Methods}\label{subapdx:methods}
+    \newpage
+    \include{PARTS/6_APPENDIX_CHAPTER1_METHODS}
+    \newpage
+    
+
+
+    % == Chapter 2 Supplementary =======================================
+    \section{Documentation of \texttt{plotastic}}\label{apdx:plotastic_docs}
+    \resetcounters % > Reset fig and tab counter
+    \include{PARTS/7_APPENDIX_CHAPTER2}
+    \newpage
+
+    
+    % == Forms =========================================================
+    \include{PARTS/8_APPENDIX_FORMS}
     \newpage
 
 \end{appendices}
