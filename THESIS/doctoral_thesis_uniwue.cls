@@ -362,7 +362,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % >     pathtopicture
 % > }{caption}{label}
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m m m}{
-    \begin{minipage}{\textwidth}
+\vspace{\vfull}
+\begin{minipage}{\textwidth}
         \centering
         \IfStrEq{#2}{}
         {\includegraphics[width=#1\textwidth]{#3}}
