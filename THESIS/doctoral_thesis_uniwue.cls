@@ -388,11 +388,13 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \usepackage{multirow} % > For rows conatining two lines
 
 % ## For cells spanning multiple rows
+% > \multirowcell{number of rows}{width}{content}
 \newcommand{\multirowcell}[3]{
+    % \begin{spacing}{1}
     \multirow{#1}{*}[-0.5ex]{
-
         \parbox{#2}{\noindent #3}
     }
+    % \end{spacing}
 }
 
 

@@ -60,42 +60,66 @@
 \newpage
 
 % ## Fig. S5
-\includeimage[1][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
+\includeimage[1][{\fmleft} 4.3in {\fmright} {\fmtop}]{
     APPENDIX_CHAPTER1/figures8_supplemental5.pdf
-}{
-    lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+}{%
+    Correlation of RNAseq with qPCR Left: Validation of RNAseq results (Fig. 3)
+    with qPCR showing the log2(foldchange expression) of 18 genes. For qPCR,
+    Datapoints each represent one biological replicate (n=10), which is the mean
+    of technical replicates (n=3). Bar height represents mean of biological
+    replicates, error bars show standard deviation of biological replicates.
+    Right: Correlation between qPCR and RNAseq in terms of log2(mean foldchange
+    expression per gene). Each dot represents one gene shown in the barplot to
+    the left. Genes measured with qPCR that showed no differential expression in
+    RNAseq were set to have a log2(FC) = 0. Shaded area shows the confidence
+    interval of linear regression. Correlation coefficient () was calculated
+    using Spearman’s rank. N = 18 genes. FC = fold change expression.%
 }{fig:S5}
 \newpage
 
 
 % ## Fig. S6
-\includeimage[1][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
+\includeimage[1][{\fmleft} 2.7in {\fmright} {\fmtop}]{
     APPENDIX_CHAPTER1/figures8_supplemental6.pdf
-}{
-    lorem ipsum dolor sit amet consectetur adipiscing elit sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-    veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+}{ %
+    Functional enrichment analysis by Metascape using genes that are
+    differentially expressed between MSC-interacting subpopulations. Top:
+    Upregulated genes. Bottom: Downregulated genes.%
 }{fig:S6}
 \newpage
 
 
 
+% ## Fig. S7
+\addpdf*[.70]{bla}{APPENDIX_CHAPTER1/crc-23-0411-s15.pdf}
+% > Set figure counter to 7
+\setcounter{figure}{7}
+
+
+
+% ## Fig. S8
+% \addpdf*[.70]{bla}{APPENDIX_CHAPTER1/crc-23-0411-s16.pdf}
+\includeimage[0.9][{\fmleft} {\fmbottom} {\fmright} {.5\fmtop}]{
+    APPENDIX_CHAPTER1/crc-23-0411-s16.pdf 
+    }{%
+    Expression levels of adhesion genes that are not downregulated and
+    associated with survival (p < 0.01). Bone Marrow Plasma Cell (BMPC),
+    Monoclonal Gammopathy of Undetermined Significance (MGUS), Smoldering
+    Multiple Myeloma (sMM), Multiple Myeloma (MM), Multiple Myeloma Relapse
+    (MMR).%
+    }{fig:S8}
+\newpage
+
 
 
 
 %%%%%%% Test References
-V-Well is described in \refapdx{apdx:supplemental}{fig:S1}
+% V-Well is described in \refapdx{apdx:supplemental}{fig:S1}
 
-V-Well is described in \refapdx{apdx:supplemental}{fig:S1}, \ref{fig:S2}
+% V-Well is described in \refapdx{apdx:supplemental}{fig:S1}, \ref{fig:S2}
 
-% Image cytometry is described in \autoref{subapdx:sup_figtabs} \autoref{fig:S2}
+% % Image cytometry is described in \autoref{subapdx:sup_figtabs} \autoref{fig:S2}
 
-Full analysis is shown in \refapdx{subapdx:example_analysis}
+% Full analysis is shown in \refapdx{subapdx:example_analysis}
 
 % Referenzen als Fußnoten ab hier?
