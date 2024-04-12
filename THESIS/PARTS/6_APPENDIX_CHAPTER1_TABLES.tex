@@ -10,8 +10,8 @@
     \hline
     \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} & \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} & \textbf{Experiment(s)}                                                                                   & \textbf{Figures}                        \\
     \hline
-
 }
+
 \begin{longtable}{|>{\bfseries}p{1.5cm}|>{\bfseries}p{1.2cm}|p{1cm}|p{1cm}|p{2.3cm}|p{6cm}|p{1.7cm}|}
     \caption{%
         lorem ipsum dolor sit amet consectetur adipiscing elit sed do
@@ -23,15 +23,8 @@
     \\
     \myheader
     \endfirsthead
-
-    \multicolumn{7}{c}%
-    {Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}}                                                                                                               \\
-    \myheader
-    \endhead
-
-    \hline
-    \multicolumn{7}{r}{\textit{Continued on next page}}                                                                                                                                                  \\
-    \endfoot
+    
+    \longtablecaptions % > Include captions around pagebreaks
 
     \hline \hline
     \endlastfoot
@@ -147,18 +140,8 @@
             adjusted p-values (Benj.-Hoch.). }\label{tab:S2}                                       \\
             \myheader
             \endfirsthead
-
-            \multicolumn{7}{c}%
-            {Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
-            % \myheader
-            \endhead
-
-            \hline
-            \multicolumn{7}{r}{\textit{Continued on next page}}                                    \\
-            \endfoot
-
-            \hline \hline
-            \endlastfoot
+            
+            \longtablecaptions % > Include captions around pagebreaks
 
             \hline
 
@@ -600,6 +583,7 @@
 \newpage
 
 
+% ## Tab S3: Primer list
 \begin{spacing}{1}{
         \footnotesize
         \newcommand{\myheader}{%
@@ -617,14 +601,7 @@
             \myheader
             \endfirsthead
 
-            \multicolumn{4}{c}%
-            {{Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}}}                                                                                    \\
-            \myheader
-            \endhead
-
-            \hline
-            \multicolumn{4}{|r|}{{Continued on next page}}                                                                                                                              \\
-            \endfoot
+            \longtablecaptions % > Include captions around pagebreaks
 
             \hline \hline
             \endlastfoot

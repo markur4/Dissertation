@@ -18,27 +18,36 @@
 % ## Upper part
 \includeimage[0.422]{
     APPENDIX_CHAPTER2/classdiagr_dataframe.png
-}{
+}\captionof{figure}{
     \textbf{Class diagram of \texttt{plotastic} (upper part):} The
     architecture of \texttt{plotastic} begins with classes that are related to
     handling a \texttt{pandas.DataFrame} object which stores the data, and defining
     dimensions to group the data (y, x, hue, col, row). This diagram ends with the
     classes \texttt{SubPlot} and \texttt{StatTest} and is continued on the next
     page. \umlconvention
-}{fig:S_classdiagr}
-\newpage
-\setcounter{figure}{0} % > Reset figure counter
+}\label{fig:S_classdiagr}
+% \newpage
+
 % ## Lower Part
-\def\mycap{\textbf{(continued)} The architecture of \texttt{plotastic}
-    continues after the class \texttt{DataIntegrity} with classes for plotting
-    (\texttt{SubPlot}) and statistical testing (\texttt{StatTest}) and end with
-    the class \texttt{DataAnalysis}, which serves as the main user interface.
-    \umlconvention }
-\begin{figure}[H]
-    \centering
-    \includegraphics*[scale=.20]{APPENDIX_CHAPTER2/classdiagr_plot+stats.png}
-    \caption{\mycap}
-\end{figure}
+\includeimagecontinued[0.8][][%
+    The architecture of \texttt{plotastic} continues after the class
+    \texttt{DataIntegrity} with classes for plotting (\texttt{SubPlot}) and
+    statistical testing (\texttt{StatTest}) and ends with the class
+    \texttt{DataAnalysis}, which serves as the main user interface.
+    \umlconvention ]{
+    APPENDIX_CHAPTER2/classdiagr_plot+stats.png
+}\label{fig:S_classdiagr_cont}
+
+% \def\mycap{\textbf{(continued)} The architecture of \texttt{plotastic}
+%     continues after the class \texttt{DataIntegrity} with classes for plotting
+%     (\texttt{SubPlot}) and statistical testing (\texttt{StatTest}) and end with
+%     the class \texttt{DataAnalysis}, which serves as the main user interface.
+%     \umlconvention }
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics*[scale=.20]{APPENDIX_CHAPTER2/classdiagr_plot+stats.png}
+%     \caption{\mycap}
+% \end{figure}
 
 
 

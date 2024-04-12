@@ -346,19 +346,18 @@ literate={ ( }{{{\color{parentheses}(}}}1
     font={sf, footnotesize},
     singlelinecheck=false,
     margin=0.5\leftm]{caption}
-\usepackage{needspace}
+% \usepackage{needspace}
+
 
 % ## Define a command to include an image
-% > #1 is the path to the image
-% > #2 is the width of the image (optional, default is 0.99)
-% > #3 is the crop option (optional, default is no cropping)
-% > #4 is the caption of the image
-% > #5 is the label of the image
+% > #1 is the width of the image in % (optional, default is 0.99)
+% > #2 is the crop option (optional, default is no cropping)
+% > #3 is the path to the image
 % ## Example:
 % > \includeimage[scale][left bottom right top]{
 % >     pathtopicture
-% > }{caption}{label}
-\NewDocumentCommand{\includeimage}{O{0.99} O{} m m m}{
+% > }
+\NewDocumentCommand{\includeimage}{O{0.99} O{} m}{
     \vspace{\vfull}
     \begin{minipage}{\textwidth}
         \centering
@@ -366,11 +365,17 @@ literate={ ( }{{{\color{parentheses}(}}}1
         {\includegraphics[width=#1\textwidth]{#3}}
         {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
     \end{minipage}
-    \needspace{4\baselineskip}
-    \captionof{figure}{#4}
-    \label{#5}
-    \newpage
 }
+
+
+% ## Define a command to include an image that continues on the next page
+\NewDocumentCommand{\includeimagecontinued}{O{0.99} O{} O{} m}{
+    \addtocounter{figure}{-1} % > Decrease the figure counter by 1
+    % > Include the image overriding the caption
+    \includeimage[#1][#2]{#4}
+    \captionof{figure}{\textit{(continued from previous page)} #3}
+}
+
 
 % ## Save margins that I used for making my images to be cropped away when included
 \newlength{\fmtop}
@@ -415,13 +420,33 @@ literate={ ( }{{{\color{parentheses}(}}}1
     font={sf, footnotesize, oneandhalfspacing}}
 \captionsetup[figure]{labelformat=figure,
     font={sf, footnotesize, oneandhalfspacing}, belowskip=\vhalf}
-\captionsetup[table]{labelformat=table,
-    font={sf, footnotesize, oneandhalfspacing}}
+\newcommand{\setdefaulttablecaption}{
+    \captionsetup[table]{labelformat=table,
+        font={sf, footnotesize, oneandhalfspacing}}
+}
+\setdefaulttablecaption
 
 % ## Command for resetting counters for figures and tables to 0
 \newcommand{\resetcounters}{
     \setcounter{figure}{0}
     \setcounter{table}{0}
+}
+
+% ## Define how tables captions look like around longtable pagebreaks
+\newcommand{\longtablecaptions}{
+    
+    \multicolumn{3}{l}
+    {\sffamily Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+    \hline
+    \endhead
+    
+    \hline
+    \multicolumn{3}{l}
+    {\sffamily \textit{Continued on next page}}                                    \\
+    \endfoot
+
+    \hline \hline
+    \endlastfoot
 }
 
 
