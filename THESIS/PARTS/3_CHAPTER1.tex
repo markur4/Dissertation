@@ -25,9 +25,43 @@
 % > First argument is the label
 % > Second argument is the header name
 % > Third argument is the abstract text
-\customabstract{c1:abstract}{Abstract}{
-    lorem ipsum
+\customabstract{c1:abstract}{Abstract}{ %
+    Multiple myeloma involves early dissemination of malignant plasma cells
+    across the bone marrow; however, the initial steps of dissemination remain
+    unclear. Human bone marrow- derived mesenchymal stromal cells (hMSCs)
+    stimulate myeloma cell expansion (e.g., IL-6) and simultaneously retain
+    myeloma cells via chemokines (e.g., CXCL12) and adhesion factors. Hence, we
+    hypothesized that the imbalance between cell division and retention drives
+    dissemination. We present an \textit{in vitro} model using primary hMSCs co-cultured
+    with INA-6 myeloma cells. Time-lapse microscopy revealed proliferation and
+    attachment/detachment dynamics. Separation techniques (V-well adhesion assay
+    and well plate sandwich centrifugation) were established to isolate
+    MSC-interacting myeloma subpopulations that were characterized by RNAseq,
+    cell viability and apoptosis. Results were correlated with gene expression
+    data ($n=837$) and survival of myeloma patients ($n=536$). On dispersed
+    hMSCs, INA-6 saturate hMSC-surface before proliferating into large homotypic
+    aggregates, from which single cells detached completely. On confluent hMSCs,
+    aggregates were replaced by strong heterotypic hMSC-INA-6 interactions,
+    which modulated apoptosis time-dependently. Only INA-6 daughter cells
+    (\nMAina) detached from hMSCs by cell division but sustained adherence to
+    hMSC-adhering mother cells (\MAina). Isolated \nMAina indicated
+    hMSC-autonomy through superior viability after IL-6 withdrawal and
+    upregulation of proliferation-related genes. \MAina upregulated adhesion and
+    retention factors (CXCL12), that, intriguingly, were highly expressed in
+    myeloma samples from patients with longer overall and progression-free
+    survival, but their expression decreased in relapsed myeloma samples.
+    Altogether, \textit{in vitro} dissemination of INA-6 is driven by detaching daughter
+    cells after a cycle of hMSC-(re)attachment and proliferation, involving
+    adhesion factors that represent a bone marrow-retentive phenotype with
+    potential clinical relevance. %
 }
+
+% ## Statement of Significance
+\subsection*{Statement of Significance}
+Novel methods describe \textit{in vitro} dissemination of myeloma cells as detachment of
+daughter cells after cell division. Myeloma adhesion genes were identified that
+counteract \textit{in vitro} detachment with potential clinical relevance.
+\newpage
 
 
 % ======================================================================
@@ -36,17 +70,287 @@
 % \unnsubsection{C1:Introduction}{Introduction}
 \unnsubsection{Introduction}\label{C1:introduction} % > Require unique label
 \ %
-lorem ipsum dolor sit amet
+Multiple myeloma arises from clonal expansion of malignant plasma cells in the
+bone marrow (BM). At diagnosis, myeloma cells have disseminated to multiple
+sites in the skeleton and, in some cases, to “virtually any tissue”
+\cite{bladeExtramedullaryDiseaseMultiple2022,rajkumarInternationalMyelomaWorking2014}.
+However, the mechanism through which myeloma cells initially disseminate remains
+unclear. Dissemination is a multistep process involving invasion, intravasation,
+intravascular arrest, extravasation, and colonization
+\cite{zeissigTumourDisseminationMultiple2020}. To initiate dissemination,
+myeloma cells overcome adhesion, retention, and dependency on the BM
+microenvironment, which could involve the loss of adhesion factors such as CD138
+\cite{akhmetzyanovaDynamicCD138Surface2020,garcia-ortizRoleTumorMicroenvironment2021}.
+BM retention is mediated by multiple factors: First, chemokines (CXCL12 and
+CXCL8) produced by mesenchymal stromal cells (MSCs), which attract plasma cells
+and prime their cytoskeleton and integrins for adhesion
+\cite{aggarwalChemokinesMultipleMyeloma2006,alsayedMechanismsRegulationCXCR42007}.
+Second, myeloma cells must overcome the anchorage and physical boundaries of the
+extracellular matrix (ECM), consisting of e.g. fibronectin, collagens, and
+proteoglycans such as decorin
+\cite{huDecorinmediatedSuppressionTumorigenesis2021,huangHigherDecorinLevels2015,katzAdhesionMoleculesLifelines2010,kiblerAdhesiveInteractionsHuman1998}.
+Simultaneously, ECM provides signals inducing myeloma cell cycle arrest or
+progression the cell cycle
+\cite{huDecorinmediatedSuppressionTumorigenesis2021,katzAdhesionMoleculesLifelines2010}.
+\ %
+ECM is also prone to degradation, which is common in several osteotropic
+cancers, and is the cause of osteolytic bone disease. This is driven by a
+‘vicious cycle’ that maximizes bone destruction by extracting growth factors
+(EGF and TGF-β) that are stored in calcified tissues
+\cite{glaveyProteomicCharacterizationHuman2017}. Third, direct contact with MSCs
+physically anchors myeloma cells to the BM
+\cite{zeissigTumourDisseminationMultiple2020,sanz-rodriguezCharacterizationVLA4dependentMyeloma1999}.
+Fourth, to disseminate to distant sites, myeloma cells require, at least
+partially, independence from essential growth and survival signals provided by
+MSCs in the form of soluble factors or cell adhesion signaling
+\cite{garcia-ortizRoleTumorMicroenvironment2021, chatterjeePresenceBoneMarrow2002,hideshimaUnderstandingMultipleMyeloma2007}.
+For example, the VLA4 (Myeloma)–VCAM1 (MSC)-interface activates NF-κB in both
+myeloma and MSCs, inducing IL-6 expression in MSCs. The independence from MSCs
+is then acquired through autocrine survival signaling
+\cite{frassanitoAutocrineInterleukin6Production2001, urashimaCD40LigandTriggered1995}.
+In short, anchorage of myeloma cells to MSCs or ECM is a ‘double-edged sword’:
+adhesion counteracts dissemination, but also presents signaling cues for growth,
+survival, and drug resistance \cite{solimandoDrugResistanceMultiple2022}.
+
+
+To address this ambiguity, we developed an \textit{in vitro} co-culture system
+modeling diverse adhesion modalities to study dissemination, growth, and
+survival of myeloma cells and hMSCs. Co-cultures of hMSCs and the myeloma cell
+line INA-6 replicated tight interactions and aggregate growth, akin to
+``microtumors'' in Ghobrial’s metastasis concept
+\cite{ghobrialMyelomaModelProcess2012}. We characterized the growth
+conformations of hMSCs and INA-6 as homotypic aggregation \textit{vs.}
+heterotypic hMSC adherence and their effects on myeloma cell survival. We
+tracked INA-6 detachments from aggregates and hMSCs, thereby identifying a
+potential ``disseminated'' subpopulation lacking strong adhesion. We developed
+innovative techniques (V-well adhesion assay and well plate sandwich
+centrifugation) to separate weakly and strongly adherent subpopulations for the
+subsequent analysis of differential gene expression and cell survival. Notably,
+our strategy resolves the differences in gene expression and growth behavior
+between cells of one cell population in ``direct'' contact with MSCs. In
+contrast, previous methods differentiated between ``direct'' and ``indirect''
+cell-cell contact using transwell inserts
+\cite{dziadowiczBoneMarrowStromaInduced2022}. To evaluate whether genes
+mediating adhesion and growth characteristics of INA-6 were associated with
+patient survival, we analyzed publicly available datasets
+\cite{seckingerTargetExpressionGeneration2017b,seckingerCD38ImmunotherapeuticTarget2018}.
+
+
+\newpage
 
 
 % ======================================================================
 % == Methods
 % ======================================================================
-\unnsubsection{Methods}
+\unnsubsection{Materials and Methods}\label{C1:methods}
 \ %
-Methods are described in \refapdx{subapdx:methods}
+See \refapdx{subapdx:methods} for a complete method list and description.
 
 
+\subsubsection*{Ethics Statement}
+\ %
+Primary human MSCs were collected with the written informed consent of all
+ patients. The procedure was conducted in accordance with recognized ethical
+ guidelines (Helsinki Declaration) and approved by the local Ethics Committee of
+ the University of Würzburg (186/18).
+
+\subsubsection*{Cultivation and Co-Culturing of primary hMSCs and INA-6}
+\ %
+Primary human MSCs were obtained from the femoral head of 34 non-myeloma
+patients (\refapdx{apdx:supplemental}{tab:S1}: 21 male and 13 female, mean age
+68.9 ± 10.6) undergoing elective hip arthroplasty. The INA-6 cell line
+(\textit{DSMZ Cat\# ACC-862}, \textit{RRID:CVCL\_5209},
+\href{https://www.cellosaurus.org/CVCL_5209}{link}) was initially isolated from
+a pleural effusion sample obtained from an 80-year-old male with multiple
+myeloma \cite{burgerGp130RasMediated2001c,gramatzkiTwoNewInterleukin61994}.
+hMSCs were not tested for mycoplasma, whereas stocks of INA-6 were tested in
+this study (\refapdx{apdx:supplemental}{tab:S1}) using the \textit{Venor GeM OneStep} kit
+(Minerva Biolabs, Berlin, Germany). For each co-culture, hMSCs were seeded
+\SI{24}{\hour} before INA-6 addition to generate the MSC-conditioned medium
+(CM). INA-6 cells were washed with PBS, resuspended in MSC medium, and added to
+hMSCs so that the co-culture comprised \SI{33}{\percent} (v/v) of CM gathered
+directly from the respective hMSC donor. The co-cultures were not substituted
+for IL-6 \cite{chatterjeePresenceBoneMarrow2002}.
+
+\subsubsection*{Cell Viability and Apoptosis Assay}
+\ %
+Cell viability and apoptosis rates were measured using \textit{CellTiter-Glo Luminescent
+Cell Viability Assay} and \textit{Caspase-Glo 3/7 Assay}, respectively (Promega GmbH,
+Mannheim, Germany).
+
+% 136 Automated Fluorescence Microscopy
+% 137 Microscopic images were acquired using an Axio Observer 7 (Zeiss) with a COLIBRI LED
+% 138 light source and motorized stage top using 5x and 10x magnification. The tiled images had
+% 139 an automatic 8-10% overlap and were not stitched.
+
+
+\subsubsection*{Automated Fluorescence Microscopy}
+\ %
+Microscopic images were acquired using an Axio Observer 7 (Zeiss) with a COLIBRI LED
+light source and motorized stage top using 5x and 10x magnification. The tiled images had
+an automatic \SIrange{8}{10}{\percent} overlap and were not stitched.
+
+\subsubsection*{Live Cell Imaging}
+hMSCs (stained with PKH26) were placed into an ibidi Stage Top Incubation System
+and equilibrated to \SI{80}{\percent} humidity and \SI{5}{\percent}
+CO\textsubscript{2}. INA-6 (2 $\times$ 10\textsuperscript{3}
+cells/cm\textsuperscript{2}) were added directly before the start of
+acquisition. Brightfield and fluorescence images of up to \SI{13}{\mm\squared}
+of the co-culture area were acquired every \SI{15}{\minute} for \SI{63}{\hour}.
+Each event of interest was manually analyzed and categorized into defined event
+parameters.
+
+
+% 146 V-well Adhesion Assay
+% 147 INA-6 cells were arrested during mitosis by two treatments with thymidine, followed by
+% 148 nocodazole. Arrested INA-6 were released and added to 96 V-well plates (104 cells/cm2) on
+% 149 top of confluent hMSCs and adhered for 1-3 h. The co-culture was stained with calcein-AM
+% 150 (Thermo Fisher Scientific, Darmstadt, Germany) before non-adherent INA-6 were pelleted
+% 151 into the tip of the V-well (2000 rpm, 5-10 min). MSC-adhering INA-6 cells were manually
+% 152 detached by rapid pipetting. The pellet brightness was measured microscopically and the
+% 153 pellet was isolated by pipetting.
+
+
+% 154 Cell Cycle Profiling by Image Cytometry
+% 155 Isolated INA-6 cells were fixed in 70% ice-cold ethanol, washed, resuspended in PBS,
+% 156 distributed in 96-well plates, and stained with Hoechst 33342. The plates were scanned at 5x
+% 157 magnification. A pre-trained convolutional neural network (Intellesis, Zeiss) was fine-tuned to
+% 158 segment the scans into single nuclei and exclude fragmented nuclei. Nuclei were filtered to
+% 159 exclude extremes of size roundness. The G0/G1 frequency was determined by Gaussian
+% 160 curve fitting.
+
+\subsubsection*{V-well Adhesion Assay}
+\ %
+INA-6 cells were arrested during mitosis by two treatments with thymidine, followed by
+nocodazole. Arrested INA-6 were released and added to 96 V-well plates (10\textsuperscript{4}
+cells/cm\textsuperscript{2}) on
+top of confluent hMSCs and adhered for \SIrange{1}{3}{\hour}. The co-culture was stained with calcein-AM
+(Thermo Fisher Scientific, Darmstadt, Germany) before non-adherent INA-6 were pelleted
+into the tip of the V-well (\SI{2000}{rpm}, \SIrange{5}{10}{\minute}). MSC-adhering INA-6 cells were manually
+detached by rapid pipetting. The pellet brightness was measured microscopically and the
+pellet was isolated by pipetting.
+
+\subsubsection*{Cell Cycle Profiling by Image Cytometry}
+\ %
+Isolated INA-6 cells were fixed in \SI{70}{\percent} ice-cold ethanol, washed, resuspended in PBS,
+distributed in 96-well plates, and stained with Hoechst 33342. The plates were scanned at 5x
+magnification. A pre-trained convolutional neural network (Intellesis, Zeiss) was fine-tuned to
+segment the scans into single nuclei and exclude fragmented nuclei. Nuclei were filtered to
+exclude extremes of size and roundness. The G0/G1 frequency was determined by Gaussian
+curve fitting.
+
+
+\subsubsection*{Well Plate Sandwich Centrifugation (WPSC)}
+\ %
+hMSCs were grown to confluence in 96-well plates coated with collagen I (rat
+tail; Corning, NY, USA). INA-6 cells were added and the cells were allowed to
+adhere for \SI{24}{\hour}. A second plate (``catching plate'') was attached
+upside down to the top of the co-culture plate. That ``well plate sandwich'' was
+turned around and the content of the co-culture plate was centrifuged into the
+catching plate three times (\SI{40}{\second} at \SI{110}{g}) while gently adding
+\SI{30}{\micro\liter} of medium in between centrifugation steps.
+Non-MSC-adhering INA-6 cells were collected from the catching plate, whereas
+MSC-adhering INA-6 cells were isolated by digesting the co- culture with
+accutase. For RNA sequencing (RNAseq), all samples were purified using anti-CD45
+magnetic-assisted cell sorting (Miltenyi Biotec B.V. \& Co. KG, Bergisch
+Gladbach).
+
+\subsubsection*{RNA Isolation}
+\ %
+RNA was isolated using the \textit{NucleoSpin RNA II Purification Kit}
+(Macherey-Nagel) according to the manufacturer's instructions. RNA was isolated
+from INA-6 cells co-cultured with a unique hMSC donor ($n=5$ for qPCR, $n=11$
+for RNA sequencing).
+
+\subsubsection*{RNA sequencing, Differential Expression, and Functional Enrichment Analysis}
+\ %
+RNA sequencing (RNAseq) was performed at the Core Unit Systems Medicine,
+University of Würzburg. mRNA was enriched with polyA beads. Fastq files were
+aligned to the GRCh38 reference genome using \texttt{STAR}
+(\textit{RRID:SCR\_004463},
+\href{https://scicrunch.org/resolver/RRID:SCR_004463}{link}) and raw read
+counts were generated using \texttt{HTseq} (\textit{RRID:SCR\_005514},
+\href{https://scicrunch.org/resolver/SCR_005514}{link})
+\cite{andersHTSeqPythonFramework2015,dobinSTARUltrafastUniversal2013,zerbinoEnsembl20182018}.
+Differential gene expression was analyzed using \texttt{edgeR} in R (version
+3.6.3) (\textit{RRID:SCR\_012802},
+\href{https://scicrunch.org/resolver/SCR_012802}{link}). Functional
+enrichment analysis was performed using \texttt{Metascape}
+(\textit{RRID:SCR\_016620},
+\href{https://scicrunch.org/resolver/SCR_016620}{link})
+\cite{zhouMetascapeProvidesBiologistoriented2019}.
+
+
+% 182 RT-qPCR
+% 183 RNA (1 μg) was reverse transcribed using SuperScript IV reverse transcriptase (Thermo
+% 184 Fisher Scientific). qPCR was performed using 10 μL GoTaq qPCR Master Mix (Promega),
+% 185 1:10 diluted cDNA, and 5 pmol of primers obtained from Biomers.net or Qiagen
+% 186 (Supplementary Table 3).
+\subsubsection*{RT-qPCR}
+\ %
+RNA (\SI{1}{\micro\gram}) was reverse transcribed using \textit{SuperScript IV
+reverse transcriptase} (Thermo Fisher Scientific). qPCR was performed using
+\SI{10}{\micro\liter} \textit{GoTaq qPCR Master Mix} (Promega), \SI{1}{:10}
+diluted cDNA, and \SI{5}{pmol} of primers obtained from Biomers.net or Qiagen
+(\refapdx{apdx:supplemental}{tab:S3}).
+
+
+% 187 Statistics
+% 188 Inferential statistics were performed using Python (IPython, RRID:SCR_001658, link) (3.10)
+% 189 packages pingouin (0.5.1) and statsmodels (0.14.0) (29, 30). The figures were plotted using
+% 190 plotastic (0.0.1) (31). Normality (for n ≥ 4) and sphericity were ensured using Mauchly’s and
+% 191 Shapiro-Wilk tests, respectively. Data points were log10 transformed to convert the scale
+% 192 from multiplicative to additive or to fulfill sphericity requirements. p-value = 0.05 > * > 0.01 >
+% 193 ** > 10-3 > *** 10-4 > ****. P-values were either adjusted (p-adj) or not adjusted (p-unc) for
+% 194 family wise error rate. Power calculations were not performed to determine the sample size.
+\subsubsection*{Statistics}
+\ %
+Inferential statistics were performed using Python (IPython,
+\textit{RRID:SCR\_001658},
+\href{https://www.ncbi.nlm.nih.gov/sra?term=SCR_001658}{link}) (3.10) packages
+\textit{pingouin} (0.5.1) and \texttt{statsmodels} (0.14.0)
+\cite{vallatPingouinStatisticsPython2018,seaboldStatsmodelsEconometricStatistical2010}.
+The figures were plotted using \texttt{plotastic} (0.0.1)
+\cite{kuricPlotasticBridgingPlotting2024}. Normality (for \( n \geq 4 \)) and
+sphericity were ensured using Mauchly’s and Shapiro-Wilk tests, respectively.
+Data points were log\(_{10}\) transformed to convert the scale from
+multiplicative to additive or to fulfill sphericity requirements. \( p = 0.05 >
+\text{*} > 0.01 > \text{**} > 10^{-3} > \text{***}> 10^{-4} > \text{****} \).
+$p$-values were either adjusted (\( p{\text{-adj}} \)) or not adjusted (\(
+p{\text{-unc}} \)) for family wise error rate. Power calculations were not
+performed to determine the sample size.
+
+
+% 195 Patient Cohort, Analysis of Survival and Expression
+% 196 Survival and gene expression data were obtained as previously described (21, 22) and are
+% 197 available at the European Nucleotide Archive (ENA) under accession numbers PRJEB36223
+% 198 and PRJEB37100. The expression level was categorized into “high” and “low” using maxstat
+% 199 (Maximally selected Rank Statistics) thresholds (32).
+% 200 Data Availability Statement
+% 201 A detailed description of the methods is provided in the Supplementary Material section. Raw
+% 202 tabular data and examples of analyses and videos are available in the github repository, link.
+% 203 Raw RNAseq data are available from the NCBI Gene Expression Omnibus (GEO)
+% 204 (RRID:SCR_005012, link) (GSE261423). Microscopy data are available at BioStudies
+% 205 (EMBL-EBI) (RRID:SCR_004727, link) (S-BIAD1092).
+
+\subsubsection*{Patient Cohort, Analysis of Survival and Expression}
+\ %
+Survival and gene expression data were obtained as previously described
+\cite{seckingerTargetExpressionGeneration2017b,seckingerCD38ImmunotherapeuticTarget2018}
+and are available at the European Nucleotide Archive (ENA) under accession
+numbers PRJEB36223 and PRJEB37100. The expression level was categorized into
+``high'' and ``low'' using \texttt{maxstat} (Maximally selected Rank Statistics)
+thresholds \cite{hothornMaximallySelectedRank}.
+
+\subsubsection*{Data Availability Statement}
+\ %
+A detailed description of the methods is provided in the Supplementary Material section. Raw
+tabular data and examples of analyses and videos are available in the github repository, \href{https://github.com/markur4/Supplemental-INA-6-Subpopulations-and-Aggregation-Detachment-Dynamics}{link}.
+Raw RNAseq data are available from the NCBI Gene Expression Omnibus (GEO)
+(\textit{RRID:SCR\_005012}, \href{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE261423}{link}) (GSE261423). Microscopy data are available at BioStudies
+(EMBL-EBI) (\textit{RRID:SCR\_004727}, \href{https://www.ebi.ac.uk/biostudies/bioimages/studies/S-BIAD1092?key=69bafe9c-74ff-492b-9e68-bd42655c4d1b}{link}) (S-BIAD1092).
+
+\newpage
 
 % ======================================================================
 % == Results
@@ -75,26 +379,26 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 \noindent\includeimage[1][{\fmleft} 2.8in {\fmright} {\fmtop}]{
     FIGS/figures9_1.pdf
 }\splitcaption{ %
-INA-6 growth conformations and survival on hMSCs. \tile{A} Interaction of INA-6
-(green) with hMSCs (black, negative staining) at different INA-6 densities
-(constant hMSC densities). \mbox{Scale bar = \SI{200}{\um}}. \tile{B} Frequency of
-single hMSCs (same as A) that are covered by INA-6 of varying group sizes.
-Technical replicates = three per datapoint; Single hMSCs evaluated: 100 per
-technical replicate. \tile{C} Interaction of INA-6 with hMSCs at different hMSC
-densities (constant INA-6 densities). Scale bar = \SI{300}{\um}. 
+    INA-6 growth conformations and survival on hMSCs. \tile{A} Interaction of INA-6
+    (green) with hMSCs (black, negative staining) at different INA-6 densities
+    (constant hMSC densities). \mbox{Scale bar = \SI{200}{\um}}. \tile{B} Frequency of
+    single hMSCs (same as A) that are covered by INA-6 of varying group sizes.
+    Technical replicates = three per datapoint; Single hMSCs evaluated: 100 per
+    technical replicate. \tile{C} Interaction of INA-6 with hMSCs at different hMSC
+    densities (constant INA-6 densities). Scale bar = \SI{300}{\um}.
 }{%
-\tile{D} Two types of homotypic interaction: Attachment after cell contact and
-sustained attachment of daughter cells after cell division. Datapoints represent
-one of four independent time-lapse recordings, each evaluating 116 interaction
-events. \tile{E} Effects of hMSC-density on the viability (ATP, top) and
-apoptosis (Caspase3/7 activity, bottom). INA-6:MSC ratio = 4:1; \mbox{Technical
-replicates = four per datapoint}; E left: Signals were measured in INA-6 washed
-off from hMSCs and normalized by INA-6 cultured in MSC-conditioned medium ($=
-\text{red line}$) ($n=4$). E right: Signals were measured in co-cultures and
-normalized by the sum of the signals measured in hMSC and INA-6 cultured
-separately ($= \text{red line}$) ($n=3$). \tile{Statistics} Paired t-test,
-two-factor RM- ANOVA. Datapoints represent independent co-cultures with hMSCs
-from three (A, B, D, E right), four (E left) unique donors. Confl. = Confluent.
+    \tile{D} Two types of homotypic interaction: Attachment after cell contact and
+    sustained attachment of daughter cells after cell division. Datapoints represent
+    one of four independent time-lapse recordings, each evaluating 116 interaction
+    events. \tile{E} Effects of hMSC-density on the viability (ATP, top) and
+    apoptosis (Caspase3/7 activity, bottom). INA-6:MSC ratio = 4:1; \mbox{Technical
+        replicates = four per datapoint}; E left: Signals were measured in INA-6 washed
+    off from hMSCs and normalized by INA-6 cultured in MSC-conditioned medium ($=
+        \text{red line}$) ($n=4$). E right: Signals were measured in co-cultures and
+    normalized by the sum of the signals measured in hMSC and INA-6 cultured
+    separately ($= \text{red line}$) ($n=3$). \tile{Statistics} Paired t-test,
+    two-factor RM- ANOVA. Datapoints represent independent co-cultures with hMSCs
+    from three (A, B, D, E right), four (E left) unique donors. Confl. = Confluent.
 }
 \label{fig:1}
 
@@ -115,7 +419,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     Time-lapse analysis of INA-6 detachment from INA-6 aggregates and hMSCs.
     \tile{A} Frequency of observed INA-6 aggregates that did or did not lose
     INA-6 cell(s). 87 aggregates were evaluated per datapoint. \tile{B} Example
-    of a "disseminating" INA-6 aggregate growing on fluorescently (PKH26)
+    of a ``disseminating`` INA-6 aggregate growing on fluorescently (PKH26)
     stained hMSC (from A-D). Dashed green lines are trajectories of detached
     INA-6 cells. Scale bar = \SI{50}{\um}. \tile{\mbox{C-E}} Quantitative assessment of
     INA-6 detachments. 45 detachment events were evaluated per datapoint.

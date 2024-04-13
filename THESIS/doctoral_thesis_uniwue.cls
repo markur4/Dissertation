@@ -139,34 +139,6 @@
 
 % ## Sub Sections =================================================
 
-% \newcommand{\unnsubsection}[1]{ % > Unnumbered subsection
-%     \subsection*{#1}
-%     \addcontentsline{toc}{subsection}{#1}
-%     \mbox{} % > Add empty line to avoid warnings
-%     % \markboth{#1}{} % > Mark subsection manually for headers
-% }
-
-% \makeatletter % > Make @ a valid character for use in command names
-% % > Define a new command \unnsubsection
-% \newcommand{\unnsubsection}{
-% \@ifnextchar[ % > Check if the next character is [
-% \unnsubsection@withopt % > If the next character is [, call the \unnsubsection@withopt command
-% \unnsubsection@withoutopt % > If the next character is not [, call the \unnsubsection@withoutopt command
-% }
-% % > Define a new command \unnsubsection@withopt that takes two arguments
-% \def\unnsubsection@withopt[#1]#2{
-%     \subsection*{#2} % > Create a new unnumbered subsection with a name #2
-%     \addcontentsline{toc}{subsection}{#2}% > Add the subsection to the table of contents
-%     \label{#1} % > Create a unique identifier for the subsection
-%     \mbox{} % > Add an empty line to avoid warnings
-% }
-% % > Define a new command \unnsubsection@withoutopt that takes one argument
-% \newcommand{\unnsubsection@withoutopt}[1]{
-%     \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
-%     \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
-%     \mbox{} % > Add an empty line to avoid warnings
-% }
-% \makeatother % > Change the category code of @ back to its original value
 
 \newcommand{\unnsubsection}[1]{
     \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
@@ -230,11 +202,14 @@
 % ======================================================================
 % == Text Objects 
 % ======================================================================
-
+\usepackage{xspace} % > For adding spaces after commands
 \usepackage[normalem]{ulem} % > For underlining with dots for handwriting
 
 % ## Tell Latex to never break these words at the end of a line
 \hyphenation{hMSC hMSCs MM}
+% > Commands for words containing hyphens to not be broken
+\newcommand{\nMAina}{\mbox{nMA-INA6}\xspace}
+\newcommand{\MAina}{\mbox{MA-INA6}\xspace}
 
 
 % == Hyperlinks ========================================================
@@ -358,13 +333,16 @@ literate={ ( }{{{\color{parentheses}(}}}1
     range-units=single, % > For concentration ranges
 }
 % ## Declare units
-% > Use like this: \SI{10}{\molar} --> 10 M
+% > \SI{10}{\molar} --> 10 M
+% > \SIrange{10}{20}{\molar} --> 10--20 M
+% > \SIlist{10;20;30}{\molar} --> 10, 20, 30 M
 \DeclareSIUnit{\molar}{M} % >  Molar
 \DeclareSIUnit{\um}{\micro\meter} % >  Micrometer µm
 \DeclareSIUnit{\bp}{bp} % > Base pairs
 \DeclareSIUnit{\nt}{nt} % > Nucleotides
 \DeclareSIUnit{\normcounts}{normalized counts} % > Nanograms
 \DeclareSIUnit{\X}{X} % > Declare X for concentrations
+\DeclareSIUnit{\cellspercm}{cells/cm\textsuperscript{2}} % > cells/cm^2
 
 
 
@@ -509,9 +487,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #1 is the first part of the caption
 % > #2 is the second part of the caption
 \newcommand{\splitcaption}[2]{ %
-\captionof{figure}{#1 -- \textit{Continued on next page}}
-\ContinuedFloat
-\caption*{\textit{Continued from previous page} -- #2}
+    \captionof{figure}{#1 -- \textit{Continued on next page}}
+    \ContinuedFloat
+    \caption*{\textit{Continued from previous page} -- #2}
 }
 
 
@@ -571,7 +549,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #2 is the scale of each pdf page, defaults to 98% (.98)
 % > #3 {} argument is the name of the toc section
 % > #4 {} argument is the name of the file
-
 \NewDocumentCommand{\addpdf}{sO{.98}mm}{
     \setcounter{includepdfpage}{1} % Reset the includepdfpage counter to 1
     \IfBooleanTF{#1}{}{
