@@ -233,6 +233,9 @@
 
 \usepackage[normalem]{ulem} % > For underlining with dots for handwriting
 
+% ## Tell Latex to never break these words at the end of a line
+\hyphenation{hMSC hMSCs MM}
+
 
 % == Hyperlinks ========================================================
 \usepackage[hidelinks]{hyperref} % > For clickable links, [remove boxes]
@@ -395,7 +398,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
         \IfStrEq{#2}{}
         {\includegraphics[width=#1\textwidth]{#3}}
         {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
-    \end{minipage}
+    \end{minipage} %
 }
 
 
@@ -421,6 +424,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \setlength{\fmright}{0.78in}
 \setlength{\fmbottom}{0.98in}
 \setlength{\fmleft}{0.78in}
+
 
 % == Tables ============================================================
 \usepackage{longtable} % > For proper tables
@@ -498,6 +502,16 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \newcommand{\tile}[1]{%
     % > Makes bold, unbreakable space after, strip whitespaces
     \ignorespaces\textbf{#1:~}\ignorespaces
+}
+
+
+% ## A command to split a cpation into two parts
+% > #1 is the first part of the caption
+% > #2 is the second part of the caption
+\newcommand{\splitcaption}[2]{ %
+\captionof{figure}{#1 -- \textit{Continued on next page}}
+\ContinuedFloat
+\caption*{\textit{Continued from previous page} -- #2}
 }
 
 
