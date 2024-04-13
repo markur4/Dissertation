@@ -146,27 +146,33 @@
 %     % \markboth{#1}{} % > Mark subsection manually for headers
 % }
 
-\makeatletter % > Make @ a valid character for use in command names
-% > Define a new command \unnsubsection
-\newcommand{\unnsubsection}{
-\@ifnextchar[ % > Check if the next character is [
-\unnsubsection@withopt % > If the next character is [, call the \unnsubsection@withopt command
-\unnsubsection@withoutopt % > If the next character is not [, call the \unnsubsection@withoutopt command
-}
-% > Define a new command \unnsubsection@withopt that takes two arguments
-\def\unnsubsection@withopt[#1]#2{
-    \subsection*{#2} % > Create a new unnumbered subsection with a name #2
-    \addcontentsline{toc}{subsection}{#2}% > Add the subsection to the table of contents
-    \label{#1} % > Create a unique identifier for the subsection
-    \mbox{} % > Add an empty line to avoid warnings
-}
-% > Define a new command \unnsubsection@withoutopt that takes one argument
-\newcommand{\unnsubsection@withoutopt}[1]{
+% \makeatletter % > Make @ a valid character for use in command names
+% % > Define a new command \unnsubsection
+% \newcommand{\unnsubsection}{
+% \@ifnextchar[ % > Check if the next character is [
+% \unnsubsection@withopt % > If the next character is [, call the \unnsubsection@withopt command
+% \unnsubsection@withoutopt % > If the next character is not [, call the \unnsubsection@withoutopt command
+% }
+% % > Define a new command \unnsubsection@withopt that takes two arguments
+% \def\unnsubsection@withopt[#1]#2{
+%     \subsection*{#2} % > Create a new unnumbered subsection with a name #2
+%     \addcontentsline{toc}{subsection}{#2}% > Add the subsection to the table of contents
+%     \label{#1} % > Create a unique identifier for the subsection
+%     \mbox{} % > Add an empty line to avoid warnings
+% }
+% % > Define a new command \unnsubsection@withoutopt that takes one argument
+% \newcommand{\unnsubsection@withoutopt}[1]{
+%     \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
+%     \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
+%     \mbox{} % > Add an empty line to avoid warnings
+% }
+% \makeatother % > Change the category code of @ back to its original value
+
+\newcommand{\unnsubsection}[1]{
     \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
-    \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
+    \addcontentsline{toc}{subsection}{#1} % > Add the subsection to the table of contents
     \mbox{} % > Add an empty line to avoid warnings
 }
-\makeatother % > Change the category code of @ back to its original value
 
 % == Abstracts =========================================================
 
@@ -265,7 +271,7 @@
 
 
 
-% ## Define the default style
+% ## Define the default listning style
 \lstdefinestyle{defaultstyle}{
 frame=single, % > add a frame
 xleftmargin=\leftm,
@@ -290,7 +296,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 { = }{{{\color{operatorcolor}=}}}1,
 }
 
-% ## Define the Python style
+% ## Define the Python listing style
 \lstdefinestyle{pythonstyle}{
     style=defaultstyle,  % > Use the default style
     language=Python,  % > Set the language to Python
@@ -310,7 +316,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 }
 
 
-% ## Define styles that prevents page breaks
+% ## Define listing styles that prevents page breaks
 \lstdefinestyle{defaultstyleNonbreaking}{
     float=h, % > Prevent page breaks & Place at exactly this position
     style=defaultstyle,  % > Use the default style
@@ -321,15 +327,40 @@ literate={ ( }{{{\color{parentheses}(}}}1
 }
 
 
-% == Units & Numbers ===================================================
+% == Chemical Equations ================================================
 %\usepackage[version=3]{mhchem} % > Package for chemical equation typesetting
-%\usepackage{amsmath} % > normal font for math environment
+
+
+% == Math ==============================================================
+\usepackage{amsmath}  % > Enhances math handling in LaTeX
+\usepackage{mathastext} % for upright numbers
+% \usepackage{sansmathfonts} % > For sans-serif math
+
+% ## Sans-serif font for math environment
+\usepackage{sansmath}  % > Enables turning on sans-serif math mode, and using other environments
+% \sansmath  % !! This is called right after \begin{document}
+
+% ## Make numbers non-italic
+% \usepackage[italic]{mathastext} % for upright numbers
+% \usepackage{newtxsf} % for sans-serif math
+
+
+
+
+% == Units =============================================================
 \usepackage{siunitx} % > Provides the \SI{}{} and \si{} command 
-\sisetup{range-phrase=--} % > for concentration ranges
-\sisetup{range-units=single} % > remove unit after range start
-\DeclareSIUnit{\molar}{M} % > Declare  unit molar
-\DeclareSIUnit{\bp}{bp} % > Declare unit base pairs
-\DeclareSIUnit{\nt}{nt} % > Declare unit nucleotides
+\sisetup{
+    detect-all, % > Apply the font settings to the text font
+    range-phrase=--, % > Remove unit after range start
+    range-units=single, % > For concentration ranges
+}
+% ## Declare units
+% > Use like this: \SI{10}{\molar} --> 10 M
+\DeclareSIUnit{\molar}{M} % >  Molar
+\DeclareSIUnit{\um}{\micro\meter} % >  Micrometer µm
+\DeclareSIUnit{\bp}{bp} % > Base pairs
+\DeclareSIUnit{\nt}{nt} % > Nucleotides
+\DeclareSIUnit{\normcounts}{normalized counts} % > Nanograms
 \DeclareSIUnit{\X}{X} % > Declare X for concentrations
 
 
@@ -370,10 +401,14 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 % ## Define a command to include an image that continues on the next page
 \NewDocumentCommand{\includeimagecontinued}{O{0.99} O{} O{} m}{
-    \addtocounter{figure}{-1} % > Decrease the figure counter by 1
-    % > Include the image overriding the caption
-    \includeimage[#1][#2]{#4}
-    \captionof{figure}{\textit{(continued from previous page)} #3}
+    {
+            % > Set the caption format (not bold, if continued)
+            % \captionsetup[figure]{labelformat=appendixfigurecontinued}
+            \addtocounter{figure}{-1} % > Decrease the figure counter by 1
+            % > Include the image overriding the caption
+            \includeimage[#1][#2]{#4}
+            \captionof{figure}{\textit{(continued from previous page)} #3}
+        }
 }
 
 
@@ -412,8 +447,10 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
 \DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
 \DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesection~Figure #2}}
+% \DeclareCaptionLabelFormat{appendixfigurecontinued}{Appendix \thesection~Figure #2}
 \DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
 \DeclareCaptionLabelFormat{appendixtable}{\textbf{Appendix \thesection~Table #2}}
+
 
 % > Set the caption format for each type of object
 \captionsetup[lstlisting]{labelformat=listing,
@@ -426,27 +463,41 @@ literate={ ( }{{{\color{parentheses}(}}}1
 }
 \setdefaulttablecaption
 
+
 % ## Command for resetting counters for figures and tables to 0
 \newcommand{\resetcounters}{
     \setcounter{figure}{0}
     \setcounter{table}{0}
 }
 
+
 % ## Define how tables captions look like around longtable pagebreaks
-\newcommand{\longtablecaptions}{
-    
-    \multicolumn{3}{l}
-    {\sffamily Appendix \thesection~\tablename\ \thetable\ -- \textit{Continued from previous page}} \\
+% > #1 is the number of columns
+% > #2 is the text added before "Continued from previous page"
+\newcommand{\longtablecaptions}[2]{
+
+    % > Define secondary header row(s) for every time the page breaks
+    \multicolumn{#1}{l}
+    {\footnotesize \sffamily \textbf{#2~\tablename~\thetable~}-- \textit{Continued from previous page}} \\
     \hline
     \endhead
-    
+
+    % > The footer row for middle pages after page break
     \hline
-    \multicolumn{3}{l}
-    {\sffamily \textit{Continued on next page}}                                    \\
+    \multicolumn{#1}{l}
+    {\footnotesize \sffamily \textit{Continued on next page}}                                    \\
     \endfoot
 
+    % > The footer row for the last page
     \hline \hline
     \endlastfoot
+}
+
+% ## Format for Figure Tile Refernces (A, B, C) within captions
+% > e.g. \subfig{A} --> A: in bold
+\newcommand{\tile}[1]{%
+    % > Makes bold, unbreakable space after, strip whitespaces
+    \ignorespaces\textbf{#1:~}\ignorespaces
 }
 
 
@@ -460,7 +511,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ' \refapdx{sec:sup_figtabs}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
 
 \NewDocumentCommand{\refapdx}{m g}{%
-    Appendix \ref{#1}\IfValueT{#2}{: \autoref{#2}}%
+    Appendix~\ref{#1}\IfValueT{#2}{:~\autoref{#2}}%
 }
 
 

@@ -19,12 +19,8 @@
 % ======================================================================
 % == Abstract
 % ======================================================================
-% \addcontentsline{toc}{subsection}{Abstract} % > Add to Table of Contents
 
-% \renewcommand{\abstractname}{Abstract} % > Rename what is displayed
-% \begin{abstract}
-%     lorem ipsum
-% \end{abstract}
+
 
 % > First argument is the label
 % > Second argument is the header name
@@ -38,7 +34,7 @@
 % == Introduction
 % ======================================================================
 % \unnsubsection{C1:Introduction}{Introduction}
-\unnsubsection[c1:introduction]{Introduction}
+\unnsubsection{Introduction}\label{C1:introduction} % > Require unique label
 \ %
 lorem ipsum dolor sit amet
 
@@ -46,16 +42,16 @@ lorem ipsum dolor sit amet
 % ======================================================================
 % == Methods
 % ======================================================================
-\unnsubsection[c1:methods]{Methods}
+\unnsubsection{Methods}
 \ %
-Methods are described in \refapdx{subapdx:materialsmethods}
+Methods are described in \refapdx{subapdx:methods}
 
 
 
 % ======================================================================
 % == Results
 % ======================================================================
-\unnsubsection[c1:results]{Results}
+\unnsubsection{Results}
 \ %
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -98,7 +94,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 % ## Fig. 2
 \includeimage[1][{\fmleft} 7.4in {\fmright} {\fmtop}]{
     FIGS/figures9_2.pdf
-}\captionof{figure}{
+}\captionof{figure}{ %
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -119,7 +115,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 % ## Fig. 3
 \includeimage[1][{\fmleft} 5.4in {\fmright} {\fmtop}]{
     FIGS/figures9_3.pdf
-}\captionof{figure}{
+}\captionof{figure}{ %
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -138,7 +134,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 % ## Fig. 4
 \includeimage[1][{\fmleft} 4.3in {\fmright} {\fmtop}]{
     FIGS/figures9_4.pdf
-}\captionof{figure}{
+}\captionof{figure}{ %
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -154,7 +150,7 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 % ## Fig. 5
 \includeimage[.97][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
     FIGS/figures9_5.pdf
-}\captionof{figure}{
+}\captionof{figure}{ %
     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
@@ -171,13 +167,26 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 
 % ## Fig. 6
-\includeimage[1][{\fmleft} 3.3in {\fmright} {\fmtop}]{
-    FIGS/figures9_6.pdf
-}\captionof{figure}{
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-}\label{fig:6}
+\includeimage[1][{\fmleft} 3.3in {\fmright} {\fmtop}]{ FIGS/figures9_6.pdf
+}\captionof{figure}{ %
+    Survival of patients with multiple myeloma regarding the expression levels
+    of adhesion and bone retention genes. \tile{A} p-value distribution of genes
+    associated with patient survival ($n=535$) depending on high or low
+    expression levels. Red dashed line marks the significance threshold of
+    $p\text{-adj}=0.05$. Histogram of $p$-values was plotted using a bin width
+    of \(-\log_{10}(0.05)/2\). Patients with high and low gene expression were
+    delineated using maximally selected rank statistics (maxstat). \tile{B}
+    Survival curves for three genes taken from the list of adhesion genes shown
+    in (A), maxstat thresholds defining high and low expression were:
+    \textit{CXCL12}: 81.08; \textit{DCN}: 0.75; \textit{TGM2}:
+    \SI{0.66}{\normcounts}. \tile{C} Gene expression (RNAseq, $n=873$) measured
+    in normalized counts (edgeR) of \textit{CXCL12}, \textit{DCN} in Bone Marrow
+    Plasma Cell (BMPC), Monoclonal Gammopathy of Undetermined Significance
+    (MGUS), smoldering Multiple Myeloma (sMM), Multiple Myeloma (MM), Multiple
+    Myeloma Relapse (MMR), Human Myeloma Cell Lines (HMCL). The red dashed line
+    marks one normalized read count. \tile{Statistics} (A, B): Log-rank test;
+    (C): Kruskal-Wallis, Mann–Whitney U Test. All $p$-values were corrected
+    using the Benjamini-Hochberg procedure. }\label{fig:6}
 
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
@@ -208,59 +217,59 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
                 \refapdx{apdx:supplemental}{tab:S2}. Bone Marrow Plasma Cells
                 (BMPC), Monoclonal Gammopathy of Undetermined Significance (MGUS),
                 smoldering Multiple Myeloma (sMM), Multiple Myeloma (MM), and
-                Multiple Myeloma Relapse (MMR). p-unc = unadjusted p-values; p-adj:
+                Multiple Myeloma Relapse (MMR). p-unc: unadjusted p-values; p-adj:
                 p-values adjusted using the Benjamini-Hochberg method with 101
-            genes.}\label{tab:1}                                                                   \\
+            genes.}\label{tab:1}                                                  \\
             \myheader
             \endfirsthead
 
-            \longtablecaptions
+            \longtablecaptions{3}{}
 
             \hline
 
             \multirowcell{3}{3cm}{Not Downregulated (or overall low expression)}
-             & CCNE2  & ENSG00000175305 & Overall    & low  & 5.34E-04 & 8.64E-03                  \\
+             & CCNE2  & ENSG00000175305 & Overall    & low  & 5.34E-04 & 8.64E-03 \\
             \hhline{~------}
-             & MMP2   & ENSG00000087245 & Prog. Free & high & 2.29E-05 & 2.32E-03                  \\
+             & MMP2   & ENSG00000087245 & Prog. Free & high & 2.29E-05 & 2.32E-03 \\
             \hhline{~------}
-             & OSMR   & ENSG00000145623 & Prog. Free & high & 5.67E-04 & 7.15E-03                  \\
+             & OSMR   & ENSG00000145623 & Prog. Free & high & 5.67E-04 & 7.15E-03 \\
             \hhline{~------}
             \hline
 
-            \multirowcell{17}{2.7cm}{Continuously Downregulated (BMPC > MGUS > sMM > MM > MMR)}
-             & AXL    & ENSG00000167601 & Overall    & high & 3.64E-05 & 1.84E-03                  \\
+            \multirowcell{8}{2.7cm}{Continuously Downregulated (BMPC > MGUS > sMM > MM > MMR)}
+             & AXL    & ENSG00000167601 & Overall    & high & 3.64E-05 & 1.84E-03 \\
             \hhline{~------}
-             & COL1A1 & ENSG00000108821 & Prog. Free & high & 3.03E-04 & 4.37E-03                  \\
+             & COL1A1 & ENSG00000108821 & Prog. Free & high & 3.03E-04 & 4.37E-03 \\
             \hhline{~~~----}
-             &        &                 & Overall    & high & 5.93E-04 & 8.64E-03                  \\
+             &        &                 & Overall    & high & 5.93E-04 & 8.64E-03 \\
             \hhline{~------}
-             & CXCL12 & ENSG00000107562 & Prog. Free & high & 1.16E-04 & 2.93E-03                  \\
+             & CXCL12 & ENSG00000107562 & Prog. Free & high & 1.16E-04 & 2.93E-03 \\
             \hhline{~~~----}
-             &        &                 & Overall    & high & 6.48E-04 & 8.64E-03                  \\
+             &        &                 & Overall    & high & 6.48E-04 & 8.64E-03 \\
             \hhline{~------}
-             & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03                  \\
+             & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03 \\
             \hhline{~------}
-             & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03                  \\
+             & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03 \\
             \hhline{~------}
-             & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03                  \\
+             & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03 \\
             \hhline{~------}
-             & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03                  \\
+             & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03 \\
             \hhline{~------}
-             & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03                  \\
+             & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03 \\
             \hhline{~------}
-             & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03                  \\
+             & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03 \\
             \hhline{~------}
-             & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03                  \\
+             & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03 \\
             \hhline{~------}
-             & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03                  \\
+             & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03 \\
             \hhline{~------}
-             & MFAP5  & ENSG00000197614 & Prog. Free & high & 2.43E-04 & 4.09E-03                  \\
+             & MFAP5  & ENSG00000197614 & Prog. Free & high & 2.43E-04 & 4.09E-03 \\
             \hhline{~------}
-             & MMP14  & ENSG00000157227 & Prog. Free & high & 6.93E-05 & 2.93E-03                  \\
+             & MMP14  & ENSG00000157227 & Prog. Free & high & 6.93E-05 & 2.93E-03 \\
             \hhline{~------}
-             & MYL9   & ENSG00000101335 & Prog. Free & high & 1.46E-04 & 2.95E-03                  \\
+             & MYL9   & ENSG00000101335 & Prog. Free & high & 1.46E-04 & 2.95E-03 \\
             \hhline{~~~----}
-             &        &                 & Overall    & high & 1.56E-05 & 1.57E-03                  \\
+             &        &                 & Overall    & high & 1.56E-05 & 1.57E-03 \\
             \hline
         \end{longtable}
     }
@@ -278,28 +287,28 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     FIGS/figures9_7.pdf
 }\captionof{figure}{
     Proposed model of “Detached Daughter Driven Dissemination” (DDDD) in
-    aggregating multiple myeloma. \textbf{Heterotypic Interaction:} Malignant
+    aggregating multiple myeloma. \tile{Heterotypic Interaction} Malignant
     plasma cells colonize the bone marrow microenvironment by adhering to an MSC
     (or osteoblast, ECM, etc.) to maximize growth and survival through paracrine
     and adhesion mediated signaling, even if contact may trigger initial
     apoptosis. Gene expression will focus on establishing a strong anchor within
     the bone marrow, but also on attracting other myeloma cells (via secretion
-    of ECM factors and CXCL12/CXCL8, respectively). \textbf{Cell Division:} Cell
+    of ECM factors and CXCL12/CXCL8, respectively). \tile{Cell Division} Cell
     fission can generate one daughter cell that no longer adheres to the MSC
-    (nMA). \textbf{Homotypic Interaction:} If myeloma cells have the capacity to
+    (nMA). \tile{Homotypic Interaction} If myeloma cells have the capacity to
     grow as aggregates, the daughter cell stays attached to their MSC-adhering
-    mother cell (MA). \textbf{Re-Adhesion:} The daughter cell “rolls around” the
+    mother cell (MA). \tile{Re-Adhesion} The daughter cell “rolls around” the
     mother cell until it re-adheres to the MSC. Our model estimates the rolling
-    duration to be 1-10 h long. \textbf{Proliferation \& Saturation:} We
+    duration to be \SIrange{1}{10}{\hour} long. \tile{Proliferation \& Saturation} We
     estimate that a single myeloma cell covers one MSC completely after roughly
     four population doublings. When heterotypic adhesion is saturated,
     subsequent daughter cells benefit from a homotypic interaction, since they
     stay close to growth-factor secreting MSCs and focus gene expression on
     proliferation (e.g. driven by E2F) and not adhesion (driven by NF-κB).
-    \textbf{Critical Size:} Homotypic interaction is weaker than heterotypic
+    \tile{Critical Size} Homotypic interaction is weaker than heterotypic
     interaction, and each cell fission destabilizes the aggregate. Hence,
     detachment of myeloma cells may depend mostly on aggregate size.
-    \textbf{Dissemination:} After myeloma cells have detached, they gained a
+    \tile{Dissemination} After myeloma cells have detached, they gained a
     viability advantage through IL-6-independence (with unknown duration), which
     enhances their survival outside of the bone marrow and allows them to spread
     throughout the body. }\label{fig:7}
@@ -313,27 +322,27 @@ Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 
+% lorem ipsum
+
+% V-Well is described in \refapdx{apdx:supplemental}{fig:S1}
+
+% V-Well is described in \refapdx{apdx:supplemental}{fig:S1}, \ref{fig:S2}
+
+% % Image cytometry is described in \autoref{subapdx:sup_figtabs} \autoref{fig:S2}
+
+% Full analysis is shown in \refapdx{subapdx:example_analysis}
+
+% % ======================================================================
+% % == Discussion
+% % ======================================================================
+\unnsubsection{Discussion}\label{C1:discussion} % > Require unique label
+\ %
 lorem ipsum
 
-V-Well is described in \refapdx{apdx:supplemental}{fig:S1}
-
-V-Well is described in \refapdx{apdx:supplemental}{fig:S1}, \ref{fig:S2}
-
-% Image cytometry is described in \autoref{subapdx:sup_figtabs} \autoref{fig:S2}
-
-Full analysis is shown in \refapdx{subapdx:example_analysis}
-
-% ======================================================================
-% == Discussion
-% ======================================================================
-\unnsubsection[c1:discussion]{Discussion}
-\
-lorem ipsum
-
-% == Paper 1 ===========================================================
-% > You could import .pdf here, but chapter based theses should apply the 
-% > manuscripts into the formatting of the thesis
-% \addpdf{Research Article: Cancer Research Communications}{PUBLICATIONS/AACR.pdf}
+% % == Paper 1 ===========================================================
+% % > You could import .pdf here, but chapter based theses should apply the 
+% % > manuscripts into the formatting of the thesis
+% % \addpdf{Research Article: Cancer Research Communications}{PUBLICATIONS/AACR.pdf}
 
 
 
