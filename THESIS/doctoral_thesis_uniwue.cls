@@ -34,6 +34,8 @@
 \LoadClass{extarticle}
 
 
+
+
 % ======================================================================
 % == Universal Packages ================================================
 % ======================================================================
@@ -47,6 +49,7 @@
 % > adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
+\usepackage{needspace} % > For keeping text together on the same page
 
 
 % ======================================================================
@@ -316,7 +319,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 % ## Sans-serif font for math environment
 \usepackage{sansmath}  % > Enables turning on sans-serif math mode, and using other environments
-% \sansmath  % !! This is called right after \begin{document}
+% \sansmath  % !! Can only be called in the document, not in the preamble
 
 % ## Make numbers non-italic
 % \usepackage[italic]{mathastext} % for upright numbers
@@ -336,14 +339,17 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > \SI{10}{\molar} --> 10 M
 % > \SIrange{10}{20}{\molar} --> 10--20 M
 % > \SIlist{10;20;30}{\molar} --> 10, 20, 30 M
-\DeclareSIUnit{\molar}{M} % >  Molar
 \DeclareSIUnit{\um}{\micro\meter} % >  Micrometer µm
-\DeclareSIUnit{\bp}{bp} % > Base pairs
-\DeclareSIUnit{\nt}{nt} % > Nucleotides
-\DeclareSIUnit{\normcounts}{normalized counts} % > Nanograms
-\DeclareSIUnit{\X}{X} % > Declare X for concentrations
+\DeclareSIUnit{\normcounts}{normalized counts} % > normalized counts
 \DeclareSIUnit{\cellspercm}{cells/cm\textsuperscript{2}} % > cells/cm^2
+% \DeclareSIUint{\std}{\mathrm{\sigma}} % > Standard deviation
 
+
+% ## Define commands combining numbers and units
+% > \SIprod{130}{100}{mm} --> 130x100 mm
+\newcommand{\SIprod}[3]{$\num{#1}\times\num{#2}$\,\si{#3}}
+% > \SIdiv{130}{100}{mm} --> 130/100 mm
+\newcommand{\SIslash}[3]{$\num{#1}\text{/}\num{#2}$\,\si{#3}}
 
 
 
@@ -358,7 +364,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
     font={sf, footnotesize},
     singlelinecheck=false,
     margin=0.5\leftm]{caption}
-% \usepackage{needspace}
+
 
 
 % ## Define a command to include an image
@@ -436,12 +442,12 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 % > Set the caption format for each type of object
 \captionsetup[lstlisting]{labelformat=listing,
-    font={sf, footnotesize, oneandhalfspacing}}
+    font={sf, footnotesize, oneandhalfspacing, sansmath}}
 \captionsetup[figure]{labelformat=figure,
-    font={sf, footnotesize, oneandhalfspacing}, belowskip=\vhalf}
+    font={sf, footnotesize, oneandhalfspacing, sansmath}, belowskip=\vhalf}
 \newcommand{\setdefaulttablecaption}{
     \captionsetup[table]{labelformat=table,
-        font={sf, footnotesize, oneandhalfspacing}}
+        font={sf, footnotesize, oneandhalfspacing, sansmath}}
 }
 \setdefaulttablecaption
 
@@ -519,8 +525,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \let\cite\citep % > Rename \citep to \cite
 % > Examples:
 % ' \citeauthor*{jon90} --> Jones, Baker, and Williams
-% ' \citet*{jon90} --> Jones, Baker, and Williams (1990)
-% ' \citep*{jon90} --> (Jones, Baker, and Williams, 1990)
+% ' \citet{jon90} --> Jones, Baker, and Williams (1990)
+% ' \citep{jon90} --> (Jones, Baker, and Williams, 1990)
 % ' \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
 % ## Define the bibliography style

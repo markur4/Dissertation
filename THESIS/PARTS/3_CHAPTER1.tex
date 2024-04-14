@@ -154,6 +154,8 @@ Primary human MSCs were collected with the written informed consent of all
  guidelines (Helsinki Declaration) and approved by the local Ethics Committee of
  the University of Würzburg (186/18).
 
+ 
+ 
 \subsubsection*{Cultivation and Co-Culturing of primary hMSCs and INA-6}
 \ %
 Primary human MSCs were obtained from the femoral head of 34 non-myeloma
@@ -172,23 +174,38 @@ hMSCs so that the co-culture comprised \SI{33}{\percent} (v/v) of CM gathered
 directly from the respective hMSC donor. The co-cultures were not substituted
 for IL-6 \cite{chatterjeePresenceBoneMarrow2002}.
 
+% 132 Cell Viability and Apoptosis Assay
+% 133 Cell viability and apoptosis rates were measured using CellTiter-Glo Luminescent Cell
+% 134 Viability Assay and Caspase-Glo 3/7 Assay, respectively (Promega GmbH, Mannheim,
+% 135 Germany).
+
+
+
 \subsubsection*{Cell Viability and Apoptosis Assay}
 \ %
 Cell viability and apoptosis rates were measured using \textit{CellTiter-Glo Luminescent
 Cell Viability Assay} and \textit{Caspase-Glo 3/7 Assay}, respectively (Promega GmbH,
 Mannheim, Germany).
 
+
 % 136 Automated Fluorescence Microscopy
 % 137 Microscopic images were acquired using an Axio Observer 7 (Zeiss) with a COLIBRI LED
 % 138 light source and motorized stage top using 5x and 10x magnification. The tiled images had
 % 139 an automatic 8-10% overlap and were not stitched.
-
 
 \subsubsection*{Automated Fluorescence Microscopy}
 \ %
 Microscopic images were acquired using an Axio Observer 7 (Zeiss) with a COLIBRI LED
 light source and motorized stage top using 5x and 10x magnification. The tiled images had
 an automatic \SIrange{8}{10}{\percent} overlap and were not stitched.
+
+
+% 140 Live Cell Imaging
+% 141 hMSCs (stained with PKH26) were placed into an ibidi Stage Top Incubation System and
+% 142 equilibrated to 80% humidity and 5% CO2. INA-6 (2 × 103 cells/cm2) were added directly
+% 143 before the start of acquisition. Brightfield and fluorescence images of up to 13 mm2 of the co-
+% 144 culture area were acquired every 15 min for 63 h. Each event of interest was manually
+% 145 analyzed and categorized into defined event parameters.
 
 \subsubsection*{Live Cell Imaging}
 hMSCs (stained with PKH26) were placed into an ibidi Stage Top Incubation System
@@ -211,14 +228,6 @@ parameters.
 % 153 pellet was isolated by pipetting.
 
 
-% 154 Cell Cycle Profiling by Image Cytometry
-% 155 Isolated INA-6 cells were fixed in 70% ice-cold ethanol, washed, resuspended in PBS,
-% 156 distributed in 96-well plates, and stained with Hoechst 33342. The plates were scanned at 5x
-% 157 magnification. A pre-trained convolutional neural network (Intellesis, Zeiss) was fine-tuned to
-% 158 segment the scans into single nuclei and exclude fragmented nuclei. Nuclei were filtered to
-% 159 exclude extremes of size roundness. The G0/G1 frequency was determined by Gaussian
-% 160 curve fitting.
-
 \subsubsection*{V-well Adhesion Assay}
 \ %
 INA-6 cells were arrested during mitosis by two treatments with thymidine, followed by
@@ -229,6 +238,14 @@ top of confluent hMSCs and adhered for \SIrange{1}{3}{\hour}. The co-culture was
 into the tip of the V-well (\SI{2000}{rpm}, \SIrange{5}{10}{\minute}). MSC-adhering INA-6 cells were manually
 detached by rapid pipetting. The pellet brightness was measured microscopically and the
 pellet was isolated by pipetting.
+
+% 154 Cell Cycle Profiling by Image Cytometry
+% 155 Isolated INA-6 cells were fixed in 70% ice-cold ethanol, washed, resuspended in PBS,
+% 156 distributed in 96-well plates, and stained with Hoechst 33342. The plates were scanned at 5x
+% 157 magnification. A pre-trained convolutional neural network (Intellesis, Zeiss) was fine-tuned to
+% 158 segment the scans into single nuclei and exclude fragmented nuclei. Nuclei were filtered to
+% 159 exclude extremes of size roundness. The G0/G1 frequency was determined by Gaussian
+% 160 curve fitting.
 
 \subsubsection*{Cell Cycle Profiling by Image Cytometry}
 \ %
@@ -341,6 +358,13 @@ and are available at the European Nucleotide Archive (ENA) under accession
 numbers PRJEB36223 and PRJEB37100. The expression level was categorized into
 ``high'' and ``low'' using \texttt{maxstat} (Maximally selected Rank Statistics)
 thresholds \cite{hothornMaximallySelectedRank}.
+
+% 200 Data Availability Statement
+% 201 A detailed description of the methods is provided in the Supplementary Material section. Raw
+% 202 tabular data and examples of analyses and videos are available in the github repository, link.
+% 203 Raw RNAseq data are available from the NCBI Gene Expression Omnibus (GEO)
+% 204 (RRID:SCR_005012, link) (GSE261423). Microscopy data are available at BioStudies
+% 205 (EMBL-EBI) (RRID:SCR_004727, link) (S-BIAD1092).
 
 \subsubsection*{Data Availability Statement}
 \ %
