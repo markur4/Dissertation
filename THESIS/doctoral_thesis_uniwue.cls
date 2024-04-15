@@ -213,6 +213,8 @@
 % > Commands for words containing hyphens to not be broken
 \newcommand{\nMAina}{\mbox{nMA-INA6}\xspace}
 \newcommand{\MAina}{\mbox{MA-INA6}\xspace}
+\newcommand{\CMina}{\mbox{CM-INA6}\xspace}
+\newcommand{\INA}{\mbox{INA-6}\xspace}
 
 
 % == Hyperlinks ========================================================
@@ -342,15 +344,13 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \DeclareSIUnit{\um}{\micro\meter} % >  Micrometer µm
 \DeclareSIUnit{\normcounts}{normalized counts} % > normalized counts
 \DeclareSIUnit{\cellspercm}{cells/cm\textsuperscript{2}} % > cells/cm^2
-% \DeclareSIUint{\std}{\mathrm{\sigma}} % > Standard deviation
-
 
 % ## Define commands combining numbers and units
 % > \SIprod{130}{100}{mm} --> 130x100 mm
-\newcommand{\SIprod}[3]{$\num{#1}\times\num{#2}$\,\si{#3}}
+\newcommand{\SIprod}[3]{$\num{#1}$\,$\times$\,$\num{#2}$\,\si{#3}}
 % > \SIdiv{130}{100}{mm} --> 130/100 mm
-\newcommand{\SIslash}[3]{$\num{#1}\text{/}\num{#2}$\,\si{#3}}
-
+\newcommand{\SIslash}[3]{$\num{#1}$\,/\,$\num{#2}$\,\si{#3}}
+\newcommand{\SIplusminus}[3]{$\num{#1}$\,$\pm$\,$\num{#2}$\,\si{#3}}
 
 
 % ======================================================================
@@ -364,7 +364,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
     font={sf, footnotesize},
     singlelinecheck=false,
     margin=0.5\leftm]{caption}
-
+% \usepackage{wrapfig} % > For wrapping text around images
 
 
 % ## Define a command to include an image
@@ -373,7 +373,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #3 is the path to the image
 % ## Example:
 % > \includeimage[scale][left bottom right top]{
-% >     pathtopicture
+    % >     pathtopicture
 % > }
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m}{
     \vspace{\vfull}
@@ -383,8 +383,19 @@ literate={ ( }{{{\color{parentheses}(}}}1
         {\includegraphics[width=#1\textwidth]{#3}}
         {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
     \end{minipage} %
-}
-
+    }
+% > #4 is the float position (optional, default is h)
+% \NewDocumentCommand{\includeimage}{O{0.99} O{} m O{h}}{
+%     \begin{wrapfigure}{#4}{#1\textwidth}
+%         \vspace{\vfull}
+%         \begin{minipage}{\linewidth}
+%             \centering
+%             \IfStrEq{#2}{}
+%             {\includegraphics[width=\linewidth]{#3}}
+%             {\includegraphics[width=\linewidth, trim=#2, clip]{#3}}
+%         \end{minipage}
+%     \end{wrapfigure}
+% }
 
 % ## Define a command to include an image that continues on the next page
 \NewDocumentCommand{\includeimagecontinued}{O{0.99} O{} O{} m}{

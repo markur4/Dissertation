@@ -150,12 +150,12 @@ See \refapdx{subapdx:methods} for a complete method list and description.
 \subsubsection*{Ethics Statement}
 \ %
 Primary human MSCs were collected with the written informed consent of all
- patients. The procedure was conducted in accordance with recognized ethical
- guidelines (Helsinki Declaration) and approved by the local Ethics Committee of
- the University of Würzburg (186/18).
+patients. The procedure was conducted in accordance with recognized ethical
+guidelines (Helsinki Declaration) and approved by the local Ethics Committee of
+the University of Würzburg (186/18).
 
- 
- 
+
+
 \subsubsection*{Cultivation and Co-Culturing of primary hMSCs and INA-6}
 \ %
 Primary human MSCs were obtained from the femoral head of 34 non-myeloma
@@ -184,7 +184,7 @@ for IL-6 \cite{chatterjeePresenceBoneMarrow2002}.
 \subsubsection*{Cell Viability and Apoptosis Assay}
 \ %
 Cell viability and apoptosis rates were measured using \textit{CellTiter-Glo Luminescent
-Cell Viability Assay} and \textit{Caspase-Glo 3/7 Assay}, respectively (Promega GmbH,
+    Cell Viability Assay} and \textit{Caspase-Glo 3/7 Assay}, respectively (Promega GmbH,
 Mannheim, Germany).
 
 
@@ -306,7 +306,7 @@ enrichment analysis was performed using \texttt{Metascape}
 \subsubsection*{RT-qPCR}
 \ %
 RNA (\SI{1}{\micro\gram}) was reverse transcribed using \textit{SuperScript IV
-reverse transcriptase} (Thermo Fisher Scientific). qPCR was performed using
+    reverse transcriptase} (Thermo Fisher Scientific). qPCR was performed using
 \SI{10}{\micro\liter} \textit{GoTaq qPCR Master Mix} (Promega), \SI{1}{:10}
 diluted cDNA, and \SI{5}{pmol} of primers obtained from Biomers.net or Qiagen
 (\refapdx{apdx:supplemental}{tab:S3}).
@@ -376,64 +376,136 @@ Raw RNAseq data are available from the NCBI Gene Expression Omnibus (GEO)
 
 \newpage
 
+
+
+
+
+
 % ======================================================================
 % == Results
 % ======================================================================
-\unnsubsection{Results}
+\unnsubsection{Results}\label{C1:results}
 \ %
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+\subsubsection*{\INA Cells Saturate hMSC-Interaction to Proliferate into Aggregates}
+hMSCs are isolated as a heterogeneous cell population. To analyze whether \INA
+cells could adhere to every hMSC, we saturated hMSCs with \INA. A seeding ratio
+of 1:4 (hMSC:\INA) resulted in the occupation of \SIplusminus{93}{6}{\percent}
+of single hMSCs by one or more \INA cells within 24 hours after \INA addition,
+escalating to \SI{6}{\percent} after \SI{48}{hours} (\autoref{fig:1}A, B).
+Therefore, most hMSCs provide an interacting surface for \INA cells.
+
+INA-6 exhibits homotypic aggregation when cultured alone, a phenomenon observed
+in some freshly isolated myeloma samples (up to \SI{100}{cells} after
+\SI{6}{hours})
+\cite{kawanoHomotypicCellAggregations1991,okunoVitroGrowthPattern1991}. Adding
+hMSCs at a 1:1 ratio led to smaller aggregates after \SI{24}{hours} (size
+\SIrange{1}{5}{cells}), all of which were distributed over
+\SIplusminus{52}{2}{\percent} of all hMSCs (\autoref{fig:1}A, B). Intriguingly,
+\INA aggregation was notably absent when grown on confluent hMSCs, and occurred
+only when heterotypic interactions were limited to 0.2 hMSCs per \INA cell
+(\autoref{fig:1}C). We concluded that \INA cells prioritize heterotypic over
+homotypic interactions.
+
+To monitor the formation of such aggregates, we conducted live-cell imaging of
+hMSC/\INA co-cultures for \SI{63}{hours}. We observed that \INA cells adhered
+long after cytokinesis, constituting \SIplusminus{55}{12}{\percent} of all
+homotypic interactions between \SI{13}{hours} and \SI{26}{hours}, increasing to
+more than \SI{75}{\percent} for the remainder of the co-culture
+(\autoref{fig:1}D). Therefore, homotypic \INA aggregates were mostly formed by
+cell division.
+
+\subsubsection*{Apoptosis of \INA Depends on Ratio Between Heterotypic and Homotypic Interaction}
+Although direct interaction with hMSCs has been shown to enhance myeloma cell
+survival through NF-$\kappa$B signaling
+\cite{hideshimaUnderstandingMultipleMyeloma2007}, the impact of aggregation on
+myeloma cell viability during hMSC interaction remains unclear. To address this,
+we measured the cell viability (ATP) and apoptosis rates of \INA cells growing
+as homotypic aggregates compared to those in heterotypic interactions with hMSCs
+by modulating hMSC density (\autoref{fig:1}E). To equalize the background
+signaling caused by soluble MSC-derived factors, all cultures were incubated in
+hMSC-conditioned medium and the results were normalized to \INA cells cultured
+without direct hMSC contact (\autoref{fig:1}E, left).
+
+\newpage
 
 % ## Example:
 % > \includeimage[scale][left bottom right top]{
 % >     pathtopicture
 % > }{caption}
 
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-
-
 % ## Fig. 1
 % > use \noindent, for some reason first image is indented otherwise
 \noindent\includeimage[1][{\fmleft} 2.8in {\fmright} {\fmtop}]{
     FIGS/figures9_1.pdf
 }\splitcaption{ %
-    INA-6 growth conformations and survival on hMSCs. \tile{A} Interaction of INA-6
-    (green) with hMSCs (black, negative staining) at different INA-6 densities
-    (constant hMSC densities). \mbox{Scale bar = \SI{200}{\um}}. \tile{B} Frequency of
-    single hMSCs (same as A) that are covered by INA-6 of varying group sizes.
-    Technical replicates = three per datapoint; Single hMSCs evaluated: 100 per
-    technical replicate. \tile{C} Interaction of INA-6 with hMSCs at different hMSC
-    densities (constant INA-6 densities). Scale bar = \SI{300}{\um}.
+    INA-6 growth conformations and survival on hMSCs. \tile{A} Interaction of
+    INA-6 (green) with hMSCs (black, negative staining) at different INA-6
+    densities (constant hMSC densities). \mbox{Scale bar = \SI{200}{\um}}.
+    \tile{B} Frequency of single hMSCs (same as A) that are covered by INA-6 of
+    varying group sizes. Technical replicates = three per datapoint; Single
+    hMSCs evaluated: 100 per technical replicate. \tile{C} Interaction of INA-6
+    with hMSCs at different hMSC densities (constant INA-6 densities). Scale bar
+    = \SI{300}{\um}. 
 }{%
-    \tile{D} Two types of homotypic interaction: Attachment after cell contact and
-    sustained attachment of daughter cells after cell division. Datapoints represent
-    one of four independent time-lapse recordings, each evaluating 116 interaction
-    events. \tile{E} Effects of hMSC-density on the viability (ATP, top) and
-    apoptosis (Caspase3/7 activity, bottom). INA-6:MSC ratio = 4:1; \mbox{Technical
-        replicates = four per datapoint}; E left: Signals were measured in INA-6 washed
-    off from hMSCs and normalized by INA-6 cultured in MSC-conditioned medium ($=
-        \text{red line}$) ($n=4$). E right: Signals were measured in co-cultures and
-    normalized by the sum of the signals measured in hMSC and INA-6 cultured
-    separately ($= \text{red line}$) ($n=3$). \tile{Statistics} Paired t-test,
-    two-factor RM- ANOVA. Datapoints represent independent co-cultures with hMSCs
-    from three (A, B, D, E right), four (E left) unique donors. Confl. = Confluent.
-}
+    \tile{D} Two types of homotypic interaction: Attachment after cell contact
+    and sustained attachment of daughter cells after cell division. Datapoints
+    represent one of four independent time-lapse recordings, each evaluating 116
+    interaction events. \tile{E} Effects of hMSC-density on the viability (ATP,
+    top) and apoptosis (Caspase3/7 activity, bottom). INA-6:MSC ratio = 4:1;
+    \mbox{Technical replicates = four per datapoint}; E left: Signals were
+    measured in INA-6 washed off from hMSCs and normalized by INA-6 cultured in
+    MSC-conditioned medium ($= \text{red line}$) ($n=4$). E right: Signals were
+    measured in co-cultures and normalized by the sum of the signals measured in
+    hMSC and INA-6 cultured separately ($= \text{red line}$) ($n=3$).
+    \tile{Statistics} Paired t-test, two-factor RM- ANOVA. Datapoints represent
+    independent co-cultures with hMSCs from three (A, B, D, E right), four (E
+    left) unique donors. Confl. = Confluent. }
 \label{fig:1}
 
 
+\INA viability (ATP) was not affected by the direct adhesion of hMSCs at any
+density. However, apoptosis rates decreased over time [\(F(2, 6) = 23.29\),
+\(p\)-unc = \(1.49 \times 10^{-3}\), Two-factor RM-ANOVA], interacting
+significantly with MSC density [\(F(4, 12) = 6.98\), \(p\)-unc = \(3.83 \times
+10^{-3}\)]. For example, 24 hours of adhesion to confluent MSCs increased
+apoptosis rates by \SIplusminus{1.46}{0.37}{fold}, while culturing \INA cells on
+dispersed hMSCs (ratio 1:1) did not change the apoptosis rate
+(\SIplusminus{1.01}{0.26}{fold}).
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+
+We presumed that sensitive apoptotic cells might have been lost when harvesting
+\INA cells from hMSCs. Hence, we measured survival parameters in the co-culture
+and in hMSC and \INA cells cultured separately (\autoref{fig:1}E, right). We
+defined MSC interaction effects when the survival measured in the co-culture
+differed from the sum of the signals measured from \INA and hMSCs alone.
+RM-ANOVA confirmed that adherence to confluent MSCs increased apoptosis rates of
+\INA cells \SI{24}{hours} after adhesion and decreased after \SI{72}{hours}
+[interaction between MSC density and time: \(F(2, 4) = 26.86\), \(p\)-unc =
+\(4.80 \times 10^{-3}\), Two-factor RM-ANOVA], whereas \INA cells were
+unaffected when grown on dispersed hMSCs.
+
+In summary, the growth conformation of \INA cells, measured as the ratio between
+homotypic aggregation and heterotypic MSC interactions, affected apoptosis rates
+of \INA cells.
+
+
+
+\subsubsection*{Single \INA Cells Detach Spontaneously from Aggregates of Critical Size}
+Using time-lapse microscopy, we observed that \SIplusminus{26}{8}{\percent} of
+\INA aggregates growing on single hMSCs spontaneously shed \INA cells
+(\autoref{fig:2}A, B; Supplementary Video 1). Notably, all detached cells
+exhibited similar directional movements, suggesting entrainment in convective
+streams generated by temperature gradients within the incubation chamber. \INA
+predominantly detached from other \INA cells or aggregates (\autoref{fig:2}C),
+indicating weaker adhesive forces in homotypic interactions than in heterotypic
+interactions. The detachment frequency increased after \SI{52}{hours}, when most
+aggregates that shed \INA cells were categorized as large (greater than 30
+cells) (\autoref{fig:2}D). Since approximately 10-20 \INA cells already fully
+covered a single hMSC, we suggest that myeloma cell detachment depended not only
+on hMSC saturation but also required a minimum aggregate size. Interestingly,
+\INA detached mostly as single cells, independent of aggregate size categories
+[\(F(2, 6) = 4.68\), \(p\)-unc = 0.059, Two-factor RM-ANOVA] (\autoref{fig:2}E),
+showing that aggregates remained mostly stable despite losing cells.
 
 
 % ## Fig. 2
@@ -459,14 +531,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 
 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+
 
 
 % ## Fig. 3
