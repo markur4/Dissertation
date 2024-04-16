@@ -373,7 +373,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #3 is the path to the image
 % ## Example:
 % > \includeimage[scale][left bottom right top]{
-    % >     pathtopicture
+% >     pathtopicture
 % > }
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m}{
     \vspace{\vfull}
@@ -383,7 +383,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
         {\includegraphics[width=#1\textwidth]{#3}}
         {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
     \end{minipage} %
-    }
+}
 % > #4 is the float position (optional, default is h)
 % \NewDocumentCommand{\includeimage}{O{0.99} O{} m O{h}}{
 %     \begin{wrapfigure}{#4}{#1\textwidth}
@@ -506,6 +506,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \newcommand{\splitcaption}[2]{ %
     \captionof{figure}{#1 -- \textit{Continued on next page}}
     \ContinuedFloat
+    % \vspace{-5cm} % !! doesn't work
+    % \captionsetup{belowskip=0pt}
     \caption*{\textit{Continued from previous page} -- #2}
 }
 
@@ -513,16 +515,14 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % == Referencing Images, Tables, etc. ==================================
 
 % ## Shorten referencing to Figures in Appendix
-% > \refapdx{appendixlabel}{figlabel}
+% > \apdxref{appendixlabel}{figlabel}
 % > Examples:
-% ' \refapdx{sec:figtabs} --> Appendix A
-% ' \refapdx{sec:figtabs}{fig:S1} --> Appendix A: Figure 1
-% ' \refapdx{sec:sup_figtabs}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
-
-\NewDocumentCommand{\refapdx}{m g}{%
-    Appendix~\ref{#1}\IfValueT{#2}{:~\autoref{#2}}%
+% ' \apdxref{sec:figtabs} --> Appendix A
+% ' \apdxref{sec:figtabs}{fig:S1} --> Appendix A: Figure 1
+% ' \apdxref{sec:sup_figtabs}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
+\NewDocumentCommand{\apdxref}{m g}{%
+    Appendix\,\ref{#1}\IfValueT{#2}{:\,\autoref{#2}}%
 }
-
 
 
 % == Citations =========================================================

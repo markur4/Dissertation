@@ -144,7 +144,7 @@ patient survival, we analyzed publicly available datasets
 % ======================================================================
 \unnsubsection{Materials and Methods}\label{C1:methods}
 \ %
-See \refapdx{subapdx:methods} for a complete method list and description.
+See \apdxref{subapdx:methods} for a complete method list and description.
 
 
 \subsubsection*{Ethics Statement}
@@ -159,14 +159,14 @@ the University of Würzburg (186/18).
 \subsubsection*{Cultivation and Co-Culturing of primary hMSCs and INA-6}
 \ %
 Primary human MSCs were obtained from the femoral head of 34 non-myeloma
-patients (\refapdx{apdx:supplemental}{tab:S1}: 21 male and 13 female, mean age
+patients (\apdxref{apdx:supplemental}{tab:S1}: 21 male and 13 female, mean age
 68.9 ± 10.6) undergoing elective hip arthroplasty. The INA-6 cell line
 (\textit{DSMZ Cat\# ACC-862}, \textit{RRID:CVCL\_5209},
 \href{https://www.cellosaurus.org/CVCL_5209}{link}) was initially isolated from
 a pleural effusion sample obtained from an 80-year-old male with multiple
 myeloma \cite{burgerGp130RasMediated2001c,gramatzkiTwoNewInterleukin61994}.
 hMSCs were not tested for mycoplasma, whereas stocks of INA-6 were tested in
-this study (\refapdx{apdx:supplemental}{tab:S1}) using the \textit{Venor GeM OneStep} kit
+this study (\apdxref{apdx:supplemental}{tab:S1}) using the \textit{Venor GeM OneStep} kit
 (Minerva Biolabs, Berlin, Germany). For each co-culture, hMSCs were seeded
 \SI{24}{\hour} before INA-6 addition to generate the MSC-conditioned medium
 (CM). INA-6 cells were washed with PBS, resuspended in MSC medium, and added to
@@ -309,7 +309,7 @@ RNA (\SI{1}{\micro\gram}) was reverse transcribed using \textit{SuperScript IV
     reverse transcriptase} (Thermo Fisher Scientific). qPCR was performed using
 \SI{10}{\micro\liter} \textit{GoTaq qPCR Master Mix} (Promega), \SI{1}{:10}
 diluted cDNA, and \SI{5}{pmol} of primers obtained from Biomers.net or Qiagen
-(\refapdx{apdx:supplemental}{tab:S3}).
+(\apdxref{apdx:supplemental}{tab:S3}).
 
 
 % 187 Statistics
@@ -445,7 +445,7 @@ without direct hMSC contact (\autoref{fig:1}E, left).
     varying group sizes. Technical replicates = three per datapoint; Single
     hMSCs evaluated: 100 per technical replicate. \tile{C} Interaction of INA-6
     with hMSCs at different hMSC densities (constant INA-6 densities). Scale bar
-    = \SI{300}{\um}. 
+    = \SI{300}{\um}.
 }{%
     \tile{D} Two types of homotypic interaction: Attachment after cell contact
     and sustained attachment of daughter cells after cell division. Datapoints
@@ -465,9 +465,9 @@ without direct hMSC contact (\autoref{fig:1}E, left).
 
 \INA viability (ATP) was not affected by the direct adhesion of hMSCs at any
 density. However, apoptosis rates decreased over time [\(F(2, 6) = 23.29\),
-\(p\)-unc = \(1.49 \times 10^{-3}\), Two-factor RM-ANOVA], interacting
+        \(p\)-unc = \(1.49 \times 10^{-3}\), Two-factor RM-ANOVA], interacting
 significantly with MSC density [\(F(4, 12) = 6.98\), \(p\)-unc = \(3.83 \times
-10^{-3}\)]. For example, 24 hours of adhesion to confluent MSCs increased
+        10^{-3}\)]. For example, 24 hours of adhesion to confluent MSCs increased
 apoptosis rates by \SIplusminus{1.46}{0.37}{fold}, while culturing \INA cells on
 dispersed hMSCs (ratio 1:1) did not change the apoptosis rate
 (\SIplusminus{1.01}{0.26}{fold}).
@@ -481,7 +481,7 @@ differed from the sum of the signals measured from \INA and hMSCs alone.
 RM-ANOVA confirmed that adherence to confluent MSCs increased apoptosis rates of
 \INA cells \SI{24}{hours} after adhesion and decreased after \SI{72}{hours}
 [interaction between MSC density and time: \(F(2, 4) = 26.86\), \(p\)-unc =
-\(4.80 \times 10^{-3}\), Two-factor RM-ANOVA], whereas \INA cells were
+    \(4.80 \times 10^{-3}\), Two-factor RM-ANOVA], whereas \INA cells were
 unaffected when grown on dispersed hMSCs.
 
 In summary, the growth conformation of \INA cells, measured as the ratio between
@@ -504,7 +504,7 @@ cells) (\autoref{fig:2}D). Since approximately 10-20 \INA cells already fully
 covered a single hMSC, we suggest that myeloma cell detachment depended not only
 on hMSC saturation but also required a minimum aggregate size. Interestingly,
 \INA detached mostly as single cells, independent of aggregate size categories
-[\(F(2, 6) = 4.68\), \(p\)-unc = 0.059, Two-factor RM-ANOVA] (\autoref{fig:2}E),
+    [\(F(2, 6) = 4.68\), \(p\)-unc = 0.059, Two-factor RM-ANOVA] (\autoref{fig:2}E),
 showing that aggregates remained mostly stable despite losing cells.
 
 
@@ -529,6 +529,19 @@ showing that aggregates remained mostly stable despite losing cells.
     co-cultures with hMSCs from two (A) or three (C-E) unique donors.
 }\label{fig:2}
 
+\subsubsection*{Cell Division Generates a Daughter Cell Detached from hMSC}
+We suspected that cell division drives detachment because we observed that
+MSC-adhering \INA cells could generate daughter cells that “roll over” the
+mother cell (\autoref{fig:3}A; Supplementary Video 2). We recorded and
+categorized the movement of \INA daughter cells in confluent hMSCs after cell
+division. Half of all \INA divisions yielded two daughter cells that remained
+stationary, indicating hMSC adherence (\autoref{fig:3}B, C; Supplementary Video
+3). The other half of division events generated one hMSC-adhering (\MAina) cell
+and one non-hMSC-adhering (\nMAina) cell, which rolled around the \MAina cell
+for a median time of \SI{2.5}{hours} post division (Q1=\SI{1.00}{hour},
+Q3=\SI{6.25}{hours}) until it stopped and re-adhered to the hMSC monolayer
+(\autoref{fig:3}D; Supplementary Video 2, Supplementary Video 4). Thus, cell
+division establishes a time window in which one daughter cell can detach.
 
 
 
@@ -539,48 +552,61 @@ showing that aggregates remained mostly stable despite losing cells.
     FIGS/figures9_3.pdf
 }\captionof{figure}{ %
     Detachment of INA-6 daughter cells after Cell Division. \tile{A-D} INA-6
-    divisions in interaction with confluent hMSCs. Seeding ratio INA-6:MSC = 4:20.
-    \tile{A} Three examples of dividing INA-6 cells generating either two MA, or one
-    MA and one nMA daughter cells as described in (G). Dashed circles mark mother
-    cells (white), MA cell (blue), and first position of nMA cell (green). Scale
-    bar: \SI{20}{\um}. \tile{B} Cell division of MSC-adhering (MA) mother cell can
-    yield one mobile non-MSC-adhering (nMA) daughter cell. \tile{C} Frequencies of
-    INA-6 pairs defined in (A, B) per observed cell division. 65 divisions were
-    evaluated for each of three independent time-lapse recordings. \tile{D} Rolling
-    duration of nMA cells after division did not depend on hMSC donor [$H(2) =
-                5.250$, $p\text{-unc} = .072$]. Datapoints represent single nMA-cells after
-    division. \tile{E-G} Adhesive and cell cycle assessment of MSC-interacting INA-6
-    subpopulations using the V-Well assay. \tile{E} Schematic of V-Well Assay (see
-    \refapdx{apdx:supplemental}{fig:S1} for detailed analysis). MSC-interacting
-    subpopulations were separated by subsequent centrifugation and removal of the
-    pellet. The pellet size was quantified by its total fluorescence brightness.
-    Adhering subpopulations were resuspended by rough pipetting. \tile{F} Relative
-    cell pellet sizes of adhesive INA-6 subpopulations that cycle either
-    asynchronously or were synchronized at mitosis. Gray lines in-between points
-    connect dependent measurements of co-cultures ($n=9$) that shared the same
-    hMSC-donor and INA-6 culture. Co-cultures were incubated for three different
-    durations (\SIlist{1;2;3}{\hour} after INA-6 addition). Time points were pooled,
-    since time did not show an effect on cell adhesion [$F(2,4) = 1.414$,
-            $p\text{-unc} = 0.343$]. Factorial RM-ANOVA shows an interaction between cell
-    cycle and the kind of adhesive subpopulation [$F(1, 8) = 42.67$, $p\text{-unc} =
-                1.82e-04$]. Technical replicates = 4 per datapoint. \tile{G} Cell cycles were
-    profiled in cells gathered from the pellets of four independent co-cultures
-    ($n=4$) and the frequency of G0/G1 cells are displayed depending on co-culture
-    duration (see \refapdx{apdx:supplemental}{fig:S3} for cell cycle profiles). Four
-    technical replicates were pooled after pelleting. \tile{Statistics} (D):
+    divisions in interaction with confluent hMSCs. Seeding ratio INA-6:MSC =
+    4:20. \tile{A} Three examples of dividing INA-6 cells generating either two
+    MA, or one MA and one nMA daughter cells as described in (G). Dashed circles
+    mark mother cells (white), MA cell (blue), and first position of nMA cell
+    (green). Scale bar: \SI{20}{\um}. \tile{B} Cell division of MSC-adhering
+    (MA) mother cell can yield one mobile non-MSC-adhering (nMA) daughter cell.
+    \tile{C} Frequencies of INA-6 pairs defined in (A, B) per observed cell
+    division. 65 divisions were evaluated for each of three independent
+    time-lapse recordings. \tile{D} Rolling duration of nMA cells after division
+    did not depend on hMSC donor [$H(2) = 5.250$, $p\text{-unc} = .072$].
+    Datapoints represent single nMA-cells after division. \tile{E-G} Adhesive
+    and cell cycle assessment of MSC-interacting INA-6 subpopulations using the
+    V-Well assay. \tile{E} Schematic of V-Well Assay (see
+    \apdxref{apdx:supplemental}{fig:S1} for detailed analysis). MSC-interacting
+    subpopulations were separated by subsequent centrifugation and removal of
+    the pellet. The pellet size was quantified by its total fluorescence
+    brightness. Adhering subpopulations were resuspended by rough pipetting.
+    \tile{F} Relative cell pellet sizes of adhesive INA-6 subpopulations that
+    cycle either asynchronously or were synchronized at mitosis. Gray lines
+    in-between points connect dependent measurements of co-cultures ($n=9$) that
+    shared the same hMSC-donor and INA-6 culture. Co-cultures were incubated for
+    three different durations (\SIlist{1;2;3}{\hour} after INA-6 addition). Time
+    points were pooled, since time did not show an effect on cell adhesion
+        [$F(2,4) = 1.414$, $p\text{-unc} = 0.343$]. Factorial RM-ANOVA shows an
+    interaction between cell cycle and the kind of adhesive subpopulation [$F(1,
+                8) = 42.67$, $p\text{-unc} = 1.82e-04$]. Technical replicates = 4 per
+    datapoint. \tile{G} Cell cycles were profiled in cells gathered from the
+    pellets of four independent co-cultures ($n=4$) and the frequency of G0/G1
+    cells are displayed depending on co-culture duration (see
+    \apdxref{apdx:supplemental}{fig:S3} for cell cycle profiles). Four technical
+    replicates were pooled after pelleting. \tile{Statistics} (D):
     Kruskal-Wallis H-test. (F): Paired t-test, (G): Paired t-test, two-factor
-    RM-ANOVA. Datapoints represent INA-6 from independent co- cultures with hMSCs
-    from three unique donors. }\label{fig:3}
+    RM-ANOVA. Datapoints represent INA-6 from independent co- cultures with
+    hMSCs from three unique donors. }\label{fig:3}
 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+To validate that cell division reduced adhesion, we measured both the size and
+cell cycle profile of the \nMAina and \MAina populations using an enhanced
+V-well assay (method described in \autoref{fig:3}E,
+\apdxref{apdx:supplemental}{fig:S1},\,\ref{fig:S2}). For comparison, we fully
+synchronized and arrested \INA cells at mitosis and released their cell cycle
+immediately before addition to the hMSC monolayer, rendering them more likely to
+divide while adhering. Mitotic arrest significantly increased the number of
+\nMAina cells and decreased the number of \MAina cells (\autoref{fig:3}F).
+Furthermore, the \nMAina population contained significantly more cells cycling
+in the G0/G1 phase than the \MAina population, both in synchronously and
+asynchronously cycling \INA (\autoref{fig:3}G,
+\apdxref{apdx:supplemental}{fig:S3},\,\ref{fig:S4}). The number of \nMAina \INA
+cells increased due to a higher cell division frequency. Taken together, we
+showed that \INA detach from aggregates by generating one temporarily detached
+daughter cell after cell division, a process that potentially contributes to the
+initiation of dissemination.
+
+
+
 
 % ## Fig. 4
 \includeimage[1][{\fmleft} 4.3in {\fmright} {\fmtop}]{
@@ -626,7 +652,7 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     Enrichment analysis of pairwise comparisons between MA subpopulations and
     their overlaps (arranged in columns). GO terms were manually picked and
     categorized (arranged in rows). Raw Metascape results are shown in
-    \refapdx{apdx:supplemental}{fig:S6}. For each GO-term, the p-values (x-axis) and the
+    \apdxref{apdx:supplemental}{fig:S6}. For each GO-term, the p-values (x-axis) and the
     counts of matching input genes (circle size) were plotted. The lowest row
     shows enrichment of gene lists from the TRRUST-database. \tile{C} Circos
     plots by Metascape. Sections of a circle represent lists of differentially
@@ -704,7 +730,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
                 filtered by their association with patient survival (p-adj. < 0.01)
                 and were categorized as continuously downregulated during disease
                 progression. The complete list is presented in
-                \refapdx{apdx:supplemental}{tab:S2}. Bone Marrow Plasma Cells
+                \apdxref{apdx:supplemental}{tab:S2}. Bone Marrow Plasma Cells
                 (BMPC), Monoclonal Gammopathy of Undetermined Significance (MGUS),
                 smoldering Multiple Myeloma (sMM), Multiple Myeloma (MM), and
                 Multiple Myeloma Relapse (MMR). p-unc: unadjusted p-values; p-adj:
@@ -814,13 +840,13 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 
 % lorem ipsum
 
-% V-Well is described in \refapdx{apdx:supplemental}{fig:S1}
+% V-Well is described in \apdxref{apdx:supplemental}{fig:S1}
 
-% V-Well is described in \refapdx{apdx:supplemental}{fig:S1}, \ref{fig:S2}
+% V-Well is described in \apdxref{apdx:supplemental}{fig:S1}, \ref{fig:S2}
 
 % % Image cytometry is described in \autoref{subapdx:sup_figtabs} \autoref{fig:S2}
 
-% Full analysis is shown in \refapdx{subapdx:example_analysis}
+% Full analysis is shown in \apdxref{subapdx:example_analysis}
 
 % % ======================================================================
 % % == Discussion
