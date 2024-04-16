@@ -42,7 +42,7 @@
 \usepackage{float} % > For e.g. forced precise image positioning
 \usepackage{xparse} % > For advanced command definitions
 \usepackage{xstring} % > For string processing e.g. \IfStrEq
-% \usepackage{etoolbox} % > List processing
+\usepackage{etoolbox} % > List processing
 % \usepackage{refcount}
 \usepackage{appendix}  % > For appendices
 
@@ -50,6 +50,7 @@
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
 \usepackage{needspace} % > For keeping text together on the same page
+
 
 
 % ======================================================================
@@ -201,12 +202,12 @@
 \renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
 
 
+% ======================================================================
+% == Text Blocks
+% ======================================================================
 
-% ======================================================================
-% == Text Objects 
-% ======================================================================
-\usepackage{xspace} % > For adding spaces after commands
-\usepackage[normalem]{ulem} % > For underlining with dots for handwriting
+
+% == Hyphenation =======================================================
 
 % ## Tell Latex to never break these words at the end of a line
 \hyphenation{hMSC hMSCs MM}
@@ -215,6 +216,68 @@
 \newcommand{\MAina}{\mbox{MA-INA6}\xspace}
 \newcommand{\CMina}{\mbox{CM-INA6}\xspace}
 \newcommand{\INA}{\mbox{INA-6}\xspace}
+\newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
+
+
+% == White Space =======================================================
+\usepackage{xspace}
+\xspaceremoveexception{,}
+\xspaceaddexceptions{\,} % > Add a space after \, command
+
+% ## Command to replace all spaces with shortspaces
+\newcommand{\shortspaces}[1]{%
+    \StrSubstitute{#1}{ }{\,}[\temp]%
+    \temp
+}
+
+
+% == Special Formats ===================================================
+% ## Commands to process multiple arguments
+\newcounter{@itemcount}
+\newcounter{@listlen}
+\newcommand{\@countlistitems}[1]{%
+    \stepcounter{@listlen}%
+}
+\newcommand{\@processitem}[1]{%
+    \stepcounter{@itemcount}%
+    \textit{#1}%
+    \ifnum\value{@itemcount}<\value{@listlen}%
+        ,\,\allowbreak%
+    \fi
+}
+
+
+% ## Command to format make italicised list
+\newcommand{\listit}[1]{%
+    \setcounter{@itemcount}{0}%
+    \setcounter{@listlen}{0}%
+    \forcsvlist{\listgadd\mylist}{#1}%
+    \forlistloop{\@countlistitems}{\mylist}%
+    \forlistloop{\@processitem}{\mylist}%
+}
+
+% ## Command to report an omnibus test
+% > #1 is the name of the test statistic, e.g. "F" or "\rho"
+% > #2 is the degree of freedoms, e.g. "1, 2"
+% > #3 is the value of the omnibus statistic
+% > #4 (optional) is the kind of p-value, e.g. "p-unc", it defaults to empty
+% > #5 is the p-value
+
+\newcommand{\omnibus}[5]{[$#1(#2)$\,$=$\,$#3$, $p$#4\,$=$\,$#5$]}
+
+
+
+% ======================================================================
+% == Text Objects 
+% ======================================================================
+\usepackage{xspace} % > For adding spaces after commands
+\usepackage[normalem]{ulem} % > For underlining with dots for handwriting
+\usepackage{xstring}
+
+
+
+
+
 
 
 % == Hyperlinks ========================================================
@@ -346,8 +409,10 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \DeclareSIUnit{\cellspercm}{cells/cm\textsuperscript{2}} % > cells/cm^2
 
 % ## Define commands combining numbers and units
+\newcommand{\scinot}[2]{#1×10^{#2}}
+\newcommand{\xprod}[2]{$\num{#1}$\,$\times$\,$\num{#2}$}
 % > \SIprod{130}{100}{mm} --> 130x100 mm
-\newcommand{\SIprod}[3]{$\num{#1}$\,$\times$\,$\num{#2}$\,\si{#3}}
+\newcommand{\SIprod}[3]{\xprod{#1}{#2}\,\si{#3}}
 % > \SIdiv{130}{100}{mm} --> 130/100 mm
 \newcommand{\SIslash}[3]{$\num{#1}$\,/\,$\num{#2}$\,\si{#3}}
 \newcommand{\SIplusminus}[3]{$\num{#1}$\,$\pm$\,$\num{#2}$\,\si{#3}}
@@ -496,16 +561,16 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > e.g. \subfig{A} --> A: in bold
 \newcommand{\tile}[1]{%
     % > Makes bold, unbreakable space after, strip whitespaces
-    \ignorespaces\textbf{#1:~}\ignorespaces
+    \ignorespaces\,\textbf{#1:~}\ignorespaces
 }
 
 
-% ## A command to split a cpation into two parts
+% ## A command to split a caption into two parts
 % > #1 is the first part of the caption
 % > #2 is the second part of the caption
 \newcommand{\splitcaption}[2]{ %
     \captionof{figure}{#1 -- \textit{Continued on next page}}
-    \ContinuedFloat
+    % \ContinuedFloat
     % \vspace{-5cm} % !! doesn't work
     % \captionsetup{belowskip=0pt}
     \caption*{\textit{Continued from previous page} -- #2}
