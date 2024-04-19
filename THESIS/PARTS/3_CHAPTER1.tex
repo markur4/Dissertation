@@ -330,7 +330,7 @@ Inferential statistics were performed using Python (IPython,
 The figures were plotted using \texttt{plotastic} (0.0.1)
 \cite{kuricPlotasticBridgingPlotting2024}. Normality (for \( n \geq 4 \)) and
 sphericity were ensured using Mauchly’s and Shapiro-Wilk tests, respectively.
-Data points were log\(_{10}\) transformed to convert the scale from
+Data points were Log\(_{10}\) transformed to convert the scale from
 multiplicative to additive or to fulfill sphericity requirements. \( p = 0.05 >
 \text{*} > 0.01 > \text{**} > 10^{-3} > \text{***}> 10^{-4} > \text{****} \).
 $p$-values were either adjusted (\( p{\text{-adj}} \)) or not adjusted (\(
@@ -380,13 +380,22 @@ Raw RNAseq data are available from the NCBI Gene Expression Omnibus (GEO)
 
 
 
+% ======================================================================
+% ======================================================================
+% ======================================================================
+% == RESULTS
 
-% ======================================================================
-% == Results
-% ======================================================================
+
 \unnsubsection{Results}\label{C1:results}
-\ %
+%%%%%%
+
+
+% ==  ==================================================================
+% == MSC Saturation
+% == ===================================================================
+
 \subsubsection*{\INA Cells Saturate hMSC-Interaction to Proliferate into Aggregates}
+%%%
 hMSCs are isolated as a heterogeneous cell population. To analyze whether \INA
 cells could adhere to every hMSC, we saturated hMSCs with \INA. A seeding ratio
 of 1:4 (hMSC:\INA) resulted in the occupation of \SIplusminus{93}{6}{\percent}
@@ -415,6 +424,7 @@ more than \SI{75}{\percent} for the remainder of the co-culture
 cell division.
 
 \subsubsection*{Apoptosis of \INA Depends on Ratio Between Heterotypic and Homotypic Interaction}
+%%%
 Although direct interaction with hMSCs has been shown to enhance myeloma cell
 survival through NF-$\kappa$B signaling
 \cite{hideshimaUnderstandingMultipleMyeloma2007}, the impact of aggregation on
@@ -434,8 +444,7 @@ without direct hMSC contact (\autoref{fig:1}E,\,left).
 % >     pathtopicture
 % > }{caption}
 
-% ## Fig. 1
-% > use \noindent, for some reason first image is indented otherwise
+% == Fig. 1 ============================================================
 \includeimage[1][{\fmleft} 2.8in {\fmright} {\fmtop}]{
     FIGS/figures9_1.pdf
 }\splitcaption[fig:1]{ %
@@ -445,7 +454,7 @@ without direct hMSC contact (\autoref{fig:1}E,\,left).
     \tile{B} Frequency of single hMSCs (same as A) that are covered by INA-6 of
     varying group sizes. Technical replicates = three per datapoint; 100 single
     hMSCs were evaluated per technical replicate. \tile{C} Interaction of INA-6
-    }{%
+}{%
     with hMSCs at different hMSC densities (constant INA-6 densities). Scale bar
     = \SI{300}{\um}.
     \tile{D} Two types of homotypic interaction: Attachment after cell contact
@@ -462,7 +471,6 @@ without direct hMSC contact (\autoref{fig:1}E,\,left).
     ANOVA. Datapoints represent independent co-cultures with hMSCs from three
     (A, B, D, E\,right), four (E\,left) unique donors. Confl.\,=\,Confluent.
 }
-
 
 
 \INA viability (ATP) was not affected by the direct adhesion of hMSCs at any
@@ -491,7 +499,12 @@ of \INA cells.
 
 
 
+% ==  ==================================================================
+% == Timelapse
+% == ===================================================================
+
 \subsubsection*{Single \INA Cells Detach Spontaneously from Aggregates of Critical Size}
+%%%
 Using time-lapse microscopy, we observed that \SIplusminus{26}{8}{\percent} of
 \INA aggregates growing on single hMSCs spontaneously shed \INA cells
 (\autoref{fig:2}A, B; Supplementary\,Video\,1). Notably, all detached cells
@@ -511,8 +524,7 @@ showing that aggregates remained mostly stable despite losing cells.
 
 
 
-% ## Fig. 2
-
+% == Fig. 2 ============================================================
 \includeimage[1][{\fmleft} 7.43in {\fmright} {\fmtop}]{
     FIGS/figures9_2.pdf
 }\figcaption[fig:2]{ %
@@ -533,8 +545,10 @@ showing that aggregates remained mostly stable despite losing cells.
     co-cultures with hMSCs from two (A) or three (C-E) unique donors.
 }
 
+
 \vspace{-.3cm}
 \subsubsection*{Cell Division Generates a Daughter Cell Detached from hMSC}
+%%%
 We suspected that cell division drives detachment because we observed that
 MSC-adhering \INA cells could generate daughter cells that “roll over” the
 mother cell (\autoref{fig:3}A; Supplementary\,Video\,2). We recorded and
@@ -551,7 +565,7 @@ one daughter cell can detach.
 
 
 
-% ## Fig. 3
+% == Fig. 3 ============================================================
 \includeimage[1][{\fmleft} 5.42in {\fmright} {\fmtop}]{
     FIGS/figures9_3.pdf
 }\figcaption[fig:3]{ %
@@ -613,8 +627,12 @@ initiation of dissemination.
 
 
 
+% ==  ==================================================================
+% == RNAseq
+% == ===================================================================
 
 \subsubsection*{RNAseq of Non-MSC-Adhering and MSC-Adhering Subpopulations}
+%%%
 To characterize the subpopulations separated by WPSC, we conducted RNAseq,
 revealing 1291 differentially expressed genes between \versus{\nMAina}{\CMina},
 484 between \versus{\MAina}{\CMina}, and 195 between \versus{\MAina}{\nMAina}. We
@@ -637,7 +655,7 @@ significant upregulation of seven genes (\listit{TGM2, DCN, LOX, MMP14, MMP2,
 
 
 
-% ## Fig. 4
+% == Fig. 4 ============================================================
 \includeimage[1][{\fmleft} 4.3in {\fmright} {\fmtop}]{
     FIGS/figures9_4.pdf
 }\figcaption[fig:4]{ %
@@ -659,56 +677,54 @@ significant upregulation of seven genes (\listit{TGM2, DCN, LOX, MMP14, MMP2,
     \tile{Statistics} (C-E): Paired t-test. Datapoints represent the mean of
     three (B-E) technical replicates. INA-6 were isolated from independent
     co-cultures with hMSCs from five (A, B), nine (C-E) unique donors.
-} 
+}
+
 
 \subsubsection*{Non-MSC-Adhering \INA and MSC-Adhering \INA Have Distinct Expression Patterns of Proliferation or Adhesion, Respectively}
+%%%
 To functionally characterize the unique transcriptional patterns in \nMAina and
 \MAina, we generated lists of genes that were differentially expressed
 \textit{vs.} the other two subpopulations [termed \versus{nMA}{\MAandCM} and
-\versus{MA}{\nMAandCM}]. 
-Functional enrichment analysis was performed, and the
+        \versus{MA}{\nMAandCM}]. Functional enrichment analysis was performed, and the
 enriched terms were displayed as ontology clusters (\autoref{fig:5}A). \nMAina
 upregulated genes enriched with loosely connected term clusters associated with
 proliferation (e.g., “positive regulation of cell cycle”). \MAina upregulated
 genes enriched with tightly connected term clusters related to cell adhesion and
 the production of ECM factors (e.g., ``cell-substrate adhesion''). Similar
 ontology terms were enriched in the gene lists obtained from pairwise
-comparisons \versus{nMA}{CM}, \versus{MA}{CM}, and
-\versus{MA}{nMA} (\autoref{fig:5}B). In particular,
-\versus{nMA}{CM} (but not \versus{MA}{CM}) upregulated genes
-that were enriched with “G1/S transition”, showing that WPSC isolated \nMAina\
-daughter cells after cell division.
+comparisons \versus{nMA}{CM}, \versus{MA}{CM}, and \versus{MA}{nMA}
+(\autoref{fig:5}B). In particular, \versus{nMA}{CM} (but not \versus{MA}{CM})
+upregulated genes that were enriched with “G1/S transition”, showing that WPSC
+isolated \nMAina\ daughter cells after cell division.
 
 To check for similarities between lists of differentially expressed genes from
 hMSC-interacting subpopulations, we performed enrichment analysis on gene lists
 from the overlaps (“$\cap$”) between all pairwise comparisons (\autoref{fig:5}B,
 \apdxref{apdx:supplemental}{fig:S6}), and showed the extent of these overlaps in
-circos plots (\autoref{fig:5}C). The overlap between \versus{\MAina}{\CMina} and
-\versus{\nMAina}{\CMina} showed neither enrichment with proliferation- nor
+circos plots (\autoref{fig:5}C). The overlap between \versus{MA}{CM} and
+\versus{nMA}{CM} showed neither enrichment with proliferation- nor
 adhesion-related terms but with apoptosis-related terms. A direct comparison of
-MSC-interacting subpopulations (\versus{\MAina}{\nMAina}) showed a major overlap
-with \versus{\MAina}{\CMina} (\autoref{fig:5}C, middle). This overlap was
-enriched with terms related to adhesion but not proliferation. Hence, \MAina-INA6
-and \nMAina-INA6 mostly differed in their expression of adhesion genes.
+MSC-interacting subpopulations (\versus{MA}{nMA}) showed a major overlap with
+\versus{MA}{CM} (\autoref{fig:5}C, middle). This overlap was enriched with terms
+related to adhesion but not proliferation. Hence, \MAina\ and \nMAina\ mostly
+differed in their expression of adhesion genes.
 
 To assess whether \nMAina\ and \MAina\ were regulated by separate transcription
 factors, we examined the enrichment of curated regulatory networks from the
-TRRUST database (\autoref{fig:5}B\,bottom). All the lists were enriched for p53
+TRRUST database (\autoref{fig:5}B, bottom). All the lists were enriched for p53
 regulation. E2F1 regulation was observed only in genes upregulated in
-\versus{\nMAina}{\CMina} and downregulated in \versus{\MAina}{\nMAina}.
-Genelists involving \MAina\ were enriched in regulation by subunits of
-NF-$\kappa$B (NFKB1/p105 and RELA/p65) and factors of immediate early response
-(SRF, JUN). Correspondingly, NF-$\kappa$B and JUN are known to regulate the
-expression of adhesion factors in multiple myeloma and B-cell lymphoma,
-respectively \cite{blonskaJunregulatedGenesPromote2015,taiRoleBcellactivatingFactor2006}.
-
+\versus{nMA}{CM} and downregulated in \versus{MA}{nMA}. Genelists involving
+\MAina\ were enriched in regulation by subunits of NF-$\kappa$B (NFKB1/p105 and
+RELA/p65) and factors of immediate early response (SRF, JUN). Correspondingly,
+NF-$\kappa$B and JUN are known to regulate the expression of adhesion factors in
+multiple myeloma and B-cell lymphoma, respectively
+\cite{blonskaJunregulatedGenesPromote2015,taiRoleBcellactivatingFactor2006}.
 
 Taken together, MSC-interacting subpopulations showed unique regulatory
 patterns, focusing on either proliferation or adhesion.
 
 
-
-% ## Fig. 5
+% == Fig. 5 ============================================================
 \includeimage[.97][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
     FIGS/figures9_5.pdf
 }\figcaption[fig:5]{ %
@@ -718,43 +734,115 @@ patterns, focusing on either proliferation or adhesion.
     gene lists that are unique for MA (left) or nMA (right) INA-6. Circle nodes
     represent subsets of input genes falling into similar GO-term. Node size
     grows with the number of input genes. Node color defines a shared parent
-    GO-term. Two nodes with a $\text{similarity score} > 0.3$ are linked. \tile{B}
-    Enrichment analysis of pairwise comparisons between MA subpopulations and
-    their overlaps (arranged in columns). GO terms were manually picked and
-    categorized (arranged in rows). Raw Metascape results are shown in
-    \apdxref{apdx:supplemental}{fig:S6}. For each GO-term, the p-values (x-axis) and the
-    counts of matching input genes (circle size) were plotted. The lowest row
-    shows enrichment of gene lists from the TRRUST-database. \tile{C} Circos
-    plots by Metascape. Sections of a circle represent lists of differentially
-    expressed genes. Purple lines connect same genes appearing in two gene
-    lists. \(\cap\): Overlapping groups, MA: MSC-adhering, nMA:
-    non-MSC-adhering, CM: MSC-Conditioned Medium. \tile{D} INA-6 were
-    co-cultured on confluent hMSC for \SI{24}{\hour} or \SI{48}{\hour},
-    separated by WPSC and sub-cultured for \SI{48}{\hour} under IL-6 withdrawal
-    ($n=6$), except the control (IL-6 + INA-6) ($n=3$). Signals were
-    normalized (red line) to INA-6 cells grown without hMSCs and IL-6 ($n=3$).
-    \tile{Statistics} (D): Paired t-test, two-factor RM-ANOVA. Datapoints represent the
-    mean of four technical replicates. INA-6 were isolated from independent
-    co-cultures with hMSCs from six unique donors.
-}
-
-\subsubsection*{MSC-Adhering \INA Cells Are More Resistant to IL-6 Withdrawal}
-
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-
-ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+    GO-term. Two nodes with a $\text{similarity score} > 0.3$ are linked.
+    \tile{B} Enrichment analysis of pairwise comparisons between MA
+    subpopulations and their overlaps (arranged in columns). GO terms were
+    manually picked and categorized (arranged in rows). Raw Metascape results
+    are shown in \apdxref{apdx:supplemental}{fig:S6}. For each GO-term, the
+    p-values (x-axis) and the counts of matching input genes (circle size) were
+    plotted. The lowest row shows enrichment of gene lists from the
+    TRRUST-database. \tile{C} Circos plots by Metascape. Sections of a circle
+    represent lists of differentially expressed genes. Purple lines connect same
+    genes appearing in two gene lists. \(\cap\): Overlapping groups, MA:
+    MSC-adhering, nMA: non-MSC-adhering, CM: MSC-Conditioned Medium. \tile{D}
+    INA-6 were co-cultured on confluent hMSC for \SI{24}{\hour} or
+    \SI{48}{\hour}, separated by WPSC and sub-cultured for \SI{48}{\hour} under
+    IL-6 withdrawal ($n=6$), except the control (IL-6 + INA-6) ($n=3$). Signals
+    were normalized (red line) to INA-6 cells grown without hMSCs and IL-6
+    ($n=3$). \tile{Statistics} (D): Paired t-test, two-factor RM-ANOVA.
+    Datapoints represent the mean of four technical replicates. INA-6 were
+    isolated from independent co-cultures with hMSCs from six unique donors. }
 
 
-% ## Fig. 6
+% == ===================================================================
+% == Special Functional Characterization
+% == ===================================================================
+
+
+\subsubsection*{nMA-INA6 and MA-INA6 Show Increased Apoptosis Signaling Mediated by ER-Stress, p53 and Death Domain Receptors}
+%%%
+As previously stated, apoptosis rates increased in \INA cells grown on confluent
+hMSCs compared to \CMina\ cells after \SI{24}{hours} of co-culture
+(\autoref{fig:1}D). Since this setup was similar to that used to separate
+hMSC-interacting subpopulations using WPSC, we looked for enrichment of
+apoptosis-related terms (\autoref{fig:5}B). “Regulation of cellular response to
+stress” and “intrinsic apoptotic signaling pathway (in response to ER-stress)”
+are terms that were enriched in \versus{nMA}{CM}, \versus{MA}{CM} and their
+overlap. We also found specific stressors for either \nMAina\ (“intrinsic
+apoptotic signaling pathway by p53 class mediator”) or \MAina\ (“extrinsic
+apoptotic signaling pathway via death domain receptor”). Therefore, apoptosis
+may be driven by ER stress in both \nMAina\ and \MAina, but also by individual
+pathways such as p53 and death domain receptors, respectively.
+
+
+\subsubsection*{nMA-INA6 and MA-INA6 Regulate Genes Associated with Bone Loss}
+%%%
+Myeloma cells cause bone loss by degradation and dysregulation of bone turnover
+via \textit{DKK1} and \textit{OPG}
+\cite{standalOsteoprotegerinBoundInternalized2002,vanvalckenborghMultifunctionalRoleMatrix2004,zhouDickkopf1KeyRegulator2013}.
+RNAseq of hMSC-interacting subpopulations showed enrichment with functional
+terms ``skeletal system development'' and ``ossification'' (\autoref{fig:5}A,
+\apdxref{apdx:supplemental}{fig:S6}), as well as the regulation of
+\textit{MMP2}, \textit{MMP14}, \textit{DKK1}, and \textit{OPG}. Validation by
+qPCR (\autoref{fig:4}C, D) showed that \MAina\ significantly upregulated both
+\textit{MMP14} and \textit{MMP2} compared with either \nMAina\ or \CMina. The
+expression of \textit{DKK1}, however, was upregulated significantly in \nMAina\
+(and not significantly upregulated in \MAina), while \textit{OPG} was
+significantly downregulated only in \nMAina.
+
+Together, hMSC-interacting subpopulations might contribute to bone loss through
+different mechanisms: \MAina\ expression of matrix metalloproteinases and
+\nMAina\ cells via paracrine signaling.
+
+
+\subsubsection*{MA-INA6 Upregulate Collagen and Chemokines Associated with Bone Marrow Retention}
+%%%
+Retention of myeloma cells within the bone marrow is mediated by adhesion to the
+ECM (e.g., collagen VI) and the secretion of chemokines (\textit{CXCL8} and
+\textit{CXCL12}), potentially counteracting dissemination \cite{alsayedMechanismsRegulationCXCR42007,
+    katzAdhesionMoleculesLifelines2010}.
+RNAseq of hMSC-interacting subpopulations showed that genes upregulated in
+\MAina\ were enriched with collagen biosynthesis and modifying enzymes, as well
+as chemotaxis and chemotaxis-related terms (\autoref{fig:5}B). Using qPCR, we
+validated the upregulation of collagen crosslinkers (\textit{LOX} and
+\textit{TGM2}), collagen-binding \textit{DCN}, and chemokines (\textit{CXCL8}
+and \textit{CXCL12}) in \MAina\ compared with both \nMAina\ and \CMina\
+(\autoref{fig:4}D). Therefore, \MAina\ can provide both an adhesive surface and
+soluble signals for the retention of malignant plasma cells in the bone marrow.
+
+
+\subsubsection*{nMA-INA6 Show Highest Viability During IL-6 Withdrawal}
+%%%
+Although RNAseq did not reveal IL-6 induction in any WPSC-isolated
+subpopulation, \nMAina\ upregulated \textit{IGF-1} 1.35-fold [RNAseq,
+\versus{nMA}{\MAandCM}], which was shown to stimulate growth in CD45+ and IL-6
+dependent myeloma cell lines such as INA-6, implying increased autonomy for
+\nMAina\ (40). To test the autonomy of hMSC-interacting \INA subpopulations, we
+isolated them using WPSC after \SI{24}{hours} and \SI{48}{hours} of co-culture,
+sub-cultured them for \SI{48}{hours} under IL-6 withdrawal, and measured both
+viability and apoptosis (\autoref{fig:5}D). Among the subpopulations, \nMAina\
+was the most viable. Compared to \MAina, \nMAina\ increased cell viability by 8
+or 4 fold when co-cultured for \SI{24}{hours} or \SI{48}{hours}, respectively
+    [Hedges $g$ of Log\textsubscript{10}(Fold Change) = 2.31 or 0.82]. However, the
+difference was no longer significant after \SI{48}{hours} of co-culture,
+probably because \nMAina\ adhered to the hMSC layer (turning into \MAina) during
+prolonged co-culture, which could also explain why the viability of \MAina\ cell
+subcultures increased with prolonged co-culture. Nevertheless, \nMAina\ did not
+achieve the same viability as that of \INA cells cultured with IL-6. Despite the
+differences in viability, subcultures of hMSC-interacting subpopulations did not
+show any differences in caspase 3/7 activity when co-cultured for \SI{48}{hours}
+(\autoref{fig:5}D, right).
+
+Overall, among the hMSC-interacting subpopulations, \nMAina\ had the highest
+chance of surviving IL-6 withdrawal.
+
+
+% == ===================================================================
+% == Patient Survival
+% == ===================================================================
+
+
+% == Fig. 6 ============================================================
 \includeimage[1][{\fmleft} 3.3in {\fmright} {\fmtop}]{ FIGS/figures9_6.pdf }
 \splitcaption[fig:6]{%     
     Survival of patients with multiple myeloma regarding the expression levels
@@ -779,19 +867,50 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     using the Benjamini-Hochberg procedure.
 }
 
+\subsubsection*{Genes Upregulated by MA-INA6 are Associated with an Improved Disease Prognosis}
+%%%
+To relate the adhesion of \MAina\ observed \textit{in vitro} to the progression
+of multiple myeloma, we assessed patient survival [$n = 535$,
+        \citet{seckingerTargetExpressionGeneration2017b,seckingerCD38ImmunotherapeuticTarget2018}]
+depending on the expression level of 101 genes, which were upregulated in
+\versus{MA}{\nMAandCM} and are part of the ontology terms ``Extracellular matrix
+organization,'' ``ECM proteoglycans,'' ``cell-substrate adhesion,'' and
+``negative regulation of cell-substrate adhesion'' (\autoref{fig:6}A,
+\apdxref{apdx:supplemental}{tab:S2}). As a reference, we generated a list of 173
+cell cycle-related genes that were upregulated by \versus{nMA}{\MAandCM}.
+
+As expected, longer patient survival was associated with low expression of the
+majority of cell cycle genes [71 or 68 genes for progression-free survival (PFS)
+        or overall survival (OS)]. Only a few cell cycle genes (two for PFS and seven
+for OS) were associated with survival when highly expressed. Intriguingly,
+adhesion genes showed an inverse pattern: a large group of adhesion genes (24
+for PFS and 26 for OS) was significantly associated with improved survival when
+highly expressed, whereas only a few genes (two for PFS and four for OS)
+improved survival when expressed at low levels (\autoref{tab:1}). We concluded
+that the myeloma-dependent expression of adhesion factors determined in our
+\textit{in vitro} study correlates with improved patient survival.
+
+
+\subsubsection*{Expression of Adhesion- or Retention-related Genes (\textit{CXCL12}, \textit{DCN} and \textit{TGM2}) is Decreased During Progression of Multiple Myeloma}
+%%%
+To examine how the disease stage affects the adhesion and bone marrow retention
+of myeloma cells \textit{in vitro}, we analyzed the expression of
+\textit{CXCL12} in healthy plasma cell (BMPC) cohorts of patients at different
+disease stages and in myeloma cell lines (HMCL)
+[described in \citet{seckingerCD38ImmunotherapeuticTarget2018}] (\autoref{fig:6}C). We also
+included \textit{DCN} and \textit{TGM2} since both are suggested to inhibit
+metastasis in different cancers by promoting cell-matrix interactions
+\cite{huDecorinmediatedSuppressionTumorigenesis2021,tabolacciRoleTissueTransglutaminase2019}.
+In accordance with independent reports
+\cite{huangHigherDecorinLevels2015,baoCXCR4GoodSurvival2013}, high
+expression of \textit{CXCL12} and \textit{DCN} by myeloma cells was associated
+with improved overall survival (adj. \( p = .009 \) and \( .008 \),
+respectively) (\autoref{fig:6}B).
 
 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 
-    % ## Tab. 1
+    % == Tab. 1 ============================================================
     {
         \footnotesize
         \newcommand{\myheader}{
@@ -822,44 +941,44 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 
             \multirowcell{3}{3cm}{Not Downregulated (or overall low expression)}
              & CCNE2  & ENSG00000175305 & Overall    & low  & 5.34E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & MMP2   & ENSG00000087245 & Prog. Free & high & 2.29E-05 & 2.32E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & OSMR   & ENSG00000145623 & Prog. Free & high & 5.67E-04 & 7.15E-03 \\
-            \hhline{~------}
+            \hhline{~======}
             \hline
 
             \multirowcell{8}{2.7cm}{Continuously Downregulated (BMPC > MGUS > sMM > MM > MMR)}
              & AXL    & ENSG00000167601 & Overall    & high & 3.64E-05 & 1.84E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & COL1A1 & ENSG00000108821 & Prog. Free & high & 3.03E-04 & 4.37E-03 \\
             \hhline{~~~----}
              &        &                 & Overall    & high & 5.93E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & CXCL12 & ENSG00000107562 & Prog. Free & high & 1.16E-04 & 2.93E-03 \\
             \hhline{~~~----}
              &        &                 & Overall    & high & 6.48E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & CYP1B1 & ENSG00000138061 & Overall    & high & 6.84E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & DCN    & ENSG00000011465 & Overall    & high & 2.47E-04 & 8.33E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & LRP1   & ENSG00000123384 & Overall    & high & 4.34E-04 & 8.64E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & LTBP2  & ENSG00000119681 & Prog. Free & high & 9.03E-05 & 2.93E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & MFAP5  & ENSG00000197614 & Prog. Free & high & 2.43E-04 & 4.09E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & MMP14  & ENSG00000157227 & Prog. Free & high & 6.93E-05 & 2.93E-03 \\
-            \hhline{~------}
+            \hhline{~======}
              & MYL9   & ENSG00000101335 & Prog. Free & high & 1.46E-04 & 2.95E-03 \\
             \hhline{~~~----}
              &        &                 & Overall    & high & 1.56E-05 & 1.57E-03 \\
@@ -868,14 +987,91 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     }
 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+\textit{CXCL12} is expressed by BMPCs (median = 219~normalized counts), but its
+expression levels are significantly lower from MGUS to relapsed multiple myeloma
+(MMR) (median = 9~normalized counts in MMR and absent expression in most HMCL).
+\textit{DCN} (but not \textit{TGM2}) was weakly expressed in BMPCs ($Q_1$ = 0.7,
+$Q_3$ = 3.7, normalized counts), whereas \textit{TGM2} was weakly expressed only
+in patients with monoclonal gammopathy of undetermined significance (MGUS)
+($Q_1$ = 0.4, $Q_3$ = 4.1 normalized counts). The median and upper quartiles of
+both \textit{DCN}- and \textit{TGM2} decreased continuously after each stage,
+ending at $Q_3$ = 0.9 and $Q_3$ = 0.6, respectively, in MMR. 49 of the 101 adhesion genes
+(\autoref{fig:6}A) followed a similar pattern of continuous downregulation in
+the advanced stages of multiple myeloma (\apdxref{apdx:supplemental}{fig:S7}\,and\,\ref{fig:S8}), of which 19 genes were associated with
+longer PFS when they were highly expressed. The other 52 (out of 101) adhesion
+genes that were not downregulated across disease progression (or were expressed
+at a level too low to make that categorization) contained only five genes that
+were associated with longer PFS at high expression (\autoref{tab:1},
+\apdxref{apdx:supplemental}{tab:S2}).
 
-% ## Fig. 7
+Together, the expression of adhesion or bone marrow retention-related markers
+(\textit{CXCL12}, \textit{DCN}, and \textit{TGM2}) is reduced or lost at
+advanced stages of multiple myeloma, which could enhance dissemination and
+reduce retention in the BM microenvironment.
+
+
+\newpage
+
+% ======================================================================
+% ======================================================================
+% ======================================================================
+% == DISCUSSION
+
+\unnsubsection{Discussion}\label{C1:discussion} % > Require unique label
+%%%
+In this study, we developed an \textit{in vitro} model to investigate the
+attachment/detachment dynamics of \INA\ cells to/from hMSCs and established
+methods to isolate the attached and detached intermediates \nMAina\ and \MAina.
+Secondly, we characterized a cycle of (re)attachment, division, and detachment,
+linking cell division to the switch that causes myeloma cells to detach from
+hMSC adhesion (\autoref{fig:7}). Thirdly, we identified clinically relevant
+genes associated with patient survival, where better or worse survival was based
+on the adherence status of \INA\ to hMSCs.
+
+\INA\ cells emerged as a robust choice for studying myeloma dissemination
+\textit{in vitro}, showing rapid and strong adherence, as well as aggregation
+exceeding MSC saturation. The IL-6 dependency of \INA\ enhanced the resemblance
+of myeloma cell lines to patient samples, with \INA\ ranking 13th among 66 cell
+lines \cite{sarinEvaluatingEfficacyMultiple2020}. Despite variations in bone
+marrow MSCs between multiple myeloma and healthy states, we anticipated the
+robustness of our results, given the persistent strong adherence and growth
+signaling from MSCs to \INA\ during co-cultures
+\cite{dotterweichContactMyelomaCells2016}.
+
+
+We acknowledge that \INA\ cells alone cannot fully represent the complexity of
+myeloma aggregation and detachment dynamics. However, the diverse adhesive
+properties of myeloma cell lines pose a challenge. We reasoned that attempting
+to capture this complexity within a single publication would not be possible.
+Our focus on \INA\ interactions with hMSCs allowed for a detailed exploration of
+the observed phenomena, such as the unique aggregation capabilities that
+facilitate the easy detection of detaching cells \textit{in vitro}. The validity
+of our data was demonstrated by matching the \textit{in vitro} findings with the
+gene expression and survival data of the patients (e.g., \textit{CXCL12},
+\textit{DCN}, and \textit{TGM2} expression, \( n=873 \)), ensuring biological
+consistency and generalizability regardless of the cell line used. The protocols
+presented in this study offer a cost-efficient and convenient solution, making
+them potentially valuable for a broader study of cell interactions. We encourage
+optimizations to meet the varied adhesive properties of the samples, such as
+decreasing the number of washing steps if the adhesive strength is low. We
+caution against strategies that average over multiple cell lines without prior
+understanding their diverse attachment/detachment dynamics, such as homotypic
+aggregation. Such detailed insights may prove instrumental when considering the
+diversity of myeloma patient samples across different disease stages
+\cite{kawanoHomotypicCellAggregations1991, okunoVitroGrowthPattern1991}.
+
+The intermediates, \nMAina\ and \MAina, were distinct but shared similarities in
+response to cell stress, intrinsic apoptosis, and regulation by p53. Unique
+regulatory patterns were related to central transcription factors: E2F1 for
+\nMAina; and NF-$\kappa$B, SRF, and JUN for \MAina. This distinction may have
+been established through antagonism between p53 and the NF-$\kappa$B subunit
+RELA/p65 \cite{wadgaonkarCREBbindingProteinNuclear1999, websterTranscriptionalCrossTalk1999}. Similar
+regulatory patterns were found in transwell experiments with RPMI1-8226 myeloma
+cells, where direct contact with the MSC cell line HS5 led to NF-$\kappa$B
+signaling and soluble factors to E2F signaling \cite{dziadowiczBoneMarrowStromaInduced2022}.
+
+
+% == Fig. 7 ============================================================
 \includeimage[1][{\fmleft} 6.8in {\fmright} {\fmtop}]{
     FIGS/figures9_7.pdf
 }\figcaption[fig:7]{
@@ -904,40 +1100,80 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     \tile{Dissemination} After myeloma cells have detached, they gained a
     viability advantage through IL-6-independence (with unknown duration), which
     enhances their survival outside of the bone marrow and allows them to spread
-    throughout the body. }
+    throughout the body.
+}
 
 
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+The first subpopulation, \nMAina, represented proliferative and disseminative
+cells; They drove detachment through cell division, which was regulated by E2F,
+p53, and likely their crosstalk \cite{polagerP53E2fPartners2009}. \nMAina
+upregulate cell cycle progression genes associated with worse prognosis, because
+proliferation is a general risk factor for an aggressive disease course
+\cite{hoseProliferationCentralIndependent2011}. Additionally, \nMAina\ survived
+IL-6 withdrawal better than \CMina\ and \MAina, implying their ability to
+proliferate independently of the bone marrow
+\cite{bladeExtramedullaryDiseaseMultiple2022}. Indeed, xenografted \INA\ cells
+developed autocrine IL-6 signaling but remained IL-6-dependent after
+explantation \cite{burgerGp130RasMediated2001c}. The increased autonomy of
+\nMAina\ cells can be explained by the upregulation of \textit{IGF-1}, being the
+major growth factor for myeloma cell lines \cite{sprynskiRoleIGF1Major2009}.
+Other reports characterized disseminating cells differently: Unlike \nMAina,
+circulating myeloma tumor cells were reported to be non-proliferative and bone
+marrow retentive \cite{garcesTranscriptionalProfilingCirculating2020}. In
+contrast to circulating myeloma tumor cells, \nMAina\ were isolated shortly
+after detachment and therefore these cells are not representative of further
+steps of dissemination, such as intravasation, circulation or intravascular
+arrest \cite{zeissigTumourDisseminationMultiple2020}. Furthermore, Brandl et al.
+described proliferative and disseminative myeloma cells as separate entities,
+depending on the surface expression of CD138 or JAM-C
+\cite{akhmetzyanovaDynamicCD138Surface2020,
+brandlJunctionalAdhesionMolecule2022}. Although CD138 was not differentially
+regulated in \nMAina\ or \MAina, both subpopulations upregulated JAM-C,
+indicating disease progression \cite{brandlJunctionalAdhesionMolecule2022}.
 
-% lorem ipsum
-
-% V-Well is described in \apdxref{apdx:supplemental}{fig:S1}
-
-% V-Well is described in \apdxref{apdx:supplemental}{fig:S1}, \ref{fig:S2}
-
-% % Image cytometry is described in \autoref{subapdx:sup_figtabs} \autoref{fig:S2}
-
-% Full analysis is shown in \apdxref{subapdx:example_analysis}
-
-% % ======================================================================
-% % == Discussion
-% % ======================================================================
-\unnsubsection{Discussion}\label{C1:discussion} % > Require unique label
-\ %
-lorem ipsum
-
-% % == Paper 1 ===========================================================
-% % > You could import .pdf here, but chapter based theses should apply the 
-% % > manuscripts into the formatting of the thesis
-% % \addpdf{Research Article: Cancer Research Communications}{PUBLICATIONS/AACR.pdf}
+Furthermore, \nMAina\ showed that cell division directly contributed to
+dissemination. This was because \INA\ daughter cells emerged from the mother
+cell with distance to the hMSC plane in the 2D setup. A similar mechanism was
+described in an intravasation model in which tumor cells disrupt the vessel
+endothelium through cell division and detach into blood circulation
+\cite{wongMitosismediatedIntravasationTissueengineered2017}. Overall, cell
+division offers key mechanistic insights into dissemination and metastasis.
 
 
+
+The other subpopulation, \MAina, represented cells retained in the bone marrow; \linebreak
+\MAina\ strongly adhered to MSCs, showed NF-$\kappa$B signaling, and upregulated
+several retention, adhesion, and ECM factors. The production of ECM-associated
+factors has recently been described in MM.1S and RPMI-8226 myeloma cells
+\cite{maichlIdentificationNOTCHdrivenMatrisomeassociated2023}. Another report did not
+identify the upregulation of such factors after direct contact with the MSC cell
+line HS5; hence, primary hMSCs may be crucial for studying myeloma-MSC
+interactions \cite{dziadowiczBoneMarrowStromaInduced2022}. Moreover, \MAina\ upregulated
+adhesion genes associated with prolonged patient survival and showed decreased
+expression in relapsed myeloma. As myeloma progression implies the independence
+of myeloma cells from the bone marrow \cite{bladeExtramedullaryDiseaseMultiple2022,sarinEvaluatingEfficacyMultiple2020}, we interpreted these adhesion genes as
+mediators of bone marrow retention, decreasing the risk for dissemination and
+thereby potentially prolonging patient survival. However, the overall impact of
+cell adhesion and ECM on patient survival remains unclear. Several adhesion
+factors have been proposed as potential therapeutic targets
+\cite{brandlJunctionalAdhesionMolecule2022, bouzerdanAdhesionMoleculesMultiplea}. Recent studies
+have described the prognostic value of multiple ECM genes, such as those driven
+by NOTCH \cite{maichlIdentificationNOTCHdrivenMatrisomeassociated2023}. Another study focused
+on ECM gene families, of which only six of the 26 genes overlapped with our gene
+set (\apdxref{apdx:supplemental}{tab:S2}) \cite{eversPrognosticValueExtracellular2023}. The
+expression of only one gene (\textit{COL4A1}) showed a different association with overall
+survival than that in our cohort. The lack of overlap and differences can be
+explained by dissimilar definitions of gene sets (homology \textit{vs.} gene ontology),
+methodological discrepancies, and cohort composition.
+
+In summary, our \textit{in vitro} model provides a starting point for
+understanding the initiation of dissemination and its implications for patient
+survival, providing innovative methods, mechanistic insights into
+attachment/detachment, and a set of clinically relevant genes that play a role
+in bone marrow retention. These results and methods might prove useful when
+facing the heterogeneity of disseminative behaviors among myeloma cell lines and
+primary materials.
 
 
 

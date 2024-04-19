@@ -44,16 +44,13 @@
 \usepackage{xstring} % > For string processing e.g. \IfStrEq
 \usepackage{etoolbox} % > List processing
 
-
 % == Document Layout 
 \usepackage{geometry} % > Set the general layout of the document
 \usepackage{changepage} % > Allows for layout changes in single pages
 
-
 % == Fonts 
 \usepackage{fontspec} % > For custom fonts
 \usepackage{xcolor} % > Required for \definecolor
-
 
 % == Vertical/Horizontal Spacing 
 \usepackage{float} % > For e.g. forced precise image positioning
@@ -70,7 +67,6 @@
 \newlength{\rightm}
 \setlength{\rightm}{1.5cm}
 
-
 % == Sections ==========================================================
 \usepackage{tocloft} % > For customizing the table of contents
 \usepackage{titlesec} % > For customizing sections
@@ -81,11 +77,9 @@
 % == Page Head and Foot 
 \usepackage{fancyhdr} % > For customizing headers and footers
 
-
 % == Raw Text 
 \usepackage{xspace} % > For adding spaces after commands
 \usepackage{xstring} % > For string processing
-
 
 % == Special Formats: Math, Units, etc. ================================
 \usepackage{amsmath}  % > Enhances math handling in LaTeX
@@ -93,7 +87,6 @@
 % \usepackage{mhchem} % > For chemical equations
 \usepackage[normalem]{ulem} % > For underlining with dots for handwriting
 \usepackage[hidelinks]{hyperref} % > For clickable links, [remove boxes]
-
 
 % == Captions 
 \usepackage[ % ## Customize captions
@@ -103,7 +96,6 @@
 ]{caption}
 \usepackage{chngcntr} % > For continuous numbering of figures and tables
 
-
 % == Images, Listings, Tables ==========================================
 \usepackage{graphicx} % > For the inclusion of images
 % \usepackage{wrapfig} % > For wrapping text around images
@@ -112,11 +104,9 @@
 \usepackage{hhline} % > For better lines in tables
 \usepackage{multirow} % > For rows conatining two lines
 
-
 % == Citations 
 \usepackage{apacite} % > For citations
 \usepackage{natbib} % > For citations without parentheses
-
 
 % == PDF Files 
 \usepackage{pdfpages} % > For including PDF files
@@ -434,6 +424,13 @@
 
 
 % == Referencing Captions ==============================================
+
+% ## Redefine format of \autoref
+\renewcommand{\figureautorefname}{Fig.}
+\renewcommand{\tableautorefname}{Tab.}
+% \renewcommand{\listingautorefname}{Lst.}
+% \let\oldautoref\autoref
+% \renewcommand{\autoref}[1]{\oldautoref{#1}\,}
 
 % ## Shorten referencing to Figures in Appendix
 % > \apdxref{appendixlabel}{figlabel}
