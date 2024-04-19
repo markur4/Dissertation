@@ -276,8 +276,8 @@ Gladbach).
 \ %
 RNA was isolated using the \textit{NucleoSpin RNA II Purification Kit}
 (Macherey-Nagel) according to the manufacturer's instructions. RNA was isolated
-from INA-6 cells co-cultured with a unique hMSC donor ($n=5$ for qPCR, $n=11$
-for RNA sequencing).
+from INA-6 cells co-cultured with a unique hMSC donor ($n=5$ for RNA sequencing, $n=11$
+for qPCR).
 
 \subsubsection*{RNA sequencing, Differential Expression, and Functional Enrichment Analysis}
 \ %
@@ -320,7 +320,7 @@ diluted cDNA, and \SI{5}{pmol} of primers obtained from Biomers.net or Qiagen
 % 192 from multiplicative to additive or to fulfill sphericity requirements. p-value = 0.05 > * > 0.01 >
 % 193 ** > 10-3 > *** 10-4 > ****. P-values were either adjusted (p-adj) or not adjusted (p-unc) for
 % 194 family wise error rate. Power calculations were not performed to determine the sample size.
-\subsubsection*{Statistics}
+\subsubsection*{Statistical Analysis}
 \ %
 Inferential statistics were performed using Python (IPython,
 \textit{RRID:SCR\_001658},
@@ -392,7 +392,7 @@ cells could adhere to every hMSC, we saturated hMSCs with \INA. A seeding ratio
 of 1:4 (hMSC:\INA) resulted in the occupation of \SIplusminus{93}{6}{\percent}
 of single hMSCs by one or more \INA cells within 24 hours after \INA addition,
 escalating to \SI{6}{\percent} after \SI{48}{hours} (\autoref{fig:1}A, B).
-Therefore, most hMSCs provide an interacting surface for \INA cells.
+Therefore, most hMSCs provide an interaction surface for \INA cells.
 
 INA-6 exhibits homotypic aggregation when cultured alone, a phenomenon observed
 in some freshly isolated myeloma samples (up to \SI{100}{cells} after
@@ -426,7 +426,8 @@ signaling caused by soluble MSC-derived factors, all cultures were incubated in
 hMSC-conditioned medium and the results were normalized to \INA cells cultured
 without direct hMSC contact (\autoref{fig:1}E,\,left).
 
-\newpage
+
+% \newpage
 
 % ## Example:
 % > \includeimage[scale][left bottom right top]{
@@ -435,18 +436,18 @@ without direct hMSC contact (\autoref{fig:1}E,\,left).
 
 % ## Fig. 1
 % > use \noindent, for some reason first image is indented otherwise
-\noindent\includeimage[1][{\fmleft} 2.8in {\fmright} {\fmtop}]{
+\includeimage[1][{\fmleft} 2.8in {\fmright} {\fmtop}]{
     FIGS/figures9_1.pdf
-}\splitcaption{ %
+}\splitcaption[fig:1]{ %
     INA-6 growth conformations and survival on hMSCs. \tile{A} Interaction of
     INA-6 (green) with hMSCs (black, negative staining) at different INA-6
     densities (constant hMSC densities). \mbox{Scale\,bar\,=\,\SI{200}{\um}}.
     \tile{B} Frequency of single hMSCs (same as A) that are covered by INA-6 of
-    varying group sizes. Technical replicates = three per datapoint; Single
-    hMSCs evaluated: 100 per technical replicate. \tile{C} Interaction of INA-6
+    varying group sizes. Technical replicates = three per datapoint; 100 single
+    hMSCs were evaluated per technical replicate. \tile{C} Interaction of INA-6
+    }{%
     with hMSCs at different hMSC densities (constant INA-6 densities). Scale bar
     = \SI{300}{\um}.
-}{%
     \tile{D} Two types of homotypic interaction: Attachment after cell contact
     and sustained attachment of daughter cells after cell division. Datapoints
     represent one of four independent time-lapse recordings, each evaluating 116
@@ -457,10 +458,11 @@ without direct hMSC contact (\autoref{fig:1}E,\,left).
     cultured in MSC-conditioned medium ($= \text{red line}$) ($n=4$).
     \tile{E\,right} Signals were measured in co-cultures and normalized by the
     sum of the signals measured in hMSC and INA-6 cultured separately ($=
-    \text{red line}$) ($n=3$). \tile{Statistics} Paired t-test, two-factor RM-
+        \text{red line}$) ($n=3$). \tile{Statistics} Paired t-test, two-factor RM-
     ANOVA. Datapoints represent independent co-cultures with hMSCs from three
-    (A, B, D, E\,right), four (E\,left) unique donors. Confl.\,=\,Confluent. }
-\label{fig:1}
+    (A, B, D, E\,right), four (E\,left) unique donors. Confl.\,=\,Confluent.
+}
+
 
 
 \INA viability (ATP) was not affected by the direct adhesion of hMSCs at any
@@ -483,7 +485,6 @@ RM-ANOVA confirmed that adherence to confluent MSCs increased apoptosis rates of
 \omnibus{F}{2,4}{26.86}{-unc}{\scinot{4.80}{-3}} (interaction between MSC
 density and time, Two-factor RM-ANOVA), whereas \INA cells were unaffected when
 grown on dispersed hMSCs.
-
 In summary, the growth conformation of \INA cells, measured as the ratio between
 homotypic aggregation and heterotypic MSC interactions, affected apoptosis rates
 of \INA cells.
@@ -504,15 +505,17 @@ cells) (\autoref{fig:2}D). Since approximately 10-20 \INA cells already fully
 covered a single hMSC, we suggest that myeloma cell detachment depended not only
 on hMSC saturation but also required a minimum aggregate size. Interestingly,
 \INA detached mostly as single cells, independent of aggregate size categories
-    \omnibus{F}{2,6}{4.68}{-unc}{0.059}
-    (Two-factor RM-ANOVA) (\autoref{fig:2}E),
+\omnibus{F}{2,6}{4.68}{-unc}{0.059}
+(Two-factor RM-ANOVA) (\autoref{fig:2}E),
 showing that aggregates remained mostly stable despite losing cells.
 
 
+
 % ## Fig. 2
-\includeimage[1][{\fmleft} 7.4in {\fmright} {\fmtop}]{
+
+\includeimage[1][{\fmleft} 7.43in {\fmright} {\fmtop}]{
     FIGS/figures9_2.pdf
-}\captionof{figure}{ %
+}\figcaption[fig:2]{ %
     Time-lapse analysis of INA-6 detachment from INA-6 aggregates and hMSCs.
     \tile{A} Frequency of observed INA-6 aggregates that did or did not lose
     INA-6 cell(s). 87 aggregates were evaluated per datapoint. \tile{B} Example
@@ -528,8 +531,9 @@ showing that aggregates remained mostly stable despite losing cells.
     Paired-t-test; (C-E): Paired-t-test, Two-factor RM-ANOVA; Datapoints
     represent three (A) or four (C-E) independent time-lapse recordings of
     co-cultures with hMSCs from two (A) or three (C-E) unique donors.
-    }\label{fig:2}
+}
 
+\vspace{-.3cm}
 \subsubsection*{Cell Division Generates a Daughter Cell Detached from hMSC}
 We suspected that cell division drives detachment because we observed that
 MSC-adhering \INA cells could generate daughter cells that “roll over” the
@@ -547,11 +551,10 @@ one daughter cell can detach.
 
 
 
-
 % ## Fig. 3
-\includeimage[1][{\fmleft} 5.4in {\fmright} {\fmtop}]{
+\includeimage[1][{\fmleft} 5.42in {\fmright} {\fmtop}]{
     FIGS/figures9_3.pdf
-}\captionof{figure}{ %
+}\figcaption[fig:3]{ %
     Detachment of INA-6 daughter cells after Cell Division. \tile{A-D} INA-6
     divisions in interaction with confluent hMSCs. Seeding ratio INA-6:MSC =
     4:20. \tile{A} Three examples of dividing INA-6 cells generating either two
@@ -562,7 +565,7 @@ one daughter cell can detach.
     \tile{C} Frequencies of INA-6 pairs defined in (A, B) per observed cell
     division. 65 divisions were evaluated for each of three independent
     time-lapse recordings. \tile{D} Rolling duration of nMA cells after division
-    did not depend on hMSC donor 
+    did not depend on hMSC donor
     \omnibus{H}{2}{5.250}{-unc}{.072}.
     Datapoints represent single nMA-cells after division. \tile{E-G} Adhesive
     and cell cycle assessment of MSC-interacting INA-6 subpopulations using the
@@ -577,8 +580,8 @@ one daughter cell can detach.
     shared the same hMSC-donor and INA-6 culture. Co-cultures were incubated for
     three different durations (\SIlist{1;2;3}{\hour} after INA-6 addition). Time
     points were pooled, since time did not show an effect on cell adhesion
-        \omnibus{F}{2,4}{1.414}{-unc}{0.343}
-        Factorial RM-ANOVA shows an interaction between cell cycle and the kind
+    \omnibus{F}{2,4}{1.414}{-unc}{0.343}
+    Factorial RM-ANOVA shows an interaction between cell cycle and the kind
     of adhesive subpopulation \omnibus{F}{1,8}{42.67}{-unc}{\scinot{1.82}{-4}}.
     Technical replicates = 4 per datapoint. \tile{G} Cell cycles were profiled
     in cells gathered from the pellets of four independent co-cultures ($n=4$)
@@ -587,7 +590,8 @@ one daughter cell can detach.
     Four technical replicates were pooled after pelleting. \tile{Statistics}
     (D): Kruskal-Wallis H-test. (F): Paired t-test, (G): Paired t-test,
     two-factor RM-ANOVA. Datapoints represent INA-6 from independent co-
-    cultures with hMSCs from three unique donors. }\label{fig:3}
+    cultures with hMSCs from three unique donors.
+}
 
 
 To validate that cell division reduced adhesion, we measured both the size and
@@ -609,6 +613,7 @@ initiation of dissemination.
 
 
 
+
 \subsubsection*{RNAseq of Non-MSC-Adhering and MSC-Adhering Subpopulations}
 To characterize the subpopulations separated by WPSC, we conducted RNAseq,
 revealing 1291 differentially expressed genes between \versus{\nMAina}{\CMina},
@@ -623,55 +628,93 @@ correlated with those measured with qPCR for each pairwise comparison
 measured by qPCR showed a mean expression opposite to that obtained by RNAseq
 (\versus{\nMAina}{\CMina}), although the difference was insignificant
 (\autoref{fig:4}C). For \versus{\nMAina}{\CMina}, the difference in expression
-measured by qPCR was significant for only two of the 11 genes 
+measured by qPCR was significant for only two of the 11 genes
 (\listit{DKK1, OPG}), whereas the other genes (\listit{BCL6, BMP4, BTG2, IL10RB,
-IL24, NOTCH2, TNFRSF1A, TRAF5}) only confirmed the tendency measured by RNAseq
+    IL24, NOTCH2, TNFRSF1A, TRAF5}) only confirmed the tendency measured by RNAseq
 (\autoref{fig:4}C--E). For \versus{\MAina}{\CMina}, qPCR validated the
 significant upregulation of seven genes (\listit{TGM2, DCN, LOX, MMP14, MMP2,
-CXCL12, CXCL8}), whereas the downregulation of \textit{BMP4} was insignificant.
+    CXCL12, CXCL8}), whereas the downregulation of \textit{BMP4} was insignificant.
 
 
-% [𝜌(16) = .803, p = 6.09e-5] turns into \omnibus{\rho}{16}{.803}{}{\scinot{6.09}{-5}}
-
-% [F(2,3) = .888, p-unc = 9.13e-6] turns into \omnibus{\rho}{2,3}{.888}{-unc}{\scinot{9.13}{-6}}
-% \omnibus{\rho}{16}{.803}{-unc}{\num{123e23}}
-
-% \omnibus{\rho}{16}{.803}{$p$-unc}{$6.09 \times 10^{-5}$}
 
 % ## Fig. 4
 \includeimage[1][{\fmleft} 4.3in {\fmright} {\fmtop}]{
     FIGS/figures9_4.pdf
-}\captionof{figure}{ %
-    Separation and gene expression of INA-6 subpopulations. \tile{A} Schematic of
-    “Well-Plate Sandwich Centrifugation” (WPSC) separating nMA- from MA-INA6. A
-    co-culture 96-well plate is turned upside down and attached on top of a
-    “catching plate”, forming a “well-plate sandwich”. nMA-INA6 cells are collected
-    in the catching plate by subsequent rounds of centrifugation and gentle washing.
-    MA-INA6 are enzymatically dissociated from hMSCs or by rough pipetting.
-    Subsequent RNAseq of MSC-interacting subpopulations reveals distinct expression
-    clusters [right, multidimensional scaling plot (MDS) ($n=5$)]. \tile{B}
-    Separation was microscopically tracked after each centrifugation step.
-    \tile{C-E} RT-qPCR of genes derived from RNAseq results. Expression was
-    normalized to the median of CM-INA6. Samples include those used for RNAseq and
-    six further co-cultures ($n=11$; non-detects were discarded). \tile{C} Adhesion
-    factors, ECM proteins, and matrix metalloproteinases. \tile{D} Factors involved
-    in bone remodeling and bone homing chemokines. \tile{E} Factors involved in
-    (immune) signaling. \tile{Statistics} (C-E): Paired t-test. Datapoints represent the
-    mean of three (B-E) technical replicates. INA-6 were isolated from independent
+}\figcaption[fig:4]{ %
+    Separation and gene expression of INA-6 subpopulations. \tile{A} Schematic
+    of “Well-Plate Sandwich Centrifugation” (WPSC) separating nMA- from MA-INA6.
+    A co-culture 96-well plate is turned upside down and attached on top of a
+    “catching plate”, forming a “well-plate sandwich”. nMA-INA6 cells are
+    collected in the catching plate by subsequent rounds of centrifugation and
+    gentle washing. MA-INA6 are enzymatically dissociated from hMSCs or by rough
+    pipetting. Subsequent RNAseq of MSC-interacting subpopulations reveals
+    distinct expression clusters [right, multidimensional scaling plot (MDS)
+            ($n=5$)]. \tile{B} Separation was microscopically tracked after each
+    centrifugation step. \tile{C-E} RT-qPCR of genes derived from RNAseq
+    results. Expression was normalized to the median of CM-INA6. Samples include
+    those used for RNAseq and six further co-cultures ($n=11$; non-detects were
+    discarded). \tile{C} Adhesion factors, ECM proteins, and matrix
+    metalloproteinases. \tile{D} Factors involved in bone remodeling and bone
+    homing chemokines. \tile{E} Factors involved in (immune) signaling.
+    \tile{Statistics} (C-E): Paired t-test. Datapoints represent the mean of
+    three (B-E) technical replicates. INA-6 were isolated from independent
     co-cultures with hMSCs from five (A, B), nine (C-E) unique donors.
-}\label{fig:4} % > Is referenced in supplemental
+} 
+
+\subsubsection*{Non-MSC-Adhering \INA and MSC-Adhering \INA Have Distinct Expression Patterns of Proliferation or Adhesion, Respectively}
+To functionally characterize the unique transcriptional patterns in \nMAina and
+\MAina, we generated lists of genes that were differentially expressed
+\versus{}{} the other two subpopulations [termed \versus{nMA}{\MAandCM} and
+\versus{MA}{\nMAandCM}].
 
 
+\versus{nMA}{\MAandCM} and \versus{MA}{\nMAandCM}. Functional enrichment
+analysis was performed, and the enriched terms were displayed as ontology
+clusters (\autoref{fig:5}A). \nMAina upregulated genes enriched with loosely
+connected term clusters associated with proliferation (e.g., “positive
+regulation of cell cycle”). \MAina upregulated genes enriched with tightly
+connected term clusters related to cell adhesion and the production of ECM
+factors (e.g., ``cell-substrate adhesion''). Similar ontology terms were
+enriched in the gene lists obtained from pairwise comparisons
+\versus{\nMAina}{\CMina}, \versus{\MAina}{\CMina}, and \versus{\MAina}{\nMAina}
+(\autoref{fig:5}B). In particular, \versus{\nMAina}{\CMina} (but not
+\versus{\MAina}{\CMina}) upregulated genes that were enriched with “G1/S
+transition”, showing that WPSC isolated \nMAina\ daughter cells after cell
+division.
 
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+To check for similarities between lists of differentially expressed genes from
+hMSC-interacting subpopulations, we performed enrichment analysis on gene lists
+from the overlaps (“$\cap$”) between all pairwise comparisons (\autoref{fig:5}B,
+\apdxref{apdx:supplemental}{fig:S6}), and showed the extent of these overlaps in
+circos plots (\autoref{fig:5}C). The overlap between \versus{\MAina}{\CMina} and
+\versus{\nMAina}{\CMina} showed neither enrichment with proliferation- nor
+adhesion-related terms but with apoptosis-related terms. A direct comparison of
+MSC-interacting subpopulations (\versus{\MAina}{\nMAina}) showed a major overlap
+with \versus{\MAina}{\CMina} (\autoref{fig:5}C, middle). This overlap was
+enriched with terms related to adhesion but not proliferation. Hence, \MAina-INA6
+and \nMAina-INA6 mostly differed in their expression of adhesion genes.
+
+To assess whether \nMAina\ and \MAina\ were regulated by separate transcription
+factors, we examined the enrichment of curated regulatory networks from the
+TRRUST database (\autoref{fig:5}B\,bottom). All the lists were enriched for p53
+regulation. E2F1 regulation was observed only in genes upregulated in
+\versus{\nMAina}{\CMina} and downregulated in \versus{\MAina}{\nMAina}.
+Genelists involving \MAina\ were enriched in regulation by subunits of
+NF-$\kappa$B (NFKB1/p105 and RELA/p65) and factors of immediate early response
+(SRF, JUN). Correspondingly, NF-$\kappa$B and JUN are known to regulate the
+expression of adhesion factors in multiple myeloma and B-cell lymphoma,
+respectively \cite{blonskaJunregulatedGenesPromote2015,taiRoleBcellactivatingFactor2006}.
+
+
+Taken together, MSC-interacting subpopulations showed unique regulatory
+patterns, focusing on either proliferation or adhesion.
 
 
 
 % ## Fig. 5
 \includeimage[.97][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
     FIGS/figures9_5.pdf
-}\captionof{figure}{ %
+}\figcaption[fig:5]{ %
     Functional analysis of MSC-interacting subpopulations \tile{(A-C)}
     Functional enrichment analysis of differentially expressed genes (from
     RNAseq) using Metascape. \tile{A} Gene ontology (GO) cluster analysis of
@@ -695,8 +738,10 @@ eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
     normalized (red line) to INA-6 cells grown without hMSCs and IL-6 ($n=3$).
     \tile{Statistics} (D): Paired t-test, two-factor RM-ANOVA. Datapoints represent the
     mean of four technical replicates. INA-6 were isolated from independent
-    co-cultures with hMSCs from six unique donors. }\label{fig:5}
+    co-cultures with hMSCs from six unique donors.
+}
 
+\subsubsection*{MSC-Adhering \INA Cells Are More Resistant to IL-6 Withdrawal}
 
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
@@ -706,10 +751,15 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
 eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
 voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+
+ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
+eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
+voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
+
 
 % ## Fig. 6
 \includeimage[1][{\fmleft} 3.3in {\fmright} {\fmtop}]{ FIGS/figures9_6.pdf }
-\splitcaption{%     
+\splitcaption[fig:6]{%     
     Survival of patients with multiple myeloma regarding the expression levels
     of adhesion and bone retention genes. \tile{A} p-value distribution of genes
     associated with patient survival ($n=535$) depending on high or low
@@ -730,7 +780,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     marks one normalized read count. \tile{Statistics} (A, B): Log-rank test;
     (C): Kruskal-Wallis, Mann–Whitney U Test. All $p$-values were corrected
     using the Benjamini-Hochberg procedure.
-}\label{fig:6}
+}
 
 
 
@@ -831,7 +881,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
 % ## Fig. 7
 \includeimage[1][{\fmleft} 6.8in {\fmright} {\fmtop}]{
     FIGS/figures9_7.pdf
-}\captionof{figure}{
+}\figcaption[fig:7]{
     Proposed model of “Detached Daughter Driven Dissemination” (DDDD) in
     aggregating multiple myeloma. \tile{Heterotypic Interaction} Malignant
     plasma cells colonize the bone marrow microenvironment by adhering to an MSC
@@ -857,7 +907,7 @@ voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
     \tile{Dissemination} After myeloma cells have detached, they gained a
     viability advantage through IL-6-independence (with unknown duration), which
     enhances their survival outside of the bone marrow and allows them to spread
-    throughout the body. }\label{fig:7}
+    throughout the body. }
 
 
 

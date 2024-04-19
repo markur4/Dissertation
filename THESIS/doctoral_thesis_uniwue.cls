@@ -99,6 +99,7 @@
 
 % ## Set paragraph spacing
 \setlength{\parskip}{6pt}
+% \setlength{\parindent}{0pt} % > No indentation for paragraphs
 
 % ## Define variables to be reused for vertical spacing
 \newlength{\vdouble}
@@ -167,6 +168,7 @@
 
 
 
+
 % == Page Head and Foot =================================================
 \usepackage{fancyhdr}
 
@@ -202,8 +204,9 @@
 \renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
 
 
+
 % ======================================================================
-% == Text Blocks
+% == Raw Text
 % ======================================================================
 
 
@@ -212,40 +215,87 @@
 % ## Tell Latex to never break these words at the end of a line
 \hyphenation{hMSC hMSCs MM}
 % > Commands for words containing hyphens to not be broken
+\newcommand{\INA}{\mbox{INA-6}\xspace}
 \newcommand{\nMAina}{\mbox{nMA-INA6}\xspace}
 \newcommand{\MAina}{\mbox{MA-INA6}\xspace}
 \newcommand{\CMina}{\mbox{CM-INA6}\xspace}
-\newcommand{\INA}{\mbox{INA-6}\xspace}
-\newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
 
 
 % == White Space =======================================================
 \usepackage{xspace}
 \xspaceremoveexception{,}
-\xspaceaddexceptions{\,} % > Add a space after \, command
+\xspaceaddexceptions{\, ] )} % > Don't add a space after \, command
 
 % ## Command to replace all spaces with shortspaces
 \newcommand{\shortspaces}[1]{%
-    \StrSubstitute{#1}{ }{\,}[\temp]%
-    \temp
+\StrSubstitute{#1}{ }{\,}[\temp]%
+\temp
 }
 
 
-% == Special Formats ===================================================
+
+% ======================================================================
+% == Special Formats: Math, Units, etc.
+% ======================================================================
+
+% == Special Combinations ==============================================
+\newcommand{\MAandCM}{\mbox{(MA\,\&\,CM)}\xspace}
+\newcommand{\nMAandCM}{\mbox{(nMA\,\&\,CM)}\xspace}
+\newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
+
+
+
+% == Math ==============================================================
+\usepackage{amsmath}  % > Enhances math handling in LaTeX
+
+% ## Sans-serif font for math environment
+% \sansmath  % !! Can only be called in the document, not in the preamble
+
+
+
+
+% == Units =============================================================
+\usepackage{siunitx} % > Provides the \SI{}{} and \si{} command 
+\sisetup{
+    detect-all, % > Apply the font settings to the text font
+    range-phrase=--, % > Remove unit after range start
+    range-units=single, % > For concentration ranges
+}
+% ## Declare units
+% > \SI{10}{\molar} --> 10 M
+% > \SIrange{10}{20}{\molar} --> 10--20 M
+% > \SIlist{10;20;30}{\molar} --> 10, 20, 30 M
+\DeclareSIUnit{\um}{\micro\meter} % >  Micrometer µm
+\DeclareSIUnit{\normcounts}{normalized counts} % > normalized counts
+\DeclareSIUnit{\cellspercm}{cells/cm\textsuperscript{2}} % > cells/cm^2
+
+% ## Define commands combining numbers and units
+\newcommand{\scinot}[2]{#1×10^{#2}}
+\newcommand{\xprod}[2]{$\num{#1}$\,$\times$\,$\num{#2}$}
+% > \SIprod{130}{100}{mm} --> 130x100 mm
+\newcommand{\SIprod}[3]{\xprod{#1}{#2}\,\si{#3}}
+% > \SIdiv{130}{100}{mm} --> 130/100 mm
+\newcommand{\SIslash}[3]{$\num{#1}$\,/\,$\num{#2}$\,\si{#3}}
+\newcommand{\SIplusminus}[3]{$\num{#1}$\,$\pm$\,$\num{#2}$\,\si{#3}}
+
+
+
+
+
+% == Lists =============================================================
 % ## Commands to process multiple arguments
 \newcounter{@itemcount}
 \newcounter{@listlen}
 \newcommand{\@countlistitems}[1]{%
     \stepcounter{@listlen}%
-}
+}    
 \newcommand{\@processitem}[1]{%
     \stepcounter{@itemcount}%
     \textit{#1}%
     \ifnum\value{@itemcount}<\value{@listlen}%
         ,\,\allowbreak%
-    \fi
-}
-
+    \fi    
+}    
 
 % ## Command to format make italicised list
 \newcommand{\listit}[1]{%
@@ -254,16 +304,25 @@
     \forcsvlist{\listgadd\mylist}{#1}%
     \forlistloop{\@countlistitems}{\mylist}%
     \forlistloop{\@processitem}{\mylist}%
-}
+}    
 
+
+% == Statistics =============================================================
 % ## Command to report an omnibus test
 % > #1 is the name of the test statistic, e.g. "F" or "\rho"
 % > #2 is the degree of freedoms, e.g. "1, 2"
 % > #3 is the value of the omnibus statistic
 % > #4 (optional) is the kind of p-value, e.g. "p-unc", it defaults to empty
 % > #5 is the p-value
-
 \newcommand{\omnibus}[5]{[$#1(#2)$\,$=$\,$#3$, $p$#4\,$=$\,$#5$]}
+
+
+
+% == Chemical Equations ================================================
+%\usepackage[version=3]{mhchem} % > Package for chemical equation typesetting
+
+
+
 
 
 
@@ -273,10 +332,6 @@
 \usepackage{xspace} % > For adding spaces after commands
 \usepackage[normalem]{ulem} % > For underlining with dots for handwriting
 \usepackage{xstring}
-
-
-
-
 
 
 
@@ -373,49 +428,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 }
 
 
-% == Chemical Equations ================================================
-%\usepackage[version=3]{mhchem} % > Package for chemical equation typesetting
-
-
-% == Math ==============================================================
-\usepackage{amsmath}  % > Enhances math handling in LaTeX
-\usepackage{mathastext} % for upright numbers
-% \usepackage{sansmathfonts} % > For sans-serif math
-
-% ## Sans-serif font for math environment
-\usepackage{sansmath}  % > Enables turning on sans-serif math mode, and using other environments
-% \sansmath  % !! Can only be called in the document, not in the preamble
-
-% ## Make numbers non-italic
-% \usepackage[italic]{mathastext} % for upright numbers
-% \usepackage{newtxsf} % for sans-serif math
-
-
-
-
-% == Units =============================================================
-\usepackage{siunitx} % > Provides the \SI{}{} and \si{} command 
-\sisetup{
-    detect-all, % > Apply the font settings to the text font
-    range-phrase=--, % > Remove unit after range start
-    range-units=single, % > For concentration ranges
-}
-% ## Declare units
-% > \SI{10}{\molar} --> 10 M
-% > \SIrange{10}{20}{\molar} --> 10--20 M
-% > \SIlist{10;20;30}{\molar} --> 10, 20, 30 M
-\DeclareSIUnit{\um}{\micro\meter} % >  Micrometer µm
-\DeclareSIUnit{\normcounts}{normalized counts} % > normalized counts
-\DeclareSIUnit{\cellspercm}{cells/cm\textsuperscript{2}} % > cells/cm^2
-
-% ## Define commands combining numbers and units
-\newcommand{\scinot}[2]{#1×10^{#2}}
-\newcommand{\xprod}[2]{$\num{#1}$\,$\times$\,$\num{#2}$}
-% > \SIprod{130}{100}{mm} --> 130x100 mm
-\newcommand{\SIprod}[3]{\xprod{#1}{#2}\,\si{#3}}
-% > \SIdiv{130}{100}{mm} --> 130/100 mm
-\newcommand{\SIslash}[3]{$\num{#1}$\,/\,$\num{#2}$\,\si{#3}}
-\newcommand{\SIplusminus}[3]{$\num{#1}$\,$\pm$\,$\num{#2}$\,\si{#3}}
 
 
 % ======================================================================
@@ -440,50 +452,86 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > \includeimage[scale][left bottom right top]{
 % >     pathtopicture
 % > }
-\NewDocumentCommand{\includeimage}{O{0.99} O{} m}{
+
+\NewDocumentCommand{\includeimage}{O{0.99} O{} m}{%
     \vspace{\vfull}
-    \begin{minipage}{\textwidth}
+    {%
         \centering
-        \IfStrEq{#2}{}
-        {\includegraphics[width=#1\textwidth]{#3}}
-        {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
-    \end{minipage} %
+        \begin{minipage}{\textwidth}
+            \IfStrEq{#2}{}
+            {\includegraphics[width=#1\textwidth]{#3}}
+            {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
+        \end{minipage} %
+    }%
 }
-% > #4 is the float position (optional, default is h)
-% \NewDocumentCommand{\includeimage}{O{0.99} O{} m O{h}}{
-%     \begin{wrapfigure}{#4}{#1\textwidth}
-%         \vspace{\vfull}
-%         \begin{minipage}{\linewidth}
-%             \centering
-%             \IfStrEq{#2}{}
-%             {\includegraphics[width=\linewidth]{#3}}
-%             {\includegraphics[width=\linewidth, trim=#2, clip]{#3}}
-%         \end{minipage}
-%     \end{wrapfigure}
-% }
+
+
+% ## Define default messages for objects continueing across page-breaks
+\newcommand{\continuestartmsg}{%
+    \textit{continued\,on\,next\,page}
+}
+\newcommand{\continueendmsg}{%
+    \textit{continued\,from\,previous\,page}
+}
+
 
 % ## Define a command to include an image that continues on the next page
 \NewDocumentCommand{\includeimagecontinued}{O{0.99} O{} O{} m}{
     {
-            % > Set the caption format (not bold, if continued)
-            % \captionsetup[figure]{labelformat=appendixfigurecontinued}
             \addtocounter{figure}{-1} % > Decrease the figure counter by 1
             % > Include the image overriding the caption
             \includeimage[#1][#2]{#4}
-            \captionof{figure}{\textit{(continued from previous page)} #3}
+            \captionof{figure}{\continueendmsg #3}
         }
 }
 
 
 % ## Save margins that I used for making my images to be cropped away when included
 \newlength{\fmtop}
-\newlength{\fmright}
-\newlength{\fmbottom}
-\newlength{\fmleft}
 \setlength{\fmtop}{0.9in}
+\newlength{\fmright}
 \setlength{\fmright}{0.78in}
+\newlength{\fmbottom}
 \setlength{\fmbottom}{0.98in}
+\newlength{\fmleft}
 \setlength{\fmleft}{0.78in}
+
+
+
+% == Figure Captions ====================================================
+
+% ## > Define space between figure and caption
+\newlength{\vfigcaption}
+\setlength{\vfigcaption}{-.2cm}
+
+% ## Redefine \caption to be used outside a figure environment
+% > #1 is the label
+% > #2 is the caption
+% > Example:
+% > \figcaption[label]{caption}
+\NewDocumentCommand{\figcaption}{O{} m}{%
+    \begin{figure}[H]
+        \vspace{\vfigcaption}
+        \caption{#2}
+        \label{#1}
+    \end{figure}
+}
+
+% ## A command to split a caption into two parts
+% > #1 is the label
+% > #2 is the first part of the caption
+% > #3 is the second part of the caption
+% > Example:
+% > \splitcaption[label]{caption1}{caption2}
+\NewDocumentCommand{\splitcaption}{O{} m m}{%
+    \figcaption[#1]{#2 -- \continuestartmsg}
+    \begin{figure}[!htb]
+        \ContinuedFloat
+        \phantomsection
+        \caption*{\textbf{Figure \thefigure}: \continueendmsg -- #3}
+    \end{figure}
+}
+
 
 
 % == Tables ============================================================
@@ -500,6 +548,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
     }
     % \end{spacing}
 }
+
 
 
 % == Caption Styles ====================================================
@@ -520,7 +569,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \captionsetup[lstlisting]{labelformat=listing,
     font={sf, footnotesize, oneandhalfspacing, sansmath}}
 \captionsetup[figure]{labelformat=figure,
-    font={sf, footnotesize, oneandhalfspacing, sansmath}, belowskip=\vhalf}
+    font={sf, footnotesize, oneandhalfspacing, sansmath}}
 \newcommand{\setdefaulttablecaption}{
     \captionsetup[table]{labelformat=table,
         font={sf, footnotesize, oneandhalfspacing, sansmath}}
@@ -542,14 +591,14 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
     % > Define secondary header row(s) for every time the page breaks
     \multicolumn{#1}{l}
-    {\footnotesize \sffamily \textbf{#2~\tablename~\thetable~}-- \textit{Continued from previous page}} \\
+    {\footnotesize \sffamily \textbf{#2~\tablename~\thetable~}-- \continueendmsg} \\
     \hline
     \endhead
 
     % > The footer row for middle pages after page break
     \hline
     \multicolumn{#1}{l}
-    {\footnotesize \sffamily \textit{Continued on next page}}                                    \\
+    {\footnotesize \sffamily \continuestartmsg}                                    \\
     \endfoot
 
     % > The footer row for the last page
@@ -557,7 +606,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \endlastfoot
 }
 
-% ## Format for Figure Tile Refernces (A, B, C) within captions
+% ## Format Tile Refernces (Fig 2 A, B, C) within captions
 % > e.g. \subfig{A} --> A: in bold
 \newcommand{\tile}[1]{%
     % > Makes bold, unbreakable space after, strip whitespaces
@@ -565,26 +614,15 @@ literate={ ( }{{{\color{parentheses}(}}}1
 }
 
 
-% ## A command to split a caption into two parts
-% > #1 is the first part of the caption
-% > #2 is the second part of the caption
-\newcommand{\splitcaption}[2]{ %
-    \captionof{figure}{#1 -- \textit{Continued on next page}}
-    % \ContinuedFloat
-    % \vspace{-5cm} % !! doesn't work
-    % \captionsetup{belowskip=0pt}
-    \caption*{\textit{Continued from previous page} -- #2}
-}
-
 
 % == Referencing Images, Tables, etc. ==================================
 
 % ## Shorten referencing to Figures in Appendix
 % > \apdxref{appendixlabel}{figlabel}
 % > Examples:
-% ' \apdxref{sec:figtabs} --> Appendix A
-% ' \apdxref{sec:figtabs}{fig:S1} --> Appendix A: Figure 1
-% ' \apdxref{sec:sup_figtabs}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
+% ' \apdxref{apdx:supplemental} --> Appendix A
+% ' \apdxref{subapdx:fig}{fig:S1} --> Appendix A.1: Figure 1
+% ' \apdxref{subapdx:fig}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
 \NewDocumentCommand{\apdxref}{m g}{%
     Appendix\,\ref{#1}\IfValueT{#2}{:\,\autoref{#2}}%
 }
