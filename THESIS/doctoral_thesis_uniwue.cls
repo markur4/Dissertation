@@ -14,8 +14,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ======================================================================
-% == Latex Environment
 % ======================================================================
+% == ENVIRONMENT 
+
 
 % == Class definition ==================================================
 % LaTeX2e is the major Latex version, is Latex3 released?
@@ -34,22 +35,98 @@
 \LoadClass{extarticle}
 
 
-
-
 % ======================================================================
-% == Universal Packages ================================================
 % ======================================================================
-\usepackage{float} % > For e.g. forced precise image positioning
+% == IMPORTS 
+
+% == General Packages 
 \usepackage{xparse} % > For advanced command definitions
 \usepackage{xstring} % > For string processing e.g. \IfStrEq
 \usepackage{etoolbox} % > List processing
-% \usepackage{refcount}
-\usepackage{appendix}  % > For appendices
 
-% > adjust float spacing
+
+% == Document Layout 
+\usepackage{geometry} % > Set the general layout of the document
+\usepackage{changepage} % > Allows for layout changes in single pages
+
+
+% == Fonts 
+\usepackage{fontspec} % > For custom fonts
+\usepackage{xcolor} % > Required for \definecolor
+
+
+% == Vertical/Horizontal Spacing 
+\usepackage{float} % > For e.g. forced precise image positioning
+\usepackage{setspace} % > For line spacing
+\usepackage{tabto} % > For Tabbing
+\usepackage{needspace} % > For keeping text together on the same page
+
+% ## adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
-\usepackage{needspace} % > For keeping text together on the same page
+% ## Define marings
+\newlength{\leftm}
+\setlength{\leftm}{1.5cm}
+\newlength{\rightm}
+\setlength{\rightm}{1.5cm}
+
+
+% == Sections ==========================================================
+\usepackage{tocloft} % > For customizing the table of contents
+\usepackage{titlesec} % > For customizing sections
+\usepackage{abstract} % > For customizing abstracts
+\usepackage{appendix}  % > For appendices
+
+
+% == Page Head and Foot 
+\usepackage{fancyhdr} % > For customizing headers and footers
+
+
+% == Raw Text 
+\usepackage{xspace} % > For adding spaces after commands
+\usepackage{xstring} % > For string processing
+
+
+% == Special Formats: Math, Units, etc. ================================
+\usepackage{amsmath}  % > Enhances math handling in LaTeX
+\usepackage{siunitx} % > For units
+% \usepackage{mhchem} % > For chemical equations
+\usepackage[normalem]{ulem} % > For underlining with dots for handwriting
+\usepackage[hidelinks]{hyperref} % > For clickable links, [remove boxes]
+
+
+% == Captions 
+\usepackage[ % ## Customize captions
+    font={sf, footnotesize},
+    singlelinecheck=false,
+    margin=0.5\leftm
+]{caption}
+\usepackage{chngcntr} % > For continuous numbering of figures and tables
+
+
+% == Images, Listings, Tables ==========================================
+\usepackage{graphicx} % > For the inclusion of images
+% \usepackage{wrapfig} % > For wrapping text around images
+\usepackage{listings} % > For code listings
+\usepackage{longtable} % > For proper tables
+\usepackage{hhline} % > For better lines in tables
+\usepackage{multirow} % > For rows conatining two lines
+
+
+% == Citations 
+\usepackage{apacite} % > For citations
+\usepackage{natbib} % > For citations without parentheses
+
+
+% == PDF Files 
+\usepackage{pdfpages} % > For including PDF files
+
+
+
+
+% ======================================================================
+% ======================================================================
+% == COMMANDS
 
 
 
@@ -59,16 +136,15 @@
 
 
 % == Layout ============================================================
-\usepackage{geometry} % > Set the general layout of the document
+% ## Set the general layout of the document
 \geometry{
     left = 2cm,
     right = 2cm,
     top = 2cm,
     bottom = 2cm,
     bindingoffset = 5mm}
-\usepackage{changepage} % > Allows for layout changes in single pages
 
-% > For empty pages
+% ## For empty pages
 \newcommand{\blankpage}{
     \clearpage
     \thispagestyle{empty}
@@ -76,13 +152,11 @@
     \clearpage
 }
 
-% == Fonts =============================================================
-\usepackage{fontspec} % > For custom fonts
-\usepackage{xcolor} % > Required for \definecolor
 
+% == Fonts =============================================================
 \setmonofont{inconsolata} % > Overrides monospaced font
 
-% > Use Fontsizes by extarticle
+% ## Use Fontsizes by extarticle
 % > \small \Small \footnotesize \scriptsize \tiny 
 % > \normalsize \large \Large \LARGE \huge \Huge
 
@@ -94,7 +168,6 @@
 
 % == Vertical Spacing ==================================================
 % ## Set line spacing to 1.5
-\usepackage{setspace}
 \onehalfspacing
 
 % ## Set paragraph spacing
@@ -111,30 +184,26 @@
 
 
 % == Horizontal Spacing ================================================
-\usepackage{tabto} % > For Tabbing
 \TabPositions{0.49in,0.98in,1.47in,1.96in,2.45in,2.94in,3.43in,3.92in,4.41in,4.9in,5.39in,5.88in,}
-
-% ## Define marings
-\newlength{\leftm}
-\setlength{\leftm}{1.5cm}
-\newlength{\rightm}
-\setlength{\rightm}{1.5cm}
 
 
 
 % == Table of Contents =================================================
-\usepackage{tocloft} % > For customizing the table of contents
-
 \renewcommand{\cftbeforesecskip}{1.1ex} % Adjust this value as needed
 \renewcommand{\cftbeforesubsecskip}{0.0ex} % Adjust this value as needed
 \renewcommand{\cftbeforesubsubsecskip}{0.0ex} % Adjust this value as needed
 
 
 
-% == Sections ==========================================================
+
+% ======================================================================
+% == Sections
+% ======================================================================
+
+% == Main Sections =====================================================
 % > Unnumbered
 
-% ## Main Sections =================================================
+% ## Main Sections 
 \newcommand{\unnsection}[1]{ % > Unnumbered section
     \section*{#1}
     \addcontentsline{toc}{section}{#1}
@@ -142,14 +211,15 @@
     \markboth{#1}{} % > Mark section manually for headers
 }
 
-% ## Sub Sections =================================================
 
+% == Sub Sections ======================================================
 
 \newcommand{\unnsubsection}[1]{
     \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
     \addcontentsline{toc}{subsection}{#1} % > Add the subsection to the table of contents
     \mbox{} % > Add an empty line to avoid warnings
 }
+
 
 % == Abstracts =========================================================
 
@@ -168,9 +238,7 @@
 
 
 
-
 % == Page Head and Foot =================================================
-\usepackage{fancyhdr}
 
 % ## Default Page Style
 \fancypagestyle{headersfooters}{
@@ -222,14 +290,13 @@
 
 
 % == White Space =======================================================
-\usepackage{xspace}
 \xspaceremoveexception{,}
 \xspaceaddexceptions{\, ] )} % > Don't add a space after \, command
 
 % ## Command to replace all spaces with shortspaces
 \newcommand{\shortspaces}[1]{%
-\StrSubstitute{#1}{ }{\,}[\temp]%
-\temp
+    \StrSubstitute{#1}{ }{\,}[\temp]%
+    \temp
 }
 
 
@@ -246,16 +313,12 @@
 
 
 % == Math ==============================================================
-\usepackage{amsmath}  % > Enhances math handling in LaTeX
-
 % ## Sans-serif font for math environment
 % \sansmath  % !! Can only be called in the document, not in the preamble
 
 
 
-
 % == Units =============================================================
-\usepackage{siunitx} % > Provides the \SI{}{} and \si{} command 
 \sisetup{
     detect-all, % > Apply the font settings to the text font
     range-phrase=--, % > Remove unit after range start
@@ -281,21 +344,20 @@
 
 
 
-
 % == Lists =============================================================
 % ## Commands to process multiple arguments
 \newcounter{@itemcount}
 \newcounter{@listlen}
 \newcommand{\@countlistitems}[1]{%
     \stepcounter{@listlen}%
-}    
+}
 \newcommand{\@processitem}[1]{%
     \stepcounter{@itemcount}%
     \textit{#1}%
     \ifnum\value{@itemcount}<\value{@listlen}%
         ,\,\allowbreak%
-    \fi    
-}    
+    \fi
+}
 
 % ## Command to format make italicised list
 \newcommand{\listit}[1]{%
@@ -304,7 +366,7 @@
     \forcsvlist{\listgadd\mylist}{#1}%
     \forlistloop{\@countlistitems}{\mylist}%
     \forlistloop{\@processitem}{\mylist}%
-}    
+}
 
 
 % == Statistics =============================================================
@@ -319,24 +381,12 @@
 
 
 % == Chemical Equations ================================================
-%\usepackage[version=3]{mhchem} % > Package for chemical equation typesetting
+% > Insert commands for reactions here
 
-
-
-
-
-
-% ======================================================================
-% == Text Objects 
-% ======================================================================
-\usepackage{xspace} % > For adding spaces after commands
-\usepackage[normalem]{ulem} % > For underlining with dots for handwriting
-\usepackage{xstring}
 
 
 
 % == Hyperlinks ========================================================
-\usepackage[hidelinks]{hyperref} % > For clickable links, [remove boxes]
 \hypersetup{
     colorlinks=false,
     linkcolor=black,
@@ -348,10 +398,61 @@
 }
 
 
-% == Code Syntax Highlighting ==========================================
-\usepackage{listings} % > For code listings
+% ======================================================================
+% == Caption Styles
+% ======================================================================
+% ## Set linespacing for captions
+\DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
 
-% ## Define the colors
+% ## Caption styles
+\DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
+\DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
+\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesection~Figure #2}}
+% \DeclareCaptionLabelFormat{appendixfigurecontinued}{Appendix \thesection~Figure #2}
+\DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
+\DeclareCaptionLabelFormat{appendixtable}{\textbf{Appendix \thesection~Table #2}}
+
+
+% ## Set Default Caption formats
+\captionsetup[lstlisting]{labelformat=listing,
+    font={sf, footnotesize, oneandhalfspacing, sansmath}}
+\captionsetup[figure]{labelformat=figure,
+    font={sf, footnotesize, oneandhalfspacing, sansmath}}
+% > Command for resetting defaults
+\newcommand{\setdefaulttablecaption}{
+    \captionsetup[table]{labelformat=table,
+        font={sf, footnotesize, oneandhalfspacing, sansmath}}
+}
+\setdefaulttablecaption % > Set the default table caption format
+
+
+% ## Command for resetting counters for figures and tables to 0
+\newcommand{\resetcounters}{
+    \setcounter{figure}{0}
+    \setcounter{table}{0}
+}
+
+
+% == Referencing Captions ==============================================
+
+% ## Shorten referencing to Figures in Appendix
+% > \apdxref{appendixlabel}{figlabel}
+% > Examples:
+% ' \apdxref{apdx:supplemental} --> Appendix A
+% ' \apdxref{subapdx:fig}{fig:S1} --> Appendix A.1: Figure 1
+% ' \apdxref{subapdx:fig}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
+\NewDocumentCommand{\apdxref}{m g}{%
+    Appendix\,\ref{#1}\IfValueT{#2}{:\,\autoref{#2}}%
+}
+
+
+
+
+% ======================================================================
+% == Code Listings
+% ======================================================================
+
+% ## Define the colors for Syntax Highlighting
 \definecolor{keywordcolor}{RGB}{0,128,0}  % > Green
 \definecolor{commentcolor}{RGB}{64,128,128}  % > Green
 \definecolor{stringcolor}{RGB}{186,34,32}  % > Red
@@ -372,7 +473,7 @@
 
 
 
-% ## Define the default listning style
+% ## Define the default listing style
 \lstdefinestyle{defaultstyle}{
 frame=single, % > add a frame
 xleftmargin=\leftm,
@@ -430,19 +531,10 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 
+
 % ======================================================================
-% == External Objects (Images, Tables, etc.)
+% == Images
 % ======================================================================
-
-
-% == Images ============================================================
-\usepackage{graphicx} % > For the inclusion of images
-\usepackage[ % > Import captions and define sans-serif font
-    font={sf, footnotesize},
-    singlelinecheck=false,
-    margin=0.5\leftm]{caption}
-% \usepackage{wrapfig} % > For wrapping text around images
-
 
 % ## Define a command to include an image
 % > #1 is the width of the image in % (optional, default is 0.99)
@@ -452,7 +544,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > \includeimage[scale][left bottom right top]{
 % >     pathtopicture
 % > }
-
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m}{%
     \vspace{\vfull}
     {%
@@ -534,10 +625,11 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 
-% == Tables ============================================================
-\usepackage{longtable} % > For proper tables
-\usepackage{hhline} % > For better lines in tables
-\usepackage{multirow} % > For rows conatining two lines
+
+
+% ======================================================================
+% == Tables 
+% ======================================================================
 
 % ## For cells spanning multiple rows
 % > \multirowcell{number of rows}{width}{content}
@@ -551,38 +643,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 
-% == Caption Styles ====================================================
-\usepackage{chngcntr} % > For continuous numbering of figures and tables
 
-\DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
-
-% ## Caption styles
-\DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
-\DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
-\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesection~Figure #2}}
-% \DeclareCaptionLabelFormat{appendixfigurecontinued}{Appendix \thesection~Figure #2}
-\DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
-\DeclareCaptionLabelFormat{appendixtable}{\textbf{Appendix \thesection~Table #2}}
-
-
-% > Set the caption format for each type of object
-\captionsetup[lstlisting]{labelformat=listing,
-    font={sf, footnotesize, oneandhalfspacing, sansmath}}
-\captionsetup[figure]{labelformat=figure,
-    font={sf, footnotesize, oneandhalfspacing, sansmath}}
-\newcommand{\setdefaulttablecaption}{
-    \captionsetup[table]{labelformat=table,
-        font={sf, footnotesize, oneandhalfspacing, sansmath}}
-}
-\setdefaulttablecaption
-
-
-% ## Command for resetting counters for figures and tables to 0
-\newcommand{\resetcounters}{
-    \setcounter{figure}{0}
-    \setcounter{table}{0}
-}
-
+% == Table Captions ====================================================
 
 % ## Define how tables captions look like around longtable pagebreaks
 % > #1 is the number of columns
@@ -615,27 +677,15 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 
-% == Referencing Images, Tables, etc. ==================================
+% ======================================================================
+% == Citations
+% ======================================================================
 
-% ## Shorten referencing to Figures in Appendix
-% > \apdxref{appendixlabel}{figlabel}
-% > Examples:
-% ' \apdxref{apdx:supplemental} --> Appendix A
-% ' \apdxref{subapdx:fig}{fig:S1} --> Appendix A.1: Figure 1
-% ' \apdxref{subapdx:fig}{fig:S1}, \ref{fig:S2} --> Appendix A: Figure 1, 2
-\NewDocumentCommand{\apdxref}{m g}{%
-    Appendix\,\ref{#1}\IfValueT{#2}{:\,\autoref{#2}}%
-}
-
-
-% == Citations =========================================================
-\usepackage{apacite}
 \bibliographystyle{apacite}
 
 \let\fullcite\cite % > Rename \cite to \fullcite
 % \let\cite\shortcite % > Rename \shortcite to \cite
 
-\usepackage{natbib} % > For citations without parentheses 
 \let\cite\citep % > Rename \citep to \cite
 % > Examples:
 % ' \citeauthor*{jon90} --> Jones, Baker, and Williams
@@ -651,9 +701,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \footnotesize
 }
 
-
-% == PDF Files =========================================================
-\usepackage{pdfpages} % > For including PDF files
+% ======================================================================
+% == Importing PDF Files
+% ======================================================================
 
 % ## Define actions to be executed onto each page during the \includepdf command
 % > Define a new counter to keep track of the current page number of the included PDF
@@ -670,97 +720,16 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #3 {} argument is the name of the toc section
 % > #4 {} argument is the name of the file
 \NewDocumentCommand{\addpdf}{sO{.98}mm}{
-    \setcounter{includepdfpage}{1} % Reset the includepdfpage counter to 1
+    \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
     \IfBooleanTF{#1}{}{
         \phantomsection
         \addcontentsline{toc}{subsection}{#1} % > Add to TOC
-    } % Prevents sections occupying the same page only if not starred
+    } % > Prevents sections occupying the same page only if not starred
     \includepdf[
-        pages=-, % Include all pages of the PDF
-        scale=#2,  % Scale the PDF to e.g. 98% of the text width
-        pagecommand={\eachpage{#3}}, % Execute command for each page
+        pages=-, % > Include all pages of the PDF
+        scale=#2,  % > Scale the PDF to e.g. 98% of the text width
+        pagecommand={\eachpage{#3}}, % > Execute command for each page
     ]{#4}
 }
 
 
-
-
-
-
-
-% % ## Command that makes a main section from a PDF
-% \newcommand{\addpdfsection}[3][.98]{
-%     \setcounter{includepdfpage}{1} % > Reset the includepdfpage counter to 1
-%     % \phantomsection % > Prevents sections occupying the same page
-%     % \addcontentsline{toc}{section}{#2} % > Add a line to TOC
-%     % \unnsection{#2}
-%     \markboth{#2}{}
-%     \includepdf[
-%         pages=-, % > Include all pages of the PDF
-%         scale=#1,  % > Scale the PDF to 98% of the text width
-%         pagecommand={\eachpagesection{#2}}, % > Execute command for each page
-%     ]{#3}
-% }
-
-
-
-
-
-% % == Appendices ========================================================
-% \usepackage{appendix}
-
-
-% % > \refappendix{appendixlabel}{figlabel}
-% % > e.g.: \refappendix{sec:sup_figs_tables}{fig:S2}
-% \newcommand{\refappendix}[2]{
-% \autoref{#1}: \autoref{#2}
-% }
-
-% \NewDocumentCommand{\refappendix}{m >{\SplitList{,}}m}{
-%     \autoref{#1}:
-%     \ProcessList{#2}{\singlefigure}
-% }
-
-% \newcommand{\singlefigure}[1]{
-%     \autoref{#1},
-% }
-
-% \NewDocumentCommand{\refappendix}{m >{\SplitList{,}}m}{
-%     \autoref{#1}: Figure
-%     \ProcessList{#2}{\singlefigure}
-% }
-
-% \newcommand{\singlefigure}[1]{
-%     \getrefnumber{#1}\iflastitem{}{,}
-% }
-
-% \NewDocumentCommand{\refappendix}{m >{\SplitList{,}}m}{
-%     \autoref{#1}: Figure
-%     \setcounter{itemnum}{0}%
-%     \setcounter{totalitems}{\clist_count:n{#2}}%
-%     \ProcessList{#2}{\singlefigure}
-% }
-
-% \newcounter{itemnum}
-% \newcounter{totalitems}
-
-% \newcommand{\singlefigure}[1]{
-%     \stepcounter{itemnum}%
-%     \getrefnumber{#1}\ifnum\value{itemnum}<\value{totalitems},\fi
-% }
-
-% \NewDocumentCommand{\refappendix}{m m}{
-%     \autoref{#1}: Figure
-%     \def\listfigures{#2}
-%     \def\temp{}%
-%     \forcsvlist{\processfigure}{\listfigures}
-%     \temp
-% }
-
-% \newcommand{\processfigure}[1]{
-%     \ifnum\listcount<\listtotal
-%         \edef\temp{\temp\getrefnumber{#1}, }%
-%     \else
-%         \edef\temp{\temp\getrefnumber{#1}}%
-%     \fi
-% }
