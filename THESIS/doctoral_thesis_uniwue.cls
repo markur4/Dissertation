@@ -459,7 +459,7 @@
 \definecolor{typecolor}{RGB}{0,85,170}  % > Blue
 \definecolor{darkpurple}{RGB}{119, 0, 134}  % > dark purple
 
-\definecolor{parentheses}{rgb}{1,0.5,0}
+\definecolor{parentheses}{rgb}{.7,.1,0}
 
 \definecolor{deepblue}{rgb}{0,0,0.7}
 \definecolor{darkyellow}{RGB}{200,150,0}

@@ -619,47 +619,96 @@ writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''
 
 Together, python is not just beginner-friendly, but also well respected for its
 ease in development, which is why it is widely used in professional settings for
-web development, data analysis, machine learning, biosciences and more \cite{ekmekciIntroductionProgrammingBioscientists2016}.
+web development, data analysis, machine learning, biosciences and more
+\cite{ekmekciIntroductionProgrammingBioscientists2016,rayhanRisePythonSurvey2023}.
 
 % ======================================================================
-\unnsubsection{Data Science with Python}
-the ease of use has made python a very popular language~\cite{rayhanRisePythonSurvey2023}
-
-Like any other programming language, python alone does not provide specialized
-tools like those used for data analysis \cite{PythonLanguageReference}. However,
-python was designed to be extended by packages developed by its users. A python
-package consists of multiple python modules, where each module is a text-file
-with a \texttt{.py} ending containing python code. Famous examples of such
+\unnsubsection{Data Science Packages with Python}
+%%%
+Python includes a vast number of built-in packages used for basic data-types,
+software development, simple math operations, etc.,
+\cite{PythonLanguageReference}. Still, python relies on packages developed by
+its users to provide specialized tools for data analysis. A python package
+consists of multiple python \emph{modules}, where each module is a text-file
+with~a~\texttt{.py} ending containing python code. Famous examples of such
 packages are \texttt{pytorch} and \texttt{tensorflow}, that are used to build
-models of artificial intelligence, including ChatGPT
+models of artificial intelligence, including \textit{ChatGPT}
 \cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
     radfordLanguageModelsAre2019}. Here, we outlay the most important packages used
-for \texttt{plotastic}.
+for \texttt{plotastic} in Chapter 2.
+
+\texttt{IPython} can be understood as an enhanced version of the standard Python
+interpreter, designed to improve the interactivity of Python code execution
+\cite{perezIPythonSystemInteractive2007}. It streamlines the process of writing
+and executing code by conveniently displaying rich media, visualization, and
+extensive documentation, which helps in understanding complex data analyses.
+This make \texttt{IPython} similar in functionality to \textit{MATLAB} or
+\textit{RStudio}. This is particularly advantageous in the field of biomedicine,
+where visualizing data trends and patterns can lead to significant insights.
+
+\texttt{Jupyter} is an evolution of \texttt{IPython}, introducing the
+\emph{Jupyter notebook} format (file-ending \texttt{.ipynb})
+\cite{kluyverJupyterNotebooksPublishing2016}. Jupyter notebooks are documents
+that combine both code and written text information and structures those into
+\emph{code cells} and \emph{markdown cells}, respectively. These cells can be
+executed individually, displaying the cell's output directly below the cell.
+This allows for an interactive exploration of data, but also makes Jupyter
+notebooks a very human-readable format that outlays data analysis in a clear
+manner with precise and reproducible documentation of all data processing steps.
+Jupyter notebooks have become a standard format compatible with collaborative
+platforms like \textit{Google Colab} and \textit{JupyterLab}, but also
+professional software development tools like \textit{VS Code}, and
+\textit{PyCharm}.
 
 
 
-Interactive Python
-- Jupyter
+\texttt{NumPy} accelerates the mathematical capabilities of Python by enabling
+large-scale operations on multi-dimensional arrays and matrices with high
+efficiency \cite{harrisArrayProgrammingNumPy2020}. One key feature of
+\texttt{NumPy} is the implementation of SIMD (Single Instruction, Multiple Data)
+instructions. SIMD allows multiple data points to be processed simultaneously,
+significantly speeding up operations that are inherently parallelizable, such as
+matrix addition or multiplication. This capability is crucial when handling the
+vast datasets typically found in medical imaging or genomic data analysis in
+cancer research.
 
-Python overcame the issues of interpreted language by utilizing Code
-written in C
-numpy:
-- Acceleration,
-- SIMD instructions
+\texttt{Pandas} extends Python with a tabular datatype, called
+\texttt{DataFrame}, which allows for easy data manipulation with integrated
+indexing \cite{mckinneyPandasFoundationalPython2011}. The intuitive interface of Pandas can be likened to Excel; however, it
+is vastly more powerful due to its speed, functionality, and ability to handle
+larger datasets. Unlike Excel, Pandas enables automation of data processing
+scripts, which is indispensable for reproducible scientific analysis.
 
-Tabular operations
-- pandas
+\texttt{Matplotlib} is a plotting library that provides a wide range of static,
+animated, and interactive plots and graphs
+\cite{hunterMatplotlib2DGraphics2007}. It serves as the foundation for many
+other visualization tools and is particularly valued for its flexibility and
+customization options. Researchers in biomedicine use Matplotlib to create a
+variety of graphs (like histograms or scatter plots), which are essential for
+preliminary data analysis and checking data distributions.
 
-Data visualization
-- matplotlib
-- seaborn
+\texttt{Seaborn} builds on Matplotlib by integrating closely with
+\texttt{Pandas} data structures and providing a high-level interface for drawing
+attractive and informative statistical graphics
+\cite{waskomSeabornStatisticalData2021}. It simplifies the creation of complex
+visualizations involving multidimensional data, making it easier to reveal
+patterns and relationships via color encoding, faceting, and automated
+statistical fits. This is particularly useful in cancer research for visualizing
+and understanding complex datasets, such as patient response variability to
+treatments across multiple subgroups.
 
+\texttt{Pingouin} is designed to be a user-friendly statistical tool that offers
+a straightforward syntax for performing statistical tests, which are commonly
+implemented in R \cite{vallatPingouinStatisticsPython2018}. Unlike R,
+\texttt{Pingouin} integrates seamlessly within the Python ecosystem, which
+allows combining data manipulation, analysis, and visualization all in one
+platform. This integration is beneficial for researchers who wish to conduct
+advanced statistical analysis without switching between different software
+environments.
 
-Inferential Statistics
-- pingouin
-
-AI:
-- pytorch and tensorflow
-- example: VGG19 is just a few lines of code (\autoref{lst:vgg19}) asdfdf
-
-
+Together, these packages form the backbone of modern data analysis in Python,
+often times combining software from different languages to accelerate certain
+features, while retaining the ease of use and readability that Python is known
+for. This is particularly advantageous in the field of biomedicine, where data
+analysis is often complex and requires a high degree of flexibility and
+customization.
