@@ -29,7 +29,7 @@ similar to a role of ``precision medicine
 bioninformatician''~\cite{gomez-lopezPrecisionMedicineNeeds2019}.
 
 Statistical analysis in biosciences has traditionally been reliant on
-user-friendly tools like Excel and GraphPad Prism. While Excel by itself is
+user-friendly tools like \textit{Microsoft Excel} and \textit{GraphPad Prism}. While \textit{Excel} by itself is
 recognized as limited for complex data analysis
 \cite{tanavaleeLimitationsUsingMicrosoft2016a, incertiYouStillUsing2019a},
 GraphPad Prism offers more advanced statistical models .
@@ -41,7 +41,7 @@ R and Python scripts offer more efficient and
 versatile solutions, enabling complex analyses with a few lines of code
 \cite{rcoreteamLanguageEnvironmentStatistical2018,vallatPingouinStatisticsPython2018}.
 
-Recognizing this trend, Microsoft has integrated a Python interpreter into Excel to
+Recognizing this trend, Microsoft has integrated a Python interpreter into \textit{Excel} to
 computations more accessible within a widely used platform \cite{AnnouncingPythonExcel2023}.
 
 % A potential use-case for coding is statistical analysis. Most users rely on tools
@@ -49,9 +49,9 @@ computations more accessible within a widely used platform \cite{AnnouncingPytho
 % However, Prism becomes impractical with large and complex datasets,
 % as manual re-analysis is time-consuming. In contrast, scripts in R or Python
 % allow for a single click to re-analyze the data. Recognizing this trend,
-% Microsoft has recently implemented a Python interpreter into Excel, allowing
-% execution of python code within cells. R, in particular, offers more advanced
-% statistical models than Prism or Excel, which has led to R's widespread
+% Microsoft has recently implemented a Python interpreter into \textit{Excel}, allowing
+% execution of Python code within cells. R, in particular, offers more advanced
+% statistical models than Prism or \textit{Excel}, which has led to R's widespread
 % adoption.
 
 Next-generation sequencing, such as bulk RNAseq, has become affordable, allowing
@@ -68,7 +68,7 @@ hypotheses, but given the sheer amount of data, is impractical to analyze
 manually.
 
 since Metascape
-returns large Excel sheets with complex nested information, a researcher without
+returns large \textit{Excel} sheets with complex nested information, a researcher without
 coding skills requires manual work to adapt the results to specific research
 hypotheses.
 
@@ -79,7 +79,7 @@ Modern gene ontology tools like Metascape offer powerful graphical user
 interfaces. However, their effectiveness is only possible through standardizing
 multiple large datasets.
 
-The output from Metascape, large Excel sheets with
+The output from Metascape, large \textit{Excel} sheets with
 complex nested information, is more efficiently analyzed through scripting,
 which is often necessary to adapt metascape results to specific research
 hypotheses.
@@ -134,7 +134,7 @@ laboratory skills.
 % complex datasets, since manual re-analysis has to be repeated manually, while
 % scripts would allow for a single click to re-analyze the data. Hence, R or
 % Python have become a standard, with R offering more advanced statistical models
-% than Prism or Excel. Excel has recognized this development and
+% than Prism or \textit{Excel}. \textit{Excel} has recognized this development and
 % introduced Python support
 
 % - Next generation sequencing? Rnaseq has become cheap (bulk RNAseq), allowing for growing
@@ -157,7 +157,7 @@ laboratory skills.
 % recorded, yet an understanding of the underlying code is required to
 % troubleshoot and adapt the macro to new datasets.
 
-% - Protein structurual biologists? Pymol is standard and also has a python
+% - Protein structurual biologists? Pymol is standard and also has a Python
 % command interface
 
 % - Artificial intelligence (AI) has been a game changer in the field of
@@ -314,7 +314,7 @@ works as expected~\cite{10.5555/2161638}. The main type of software testing is
 unit testing, which tests the smallest units of the codebase (functions and
 classes) in isolation (\autoref{lst:unit_test}).
 
-\def\mycaption{ Example of an arbitrary python function and its respective unit
+\def\mycaption{ Example of an arbitrary Python function and its respective unit
     test function. The first function simply returns the number 5. The second
     function tests if the first function indeed returns the number 5. The test
     function is named with the prefix ``\texttt{test\_}'' and is placed in a
@@ -344,7 +344,7 @@ measurable quantity, but it represents if the tests truly checks if the code
 works as expected. The number of test-cases is the number of different scenarios
 that are checked by the testing functions, for example testing every possible
 option or combinations of options for functions that have multiple options. The
-most popular software testing framework for python is \texttt{pytest}, which is
+most popular software testing framework for Python is \texttt{pytest}, which is
 utilized by \texttt{plotastic}~\cite{pytestx.y}.
 
 Together, the standards of software development, including version control,
@@ -357,16 +357,16 @@ results.
 % ======================================================================
 % ======================================================================
 \unnsubsection{Python as a Programming Language}
-Here, we provide a general overview of the python programming language,
+Here, we provide a general overview of the Python programming language,
 explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
 prepare readers without prior programming experience for the following chapters.
-We also describe the design principles of python to lay out the key concepts
-that differentiate python compared to other programming languages. A more
-detailed tutorial on python that's specialized for bioscientists is found
+We also describe the design principles of Python to lay out the key concepts
+that differentiate Python compared to other programming languages. A more
+detailed tutorial on Python that's specialized for bioscientists is found
 in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}
 
 \def\mycaption{ Example of
-    readable python code. This one-line code returns the words (string)
+    readable Python code. This one-line code returns the words (string)
     \texttt{'Hello, World!'} when executed. The command is straightforward and easy
     to understand.}
 \begin{lstlisting}[
@@ -379,15 +379,15 @@ print("Hello, World!")
 # Output: Hello, World!
 \end{lstlisting}
 
-Languages such as python are considered \textit{``high-level''}, which means
+Languages such as Python are considered \textit{``high-level''}, which means
 that it is designed to be easy to read and write, but also independent of
 hardware by hiding (\textit{``abstracting''}) underlying
-details~\cite{PythonLanguageReference}. A key principle of python is the
+details~\cite{PythonLanguageReference2024}. A key principle of Python is the
 emphasis on implementing a syntax that is concise and close to human language
 (\autoref{lst:readable}, \autoref{lst:not_readable}).
 
 \def\mycaption{ Example of less readable code written in the low-level
-    programming language C. This code is doing exactly the same as the python
+    programming language C. This code is doing exactly the same as the Python
     code in \autoref{lst:readable}. The command is harder to understand because
     more steps are needed to access the same functionality, including the
     definition of a function}
@@ -405,7 +405,7 @@ int main() {
 // Output: Hello, World!
 \end{lstlisting}
 
-Furthermore, python is an \textit{interpreted} language, which means that the
+Furthermore, Python is an \textit{interpreted} language, which means that the
 code is executed line by line. This makes coding easier because the programmer
 can see the results of the code immediately after writing it, and error messages
 point to the exact line where the error occurred. This is in contrast to
@@ -420,14 +420,14 @@ automatically frees memory space that is no longer needed by the program. This
 is a feature that is not present in low-level programming languages like C or
 C++, that were designed to maximize control over hardware.
 
-Another hallmark of python is its \textit{dynamic typing system}. In python the
+Another hallmark of Python is its \textit{dynamic typing system}. In Python the
 type  is inferred automatically during code execution
 (\autoref{lst:dynamic_typing}). This is in contrast to \textit{statically} typed
 languages like C, where the type of a variable has to be declared explicitly and
 cannot be changed during code execution
 (\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
 
-\def\mycaption{ Example of dynamic typing in python. The variable ``\texttt{a}''
+\def\mycaption{ Example of dynamic typing in Python. The variable ``\texttt{a}''
     is assigned the value 5, which is of type integer. The variable ``\texttt{a}''
     is then assigned the value ``\texttt{Hello, World!}'', which is of type string.
     Python allows dynamic re-assignment of variables with different types. Note that
@@ -466,13 +466,13 @@ a = 5;
 a = 'Hello, World!';  // Compilation error!
 \end{lstlisting}
 
-Dynamic typing makes python a very beginner-friendly language, since one does
+Dynamic typing makes Python a very beginner-friendly language, since one does
 not have to keep track of the type of each variable. However, this also makes
-python a slower language, because the interpreter has to check the type of each
+Python a slower language, because the interpreter has to check the type of each
 variable during code execution. Also, developing code with dynamic typing
 systems is prone to introducing bugs (``type errors''), because it allows
 unexperienced developers to convert variables from one type to another without
-noticing, leading to unexpected behavior. Hence, larger python projects require
+noticing, leading to unexpected behavior. Hence, larger Python projects require
 disciplined adherence to programming conventions. One such convention is
 \textit{type hinting}, which is a way to explicitly note the type of a
 variable. Type hinting does not have an effect on the code, but it makes the
@@ -481,7 +481,7 @@ development environments to detect type errors before execution
 (\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
 
 \def\mycaption{
-    Example of type hints used in python. Explicitly stating the type of the
+    Example of type hints used in Python. Explicitly stating the type of the
     variable is optional and does not change the behavior of the code as shown in
     \autoref{lst:dynamic_typing}.}
 \begin{lstlisting}[
@@ -539,7 +539,7 @@ and functions, and a class is a blueprint for creating objects. The data of an
 object is stored as attributes. Functions that are associated with an object are
 called methods.
 
-\def\mycaption{ Example of object oriented programming in python. The class is
+\def\mycaption{ Example of object oriented programming in Python. The class is
     called ``\texttt{Gene}'' and has four methods, ``\texttt{\_\_init\_\_}'',
     ``\texttt{find\_promotor}'', ``\texttt{find\_restriction\_site}'' and
     ``\texttt{cut}''. The method ``\texttt{\_\_init\_\_}'' is called when
@@ -588,7 +588,7 @@ Furthermore, classes can be expanded in their functionalities through
 inheritance (\autoref{lst:inheritance}).
 
 
-\def\mycaption{ Example of inheritance in python.
+\def\mycaption{ Example of inheritance in Python.
     The class ``\texttt{mRNA}'' inherits from the class ``\texttt{Gene}''. The class
     ``\texttt{mRNA}'' has two methods, ``\texttt{\_\_init\_\_}'' and
     ``\texttt{find\_stopcodon}''. The method ``\texttt{find\_stopcodon}'' finds the
@@ -617,98 +617,153 @@ a class to access every attribute and method of a parent class. For example, one
 could extend the class ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by
 writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
 
-Together, python is not just beginner-friendly, but also well respected for its
+Together, Python is not just beginner-friendly, but also well respected for its
 ease in development, which is why it is widely used in professional settings for
 web development, data analysis, machine learning, biosciences and more
 \cite{ekmekciIntroductionProgrammingBioscientists2016,rayhanRisePythonSurvey2023}.
 
 % ======================================================================
-\unnsubsection{Data Science Packages with Python}
+\unnsubsection{The Potential of Python Data Science Packages for Biomedicine}
 %%%
 Python includes a vast number of built-in packages used for basic data-types,
 software development, simple math operations, etc.,
-\cite{PythonLanguageReference}. Still, python relies on packages developed by
-its users to provide specialized tools for data analysis. A python package
-consists of multiple python \emph{modules}, where each module is a text-file
-with~a~\texttt{.py} ending containing python code. Famous examples of such
+\cite{PythonLanguageReference2024}. Still, Python relies on packages developed
+by its users to provide specialized tools for data analysis. A Python package
+consists of multiple Python \emph{modules}, where each module is a text-file
+with~a~\texttt{.py} ending containing Python code. Famous examples of such
 packages are \texttt{pytorch} and \texttt{tensorflow}, that are used to build
 models of artificial intelligence, including \textit{ChatGPT}
 \cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
     radfordLanguageModelsAre2019}. Here, we outlay the most important packages used
-for \texttt{plotastic} in Chapter 2.
+for \texttt{plotastic} in Chapter 2 and present examples how these packages are
+utilized in modern biomedical research.
 
-\texttt{IPython} can be understood as an enhanced version of the standard Python
-interpreter, designed to improve the interactivity of Python code execution
-\cite{perezIPythonSystemInteractive2007}. It streamlines the process of writing
-and executing code by conveniently displaying rich media, visualization, and
-extensive documentation, which helps in understanding complex data analyses.
-This make \texttt{IPython} similar in functionality to \textit{MATLAB} or
-\textit{RStudio}. This is particularly advantageous in the field of biomedicine,
-where visualizing data trends and patterns can lead to significant insights.
-
-\texttt{Jupyter} is an evolution of \texttt{IPython}, introducing the
-\emph{Jupyter notebook} format (file-ending \texttt{.ipynb})
-\cite{kluyverJupyterNotebooksPublishing2016}. Jupyter notebooks are documents
-that combine both code and written text information and structures those into
-\emph{code cells} and \emph{markdown cells}, respectively. These cells can be
-executed individually, displaying the cell's output directly below the cell.
-This allows for an interactive exploration of data, but also makes Jupyter
-notebooks a very human-readable format that outlays data analysis in a clear
-manner with precise and reproducible documentation of all data processing steps.
-Jupyter notebooks have become a standard format compatible with collaborative
-platforms like \textit{Google Colab} and \textit{JupyterLab}, but also
-professional software development tools like \textit{VS Code}, and
-\textit{PyCharm}.
+\textbf{\texttt{\textbf Interactive Python}:} The standard Python interface is
+insufficient for data science, because it lacks the tools to quickly and
+conveniently visualize and explore data. \texttt{IPython} can be
+understood as an enhanced version of the standard Python interpreter, designed
+to improve the interactivity of Python code execution
+\cite{perezIPythonSystemInteractive2007}. \texttt{IPython} introduces features like
+dynamic type introspection and an interactive shell that offers rich media
+support. This functionality is akin to what \textit{MATLAB} and \textit{RStudio}
+provide through their advanced graphical user interfaces and extensive debugging
+tools. This is particularly advantageous in the field of biomedicine,
+where visualizing data trends and patterns can lead to significant insights;
+however, \texttt{IPython} is most often utilized in the form of \emph{Jupyter
+Notebooks}.
 
 
 
-\texttt{NumPy} accelerates the mathematical capabilities of Python by enabling
-large-scale operations on multi-dimensional arrays and matrices with high
-efficiency \cite{harrisArrayProgrammingNumPy2020}. One key feature of
-\texttt{NumPy} is the implementation of SIMD (Single Instruction, Multiple Data)
-instructions. SIMD allows multiple data points to be processed simultaneously,
-significantly speeding up operations that are inherently parallelizable, such as
-matrix addition or multiplication. This capability is crucial when handling the
-vast datasets typically found in medical imaging or genomic data analysis in
-cancer research.
+\textbf{\texttt{Jupyter}:} \texttt{Jupyter} is an evolution of \texttt{IPython},
+introducing the \emph{Jupyter notebook} format, having a
+file-ending~\texttt{.ipynb} \cite{kluyverJupyterNotebooksPublishing2016}.
+Jupyter Notebooks are documents that combine both code and text structured as
+\emph{code cells} and \emph{markdown cells}, respectively. Markdown cells allow
+the author to provide additional information with text formatting, for example
+structuring the document with headings and subheadings, adding hyperlinks,
+images and mathematical formulas. Code cells can be executed individually,
+displaying the output directly below the cell. This allows for an interactive
+exploration of data, but also makes Jupyter Notebooks a very human-readable
+format that outlays data analysis in a clear manner with precise and
+reproducible documentation of all data processing steps. A major benefit of
+Jupyter Notebooks are interchangable \textit{Kernels}, allowing the execution of
+code in different programming languages, such as R, Julia, and C++
+\cite{giorgiLanguageEngineBioinformatics2022}. Today, Jupyter Notebooks have
+become a standard format compatible with collaborative platforms like
+\textit{Google Colab} and \textit{JupyterLab}, but also professional software
+development tools like \textit{VS Code}, and \textit{PyCharm}. For biomedical
+research, Jupyter Notebooks hold great potential to improve reproducibility, as
+they provide a standardized format to present data analyses, and are found in
+the supplemental of modern publications of both bioinformatics and wet-lab
+research
+\cite{taskiranCelltypedirectedDesignSynthetic2024,bosch-queraltFluorescenceMicroscopybasedProtocol2022,howeChallengesOpportunitiesUnderstanding2015}.
 
-\texttt{Pandas} extends Python with a tabular datatype, called
+
+
+\textbf{\texttt{NumPy}:} Central processing units (CPU) usually execute one
+instruction on one data point at a time. For manipulating tabular data, this is
+inefficient as the same instruction must be repeatedly loaded for every data
+point. \texttt{NumPy} accelerates the mathematical capabilities of Python by
+enabling large-scale operations on multi-dimensional arrays and matrices with
+high efficiency \cite{harrisArrayProgrammingNumPy2020}. One key feature of
+\texttt{NumPy} is the implementation of ``vectorization'' or SIMD (Single
+Instruction, Multiple Data) instructions. SIMD allows multiple data points to be
+processed simultaneously, significantly speeding up operations that are
+inherently parallelizable, such as matrix addition or multiplication.
+\texttt{NumPy}’s syntax and functional approach to array manipulation have set a
+standard for matrix computation, influencing the design of advanced AI
+frameworks such as \texttt{PyTorch} and \texttt{mlx}
+\cite{paszkePyTorchImperativeStyle2019,MlexploreMlx2024}, which mirrors several
+of \texttt{NumPy’s} functionalities to facilitate ease of use for those familiar
+with \texttt{NumPy}. This standardization has made \texttt{NumPy} an attractive
+tool not only in genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also
+for modern clinical applications, such as imaging technologies and augmented-reality in surgery
+\cite{thompsonSciKitSurgeryCompactLibraries2020}.
+
+
+\textbf{\texttt{Pandas}:} Tables are the most common way to store experimental
+results. \texttt{Pandas} extends Python with a tabular datatype, called
 \texttt{DataFrame}, which allows for easy data manipulation with integrated
-indexing \cite{mckinneyPandasFoundationalPython2011}. The intuitive interface of Pandas can be likened to Excel; however, it
-is vastly more powerful due to its speed, functionality, and ability to handle
-larger datasets. Unlike Excel, Pandas enables automation of data processing
-scripts, which is indispensable for reproducible scientific analysis.
+indexing \cite{mckinneyPandasFoundationalPython2011}. The intuitive interface of
+Pandas can be likened to \textit{Microsoft Excel}; however, it is vastly more
+powerful due to its speed, functionality, and ability to handle larger datasets
+by running efficient \texttt{numpy} vectorization in the background. Unlike
+\textit{Excel}, Pandas enables automation by summarizing processing commands
+into scripts, documenting each step, and ensuring reproducibility.
+\texttt{Pandas} is used in biomedicine for data wrangling, data cleaning,
+and data analysis, as it allows for the integration of multiple data sources
+into a single table \cite{santosCOVID19ScholarlyProduction2020}.
 
-\texttt{Matplotlib} is a plotting library that provides a wide range of static,
-animated, and interactive plots and graphs
+\textbf{\texttt{matplotlib}:} \texttt{matplotlib} is a plotting library that
+provides a wide range of static, animated, and interactive plots and graphs
 \cite{hunterMatplotlib2DGraphics2007}. It serves as the foundation for many
 other visualization tools and is particularly valued for its flexibility and
-customization options. Researchers in biomedicine use Matplotlib to create a
-variety of graphs (like histograms or scatter plots), which are essential for
-preliminary data analysis and checking data distributions.
+customization options. Researchers in biomedicine use \texttt{matplotlib} to
+create a variety of graphs (like histograms or scatter plots), which are
+essential for preliminary data analysis and checking data distributions.
 
-\texttt{Seaborn} builds on Matplotlib by integrating closely with
-\texttt{Pandas} data structures and providing a high-level interface for drawing
-attractive and informative statistical graphics
-\cite{waskomSeabornStatisticalData2021}. It simplifies the creation of complex
-visualizations involving multidimensional data, making it easier to reveal
-patterns and relationships via color encoding, faceting, and automated
-statistical fits. This is particularly useful in cancer research for visualizing
-and understanding complex datasets, such as patient response variability to
-treatments across multiple subgroups.
 
+\textbf{\texttt{seaborn}:} While \texttt{matplotlib} is valued for its
+flexibility, it can be cumbersome to use for complex visualizations, e.g. by using
+different syntaxes for different types of plots. \texttt{seaborn} builds on
+\texttt{matplotlib} by integrating closely with \texttt{Pandas} data structures and
+providing a high-level interface for drawing attractive and informative
+statistical graphics \cite{waskomSeabornStatisticalData2021}. It simplifies the
+creation of complex visualizations involving multidimensional data, making it
+easier to reveal patterns and relationships via color encoding, faceting, and
+automated statistical fits. This is particularly useful in biomedical research
+for visualizing and understanding complex datasets, such as large quantities of
+protein data  \cite{weissVisualizingProteinBig2022}. \texttt{seaborn} could
+indirectly contribute to improving reproducibility in biomedical research by
+making visualizations of complex data very accessible through an easy and
+standardized syntax.
+
+
+
+\textbf{\texttt{Pingouin}:} Integrating both data visualization and statistical
+analysis is beneficial for researchers who wish to conduct advanced statistical
+analysis without switching between different software environments.
 \texttt{Pingouin} is designed to be a user-friendly statistical tool that offers
 a straightforward syntax for performing statistical tests, which are commonly
 implemented in R \cite{vallatPingouinStatisticsPython2018}. Unlike R,
 \texttt{Pingouin} integrates seamlessly within the Python ecosystem, which
 allows combining data manipulation, analysis, and visualization all in one
-platform. This integration is beneficial for researchers who wish to conduct
-advanced statistical analysis without switching between different software
-environments.
+platform. This improves reproducibility by reducing the number of software tools
+required to analyze data. Despite its potential to streamline the data analysis
+process, \texttt{Pingouin} has not been widely adopted by biomedical research,
+yet. One example of a study that utilized \texttt{Pingouin} is the work of
+\citet{kellyEthicalMatrixMethod2023} in the field of Patient Public Involvement
+(PPI), producing an ethical matrix that allows for the inclusion of stakeholder
+opinion in medical research design. This lack of \texttt{Pingouin}'s adoption in
+biomedicine could be due to recent development and the dominance of R in the
+field. However, since Python offers multiple benefits over R in ease of use, software
+development, runtime performance and integration with other tools (like including performant C++
+code), \texttt{Pingouin} is an attractive standard for future statistical
+analyses in biomedicine \cite{gorelickHighPerformancePython2020}.
 
-Together, these packages form the backbone of modern data analysis in Python,
+Together, these python packages form the backbone of modern data analysis in Python,
 often times combining software from different languages to accelerate certain
 features, while retaining the ease of use and readability that Python is known
-for. This is particularly advantageous in the field of biomedicine, where data
-analysis is often complex and requires a high degree of flexibility and
-customization.
+for. This is particularly advantageous in the field of biomedicine, where the
+requirements of modern data analysis are often complex and require a high degree
+of flexibility and customization.
