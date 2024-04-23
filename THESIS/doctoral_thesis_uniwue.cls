@@ -194,20 +194,20 @@
 % > Unnumbered
 
 % ## Main Sections 
-\newcommand{\unnsection}[1]{ % > Unnumbered section
-    \section*{#1}
-    \addcontentsline{toc}{section}{#1}
-    \mbox{} % > Add empty line to avoid warnings
-    \markboth{#1}{} % > Mark section manually for headers
+\newcommand{\unnsection}[1]{%
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+    \mbox{}% > Add empty line to avoid warnings
+    \markboth{#1}{}% > Mark section manually for headers
 }
 
 
 % == Sub Sections ======================================================
 
-\newcommand{\unnsubsection}[1]{
-    \subsection*{#1} % > Create a new unnumbered subsection with the same name #1
-    \addcontentsline{toc}{subsection}{#1} % > Add the subsection to the table of contents
-    \mbox{} % > Add an empty line to avoid warnings
+\newcommand{\unnsubsection}[1]{%
+    \subsection*{#1}% > Create a new unnumbered subsection with the same name #1
+    \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
+    \mbox{}% > Add an empty line to avoid warnings
 }
 
 

@@ -1,109 +1,129 @@
 
 
 % ======================================================================
-\unnsubsection{Code-Automation as a Standard in Modern Biosciences}
-\
-Beschreibe die Situation.
-- Big Data in Biosciences
-- what is big data, examples
-- Define citable challenges:
-- reproducibility crisis
-- lack of tools
+\unnsubsection{Semi-Big Data is Causing a Reproducibility Bottleneck in Modern Biosciences}%
+\label{sec:code_automation}%
+%%%%%%%%%%%%%
+The advent of advanced technologies in biosciences has ushered in an era of Big
+Data, characterized by unprecedented volumes and complexities of
+data~\cite{yangScalabilityValidationBig2017,
+    ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
+by significant challenges in data analysis, particularly impacting the
+reproducibility of scientific research. Studies such as Baker's 2016 survey in
+Nature revealed that more than 70\% of researchers have tried and failed to
+reproduce another scientist's experiments, highlighting a reproducibility crisis
+that questions the reliability of scientific findings \cite{baker500ScientistsLift2016,begleyReproducibilityScienceImproving2015,ioannidisWhyMostPublished2005}.
 
-% - Semi big data
-% - What is that: At the edge of managability
-% - Tools to handle semi-big data are lacking:
-% Either manual analysis or big data tools
-% - Author defines semi-automation
+Reproducibility is foundational to scientific research, ensuring that findings
+are reliable and verifiable \cite{goodmanWhatDoesResearch2016}. Reproducibility
+was compromised by data nontransparency, as researchers lacked the infrastructure or habits\footnote{ %
+    \citet{pengReproducibleResearchComputational2011}: \textit{ ``[...] old
+        habits die hard, and many will be unwilling to discard the hours spent
+        learning existing systems.'' }
+} %
+to provide raw data for independent verification, both for small and big data
+\cite{pengReproducibleResearchComputational2011,
+mesirovAccessibleReproducibleResearch2010}.
+ Data nontransparency also includes
+cryptic or complete lack of explanations regarding processing pipelines, which
+are essential for understanding how data was processed and analyzed \cite{gosselinInsufficientTransparencyStatistical2021}. Re-analysis
+of data often times did not support the original conclusions
+\cite{witwerDataSubmissionQuality2013}. 
 
 
+In big data, recent advances have been made to standardize both raw data availability and
+processing pipelines, such as in RNAseq analysis
 
-In recent years, the biosciences have evolved dramatically, with a marked
-increase in the volume and complexity of data generated
-~\cite{yangScalabilityValidationBig2017,ekmekciIntroductionProgrammingBioscientists2016}.
-This transformation necessitates robust software tools, many of which require
-coding skills to use effectively. Here we summarize standard tools used by
-biosciences today and show their reliance on coding. The author argues that the
-role of a modern independent researcher is now intertwined with coding skills
-similar to a role of ``precision medicine
-bioninformatician''~\cite{gomez-lopezPrecisionMedicineNeeds2019}.
+have shown how automation
+and sophisticated software can aid in making data analysis more reproducible by
+providing standardized and repeatable analysis protocols
+\cite{meiCanBigData2018}. However, a gap exists for datasets that do not require
+or can not utilize these high-powered tools.
 
-Statistical analysis in biosciences has traditionally been reliant on
-user-friendly tools like \textit{Microsoft Excel} and \textit{GraphPad Prism}. While \textit{Excel} by itself is
-recognized as limited for complex data analysis
-\cite{tanavaleeLimitationsUsingMicrosoft2016a, incertiYouStillUsing2019a},
-GraphPad Prism offers more advanced statistical models .
+The awareness for complex datasets is rising in biosciences, as tutorials for
+\textit{multidimensional data} are available
+\cite{krzywinskiMultidimensionalData2013,dunnExploringVisualizingMultidimensional2017}.
 
-However, increasingly demands more sophisticated
-approaches as data sets grow in size and complexity.
+In this thesis, the author introduces the concept of \emph{semi-big data} to
+describe datasets with a size that is at the edge of manageability: Semi-big
+data is large and/or complex enough to make manual analysis extremely
+time-consuming, yet don't require or are incompatible with traditional Big Data
+tools. These datasets are commonly produced by methods such as automated
+microscopy or multiplex qPCR. Researchers are often forced to revert to basic
+tools like \textit{Microsoft Excel} for analyzing semi-big data
+\cite{incertiYouStillUsing2019a}. This could be due to the data's complexity
+requiring a high manual intervention to ensure accuracy of every processing
+step. However, manual analysis not only is laborious and prone to errors, but
+also represents a significant barrier to reproducibility, as most reviewers lack
+the time to repeat the same in-depth processing to verify the results.
 
-R and Python scripts offer more efficient and
-versatile solutions, enabling complex analyses with a few lines of code
-\cite{rcoreteamLanguageEnvironmentStatistical2018,vallatPingouinStatisticsPython2018}.
+A remedy to this bottleneck are either writing custom programming scripts, or
+tools that allow batch-processing, for example to execute the same processing
+steps on multiple samples. \texttt{Fiji/ImageJ}, a standard tool in microscopy, allows
+both macros and scripting for batch processing of multiple images and
+automating multiple processing steps into a pipeline. Another example is \texttt{PyMOL},
+a standard tool in protein structural biology, which also has a Python command
+interface. Intriguingly, Microsoft has recently integrated a Python interpreter
+into \textit{Excel}, allowing researchers to automate tasks and analyze data
+more efficiently~\cite{microsoftexcelAnnouncingPythonExcel2023}.
+% These tools show that the fields of Biosciences and
+% Informatics are converging, and that coding skills are becoming increasingly
+% important for researchers in the biosciences.
 
-Recognizing this trend, Microsoft has integrated a Python interpreter into \textit{Excel} to
-computations more accessible within a widely used platform \cite{AnnouncingPythonExcel2023}.
-
-% A potential use-case for coding is statistical analysis. Most users rely on tools
-% like Prism.
-% However, Prism becomes impractical with large and complex datasets,
-% as manual re-analysis is time-consuming. In contrast, scripts in R or Python
-% allow for a single click to re-analyze the data. Recognizing this trend,
-% Microsoft has recently implemented a Python interpreter into \textit{Excel}, allowing
-% execution of Python code within cells. R, in particular, offers more advanced
-% statistical models than Prism or \textit{Excel}, which has led to R's widespread
-% adoption.
-
-Next-generation sequencing, such as bulk RNAseq, has become affordable, allowing
-for larger sample sets during a single PhD project. This technology offers
-advanced tools that are most efficiently used through scripting in R or Python.
-In the absence of a dedicated statistician, researchers are compelled to learn
-coding.
-
-In gene ontology, tools such as Metascape facilitate the integration of vast
-datasets and outputs multiple useful data visualizations. Metascape also
-provides multiple excel sheets, containing all results, sometimes in a nested
-format, which provides even further information that's adaptable for specific
-hypotheses, but given the sheer amount of data, is impractical to analyze
-manually.
-
-since Metascape
-returns large \textit{Excel} sheets with complex nested information, a researcher without
-coding skills requires manual work to adapt the results to specific research
-hypotheses.
-
-its true potential is unlocked only when researchers can
-manipulate and analyze these data through scripting.
-
-Modern gene ontology tools like Metascape offer powerful graphical user
-interfaces. However, their effectiveness is only possible through standardizing
-multiple large datasets.
-
-The output from Metascape, large \textit{Excel} sheets with
-complex nested information, is more efficiently analyzed through scripting,
-which is often necessary to adapt metascape results to specific research
-hypotheses.
+However, custom scripts and tools of batch-processing can still pose a challenge
+to reproducibility: They are often highly specialized on a single use-case their
+adoption rate is very low. Also, batch-processing scripts often time don't
+outlay intermediate results comprehensively, decreasing the confidence in the
+final results. Besides, software scripts often do not follow standards that ensure
+functionality in different software environments, or lack necessary
+documentation to execute them properly, assuming the scripts are working as intended
+\cite{sandveTenSimpleRules2013, pengReproducibleResearchComputational2011}.
 
 
 
-Image analysis is another area where coding skills are essential. ImageJ/FIJI, a
-standard tool in the field, requires scripting for batch processing of multiple
-images and automating multiple processing steps into a pipeline. While macros
-can be recorded, understanding the underlying code is necessary for
-troubleshooting and adapting the macro to new datasets.
 
-In the field of protein structural biology, Pymol is a standard tool that also
-has a Python command interface.
 
-Similarly, artificial intelligence (AI), a
-game-changer in biomedicine, primarily uses Python due to its extensive
-libraries for machine learning and scientific computing. Python is also a
-standard for integrative biomedicine simulations.
+% For instance, the output of
+% tools like Metascape, which facilitate the integration of large datasets, return
+% complex \textit{Excel} sheets that are more efficiently analyzed through
+% scripting to adapt the results to specific research hypotheses. 
 
-Finally, databases and repositories are essential for storing, retrieving, and
-sharing data. Researchers need to understand common file formats to adhere to
-standards that ensure re-usability and interoperability. Scripting helps
-automate the process of formatting data for submission to these databases.
+% Similarly, tools like
+% Metascape, which facilitate the integration of large datasets, return complex
+% \textit{Excel} sheets that are more efficiently analyzed through scripting to
+% adapt the results to specific research hypotheses. This makes
+
+% The Convergence of Bioinformatics and Biosciences
+% The intersection of
+% informatics and biosciences has become increasingly prominent, necessitating a
+% proficiency in data handling and analysis akin to traditional laboratory skills.
+% Tools like Pymol with Python interfaces or the aggregation of large tables of
+% gene ontology data in bioinformatics platforms illustrate how coding and
+% software are becoming integral in bioscience research. This convergence
+% underscores the necessity for tools that can bridge the gap between
+% user-friendly interfaces and the powerful capabilities required to handle
+% semi-big data efficiently.
+
+
+
+Given the unique challenges posed by semi-big data, there
+is a critical need for new analytical tools specifically tailored to this data
+category. These tools must combine the ease of use found in basic software with
+the robust, analytical capabilities of more sophisticated systems. By automating
+the analysis process and standardizing outputs, such tools could significantly
+enhance reproducibility, allowing researchers to focus on scientific inquiry
+rather than data management intricacies.
+
+
+In conclusion, as bioscience continues to generate increasingly complex datasets,
+the distinction between biologists and bioinformaticians blurs, emphasizing the
+need for all researchers to adopt computational tools. The development of new
+software to handle semi-big data effectively is not just an enhancement but a
+necessity to ensure the future reliability and efficiency of scientific
+research. This thesis proposes a framework for understanding and addressing the
+semi-big data challenges, setting the stage for a discussion on innovative
+solutions like the software tools described in subsequent chapters.
+
 
 In conclusion, the integration of coding in bioscience research is not just a
 trend but a necessity. As the field continues to evolve, the demarcation between
@@ -111,6 +131,140 @@ biologists and computational scientists blurs, underscoring the importance of
 coding skills for the next generation of researchers. The ability to code is
 fast becoming an indispensable asset, as integral to bioscience as traditional
 laboratory skills.
+
+
+
+
+This thesis aims to address this call by providing a software tool
+that automates the analysis of semi-big data, ensuring that the results are
+
+
+
+
+% %%%%
+% Beschreibe die Situation.
+% - Big Data in Biosciences
+% - what is big data, examples
+% - Define citable challenges:
+% - reproducibility crisis
+% - lack of tools
+
+% % - Semi big data
+% % - What is that: At the edge of managability
+% % - Tools to handle semi-big data are lacking:
+% % Either manual analysis or big data tools
+% % - Author defines semi-automation
+
+
+
+
+
+
+
+
+
+
+% %%%%%%%%%%%%%%%%%
+
+% In recent years, the biosciences have evolved dramatically, with a marked
+% increase in the volume and complexity of data generated
+% ~\cite{yangScalabilityValidationBig2017,ekmekciIntroductionProgrammingBioscientists2016}.
+% This transformation necessitates robust software tools, many of which require
+% coding skills to use effectively. Here we summarize standard tools used by
+% biosciences today and show their reliance on coding. The author argues that the
+% role of a modern independent researcher is now intertwined with coding skills
+% similar to a role of ``precision medicine
+% bioninformatician''~\cite{gomez-lopezPrecisionMedicineNeeds2019}.
+
+% Statistical analysis in biosciences has traditionally been reliant on
+% user-friendly tools like \textit{Microsoft Excel} and \textit{GraphPad Prism}.
+% While \textit{Excel} by itself is recognized as limited for complex data
+% analysis \cite{tanavaleeLimitationsUsingMicrosoft2016a,
+% incertiYouStillUsing2019a}, GraphPad Prism offers more advanced statistical
+% models .
+
+% However, increasingly demands more sophisticated
+% approaches as data sets grow in size and complexity.
+
+% R and Python scripts offer more efficient and
+% versatile solutions, enabling complex analyses with a few lines of code
+% \cite{rcoreteamLanguageEnvironmentStatistical2018,vallatPingouinStatisticsPython2018}.
+
+% Recognizing this trend, Microsoft has integrated a Python interpreter into \textit{Excel} to
+% computations more accessible within a widely used platform \cite{AnnouncingPythonExcel2023}.
+
+% % A potential use-case for coding is statistical analysis. Most users rely on tools
+% % like Prism.
+% % However, Prism becomes impractical with large and complex datasets,
+% % as manual re-analysis is time-consuming. In contrast, scripts in R or Python
+% % allow for a single click to re-analyze the data. Recognizing this trend,
+% % Microsoft has recently implemented a Python interpreter into \textit{Excel}, allowing
+% % execution of Python code within cells. R, in particular, offers more advanced
+% % statistical models than Prism or \textit{Excel}, which has led to R's widespread
+% % adoption.
+
+% Next-generation sequencing, such as bulk RNAseq, has become affordable, allowing
+% for larger sample sets during a single PhD project. This technology offers
+% advanced tools that are most efficiently used through scripting in R or Python.
+% In the absence of a dedicated statistician, researchers are compelled to learn
+% coding.
+
+% In gene ontology, tools such as Metascape facilitate the integration of vast
+% datasets and outputs multiple useful data visualizations. Metascape also
+% provides multiple excel sheets, containing all results, sometimes in a nested
+% format, which provides even further information that's adaptable for specific
+% hypotheses, but given the sheer amount of data, is impractical to analyze
+% manually.
+
+% since Metascape
+% returns large \textit{Excel} sheets with complex nested information, a researcher without
+% coding skills requires manual work to adapt the results to specific research
+% hypotheses.
+
+% its true potential is unlocked only when researchers can
+% manipulate and analyze these data through scripting.
+
+% Modern gene ontology tools like Metascape offer powerful graphical user
+% interfaces. However, their effectiveness is only possible through standardizing
+% multiple large datasets.
+
+% The output from Metascape, large \textit{Excel} sheets with
+% complex nested information, is more efficiently analyzed through scripting,
+% which is often necessary to adapt metascape results to specific research
+% hypotheses.
+
+
+
+% Image analysis is another area where coding skills are essential. Classifying
+% regions of cells is a common task in microscopy to solve simple problems like
+% counting individual cells or more complex problems like fluorescence
+% co-localization.
+
+% ImageJ/FIJI, a
+% standard tool in the field, requires scripting for batch processing of multiple
+% images and automating multiple processing steps into a pipeline. While macros
+% can be recorded, understanding the underlying code is necessary for
+% troubleshooting and adapting the macro to new datasets.
+
+% In the field of protein structural biology, Pymol is a standard tool that also
+% has a Python command interface.
+
+% Similarly, artificial intelligence (AI), a
+% game-changer in biomedicine, primarily uses Python due to its extensive
+% libraries for machine learning and scientific computing. Python is also a
+% standard for integrative biomedicine simulations.
+
+% Finally, databases and repositories are essential for storing, retrieving, and
+% sharing data. Researchers need to understand common file formats to adhere to
+% standards that ensure re-usability and interoperability. Scripting helps
+% automate the process of formatting data for submission to these databases.
+
+% In conclusion, the integration of coding in bioscience research is not just a
+% trend but a necessity. As the field continues to evolve, the demarcation between
+% biologists and computational scientists blurs, underscoring the importance of
+% coding skills for the next generation of researchers. The ability to code is
+% fast becoming an indispensable asset, as integral to bioscience as traditional
+% laboratory skills.
 
 
 
@@ -240,20 +394,23 @@ laboratory skills.
 
 
 
-
+A main reason to write software is to define re-usable instructions for task
+automation~\cite{narztReusabilityConceptProcess1998}.
 
 % ======================================================================
-\unnsubsection{How Code Quality Improves Scientific Reproducibility}
-A main reason to write software is to define re-usable instructions for task
-automation~\cite{narztReusabilityConceptProcess1998}. However, the complexity of
-the code makes it prone to errors and can prevent usage by persons other than
-the author himself. This is a problem for the general scientific community, as
-the software is often the only way to reproduce the results of a
-study~\cite{sandveTenSimpleRules2013}. Hence, modern journals aim to enforce
-standards to software development, including software written and used by
-biological researchers~\cite{smithJournalOpenSource2018}. Here, we provide a
+\unnsubsection{Modern Standards of Software Development}
+\label{sec:code_quality}
+%%%%%%%
+The complexity of software code makes it prone to errors, which can prevent
+its usage by persons other than the author himself. This is a problem for the
+general scientific community, as the software is often essential for
+reproduction~\cite{sandveTenSimpleRules2013}. Hence, modern journals aim to
+enforce standards to software development, including software written and used
+by biological researchers~\cite{smithJournalOpenSource2018}. Here, we provide a
 brief overview of the standards utilized by \texttt{plotastic} that to ensure
-its reliability and reproducibility by the scientific community~\cite{pengReproducibleResearchComputational2011}.
+its reliability and reproducibility by the scientific
+community~\cite{pengReproducibleResearchComputational2011}.
+
 
 Modern software development is a long-term commitment of maintaining and
 improving code after initial release~\cite{boswellArtReadableCode2011}. Hence,
@@ -356,7 +513,7 @@ results.
 
 % ======================================================================
 % ======================================================================
-\unnsubsection{Python as a Programming Language}
+\unnsubsection{Python as a Programming Language}\label{sec:python}
 Here, we provide a general overview of the Python programming language,
 explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
 prepare readers without prior programming experience for the following chapters.
@@ -624,6 +781,7 @@ web development, data analysis, machine learning, biosciences and more
 
 % ======================================================================
 \unnsubsection{The Potential of Python Data Science Packages for Biomedicine}
+\label{sec:python_packages}
 %%%
 Python includes a vast number of built-in packages used for basic data-types,
 software development, simple math operations, etc.,
@@ -640,22 +798,20 @@ utilized in modern biomedical research.
 
 \textbf{\texttt{\textbf Interactive Python}:} The standard Python interface is
 insufficient for data science, because it lacks the tools to quickly and
-conveniently visualize and explore data. \texttt{IPython} can be
-understood as an enhanced version of the standard Python interpreter, designed
-to improve the interactivity of Python code execution
-\cite{perezIPythonSystemInteractive2007}. \texttt{IPython} introduces features like
-dynamic type introspection and an interactive shell that offers rich media
-support. This functionality is akin to what \textit{MATLAB} and \textit{RStudio}
-provide through their advanced graphical user interfaces and extensive debugging
-tools. This is particularly advantageous in the field of biomedicine,
-where visualizing data trends and patterns can lead to significant insights;
-however, \texttt{IPython} is most often utilized in the form of \emph{Jupyter
-Notebooks}.
+conveniently visualize and explore data. \texttt{IPython} can be understood as
+an enhanced version of the standard Python interpreter, designed to improve the
+interactivity of Python code execution \cite{perezIPythonSystemInteractive2007}.
+\texttt{IPython} introduces features like rich media support to display
+graphics, but also helps users to use correct python data types through dynamic
+type introspection, detecting errors in the code. This functionality is akin to
+what \textit{MATLAB} and \textit{RStudio} provide through their advanced
+graphical user interfaces and extensive debugging tools. \texttt{IPython} is most
+often utilized in the form of \emph{Jupyter Notebooks}.
 
 
 
 \textbf{\texttt{Jupyter}:} \texttt{Jupyter} is an evolution of \texttt{IPython},
-introducing the \emph{Jupyter notebook} format, having a
+introducing the \emph{Jupyter notebook} format, which has the
 file-ending~\texttt{.ipynb} \cite{kluyverJupyterNotebooksPublishing2016}.
 Jupyter Notebooks are documents that combine both code and text structured as
 \emph{code cells} and \emph{markdown cells}, respectively. Markdown cells allow
@@ -675,8 +831,9 @@ development tools like \textit{VS Code}, and \textit{PyCharm}. For biomedical
 research, Jupyter Notebooks hold great potential to improve reproducibility, as
 they provide a standardized format to present data analyses, and are found in
 the supplemental of modern publications of both bioinformatics and wet-lab
-research
-\cite{taskiranCelltypedirectedDesignSynthetic2024,bosch-queraltFluorescenceMicroscopybasedProtocol2022,howeChallengesOpportunitiesUnderstanding2015}.
+research \cite{taskiranCelltypedirectedDesignSynthetic2024,
+    bosch-queraltFluorescenceMicroscopybasedProtocol2022,
+    howeChallengesOpportunitiesUnderstanding2015}.
 
 
 
@@ -692,13 +849,13 @@ processed simultaneously, significantly speeding up operations that are
 inherently parallelizable, such as matrix addition or multiplication.
 \texttt{NumPy}’s syntax and functional approach to array manipulation have set a
 standard for matrix computation, influencing the design of advanced AI
-frameworks such as \texttt{PyTorch} and \texttt{mlx}
-\cite{paszkePyTorchImperativeStyle2019,MlexploreMlx2024}, which mirrors several
-of \texttt{NumPy’s} functionalities to facilitate ease of use for those familiar
-with \texttt{NumPy}. This standardization has made \texttt{NumPy} an attractive
-tool not only in genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also
-for modern clinical applications, such as imaging technologies and augmented-reality in surgery
-\cite{thompsonSciKitSurgeryCompactLibraries2020}.
+frameworks such as \texttt{PyTorch} and \texttt{mlx}, which mirrors several of
+\texttt{NumPy’s} functionalities to facilitate ease of use for those familiar
+with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,MlexploreMlx2024}.
+This standardization has made \texttt{NumPy} an attractive tool not only in
+genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also for modern
+clinical applications like imaging technologies and augmented-reality in
+surgery \cite{thompsonSciKitSurgeryCompactLibraries2020}.
 
 
 \textbf{\texttt{Pandas}:} Tables are the most common way to store experimental
@@ -706,37 +863,47 @@ results. \texttt{Pandas} extends Python with a tabular datatype, called
 \texttt{DataFrame}, which allows for easy data manipulation with integrated
 indexing \cite{mckinneyPandasFoundationalPython2011}. The intuitive interface of
 Pandas can be likened to \textit{Microsoft Excel}; however, it is vastly more
-powerful due to its speed, functionality, and ability to handle larger datasets
-by running efficient \texttt{numpy} vectorization in the background. Unlike
+powerful due to its speed, functionality, and ability to handle larger datasets,
+e.g. by running efficient \texttt{numpy} vectorization in the background. Unlike
 \textit{Excel}, Pandas enables automation by summarizing processing commands
 into scripts, documenting each step, and ensuring reproducibility.
-\texttt{Pandas} is used in biomedicine for data wrangling, data cleaning,
-and data analysis, as it allows for the integration of multiple data sources
-into a single table \cite{santosCOVID19ScholarlyProduction2020}.
+\texttt{Pandas} is used in biomedicine for data wrangling, data cleaning, and
+data analysis, as it allows for the integration of multiple data sources into a
+single table \cite{santosCOVID19ScholarlyProduction2020}.
 
 \textbf{\texttt{matplotlib}:} \texttt{matplotlib} is a plotting library that
 provides a wide range of static, animated, and interactive plots and graphs
 \cite{hunterMatplotlib2DGraphics2007}. It serves as the foundation for many
-other visualization tools and is particularly valued for its flexibility and
-customization options. Researchers in biomedicine use \texttt{matplotlib} to
-create a variety of graphs (like histograms or scatter plots), which are
-essential for preliminary data analysis and checking data distributions.
+visualization tools and is particularly valued for its flexibility and
+customization options. For example, \texttt{Pandas} uses \texttt{matplotlib} to
+plot column datapoints directly from a \texttt{DataFrame} object, creating
+histograms or scatter plots, which is useful for preliminary data analysis and
+checking data distributions. However, \texttt{matplotlib} uses a low-level
+syntax, hence plots generated by \texttt{matplotlib} can be cumbersome to format
+and customize.
 
 
-\textbf{\texttt{seaborn}:} While \texttt{matplotlib} is valued for its
-flexibility, it can be cumbersome to use for complex visualizations, e.g. by using
-different syntaxes for different types of plots. \texttt{seaborn} builds on
-\texttt{matplotlib} by integrating closely with \texttt{Pandas} data structures and
-providing a high-level interface for drawing attractive and informative
-statistical graphics \cite{waskomSeabornStatisticalData2021}. It simplifies the
-creation of complex visualizations involving multidimensional data, making it
-easier to reveal patterns and relationships via color encoding, faceting, and
-automated statistical fits. This is particularly useful in biomedical research
-for visualizing and understanding complex datasets, such as large quantities of
-protein data  \cite{weissVisualizingProteinBig2022}. \texttt{seaborn} could
-indirectly contribute to improving reproducibility in biomedical research by
-making visualizations of complex data very accessible through an easy and
-standardized syntax.
+\textbf{\texttt{seaborn}:} While the low-level syntax of \texttt{matplotlib} is
+valued for its flexibility, formatting publication grade plots can be laborious,
+and its inconsistent syntax can make it difficult to remember the correct
+commands for different plot types. \texttt{seaborn} is a high-level interface on
+top of \texttt{matplotlib} that offers a more intuitive and highly standardized
+syntax across a wide array of plot types
+\cite{waskomSeabornStatisticalData2021}. \texttt{seaborn} also integrates
+closely with \texttt{Pandas} data structures: It automatically groups
+datapoints, calculates measures of both central tendency (e.g. mean, median) and
+variance (e.g. standard deviation), and displays them into the plot (e.g. error
+bars). This completely replaces manual calculation of descriptive statistics.
+\texttt{seaborn} also offers intuitive grouping (\textit{facetting}) of data
+points, which simplifies the creation of complex visualizations involving
+multidimensional data, making it easier to reveal patterns and relationships via
+color encoding, faceting, and automated statistical fits. This is particularly
+useful in biomedical research for visualizing and understanding complex
+datasets, such as large quantities of protein data
+\cite{krzywinskiMultidimensionalData2013,weissVisualizingProteinBig2022}.
+\texttt{seaborn} could indirectly contribute to improving reproducibility in
+biomedical research by making visualizations of complex data very accessible
+through an easy and standardized syntax.
 
 
 
@@ -756,10 +923,11 @@ yet. One example of a study that utilized \texttt{Pingouin} is the work of
 (PPI), producing an ethical matrix that allows for the inclusion of stakeholder
 opinion in medical research design. This lack of \texttt{Pingouin}'s adoption in
 biomedicine could be due to recent development and the dominance of R in the
-field. However, since Python offers multiple benefits over R in ease of use, software
-development, runtime performance and integration with other tools (like including performant C++
-code), \texttt{Pingouin} is an attractive standard for future statistical
-analyses in biomedicine \cite{gorelickHighPerformancePython2020}.
+field. However, since Python offers multiple benefits over R in syntax, software
+development, runtime performance and integration with other tools (like
+including performant C++ code), \texttt{Pingouin} is an attractive standard for
+future statistical analyses in biomedicine
+\cite{gorelickHighPerformancePython2020}.
 
 Together, these python packages form the backbone of modern data analysis in Python,
 often times combining software from different languages to accelerate certain
