@@ -459,7 +459,8 @@
 \definecolor{typecolor}{RGB}{0,85,170}  % > Blue
 \definecolor{darkpurple}{RGB}{119, 0, 134}  % > dark purple
 
-\definecolor{parentheses}{rgb}{.7,.1,0}
+% \definecolor{parentheses}{rgb}{.7,.1,0}
+\definecolor{parentheses}{RGB}{250,200,50}
 
 \definecolor{deepblue}{rgb}{0,0,0.7}
 \definecolor{darkyellow}{RGB}{200,150,0}
@@ -480,7 +481,7 @@ belowskip=3pt, % > Space after listing
 abovecaptionskip=0pt, % > Remove space before caption
 numbers=left,  % > Show line numbers
 numbersep=5pt,  % > Move line numbers slightly to the right
-basicstyle=\linespread{1}\color{darkgray}\ttfamily\small,  % > Variables are black
+basicstyle=\linespread{1}\color{darkgray}\ttfamily\footnotesize,  % > Variables are black
 showstringspaces=false,  % > Don't highlight spaces within strings
 keywordstyle=\color{keywordcolor}\bfseries,  % > Keywords are green
 commentstyle=\color{commentcolor},  % > Comments are green
@@ -499,7 +500,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \lstdefinestyle{pythonstyle}{
     style=defaultstyle,  % > Use the default style
     language=Python,  % > Set the language to Python
-    morekeywords={assert},  % > Add Python-specific keywords
+    morekeywords={assert, as},  % > Add Python-specific keywords
     classoffset=1,  % > Starting new class of keywords
     keywordstyle=\color{typecolor},  % > Type built-in functions are blue
     classoffset=2,  % > Starting new class of keywords

@@ -114,13 +114,10 @@ microscopy or multiplex qPCR, which produce volumes of data that are manageable
 on a surface level, but pose substantial barriers for in-depth, manual
 reproducibility~\cite{bustinReproducibilityBiomedicalResearch2014}. This is
 further complicated by the complexity inherent in multidimensional datasets
-\cite{krzywinskiMultidimensionalData2013}. Modern biosciences rely on complex
-experiments, for example for processes that are highly time-dependent, like
-cell-adhesion \cite{reblTimedependentMetabolicActivity2010,
+\cite{krzywinskiMultidimensionalData2013}. Modern biosciences describe processes (e.g. cell-adhesion) that are highly dependent on multiple experimental parameters, like time and concentration \cite{reblTimedependentMetabolicActivity2010,
 mckayCellcellAdhesionMolecules1997}. Without a clearly
-documented data analysis protocol and standardized data formats, the
-reproduction of such analysis becomes extremely challenging, if not
-impossible~\cite{bustinReproducibilityBiomedicalResearch2014}.
+documented data analysis protocol and standardized data formats, 
+ such analyses become nontransparent and not reproducible~\cite{bustinReproducibilityBiomedicalResearch2014}.
 
 Although the awareness for multidimensional data is increasing
 \cite{dunnExploringVisualizingMultidimensional2017}, intuitive tools for the
@@ -537,6 +534,9 @@ Is plotastic tested? Coverage? Does it cover every feature? What is not covered
 The full code of an example analysis is shown in \autoref{apdx:example_analysis}.
 
 
+
+
+
 Is plotastic USABLE for biologists?
 - Yes but use is limited by minimal knowledge of Python
 - However, that is subject to change as Python is becoming more popular
@@ -575,6 +575,13 @@ intuitive ways to both capture and embed our computational work directly into
 our papers". In this thesis, combining Jupyter Notebooks with plotastic could
 represent an intriguing solution to solve that problem.
 
+Statistical or Data illiteracy is a critical issue that's well researched for both clinicians and 
+biomedical researchers \cite{lakhlifiIllusionKnowledgeStatistics2023,federerDataLiteracyTraining2016}.
+plotastic removes a lot of need for statistical knowledge, yet still performs complex statistical analyses,
+if the measurements were correctly performed and the results are correctly interpreted.
+Using unpaired non-parametric tests, plotastic provides statistically sound for a wide array of study types without 
+the need for the user to understand the underlying statistical principles. This is a significant advantage for
+biologists, who often lack the necessary statistical training to perform these analyses manually.
 
 Usability is a critical attribute of analytical software, particularly as
 researchers confront increasingly complex datasets. While the developer's

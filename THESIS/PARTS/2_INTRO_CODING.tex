@@ -1,34 +1,116 @@
 
 
+\unnsubsection{Multidimensional Data in Biomedical Research}%
+\label{sec:multidimensional_data}%
+blablal
+
+The awareness for complex datasets is rising in biosciences, as tutorials for
+\textit{multidimensional data} are available
+\cite{krzywinskiMultidimensionalData2013,dunnExploringVisualizingMultidimensional2017}.
+
+
+
 % ======================================================================
-\unnsubsection{Semi-Big Data is Causing a Reproducibility Bottleneck in Modern Biosciences}%
-\label{sec:code_automation}%
+% \unnsubsection{Semi-Big Data is Causing a Reproducibility Bottleneck in Modern Biosciences}%
+\unnsubsection{Nontransparencies in Biomedical Data Analyses}%
+\label{sec:nontransparencies}%
 %%%%%%%%%%%%%
 The advent of advanced technologies in biosciences has ushered in an era of Big
 Data, characterized by unprecedented volumes and complexities of
 data~\cite{yangScalabilityValidationBig2017,
     ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
 by significant challenges in data analysis, particularly impacting the
-reproducibility of scientific research. Studies such as Baker's 2016 survey in
-Nature revealed that more than 70\% of researchers have tried and failed to
-reproduce another scientist's experiments, highlighting a reproducibility crisis
-that questions the reliability of scientific findings \cite{baker500ScientistsLift2016,begleyReproducibilityScienceImproving2015,ioannidisWhyMostPublished2005}.
+reproducibility of scientific research. Studies such as the
+\citet{baker500ScientistsLift2016} survey  revealed that more than
+\SI{70}{\percent} of researchers have tried and failed to reproduce another
+scientist's experiments, highlighting a reproducibility crisis that questions
+the reliability of scientific findings
+\cite{begleyReproducibilityScienceImproving2015, ioannidisWhyMostPublished2005}.
 
-Reproducibility is foundational to scientific research, ensuring that findings
-are reliable and verifiable \cite{goodmanWhatDoesResearch2016}. Reproducibility
-was compromised by data nontransparency, as researchers lacked the infrastructure or habits\footnote{ %
-    \citet{pengReproducibleResearchComputational2011}: \textit{ ``[...] old
-        habits die hard, and many will be unwilling to discard the hours spent
-        learning existing systems.'' }
-} %
-to provide raw data for independent verification, both for small and big data
-\cite{pengReproducibleResearchComputational2011,
-mesirovAccessibleReproducibleResearch2010}.
- Data nontransparency also includes
-cryptic or complete lack of explanations regarding processing pipelines, which
-are essential for understanding how data was processed and analyzed \cite{gosselinInsufficientTransparencyStatistical2021}. Re-analysis
-of data often times did not support the original conclusions
-\cite{witwerDataSubmissionQuality2013}. 
+\emph{Reproducibility} is considered foundational to scientific research, ensuring that
+findings are reliable and verifiable. Still, its meaning requires precise
+definition \cite{goodmanWhatDoesResearch2016}. The common understanding of
+scientific reproduction implies not only that detailed information is provided
+to enable independent repetition (\emph{transparency}), but also that time and
+effort is invested into repeating the experiments (\emph{corroboration}).
+However, since modern biomedical journals are demanding novelty research, and
+since experiments have become highly specialized and time-intensive, repeating
+someone else's work is considered neither interesting%
+\footnote{%
+    \citet{flierProblemIrreproducibleBioscience2022}: \textit{``There are no
+        scientists with the interest, resources, or incentives to “repeat” or
+        confirm this vast sea of published work, so whether the findings they
+        report are reproducible will simply never be assessed.''} } %
+nor possible for most publications \cite{flierProblemIrreproducibleBioscience2022,
+    pengReproducibleResearchComputational2011}. Hence, the meaning of
+reproducibility is confined to \emph{transparency}, a concept that has
+been applied to many fields, including clinical trials
+\cite{goodmanWhatDoesResearch2016,
+    committeeonstrategiesforresponsiblesharingofclinicaltrialdataSharingClinicalTrial2015}.
+
+Nevertheless, there is a surprising amount of evidence for nontransparencies in
+biomedical data analyses: For Microarray-based miRNA profiling, raw data was not
+reported in more than \SI{40}{\percent} of 127 articles, making independent
+verification impossible \cite{witwerDataSubmissionQuality2013}. This problem
+becomes critical, since the same study also found that re-analysis of data often
+times did not support the original conclusions. The distrust in scientific
+reporting is further fueled when it is evident that of 233 preclinical articles,
+\SI{44}{\percent} describe statistical tests insufficiently, while few don't
+describe them at all \cite{gosselinInsufficientTransparencyStatistical2021}.
+Another study reviewed 147 papers in the field of optometrics and found that
+\SI{91}{\percent} did not discuss their rationale of correcting p-values for
+multiple comparisons (e.g. Bonferroni correction)
+\cite{armstrongWhenUseBonferroni2014}. However, it is reasonable to assume that
+researchers lack the confidence to report their technique in detail, given
+that the exact use of multiple comparisons corrections has been under debate for
+decades \cite{pernegerWhatWrongBonferroni1998,
+    moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}.
+Indeed, \SI{77}{\percent} of biomedical researchers state that they have not
+received formal training in data literacy (including visualization and
+public deposition of data), although they understand its
+high relevance \cite{federerDataLiteracyTraining2016}. For clinicians,
+statistical illiteracy is a well-known problem
+\cite{lakhlifiIllusionKnowledgeStatistics2023}. Correspondingly, it has been
+communicated that there is a lack of simple and intuitive tools to both capture
+and embed computational work \cite{mesirovAccessibleReproducibleResearch2010}.
+Therefore, nontransparencies in biomedical analyses are not only caused by a
+habit%
+\footnote{%
+\citet{pengReproducibleResearchComputational2011}: \textit{ ``[...] old habits
+die hard, and many will be unwilling to discard the hours spent learning
+existing systems.''} } %
+of insufficient reporting, but could be exacerbated by the confusions caused
+by currently available tools and the lack of proper training.
+
+
+
+\unnsubsection{Nontransparencies And Shortcomings of Common Biomedical Analysis Tools}%
+\label{sec:nontransparent_tools}
+%%%%%%%%%%%%%%
+\textit{``Interactive software systems often used for exploratory data analysis
+    typically do not keep track of users’ actions in any concrete form. Even if
+    researchers use software that is run by written code, often multiple packages
+    are used, and the code that combines the different results together is not saved.
+    ''} \cite{pengReproducibleResearchComputational2011,mesirovAccessibleReproducibleResearch2010,localioStatisticalCodeSupport2018}.
+
+
+%%%%%
+\textit{GraphPad Prism} is used ubiquitously in biomedicine for statistical
+analyses, yet it has been criticized for driving intransparency not just due to
+the inaccessibility of their proprietary code, but also because current journals
+accept the output of \textit{Prism} without demanding a
+complete description of commands used, which is a practice that is common in biostatistics literature
+\cite{gosselinInsufficientTransparencyStatistical2021,localioStatisticalCodeSupport2018}
+%%%%%
+
+
+Excel can't handle multidimensional data
+
+
+\unnsubsection{Semi-Big Data: Filling the Gap between Big and Small Data}%
+\label{sec:semi_big_data}%
+%%%%%%%%%%%%
+
 
 
 In big data, recent advances have been made to standardize both raw data availability and
@@ -40,9 +122,8 @@ providing standardized and repeatable analysis protocols
 \cite{meiCanBigData2018}. However, a gap exists for datasets that do not require
 or can not utilize these high-powered tools.
 
-The awareness for complex datasets is rising in biosciences, as tutorials for
-\textit{multidimensional data} are available
-\cite{krzywinskiMultidimensionalData2013,dunnExploringVisualizingMultidimensional2017}.
+
+
 
 In this thesis, the author introduces the concept of \emph{semi-big data} to
 describe datasets with a size that is at the edge of manageability: Semi-big
@@ -56,6 +137,8 @@ requiring a high manual intervention to ensure accuracy of every processing
 step. However, manual analysis not only is laborious and prone to errors, but
 also represents a significant barrier to reproducibility, as most reviewers lack
 the time to repeat the same in-depth processing to verify the results.
+
+
 
 A remedy to this bottleneck are either writing custom programming scripts, or
 tools that allow batch-processing, for example to execute the same processing
@@ -513,7 +596,7 @@ results.
 
 % ======================================================================
 % ======================================================================
-\unnsubsection{Python as a Programming Language}\label{sec:python}
+\unnsubsection{Python: The ``Easy'' Programming Language}\label{sec:python}
 Here, we provide a general overview of the Python programming language,
 explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
 prepare readers without prior programming experience for the following chapters.
@@ -582,7 +665,7 @@ type  is inferred automatically during code execution
 (\autoref{lst:dynamic_typing}). This is in contrast to \textit{statically} typed
 languages like C, where the type of a variable has to be declared explicitly and
 cannot be changed during code execution
-(\autoref{lst:static_typing})~\cite{PythonLanguageReference}.
+(\autoref{lst:static_typing})~\cite{PythonLanguageReference2024}.
 
 \def\mycaption{ Example of dynamic typing in Python. The variable ``\texttt{a}''
     is assigned the value 5, which is of type integer. The variable ``\texttt{a}''
@@ -653,8 +736,48 @@ a: str = 'Hello, World!'
 
 %%%%%%%%%%%%%%%%%%%%%%%%
 
-Python supports both functional and object-oriented programming paradigms. In
-functional programming, the code is written in a way that the program is a
+
+To make Python as easy as possible, python packages aim to reduce the amount of
+code that has to be written by the user. For example, the package
+\texttt{matplotlib} is a plotting library where every command is written such
+that the user immediately understands its purpose, like plotting a line or
+labeling an axis (\autoref{lst:matplotlib}). Hence \texttt{matplotlib} code is a
+sequence of simple function calls, where the state of the plot is modified and
+saved in the background line by line.
+
+\def\mycaption{ Example of using pre-written functions of a Python package. The
+    functions of the package \texttt{matplotlib.pyplot} become accessable by
+    importing the package as \texttt{plt}, where plt serves as an alias (or rather
+    shortcut) to access the functions of the package. Then, two arbitrary lists are
+    defined, \texttt{x} and \texttt{y}. These datapoints are plotted (scatterplot)
+    using the function \texttt{plot} The plots x- and y-axes are then labeled and
+    saved as an image. The code is written in a sequence of function calls, where
+    the state of the plot is saved in the background. The plot is then displayed
+    using the function \texttt{show}. }
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyleNonbreaking,
+    label=lst:matplotlib,
+    caption=\mycaption,
+    ]
+import matplotlib.pyplot as plt # Make functions accessible via plt
+x = [1, 2, 3, 4, 5] # Define arbitrary x values
+y = [1, 4, 9, 16, 25] # Define arbitrary y values
+plt.plot(x, y) # Plot x against y
+plt.xlabel('Timepoint') # Add a label to the x axis
+plt.ylabel('Foldchange') # Add a label to the y axis
+plt.title('Example Plot') # Add a title above the plot
+plt.savefig('example plot.png') # Save plot as image
+plt.show() # Show the plot
+    
+\end{lstlisting}
+
+However, when no pre-written functions or packages are available, Python offers
+the tools of a general purpose programming language to write and deploy custom
+code easily. Programming styles can be classified into two main paradigms:
+\emph{functional} and \emph{object-oriented} programming, which can be
+understood as different ways to structure code. Python supports both paradigms.
+In \emph{functional} programming, the code is written in a way that the program is a
 sequence of function calls, where each function call returns a value that is
 used in the next function call (\autoref{lst:functional}). This approach is
 useful when multiple actions have to be performed on the same data and the
@@ -689,12 +812,13 @@ print(gene1_cut)
 
 
 When the data itself gains in complexity, for example when storing not just the
-gene sequence, but also the promotor sequence, an object-oriented approach is
+gene sequence, but also the promotor sequence, an \emph{object-oriented} approach is
 more suitable (\autoref{lst:oop}). Object-oriented programming is a programming
 paradigm that uses objects and classes. An object is a collection of both data
 and functions, and a class is a blueprint for creating objects. The data of an
-object is stored as attributes. Functions that are associated with an object are
-called methods.
+object is stored as \emph{attributes}. Functions that are associated with an object are
+called \emph{methods}.
+
 
 \def\mycaption{ Example of object oriented programming in Python. The class is
     called ``\texttt{Gene}'' and has four methods, ``\texttt{\_\_init\_\_}'',
@@ -780,8 +904,8 @@ web development, data analysis, machine learning, biosciences and more
 \cite{ekmekciIntroductionProgrammingBioscientists2016,rayhanRisePythonSurvey2023}.
 
 % ======================================================================
-\unnsubsection{The Potential of Python Data Science Packages for Biomedicine}
-\label{sec:python_packages}
+\unnsubsection{The Potential of Python Data Science Packages for Biomedicine}%
+\label{sec:python_packages}%
 %%%
 Python includes a vast number of built-in packages used for basic data-types,
 software development, simple math operations, etc.,
@@ -821,19 +945,24 @@ images and mathematical formulas. Code cells can be executed individually,
 displaying the output directly below the cell. This allows for an interactive
 exploration of data, but also makes Jupyter Notebooks a very human-readable
 format that outlays data analysis in a clear manner with precise and
-reproducible documentation of all data processing steps. A major benefit of
-Jupyter Notebooks are interchangable \textit{Kernels}, allowing the execution of
-code in different programming languages, such as R, Julia, and C++
+reproducible documentation of all data processing steps. Another major benefit
+of Jupyter Notebooks are interchangable \textit{Kernels}, allowing the execution
+of code in different programming languages, such as R, Julia, and C++
 \cite{giorgiLanguageEngineBioinformatics2022}. Today, Jupyter Notebooks have
 become a standard format compatible with collaborative platforms like
 \textit{Google Colab} and \textit{JupyterLab}, but also professional software
 development tools like \textit{VS Code}, and \textit{PyCharm}. For biomedical
-research, Jupyter Notebooks hold great potential to improve reproducibility, as
-they provide a standardized format to present data analyses, and are found in
-the supplemental of modern publications of both bioinformatics and wet-lab
-research \cite{taskiranCelltypedirectedDesignSynthetic2024,
-    bosch-queraltFluorescenceMicroscopybasedProtocol2022,
-    howeChallengesOpportunitiesUnderstanding2015}.
+research, Jupyter Notebooks are a powerful solution for improving
+reproducibility: They elegantly combine both documentation and code execution
+into a concise presentation of the data analysis process, hence being an
+intuitive tool to both capture and embed computational work directly into
+papers, a requirement postulated by
+\citet{mesirovAccessibleReproducibleResearch2010}. Jupyter notebooks are
+increasingly found in the supplemental of modern publications of both
+bioinformatics and wet-lab research
+\cite{taskiranCelltypedirectedDesignSynthetic2024,
+bosch-queraltFluorescenceMicroscopybasedProtocol2022,
+howeChallengesOpportunitiesUnderstanding2015}.
 
 
 
@@ -851,7 +980,7 @@ inherently parallelizable, such as matrix addition or multiplication.
 standard for matrix computation, influencing the design of advanced AI
 frameworks such as \texttt{PyTorch} and \texttt{mlx}, which mirrors several of
 \texttt{NumPy’s} functionalities to facilitate ease of use for those familiar
-with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,MlexploreMlx2024}.
+with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,mlx2023}.
 This standardization has made \texttt{NumPy} an attractive tool not only in
 genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also for modern
 clinical applications like imaging technologies and augmented-reality in
@@ -873,14 +1002,14 @@ single table \cite{santosCOVID19ScholarlyProduction2020}.
 
 \textbf{\texttt{matplotlib}:} \texttt{matplotlib} is a plotting library that
 provides a wide range of static, animated, and interactive plots and graphs
-\cite{hunterMatplotlib2DGraphics2007}. It serves as the foundation for many
-visualization tools and is particularly valued for its flexibility and
-customization options. For example, \texttt{Pandas} uses \texttt{matplotlib} to
-plot column datapoints directly from a \texttt{DataFrame} object, creating
-histograms or scatter plots, which is useful for preliminary data analysis and
-checking data distributions. However, \texttt{matplotlib} uses a low-level
-syntax, hence plots generated by \texttt{matplotlib} can be cumbersome to format
-and customize.
+\autoref{lst:matplotlib} \cite{hunterMatplotlib2DGraphics2007}. It serves as the
+foundation for many visualization tools and is particularly valued for its
+flexibility and customization options. For example, \texttt{Pandas} uses
+\texttt{matplotlib} to plot column datapoints directly from a \texttt{DataFrame}
+object, creating histograms or scatter plots, which is useful for preliminary
+data analysis and checking data distributions. However, \texttt{matplotlib} uses
+a low-level syntax, hence plots generated by \texttt{matplotlib} can be
+cumbersome to format and customize.
 
 
 \textbf{\texttt{seaborn}:} While the low-level syntax of \texttt{matplotlib} is
