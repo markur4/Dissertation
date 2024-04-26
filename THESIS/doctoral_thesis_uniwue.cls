@@ -1,40 +1,62 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INFORMATION (DO NOT CHANGE!)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% !! TEMPLATE INFORMATION
+% !! DO NOT CHANGE !!
 %
-% Doctoral Thesis (Chapter Based) University of Würzburg
+% Doctoral Thesis University of Würzburg
 % LaTeX Class
-% Version 1.0 (03.2024)
+% Version 1.0 (05.2024)
 %
-% Author of Latex Template: 
-% Martin Kuric 
+%
+% AUTHOR: 
+% Martin Kuric (github: markur4)
 % 
+%
+% LICENSE: 
+% GNU Public License v3.0
+% Do what you want with this template, but
+% please keep the author's name and the license. And don't blame the author
+%
+%
+% REFERENCES:
 % Cover page is based on a template by the University of Würzburg
 %
-% This template is licensed under the GNU Public License v3.0
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% INFO:
+% Used for Chapter based thesis, but works with manuscript as well
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 % ======================================================================
 % ======================================================================
-% == ENVIRONMENT 
+% ======================================================================
+% == LATEX ENVIRONMENT 
 
 
-% == Class definition ==================================================
-% LaTeX2e is the major Latex version, is Latex3 released?
+% == Latex Version =====================================================
+% ## LaTeX2e is the major Latex version, is Latex3 released?
 \NeedsTeXFormat{LaTeX2e}
 
-% Make this class usable in main document \documentclass[options]{style}
+
+% == Base Class ========================================================
+% ## Pass through any options to the base class
+% ' e.g. \documentclass[options]{class}
+\DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
+\ProcessOptions\relax % > Process options, but stop looking for more
+
+% ## Base Class
+\LoadClass{extarticle} 
+
+% ## Make the class "doctoral_thesis_uniwue" usable in main document 
+% ' e.g. \documentclass[options]{doctoral_thesis_uniwue}
 \ProvidesClass{doctoral_thesis_uniwue}
 
-% Pass through any options to the base class
-\DeclareOption*{\PassOptionsToClass{\CurrentOption}{extarticle}}
-
-% Process given options
-\ProcessOptions\relax
-
-% Load the base class
-\LoadClass{extarticle}
 
 
+
+
+% ======================================================================
 % ======================================================================
 % ======================================================================
 % == IMPORTS 
@@ -114,6 +136,7 @@
 
 
 
+% ======================================================================
 % ======================================================================
 % ======================================================================
 % == COMMANDS

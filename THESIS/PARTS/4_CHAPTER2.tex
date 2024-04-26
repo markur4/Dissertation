@@ -115,9 +115,9 @@ on a surface level, but pose substantial barriers for in-depth, manual
 reproducibility~\cite{bustinReproducibilityBiomedicalResearch2014}. This is
 further complicated by the complexity inherent in multidimensional datasets
 \cite{krzywinskiMultidimensionalData2013}. Modern biosciences describe processes (e.g. cell-adhesion) that are highly dependent on multiple experimental parameters, like time and concentration \cite{reblTimedependentMetabolicActivity2010,
-mckayCellcellAdhesionMolecules1997}. Without a clearly
-documented data analysis protocol and standardized data formats, 
- such analyses become nontransparent and not reproducible~\cite{bustinReproducibilityBiomedicalResearch2014}.
+      mckayCellcellAdhesionMolecules1997}. Without a clearly
+documented data analysis protocol and standardized data formats,
+such analyses become nontransparent and not reproducible~\cite{bustinReproducibilityBiomedicalResearch2014}.
 
 Although the awareness for multidimensional data is increasing
 \cite{dunnExploringVisualizingMultidimensional2017}, intuitive tools for the
@@ -139,8 +139,8 @@ However, these advancements can place undue pressure on researchers,
 particularly those with limited training in statistics, underscoring the need
 for intuitive, user-friendly analytical
 tools~\cite{gosselinInsufficientTransparencyStatistical2021,
-armstrongWhenUseBonferroni2014, gomez-lopezPrecisionMedicineNeeds2019,
-leekStatisticsValuesAre2015, incertiYouStillUsing2019a}
+      armstrongWhenUseBonferroni2014, gomez-lopezPrecisionMedicineNeeds2019,
+      leekStatisticsValuesAre2015, incertiYouStillUsing2019a}
 
 In this context, \texttt{plotastic} emerges as a tool designed to democratize access to
 sophisticated statistical analysis, offering a user-centric interface that
@@ -551,6 +551,17 @@ steps re needed:
 - Type \texttt{pip install plotastic}
 - Check Rea
 
+- lack of GUI? Jupyter Notebooks include buttons to save a figure, and can be
+extended with features like sorting displayed tables (?) are compatible with
+packages with GUIs, like. However, GUIs do not promise an easier use, in fact,
+given the text-based approach of codes, this makes code very compatible with
+Large Language Models, offering a powerful debugging platform. In fact, tools like vscode offer GitHub copilot for free for academics,
+integrating with the interface and displaying suggestions for code completion.
+
+A GUI on the other hand is
+hard to design, maintain, is prone to errors and when users face an error, there
+is no options for workarounds
+
 
 The evaluation of plotastic within this thesis reflects its potential to address
 key challenges in the field of data analysis. The software integrates a
@@ -575,11 +586,11 @@ intuitive ways to both capture and embed our computational work directly into
 our papers". In this thesis, combining Jupyter Notebooks with plotastic could
 represent an intriguing solution to solve that problem.
 
-Statistical or Data illiteracy is a critical issue that's well researched for both clinicians and 
+Statistical or Data illiteracy is a critical issue that's well researched for both clinicians and
 biomedical researchers \cite{lakhlifiIllusionKnowledgeStatistics2023,federerDataLiteracyTraining2016}.
 plotastic removes a lot of need for statistical knowledge, yet still performs complex statistical analyses,
 if the measurements were correctly performed and the results are correctly interpreted.
-Using unpaired non-parametric tests, plotastic provides statistically sound for a wide array of study types without 
+Using unpaired non-parametric tests, plotastic provides statistically sound for a wide array of study types without
 the need for the user to understand the underlying statistical principles. This is a significant advantage for
 biologists, who often lack the necessary statistical training to perform these analyses manually.
 

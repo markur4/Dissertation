@@ -2,16 +2,116 @@
 
 \unnsubsection{Multidimensional Data in Biomedical Research}%
 \label{sec:multidimensional_data}%
-blablal
+As modern biosciences advance, researchers increasingly encounter datasets that
+are influenced by a variety of independent variables, such as time, dosage, and
+environmental conditions. These variables introduce multidimensional complexity
+into datasets, challenging traditional analysis methods. For instance, cell
+adhesion studies, which are crucial for understanding cellular interactions and
+cancer metastasis, often require analyses across multiple time points and
+varying adhesion molecule concentrations, demonstrating a time-dependent
+variability that significantly impacts biological interpretations
+\cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997,bolado-carrancioPeriodicPropagatingWaves2020a}.
 
-The awareness for complex datasets is rising in biosciences, as tutorials for
-\textit{multidimensional data} are available
-\cite{krzywinskiMultidimensionalData2013,dunnExploringVisualizingMultidimensional2017}.
+Multidimensional data encompass datasets where multiple independent variables
+(factors), such as experimental conditions or measurement modalities, interact
+to influence one or more dependent variables (outcomes). These interactions
+often address multiple hypotheses, making it crucial to design analysis
+strategies that can reveal the true structure and value of the data
+\cite{krzywinskiMultidimensionalData2013}.
 
+(put the following examples into discussion? Use one example, rest into discussion?)
+
+A primary example of multidimensional data is multiplex RT-qPCR, where the
+expression levels of various genes are measured across different samples under
+varying conditions. Here, the dependent variable is typically the fold change
+expression values derived from $\Delta\Delta$Ct calculations
+\cite{brankatschkSimpleAbsoluteQuantification2012}. The independent variables
+include the genes being measured and the experimental conditions under which the
+samples are processed.
+
+Microscopy data further illustrate the complexity of multidimensional datasets
+\cite{ruedenImageJ2ImageJNext2017}. In this context, the dependent variable
+might be a quantifiable feature, such as cell count or morphological metrics
+extracted from image analyses. The independent variables can expand immensely to
+include factors such as well-plate coordinates in a 96-well plate, Z-positions
+in confocal microscopy, and time points in time-lapse studies.
+
+Lastly, big-data aggregation tools like \texttt{Metascape} provide a rich source
+of multidimensional data by integrating various dependent variables, such as
+gene expression fold changes and associated p-values, with independent variables
+spanning gene identifiers, gene ontology terms, and ontology classes derived from
+multiple databases \cite{zhouMetascapeProvidesBiologistoriented2019}. Despite
+the provision of summarized graphical outputs, the raw data often remain in
+complex, nested formats within Excel sheets, posing significant challenges for
+hypothesis-driven research.
+
+This extensive integration of multiple dimensions requires sophisticated
+visualization and analysis techniques. While basic statistical visualizations
+suffice for one- or two-dimensional data, more complex data sets necessitate
+advanced techniques such as heatmaps, parallel coordinates, and dynamic pivot
+tables, which allow researchers to visualize and interact with data in ways that
+elucidate the underlying patterns and relationships
+\cite{dunnExploringVisualizingMultidimensional2017}. However, the gap between
+available visualization tools and the needs of clinicians or biologists without
+extensive bioinformatics training remains wide, emphasizing the need for
+intuitive, user-friendly tools that bridge this knowledge gap and enhance the
+accessibility of complex data analyses
+\cite{dunnExploringVisualizingMultidimensional2017}.
+
+
+
+
+% \unnsubsection{Multidimensional Data in Biomedical Research}%
+% \label{sec:multidimensional_data}%
+% - This is the first paragraph after the sections describing cancer dissemination
+
+% - Introduce why multidimensional data
+% Modern biosciences describe processes (e.g. cell-adhesion) that are highly
+% dependent on multiple experimental conditions, like time and concentration
+% \cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997}
+% - Go into more detail how and why cell adhesion is highly time-dependent, providing real citable sources for these claims  
+% - The awareness for complex datasets is rising in biosciences, as tutorials for
+% multidimensional data are available
+% \cite{krzywinskiMultidimensionalData2013, dunnExploringVisualizingMultidimensional2017}.
+
+% - What is multidimensional data
+% - Explain in detail, introduce terms like dependent variable, independent variable, factors
+
+% - Describe in three examples on methods how multidimensional data is generated in biosciences
+% - Provide real citable sources that show examples for every example!
+
+% An example of multidimensional data is (multiplex) RT-qPCR, a method that
+% measures the expression of multiple genes in multiple samples. The data can be
+% structured with the dependent variable being the foldchange expression values
+% (resulting from delta delta Ct according to
+% \citet{brankatschkSimpleAbsoluteQuantification2012}), and the independent
+% variables being the genes and the samples. The data is grouped into foldchange
+% expression values as dependent variables, and
+
+% Another hallmark example for multidimensional data are microscopy data. Stacks
+% of images themselves are three-dimensional (single black-white channel),
+% however, multidimensional data refers mostly to the resulting data after image
+% analysis. For example, the dependent variable could a feature quantified from
+% each image (e.g. number of cells). The independent factors can increase
+% drastically, including experimental conditions grouped into well-plate
+% coordinates (e.g. 96 wellplates), or Z-position (confocal microscopy), or time
+% (time-lapse microscopy).
+
+
+% Another source of multidimensional data are aggregated big-data, such as the
+% result from GO-term enrichment analysis tools like \texttt{Metascape}
+% \cite{zhouMetascapeProvidesBiologistoriented2019}. This Data integrates multiple
+% dependent variables like foldchange expression and p-values, and the data is
+% grouped into factors like gene, gene ontology terms and ontology classes from
+% multiple online databases. Since these factors apply to every experimental
+% conditions, GO analysis can result in highly complex and nested datasets.
+% Although \texttt{Metascape} returns a graphical user interface with numerous
+% summarizing graphs, the supplied Excel sheets can be non-readable for
+% humans, making it difficult to extract the information that is relevant for
+% specific research hypotheses.
 
 
 % ======================================================================
-% \unnsubsection{Semi-Big Data is Causing a Reproducibility Bottleneck in Modern Biosciences}%
 \unnsubsection{Nontransparencies in Biomedical Data Analyses}%
 \label{sec:nontransparencies}%
 %%%%%%%%%%%%%
@@ -21,7 +121,7 @@ data~\cite{yangScalabilityValidationBig2017,
     ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
 by significant challenges in data analysis, particularly impacting the
 reproducibility of scientific research. Studies such as the
-\citet{baker500ScientistsLift2016} survey  revealed that more than
+\citet{baker500ScientistsLift2016} survey revealed that more than
 \SI{70}{\percent} of researchers have tried and failed to reproduce another
 scientist's experiments, highlighting a reproducibility crisis that questions
 the reliability of scientific findings
@@ -51,30 +151,28 @@ been applied to many fields, including clinical trials
 Nevertheless, there is a surprising amount of evidence for nontransparencies in
 biomedical data analyses: For Microarray-based miRNA profiling, raw data was not
 reported in more than \SI{40}{\percent} of 127 articles, making independent
-verification impossible \cite{witwerDataSubmissionQuality2013}. This problem
-becomes critical, since the same study also found that re-analysis of data often
-times did not support the original conclusions. The distrust in scientific
-reporting is further fueled when it is evident that of 233 preclinical articles,
-\SI{44}{\percent} describe statistical tests insufficiently, while few don't
-describe them at all \cite{gosselinInsufficientTransparencyStatistical2021}.
-Another study reviewed 147 papers in the field of optometrics and found that
-\SI{91}{\percent} did not discuss their rationale of correcting p-values for
-multiple comparisons (e.g. Bonferroni correction)
-\cite{armstrongWhenUseBonferroni2014}. However, it is reasonable to assume that
-researchers lack the confidence to report their technique in detail, given
-that the exact use of multiple comparisons corrections has been under debate for
-decades \cite{pernegerWhatWrongBonferroni1998,
-    moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}.
-Indeed, \SI{77}{\percent} of biomedical researchers state that they have not
-received formal training in data literacy (including visualization and
-public deposition of data), although they understand its
-high relevance \cite{federerDataLiteracyTraining2016}. For clinicians,
-statistical illiteracy is a well-known problem
+verification impossible \cite{witwerDataSubmissionQuality2013}. The same study
+also found that re-analysis of data often times did not support the original
+conclusions. Furthermore, \SI{44}{\percent} of 233 preclinical articles describe
+statistical tests insufficiently, while few don't describe them at all
+\cite{gosselinInsufficientTransparencyStatistical2021}. Another study reviewed
+147 papers in the field of optometrics and found that \SI{91}{\percent} did not
+discuss their rationale of correcting p-values for multiple comparisons (e.g.
+Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, it is
+reasonable to assume that researchers lack the confidence to report their
+technique in detail, given that the exact use of multiple comparisons
+corrections has been under debate for decades
+\cite{pernegerWhatWrongBonferroni1998, moranArgumentsRejectingSequential2003,
+sullivanFactsFictionsHandling2021}. Indeed, \SI{77}{\percent} of biomedical
+researchers state that they have not received formal training in data literacy
+(including visualization and public deposition of data), although they
+understand its high relevance \cite{federerDataLiteracyTraining2016}. For
+clinicians, statistical illiteracy is a well-known problem
 \cite{lakhlifiIllusionKnowledgeStatistics2023}. Correspondingly, it has been
 communicated that there is a lack of simple and intuitive tools to both capture
-and embed computational work \cite{mesirovAccessibleReproducibleResearch2010}.
-Therefore, nontransparencies in biomedical analyses are not only caused by a
-habit%
+and embed computational work into publications
+\cite{mesirovAccessibleReproducibleResearch2010}. Therefore, nontransparencies
+in biomedical analyses are not only caused by a habit%
 \footnote{%
 \citet{pengReproducibleResearchComputational2011}: \textit{ ``[...] old habits
 die hard, and many will be unwilling to discard the hours spent learning
@@ -84,44 +182,21 @@ by currently available tools and the lack of proper training.
 
 
 
-\unnsubsection{Nontransparencies And Shortcomings of Common Biomedical Analysis Tools}%
-\label{sec:nontransparent_tools}
-%%%%%%%%%%%%%%
-\textit{``Interactive software systems often used for exploratory data analysis
-    typically do not keep track of users’ actions in any concrete form. Even if
-    researchers use software that is run by written code, often multiple packages
-    are used, and the code that combines the different results together is not saved.
-    ''} \cite{pengReproducibleResearchComputational2011,mesirovAccessibleReproducibleResearch2010,localioStatisticalCodeSupport2018}.
 
 
-%%%%%
-\textit{GraphPad Prism} is used ubiquitously in biomedicine for statistical
-analyses, yet it has been criticized for driving intransparency not just due to
-the inaccessibility of their proprietary code, but also because current journals
-accept the output of \textit{Prism} without demanding a
-complete description of commands used, which is a practice that is common in biostatistics literature
-\cite{gosselinInsufficientTransparencyStatistical2021,localioStatisticalCodeSupport2018}
-%%%%%
 
-
-Excel can't handle multidimensional data
-
-
-\unnsubsection{Semi-Big Data: Filling the Gap between Big and Small Data}%
+\unnsubsection{Semi-Big Data: Big Enough to Cause Problems}%
 \label{sec:semi_big_data}%
 %%%%%%%%%%%%
 
 
 
-In big data, recent advances have been made to standardize both raw data availability and
-processing pipelines, such as in RNAseq analysis
-
-have shown how automation
-and sophisticated software can aid in making data analysis more reproducible by
-providing standardized and repeatable analysis protocols
-\cite{meiCanBigData2018}. However, a gap exists for datasets that do not require
-or can not utilize these high-powered tools.
-
+In big data, recent advances have been made to standardize both raw data
+availability and processing pipelines, such as in RNAseq analysis. They have
+shown how automation and sophisticated software can aid in making data analysis
+more reproducible by providing standardized and repeatable analysis protocols
+(SOURCE!). However, a gap exists for datasets that do not require or can not
+utilize these high-powered tools.
 
 
 
@@ -140,7 +215,31 @@ the time to repeat the same in-depth processing to verify the results.
 
 
 
-A remedy to this bottleneck are either writing custom programming scripts, or
+\unnsubsection{Nontransparencies And Shortcomings of Common Biomedical Analysis Tools}%
+\label{sec:nontransparent_tools}
+%%%%%%%%%%%%%%
+
+
+nontransparencies
+- explain the need for line-by-line tracking reproducibility
+
+\textit{``Interactive software systems often used for exploratory data analysis
+    typically do not keep track of users’ actions in any concrete form. Even if
+    researchers use software that is run by written code, often multiple packages
+    are used, and the code that combines the different results together is not saved.
+    ''} \cite{pengReproducibleResearchComputational2011,mesirovAccessibleReproducibleResearch2010,localioStatisticalCodeSupport2018}.
+
+\textit{GraphPad Prism} is used ubiquitously in biomedicine for statistical
+analyses, yet it has been criticized for driving intransparency not just due to
+the inaccessibility of their proprietary code, but also because current journals
+accept the output of \textit{Prism} without demanding a
+complete description of commands used, which is a practice that is common in biostatistics literature
+\cite{gosselinInsufficientTransparencyStatistical2021,localioStatisticalCodeSupport2018}
+
+Excel can't handle multidimensional data
+
+
+Remedies to handling semi-big data are writing custom programming scripts, or
 tools that allow batch-processing, for example to execute the same processing
 steps on multiple samples. \texttt{Fiji/ImageJ}, a standard tool in microscopy, allows
 both macros and scripting for batch processing of multiple images and
@@ -149,77 +248,46 @@ a standard tool in protein structural biology, which also has a Python command
 interface. Intriguingly, Microsoft has recently integrated a Python interpreter
 into \textit{Excel}, allowing researchers to automate tasks and analyze data
 more efficiently~\cite{microsoftexcelAnnouncingPythonExcel2023}.
-% These tools show that the fields of Biosciences and
-% Informatics are converging, and that coding skills are becoming increasingly
-% important for researchers in the biosciences.
+These tools show that the fields of Biosciences and
+Informatics are converging, and that coding skills are becoming increasingly
+important for researchers in the biosciences.
+
 
 However, custom scripts and tools of batch-processing can still pose a challenge
 to reproducibility: They are often highly specialized on a single use-case their
-adoption rate is very low. Also, batch-processing scripts often time don't
+adoption rate is very low, which means that few people are familiar with the
+details of such tools.
+
+Also, batch-processing scripts often time don't
 outlay intermediate results comprehensively, decreasing the confidence in the
 final results. Besides, software scripts often do not follow standards that ensure
 functionality in different software environments, or lack necessary
 documentation to execute them properly, assuming the scripts are working as intended
 \cite{sandveTenSimpleRules2013, pengReproducibleResearchComputational2011}.
+This shows that the tools to handle semi-big data lack common standards that ensure both
+robustness, correctness and ease-of-use.
+
+
+Given the unique challenges posed by semi-big data, there is a critical need for
+new analytical tools specifically tailored to this data category. These tools
+must combine the ease of use found in basic software with the robust, analytical
+capabilities of more sophisticated systems. By automating the analysis process
+and standardizing outputs, such tools could improve reproducibility, but also
+allowing researchers to focus on scientific inquiry rather than data management
+intricacies.
+
+This thesis aims to presents a software environment based on the programming
+language Python, showing that a minimum of coding skills have the potential
+to both greatly accelerate and standardize the analysis of semi-big data.
 
 
 
 
 
-% For instance, the output of
-% tools like Metascape, which facilitate the integration of large datasets, return
-% complex \textit{Excel} sheets that are more efficiently analyzed through
-% scripting to adapt the results to specific research hypotheses. 
-
-% Similarly, tools like
-% Metascape, which facilitate the integration of large datasets, return complex
-% \textit{Excel} sheets that are more efficiently analyzed through scripting to
-% adapt the results to specific research hypotheses. This makes
-
-% The Convergence of Bioinformatics and Biosciences
-% The intersection of
-% informatics and biosciences has become increasingly prominent, necessitating a
-% proficiency in data handling and analysis akin to traditional laboratory skills.
-% Tools like Pymol with Python interfaces or the aggregation of large tables of
-% gene ontology data in bioinformatics platforms illustrate how coding and
-% software are becoming integral in bioscience research. This convergence
-% underscores the necessity for tools that can bridge the gap between
-% user-friendly interfaces and the powerful capabilities required to handle
-% semi-big data efficiently.
-
-
-
-Given the unique challenges posed by semi-big data, there
-is a critical need for new analytical tools specifically tailored to this data
-category. These tools must combine the ease of use found in basic software with
-the robust, analytical capabilities of more sophisticated systems. By automating
-the analysis process and standardizing outputs, such tools could significantly
-enhance reproducibility, allowing researchers to focus on scientific inquiry
-rather than data management intricacies.
-
-
-In conclusion, as bioscience continues to generate increasingly complex datasets,
-the distinction between biologists and bioinformaticians blurs, emphasizing the
-need for all researchers to adopt computational tools. The development of new
-software to handle semi-big data effectively is not just an enhancement but a
-necessity to ensure the future reliability and efficiency of scientific
-research. This thesis proposes a framework for understanding and addressing the
-semi-big data challenges, setting the stage for a discussion on innovative
-solutions like the software tools described in subsequent chapters.
-
-
-In conclusion, the integration of coding in bioscience research is not just a
-trend but a necessity. As the field continues to evolve, the demarcation between
-biologists and computational scientists blurs, underscoring the importance of
-coding skills for the next generation of researchers. The ability to code is
-fast becoming an indispensable asset, as integral to bioscience as traditional
-laboratory skills.
 
 
 
 
-This thesis aims to address this call by providing a software tool
-that automates the analysis of semi-big data, ensuring that the results are
 
 
 
@@ -596,7 +664,9 @@ results.
 
 % ======================================================================
 % ======================================================================
-\unnsubsection{Python: The ``Easy'' Programming Language}\label{sec:python}
+\unnsubsection{What makes Python an ``Easy'' Programming Language?}%
+\label{sec:python}%
+%%%%%%%%%%
 Here, we provide a general overview of the Python programming language,
 explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
 prepare readers without prior programming experience for the following chapters.
@@ -604,6 +674,14 @@ We also describe the design principles of Python to lay out the key concepts
 that differentiate Python compared to other programming languages. A more
 detailed tutorial on Python that's specialized for bioscientists is found
 in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}
+
+
+Languages such as Python are considered \textit{``high-level''}, which means
+that it is designed to be easy to read and write, but also independent of
+hardware by hiding (\textit{``abstracting''}) underlying
+details~\cite{PythonLanguageReference2024}. A key principle of Python is the
+emphasis on implementing a syntax that is concise and close to human language
+(\autoref{lst:readable}, \autoref{lst:not_readable}).
 
 \def\mycaption{ Example of
     readable Python code. This one-line code returns the words (string)
@@ -615,31 +693,24 @@ in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}
     label=lst:readable,
     caption=\mycaption
     ]
-print("Hello, World!")
+print('Hello, World!')
 # Output: Hello, World!
 \end{lstlisting}
 
-Languages such as Python are considered \textit{``high-level''}, which means
-that it is designed to be easy to read and write, but also independent of
-hardware by hiding (\textit{``abstracting''}) underlying
-details~\cite{PythonLanguageReference2024}. A key principle of Python is the
-emphasis on implementing a syntax that is concise and close to human language
-(\autoref{lst:readable}, \autoref{lst:not_readable}).
-
 \def\mycaption{ Example of less readable code written in the low-level
     programming language C. This code is doing exactly the same as the Python
-    code in \autoref{lst:readable}. The command is harder to understand because
-    more steps are needed to access the same functionality, including the
-    definition of a function}
+    code in \autoref{lst:readable}, but is harder to understand because more
+    steps are needed, including the import of a library \texttt{stdio.h} and the
+    definition of a function called \texttt{main}.}
 \begin{lstlisting}[
     language=C, 
     style=defaultstyle,
     label=lst:not_readable, 
     caption=\mycaption
     ]
-#include <stdio.h>
-int main() {
-    printf("Hello, World!");
+#include <stdio.h>          // Import functions for standard input & output
+int main() {                // Define a function called 'main'
+    printf('Hello, World!');
     return 0;
 }
 // Output: Hello, World!
@@ -720,10 +791,9 @@ code more readable and understandable for other developers, and allows for
 development environments to detect type errors before execution
 (\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
 
-\def\mycaption{
-    Example of type hints used in Python. Explicitly stating the type of the
-    variable is optional and does not change the behavior of the code as shown in
-    \autoref{lst:dynamic_typing}.}
+\def\mycaption{ Example of type hints used in Python. Explicitly stating the
+    type of the variable is optional and does not change the behavior of the
+    code, but behaves exactly as shown in \autoref{lst:dynamic_typing}.}
 \begin{lstlisting}[
     language=Python,
     style=pythonstyleNonbreaking,
@@ -760,15 +830,15 @@ saved in the background line by line.
     label=lst:matplotlib,
     caption=\mycaption,
     ]
-import matplotlib.pyplot as plt # Make functions accessible via plt
-x = [1, 2, 3, 4, 5] # Define arbitrary x values
-y = [1, 4, 9, 16, 25] # Define arbitrary y values
-plt.plot(x, y) # Plot x against y
-plt.xlabel('Timepoint') # Add a label to the x axis
-plt.ylabel('Foldchange') # Add a label to the y axis
-plt.title('Example Plot') # Add a title above the plot
-plt.savefig('example plot.png') # Save plot as image
-plt.show() # Show the plot
+import matplotlib.pyplot as plt  # Make functions accessible via plt
+x = [1, 2, 3, 4, 5]              # Define arbitrary x values
+y = [1, 4, 9, 16, 25]            # Define arbitrary y values
+plt.plot(x, y)                   # Plot x against y
+plt.xlabel('Timepoint')          # Add a label to the x axis
+plt.ylabel('Foldchange')         # Add a label to the y axis
+plt.title('Gene Expression')     # Add a title above the plot
+plt.savefig('plot.png')          # Save plot as image onto harddrive
+plt.show()                       # Show the plot preview
     
 \end{lstlisting}
 
@@ -795,16 +865,16 @@ sequence.
     label=lst:functional,
     caption=\mycaption,
     ]
-def find_restriction_site(gene: str):
-    return gene.find('GCGC')
+def find_restriction_site(gene: str):      # Define a function
+    return gene.find('GCGC')               # Find the position of 'GCGC'
     
-def cut(gene: str):
-    position = find_restriction_site(gene)
-    return gene[position:]   
+def cut(gene: str):                        # Define another function
+    position = find_restriction_site(gene) # Use the function above
+    return gene[position:]                 # Cut the gene at the position
     
-gene1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'
-gene1_cut = cut(gene1)
-print(gene1_cut)
+gene1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'   # Define an arbitrary gene
+gene1_cut = cut(gene1)                     # Cut the gene
+print(gene1_cut)                           # Show the result
 # Output: GCGCTATATTTAGGCG
     
     
@@ -835,21 +905,21 @@ called \emph{methods}.
     label=lst:oop,
     caption=\mycaption,
     ]
-class Gene:
-    def __init__(self, sequence: str):
-        self.sequence: str = sequence # Save sequence as attribute
-        self.promotor: str = self.find_promotor() 
-    def find_promotor(self):
+class Gene:                               # Define a Gene class
+    def __init__(self, sequence: str):    # Define how a Gene object is created
+        self.sequence: str = sequence     # Save sequence as attribute
+        self.promotor: str = self.find_promotor() # Automatically find promotor
+    def find_promotor(self):              # Define how to find the promotor
         return self.sequence.find('TATA')
-    def find_restriction_site(self):
-        return self.sequence.find('GCGC')
-    def cut(self):
-        position = self.find_restriction_site()
-        return self.sequence[position:]
+    def find_restriction_site(self):      # Define how to find restriction site
+        return self.sequence.find('GCGC') # Find the position of 'GCGC'
+    def cut(self):                        # Define how to cut the gene
+        position = self.find_restriction_site() # Call the method above
+        return self.sequence[position:]   # Cut the gene at the position
 
-gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create object
-gene1_cut = gene1.cut() # Call the method cut
-print(gene1_cut) # Show result
+gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create Gene object
+gene1_cut = gene1.cut()                   # Call the method cut
+print(gene1_cut)                          # Show result
 # Output: GCGCTATATTTAGGCG
 \end{lstlisting}
 
@@ -866,7 +936,11 @@ program's overall architecture, and functional programming is used to implement
 the algorithms of the program's features. This allows for scalability of the
 software, as every single class is extended through the addition of new methods.
 Furthermore, classes can be expanded in their functionalities through
-inheritance (\autoref{lst:inheritance}).
+\emph{inheritance} (\autoref{lst:inheritance}). Inheritance is a feature of
+object-oriented programming that allows a class to access every attribute and
+method of a parent class. For example, one could extend the class
+``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by writing a class
+``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
 
 
 \def\mycaption{ Example of inheritance in Python.
@@ -880,23 +954,18 @@ inheritance (\autoref{lst:inheritance}).
     label=lst:inheritance,
     caption=\mycaption,
     ]
-# Define a class called mRNA inheriting from the class Gene
-class mRNA(Gene):
-    def __init__(self, sequence: str):
-        super().__init__(sequence)  # Get attributes from parent class
+class mRNA(Gene):          # Define the mRNA class, inheriting from Gene class
+    def __init__(self, sequence: str):   # Define how an mRNA object is created
+        super().__init__(sequence)       # Get attributes from parent class
         self.sequence.replace('T', 'U')  # Replace thymine with uracil
-    def find_stopcodons(self):
-        return self.sequence.find('UGA')
+    def find_stopcodons(self):           # Define how to find stop codons
+        return self.sequence.find('UGA') # Find the position of 'UGA'
 
-mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create object
-print(mrna1.find_stopcodons())  # Call the method translate
+mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create mRNA object
+print(mrna1.find_stopcodons())              # Show the position of stop codons
 # Output: [0, 5, 10]
 \end{lstlisting}
 
-Inheritance is a feature of object-oriented programming that allows
-a class to access every attribute and method of a parent class. For example, one
-could extend the class ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by
-writing a class ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
 
 Together, Python is not just beginner-friendly, but also well respected for its
 ease in development, which is why it is widely used in professional settings for
@@ -961,8 +1030,8 @@ papers, a requirement postulated by
 increasingly found in the supplemental of modern publications of both
 bioinformatics and wet-lab research
 \cite{taskiranCelltypedirectedDesignSynthetic2024,
-bosch-queraltFluorescenceMicroscopybasedProtocol2022,
-howeChallengesOpportunitiesUnderstanding2015}.
+    bosch-queraltFluorescenceMicroscopybasedProtocol2022,
+    howeChallengesOpportunitiesUnderstanding2015}.
 
 
 
