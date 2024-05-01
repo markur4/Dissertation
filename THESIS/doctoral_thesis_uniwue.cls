@@ -74,6 +74,7 @@
 % == Fonts 
 \usepackage{fontspec} % > For custom fonts
 \usepackage{xcolor} % > Required for \definecolor
+% \usepackage{microtype} % > For better font rendering
 
 % == Vertical/Horizontal Spacing 
 \usepackage{float} % > For e.g. forced precise image positioning
@@ -178,6 +179,8 @@
 \definecolor{darkgray}{gray}{0.3}
 \let\oldtexttt\texttt
 \renewcommand{\texttt}[1]{{\color{darkgray}\oldtexttt{#1}}}
+
+
 
 
 % == Vertical Spacing ==================================================
@@ -312,6 +315,9 @@
     \StrSubstitute{#1}{ }{\,}[\temp]%
     \temp
 }
+
+
+
 
 
 
@@ -700,7 +706,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 % ======================================================================
-% == Citations
+% == Citationsm, Footnotes
 % ======================================================================
 
 \bibliographystyle{apacite}
@@ -722,6 +728,18 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \setlength{\itemsep}{0pt}
     \footnotesize
 }
+
+
+% == Footnotes =========================================================
+
+% ## Define Command for footnotes containing quotes
+% > #1 is the citation
+% > #2 is the text of the footnote
+\newcommand{\footnotequote}[2]{%
+    \footnote{\citet{#2}: \textit{``#1''}}\xspace%
+}
+
+
 
 % ======================================================================
 % == Importing PDF Files

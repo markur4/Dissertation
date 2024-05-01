@@ -12,19 +12,19 @@ varying adhesion molecule concentrations, demonstrating a time-dependent
 variability that significantly impacts biological interpretations
 \cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997,bolado-carrancioPeriodicPropagatingWaves2020a}.
 
-Multidimensional data encompass datasets where multiple independent variables
-(factors), such as experimental conditions or measurement modalities, interact
-to influence one or more dependent variables (outcomes). These interactions
-often address multiple hypotheses, making it crucial to design analysis
-strategies that can reveal the true structure and value of the data
-\cite{krzywinskiMultidimensionalData2013}.
+Multidimensional data encompass datasets where multiple \emph{independent
+variables} (\emph{factors}) interact to influence one or more \emph{dependent variables}
+(\emph{outcomes}). These factors include experimental conditions or measurement
+modalities. These interactions often address multiple hypotheses, making
+it crucial to design analysis strategies that can reveal the true structure and
+value of the data \cite{krzywinskiMultidimensionalData2013}.
 
 % TODO: Add examples of multidimensional data in biosciences
-(put the following examples into discussion? Use one example, rest into discussion?)
+% (put the following examples into discussion? Use one example, rest into discussion?)
 
 A primary example of multidimensional data is multiplex RT-qPCR, where the
 expression levels of various genes are measured across different samples under
-varying conditions. Here, the dependent variable is typically the fold change
+varying conditions \cite{bustinReproducibilityBiomedicalResearch2014}. Here, the dependent variable is typically the fold change
 expression values derived from $\Delta\Delta$Ct calculations
 \cite{brankatschkSimpleAbsoluteQuantification2012}. The independent variables
 include the genes being measured and the experimental conditions under which the
@@ -127,20 +127,18 @@ scientist's experiments, highlighting a reproducibility crisis that questions
 the reliability of scientific findings
 \cite{begleyReproducibilityScienceImproving2015, ioannidisWhyMostPublished2005}.
 
-\emph{Reproducibility} is considered foundational to scientific research, ensuring that
-findings are reliable and verifiable. Still, its meaning requires precise
-definition \cite{goodmanWhatDoesResearch2016}. The common understanding of
-scientific reproduction implies not only that detailed information is provided
-to enable independent repetition (\emph{transparency}), but also that time and
-effort is invested into repeating the experiments (\emph{corroboration}).
-However, since modern biomedical journals are demanding novelty research, and
-since experiments have become highly specialized and time-intensive, repeating
-someone else's work is considered neither interesting%
-\footnote{%
-    \citet{flierProblemIrreproducibleBioscience2022}: \textit{``There are no
-        scientists with the interest, resources, or incentives to “repeat” or
-        confirm this vast sea of published work, so whether the findings they
-        report are reproducible will simply never be assessed.''} } %
+\emph{Reproducibility} is considered foundational to scientific research,
+ensuring that findings are reliable and verifiable. Still, its meaning requires
+precise definition \cite{goodmanWhatDoesResearch2016}. The common understanding
+of scientific reproduction implies not only that detailed information is
+provided to enable independent repetition (\emph{transparency}), but also that
+time and effort is invested into repeating the experiments
+(\emph{corroboration}). However, since modern biomedical journals are demanding
+novelty research, and since experiments have become highly specialized and
+time-intensive, repeating someone else's work is considered neither interesting%
+\footnotequote{There are no scientists with the interest, resources, or
+    incentives to “repeat” or confirm this vast sea of published work, so whether
+    the findings they report are reproducible will simply never be assessed.}{flierProblemIrreproducibleBioscience2022}
 nor possible for most publications \cite{flierProblemIrreproducibleBioscience2022,
     pengReproducibleResearchComputational2011}. Hence, the meaning of
 reproducibility is confined to \emph{transparency}, a concept that has
@@ -162,20 +160,26 @@ Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, given
 that the exact use of multiple comparisons corrections has been under debate for
 decades, it is reasonable to assume that researchers lack the confidence to
 report their technique in detail \cite{pernegerWhatWrongBonferroni1998,
-moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}.
-Indeed, \SI{77}{\percent} of biomedical researchers state that they have not
-received formal training in data literacy (including visualization and public
-deposition of data), although they understand its high relevance
-\cite{federerDataLiteracyTraining2016}. For clinicians, statistical illiteracy
-is a well-known problem \cite{lakhlifiIllusionKnowledgeStatistics2023}.
-Correspondingly, it has been communicated that there is a lack of simple and
-intuitive tools to both capture and embed computational work into publications
-\cite{mesirovAccessibleReproducibleResearch2010}. Therefore, nontransparencies
-in biomedical analyses are not only caused by a habit%
-\footnote{%
-\citet{pengReproducibleResearchComputational2011}: \textit{ ``[...] old habits
-die hard, and many will be unwilling to discard the hours spent learning
-existing systems.''} } %
+moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}. In
+general, $P$-values are target of extreme scrutiny and also the cause of many
+arguments, which themselves are of questionable statistical reasoning%
+\footnotequote{Arguing about the P value is like focusing on a single
+misspelling, rather than on the faulty logic of a
+sentence}{leekStatisticsValuesAre2015}%
+\cite{leekStatisticsValuesAre2015}. Additionally, statistical illiteracy is a
+well-known problem among clinicians
+\cite{lakhlifiIllusionKnowledgeStatistics2023}. Among biomedical researchers,
+\SI{77}{\percent} state that they have not received formal training in data
+literacy, including visualization and public deposition of data, although they
+understand its high relevance \cite{federerDataLiteracyTraining2016}.
+Correspondingly, it has been communicated that there is a lack of intuitive
+tools to embed computational work into publications, but also a lack of
+bioinformaticians to translate computation into clinics
+\cite{mesirovAccessibleReproducibleResearch2010, smithJournalOpenSource2018,gomez-lopezPrecisionMedicineNeeds2019}.
+Therefore, nontransparencies in biomedical analyses are not only caused by a
+habit%
+\footnotequote{[...] old habits die hard, and many will be unwilling to discard the
+    hours spent learning existing systems.}{pengReproducibleResearchComputational2011}%
 of insufficient reporting, but could be exacerbated by the confusions caused
 by currently available methodologies and the lack of proper training.
 
@@ -191,13 +195,13 @@ studies. For example, tools such as \texttt{STAR} and \texttt{HISAT} for
 sequence alignment, and \texttt{Cufflinks} and \texttt{DESeq} for differential
 expression analysis, rely on scripts that standardize processing steps to
 produce repeatable and verifiable results \cite{dobinSTARUltrafastUniversal2013,
-kimHISATFastSpliced2015,trapnellDifferentialGeneTranscript2012,loveModeratedEstimationFold2014}.
+    kimHISATFastSpliced2015,trapnellDifferentialGeneTranscript2012,loveModeratedEstimationFold2014}.
 These frameworks not only automate data handling but also ensure that data
 analysis protocols are followed consistently, reducing human error and
 variability between different users or laboratories.
 
 However, this level of standardization and automation has not been mirrored in
-the analysis of semi-big data. Semi-big data, as introduced in this thesis,
+the analysis of \emph{semi-big data}. Semi-big data, as introduced in this thesis,
 describes datasets that are on the cusp of manageability: substantial enough to
 overwhelm manual analysis methods yet not sufficiently large or uniform to
 justify the heavy computational frameworks developed for big
@@ -235,12 +239,12 @@ inquiry and verification.
 %%%%%%%%%%%%%%
 Interactive software systems commonly used for exploratory data analysis in
 biomedical research often lack mechanisms to track and reproduce the
-researcher's actions systematically. Even when analysis is performed
-using scripting languages, the integration of results from multiple packages
-without a coherent record of the commands and code used undermines
-reproducibility. This practice can obscure analysis, making it
-difficult, if not impossible, for other researchers to replicate the results
-\cite{pengReproducibleResearchComputational2011,
+researcher's actions systematically. Even when analysis is performed using
+scripting languages, the integration of results from multiple packages without a
+coherent record of the commands and code used undermines reproducibility. This
+practice can obscure analysis, making it difficult, if not impossible, for other
+researchers to replicate the results \cite{leekStatisticsValuesAre2015,
+pengReproducibleResearchComputational2011,
 mesirovAccessibleReproducibleResearch2010, localioStatisticalCodeSupport2018}.
 
 A particularly illustrative example is \textit{GraphPad Prism}, a tool
@@ -250,7 +254,7 @@ nontransparencies due to \textit{Prism}'s closed-source nature and the common
 journal practice of not requiring detailed methodological transparency in its
 usage, a practice that is common in biostatistics literature
 \cite{gosselinInsufficientTransparencyStatistical2021,
-localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
+    localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
 requires manual data entry and lacks the robustness and automation necessary for
 handling multidimensional or semi-big data.
 
@@ -272,12 +276,12 @@ image data, streamlining tasks that would otherwise require laborious manual
 input. Similarly, \texttt{PyMOL}, a leading tool in protein structural biology,
 utilizes Python scripting to automate complex tasks, allowing for detailed
 molecular modeling and visualization that are reproducible and scalable across
-datasets \cite{PyMOLPymolOrg,rigsbyUsingPyMOLApplication2016}.
+datasets \cite{PyMOL2024, rigsbyUsingPyMOLApplication2016}.
 
 Although automation scripts used in tools like \texttt{Fiji/ImageJ} and
 \texttt{PyMOL} improve transparency for publishing singular data analysis
 pipelines, they still face challenges that can impede their reproducibility
-\cite{pengReproducibleResearchComputational2011, sandveTenSimpleRules2013}.
+\cite{pengReproducibleResearchComputational2011, sandveTenSimpleRules2013}:
 These scripts sometimes require specialized software environments, where setting
 up dependencies and configurations can be complex enough to discourage
 replication efforts. Additionally, these scripts do not always provide
@@ -288,7 +292,7 @@ On the other hand, when scripts are designed to be more generalized and
 distributed—for instance, as a \texttt{Fiji/ImageJ} plugin or a standalone
 application—they can make substantial contributions to scientific research by
 enabling other researchers to apply these tools to their own data sets
-\cite{narztReusabilityConceptProcess1998,smithJournalOpenSource2018}. However, this approach also comes
+\cite{narztReusabilityConceptProcess1998,wilkinsonFAIRGuidingPrinciples2016}. However, this approach also comes
 with its own set of challenges \cite{sandveTenSimpleRules2013}. Often, these
 generalized tools often lack comprehensive user-manuals (\emph{documentation})
 are not thoroughly tested across different platforms or data sets, which can
