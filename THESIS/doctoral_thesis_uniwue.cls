@@ -1,29 +1,30 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% !! TEMPLATE INFORMATION
-% !! DO NOT CHANGE !!
-%
-% Doctoral Thesis University of Würzburg
-% LaTeX Class
-% Version 1.0 (05.2024)
-%
-%
-% AUTHOR: 
-% Martin Kuric (github: markur4)
-% 
-%
-% LICENSE: 
-% GNU Public License v3.0
-% Do what you want with this template, but
-% please keep the author's name and the license. And don't blame the author
-%
-%
-% REFERENCES:
-% Cover page is based on a template by the University of Würzburg
-%
-%
-% INFO:
-% Used for Chapter based thesis, but works with manuscript as well
-%
+% > !! TEMPLATE INFORMATION
+% > !! DO NOT CHANGE !!
+% > 
+% > Doctoral Thesis University of Würzburg
+% > LaTeX Class
+% > Version 1.0 (05.2024)
+% > 
+% > 
+% > AUTHOR: 
+% > Martin Kuric (github: markur4)
+% > 
+% > 
+% > LICENSE: 
+% > GNU Public License v3.0
+% > Do what you want with this template, but
+% > please keep the author's name and the license. 
+% > And don't blame the author
+% > 
+% > 
+% > REFERENCES:
+% > Cover page is based on a template by the University of Würzburg
+% > 
+% > 
+% > INFO:
+% > Used for Chapter based thesis, but works with manuscript as well
+% > 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -46,7 +47,7 @@
 \ProcessOptions\relax % > Process options, but stop looking for more
 
 % ## Base Class
-\LoadClass{extarticle} 
+\LoadClass{extarticle}
 
 % ## Make the class "doctoral_thesis_uniwue" usable in main document 
 % ' e.g. \documentclass[options]{doctoral_thesis_uniwue}

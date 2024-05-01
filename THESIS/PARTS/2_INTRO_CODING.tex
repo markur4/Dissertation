@@ -19,6 +19,7 @@ often address multiple hypotheses, making it crucial to design analysis
 strategies that can reveal the true structure and value of the data
 \cite{krzywinskiMultidimensionalData2013}.
 
+% TODO: Add examples of multidimensional data in biosciences
 (put the following examples into discussion? Use one example, rest into discussion?)
 
 A primary example of multidimensional data is multiplex RT-qPCR, where the
@@ -48,9 +49,8 @@ hypothesis-driven research.
 This extensive integration of multiple dimensions requires sophisticated
 visualization and analysis techniques. While basic statistical visualizations
 suffice for one- or two-dimensional data, more complex data sets necessitate
-advanced techniques such as heatmaps, parallel coordinates, and dynamic pivot
-tables, which allow researchers to visualize and interact with data in ways that
-elucidate the underlying patterns and relationships
+advanced techniques, which allow researchers to visualize and interact with data
+in ways that elucidate the underlying patterns and relationships
 \cite{dunnExploringVisualizingMultidimensional2017}. However, the gap between
 available visualization tools and the needs of clinicians or biologists without
 extensive bioinformatics training remains wide, emphasizing the need for
@@ -117,7 +117,7 @@ accessibility of complex data analyses
 %%%%%%%%%%%%%
 The advent of advanced technologies in biosciences has ushered in an era of Big
 Data, characterized by unprecedented volumes and complexities of
-data~\cite{yangScalabilityValidationBig2017,
+data~\cite{bubendorfHighthroughputMicroarrayTechnologies2001, yangScalabilityValidationBig2017,
     ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
 by significant challenges in data analysis, particularly impacting the
 reproducibility of scientific research. Studies such as the
@@ -158,19 +158,18 @@ statistical tests insufficiently, while few don't describe them at all
 \cite{gosselinInsufficientTransparencyStatistical2021}. Another study reviewed
 147 papers in the field of optometrics and found that \SI{91}{\percent} did not
 discuss their rationale of correcting p-values for multiple comparisons (e.g.
-Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, it is
-reasonable to assume that researchers lack the confidence to report their
-technique in detail, given that the exact use of multiple comparisons
-corrections has been under debate for decades
-\cite{pernegerWhatWrongBonferroni1998, moranArgumentsRejectingSequential2003,
-sullivanFactsFictionsHandling2021}. Indeed, \SI{77}{\percent} of biomedical
-researchers state that they have not received formal training in data literacy
-(including visualization and public deposition of data), although they
-understand its high relevance \cite{federerDataLiteracyTraining2016}. For
-clinicians, statistical illiteracy is a well-known problem
-\cite{lakhlifiIllusionKnowledgeStatistics2023}. Correspondingly, it has been
-communicated that there is a lack of simple and intuitive tools to both capture
-and embed computational work into publications
+Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, given
+that the exact use of multiple comparisons corrections has been under debate for
+decades, it is reasonable to assume that researchers lack the confidence to
+report their technique in detail \cite{pernegerWhatWrongBonferroni1998,
+moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}.
+Indeed, \SI{77}{\percent} of biomedical researchers state that they have not
+received formal training in data literacy (including visualization and public
+deposition of data), although they understand its high relevance
+\cite{federerDataLiteracyTraining2016}. For clinicians, statistical illiteracy
+is a well-known problem \cite{lakhlifiIllusionKnowledgeStatistics2023}.
+Correspondingly, it has been communicated that there is a lack of simple and
+intuitive tools to both capture and embed computational work into publications
 \cite{mesirovAccessibleReproducibleResearch2010}. Therefore, nontransparencies
 in biomedical analyses are not only caused by a habit%
 \footnote{%
@@ -178,380 +177,153 @@ in biomedical analyses are not only caused by a habit%
 die hard, and many will be unwilling to discard the hours spent learning
 existing systems.''} } %
 of insufficient reporting, but could be exacerbated by the confusions caused
-by currently available tools and the lack of proper training.
-
-
-
+by currently available methodologies and the lack of proper training.
 
 
 
 \unnsubsection{Semi-Big Data: Big Enough to Cause Problems}%
 \label{sec:semi_big_data}%
-%%%%%%%%%%%%
+Recent advances in big data analysis have significantly improved the
+standardization of both raw data availability and processing pipelines.
+Particularly in RNAseq analysis, automation and the use of sophisticated
+software have established robust standards that enhance reproducibility across
+studies. For example, tools such as \texttt{STAR} and \texttt{HISAT} for
+sequence alignment, and \texttt{Cufflinks} and \texttt{DESeq} for differential
+expression analysis, rely on scripts that standardize processing steps to
+produce repeatable and verifiable results \cite{dobinSTARUltrafastUniversal2013,
+kimHISATFastSpliced2015,trapnellDifferentialGeneTranscript2012,loveModeratedEstimationFold2014}.
+These frameworks not only automate data handling but also ensure that data
+analysis protocols are followed consistently, reducing human error and
+variability between different users or laboratories.
+
+However, this level of standardization and automation has not been mirrored in
+the analysis of semi-big data. Semi-big data, as introduced in this thesis,
+describes datasets that are on the cusp of manageability: substantial enough to
+overwhelm manual analysis methods yet not sufficiently large or uniform to
+justify the heavy computational frameworks developed for big
+data. Such data are frequently generated in experiments like automated
+microscopy or multiplex qPCR, where the scale and complexity of the data can
+vary significantly depending on the experimental design and objectives
+\cite{krzywinskiMultidimensionalData2013}.
+
+Researchers often revert to basic tools such as \textit{Microsoft Excel} for
+analyzing these semi-big datasets \cite{incertiYouStillUsing2019a}. While Excel
+provides familiarity and immediate accessibility, it lacks the sophisticated
+data handling capabilities necessary for efficient and error-free processing of
+complex (multidimensional) datasets. This reliance on manual methods not only
+makes the analysis laborious and prone to mistakes but also significantly
+impedes the reproducibility of research findings. The time and effort required
+to replicate analyses done manually mean that validating findings from semi-big
+data can be prohibitively challenging for peer reviewers and other researchers
+in the field.
+
+Given these challenges, there is a critical need for developing new tools and
+frameworks specifically tailored for semi-big data. These tools should bridge
+the gap between the simplicity of user-friendly software like Excel and the
+robust, script-based automation seen in big data frameworks. By providing
+standardized, repeatable, and easy-to-use methods for handling complex datasets,
+such tools could significantly enhance the reliability and efficiency of
+research involving semi-big data, ultimately supporting broader scientific
+inquiry and verification.
 
 
 
-In big data, recent advances have been made to standardize both raw data
-availability and processing pipelines, such as in RNAseq analysis. They have
-shown how automation and sophisticated software can aid in making data analysis
-more reproducible by providing standardized and repeatable analysis protocols
-(SOURCE!). However, a gap exists for datasets that do not require or can not
-utilize these high-powered tools.
 
 
-
-In this thesis, the author introduces the concept of \emph{semi-big data} to
-describe datasets with a size that is at the edge of manageability: Semi-big
-data is large and/or complex enough to make manual analysis extremely
-time-consuming, yet don't require or are incompatible with traditional Big Data
-tools. These datasets are commonly produced by methods such as automated
-microscopy or multiplex qPCR. Researchers are often forced to revert to basic
-tools like \textit{Microsoft Excel} for analyzing semi-big data
-\cite{incertiYouStillUsing2019a}. This could be due to the data's complexity
-requiring a high manual intervention to ensure accuracy of every processing
-step. However, manual analysis not only is laborious and prone to errors, but
-also represents a significant barrier to reproducibility, as most reviewers lack
-the time to repeat the same in-depth processing to verify the results.
-
-
-
-\unnsubsection{Nontransparencies And Shortcomings of Common Biomedical Analysis Tools}%
-\label{sec:nontransparent_tools}
+\unnsubsection{The Shortcomings of Common Biomedical Analysis Tools}%
+\label{sec:nontransparent_tools}%
 %%%%%%%%%%%%%%
+Interactive software systems commonly used for exploratory data analysis in
+biomedical research often lack mechanisms to track and reproduce the
+researcher's actions systematically. Even when analysis is performed
+using scripting languages, the integration of results from multiple packages
+without a coherent record of the commands and code used undermines
+reproducibility. This practice can obscure analysis, making it
+difficult, if not impossible, for other researchers to replicate the results
+\cite{pengReproducibleResearchComputational2011,
+mesirovAccessibleReproducibleResearch2010, localioStatisticalCodeSupport2018}.
+
+A particularly illustrative example is \textit{GraphPad Prism}, a tool
+ubiquitously employed across biomedical disciplines for statistical analysis.
+Despite its widespread use, it does contribute to data analysis
+nontransparencies due to \textit{Prism}'s closed-source nature and the common
+journal practice of not requiring detailed methodological transparency in its
+usage, a practice that is common in biostatistics literature
+\cite{gosselinInsufficientTransparencyStatistical2021,
+localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
+requires manual data entry and lacks the robustness and automation necessary for
+handling multidimensional or semi-big data.
+
+Moreover, \textit{Microsoft Excel}, another staple in data processing in
+biomedicine, is notoriously inadequate for handling multidimensional data and
+complex statistical analyses. Its limitations include poor error tracking,
+absence of change documentation (audit trails), and a propensity for introducing
+errors that often go unnoticed, such as converting gene names to dates
+\cite{ziemannGeneNameErrors2016}. To compensate for these shortcomings,
+\textit{Microsoft} has recently integrated a Python interpreter into
+\textit{Excel}, allowing researchers to automate tasks and analyze data
+efficiently and correctly \cite{microsoftexcelAnnouncingPythonExcel2023}.
+
+Indeed, many common tools in biomedicine allow for scripting or automation to
+handle semi-big data more effectively. For example, \texttt{Fiji/ImageJ}, a
+popular image processing platform, supports extensive macro and scripting
+capabilities \cite{ruedenImageJ2ImageJNext2017}. These features enable researchers to automate batch processing of
+image data, streamlining tasks that would otherwise require laborious manual
+input. Similarly, \texttt{PyMOL}, a leading tool in protein structural biology,
+utilizes Python scripting to automate complex tasks, allowing for detailed
+molecular modeling and visualization that are reproducible and scalable across
+datasets \cite{PyMOLPymolOrg,rigsbyUsingPyMOLApplication2016}.
+
+Although automation scripts used in tools like \texttt{Fiji/ImageJ} and
+\texttt{PyMOL} improve transparency for publishing singular data analysis
+pipelines, they still face challenges that can impede their reproducibility
+\cite{pengReproducibleResearchComputational2011, sandveTenSimpleRules2013}.
+These scripts sometimes require specialized software environments, where setting
+up dependencies and configurations can be complex enough to discourage
+replication efforts. Additionally, these scripts do not always provide
+comprehensive outputs of intermediate steps, which is crucial for verifying and
+understanding the progression of data analysis \cite{sandveTenSimpleRules2013}.
+
+On the other hand, when scripts are designed to be more generalized and
+distributed—for instance, as a \texttt{Fiji/ImageJ} plugin or a standalone
+application—they can make substantial contributions to scientific research by
+enabling other researchers to apply these tools to their own data sets
+\cite{narztReusabilityConceptProcess1998,smithJournalOpenSource2018}. However, this approach also comes
+with its own set of challenges \cite{sandveTenSimpleRules2013}. Often, these
+generalized tools often lack comprehensive user-manuals (\emph{documentation})
+are not thoroughly tested across different platforms or data sets, which can
+lead to unexpected errors that can not be fixed by the user. Moreover, even when
+these tools are available, they frequently suffer from low adoption rates,
+meaning that few people are familiar with the details of such tools, further
+decreasing the confidence and reproducibility in the final results.
+
+Given these complexities, there is a pressing need for new analytical tools
+specifically designed for semi-big data. These tools must strike a balance
+between the ease of use found in basic software and the robust, analytical
+capabilities of more sophisticated systems. By providing standardized workflows,
+comprehensive documentation, and ensuring cross-platform compatibility, these
+tools can significantly enhance reproducibility. They not only allow researchers
+to perform analyses more efficiently but also ensure that these analyses are
+robust, transparent, and easily verifiable by the broader scientific community.
+
+This thesis presents a software environment developed in Python, designed to
+bridge this gap. It demonstrates that even minimal coding skills can be
+leveraged to create powerful tools that standardize and accelerate the analysis
+of semi-big data, ultimately fostering more reproducible and trustworthy
+scientific research.
 
 
-nontransparencies
-- explain the need for line-by-line tracking reproducibility
 
-\textit{``Interactive software systems often used for exploratory data analysis
-    typically do not keep track of users’ actions in any concrete form. Even if
-    researchers use software that is run by written code, often multiple packages
-    are used, and the code that combines the different results together is not saved.
-    ''} \cite{pengReproducibleResearchComputational2011,mesirovAccessibleReproducibleResearch2010,localioStatisticalCodeSupport2018}.
 
-\textit{GraphPad Prism} is used ubiquitously in biomedicine for statistical
-analyses, yet it has been criticized for driving intransparency not just due to
-the inaccessibility of their proprietary code, but also because current journals
-accept the output of \textit{Prism} without demanding a
-complete description of commands used, which is a practice that is common in biostatistics literature
-\cite{gosselinInsufficientTransparencyStatistical2021,localioStatisticalCodeSupport2018}
 
-Excel can't handle multidimensional data
 
-
-Remedies to handling semi-big data are writing custom programming scripts, or
-tools that allow batch-processing, for example to execute the same processing
-steps on multiple samples. \texttt{Fiji/ImageJ}, a standard tool in microscopy, allows
-both macros and scripting for batch processing of multiple images and
-automating multiple processing steps into a pipeline. Another example is \texttt{PyMOL},
-a standard tool in protein structural biology, which also has a Python command
-interface. Intriguingly, Microsoft has recently integrated a Python interpreter
-into \textit{Excel}, allowing researchers to automate tasks and analyze data
-more efficiently~\cite{microsoftexcelAnnouncingPythonExcel2023}.
-These tools show that the fields of Biosciences and
-Informatics are converging, and that coding skills are becoming increasingly
-important for researchers in the biosciences.
-
-
-However, custom scripts and tools of batch-processing can still pose a challenge
-to reproducibility: They are often highly specialized on a single use-case their
-adoption rate is very low, which means that few people are familiar with the
-details of such tools.
-
-Also, batch-processing scripts often time don't
-outlay intermediate results comprehensively, decreasing the confidence in the
-final results. Besides, software scripts often do not follow standards that ensure
-functionality in different software environments, or lack necessary
-documentation to execute them properly, assuming the scripts are working as intended
-\cite{sandveTenSimpleRules2013, pengReproducibleResearchComputational2011}.
-This shows that the tools to handle semi-big data lack common standards that ensure both
-robustness, correctness and ease-of-use.
-
-
-Given the unique challenges posed by semi-big data, there is a critical need for
-new analytical tools specifically tailored to this data category. These tools
-must combine the ease of use found in basic software with the robust, analytical
-capabilities of more sophisticated systems. By automating the analysis process
-and standardizing outputs, such tools could improve reproducibility, but also
-allowing researchers to focus on scientific inquiry rather than data management
-intricacies.
-
-This thesis aims to presents a software environment based on the programming
-language Python, showing that a minimum of coding skills have the potential
-to both greatly accelerate and standardize the analysis of semi-big data.
-
-
-
-
-
-
-
-
-
-
-
-
-
-% %%%%
-% Beschreibe die Situation.
-% - Big Data in Biosciences
-% - what is big data, examples
-% - Define citable challenges:
-% - reproducibility crisis
-% - lack of tools
-
-% % - Semi big data
-% % - What is that: At the edge of managability
-% % - Tools to handle semi-big data are lacking:
-% % Either manual analysis or big data tools
-% % - Author defines semi-automation
-
-
-
-
-
-
-
-
-
-
-% %%%%%%%%%%%%%%%%%
-
-% In recent years, the biosciences have evolved dramatically, with a marked
-% increase in the volume and complexity of data generated
-% ~\cite{yangScalabilityValidationBig2017,ekmekciIntroductionProgrammingBioscientists2016}.
-% This transformation necessitates robust software tools, many of which require
-% coding skills to use effectively. Here we summarize standard tools used by
-% biosciences today and show their reliance on coding. The author argues that the
-% role of a modern independent researcher is now intertwined with coding skills
-% similar to a role of ``precision medicine
-% bioninformatician''~\cite{gomez-lopezPrecisionMedicineNeeds2019}.
-
-% Statistical analysis in biosciences has traditionally been reliant on
-% user-friendly tools like \textit{Microsoft Excel} and \textit{GraphPad Prism}.
-% While \textit{Excel} by itself is recognized as limited for complex data
-% analysis \cite{tanavaleeLimitationsUsingMicrosoft2016a,
-% incertiYouStillUsing2019a}, GraphPad Prism offers more advanced statistical
-% models .
-
-% However, increasingly demands more sophisticated
-% approaches as data sets grow in size and complexity.
-
-% R and Python scripts offer more efficient and
-% versatile solutions, enabling complex analyses with a few lines of code
-% \cite{rcoreteamLanguageEnvironmentStatistical2018,vallatPingouinStatisticsPython2018}.
-
-% Recognizing this trend, Microsoft has integrated a Python interpreter into \textit{Excel} to
-% computations more accessible within a widely used platform \cite{AnnouncingPythonExcel2023}.
-
-% % A potential use-case for coding is statistical analysis. Most users rely on tools
-% % like Prism.
-% % However, Prism becomes impractical with large and complex datasets,
-% % as manual re-analysis is time-consuming. In contrast, scripts in R or Python
-% % allow for a single click to re-analyze the data. Recognizing this trend,
-% % Microsoft has recently implemented a Python interpreter into \textit{Excel}, allowing
-% % execution of Python code within cells. R, in particular, offers more advanced
-% % statistical models than Prism or \textit{Excel}, which has led to R's widespread
-% % adoption.
-
-% Next-generation sequencing, such as bulk RNAseq, has become affordable, allowing
-% for larger sample sets during a single PhD project. This technology offers
-% advanced tools that are most efficiently used through scripting in R or Python.
-% In the absence of a dedicated statistician, researchers are compelled to learn
-% coding.
-
-% In gene ontology, tools such as Metascape facilitate the integration of vast
-% datasets and outputs multiple useful data visualizations. Metascape also
-% provides multiple excel sheets, containing all results, sometimes in a nested
-% format, which provides even further information that's adaptable for specific
-% hypotheses, but given the sheer amount of data, is impractical to analyze
-% manually.
-
-% since Metascape
-% returns large \textit{Excel} sheets with complex nested information, a researcher without
-% coding skills requires manual work to adapt the results to specific research
-% hypotheses.
-
-% its true potential is unlocked only when researchers can
-% manipulate and analyze these data through scripting.
-
-% Modern gene ontology tools like Metascape offer powerful graphical user
-% interfaces. However, their effectiveness is only possible through standardizing
-% multiple large datasets.
-
-% The output from Metascape, large \textit{Excel} sheets with
-% complex nested information, is more efficiently analyzed through scripting,
-% which is often necessary to adapt metascape results to specific research
-% hypotheses.
-
-
-
-% Image analysis is another area where coding skills are essential. Classifying
-% regions of cells is a common task in microscopy to solve simple problems like
-% counting individual cells or more complex problems like fluorescence
-% co-localization.
-
-% ImageJ/FIJI, a
-% standard tool in the field, requires scripting for batch processing of multiple
-% images and automating multiple processing steps into a pipeline. While macros
-% can be recorded, understanding the underlying code is necessary for
-% troubleshooting and adapting the macro to new datasets.
-
-% In the field of protein structural biology, Pymol is a standard tool that also
-% has a Python command interface.
-
-% Similarly, artificial intelligence (AI), a
-% game-changer in biomedicine, primarily uses Python due to its extensive
-% libraries for machine learning and scientific computing. Python is also a
-% standard for integrative biomedicine simulations.
-
-% Finally, databases and repositories are essential for storing, retrieving, and
-% sharing data. Researchers need to understand common file formats to adhere to
-% standards that ensure re-usability and interoperability. Scripting helps
-% automate the process of formatting data for submission to these databases.
-
-% In conclusion, the integration of coding in bioscience research is not just a
-% trend but a necessity. As the field continues to evolve, the demarcation between
-% biologists and computational scientists blurs, underscoring the importance of
-% coding skills for the next generation of researchers. The ability to code is
-% fast becoming an indispensable asset, as integral to bioscience as traditional
-% laboratory skills.
-
-
-
-%%%%%%%%%%%%%%%
-
-% In the last decades, biosciences have made significant progress in generating
-% vast amounts of data in shorter time spans
-% ~\cite{yangScalabilityValidationBig2017}. Here, it is argued that research reliant
-% on software more than ever. More so, the author of the thesis highly doubts that
-% every modern researcher will be confronted with executing at least some lines of
-% code during their career, or maybe even collect multiple commands in a
-% self-written script.
-
-
-% - The question is, can a modern PhD student fulfill their role as an independent
-% researcher without coding skills? This is highly questionable, given that
-% standard tools in the biosciences require a code interface:
-
-
-% - Statistics? No. Requires Prism, but Prism becomes unpractical with large and
-% complex datasets, since manual re-analysis has to be repeated manually, while
-% scripts would allow for a single click to re-analyze the data. Hence, R or
-% Python have become a standard, with R offering more advanced statistical models
-% than Prism or \textit{Excel}. \textit{Excel} has recognized this development and
-% introduced Python support
-
-% - Next generation sequencing? Rnaseq has become cheap (bulk RNAseq), allowing for growing
-% samplesets during one PhD project, while gaining in remarkable
-% precision, even at single-cell level. It offers advanced tools, that are only
-% used efficiently scripting in R or Python. If
-% there's no dedicated statistician, researchers have no choice but to learn
-% coding
-
-% - Gene ontology: Modern tools like metascape offer a surprisingly powerful
-% graphical user interface. Still this achievement is only possible through
-% standardizing multiple large datasets. Also the output of metascape are large
-% excel sheets with highly complex nested information. These that are unpractical
-% to analyze manually by excel and are more efficiently analyzed through scripting
-% to adapt to specific needs of research hypotheses.
-
-% - Image analysis? ImageJ/FIJI is standard. However, there are bugs. Also,
-% scripting is required for both batch processing of multiple images and also
-% automating multiple processing steps into a pipeline. Of course, macros can be
-% recorded, yet an understanding of the underlying code is required to
-% troubleshoot and adapt the macro to new datasets.
-
-% - Protein structurual biologists? Pymol is standard and also has a Python
-% command interface
-
-% - Artificial intelligence (AI) has been a game changer in the field of
-% biomedicine. The early development of AI itself was driven by radiology, where
-% it was designed to detect pathologies in medical images. Today, Python is a
-% standard because of its extensive libraries for machine learning and scientific
-% computing.
-
-
-% - Integrative biomedicine simulations? Python is a standard
-
-% - In general, coding skills help improve a researchers general understanding of
-% every software he uses. This is because the researcher can understand the
-% underlying algorithms and assumptions of the software. Complex proprietary
-% software to use state-of-the-art equipment (Zen, Imaris, FlowJo, etc.) are often
-% black boxes. The researcher will be confronted with issues and has to make
-% constant decisions if the error is on his side, or on the software side in order
-% to think of feasable troubleshooting strategies. This is only possible if the
-% researcher has a good understanding of the software. A basic understanding of
-% code also opens the door to open-source software, allowing for state-of-the-art
-% analysis techniques that are not available in proprietary software, but their
-% installation and usage is often overestimated by researchers without coding
-% skills, while coding skills allow for adaptations of this software to the
-% specific needs of the researcher.
-
-% - Furthermore, databases and repositories are essential for storing, retrieving,
-% and sharing data. In order to adhere to standards that ensure re-usability and
-% interoparability, researchers need to have an understanding of common file
-% formats. Scripting also helps to automate the process of formatting data for
-% submitting to these databases.
-
-% Together, it remains highly questionable, if future scientists will be able to
-% perform their role as independent researchers without minimum coding skills.
-% In conclusion, the increasing role of software in biomedicine underscores the
-% importance of computational skills for modern researchers. As the field
-% continues to evolve, the ability to work with software will become even more
-% critical.
-
-%%%%%%%%%%%%%%%%
-
-
-
-% Modern methods in molecular biology, biochemistry, and biomedicine, such as
-% next-generation sequencing, mass spectrometry, and high-throughput screening,
-% generate large volumes of data that require sophisticated software tools for
-% analysis. For instance, bioinformatics software is essential for analyzing
-% genomic and proteomic data, while image analysis software is routinely used in
-% microscopy.
-
-
-% Moreover, the rise of systems biology and integrative biomedicine, which aim to
-% understand biological systems as a whole, has led to the development of complex
-% computational models and simulation software. These tools are used to integrate
-% and analyze diverse data types, from molecular to physiological data, and to
-% predict the behavior of biological systems.
-
-
-% In addition, software plays a crucial role in the management and sharing of
-% biomedical data. Databases and data repositories are essential for storing,
-% retrieving, and sharing data, while data standards and ontologies, which are
-% often implemented as software libraries, are used to ensure that data is
-% interoperable and reusable.
-
-
-% Given this landscape, it is clear that researchers in the biosciences are
-% confronted with complex software on a daily basis. Therefore, there is a growing
-% need for researchers to acquire computational skills.
-
-% Learning a programming
-% language like Python can greatly benefit researchers by enabling them to
-% automate tasks, analyze data more efficiently, and develop their own tools. This
-% not only increases productivity but also fosters reproducibility and open
-% science.
-
-
-% In conclusion, the increasing role of software in biomedicine underscores the
-% importance of computational skills for modern researchers. As the field
-% continues to evolve, the ability to work with software will become even more
-% critical.
-
-
-
-A main reason to write software is to define re-usable instructions for task
-automation~\cite{narztReusabilityConceptProcess1998}.
 
 % ======================================================================
 \unnsubsection{Modern Standards of Software Development}
 \label{sec:code_quality}
 %%%%%%%
+A main reason to write software is to define re-usable instructions for task
+automation~\cite{narztReusabilityConceptProcess1998}.
 The complexity of software code makes it prone to errors, which can prevent
 its usage by persons other than the author himself. This is a problem for the
 general scientific community, as the software is often essential for
