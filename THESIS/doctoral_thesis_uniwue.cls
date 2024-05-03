@@ -575,8 +575,8 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m}{%
     \vspace{\vfull}
     {%
-        \centering
         \begin{minipage}{\textwidth}
+            \centering
             \IfStrEq{#2}{}
             {\includegraphics[width=#1\textwidth]{#3}}
             {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}

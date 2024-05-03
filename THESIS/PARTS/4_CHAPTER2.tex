@@ -3,6 +3,7 @@
 % ======================================================================
 % == Chapter 2 ========================================================
 % ======================================================================
+% Das schrieb die GSLS an mich
 % Zusätzliche Einleitung und Diskussion: Herr Kuric soll bitte eine ergänzende
 % Einleitung und Diskussion in dem Kapitel zu seiner JOSS-Publikation
 % hinzufügen, die folgende Informationen enthalten:
@@ -95,11 +96,14 @@ reproducibility~\cite{bustinReproducibilityBiomedicalResearch2014,
       incertiYouStillUsing2019a}. This is further complicated by the complexity
 inherent in multidimensional datasets \cite{krzywinskiMultidimensionalData2013}:
 Modern biosciences describe processes (e.g. cell-adhesion) that are highly
-dependent on multiple experimental parameters, like time or kinds of treatments
-\cite{reblTimedependentMetabolicActivity2010,
-      mckayCellcellAdhesionMolecules1997}. Without a clearly documented data analysis
-protocol and standardized data formats, such analyses become nontransparent and
-too overwhelming for reproduction
+dependent on multiple experimental parameters (factors), like `time' or `kinds
+of treatments' \cite{reblTimedependentMetabolicActivity2010,
+      mckayCellcellAdhesionMolecules1997}. Manually grouping the data by multiple
+factors (facetting) is challenging and error-prone, especially when the data is
+not structured in a way that is immediately compatible with statistical tests.
+Without a clearly documented data analysis protocol and standardized data
+formats, analysis of multidimensional data becomes nontransparent and too
+overwhelming for reproduction
 \cite{bustinReproducibilityBiomedicalResearch2014}.
 
 
@@ -112,26 +116,28 @@ these advancements can place undue pressure on researchers, particularly those
 with limited training in statistics, underscoring the need for intuitive,
 user-friendly analytical tools \cite{federerDataLiteracyTraining2016,
       lakhlifiIllusionKnowledgeStatistics2023, armstrongWhenUseBonferroni2014,
-      gomez-lopezPrecisionMedicineNeeds2019, leekStatisticsValuesAre2015}
+      gomez-lopezPrecisionMedicineNeeds2019, leekStatisticsValuesAre2015}.
 
 In this context, \texttt{plotastic} emerges as a tool designed to democratize
 access to sophisticated statistical analysis, offering a user-centric interface
 that caters to researchers across varying levels of statistical proficiency.
-
 \texttt{plotastic} simplifies inferential statistics based on the idea that
- statistical analyses are often performed based on how the data is visualized,
- and automates the process based on the same intuitive plotting parameters used
- to structure the figure. By integrating robust statistical methodologies within
- an accessible framework, \texttt{plotastic} could to contribute to enhancing
- the reproducibility of research in the biosciences
- \cite{gomez-cabreroDataIntegrationEra2014}.
+statistical analyses are often performed based on how the data is visualized.
+This principle is not only intuitive but also statistically sound,
+because the parameters that structure the figure (e.g. facetting) are often
+times re-used for statistical testing (e.g. independent variables or factors).
+By integrating robust statistical methodologies within an accessible framework,
+\texttt{plotastic} could to contribute to enhancing the reproducibility of
+research in the biosciences \cite{gomez-cabreroDataIntegrationEra2014}.
 
+\pagebreak
 
-The user-centric approach of \texttt{plotastic} distinguishes itself from
-the fully automated pipelines used for big data, which are designed to handle
+The user-centric approach of \texttt{plotastic} distinguishes itself from the
+fully automated pipelines used for big data, which are designed to handle
 extensive computational tasks. Instead, \texttt{plotastic} focuses on
-intermediate outputs and ease-of-use, a concept the author refers to as
-\textit{semi-automation} (\autoref{tab:semi-auto-principles}).
+ease-of-use and structures its commands to enable an interactive review of
+intermediate outputs, a concept the author refers to as \textit{semi-automation}
+(\autoref{tab:semi-auto-principles}).
 
 \begin{table}[h]
       \caption{Key Principles of Semi-Automation and their Implementation in Plotastic}
@@ -140,61 +146,59 @@ intermediate outputs and ease-of-use, a concept the author refers to as
       \label{tab:semi-auto-principles}
       \begin{tabular}{|c|p{0.50\textwidth}|p{0.35\textwidth}|}
             \hline
-            \textbf{No.} 
-            & \textbf{Principle} 
-            & \textbf{Implementation in \texttt{plotastic}} 
+            \textbf{No.}
+             & \textbf{Principle}
+             & \textbf{Implementation in \texttt{plotastic}}
             \\
             \hline
-            1 
-            & \textbf{Standardized input:} The data to-be-analyzed follows a
+            1
+             & \textbf{Standardized input:} The data to-be-analyzed follows a
             strict standardized format. The user should be able to convert their
-            data into that format. 
-            & Long-format \texttt{pandas} \texttt{DataFrames} are used as input 
+            data into that format.
+             & Long-format \texttt{pandas} \texttt{DataFrames} are used as input
             \\
             \hline
-            2 
-            & \textbf{Automation over flexibility:} If there is an obvious way
+            2
+             & \textbf{Automation over flexibility:} If there is an obvious way
             to do things, automate it and minimize user input. User options
             should be added with good reason. Avoid situations where the user is
             asked to pass the same parameter twice. This reduces the risk of
-            human error, confusion and time spent on configuration. 
-            & E.g.
+            human error, confusion and time spent on configuration.
+             & E.g.
             passing the parameter ``subject'' once makes the rest of the
             pipeline switch automatically to the paired versions of statistical
-            tests. 
+            tests.
             \\
             \hline
-            3 
-            & \textbf{\emph{Out of the box} functionality:} The software's
+            3%
+             & \textbf{\emph{Out of the box} functionality:} The software's
             default configuration should provide acceptable (but potentially
-            sub-optimal) results. Beginners shouldn't need to learn custom
-            configurations. Options are still available to allow feature-rich
-            adaptions according to the needs of both data and user. 
-            & Default
-            tests are standard unpaired t-tests and ANOVA 
-            \\
+            sub-optimal) results. Beginners should be invited to experiment
+            without the need to learn custom configurations. Options are still
+            available to allow feature-rich adaptions according to the needs of
+            both data and user.%
+             & Default tests are standard unpaired t-tests and ANOVA             %
+            \\%
             \hline
-            4 
-            & \textbf{Focus on intermediate outputs:} The user composes the
+            4
+             & \textbf{Focus on intermediate outputs:} The user composes the
             analysis pipeline using smaller commands that are each designed to
             provide human-readable output of an intermediate result. Each step
             is a stage to control quality, allowing quick error detection and
-            troubleshooting. 
-            & Processing steps are separated into main steps:
-            assumption tests, factor analysis, post-hoc analysis and plotting 
+            troubleshooting.
+             & Processing steps are separated into main steps:
+            assumption tests, factor analysis, post-hoc analysis and plotting
             \\
             \hline
-            5 
-            & \textbf{Highly useful error messages:} Never leave the user
+            5
+             & \textbf{Highly useful error messages:} Never leave the user
             hanging. Tell him what went wrong \emph{and} what the software was
-            expecting. 
-            & E.g.: \texttt{ValueError: User passed 'subect' as
-            subject, please choose one of ['subject', 'event', 'region']} \\
+            expecting.
+             & E.g.: \texttt{ValueError: User passed 'subect' as
+            subject, please choose one of ['subject', 'event', 'region']}        \\
             \hline
-            
       \end{tabular}
 \end{table}
-
 
 
 
@@ -208,12 +212,13 @@ datasets that are challenging to analyse manually. Such complexity was
 necessary, since establishing new methods required extensive controls and
 creative variation of the experimental setup. Data analysis had to be automated
 somehow, since the lab-work itself was already time-intensive. The second
-challenge was to ignore the potential of plot-configured statistical analyses.
+challenge was to accept the potential of plot-configured statistical analyses.
 The author believes that the way data is visualized is often the way it should
-be analyzed. This is a principle that is not only intuitive but also
-statistically sound. The author's vision was to create a generally useful tool
-that would automate the statistical analysis, contributing a powerful tool to
-the scientific community.
+be analyzed. This vision is not limited to biomedical application, but a general
+principle that could benefit the scientific community overall. Making
+\texttt{plotastic} a generalized tool was a conscious decision to maximize its
+adoption rate and ensure its long-term relevance and quality, of which biomedical
+research will also benefit.
 
 
 % author's vision to make statistical analysis easier by
@@ -221,8 +226,6 @@ the scientific community.
 % frustration about current practices of statistical
 % analyses in biomedicine. Something had to be done, especially with the
 % reproducibility crisis (see Introduction for details).
-
-
 
 
 
@@ -324,10 +327,10 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 
 \includeimage[0.9]{
       FIGS/C2_fmri2.png
-}\captionof{figure}{
+}\figcaption[fig:examplefmri]{
       Example figure of \texttt{plotastic} (version 0.1). Image style was set
       by \texttt{plt.style.use(`ggplot')}
-}\label{fig:examplefmri}
+}
 
 
 
@@ -386,8 +389,7 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 % ======================================================================
 \unnsubsection{Overview}%
 \label{sec:C2_overview}%
-%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
 The functionality of \texttt{plotastic} revolves around a seamless integration
 of statistical analysis and plotting, leveraging the capabilities of
 \texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
@@ -484,101 +486,373 @@ analysis and visualization.
 % ======================================================================
 \unnsubsection{Discussion}%
 \label{sec:C2_discussion}%
-%%%
-Is plotastic tested? Coverage? Does it cover every feature? What is not covered
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+As awareness of the complexities associated with multidimensional data in
+biomedical research increases, there is a growing demand for tools that not only
+simplify analysis but also enhance its intuitiveness and effectiveness
+\cite{dunnExploringVisualizingMultidimensional2017}. \texttt{plotastic} is
+designed to meet this demand by seamlessly integrating data visualization with
+inferential statistics, making sophisticated statistical methods accessible to
+researchers of all expertise levels. This integration could be pivotal as it
+allows the visualization of data —how it is grouped and presented— to directly
+guide the statistical analysis, reducing the need for in-depth statistical
+knowledge and ensuring that the analyses are intuitively aligned with the visual
+aspects of the data. This approach could not only simplify the analytical process
+but also enhance the transparency and reproducibility of research findings.
 
-% The Architecture of plotastic is shown in \refappendixfig{fig:classdiagr}.
+% As the awareness for multidimensional data in biomedical research increases, the
+% need for intuitive and effective analysis tools becomes more critical
+% \cite{dunnExploringVisualizingMultidimensional2017}. \texttt{plotastic} aims to
+% emerge as a pivotal solution in this landscape by uniquely integrating
+% statistical analysis with data visualization, thereby enhancing accessibility
+% and understanding of statistical methods for users across varying levels of
+% expertise.
 
-The full code of an example analysis is shown in \autoref{apdx:example_analysis}.
+% \textbf{Key Features and Innovations of \texttt{plotastic}:} \texttt{plotastic}
+% stands out due to its seamless integration of plotting and statistical testing.
+% This integration reduces the need for in-depth statistical know-how by
+% configuring analyses closely aligned with how data is visualized. Such an
+% approach not only makes statistical tools more accessible but also ensures that
+% statistical analyses are driven by the visual grouping of data, which is
+% inherently intuitive.
 
+\textbf{Statistical Features:}
+A detailed list of implemented and planned features is provided on the GitHub
+page of the project \cite{kuricMarkur4Plotastic2024}. \texttt{plotastic} is
+comprehensive in its current scope, incorporating a robust suite of statistical
+tests that cater to a wide range of research needs. It includes assumption tests
+for normality, homoscedasticity, and sphericity, alongside classical statistical
+tests such as ANOVA and t-tests, available in both parametric and non-parametric
+forms, as well as paired and unpaired variants. However, its reliance on the
+\texttt{pingouin} library means that \texttt{plotastic} is subject to the same
+limitations as \texttt{pingouin} itself. For instance, it does not yet support
+survival analysis tools like log-rank tests and Kaplan-Meier plots, which are
+critical for certain biomedical applications. While there are external packages
+that offer these capabilities, integrating them into \texttt{plotastic} could
+significantly expand its utility and provide a more unified user experience
+\cite{davidson-pilonLifelinesSurvivalAnalysis2019}.
 
-Although the awareness for multidimensional data is increasing
-\cite{dunnExploringVisualizingMultidimensional2017}, intuitive tools for the
-analysis of such data are still lacking.
-
-
-Is plotastic USABLE for biologists?
-- Yes but use is limited by minimal knowledge of Python
-- However, that is subject to change as Python is becoming more popular
-in biology and AI assisted coding decreased the barrier to entry
-significantly. Tools like github copilot are able to generate code, fix
-bugs and suggest improvements. This is a game changer for biologists
-that are not familiar with programming.
-- Furthermore, installing and using plotastic for biologists is overestimated. These
-steps re needed:
-- Install anaconda from the internet
-- Open the terminal
-- Type \texttt{pip install plotastic}
-- Check Rea
-
-- lack of GUI? Jupyter Notebooks include buttons to save a figure, and can be
-extended with features like sorting displayed tables (?) are compatible with
-packages with GUIs, like. However, GUIs do not promise an easier use, in fact,
-given the text-based approach of codes, this makes code very compatible with
-Large Language Models, offering a powerful debugging platform. In fact, tools like vscode offer GitHub copilot for free for academics,
-integrating with the interface and displaying suggestions for code completion.
-
-A GUI on the other hand is
-hard to design, maintain, is prone to errors and when users face an error, there
-is no options for workarounds
-
-
-The evaluation of plotastic within this thesis reflects its potential to address
-key challenges in the field of data analysis. The software integrates a
-comprehensive suite of statistical tests, such as ANOVA and t-tests, designed
-for adaptability and ease of use, leveraging the functionalities of pingouin.
-
-In the context of the reproducibility crisis in scientific research, plotastic
-offers noteworthy contributions, though it is not positioned as a universal
-remedy. The tool's unique approach to integrating statistical analysis with
-visual representation establishes a new paradigm, promoting methodological
-transparency. By mandating that statistical analyses accompany relevant
-graphical outputs, plotastic ensures that analyses are not only conducted with
-proper scientific rigor but also documented in a manner that facilitates
-replication, provided the user possesses proficiency in Python.
-
-\citet{pengReproducibleResearchComputational2011} claims that exploration of the
-data and the analysis code may be sufficient to verify the quality of the
-scientific claims.
-
-\citet{mesirovAccessibleReproducibleResearch2010} called out for "simple,
-intuitive ways to both capture and embed our computational work directly into
-our papers". In this thesis, combining Jupyter Notebooks with plotastic could
-represent an intriguing solution to solve that problem.
-
-Statistical or Data illiteracy is a critical issue that's well researched for both clinicians and
-biomedical researchers \cite{lakhlifiIllusionKnowledgeStatistics2023,federerDataLiteracyTraining2016}.
-plotastic removes a lot of need for statistical knowledge, yet still performs complex statistical analyses,
-if the measurements were correctly performed and the results are correctly interpreted.
-Using unpaired non-parametric tests, plotastic provides statistically sound for a wide array of study types without
-the need for the user to understand the underlying statistical principles. This is a significant advantage for
-biologists, who often lack the necessary statistical training to perform these analyses manually.
-
-Usability is a critical attribute of analytical software, particularly as
-researchers confront increasingly complex datasets. While the developer's
-intimate familiarity with plotastic may bias perceptions of its ease of use, it
-is recognized that novices may initially encounter challenges. Nevertheless,
-plotastic is distinguished by its user-friendly interface, enabling users with
-minimal statistical training to perform sophisticated analyses by intuitively
-mapping plotting concepts to statistical operations.
-
-The transition to a new analytical framework, especially one that incorporates
-coding, presents a learning curve. However, the advantages of plotastic in terms
-of analytical clarity, speed, and depth are anticipated to outweigh these
-initial challenges. Support mechanisms, such as assistance from advanced AI like
-ChatGPT, are available to mitigate these hurdles, supporting users across
-varying levels of expertise.
-
-In conclusion, plotastic is posited as a valuable tool in the landscape of
-scientific research, offering a means to enhance the reproducibility and
-efficiency of data analysis. Its development ethos emphasizes simplifying
-complex analytical tasks, thereby contributing to the broader goal of fostering
-transparent and reproducible research practices.
+One known issue in \texttt{plotastic} is its handling of multiple testing
+corrections. Currently, \texttt{plotastic} might not correctly apply these
+corrections when the data is split across different facets with their own y-axes
+(facetted by \texttt{row} and \texttt{col} keywords), which can lead to
+potentially incorrect statistical inferences. This is a fixable issue, and plans
+are in place to address it in upcoming versions to ensure that corrections for
+multiple testing are appropriately applied across the complete dataset.
+Additionally, bivariate analysis tools like correlation and regression are not
+yet implemented, since \texttt{plotastic} focused on data with a categorical
+x-axis, which is more common in biomedical research.
 
 
-DO we apply the principles of Semi-Automation to the software?
+\textbf{Plotting Features:} The plotting capabilities of \texttt{plotastic}
+employ all of \texttt{seaborn}'s non-facetgrid plotting functions (e.g.
+\texttt{sns.boxplot()}), which include a wide range of plot types but may not
+cover all possible visualizations \cite{waskomSeabornStatisticalData2021}.
+Future versions could expand the range of specialized plots, for example
+QQ-plots. \texttt{plotastic} focuses on offering both high- and low-level
+plotting configuration: \texttt{Multiplots} automate overlaying multiple plot
+types, which is extremely useful for displaying raw data points alongside
+aggregated statistics (barplots, boxplots, etc.), a feature that can be
+cumbersome to implement manually. Low-level plotting configuration is supported
+just like in \texttt{seaborn}, since plotastic uses \texttt{matplotlib} as its
+backend. This level of flexibility is unique to \texttt{plotastic}, serving both
+beginners and advanced users.
 
-what features are missing?
-- Bivariate analysis
-- Filer to help save the output?
-- StatResults: System to suggest the correct test, based on the data
+Annotating statistical results into plots (e.g. *** above barplots) is a key
+requirement in modern biomedical journals and could be key feature why
+researchers choose proprietary software like \textit{GraphPad Prism} over
+other solutions. \texttt{plotastic} automates this process as well, making
+it a strong competitor to other statistical software.
+
+
+\textbf{Software Testing:} The development of \texttt{plotastic} adheres to
+modern software engineering principles to ensure reliability and
+maintainability. The project utilizes continuous integration practices, which
+means that with every change to the codebase, a comprehensive test suite is
+automatically run to identify potential bugs and ensure that new contributions
+do not disrupt existing functionalities. This test suite covers approximately
+\SI{79}{\percent} of the testable lines of code, a statistic tracked
+automatically by an independent service called \texttt{codecov}, highlighting a
+strong commitment to software quality \cite{Codecov2024}.
+
+
+
+\textbf{Documentation:}
+Documentation serves as a critical resource for enhancing user experience and
+adoption, especially for software aimed at users with varying levels of
+expertise. Currently, \texttt{plotastic}'s documentation is focused on basic
+functionalities. These include detailed installation instructions, example
+analyses using five test datasets from \texttt{seaborn} that are commonly used
+in teaching statistics, guidelines on dimension switching with commands like
+\texttt{DataAnalysis.switch()}, and tutorials on constructing and configuring
+plots, annotating statistical data, and utilizing multiplot capabilities.
+
+However, the documentation of \texttt{plotastic} could be significantly
+enhanced. Currently, it lacks a dedicated website, relying instead on
+GitHub-hosted Jupyter notebooks. While useful, these notebooks are not the most
+user-friendly or maintainable format for documentation as they can be
+challenging to navigate and don't update synchronously with software changes. A
+more robust approach would involve leveraging services like \texttt{Read the Docs}
+or \texttt{Sphinx} to generate and host documentation directly from the codebase
+\cite{ReadDocs2024, Sphinx2024}. This would not only ensure
+that the documentation remains up-to-date with the latest software developments
+but also provide a more accessible and navigable user experience, meeting the
+expectations of users who prefer a dedicated website for software documentation.
+
+
+
+\textbf{Usability for Non-Statisticians:} \texttt{plotastic} aims to make
+statistical analysis more accessible to researchers without extensive
+statistical training by intuitively mapping plotting concepts to statistical
+operations. To the author's knowledge, this approach is unique to
+\texttt{plotastic} and has great potential to make statistics easier. Still, the
+software requires responsible and self-critical usage, as emphasized by the
+thorough disclaimer on its GitHub page regarding the software's statistical
+robustness, \cite{kuricMarkur4Plotastic2024}. The disclaimer highlights that
+while \texttt{plotastic} can facilitate gaining practical experience with
+statistics and provide a preliminary analysis, it is not a substitute for
+professional statistical consultation. It is designed to aid users in generating
+publication-grade figures and performing statistical tests, provided they have a
+basic understanding of the procedures involved or have their results verified by
+a statistician. To enhance usability for non-statisticians, \texttt{plotastic}
+could incorporate a system to suggest appropriate statistical tests based on
+data characteristics, like parametric tests for normally distributed data. This
+feature would guide users in selecting the correct tests, thereby augmenting the
+tool's functionality and broadening its appeal. Additionally, the GitHub page
+provides critical guidelines for responsible statistical practice, urging users
+to document their work in detail, understand the limitations of the tests
+applied, and consult professionals to validate their findings, ensuring that
+\texttt{plotastic} supports but does not replace thorough statistical analysis
+\cite{sandveTenSimpleRules2013, kuricMarkur4Plotastic2024}.
+
+
+
+\textbf{Usability for Non-Programmers:}
+Most biomedical researchers prefer software with a graphical user interface
+(GUI) and are not confident in using a command-line interface (CLI), suggesting
+a low adoption rate for \texttt{plotastic} among non-bioinformaticians. However,
+the dawn of Artificial intelligence provides a powerful argument for
+non-programmers to give CLIs a chance: GUIs are not compatible with ChatGPT,
+whereas code is. In fact, both ChatGPT-3.5 and -4 show impressive performance in
+python \cite{arefinUnmaskingGiantComprehensive2023}. This is a game changer,
+since researchers can now use similair tools as programmers and are limited by
+their methodological expertise to formulate a correct prompt
+\cite{qureshiAreChatGPTLarge2023}\footnotequote{You can now recognize and learn
+the language of almost anything with structure, and you can translate it to
+anything with structure — so text-protein, protein-text. [...] Everybody is a
+programmer, and the programming language of the future is called
+‘human.’}{kelleherNVIDIACEOThis2024}. Concretely, when a software is not working
+as intended, users of a GUI are likely to be stuck without help or further
+research. Users of a CLI however, can use ChatGPT to ask for code-corrections,
+implementations of new features (e.g. editing a plot), explanations of the code
+line-by-line, but also for advice on how to proceed with a statistical analysis
+with their specific data and needs in mind. Still, ChatGPT requires responsible
+use, as ChatGPT-4, is not sufficient as a standalone tool for statistical
+analysis \cite{ordakChatGPTSkillsStatistical2023}. It is important to note that
+\texttt{plotastic} is not yet known to ChatGPT, but could be included in future
+versions, depending on the popularity of \texttt{plotastic}.
+% But overall, the potential of ChatGPT to
+% revolutionize biomedical research has been recognized, and \texttt{plotastic} is
+% compatible with that revolution \cite{ruksakulpiwatUsingChatGPTMedical2023}. 
+
+Together, the transition to a new data analysis ssoftware, especially one
+that incorporates coding, presents a learning curve. However, the advantages of
+plotastic in terms of analytical clarity, speed, and depth are anticipated to
+outweigh these initial challenges.
+
+
+
+
+\textbf{Adoption and Open-Source Contributions:}
+The adoption rate of \texttt{plotastic} is a critical factor for its
+sustainability, particularly in the open-source environment where community
+contributions can significantly support the author in improving and maintaining
+the software. Since its publication in the Journal of Open Source Software on
+March 9, 2024, \texttt{plotastic} has garnered attention with 41 visits and 8
+\emph{stars} (similar to a `like' on social media platforms) on its GitHub page.
+This level of engagement, while modest, shows initial interest and potential for
+growth. Active involvement from the community is essential for ongoing
+improvements; hence, efforts are being made to enhance the software's
+documentation and structure to attract more contributors: \texttt{plotastic's}
+GitHub page shows a detailed outline of the software's architecture as a class
+diagram in unified modeling language (UML) format, helping potential
+contributors orient themselves within \texttt{plotastic}'s several modules and
+classes (shown in \apdxref{subapdx:classdiagr}). But further efforts are
+required, e.g. only few functions are documented with docstrings, which help
+understanding the purpose and usage of each function. Still, \texttt{plotastic}
+is a general-purpose data analysis software designed not only for biologists but
+for a broad range of scientific disciplines, making it a versatile tool with
+promising potential for wider adoption.
+
+
+
+
+
+\textbf{Contributions to Methodological Transparency and Biomedicine:}
+\texttt{plotastic} contributes significantly to methodological transparency in
+biomedical research by ensuring that statistical analyses are performed
+alongside visual representations. This integrated approach not only enhances the
+interpretation of results but also facilitates the replication of analyses,
+promoting a higher degree of transparency. Although it streamlines the data
+analysis process, it is not a complete solution to the reproducibility crisis in
+scientific research. Researchers must still possess a basic understanding of
+data analysis principles and be cautious about their reliance on scripting
+solutions like Python, which might be less familiar to some biomedical
+researchers. 
+
+Statistical literacy and lack of training is a well-documented challenge among
+clinicians and biomedical researchers, that could decrease the confidence in
+presenting their analyses in detail
+\cite{lakhlifiIllusionKnowledgeStatistics2023, federerDataLiteracyTraining2016}.
+Since \texttt{plotastic} alleviates some need for statistical knowledge by
+automating the configuration of statistical tests, the room for error is
+reduced, and the user can lay off some responsibility to the software, gaining
+confidence in presenting their analysis transparently. 
+
+
+Furthermore, \texttt{plotastic}'s compatibility with the Jupyter ecosystem
+leverages "simple, intuitive ways to both capture and embed computational work
+directly into our papers," as advocated by
+\citet{mesirovAccessibleReproducibleResearch2010}. This integration makes
+\texttt{plotastic} not just a tool for analysis but also a means of enhancing
+the accessibility and reproducibility of scientific work. As
+\citet{pengReproducibleResearchComputational2011} suggests, the exploration of
+data and analysis code may often be sufficient to verify the quality of
+scientific claims. This seems plausible, given that statistical tests themselves
+pose rigorous requirements on the data, and the results are often not
+interpretable without the context data. Combining \texttt{plotastic} with
+Jupyter Notebooks provides a compelling solution to transparently integrate and
+document both intermediate results and analytical processes, thus furthering
+scientific rigor and replicability.
+
+
+% underscoring the potential of \texttt{plotastic} to improve
+% the transparency of biomedical research.
+
+% Provided that measurements are correctly
+% performed and results are correctly interpreted, \texttt{plotastic} offers
+% acceptable statistical analyses for a wide array of study types without
+% requiring an in-depth understanding the underlying statistical principles.
+
+% This feature is especially beneficial for
+% biologists who might lack the statistical training to perform these analyses
+% manually, but can gain confidence in presenting their analysis transparently
+% using open source tools like \texttt{plotastic}. By allowing for the use of
+% straightforward, unpaired non-parametric tests,
+
+% \texttt{plotastic} provides a
+% statistically sound framework for a variety of study types without requiring
+% users to fully grasp the underlying statistical principles.
+
+
+
+% \texttt{plotastic}'s approach to coupling statistical outputs with visual data
+% representations aligns well with the needs for methodological transparency in
+% scientific research. By ensuring that statistical analyses are both visible and
+% directly related to the plotted data, \texttt{plotastic} facilitates a better
+% understanding and replication of research findings, addressing key aspects of
+% the reproducibility crisis.
+
+% In summary, \texttt{plotastic} exemplifies a successful application of
+% semi-automation in data analysis by making complex statistical analyses
+% accessible and intuitive. It stands as a testament to the potential of
+% well-designed software tools to impact scientific research significantly,
+% enhancing both the reliability and efficiency of data analysis processes.
+
+
+
+% Does plotastic make biomedicine more transparent?
+
+
+% - It is a step in the right direction. The software is designed to
+% streamline the data analysis process, ensuring that statistical tests are
+% performed in conjunction with visual representations. This approach enhances
+% methodological transparency, as the results of statistical analyses are
+% immediately visible in the graphical outputs, facilitating the interpretation
+% of results and the replication of analyses. However, the software is not a
+% panacea for the reproducibility crisis in scientific research. While it
+% simplifies the data analysis process, it does not eliminate the need for
+% researchers to possess a basic understanding of data analysis principles. It is
+% also heavily limited by biomedical researchers aversion towards scripting solutions like python.
+
+% Statistical or Data illiteracy is a critical issue that's well researched for both clinicians and
+% biomedical researchers \cite{lakhlifiIllusionKnowledgeStatistics2023,federerDataLiteracyTraining2016}.
+% plotastic removes a lot of need for statistical knowledge, yet still performs complex statistical analyses,
+% if the measurements were correctly performed and the results are correctly interpreted.
+% Using unpaired non-parametric tests, plotastic provides statistically sound for a wide array of study types without
+% the need for the user to understand the underlying statistical principles. This is a significant advantage for
+% biologists, who often lack the necessary statistical training to perform these analyses manually, but could increase 
+% the confidence to present their analysis transparently. 
+
+% - However, \citet{pengReproducibleResearchComputational2011} claims that exploration of the
+% data and the analysis code may be sufficient to verify the quality of the
+% scientific claims. This seems plausible, given that statistical tests themselves pose rigorous
+% requirements on the data, and the results are often not interpretable without
+% the context data. In this sense, plotastic could be a valuable tool to
+% enhance the transparency of research in biomedicine.
+% - Plotastic integrates perfectly with the Jupyter ecosystem. \citet{mesirovAccessibleReproducibleResearch2010} called out for "simple,
+% intuitive ways to both capture and embed our computational work directly into
+% our papers". In this thesis, combining Jupyter Notebooks with plotastic could
+% represent an intriguing solution to solve that problem.
+% The full jupyter notebook of an example analysis is shown in \apdxref{subapdx:example_analysis}.
+% that way, plotastic ensures that analyses are not only conducted with
+% proper scientific rigor but also documented in a manner that facilitates
+% replication
+
+
+
+
+% The evaluation of plotastic within this thesis reflects its potential to address
+% key challenges in the field of data analysis. The software integrates a
+% comprehensive suite of statistical tests, such as ANOVA and t-tests, designed
+% for adaptability and ease of use, leveraging the functionalities of pingouin.
+
+% In the context of the reproducibility crisis in scientific research, plotastic
+% offers noteworthy contributions, though it is not positioned as a universal
+% remedy. The tool's unique approach to integrating statistical analysis with
+% visual representation establishes a new paradigm, promoting methodological
+% transparency. By mandating that statistical analyses accompany relevant
+% graphical outputs, plotastic ensures that analyses are not only conducted with
+% proper scientific rigor but also documented in a manner that facilitates
+% replication, provided the user possesses proficiency in Python.
+
+% Does plotastic make biomedicine more transparent?
+% - It is a step in the right direction. The software is designed to
+% streamline the data analysis process, ensuring that statistical tests are
+% performed in conjunction with visual representations. This approach enhances
+% methodological transparency, as the results of statistical analyses are
+% immediately visible in the graphical outputs, facilitating the interpretation
+% of results and the replication of analyses. However, the software is not a
+% panacea for the reproducibility crisis in scientific research. While it
+% simplifies the data analysis process, it does not eliminate the need for
+% researchers to possess a basic understanding of statistical principles and
+% Python programming.
+
+
+
+
+
+% Usability is a critical attribute of analytical software, particularly as
+% researchers confront increasingly complex datasets. While the developer's
+% intimate familiarity with plotastic may bias perceptions of its ease of use, it
+% is recognized that novices may initially encounter challenges. Nevertheless,
+% plotastic is distinguished by its user-friendly interface, enabling users with
+% minimal statistical training to perform sophisticated analyses by intuitively
+% mapping plotting concepts to statistical operations.
+
+% The transition to a new analytical framework, especially one that incorporates
+% coding, presents a learning curve. However, the advantages of plotastic in terms
+% of analytical clarity, speed, and depth are anticipated to outweigh these
+% initial challenges. Support mechanisms, such as assistance from advanced AI like
+% ChatGPT, are available to mitigate these hurdles, supporting users across
+% varying levels of expertise.
+
+% In conclusion, plotastic is posited as a valuable tool in the landscape of
+% scientific research, offering a means to enhance the reproducibility and
+% efficiency of data analysis. Its development ethos emphasizes simplifying
+% complex analytical tasks, thereby contributing to the broader goal of fostering
+% transparent and reproducible research practices.
+
+
+% DO we apply the principles of Semi-Automation to the software?
+
