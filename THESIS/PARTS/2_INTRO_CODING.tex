@@ -13,7 +13,7 @@ variability that significantly impacts biological interpretations
 \cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997,bolado-carrancioPeriodicPropagatingWaves2020a}.
 
 Multidimensional data encompass datasets where multiple \emph{independent
-variables} (\emph{factors}) interact to influence one or more \emph{dependent variables}
+    variables} (\emph{factors}) interact to influence one or more \emph{dependent variables}
 (\emph{outcomes}). These factors include experimental conditions or measurement
 modalities. These interactions often address multiple hypotheses, making
 it crucial to design analysis strategies that can reveal the true structure and
@@ -39,7 +39,7 @@ in confocal microscopy, and time points in time-lapse studies.
 
 Lastly, big-data aggregation tools like \texttt{Metascape} provide a rich source
 of multidimensional data by integrating various dependent variables, such as
-gene expression fold changes and associated p-values, with independent variables
+gene expression fold changes and associated $p$-values, with independent variables
 spanning gene identifiers, gene ontology terms, and ontology classes derived from
 multiple databases \cite{zhouMetascapeProvidesBiologistoriented2019}. Despite
 the provision of summarized graphical outputs, the raw data often remain in
@@ -115,8 +115,8 @@ accessibility of complex data analyses
 \unnsubsection{Nontransparencies in Biomedical Data Analyses}%
 \label{sec:nontransparencies}%
 %%%%%%%%%%%%%
-The advent of advanced technologies in biosciences has ushered in an era of Big
-Data, characterized by unprecedented volumes and complexities of
+The advent of advanced technologies in biosciences has ushered in an era of \emph{big
+    data}, characterized by unprecedented volumes and complexities of
 data~\cite{bubendorfHighthroughputMicroarrayTechnologies2001, yangScalabilityValidationBig2017,
     ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
 by significant challenges in data analysis, particularly impacting the
@@ -160,12 +160,12 @@ Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, given
 that the exact use of multiple comparisons corrections has been under debate for
 decades, it is reasonable to assume that researchers lack the confidence to
 report their technique in detail \cite{pernegerWhatWrongBonferroni1998,
-moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}. In
+    moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}. In
 general, $P$-values are target of extreme scrutiny and also the cause of many
 arguments, which themselves are of questionable statistical reasoning%
 \footnotequote{Arguing about the P value is like focusing on a single
-misspelling, rather than on the faulty logic of a
-sentence}{leekStatisticsValuesAre2015}%
+    misspelling, rather than on the faulty logic of a
+    sentence}{leekStatisticsValuesAre2015}%
 \cite{leekStatisticsValuesAre2015}. Additionally, statistical illiteracy is a
 well-known problem among clinicians
 \cite{lakhlifiIllusionKnowledgeStatistics2023}. Among biomedical researchers,
@@ -244,8 +244,8 @@ scripting languages, the integration of results from multiple packages without a
 coherent record of the commands and code used undermines reproducibility. This
 practice can obscure analysis, making it difficult, if not impossible, for other
 researchers to replicate the results \cite{leekStatisticsValuesAre2015,
-pengReproducibleResearchComputational2011,
-mesirovAccessibleReproducibleResearch2010, localioStatisticalCodeSupport2018}.
+    pengReproducibleResearchComputational2011,
+    mesirovAccessibleReproducibleResearch2010, localioStatisticalCodeSupport2018}.
 
 A particularly illustrative example is \textit{GraphPad Prism}, a tool
 ubiquitously employed across biomedical disciplines for statistical analysis.
@@ -342,15 +342,15 @@ community~\cite{pengReproducibleResearchComputational2011}.
 Modern software development is a long-term commitment of maintaining and
 improving code after initial release~\cite{boswellArtReadableCode2011}. Hence,
 it is good practice to write the software such that it is scalable, maintainable
-and usable. Scalability or, to be precise, structural scalability means that the
+and usable. \emph{Scalability} or, to be precise, \emph{structural scalability} means that the
 software can easily be expanded with new features without major modifications to
 its architecture \cite{bondiCharacteristicsScalabilityTheir2000}. This is
 achieved by writing the software in a modular fashion, where each module is
-responsible for a single function. Maintainability means that the software can
+responsible for a single function. \emph{Maintainability} means that the software can
 easily be fixed from bugs and adapted to new requirements
 \cite{kazmanMaintainability2020}. This is achieved by writing the code in a
 clear and readable manner, and by writing tests that ensure that the code works
-as expected~\cite{boswellArtReadableCode2011}. Usability is hard to
+as expected~\cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
 define~\cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable
 if the commands have intuitive names and if the software's manual, termed
 ``documentation'', is up-to-date and easy to understand for new users with
@@ -365,15 +365,15 @@ including version control, continuous integration (often referred to as CI), and
 software testing.
 
 Version control is a system that records changes to the codebase line by line,
-allowing the documentation of the history of the codebase, including who made
-which changes and when. This is required to isolate new and experimental
+documenting of the detailed history of the codebase, including the person and
+timepoint of every change. This is required to isolate new and experimental
 features into newer versions and away from the stable version that's known to
-work. The most popular version control system is Git, which is considered the
-industry standard for software development~\cite{chaconGitBook2024}. Git can use
+work. The most popular version control system is \texttt{Git}, which is considered the
+industry standard for software development~\cite{chaconGitBook2024}. \texttt{Git} can use
 GitHub.com as a platform to store and host codebases in the form of software
 repositories. GitHub's most famous feature is called ``pull request''. A pull
-request is a request from anyone registered on GitHub to include their changes
-to the codebase (as in ``please pull this into your main code''). One could see
+request is a request from anyone registered on GitHub to include changes
+to the codebase (as in \textit{``please pull this into your main code''}). One could see
 pull requests as the identifying feature of the open source community, since it
 exposes the codebase to potentially thousands of independent developers,
 reaching a workforce that is impossible to achieve with closed source models
@@ -383,7 +383,7 @@ Continuous integration (CI) is a software development practice in which
 developers integrate code changes into a shared repository several times a
 day~\cite{duvall2007continuous}. Each integration triggers the test suite,
 aiming to detect errors as soon as possible. The test suite includes building
-the software, setting up an environment for the software to run and then
+the software, setting up an environment for the software to run, and then
 executing the programmed tests, ensuring that the software runs as a whole.
 Continuous integration is often used together with software branches. Branches
 are independent copies of the codebase that are meant to be merged back into the
@@ -427,7 +427,7 @@ measure how well the code is tested. The precision of the test is not a
 measurable quantity, but it represents if the tests truly checks if the code
 works as expected. The number of test-cases is the number of different scenarios
 that are checked by the testing functions, for example testing every possible
-option or combinations of options for functions that have multiple options. The
+option or combinations of options for functions that offer multiple options. The
 most popular software testing framework for Python is \texttt{pytest}, which is
 utilized by \texttt{plotastic}~\cite{pytestx.y}.
 
