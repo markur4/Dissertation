@@ -327,7 +327,7 @@ Replicates can expand datasets as this factor comprises a lot of levels.
 Similarly, the factor \textit{`Gene'} multiplied the dataset by a total of 30
 genes when validating RNAseq data with RT-qPCR. With three subpopulations, one
 timepoint, eleven biological replicates, and three technical replicates, the
-qPCR dataset used in this study grew to ~2970 datapoints to be statistically
+qPCR dataset used in this study grew to 2970 datapoints to be statistically
 analyzed and visualized. This is a manageable size for manual analysis, but the
 effort involved illustrates the definition of semi-big data.
 
@@ -347,86 +347,140 @@ method optimizations and validation.
 
 
 \textbf{Agility During Establishment of V-Well Assay}
-- What is agility in laboratory? Cite the agile manifesto?
-- THe last part of the agile manifesto of software Development states
-\emph{`Responding to change over following a plan'} 
-\cite{ManifestoAgileSoftware2001}.
-This idea has also gained attraction in biomedical research 
-\cite{westReinventingResearchAgile2018}.
-This is especially true for
-the establishment of new methods in the laboratory.
+
+
+The concept of agility in laboratory research, inspired by the Agile Manifesto's
+principle of \emph{``Responding to change over following a plan''}
+\cite{ManifestoAgileSoftware2001}, is increasingly relevant in biomedical
+research \cite{westReinventingResearchAgile2018}. This adaptive approach was
+particularly crucial during the development of the V-Well adhesion assay in this
+study. Semi-automation using python significantly enhanced this agility,
+allowing rapid statistical testing and visualization of data, which would have
+taken considerably longer if done manually. This capability enabled real-time
+adjustments to the experimental technique during live microscopy sessions,
+integrating raw data tables directly into Python scripts for immediate analysis.
+Such an agile and adaptive work environment, facilitated by python tools and
+\texttt{seaborn}, proved invaluable for refining the \textit{in vitro} methods
+being developed. Additionally, the simplicity offered by \texttt{seaborn} for
+complex data plotting, such as the cell cycle profiling shown in
+\apdxref{subapdx:figs}{fig:S3}, which required minimal code to produce a
+detailed series of 24 histograms, underscores the utility of semi-automation in
+enhancing laboratory efficiency. While this work does not quantify the full
+benefits of semi-automation, the author's experiences suggest significant
+potential impacts on the speed and adaptability of method development in
+biomedical research.
+
+
+% - What is agility in laboratory? Cite the agile manifesto?
+% - THe last part of the agile manifesto of software Development states
+% \emph{`Responding to change over following a plan'} 
+% \cite{ManifestoAgileSoftware2001}.
+% This idea has also gained attraction in biomedical research 
+% \cite{westReinventingResearchAgile2018}.
+% This is especially true for
+% the establishment of new methods in the laboratory.
 
 
 
-Was plotastic useful for me?
-- Yes incredibly. I was able to perform the statistical tests and
-visualize the data in a fraction of the time that I would have needed
-manually. This allowed me to focus on the interpretation of the results
-and the writing of the manuscript.
-There was one particular example during establishing the V-Well adhesion
-assay,
-where my analysis was so fast, that I
-fed raw datatables during microscopy into python scripts and was able to
-adapt the experimental technique during the experiment. This allows for
-an agile and adaptive work environment that is not possible with manual
-analysis and proved invaluable during development of  \textit{in
-    vitro} methods.
+% Was plotastic useful for me?
+% - Yes incredibly. I was able to perform the statistical tests and
+% visualize the data in a fraction of the time that I would have needed
+% manually. This allowed me to focus on the interpretation of the results
+% and the writing of the manuscript.
+% There was one particular example during establishing the V-Well adhesion
+% assay,
+% where my analysis was so fast, that I
+% fed raw datatables during microscopy into python scripts and was able to
+% adapt the experimental technique during the experiment. This allows for
+% an agile and adaptive work environment that is not possible with manual
+% analysis and proved invaluable during development of  \textit{in
+%     vitro} methods.
 
 
-\texttt{seaborn} proved invaluable to cell cycle profiling: Plotting figure ??
-which is
+% \texttt{seaborn} proved invaluable to cell cycle profiling: Plotting figure ??
+% which is a plot of 3x4 histograms with two histograms above another, that itself
+% required one line code. This made plotting of very complex data extremely simple
 
-Further research is needed to assess the true impact of semi-automated
-analysis on the agility of establishing new \textit{in vitro} methods.
-
-
-\textbf{Quick Exploration and (Re-)Analysis using \texttt{plotastic} }
-
-
-- Was plotastic needed for quick data visualization Visualizations often times
-requires several attempts to find the best representation of the data. This is
-especially true for this study here that presents a new methodology for studying
-myeloma dissemination. This often times involves re-arranging which factors are
-represented on the x-axis or are color-coded. \texttt{seaborn} already works
-fine with experimentation by easy changes to facetting, \texttt{plotastic}
-extends the functionality of \texttt{seaborn} with the \texttt{.switch()}
-method. However, \texttt{plotastic} was mostly required for its
-\texttt{multiplots} feature to automate execution multiple \texttt{seaborn}
-functions with consistent plotting formats across the whole paper in
-order to display individual datapoints, which is a requirement for many
-journals.
-
-- Re-analysis
-\texttt{plotastic} proved invaluable for re-arranging plots.
-With graphpad prism, this would have required re-annotating the plots,
-redoing most of the   analysis pipeline manually every time a change was made.
-
-However, when re-arranging factors, statistical annotations have to be redone as
-well. This is where \texttt{plotastic} shines, as it allows for easy re-analysis
-of the data, without the need to re-calculate the statistical tests and
-re-annotating them.
-
-During the peer review process of \citet{kuricModelingMyelomaDissemination2024}, which was necessary for Figure ??.
-To the author's experience, common tools can cause frustration,
+% However, this work has not documented and quantified the benefits of
+% semi-automation at all, yet still the author wishes to share this experience.
+% Research is needed to assess the true impact of semi-automated analysis on the
+% agility of establishing new \textit{in vitro} methods.
 
 
-Given the complexity of planned examples, it is clear that a new tool had to be
-developed, and given the simplicity of \texttt{plotastic}.
+\textbf{Quick Exploration and (Re-)Analysis using \texttt{plotastic} } The
+development of new methodologies for studying myeloma dissemination necessitated
+frequent adjustments in data presentation, making \texttt{plotastic} an
+essential tool for rapid visualization and iterative analysis. The ability to
+swiftly rearrange data visualizations \dashedsentence{adjusting factors
+    represented on the x-axis or altering color codes} is crucial, especially when
+exploring novel research methodologies. \texttt{plotastic} enhances
+\texttt{seaborn}'s existing functionalities with features like the
+\texttt{.switch()} method, simplifying the exploration of different plot
+structures through switching factors through \texttt{seaborn}'s facetting parameters
+(\texttt{hue}, \texttt{row}, \texttt{col}, etc.). Its \texttt{multiplots} feature is
+particularly valuable, enabling the automation of multiple \texttt{seaborn}
+functions to maintain consistent plotting formats throughout the publication, a
+critical requirement for many journals.
 
-For example, the reproducibility of qPCR has been a long-standing issue in the
-field \footnotequote{By 2009 it was pretty obvious that many publications using
-    PCR based methods were seriously flawed
-}{bustinReproducibilityBiomedicalResearch2014}. These issues often refer to the
-analysis method of raw data. The author argues that sophisticated (re-) analysis
-are highly unattractive for average biomedical researchers, when facing semi-big
-data, since non-automated data handling does not leave time for applying
-newest data analysis techniques, let alone hinder a quick re-analysis of the
-data.
+Re-analysis processes, often cumbersome with traditional software like \textit{GraphPad
+    Prism}, are streamlined with \texttt{plotastic}. It facilitates the rapid
+reconfiguration of plots and statistical annotations without the need to
+manually redo the analysis pipeline—this adaptability was pivotal during the
+peer review of \citet{kuricModelingMyelomaDissemination2024}, where adjustments
+were necessary for Chapter\,1\,\autoref{fig:4} and \ref{fig:5}. This capability underscores \texttt{plotastic}'s
+role in enhancing the reproducibility and flexibility of data analysis,
+addressing a long-standing issue in the field where the complexity of data often
+discourages the application of sophisticated analytical techniques
+\cite{bustinReproducibilityBiomedicalResearch2014}. \texttt{plotastic}'s
+simplicity and efficiency in handling semi-big data exemplify its necessity and
+effectiveness in modern biomedical research, providing a clear example of how
+automation can transform the analysis landscape.
+
+% - Was plotastic needed for quick data visualization Visualizations often times
+% requires several attempts to find the best representation of the data. This is
+% especially true for this study here that presents a new methodology for studying
+% myeloma dissemination. This often times involves re-arranging which factors are
+% represented on the x-axis or are color-coded. \texttt{seaborn} already works
+% fine with experimentation by easy changes to facetting, \texttt{plotastic}
+% extends the functionality of \texttt{seaborn} with the \texttt{.switch()}
+% method. However, \texttt{plotastic} was mostly required for its
+% \texttt{multiplots} feature to automate execution multiple \texttt{seaborn}
+% functions with consistent plotting formats across the whole paper in
+% order to display individual datapoints, which is a requirement for many
+% journals.
+
+% - Re-analysis
+% \texttt{plotastic} proved invaluable for re-arranging plots.
+% With graphpad prism, this would have required re-annotating the plots,
+% redoing most of the   analysis pipeline manually every time a change was made.
+
+% However, when re-arranging factors, statistical annotations have to be redone as
+% well. This is where \texttt{plotastic} shines, as it allows for easy re-analysis
+% of the data, without the need to re-calculate the statistical tests and
+% re-annotating them.
+
+% During the peer review process of \citet{kuricModelingMyelomaDissemination2024}, which was necessary for Figure ??.
+% To the author's experience, common tools can cause frustration,
 
 
-\textbf{Intermediate Conclusion:} Together, adhesion studies, especially combined with methodologies that further add dimensions (Cell Cycle profiling),
-explode experimental complexity, which require sophisticated tools for
-high requirements posed by multidimensionality
+% Given the complexity of planned examples, it is clear that a new tool had to be
+% developed, and given the simplicity of \texttt{plotastic}.
+
+% For example, the reproducibility of qPCR has been a long-standing issue in the
+% field \footnotequote{By 2009 it was pretty obvious that many publications using
+%     PCR based methods were seriously flawed
+% }{bustinReproducibilityBiomedicalResearch2014}. These issues often refer to the
+% analysis method of raw data. The author argues that sophisticated (re-) analysis
+% are highly unattractive for average biomedical researchers, when facing semi-big
+% data, since non-automated data handling does not leave time for applying
+% newest data analysis techniques, let alone hinder a quick re-analysis of the
+% data.
+
+
+\textbf{Intermediate Conclusion:} Together, adhesion studies, especially
+combined with methodologies that further add dimensions (Cell Cycle profiling),
+explode experimental complexity, which require sophisticated tools for high
+requirements posed by multidimensionality.
 
 These requirements were facilitated by \texttt{seaborn} for quick processing of
 intermediate results during method optimizations and by \texttt{plotastic} for
