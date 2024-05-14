@@ -96,8 +96,8 @@ reproducibility~\cite{bustinReproducibilityBiomedicalResearch2014,
       incertiYouStillUsing2019a}. This is further complicated by the complexity
 inherent in multidimensional datasets \cite{krzywinskiMultidimensionalData2013}:
 Modern biosciences describe processes (e.g. cell-adhesion) that are highly
-dependent on multiple experimental parameters (factors), like `time' or `kinds
-of treatments' \cite{reblTimedependentMetabolicActivity2010,
+dependent on multiple experimental parameters (factors), like \textit{`time'} or \textit{`kinds
+of treatments'} \cite{reblTimedependentMetabolicActivity2010,
       mckayCellcellAdhesionMolecules1997}. Manually grouping the data by multiple
 factors (facetting) is challenging and error-prone, especially when the data is
 not structured in a way that is immediately compatible with statistical tests.
@@ -558,11 +558,14 @@ just like in \texttt{seaborn}, since plotastic uses \texttt{matplotlib} as its
 backend. This level of flexibility is unique to \texttt{plotastic}, serving both
 beginners and advanced users.
 
-Annotating statistical results into plots (e.g. *** above barplots) is a key
-requirement in modern biomedical journals and could be key feature why
-researchers choose proprietary software like \textit{GraphPad Prism} over
-other solutions. \texttt{plotastic} automates this process as well, making
-it a strong competitor to other statistical software.
+\textbf{Plot Annotation:} Annotating statistical results into plots (e.g. ***
+above barplots) is a key requirement in modern biomedical journals and could be
+key feature why researchers choose proprietary software like \textit{GraphPad
+Prism} over other solutions. \texttt{plotastic} automates this process as well,
+making it a strong competitor to other statistical software. This is especially
+useful for re-arranging plots, since the statistical annotations are
+automatically updated when the plot is re-drawn. This feature is unique to
+\texttt{plotastic} and could be a key selling point for the software.
 
 
 \textbf{Software Testing:} The development of \texttt{plotastic} adheres to
@@ -605,13 +608,14 @@ expectations of users who prefer a dedicated website for software documentation.
 statistical analysis more accessible to researchers without extensive
 statistical training by intuitively mapping plotting concepts to statistical
 operations. To the author's knowledge, this approach is unique to
-\texttt{plotastic} and has great potential to make statistics easier. Still, the
-software requires responsible and self-critical usage, as emphasized by the
-thorough disclaimer on its GitHub page regarding the software's statistical
-robustness, \cite{kuricMarkur4Plotastic2024}. The disclaimer highlights that
-while \texttt{plotastic} can facilitate gaining practical experience with
-statistics and provide a preliminary analysis, it is not a substitute for
-professional statistical consultation. It is designed to aid users in generating
+\texttt{plotastic} and has great potential to make statistics easier and
+educational for non-statisticians. Still, the software requires responsible and
+self-critical usage, as emphasized by the thorough disclaimer on its GitHub page
+regarding the software's statistical robustness,
+\cite{kuricMarkur4Plotastic2024}. The disclaimer highlights that while
+\texttt{plotastic} can facilitate gaining practical experience with statistics
+and provide a preliminary analysis, it is not a substitute for professional
+statistical consultation. It is designed to aid users in generating
 publication-grade figures and performing statistical tests, provided they have a
 basic understanding of the procedures involved or have their results verified by
 a statistician. To enhance usability for non-statisticians, \texttt{plotastic}

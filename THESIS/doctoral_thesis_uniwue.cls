@@ -332,6 +332,11 @@
 
 
 
+% == Sentence ==========================================================
+% ## Command to nest a sentence with dashes, e.g. for appositives
+\newcommand{\dashedsentence}[1]{--\,#1\,--} % this is a longer dash—
+
+
 % == Math ==============================================================
 % ## Sans-serif font for math environment
 % \sansmath  % !! Can only be called in the document, not in the preamble
@@ -387,6 +392,7 @@
     \forlistloop{\@countlistitems}{\mylist}%
     \forlistloop{\@processitem}{\mylist}%
 }
+
 
 
 % == Statistics =============================================================

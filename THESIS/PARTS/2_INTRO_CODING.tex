@@ -12,12 +12,30 @@ varying adhesion molecule concentrations, demonstrating a time-dependent
 variability that significantly impacts biological interpretations
 \cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997,bolado-carrancioPeriodicPropagatingWaves2020a}.
 
+
 Multidimensional data encompass datasets where multiple \emph{independent
-    variables} (\emph{factors}) interact to influence one or more \emph{dependent variables}
-(\emph{outcomes}). These factors include experimental conditions or measurement
-modalities. These interactions often address multiple hypotheses, making
-it crucial to design analysis strategies that can reveal the true structure and
-value of the data \cite{krzywinskiMultidimensionalData2013}.
+    variables} (here reffered to as \emph{factors}) can influence one
+\emph{dependent variables} (\emph{outcomes}) \cite{krzywinskiMultidimensionalData2013}.
+% Statistically speaking, an experiment assesses if an \emph{independent variable}
+% (here reffered to as \emph{factors}) has an influence on a \emph{dependent
+% variable} (\emph{outcome}), e.g. ``Does \emph{Time} influence \emph{Gene
+% Expression}?'' \cite{motulskyIntuitiveBiostatisticsNonmathematical2018}. 
+In biomedicine, dependent variables are often continuous (intervals or ratios),
+whereas independent variables are often categorical (ordinal or nominal),
+respectively. Categorical variables comprise discrete values called categories
+or \emph{levels}, which are assigned to experimental conditions or measurement
+modalities, for example the factor \textit{`time'} could comprise three
+\linebreak levels: \textit{`\SI{0}{\hour}'}, \textit{`\SI{24}{\hour}'}, and
+\textit{`\SI{48}{\hour}'}. Such setups are attractive, because they are
+compatible with common hypothesis tests, such as ANOVA etc.
+\cite{motulskyIntuitiveBiostatisticsNonmathematical2018}: If the levels of one
+factor are associated with a different outcome, that factor is considered to
+have an influence on the dependent variable. Multiple factors address multiple
+hypotheses, including the influence from each individual factor, but also
+potential interactions between factors. This makes it crucial to design analysis
+strategies that can reveal the true structure and value of the data
+\cite{krzywinskiMultidimensionalData2013}.
+
 
 % TODO: Add examples of multidimensional data in biosciences
 % (put the following examples into discussion? Use one example, rest into discussion?)
@@ -254,9 +272,13 @@ nontransparencies due to \textit{Prism}'s closed-source nature and the common
 journal practice of not requiring detailed methodological transparency in its
 usage, a practice that is common in biostatistics literature
 \cite{gosselinInsufficientTransparencyStatistical2021,
-    localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
+localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
 requires manual data entry and lacks the robustness and automation necessary for
-handling multidimensional or semi-big data.
+handling multidimensional or semi-big data. Although, \textit{GraphPad Prism} is
+compatible \textit{``multiple variable tables''} \dashedsentence{similar to
+long-form tables known from \citet{wickhamTidyData2014}}, but does not
+automatically graph these kinds of tables, but only user specified subsets
+\cite{GraphPadPrism102024}.
 
 Moreover, \textit{Microsoft Excel}, another staple in data processing in
 biomedicine, is notoriously inadequate for handling multidimensional data and
