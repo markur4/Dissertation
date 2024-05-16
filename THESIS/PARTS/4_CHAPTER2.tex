@@ -130,9 +130,9 @@ By integrating robust statistical methodologies within an accessible framework,
 \texttt{plotastic} could to contribute to enhancing the reproducibility of
 research in the biosciences \cite{gomez-cabreroDataIntegrationEra2014}.
 
-\texttt{plotastic} key design feature is centralizing the plot or facetting
+\texttt{plotastic} key design feature is centralizing the facetting
 parameters utilized by \texttt{seaborn} into a \texttt{DataAnalysis} object.
-\texttt{seaborn} uses the parameters \plotparams as arguments for many plotting functions. These
+\texttt{seaborn} uses the parameters \facetparams as arguments for many plotting functions. These
 parameters lay out the structure of the plot, such as which data points are
 shown on the x-axis, what categories are highlighted by color (hue), and how
 data is grouped into separate plots (by columns and/or rows). By centralizing
@@ -641,40 +641,81 @@ applied, and consult professionals to validate their findings, ensuring that
 \cite{sandveTenSimpleRules2013, kuricMarkur4Plotastic2024}.
 
 
+% \textbf{Usability for Non-Programmers:}
+% Despite the advantages of \texttt{plotastic}, its adoption among non-programmers
+% in biomedicine may be challenging due to its reliance on a command-line
+% interface (CLI), which is less intuitive for those accustomed to graphical user
+% interfaces (GUIs). However, the integration of advanced artificial intelligence
+% technologies, such as ChatGPT, presents a compelling case for embracing CLI.
+% Unlike GUIs, CLIs are highly compatible with text-based AI technologies, which
+% can significantly lower the barrier to entry. Recent advancements in AI have
+% demonstrated impressive capabilities in understanding and generating Python
+% code, which can aid researchers in script writing, debugging, and data analysis
+% \cite{arefinUnmaskingGiantComprehensive2023, qureshiAreChatGPTLarge2023}.
+
+% The application of AI in this context transforms the CLI into a more dynamic and
+% accessible tool, providing real-time assistance that can adapt to the user's
+% needs, from correcting code errors to suggesting optimal data analysis
+% approaches. This potential makes CLI a powerful interface for future scientific
+% software, aligning with predictions that programming languages will become more
+% 'human-like' and accessible to a broader audience
+% \cite{kelleherNVIDIACEOThis2024}.
+
+% However, the practical application of AI in enhancing CLI usability in
+% biomedicine remains in its early stages, and empirical evidence is needed to
+% validate these benefits fully. Researchers must approach AI tools with caution,
+% ensuring they have a foundational understanding of the underlying processes to
+% avoid misuse and ensure reliable results
+% \cite{ordakChatGPTSkillsStatistical2023}. The integration of \texttt{plotastic}
+% with AI-driven CLI tools represents a promising frontier in biomedical research
+% that could redefine how researchers interact with data analysis software.
+
+
 
 \textbf{Usability for Non-Programmers:}
-Most biomedical researchers prefer software with a graphical user interface
-(GUI) and are not confident in using a command-line interface (CLI), suggesting
-a low adoption rate for \texttt{plotastic} among non-bioinformaticians. However,
-the dawn of Artificial intelligence provides a powerful argument for
-non-programmers to give CLIs a chance: GUIs are not compatible with ChatGPT,
-whereas code is. In fact, both ChatGPT-3.5 and -4 show impressive performance in
-python \cite{arefinUnmaskingGiantComprehensive2023}. This is a game changer,
-since researchers can now use similair tools as programmers and are only limited
-by their methodological expertise to formulate a correct prompt
+% Most biomedical researchers prefer software with a graphical user interface
+% (GUI) and are not confident in using a command-line interface (CLI), suggesting
+% a low adoption rate for \texttt{plotastic} among non-bioinformaticians. However,
+% the dawn of Artificial intelligence provides a powerful argument for
+% non-programmers to give CLIs a chance: 
+Despite the advantages of \texttt{plotastic}, its adoption among non-programmers
+in biomedicine may be challenging due to its reliance on a command-line
+interface (CLI), which is less intuitive for those accustomed to graphical user
+interfaces (GUIs). However, the integration of advanced artificial intelligence
+technologies, such as ChatGPT, presents a compelling case for embracing CLI.
+
+Unlike GUIs, CLIs are highly compatible with text-based AI technologies, which
+can significantly lower the barrier to entry. In fact, both ChatGPT-3.5 and -4
+demonstrate impressive performance in python
+\cite{arefinUnmaskingGiantComprehensive2023}. This is a game changer, since
+researchers can now use similair tools as programmers and are only limited by
+their methodological expertise to formulate a correct prompt
 \cite{qureshiAreChatGPTLarge2023}\footnotequote{You can now recognize and learn
 the language of almost anything with structure, and you can translate it to
 anything with structure — so text-protein, protein-text. [...] Everybody is a
 programmer, and the programming language of the future is called
-‘human.’}{kelleherNVIDIACEOThis2024}. Concretely, when a software is not working
-as intended, users of a GUI are likely to be stuck without help or further
-research. Users of a CLI however, can use ChatGPT to ask for code-corrections,
-implementations of new features (e.g. editing a plot), explanations of the code
-line-by-line, but also for advice on how to proceed with a statistical analysis
-with their specific data and needs in mind. Still, ChatGPT requires responsible
-use, as ChatGPT-4, is not sufficient as a standalone tool for statistical
-analysis \cite{ordakChatGPTSkillsStatistical2023}. It is important to note that
-\texttt{plotastic} is not yet known to ChatGPT, but could be included in future
-versions, depending on the popularity of \texttt{plotastic}.
-% But overall, the potential of ChatGPT to
-% revolutionize biomedical research has been recognized, and \texttt{plotastic} is
-% compatible with that revolution \cite{ruksakulpiwatUsingChatGPTMedical2023}. 
+`human.'}{kelleherNVIDIACEOThis2024}. For instance, when a software is not
+working as intended, users of a GUI are likely to be stuck without help or
+further research. Users of a CLI however, could utilize ChatGPT to ask for
+code-corrections or explanations of the code line-by-line, but also for advice
+on how to proceed with a statistical analysis and how to implement new features
+(e.g. editing a plot). Attempts to integrate AI into GUIs however have proven
+challenging \cite{gaoASSISTGUITaskOrientedDesktop2024}. 
 
-Together, the transition to a new data analysis ssoftware, especially one
+Still, ChatGPT requires responsible use, as it is not sufficient as a standalone
+tool for statistical analysis \cite{ordakChatGPTSkillsStatistical2023}. It
+should also be noted that \texttt{plotastic} is not yet known to ChatGPT, but
+could be included in future versions, depending on the popularity of
+\texttt{plotastic}.
+
+Overall, the transition to a new data analysis software, especially one
 that incorporates coding, presents a learning curve. However, the advantages of
 plotastic in terms of analytical clarity, speed, and depth are anticipated to
 outweigh these initial challenges.
 
+% But overall, the potential of ChatGPT to
+% revolutionize biomedical research has been recognized, and \texttt{plotastic} is
+% compatible with that revolution \cite{ruksakulpiwatUsingChatGPTMedical2023}. 
 
 
 

@@ -105,6 +105,11 @@
 \usepackage{xspace} % > For adding spaces after commands
 \usepackage{xstring} % > For string processing
 
+% == Items
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+
 % == Special Formats: Math, Units, etc. ================================
 \usepackage{amsmath}  % > Enhances math handling in LaTeX
 \usepackage{siunitx} % > For units
@@ -330,8 +335,8 @@
 \newcommand{\nMAandCM}{\mbox{(nMA\,\&\,CM)}\xspace}
 \newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
 
-\newcommand{\plotparams}{\texttt{y},\,\texttt{x},\,\texttt{hue},\,%
-\texttt{row},\,\texttt{col}\xspace}
+\newcommand{\facetparams}{\texttt{x},\,\texttt{hue},\,%
+\texttt{col},\,\texttt{row}\xspace}
 
 
 % == Sentence ==========================================================

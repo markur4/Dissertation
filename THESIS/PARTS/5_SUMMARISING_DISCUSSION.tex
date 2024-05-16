@@ -355,11 +355,12 @@ method optimizations and validation.
 The concept of agility in laboratory research, inspired by the Agile Manifesto's
 principle of \emph{``Responding to change over following a plan''}
 \cite{ManifestoAgileSoftware2001}, is increasingly relevant in biomedical
-research \cite{westReinventingResearchAgile2018,quanbeckApplyingConceptsRapid2022}. This adaptive approach was
-particularly crucial during the development of the V-Well adhesion assay in this
-study. Semi-automation using python significantly enhanced this agility,
-allowing rapid statistical testing and visualization of data, which would have
-taken considerably longer if done manually. This capability enabled real-time
+research \cite{westReinventingResearchAgile2018,
+    quanbeckApplyingConceptsRapid2022}. This adaptive approach was particularly
+crucial during the development of the V-Well adhesion assay in this study.
+Semi-automation using python significantly enhanced this agility, allowing rapid
+statistical testing and visualization of data, which would have taken
+considerably longer if done manually. This capability enabled real-time
 adjustments to the experimental technique during live microscopy sessions,
 integrating raw data tables directly into Python scripts for immediate analysis.
 Such an agile and adaptive work environment, facilitated by python tools and
@@ -374,349 +375,188 @@ potential impacts on the speed and adaptability of method development in
 biomedical research.
 
 
-% - What is agility in laboratory? Cite the agile manifesto?
-% - THe last part of the agile manifesto of software Development states
-% \emph{`Responding to change over following a plan'} 
-% \cite{ManifestoAgileSoftware2001}.
-% This idea has also gained attraction in biomedical research 
-% \cite{westReinventingResearchAgile2018}.
-% This is especially true for
-% the establishment of new methods in the laboratory.
 
 
 
-% Was plotastic useful for me?
-% - Yes incredibly. I was able to perform the statistical tests and
-% visualize the data in a fraction of the time that I would have needed
-% manually. This allowed me to focus on the interpretation of the results
-% and the writing of the manuscript.
-% There was one particular example during establishing the V-Well adhesion
-% assay,
-% where my analysis was so fast, that I
-% fed raw datatables during microscopy into python scripts and was able to
-% adapt the experimental technique during the experiment. This allows for
-% an agile and adaptive work environment that is not possible with manual
-% analysis and proved invaluable during development of  \textit{in
-%     vitro} methods.
 
 
-% \texttt{seaborn} proved invaluable to cell cycle profiling: Plotting figure ??
-% which is a plot of 3x4 histograms with two histograms above another, that itself
-% required one line code. This made plotting of very complex data extremely simple
-
-% However, this work has not documented and quantified the benefits of
-% semi-automation at all, yet still the author wishes to share this experience.
-% Research is needed to assess the true impact of semi-automated analysis on the
-% agility of establishing new \textit{in vitro} methods.
-
-
-\textbf{Re-Designing, Re-Analysis and Re-Annotation with \texttt{plotastic}:}
-% \textbf{Enhancing Data Visualization Flexibility with \texttt{plotastic}:}
+\unnsubsection{\texttt{plotastic} Exceled in Re-Doing Statistical Analyses and Plots}%
+\label{sec:discussion_plotastic}%
 Establishing new methods of \textit{in vitro} dissemination required not just
 innovative experimental protocols, but also adaptive ways to visually present
 complex data. This need for adaptability is crucial during the publication
 process, where researchers must often experiment with different ways to visually
 represent their findings to best convey their significance. This process
-typically involves frequent adjustments to how data is displayed in
-plots—changes that can be cumbersome with traditional tools, even reaching the
-limits of Python packages like \textit{seaborn}.
+typically involves frequent adjustments to how data is displayed in plots. Such
+adjustments become especially cumbersome when subsequent adjustments are
+involved. Traditional tools (\textit{Microsoft Excel} or \textit{Graphpad
+    Prism}) fail at handling semi-big data, while Python packages like
+\textit{seaborn} reach their limits in terms of adaptability, making the
+development of \texttt{plotastic} a critical step in this work.
 
 \texttt{plotastic} addresses these challenges by not only automating statistics,
-but to enhance the flexibility of data visualization as well, making it easier
-to modify how data is presented without repetitive manual adjustments. Its key
-design feature is the centralized storage of plot parameters (\plotparams), such as which data
-points are shown on the x-axis, what categories are highlighted by color (\texttt{hue}),
-and how data is grouped into separate plots (by columns and/or rows) into
-separate plots. This centralization means that once these parameters are set,
-they not only automate statistical analysis, but also can be automatically
-applied across all subsequent adjustments made to the plot. These subsequent
-adjustment include four tasks that can be inefficient for repeated re-design
-using Python alone:
-\begin{itemize}
-    \item {Plotting multiple layers}
+but also by enhancing the adaptability of data visualization as well, making it
+easier to modify how data is presented without repetitive manual adjustments.
+The author saw four key steps that required streamlining through \texttt{plotastic}:
+\begin{enumerate}
     \item {Re-arranging facets}
-    \item {Statistical annotations}
-    \item {Fine-Tuning for publication quality}
-\end{itemize}
+    \item {Plotting multiple layers of different plot types}
+    \item {Statistical Re-Analysis and Re-Annotation}
+    \item {Fine-Tuning for publication grade quality}
+\end{enumerate}
 
-multiple plots and statistical analyses
-without needing to redefine them each time. This contrasts with
-\texttt{seaborn}, where changing these parameters typically requires adjusting
-each subsequent edits applied to the plot, such as fine-tuning the visual
-representation or adding statistical annotations using additional code with
-\texttt{matplotlib} and/or \texttt{statannotations}.
+These adjustment steps made re-plotting tedious, since a change in prior steps
+required a complete re-work of following steps, something which
+\texttt{plotastic} prevented. Its key design feature is the centralized
+storage of facetting parameters (\facetparams). These parameters define which
+data points are shown on the x-axis, what categories are highlighted by color
+(\texttt{hue}), and how data is grouped into separate plots (by columns and/or
+rows) into separate plots. This centralization means that once these parameters
+are set, they not only automate statistical analysis, but also can be
+automatically applied across all subsequent adjustments made to the plot. This
+contrasts with \texttt{seaborn}, where changing these parameters
+required adjusting multiple lines of subsequent code.
 
-For instance, \texttt{plotastic}'s \texttt{.switch()} method allows researchers
-to easily shift the arrangement of plots \dashedsentence{for example, switching
-    the data represented on the x-axis with that represented by color} to explore
-different perspectives of the data quickly. This is particularly useful when
-trying to find the most effective way to illustrate complex interactions or
-trends that might not be immediately apparent.
+\textbf{Re-arranging Facets:} \texttt{plotastic}'s \texttt{.switch()} method
+allowed for easily shifting the arrangement of plots \dashedsentence{for
+    example, switching the data represented on the x-axis with that represented by
+    color} to explore different perspectives of the data quickly. This proved
+particularly useful when trying to find the most effective way to illustrate
+complex interactions or trends that might not be immediately apparent. In
+\texttt{seaborn}, changing facets is easy and proved useful during
+intermediate data analysis, but unfeasable when plots involved multiple
+layers, sophisticated style edits or statistical annotations, as this can
+require re-writing subsequent adjustments.
 
-\texttt{plotastic} simplifies the creation of publication-quality
-figures by automating style adjustments that are typically manually coded with
+
+\textbf{Plotting Multiple Layers of Different Plot Types:}
+Modern journal standards increasingly demand the representation of individual
+datapoints alongside aggregated data, for example plotting datapoints above a
+bar- or boxplots. \texttt{seaborn} does not automate this, but can require
+calling two plotting functions in sequence, e.g. \texttt{sns.boxplot()} followed
+by \texttt{sns.swarmplot()}. This can be can get repetitive, as adjusting the
+style of these plots to match each other, e.g. defining the point
+    size or transparency of individual data points to fit into a barplot.
+\texttt{plotastic} was designed for multi-layered plotting, offering single-line
+functions for plot combinations with pre-configured style-parameters.
+
+\textbf{Statistical Re-Analysis and Re-Annotation}
+To the author's knowledge, \texttt{plotastic}'s capability of streamlining
+statistical re-analysis is unique and unmatched. \texttt{seaborn} alone can not
+perform this without multiple lines of \texttt{statannotations}
+\cite{charlierTrevismdStatannotationsV02022}. \texttt{plotastic} automates the
+inclusion of statistical annotations directly into plots. This is a significant
+enhancement because it ensures that any statistical significance noted in the
+data is immediately visible and correctly updated whenever the data presentation
+is changed. This feature proved particularly useful during the peer review
+process of \citet{kuricModelingMyelomaDissemination2024}, where a reviewer asked
+for a complete statistical analysis of Chapter\,1\,\ref{fig:5}\,D, which at that
+time included only paired t-tests between selected groups.
+
+\textbf{Fine-Tuning for Publication Grade Quality:}
+\texttt{plotastic} simplified the creation of publication-quality figures by
+automating style adjustments that are typically manually coded with
 \texttt{matplotlib} when using \texttt{seaborn}. These include adjustments like
 angled x-axis labels or consistent visual styles across multiple figures, which
 are important for maintaining the professional appearance of published data.
 
-Moreover, \texttt{plotastic} extends the functionality of \texttt{seaborn} by
-automating the inclusion of statistical annotations directly into plots. This is
-a significant enhancement because it ensures that any statistical significance
-noted in the data is immediately visible and correctly updated whenever the data
-presentation is changed. This feature is invaluable during the peer review
-process, where researchers may need to adjust their figures to meet reviewer
-demands or clarify their findings. For this work in particular, reviewer comments
-required extensive restructuring of Chapter\,1\,\autoref{fig:4} and \ref{fig:5}
-during the publication of \citet{kuricModelingMyelomaDissemination2024}.
 
-a task that can be labor-intensive with tools
-like \textit{GraphPad Prism}, which require manual re-annotation and recalculating of
-statistics with each change.
-
-was pivotal during the
-
-
-By significantly reducing the manual effort required to reconfigure and
-reanalyze data visualizations, \texttt{plotastic} not only saves time but also
-enhances the clarity and communicative power of research findings. This makes it
-an essential tool for researchers, particularly those developing new
-methodologies in fields like myeloma dissemination, where clear and accurate
-data presentation is critical for advancing understanding and treatment
-strategies.
+\textbf{Outlook: Could \texttt{plotastic} Address a Re-Analysis Bottleneck?}
+Re-analysis and re-plotting are often overlooked as bottlenecks in the
+reproducibility of scientific research. This challenge is exemplified in the
+field of quantitative PCR (qPCR), where reproducibility issues have been
+notoriously prevalent. As \citet{bustinReproducibilityBiomedicalResearch2014}
+noted, many publications using PCR-based methods have been seriously flawed,
+underscoring the need for updated approaches
+\cite{bustinNeedTransparencyGood2013, ruiz-villalbaUseMisuseCq2021}.
+Furthermore, the evolution of the $\Delta\Delta$Ct formula over recent years
+highlights the dynamic nature of data analysis standards in biomedicine
+\cite{pfafflNewMathematicalModel2001a,
+ramakersAssumptionfreeAnalysisQuantitative2003,
+ruijterEfficiencyCorrectionRequired2021}. Despite these challenges, current data
+analysis infrastructures seldom facilitate the complete redoing of figures,
+which could hamper efforts to re-analyse and apply the latest techniques to
+existing datasets. In response, \texttt{plotastic} was specifically designed to
+streamline the reconfiguration and reanalysis of data visualizations. This work
+serves as a case study showing that \dashedsentence{according to the author's
+experiences} the manual effort involved was effectively reduced, making the task
+of re-analysis seem a lot more inviting, especially for handling semi-big data.
 
 
 
 
-% The establishment of new methodologies for studying myeloma dissemination
-% necessitates developing new protocols but also setting new standards for data
-% visualization to optimally present novel data types in publications. This often
-% involves constant re-arrangement and re-design of plots to discover the most
-% effective data representation. Particularly when handling multiple experimental
-% dimensions, re-arranging plots is frequently required to meet journal standards,
-% which increasingly demand the representation of individual datapoints alongside
-% aggregated data. Key benefit of \texttt{plotastic} over \texttt{seaborn}'s is 
-% maintaining centralized parameters (y, x, hue, col, row) and passing them 
-% for all layers of plots, statistical analyses, and annotations. 
-% This simplifies the re-arrangement of
-
-% This integrated approach not
-% only automates reconfigurations but also standardizes formatting across
-% publications, fulfilling journal requirements for consistent presentation.
-
-% providing a \texttt{.switch()} method, which simplifies the re-arrangement of
-% plots by maintaining centralized parameters (y, x, hue, col, row) for all layers
-% of plots, statistical analyses, and annotations. 
-% This integrated approach not
-% only automates reconfigurations but also standardizes formatting across
-% publications, fulfilling journal requirements for consistent presentation.
-
-% Moreover, \texttt{plotastic}'s \texttt{Multiplots} feature efficiently combines
-% multiple plots to display individual datapoints, reducing the need to manually
-% reconfigure \texttt{seaborn} code or to adjust fine details using
-% \texttt{matplotlib}, such as angled x-axis labels. The software significantly
-% streamlines the process of making iterative adjustments during peer review, as
-% experienced with \citet{kuricModelingMyelomaDissemination2024}, where rapid plot
-% and statistical annotation adjustments were essential. The ability of
-% \texttt{plotastic} to facilitate quick re-analysis and re-annotation of data
-% without recalculating statistical tests exemplifies its value, particularly when
-% compared to tools like GraphPad Prism, which often require extensive manual
-% intervention for similar changes. This capability underscores
-% \texttt{plotastic}'s role in addressing long-standing issues in the field, such
-% as the reproducibility challenges in qPCR analysis, by enabling sophisticated
-% re-analysis that is approachable for researchers handling semi-big data
-% \cite{bustinReproducibilityBiomedicalResearch2014}. \texttt{plotastic}'s
-% innovative features markedly improved the efficiency and clarity of presenting
-% complex data, demonstrating its critical impact in the development and
-% publication of new methodologies for studying myeloma dissemination.
 
 
+\unnsubsection{Conclusion 1: Demonstrating the Advantages of Semi-Automation in
+Biomedical Research Methodologies}%
+\label{sec:discussion_comprehensive_conclusion_semi_automation}%
+This thesis illustrates the challenges and solutions associated with managing
+the inherent complexity of adhesion studies and related methodologies, such as
+Cell Cycle profiling. These methodologies necessitate sophisticated data
+handling tools to address two primary challenges: (1) the multidimensionality of
+semi-big data and (2) the rapid iterative loop of results evaluation and protocol
+adjustments, a process for which \textit{in vitro} methods are valued.
 
+\texttt{seaborn} and \texttt{plotastic} have been instrumental in addressing
+these challenges. \texttt{seaborn} facilitated the rapid processing of
+intermediate results during method development, while \texttt{plotastic} was
+crucial for crafting publication-grade analyses and figures, filling in the
+capabilities that \texttt{seaborn} lacks. This includes facilitating the easy
+(re-)design of visualizations and statistical analyses, which are critical for
+late-stage data processing.
 
-% - Required flexibility in publication process:
-% - new methods not only require new protocols, but establishing a new standard for 
-% visualization of new types of data, 
-% - we want the best way possible to present data in publication.
-% - this requires constant re-arrangement and re-design of plots to find good way to represent the data
-% - WHen handling at least three experimental dimensions, re-arranging plots is
-% done repeatedly
-% - Requirements of journals are raising. One requirement is the representation of individual 
-% datapoints alongside aggregation. 
-% -something where
-% \texttt{seaborn} works through facetting function, but lacks features that plotastic 
-% fills in:
-% - plotastic benefits from centralized saving of y,x,hue,col,row, passing these parameters
-% not just to all layers of plots, but also to statistical analyses and annotations.
-% - seaborn requires multiple lines of code to add multiple plots together
-% - seaborn also needs to be fine-edited via matplotlib to get publication-grade figures (e.g. angled x-axis labels)
-% - without this, such re-arrangement require the re-configuration of multiple lines of not just seaborn code
-% - seaborn plots are often fine-formatted (like angled x-axis labels, etc.) via matplotlib
-% - lotastic also automates these fine-edits to get publication-grade figures in just a few lines
-% - plotastic has re-designed the way multiple plots (\texttt{Multiplots}) are combined together 
-% in order to display individual datapoints 
-% - Plotastic adds a .switch() method that allows for easy re-arrangement of plots, passing 
-% y,x,hue,col,row, parameters to all subsequent fine-edits, automating the process.
+Though this work does not provide empirical evidence quantifying the benefits of
+semi-automation, it serves as a practical case study demonstrating the
+transformative potential of such technologies in biomedical research. The
+integration of semi-automation tools streamlined complex \textit{in vitro}
+methodologies, significantly enhancing operational agility. This case study
+bridges biomedical research with bioinformatics, highlighting how
+semi-automation can reduce data analysis workloads and enable researchers to
+focus more on exploratory research within the laboratory setting.
 
-% Another requirement from journals are consistent formatting across the whole publication
-% - Seaborn allows defining of consistent styles, but plotastic adds another layer of control
-% and automation whenever seaborn's functionality was not sufficient.
-% Such plots also have to follow a consistent formatting across the whole publication
+To the author's experience, the gained efficiencies not only saved valuable time
+but also enhanced the clarity and communicative power of the research findings.
+This is particularly crucial in fields like myeloma dissemination, where precise
+and transparent data presentation is essential for advancing understanding and
+treatment strategies. This conclusion suggests a need for further empirical
+research to validate these benefits more broadly and encourage wider adoption of
+semi-automation tools in biomedical research.
+
+However, adopting \texttt{plotastic} poses its own set of challenges,
+particularly in the realm of biomedicine where researchers may prefer graphical
+user interfaces (GUIs) over command-line interfaces (CLIs). While
+\texttt{plotastic} offers a powerful CLI that is efficient and capable of
+handling complex data manipulation and visualization tasks, the transition from
+GUIs to CLIs can be intimidating for those accustomed to more visual interaction
+with software. This barrier can be mitigated by the integration of tools like
+ChatGPT, which can facilitate the use of CLIs by offering context understanding,
+code assistance, and error identification.
 
 
 
-% Another requirement from journals are thorough and clear statistical annotations
-% - Plotastic allows for easy re-analysis of the data, without the need to re-calculate the statistical tests and re-annotating them into the plot.
+% % ======================================================================
 
-% - The author's experience with common tools like GraphPad Prism, which would have required re-annotating the plots, redoing most of the analysis pipeline manually every time a change was made.
-% - This is where plotastic shines, as it allows for easy re-analysis of the data, without the need to re-calculate the statistical tests and re-annotating them.
+% \unnsubsection{Challenges of Integrating \texttt{plotastic} into Biomedicine}
+% \label{sec:challenges_plotastic_cancer}
+% Although \texttt{plotastic} is designed for the overall scientific community and
+% has passed peer-review, time will tell if the single author's vision of an
+% optimized automated statistical workflow can be extrapolated to biomedicine. The
+% author's himself continues to use \texttt{plotastic} in future projects that
+% require visualizing single datapoints and statistical rigor.
 
-% - It facilitates the rapid
-% reconfiguration of plots and statistical annotations without the need to
-% manually redo the analysis pipeline—this adaptability was pivotal during the
-% peer review of \citet{kuricModelingMyelomaDissemination2024}, where adjustments
-% were necessary for Chapter\,1\,\autoref{fig:4} and \ref{fig:5}
-% Re-analysis is a common problem in the field, 
-% this could extend to biomedicine in general For example, the reproducibility of
-% qPCR has been a long-standing issue in the field \footnotequote{By 2009 it was
-% pretty obvious that many publications using PCR based methods were seriously
-% flawed }{bustinReproducibilityBiomedicalResearch2014}
-% \cite{bustinReproducibilityBiomedicalResearch2014}. These issues often refer to
-% the analysis method of raw data. The author argues that sophisticated (re-)
-% analysis are highly unattractive for average biomedical researchers, when facing
-% semi-big data, since non-automated data handling does not leave time for
-% applying newest data analysis techniques, let alone hinder a quick re-analysis
-% of the data.
-
-
-
-% This shows how plotastic extended seaborn in the author's work, and how it was
-% necessary for the publication of the work  that consists of novel methodologies
-% for studying myeloma dissemination.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% The development of new methodologies for studying myeloma dissemination
-% necessitated frequent adjustments in data presentation, making
-% \texttt{plotastic} an essential tool for rapid visualization and iterative
-% analysis. The ability to swiftly rearrange data visualizations
-% \dashedsentence{adjusting factors represented on the x-axis or altering color
-% codes} is crucial, especially when exploring novel research methodologies.
-% \texttt{plotastic} enhances \texttt{seaborn}'s existing functionalities with
-% features like the \texttt{.switch()} method, simplifying the exploration of
-% different plot structures through switching factors through \texttt{seaborn}'s
-% facetting parameters (\texttt{hue}, \texttt{row}, \texttt{col}, etc.). Its
-% \texttt{multiplots} feature is particularly valuable, enabling the automation of
-% multiple \texttt{seaborn} functions to maintain consistent plotting formats
-% throughout the publication, a critical requirement for many journals.
-
-% Re-analysis processes, often cumbersome with traditional software like \textit{GraphPad
-%     Prism}, are streamlined with \texttt{plotastic}. It facilitates the rapid
-% reconfiguration of plots and statistical annotations without the need to
-% manually redo the analysis pipeline—this adaptability was pivotal during the
-% peer review of \citet{kuricModelingMyelomaDissemination2024}, where adjustments
-% were necessary for Chapter\,1\,\autoref{fig:4} and \ref{fig:5}. This capability underscores \texttt{plotastic}'s
-% role in enhancing the reproducibility and flexibility of data analysis,
-% addressing a long-standing issue in the field where the complexity of data often
-% discourages the application of sophisticated analytical techniques
-% \cite{bustinReproducibilityBiomedicalResearch2014}. \texttt{plotastic}'s
-% simplicity and efficiency in handling semi-big data exemplify its necessity and
-% effectiveness in modern biomedical research, providing a clear example of how
-% automation can transform the analysis landscape.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% - Was plotastic needed for quick data visualization Visualizations often times
-% requires several attempts to find the best representation of the data. This is
-% especially true for this study here that presents a new methodology for studying
-% myeloma dissemination. This often times involves re-arranging which factors are
-% represented on the x-axis or are color-coded. \texttt{seaborn} already works
-% fine with experimentation by easy changes to facetting, \texttt{plotastic}
-% extends the functionality of \texttt{seaborn} with the \texttt{.switch()}
-% method. 
-
-% However, \texttt{plotastic} was mostly required for its
-% \texttt{multiplots} feature to automate execution multiple \texttt{seaborn}
-% functions with consistent plotting formats across the whole paper in
-% order to display individual datapoints, which is a requirement for many
-% journals.
-
-% - Re-analysis
-% \texttt{plotastic} proved invaluable for re-arranging plots.
-% With graphpad prism, this would have required re-annotating the plots,
-% redoing most of the   analysis pipeline manually every time a change was made.
-
-% However, when re-arranging factors, statistical annotations have to be redone as
-% well. This is where \texttt{plotastic} shines, as it allows for easy re-analysis
-% of the data, without the need to re-calculate the statistical tests and
-% re-annotating them.
-
-% During the peer review process of \citet{kuricModelingMyelomaDissemination2024}, which was necessary for Figure ??.
-% To the author's experience, common tools can cause frustration,
-
-
-% Given the complexity of planned examples, it is clear that a new tool had to be
-% developed, and given the simplicity of \texttt{plotastic}.
-
-% For example, the reproducibility of qPCR has been a long-standing issue in the
-% field \footnotequote{By 2009 it was pretty obvious that many publications using
-%     PCR based methods were seriously flawed
-% }{bustinReproducibilityBiomedicalResearch2014}. These issues often refer to the
-% analysis method of raw data. The author argues that sophisticated (re-) analysis
-% are highly unattractive for average biomedical researchers, when facing semi-big
-% data, since non-automated data handling does not leave time for applying
-% newest data analysis techniques, let alone hinder a quick re-analysis of the
-% data.
-
-
-\textbf{Intermediate Conclusion:} Together, adhesion studies, especially
-combined with methodologies that further add dimensions (Cell Cycle profiling),
-explode experimental complexity, which require sophisticated tools for high
-requirements posed by multidimensionality.
-
-Combining this with the speed of the in vitro feedback loop of acquiring quick results,
-evaluating results, adjusting the protocol, try again, repeat. 
-
-
-These requirements were facilitated by \texttt{seaborn} for quick processing of
-intermediate results during method optimizations and by \texttt{plotastic} for
-designing publication-grade analyses and figures. Developing \texttt{plotastic}
-was mostly a necessity that arose from late-stage data processing (statistics,
-and publication figures), filling \texttt{seaborn}'s shortcomings, but also
-ensured standards for consistent plot formatting and statistical analysis. The
-author lays emphasis on \texttt{plotastic} as an infrastructure for quick and
-confident re-structuring of publication figures that include statistical
-annotations, especially during his peer-review process.
-
-% To the author's experience, this can cause great frustration,
-% hence, 
-
-% The author wishes to share that experience that he deems valuable for the general scientific community.
-
-
-
-% ======================================================================
-
-\unnsubsection{Challenges of Integrating \texttt{plotastic} into Biomedicine}
-\label{sec:challenges_plotastic_cancer}
-Although \texttt{plotastic} is designed for the overall scientific community and
-has passed peer-review, time will tell if the single author's vision of an
-optimized automated statistical workflow can be extrapolated to biomedicine. The
-author's himself continues to use \texttt{plotastic} in future projects that
-require visualizing single datapoints and statistical rigor.
-
-For biomedicine overall, the author sees the greatest challenge in adopting
-\texttt{plotastic} since it is a tool based on a command line interface (CLI),
-whereas the majority of biologists prefer graphical user interfaces (GUI). The
-author argues that a CLI can perform everything that a GUI can, but better,
-faster, and more efficiently, provided that one is willing to undergo the
-switch, which can be intimidating. However, many python tools already provide
-extremely easy commands (e.g. \texttt{seaborn}), and \texttt{plotastic} further
-lowers the barrier to entry. The author also argues that ChatGPT is a strong
-argument to switch to CLI, since large language models are highly compatible
-with text, which is the main format of CLIs. This allows for understanding
-context, providing code drafts, identifying errors, adding and changing
-analyses, autocompletion of repetitive commands, follow-up questions and many
-more.
+% For biomedicine overall, the author sees the greatest challenge in adopting
+% \texttt{plotastic} since it is a tool based on a command line interface (CLI),
+% whereas the majority of biologists prefer graphical user interfaces (GUI). The
+% author argues that a CLI can perform everything that a GUI can, but better,
+% faster, and more efficiently, provided that one is willing to undergo the
+% switch, which can be intimidating. However, many python tools already provide
+% extremely easy commands (e.g. \texttt{seaborn}), and \texttt{plotastic} further
+% lowers the barrier to entry. The author also argues that ChatGPT is a strong
+% argument to switch to CLI, since large language models are highly compatible
+% with text, which is the main format of CLIs. This allows for understanding
+% context, providing code drafts, identifying errors, adding and changing
+% analyses, autocompletion of repetitive commands, follow-up questions and many
+% more.
 
 
 
