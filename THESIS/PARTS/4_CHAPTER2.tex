@@ -130,6 +130,17 @@ By integrating robust statistical methodologies within an accessible framework,
 \texttt{plotastic} could to contribute to enhancing the reproducibility of
 research in the biosciences \cite{gomez-cabreroDataIntegrationEra2014}.
 
+\texttt{plotastic} key design feature is centralizing the plot or facetting
+parameters utilized by \texttt{seaborn} into a \texttt{DataAnalysis} object.
+\texttt{seaborn} uses the parameters \plotparams as arguments for many plotting functions. These
+parameters lay out the structure of the plot, such as which data points are
+shown on the x-axis, what categories are highlighted by color (hue), and how
+data is grouped into separate plots (by columns and/or rows). By centralizing
+these parameters, \texttt{plotastic} ensures that all subsequent analysis steps
+do not require the user to re-specify these parameters, automating not only
+statistical analysis, but also all edits applied to the plot, such as
+$p$-value annotations. 
+
 \pagebreak
 
 The user-centric approach of \texttt{plotastic} distinguishes itself from the

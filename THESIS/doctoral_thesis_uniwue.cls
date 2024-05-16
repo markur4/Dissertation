@@ -330,6 +330,8 @@
 \newcommand{\nMAandCM}{\mbox{(nMA\,\&\,CM)}\xspace}
 \newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
 
+\newcommand{\plotparams}{\texttt{y},\,\texttt{x},\,\texttt{hue},\,%
+\texttt{row},\,\texttt{col}\xspace}
 
 
 % == Sentence ==========================================================
