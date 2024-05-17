@@ -20,11 +20,12 @@
 \documentclass[12pt]{doctoral_thesis_uniwue} 
 
 % :: Include only one part to work on for quicker compilation
+% \includeonly{PARTS/1_SUMMARY}
 % \includeonly{PARTS/2_INTRO_CANCER}
 % \includeonly{PARTS/2_INTRO_CODING}
 % \includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/4_CHAPTER2}
-% \includeonly{PARTS/5_SUMMARISING_DISCUSSION}
+\includeonly{PARTS/5_SUMMARISING_DISCUSSION}
 % \includeonly{PARTS/6_APPENDIX_CHAPTER1_FIGURES}
 % \includeonly{PARTS/6_APPENDIX_CHAPTER1_TABLES}
 % \includeonly{PARTS/6_APPENDIX_CHAPTER1_METHODS}
@@ -57,7 +58,7 @@
 
 % == Abstract ==========================================================
 % > Include ABSTRACT.tex
-\include{PARTS/1_ABSTRACT}
+\include{PARTS/1_SUMMARY}
 \newpage
 
 
@@ -99,7 +100,7 @@ This project defines these aims:
 \begin{itemize}
     \item Characterize the interaction between myeloma cells and mesenchymal stromal cells
     \item Develop methods
-    \item Face the challenge of time-dependent cell adhesion through 
+    \item Face the challenge of time-dependent cell adhesion through
     \item Provide tools to analyze multidimensional cell adhesion data
 
 \end{itemize}
@@ -181,7 +182,7 @@ This project defines these aims:
     % == Chapter 2 Supplementary =======================================
     \section{Documentation of \texttt{plotastic}}\label{apdx:plotastic_docs}
     \resetcounters % > Reset fig and tab counter
-    
+
     \include{PARTS/7_APPENDIX_CHAPTER2}
     \newpage
 

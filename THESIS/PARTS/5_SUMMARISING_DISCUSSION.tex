@@ -276,7 +276,7 @@ semi-automated data analysis tools. These novel methods introduced complexities
 that span multiple experimental parameters, making the results multidimensional.
 This demanded precise, efficient and standardized data handling capabilities
 which were facilitated by Python tools like \texttt{seaborn} and
-\texttt{plotastic}.
+\texttt{plotastic} \cite{waskomSeabornStatisticalData2021,kuricPlotasticBridgingPlotting2024}.
 
 
 \textbf{Inherent Multidimensionality of Adhesion Studies:}
@@ -446,7 +446,7 @@ bar- or boxplots. \texttt{seaborn} does not automate this, but can require
 calling two plotting functions in sequence, e.g. \texttt{sns.boxplot()} followed
 by \texttt{sns.swarmplot()}. This can be can get repetitive, as adjusting the
 style of these plots to match each other, e.g. defining the point
-    size or transparency of individual data points to fit into a barplot.
+size or transparency of individual data points to fit into a barplot.
 \texttt{plotastic} was designed for multi-layered plotting, offering single-line
 functions for plot combinations with pre-configured style-parameters.
 
@@ -472,25 +472,32 @@ are important for maintaining the professional appearance of published data.
 
 
 \textbf{Outlook: Could \texttt{plotastic} Address a Re-Analysis Bottleneck?}
-Re-analysis and re-plotting are often overlooked as bottlenecks in the
-reproducibility of scientific research. This challenge is exemplified in the
-field of quantitative PCR (qPCR), where reproducibility issues have been
-notoriously prevalent. As \citet{bustinReproducibilityBiomedicalResearch2014}
-noted, many publications using PCR-based methods have been seriously flawed,
-underscoring the need for updated approaches
-\cite{bustinNeedTransparencyGood2013, ruiz-villalbaUseMisuseCq2021}.
-Furthermore, the evolution of the $\Delta\Delta$Ct formula over recent years
-highlights the dynamic nature of data analysis standards in biomedicine
-\cite{pfafflNewMathematicalModel2001a,
+Re-doing analyses and plots is often overlooked bottlenecks in the
+reproducibility of scientific research, although it does overlap with two
+principles of the FAIR-guidelines for scientific data management and
+stewardship: Interoperability\footnotequote{Interoperability\,—\,the ability of
+data or tools from non-cooperating resources to integrate or work together with
+minimal effort.}{wilkinsonFAIRGuidingPrinciples2016} and Re-Usability
+\cite{wilkinsonFAIRGuidingPrinciples2016}. This challenge was exemplified during
+this work's experiments using RT-qPCR. The field of qPCR, where reproducibility
+issues have been notoriously prevalent. As
+\citet{bustinReproducibilityBiomedicalResearch2014} noted, many publications
+using PCR-based methods have been seriously flawed, underscoring the need for
+updated approaches \cite{bustinNeedTransparencyGood2013,
+ruiz-villalbaUseMisuseCq2021}. Furthermore, the evolution of the
+$\Delta\Delta$Ct formula over recent years highlights the dynamic nature of data
+analysis standards in biomedicine \cite{pfafflNewMathematicalModel2001a,
 ramakersAssumptionfreeAnalysisQuantitative2003,
 ruijterEfficiencyCorrectionRequired2021}. Despite these challenges, current data
-analysis infrastructures seldom facilitate the complete redoing of figures,
-which could hamper efforts to re-analyse and apply the latest techniques to
-existing datasets. In response, \texttt{plotastic} was specifically designed to
-streamline the reconfiguration and reanalysis of data visualizations. This work
-serves as a case study showing that \dashedsentence{according to the author's
-experiences} the manual effort involved was effectively reduced, making the task
-of re-analysis seem a lot more inviting, especially for handling semi-big data.
+analysis infrastructures seldom facilitate a smooth revision or complete redoing
+of figures, which could hamper efforts to re-analyse and apply the latest
+techniques to existing datasets, which could be requested e.g. during
+peer-review \cite{wilkinsonFAIRGuidingPrinciples2016}. In response,
+\texttt{plotastic} was specifically designed to streamline the reconfiguration
+and reanalysis of data visualizations. This work serves as a case study showing
+that \dashedsentence{according to the author's experiences} the manual effort
+involved was effectively reduced, making the task of re-analysis seem a lot more
+inviting, especially for handling semi-big data.
 
 
 
@@ -498,7 +505,7 @@ of re-analysis seem a lot more inviting, especially for handling semi-big data.
 
 % ======================================================================
 \unnsubsection{Conclusion 2: Demonstrating the Advantages of Semi-Automation in
-Biomedical Research Methodologies}%
+    Biomedical Research Methodologies}%
 \label{sec:discussion_conclusion_semi_automation}%
 This thesis illustrates the challenges and solutions associated with managing
 the inherent complexity of adhesion studies and related methodologies, such as

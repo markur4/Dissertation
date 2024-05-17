@@ -341,7 +341,7 @@
 
 % == Sentence ==========================================================
 % ## Command to nest a sentence with dashes, e.g. for appositives
-\newcommand{\dashedsentence}[1]{--\,#1\,--} % this is a longer dash—
+\newcommand{\dashedsentence}[1]{—\,#1\,—} % this is a longer dash—
 
 
 % == Math ==============================================================
