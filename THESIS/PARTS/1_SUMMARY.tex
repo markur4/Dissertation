@@ -5,8 +5,8 @@
 % ======================================================================
 
 % ## Treat this like a section
-\addcontentsline{toc}{section}{Summary} % Add to Table of Contents
-\markboth{Summary}{} % > Mark this section for headers
+\addcontentsline{toc}{section}{Summary / Zusammenfassung} % Add to Table of Contents
+\markboth{Summary / Zusammenfassung}{} % > Mark this section for headers
 
 % == from paper ========================================================
 % Abstract 1st paper (AACR):
@@ -46,7 +46,7 @@
 % involving adhesion factors that represent a bone marrow-retentive
 % phenotype with potential clinical relevance.
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Summary 2nd paper (JOSS):
 % plotastic addresses the challenges of transitioning from exploratory
 % data analysis to hypothesis testing in Python’s data science ecosystem.
@@ -91,41 +91,112 @@
 % == English ===========================================================
 \renewcommand{\abstractname}{Summary}
 \begin{abstract}
-    \label{Summary}
-    Lorem Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-    rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-    ipsum
-\end{abstract}
+    \label{Summary}%
+    %
 
-% \customabstract{main:summary}{Summary}{
-%     Lorem Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-%     eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-%     voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-%     clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-%     amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-%     nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-%     sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-%     rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-%     ipsum
-% }
+    % This PhD thesis integrates biomedical research and
+    % data science, focusing on the development of an \textit{in vitro} model for
+    % studying myeloma cell dissemination and the creation of a software tool for
+    % semi-automated analysis of multidimensional datasets. The work addresses
+    % critical challenges in biomedical research, including (1) understanding the
+    % early steps of myeloma dissemination and (2) improving the efficiency of
+    % data analysis, which \dashedsentence{shown in this thesis} represents a
+    % reproducibility bottleneck in biomedical research.
+
+    This PhD thesis integrates biomedical research and data science, focusing on
+    an \textit{in vitro} model for studying myeloma cell dissemination and a
+    Python-based tool, \texttt{plotastic}, for semi-automated analysis of
+    multidimensional datasets. Two major challenges are adressed: (1)
+    understanding the early steps of myeloma dissemination and (2) improving
+    data analysis efficiency to address the complexity- and reproducibility
+    bottlenecks currently present in biomedical research.
+
+    In the experimental component, primary human mesenchymal stromal cells
+    (hMSCs) are co-cultured with INA-6 myeloma cells to study cell
+    proliferation, attachment, and detachment via time-lapse microscopy. Key
+    findings reveal that detachment often follows cell division, predominantly
+    driven by daughter cells. Novel separation techniques were developed to
+    isolate myeloma subpopulations for further characterization by RNAseq, cell
+    viability, and apoptosis assays. Differential expression of adhesion and
+    retention factors upregulated by INA-6 cells correlates with patient
+    survival. Overall, this work provides insights into myeloma dissemination
+    mechanisms and identifies genes that potentially counteract dissemination
+    through adhesion, which could be relevant for the design of new
+    therapeutics.
+
+    To manage complex data, a Python-based software named \texttt{plotastic} was
+    developed that streamlines analysis and visualization of multidimensional
+    datasets. \texttt{plotastic} is built on the idea that statistical analyses
+    are performed based on how the data is visualized. This approach not only
+    simplifies data analysis, but semi-automates analysis in a standardized
+    statistical protocol. The thesis becomes a case study as it reflects on the
+    application of \texttt{plotastic} to the \textit{in vitro} model,
+    demonstrating how the software facilitates rapid adjustments and refinements
+    in data analysis and presentation. Such efficiency is crucial for handling
+    semi-big data transparently, which \dashedsentence{despite being managable}
+    is complex enough to complicate analysis and reproducibility.
+
+    Together, this thesis illustrates the synergy between experimental
+    methodologies and advanced data analysis tools. The \textit{in vitro} model
+    provides a robust platform for studying myeloma dissemination, while
+    \texttt{plotastic} addresses the need for efficient data analysis. Combined,
+    they offer a comprehensive approach to handling complex experiments,
+    advancing both cancer biology and research practices, in support of
+    exploratory and transparent analysis of challenging phenomena.
+\end{abstract}
+\pagebreak
+
 
 % == German ============================================================
 \renewcommand{\abstractname}{Zusammenfassung}
 \begin{abstract}
     \label{Zusammenfassung}
-    Lorem Ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy
-    eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam
-    voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet
-    clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit
-    amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-    nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat,
-    sed diam voluptua. At vero eos et accusam et justo duo dolores et ea
-    rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem
-    ipsum bla
+    Diese Doktorarbeit integriert biomedizinische Forschung und
+    Datenwissenschaften und konzentriert sich auf ein \textit{in vitro}-Modell
+    zur Untersuchung der Dissemination von \linebreak Myelomzellen sowie ein
+    Python-basiertes Werkzeug, \texttt{plotastic}, zur semi-automatisierten
+    Analyse multidimensionaler Datensätze. Zwei Hauptprobleme werden bearbeitet:
+    (1) das Verständnis der frühen Schritte der Myelomdissemination und (2) die
+    Verbesserung der Effizienz der Datenanalyse, um die derzeit in der
+    biomedizinischen Forschung vorhandenen Engpässe bezüglich Komplexität und
+    Reproduzierbarkeit zu adressieren.
+
+    Im experimentellen Teil werden primäre menschliche mesenchymale Stromazellen
+    \linebreak (hMSCs) mit INA-6-Myelomzellen kokultiviert, um Zellproliferation,
+    Anhaftung und Ablösung mittels Zeitraffer-Mikroskopie zu untersuchen.
+    Zentrale Erkenntnisse zeigen, dass die Ablösung oft auf die Zellteilung
+    folgt und vorwiegend von Tochterzellen angetrieben wird. Neue
+    Trennungstechniken wurden entwickelt, um Myelom-Subpopulationen für weitere
+    Charakterisierungen durch RNAseq, Zellviabilität und Apoptose-Assays zu
+    isolieren. Die differentielle Expression von Adhäsions- und
+    Retentionsfaktoren, die durch INA-6 Zellen hochreguliert werden, korreliert
+    mit dem Überleben der Patienten. Insgesamt liefert diese Arbeit Einblicke in
+    die Mechanismen der Myelomdissemination und identifiziert Gene, die
+    potenziell die Dissemination durch Adhäsion konterkarieren könnten, was für
+    die Entwicklung neuer Therapeutika relevant sein könnte.
+
+    Zur Verwaltung komplexer Daten wurde eine Python-basierte Software namens
+    \linebreak \texttt{plotastic} entwickelt, welche die Analyse und Visualisierung
+    multidimensionaler Datensätze optimiert. \texttt{plotastic} basiert auf der
+    Idee, dass statistische Analysen basierend darauf durchgeführt werden, wie
+    die Daten visualisiert werden. Dieser Ansatz vereinfacht nicht nur die
+    Datenanalyse, sondern automatisiert sie auch teilweise in einem
+    standardisierten statistischen Protokoll. Die Arbeit wird zu einer
+    Fallstudie, da sie die Anwendung von \texttt{plotastic} auf das \textit{in
+    vitro}-Modell reflektiert und zeigt, wie die Software schnelle Anpassungen
+    und Verfeinerungen in der Datenanalyse und -präsentation erleichtert. Eine
+    solche Effizienz ist entscheidend für den transparenten Umgang mit
+    Semi-Big-Data, die trotz ihrer Handhabbarkeit komplex genug ist, um die
+    Analyse und Reproduzierbarkeit zu erschweren.
+
+    Zusammengefasst veranschaulicht diese Dissertation die Synergie zwischen
+    experimentellen Methoden und fortgeschrittenen Werkzeugen der Datenanalyse.
+    Das \textit{in vitro}-Modell bietet eine robuste Plattform für die
+    Untersuchung der Myelomdissemination, während \texttt{plotastic} den Bedarf
+    an effizienter Datenanalyse adressiert. Zusammen bieten sie einen
+    umfassenden Ansatz für die Bearbeitung komplexer Experimente, fördern sowohl
+    die Krebsbiologie als auch die Forschungspraktiken und unterstützen die
+    explorative und transparente Analyse herausfordernder Phänomene.
+
+
 \end{abstract}
