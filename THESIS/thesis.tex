@@ -1,17 +1,33 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% INFORMATION (DO NOT CHANGE!)
-%
-% Doctoral Thesis (Chapter Based) University of Würzburg
-% LaTeX Class
-% Version 1.0 (03.2024)
-%
-% Author of Latex Template: 
-% Martin Kuric 
-% 
-% Cover page is based on a template by the University of Würzburg
-%
-% This template is licensed under the GNU Public License v3.0
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% > !! TEMPLATE INFORMATION
+% > !! DO NOT CHANGE !!
+% > 
+% > Doctoral Thesis University of Würzburg
+% > LaTeX Class
+% > Version 1.0 (05.2024)
+% > 
+% > 
+% > AUTHOR: 
+% > Martin Kuric (github: markur4)
+% > 
+% > 
+% > LICENSE: 
+% > GNU Public License v3.0
+% > Do what you want with this template, but
+% > please keep the author's name and the license. 
+% > And don't blame the author
+% > 
+% > 
+% > REFERENCES:
+% > Cover page is based on a template by the University of Würzburg
+% > 
+% > 
+% > INFO:
+% > Used for Chapter based thesis, but works with manuscript as well
+% > 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 % ======================================================================
 % == Preamble
@@ -32,10 +48,11 @@
 % \includeonly{PARTS/7_APPENDIX_CHAPTER2}
 
 
-% ==============
-\begin{document}
-% ==============
-
+% > Preamble ends here
+% ======================
+\begin{document} 
+% ======================
+% > Document starts here
 
 
 
@@ -72,13 +89,13 @@
 % == Main Body
 % ======================================================================
 
-
-% == Introduction ======================================================
-% > Change page numbering to arabic numerals
+% ## Change page numbering to arabic numerals
 \pagenumbering{arabic}
 \setcounter{page}{1} % > Reset page counter to 1
 
-\unnsection{Introduction}
+% == Introduction ======================================================
+\unnsection{Introduction}%
+\label{sec:intro}%
 To provide a comprehensive background for the following chapters that focus on
 the interaction of human mesenchymal stromal cells (hMSCs) with multiple myeloma
 (MM) cells, this
@@ -113,10 +130,9 @@ the interaction of human mesenchymal stromal cells (hMSCs) with multiple myeloma
 
 
 % ======================================================================
-% == References & Appendix
+% == References
 % ======================================================================
 
-% == References ========================================================
 \unnsection{References}
 \renewcommand{\refname}{} % > Replace \bibliography heading with nothing
 \vspace{-2\vdouble} % > Remove space from \bibliography inserting empty header
@@ -130,7 +146,9 @@ the interaction of human mesenchymal stromal cells (hMSCs) with multiple myeloma
 \newpage
 
 
-% == Appendix ==========================================================
+% ======================================================================
+% == Appendix
+% ======================================================================
 \appendix
 \label{apdx}
 \appendixpage
@@ -180,6 +198,7 @@ the interaction of human mesenchymal stromal cells (hMSCs) with multiple myeloma
     \newpage
 
 \end{appendices}
+
 
 
 
