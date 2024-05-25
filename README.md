@@ -1,6 +1,9 @@
 # Doctoral Thesis Martin Kuric in Biomedicine
 
-This work was performed at the Department of Musculoskeletal Tissue Regeneration, University of Würzburg, Würzburg, Germany.
+This work was conducted at the Department of Musculoskeletal Tissue
+Regeneration (Bernhard-Heine-Centre for Locomotive Research), University
+of Würzburg from 08.04.2018 to 31.03.2024 under the supervision of
+Prof. Dr. rer. nat. Regina Ebert.
 
 ### Title
 
@@ -44,7 +47,7 @@ statistical protocol. The thesis becomes a case study as it reflects on the
 application of `plotastic` to the *in vitro* model,
 demonstrating how the software facilitates rapid adjustments and refinements
 in data analysis and presentation. Such efficiency is crucial for handling
-semi-big data transparently, which \dashedsentence{despite being managable`
+semi-big data transparently, which -despite being managable-
 is complex enough to complicate analysis and reproducibility.
 
 Together, this thesis illustrates the synergy between experimental
@@ -64,3 +67,6 @@ exploratory and transparent analysis of challenging phenomena.
 [Kuric et al. (2024); *Modeling Myeloma Dissemination In Vitro with hMSC-interacting Subpopulations of INA-6 Cells and Their Aggregation/Detachment Dynamics*; **Cancer Research Communications**](https://aacrjournals.org/cancerrescommun/article/4/4/1150/745028/Modeling-Myeloma-Dissemination-In-Vitro-with-hMSC)
 
 ## Latex Template
+
+You are allowed to use the latex code of this thesis for your own work. Please
+cite the original work if you do so.
