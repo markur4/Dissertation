@@ -17,7 +17,7 @@ Development and Semi-Automated Analysis of an *in vitro* Dissemination Model
 
 ### Summary
 
-This PhD thesis integrates biomedical research and data science, focusing on
+This thesis integrates biomedical research and data science, focusing on
 an *in vitro* model for studying myeloma cell dissemination and a
 Python-based tool, `plotastic`, for semi-automated analysis of
 multidimensional datasets. Two major challenges are adressed: (1)

@@ -42,8 +42,9 @@ strategies that can reveal the true structure and value of the data
 
 A primary example of multidimensional data is multiplex RT-qPCR, where the
 expression levels of various genes are measured across different samples under
-varying conditions \cite{bustinReproducibilityBiomedicalResearch2014}. Here, the dependent variable is typically the fold change
-expression values derived from $\Delta\Delta$Ct calculations
+varying conditions \cite{bustinReproducibilityBiomedicalResearch2014}. Here, the
+dependent variable is typically the fold change expression values derived from
+$\Delta\Delta$Ct calculations
 \cite{brankatschkSimpleAbsoluteQuantification2012}. The independent variables
 include the genes being measured and the experimental conditions under which the
 samples are processed.
@@ -173,13 +174,13 @@ conclusions. Furthermore, \SI{44}{\percent} of 233 preclinical articles describe
 statistical tests insufficiently, while few don't describe them at all
 \cite{gosselinInsufficientTransparencyStatistical2021}. Another study reviewed
 147 papers in the field of optometrics and found that \SI{91}{\percent} did not
-discuss their rationale of correcting p-values for multiple comparisons (e.g.
+discuss their rationale of correcting $p$-values for multiple comparisons (e.g.
 Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, given
 that the exact use of multiple comparisons corrections has been under debate for
 decades, it is reasonable to assume that researchers lack the confidence to
 report their technique in detail \cite{pernegerWhatWrongBonferroni1998,
     moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}. In
-general, $P$-values are target of extreme scrutiny and also the cause of many
+general, $p$-values are target of extreme scrutiny and also the cause of many
 arguments, which themselves are of questionable statistical reasoning%
 \footnotequote{Arguing about the P value is like focusing on a single
     misspelling, rather than on the faulty logic of a
@@ -272,11 +273,11 @@ nontransparencies due to \textit{Prism}'s closed-source nature and the common
 journal practice of not requiring detailed methodological transparency in its
 usage, a practice that is common in biostatistics literature
 \cite{gosselinInsufficientTransparencyStatistical2021,
-localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
+    localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
 requires manual data entry and lacks the robustness and automation necessary for
 handling multidimensional or semi-big data. Although, \textit{GraphPad Prism} is
 compatible \textit{``multiple variable tables''} \dashedsentence{similar to
-long-form tables known from \citet{wickhamTidyData2014}}, but does not
+    long-form tables known from \citet{wickhamTidyData2014}}, but does not
 automatically graph these kinds of tables, but only user specified subsets
 \cite{GraphPadPrism102024}.
 
@@ -311,17 +312,19 @@ comprehensive outputs of intermediate steps, which is crucial for verifying and
 understanding the progression of data analysis \cite{sandveTenSimpleRules2013}.
 
 On the other hand, when scripts are designed to be more generalized and
-distributed—for instance, as a \texttt{Fiji/ImageJ} plugin or a standalone
-application—they can make substantial contributions to scientific research by
-enabling other researchers to apply these tools to their own data sets
-\cite{narztReusabilityConceptProcess1998,wilkinsonFAIRGuidingPrinciples2016}. However, this approach also comes
-with its own set of challenges \cite{sandveTenSimpleRules2013}. Often, these
-generalized tools often lack comprehensive user-manuals (\emph{documentation})
-are not thoroughly tested across different platforms or data sets, which can
-lead to unexpected errors that can not be fixed by the user. Moreover, even when
-these tools are available, they frequently suffer from low adoption rates,
-meaning that few people are familiar with the details of such tools, further
-decreasing the confidence and reproducibility in the final results.
+distributed \linebreak\dashedsentence{for instance, as a \texttt{Fiji/ImageJ}
+    plugin or a standalone application} they can make substantial contributions to
+scientific research by enabling other researchers to apply these tools to their
+own data sets
+\cite{narztReusabilityConceptProcess1998,wilkinsonFAIRGuidingPrinciples2016}.
+However, this approach also comes with its own set of challenges
+\cite{sandveTenSimpleRules2013}. These generalized tools often lack
+comprehensive user-manuals (\emph{documentation}) and are not thoroughly tested
+across different platforms or data sets, which can lead to unexpected errors
+that can not be fixed by the user. Moreover, even when these tools are
+available, they frequently suffer from low adoption rates, meaning that few
+people are familiar with the details of such tools, further decreasing the
+confidence and reproducibility in the final results.
 
 Given these complexities, there is a pressing need for new analytical tools
 specifically designed for semi-big data. These tools must strike a balance
@@ -348,7 +351,7 @@ scientific research.
 \unnsubsection{Modern Standards of Software Development}
 \label{sec:intro_code_quality}
 %%%%%%%
-A main reason to write software is to define re-usable instructions for task
+A main reason to write software is to define reusable instructions for task
 automation~\cite{narztReusabilityConceptProcess1998}.
 The complexity of software code makes it prone to errors, which can prevent
 its usage by persons other than the author himself. This is a problem for the
@@ -356,26 +359,27 @@ general scientific community, as the software is often essential for
 reproduction~\cite{sandveTenSimpleRules2013}. Hence, modern journals aim to
 enforce standards to software development, including software written and used
 by biological researchers~\cite{smithJournalOpenSource2018}. Here, we provide a
-brief overview of the standards utilized by \texttt{plotastic} that to ensure
+brief overview of the standards utilized by \texttt{plotastic} that ensure
 its reliability and reproducibility by the scientific
 community~\cite{pengReproducibleResearchComputational2011}.
 
 
 Modern software development is a long-term commitment of maintaining and
 improving code after initial release~\cite{boswellArtReadableCode2011}. Hence,
-it is good practice to write the software such that it is scalable, maintainable
-and usable. \emph{Scalability} or, to be precise, \emph{structural scalability} means that the
-software can easily be expanded with new features without major modifications to
-its architecture \cite{bondiCharacteristicsScalabilityTheir2000}. This is
-achieved by writing the software in a modular fashion, where each module is
-responsible for a single function. \emph{Maintainability} means that the software can
-easily be fixed from bugs and adapted to new requirements
-\cite{kazmanMaintainability2020}. This is achieved by writing the code in a
-clear and readable manner, and by writing tests that ensure that the code works
-as expected~\cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
+it is good practice to write the software such that it is \emph{scalable},
+\emph{maintainable} and \emph{usable}. \emph{Scalability} or, to be precise,
+\emph{structural scalability} means that the software can easily be expanded
+with new features without major modifications to its architecture
+\cite{bondiCharacteristicsScalabilityTheir2000}. This is achieved by writing the
+software in a modular fashion, where each module is responsible for a single
+function. \emph{Maintainability} means that the software can easily be fixed
+from bugs and adapted to new requirements \cite{kazmanMaintainability2020}. This
+is achieved by writing the code in a clear and readable manner, and by writing
+tests that ensure that the code works as
+expected~\cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
 define~\cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable
 if the commands have intuitive names and if the software's manual, termed
-``documentation'', is up-to-date and easy to understand for new users with
+\emph{documentation}, is up-to-date and easy to understand for new users with
 minimal coding experience. A software package that has not received an update
 for a long time (approx. one year) could be considered abandoned. Abandoned
 software is unlikely to be fully functional, since it relies on other software
@@ -390,18 +394,19 @@ Version control is a system that records changes to the codebase line by line,
 documenting of the detailed history of the codebase, including the person and
 timepoint of every change. This is required to isolate new and experimental
 features into newer versions and away from the stable version that's known to
-work. The most popular version control system is \texttt{Git}, which is considered the
-industry standard for software development~\cite{chaconGitBook2024}. \texttt{Git} can use
-GitHub.com as a platform to store and host codebases in the form of software
-repositories. GitHub's most famous feature is called ``pull request''. A pull
-request is a request from anyone registered on GitHub to include changes
-to the codebase (as in \textit{``please pull this into your main code''}). One could see
-pull requests as the identifying feature of the open source community, since it
+work. The most popular version control system is \texttt{Git}, which is
+considered the industry standard for software
+development~\cite{chaconGitBook2024}. \texttt{Git} can use GitHub.com as a
+platform to store and host codebases in the form of software repositories.
+GitHub's most famous feature is called ``pull request''. A pull request is a
+request from anyone registered on GitHub to include changes to the codebase (as
+in \textit{``please pull this into your main code''}). One could see pull
+requests as the identifying feature of the open source community, since it
 exposes the codebase to potentially thousands of independent developers,
 reaching a workforce that is impossible to achieve with closed source models
 used by paid software companies.
 
-Continuous integration (CI) is a software development practice in which
+\emph{Continuous integration} (CI) is a software development practice in which
 developers integrate code changes into a shared repository several times a
 day~\cite{duvall2007continuous}. Each integration triggers the test suite,
 aiming to detect errors as soon as possible. The test suite includes building
@@ -418,15 +423,20 @@ Continuous integration especially relies on a thorough software testing suite.
 Software testing is the practice of writing code that checks if the codebase
 works as expected~\cite{10.5555/2161638}. The main type of software testing is
 unit testing, which tests the smallest units of the codebase (functions and
-classes) in isolation (\autoref{lst:unit_test}).
+classes) in isolation (\autoref{lst:unit_test}). Software testing is automated
+by specialized frameworks that execute the tests and report the results, a
+popular example being \texttt{pytest}, which is utilized by
+\texttt{plotastic}~\cite{pytestx.y}.
 
 \def\mycaption{ Example of an arbitrary Python function and its respective unit
     test function. The first function simply returns the number 5. The second
     function tests if the first function indeed returns the number 5. The test
     function is named with the prefix ``\texttt{test\_}'' and is placed in a
-    file that ends with the suffix ``\texttt{\_test.py}''. The test function is
-    executed by the testing framework \texttt{pytest}. Note that code after
-    ``\texttt{\#}'' is considered a comment and won't be executed.}
+    file that ends with the suffix ``\texttt{\_test.py}''. Testing frameworks
+    such as \texttt{pytest} scan the repository for files that end with
+    ``\texttt{\_test.py}'' and execute the functions that start with
+    ``\texttt{test\_}''. Note that code after ``\texttt{\#}'' is considered a
+    comment and won't be executed.}
 \begin{lstlisting}[
     language=Python, 
     style=pythonstyle,
@@ -441,6 +451,8 @@ def test_give_me_five():
     assert give_me_five() == 5 
 \end{lstlisting}
 
+\pagebreak
+
 The quality of the software testing suite is measured by the code coverage, the
 precision of the tests, and the number of test-cases that are checked. The code
 coverage is the percentage of the codebase that is called by the testing
@@ -449,9 +461,7 @@ measure how well the code is tested. The precision of the test is not a
 measurable quantity, but it represents if the tests truly checks if the code
 works as expected. The number of test-cases is the number of different scenarios
 that are checked by the testing functions, for example testing every possible
-option or combinations of options for functions that offer multiple options. The
-most popular software testing framework for Python is \texttt{pytest}, which is
-utilized by \texttt{plotastic}~\cite{pytestx.y}.
+option or combinations of options for functions that offer multiple options.
 
 Together, the standards of software development, including version control,
 continuous integration, and software testing, ensure that the software is
@@ -483,7 +493,7 @@ emphasis on implementing a syntax that is concise and close to human language
 
 \def\mycaption{ Example of
     readable Python code. This one-line code returns the words (string)
-    \texttt{'Hello, World!'} when executed. The command is straightforward and easy
+    \texttt{"Hello, World!"} when executed. The command is straightforward and easy
     to understand.}
 \begin{lstlisting}[
     language=Python, 
@@ -491,15 +501,16 @@ emphasis on implementing a syntax that is concise and close to human language
     label=lst:readable,
     caption=\mycaption
     ]
-print('Hello, World!')
-# Output: Hello, World!
+print("Hello, World!")
+# Expected output: Hello, World!
 \end{lstlisting}
 
 \def\mycaption{ Example of less readable code written in the low-level
     programming language C. This code is doing exactly the same as the Python
     code in \autoref{lst:readable}, but is harder to understand because more
     steps are needed, including the import of a library \texttt{stdio.h} and the
-    definition of a function called \texttt{main}.}
+    definition of a function called \texttt{main}. Note that C uses \texttt{//}
+    to begin comment sections.}
 \begin{lstlisting}[
     language=C, 
     style=defaultstyle,
@@ -508,19 +519,46 @@ print('Hello, World!')
     ]
 #include <stdio.h>          // Import functions for standard input & output
 int main() {                // Define a function called 'main'
-    printf('Hello, World!');
+    printf("Hello, World!");
     return 0;
 }
-// Output: Hello, World!
+// Expected output: Hello, World!
 \end{lstlisting}
 
 Furthermore, Python is an \textit{interpreted} language, which means that the
 code is executed line by line. This makes coding easier because the programmer
 can see the results of the code immediately after writing it, and error messages
-point to the exact line where the error occurred. This is in contrast to
+point to the exact line where the error occurred (\autoref{lst:errormessage}). This is in contrast to
 \textit{compiled} languages, where the code has to be compiled into machine code
 before it can be executed. The advantage of compiled languages is that the code
 runs faster, because the machine code is optimized for the hardware.
+
+\def\mycaption{Example of an error message. Since Python is case-sensitive, the
+    error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
+    The error message begins with the type of error (\texttt{NameError}),
+    followed by a traceback that shows the sequence of function calls that led
+    to the error. The traceback located the source of the error in the file
+    \texttt{errormessage.py} and points to the line that caused the error.
+    Finally, the error message explains the error, stating that \texttt{'Hi'} is
+    undefined. }
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    label=lst:errormessage,
+    caption=\mycaption
+    ]
+hi = "Hello World"  # Define a variable 'hi' with the value "Hello World"
+print(Hi)           # Print the value of the undefined variable 'Hi'
+
+# Expected Output:
+# ---------------------------------------------------------------------------
+# NameError                                 Traceback (most recent call last)
+# File /Users/martinkuric/Documents/errormessage.py:2
+#       1 hi = "Hello World"
+# ----> 2 print(Hi)
+
+# NameError: name 'Hi' is not defined
+\end{lstlisting}
 
 Python automates tasks that would otherwise require an advanced understanding of
 computer hardware, like the need for manual allocation of memory space. This is
@@ -530,17 +568,18 @@ is a feature that is not present in low-level programming languages like C or
 C++, that were designed to maximize control over hardware.
 
 Another hallmark of Python is its \textit{dynamic typing system}. In Python the
-type  is inferred automatically during code execution
+type is inferred automatically during code execution
 (\autoref{lst:dynamic_typing}). This is in contrast to \textit{statically} typed
 languages like C, where the type of a variable has to be declared explicitly and
 cannot be changed during code execution
 (\autoref{lst:static_typing})~\cite{PythonLanguageReference2024}.
 
 \def\mycaption{ Example of dynamic typing in Python. The variable ``\texttt{a}''
-    is assigned the value 5, which is of type integer. The variable ``\texttt{a}''
-    is then assigned the value ``\texttt{Hello, World!}'', which is of type string.
-    Python allows dynamic re-assignment of variables with different types. Note that
-    code after ``\texttt{\#}'' is considered a comment and won't be executed.}
+    is assigned the value 5, which is of type integer. The variable
+    ``\texttt{a}'' is then overwritten with the value ``\texttt{Hello,
+    World!}'', which is of type string. Python allows dynamic re-assignment of
+    variables with different types. Note that code after ``\texttt{\#}'' is
+    considered a comment and won't be executed.}
 \begin{lstlisting}[
     language=Python,
     style=pythonstyleNonbreaking,
@@ -579,7 +618,7 @@ Dynamic typing makes Python a very beginner-friendly language, since one does
 not have to keep track of the type of each variable. However, this also makes
 Python a slower language, because the interpreter has to check the type of each
 variable during code execution. Also, developing code with dynamic typing
-systems is prone to introducing bugs (``type errors''), because it allows
+systems is prone to introducing bugs (\texttt{TypeError}), because it allows
 unexperienced developers to convert variables from one type to another without
 noticing, leading to unexpected behavior. Hence, larger Python projects require
 disciplined adherence to programming conventions. One such convention is
@@ -645,58 +684,84 @@ the tools of a general purpose programming language to write and deploy custom
 code easily. Programming styles can be classified into two main paradigms:
 \emph{functional} and \emph{object-oriented} programming, which can be
 understood as different ways to structure code. Python supports both paradigms.
-In \emph{functional} programming, the code is written in a way that the program is a
-sequence of function calls, where each function call returns a value that is
-used in the next function call (\autoref{lst:functional}). This approach is
+In \emph{functional} programming, the code is written in a way that the program
+is a sequence of function calls, where each function call returns a value that
+is used in the next function call (\autoref{lst:functional}). This approach is
 useful when multiple actions have to be performed on the same data and the
-structure of the data is relatively simple, for example a string of a gene
+structure of the data is relatively simple, for example a string of a DNA
 sequence.
 
 \def\mycaption{ Example of functional programming in Python. The code
     defines a function called ``\texttt{find\_restriction\_site}'' that
-    finds the position of a restriction site in a gene. The function
+    finds the position of a restriction site in a DNA sequence. The function
     ``\texttt{cut}'' uses the function ``\texttt{find\_restriction\_site}''
-    to cut the gene at the restriction site.}
+    to cut the sequence at the restriction site. To execute both functions,
+    we first define an arbitrary DNA sequence and then call the function
+    \texttt{cut} passing the sequence as an argument.
+    } 
 \begin{lstlisting}[
     language=Python,
     style=pythonstyleNonbreaking,
     label=lst:functional,
     caption=\mycaption,
     ]
-def find_restriction_site(gene: str):      # Define a function
-    return gene.find('GCGC')               # Find the position of 'GCGC'
+def find_restriction_site(sequence: str):  # Define a function
+    return sequence.find('GCGC')           # Find the position of 'GCGC'
     
-def cut(gene: str):                        # Define another function
-    position = find_restriction_site(gene) # Use the function above
-    return gene[position:]                 # Cut the gene at the position
+def cut(sequence: str):                        # Define another function
+    position = find_restriction_site(sequence) # Use the function above
+    return sequence[position:]                 # Cut sequence at the position
     
-gene1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'   # Define an arbitrary gene
-gene1_cut = cut(gene1)                     # Cut the gene
-print(gene1_cut)                           # Show the result
-# Output: GCGCTATATTTAGGCG
+seq1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'  # Define an arbitrary sequence
+seq1_cut = cut(seq1)                     # Cut the sequence
+print(seq1_cut)                          # Show the result
+# Expected output: GCGCTATATTTAGGCG
     
     
 \end{lstlisting}
 
 
 When the data itself gains in complexity, for example when storing not just the
-gene sequence, but also the promotor sequence, an \emph{object-oriented} approach is
-more suitable (\autoref{lst:oop}). Object-oriented programming is a programming
-paradigm that uses objects and classes. An object is a collection of both data
-and functions, and a class is a blueprint for creating objects. The data of an
-object is stored as \emph{attributes}. Functions that are associated with an object are
-called \emph{methods}.
+gene sequence, but also the promotor sequence, an \emph{object-oriented}
+approach is more suitable (\autoref{lst:oop}). Object-oriented programming is a
+programming paradigm that uses objects and classes. An object is a collection of
+both data and functions, and a class is a blueprint for creating objects. The
+data of an object is stored as \emph{attributes}. Functions that are associated
+with an object are called \emph{methods}. A major benefit of using an object
+oriented versus a functional approach is that the data itself programmable,
+enabling the programmer to define the behavior of the data through methods. This
+is achieved by using `\texttt{self}' to reference the objects themselves inside
+the class. \texttt{self} can be understood as \textit{``this object''}, and is a
+placeholder for objects that are to be created from the blueprint. \texttt{self}
+is required to access attributes and methods before specific objects are created
+in order to program how the objects are to be changed when calling methods. 
+
+
+% and acts
+% as a placeholder within the blueprint (class) for the object , allowing the
+% programmer to access the attributes and methods of the object without knowing
+% the object's name that is assigned by the user when creating the object.
+
+% allowing
+% the programmer to access the attributes and methods of the object without knowing
+
+% to program how the object is to be changed during creation or calling
+% methods. ``\texttt{self}'' can be understood as \textit{``this object''},
+% allowing the programmer to access the attributes and methods of the object
+% without knowing the object's name that is assigned by the user when creating the
+% object.
 
 
 \def\mycaption{ Example of object oriented programming in Python. The class is
-    called ``\texttt{Gene}'' and has four methods, ``\texttt{\_\_init\_\_}'',
+    called ``\texttt{Gene}'' and acts as a blueprint to create \texttt{Gene}
+    objects. \texttt{Gene} has four methods, ``\texttt{\_\_init\_\_}'',
     ``\texttt{find\_promotor}'', ``\texttt{find\_restriction\_site}'' and
     ``\texttt{cut}''. The method ``\texttt{\_\_init\_\_}'' is called when
     creating (``initializing'') an object, which fills the object with
-    user-defined data. The parameter ``\texttt{self}'' is used to reference the
-    object itself internally. ``\texttt{find\_promotor}'' is a
-    method that finds the position of the promotor in the gene and is called
-    during object initialization. }
+    user-defined data. The parameter ``\texttt{self}'' is a placeholder for the
+    objects that are to be created. ``\texttt{find\_promotor}'' is a method that
+    finds the position of the promotor in the gene and is called during object
+    initialization. }
 \begin{lstlisting}[
     language=Python,
     style=pythonstyle,
@@ -707,6 +772,7 @@ class Gene:                               # Define a Gene class
     def __init__(self, sequence: str):    # Define how a Gene object is created
         self.sequence: str = sequence     # Save sequence as attribute
         self.promotor: str = self.find_promotor() # Automatically find promotor
+        # Add further Gene attributes here
     def find_promotor(self):              # Define how to find the promotor
         return self.sequence.find('TATA')
     def find_restriction_site(self):      # Define how to find restriction site
@@ -718,15 +784,10 @@ class Gene:                               # Define a Gene class
 gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create Gene object
 gene1_cut = gene1.cut()                   # Call the method cut
 print(gene1_cut)                          # Show result
-# Output: GCGCTATATTTAGGCG
+# Expected output: GCGCTATATTTAGGCG
 \end{lstlisting}
 
-A major benefit of using an object oriented versus a functional approach is that
-the data itself programmable, enabling the programmer to define the behavior of
-the data itself through methods. This is achieved by using the keyword
-``\texttt{self}'' to reference the object itself inside the class. For example,
-one could extend the class ``\texttt{Gene}'' with a method that finds the
-promotor of the gene and stores it as an attribute (\autoref{lst:oop}).
+
 
 When designing software, both functional and object oriented programming can be
 used together, where object oriented programming is often used to design the
@@ -761,7 +822,7 @@ class mRNA(Gene):          # Define the mRNA class, inheriting from Gene class
 
 mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create mRNA object
 print(mrna1.find_stopcodons())              # Show the position of stop codons
-# Output: [0, 5, 10]
+# Expected output: [0, 5, 10]
 \end{lstlisting}
 
 
