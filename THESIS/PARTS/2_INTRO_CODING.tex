@@ -577,7 +577,7 @@ cannot be changed during code execution
 \def\mycaption{ Example of dynamic typing in Python. The variable ``\texttt{a}''
     is assigned the value 5, which is of type integer. The variable
     ``\texttt{a}'' is then overwritten with the value ``\texttt{Hello,
-    World!}'', which is of type string. Python allows dynamic re-assignment of
+        World!}'', which is of type string. Python allows dynamic re-assignment of
     variables with different types. Note that code after ``\texttt{\#}'' is
     considered a comment and won't be executed.}
 \begin{lstlisting}[
@@ -698,7 +698,7 @@ sequence.
     to cut the sequence at the restriction site. To execute both functions,
     we first define an arbitrary DNA sequence and then call the function
     \texttt{cut} passing the sequence as an argument.
-    } 
+}
 \begin{lstlisting}[
     language=Python,
     style=pythonstyleNonbreaking,
@@ -722,7 +722,7 @@ print(seq1_cut)                          # Show the result
 
 
 When the data itself gains in complexity, for example when storing not just the
-gene sequence, but also the promotor sequence, an \emph{object-oriented}
+gene sequence, but also the promoter sequence, an \emph{object-oriented}
 approach is more suitable (\autoref{lst:oop}). Object-oriented programming is a
 programming paradigm that uses objects and classes. An object is a collection of
 both data and functions, and a class is a blueprint for creating objects. The
@@ -734,7 +734,7 @@ is achieved by using `\texttt{self}' to reference the objects themselves inside
 the class. \texttt{self} can be understood as \textit{``this object''}, and is a
 placeholder for objects that are to be created from the blueprint. \texttt{self}
 is required to access attributes and methods before specific objects are created
-in order to program how the objects are to be changed when calling methods. 
+in order to program how the objects are to be changed when calling methods.
 
 
 % and acts
@@ -755,35 +755,34 @@ in order to program how the objects are to be changed when calling methods.
 \def\mycaption{ Example of object oriented programming in Python. The class is
     called ``\texttt{Gene}'' and acts as a blueprint to create \texttt{Gene}
     objects. \texttt{Gene} has four methods, ``\texttt{\_\_init\_\_}'',
-    ``\texttt{find\_promotor}'', ``\texttt{find\_restriction\_site}'' and
+    ``\texttt{find\_promoter}'', ``\texttt{find\_restriction\_site}'' and
     ``\texttt{cut}''. The method ``\texttt{\_\_init\_\_}'' is called when
     creating (``initializing'') an object, which fills the object with
     user-defined data. The parameter ``\texttt{self}'' is a placeholder for the
-    objects that are to be created. ``\texttt{find\_promotor}'' is a method that
-    finds the position of the promotor in the gene and is called during object
+    objects that are to be created. ``\texttt{find\_promoter}'' is a method that
+    finds the position of the promoter in the gene and is called during object
     initialization. }
 \begin{lstlisting}[
     language=Python,
-    style=pythonstyle,
+    style=pythonstyleNonbreaking,
     label=lst:oop,
     caption=\mycaption,
     ]
 class Gene:                               # Define a Gene class
     def __init__(self, sequence: str):    # Define how a Gene object is created
         self.sequence: str = sequence     # Save sequence as attribute
-        self.promotor: str = self.find_promotor() # Automatically find promotor
+        self.promoter: str = self.find_promoter()  # Automatically find promoter
         # Add further Gene attributes here
-    def find_promotor(self):              # Define how to find the promotor
+    def find_promoter(self):              # Define how to find the promoter
         return self.sequence.find('TATA')
     def find_restriction_site(self):      # Define how to find restriction site
         return self.sequence.find('GCGC') # Find the position of 'GCGC'
-    def cut(self):                        # Define how to cut the gene
-        position = self.find_restriction_site() # Call the method above
+    def cut(self):                        # Define how to cut the DNA sequence
+        position = self.find_restriction_site()   # Call the method above
         return self.sequence[position:]   # Cut the gene at the position
 
-gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create Gene object
-gene1_cut = gene1.cut()                   # Call the method cut
-print(gene1_cut)                          # Show result
+gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG')   # Create Gene object
+print(gene1.cut())                        # Cut gene and show result 
 # Expected output: GCGCTATATTTAGGCG
 \end{lstlisting}
 
@@ -794,6 +793,8 @@ used together, where object oriented programming is often used to design the
 program's overall architecture, and functional programming is used to implement
 the algorithms of the program's features. This allows for scalability of the
 software, as every single class is extended through the addition of new methods.
+
+
 Furthermore, classes can be expanded in their functionalities through
 \emph{inheritance} (\autoref{lst:inheritance}). Inheritance is a feature of
 object-oriented programming that allows a class to access every attribute and
@@ -801,12 +802,15 @@ method of a parent class. For example, one could extend the class
 ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by writing a class
 ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
 
+\vspace{\vhalf}
 
-\def\mycaption{ Example of inheritance in Python.
-    The class ``\texttt{mRNA}'' inherits from the class ``\texttt{Gene}''. The class
-    ``\texttt{mRNA}'' has two methods, ``\texttt{\_\_init\_\_}'' and
-    ``\texttt{find\_stopcodon}''. The method ``\texttt{find\_stopcodon}'' finds the
-    position of stop codons. }
+\def\mycaption{ Example of inheritance in Python. The class ``\texttt{mRNA}''
+    inherits from the class ``\texttt{Gene}'', and has
+    two methods, ``\texttt{\_\_init\_\_}'' and ``\texttt{find\_stopcodon}''. ``\texttt{find\_stopcodon}'' loops through a list of stop codons (\texttt{for x in list}):
+    For each stop codon, the position is found. If a codon
+    wasn't found, the \texttt{.find()} method returns -1, which leads to a
+    different print message. Note that \texttt{f""} formats strings
+    to include variables.}
 \begin{lstlisting}[
     language=Python,
     style=pythonstyle,
@@ -816,13 +820,21 @@ method of a parent class. For example, one could extend the class
 class mRNA(Gene):          # Define the mRNA class, inheriting from Gene class
     def __init__(self, sequence: str):   # Define how an mRNA object is created
         super().__init__(sequence)       # Get attributes from parent class
-        self.sequence.replace('T', 'U')  # Replace thymine with uracil
+        self.sequence = self.sequence.replace('T', 'U')  # Replace T with Uracil
     def find_stopcodons(self):           # Define how to find stop codons
-        return self.sequence.find('UGA') # Find the position of 'UGA'
-
-mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG') # Create mRNA object
-print(mrna1.find_stopcodons())              # Show the position of stop codons
-# Expected output: [0, 5, 10]
+        for stopcodon in ['UGA','UAA','UAG']:   # Loop over stop codons
+            position: int = self.sequence.find(stopcodon)   # Find the position
+            if position == -1:           # If position is -1, codon wasn't found
+                print(f"{stopcodon} not found") # Message if not found
+            else:                        # If position isn't -1, codon was found
+                print(f"{stopcodon} found at {position}")         
+            
+mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG')  # Create an mRNA object
+mrna1.find_stopcodons()                  # Show the position of stop codons
+# Expected outputs: 
+# UGA found at 0
+# UAA not found
+# UAG found at 24
 \end{lstlisting}
 
 
@@ -830,6 +842,7 @@ Together, Python is not just beginner-friendly, but also well respected for its
 ease in development, which is why it is widely used in professional settings for
 web development, data analysis, machine learning, biosciences and more
 \cite{ekmekciIntroductionProgrammingBioscientists2016,rayhanRisePythonSurvey2023}.
+
 
 % ======================================================================
 \unnsubsection{The Potential of Python Data Science Packages for Biomedicine}%
