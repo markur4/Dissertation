@@ -260,7 +260,7 @@ suggests that different adhesion factors should either be antagonized or
 agonized depending on the function of the adhesion factor. According to this
 assumption, adhesion factors involved in intra- and extravasation adhesion should be
 antagonized, while adhesion factors involved in BM adhesion \dashedsentence{as
-identified in Chapter 2} should be agonized. Indeed, Adhesion factors for endothelium 
+    identified in Chapter 2} should be agonized. Indeed, Adhesion factors for endothelium
 were shown to decrease tumour burden in mouse models \cite{asosinghUniquePathwayHoming2001a,mrozikTherapeuticTargetingNcadherin2015}
 
 
@@ -384,7 +384,9 @@ involves isolation of adherent and non-adherent subpopulations, effectively
 introducing \textit{`Subpopulation'} as a vital dimension in the dataset
 \cite{dziadowiczBoneMarrowStromaInduced2022}. This study specifically
 categorized cells into three levels of MSC-interaction: \CMina, \nMAina, and
-\MAina. Furthermore, the dynamic nature of cell adhesion processes is profoundly
+\MAina, representing \INA cells incubating in MSC-conditioned medium, \INA cells
+not adhering to MSCs, and \INA cells adhering to MSCs, respectively.
+Furthermore, the dynamic nature of cell adhesion processes is profoundly
 influenced by the factor \emph{`Time'}, making it a crucial experimental
 parameter for investigation \cite{reblTimedependentMetabolicActivity2010,
     mckayCellcellAdhesionMolecules1997,
@@ -413,18 +415,18 @@ In addition to \textit{`Subpopulation'} and \textit{`Time'}, this study faced
 additional layers of complexity that were managed through semi-automated
 analysis.
 
-Experiments typically involved at least three biological replicates
-and corresponding technical replicates. Although replicates were not treated as
+Experiments typically involved at least three biological replicates and
+corresponding technical replicates. Although replicates were not treated as
 independent variables \dashedsentence{instead serving for displaying variance}
 they can add substantially to the data management workload. In this work,
-semi-automation nullified the manual burdens of handling replicates:
+semi-automation nullified the manual burdens of handling technical replicates:
 \texttt{pandas} was used to automate aggregation of technical replicates into
 means after removing technical outliers thorugh z-score thresholding, while the
 jupyter notebook format allowed for reviewing filtered data for specific data
 losses. The removal of technical noise was especially relevant for qPCR data,
-where low gene expression can lead to sudden increase in Ct value
-(non-detects). In fact, the decision to remove or impute non-detects is under
-active discussion, however, available algorithms are hard to understand for non
+where low gene expression can lead to sudden increase in Ct value (non-detects).
+In fact, the decision to remove or impute non-detects is under active
+discussion, however, available algorithms are hard to understand for non
 bioinformaticians, but also do not separate biological from technical variance,
 which is considered bad practice by
 \citet{motulskyIntuitiveBiostatisticsNonmathematical2018}
@@ -434,7 +436,7 @@ automatic aggregation of datapoints during plotting is a key feature of
 \texttt{seaborn}, on which \texttt{plotastic} was built. Without such
 automation, calculating means and standard deviations for simple barplots would
 have required extensive manual computation in \textit{Microsoft Excel}, or
-tedious plot configurations in \textit{Graphpad Prism} due to limited facetting
+tedious plot configurations in \textit{GraphPad Prism} due to limited facetting
 functionality of multiple variable tables \cite{GraphPadPrism102024}.
 
 Replicates can expand datasets as this factor comprises a lot of levels.
@@ -463,21 +465,28 @@ The concept of agility in laboratory research, inspired by the Agile Manifesto's
 principle of \emph{``Responding to change over following a plan''}
 \cite{ManifestoAgileSoftware2001}, is increasingly relevant in biomedical
 research \cite{westReinventingResearchAgile2018,
-    quanbeckApplyingConceptsRapid2022}. This adaptive approach was particularly
-crucial during the development of the V-Well adhesion assay in this study.
-Semi-automation using python significantly enhanced this agility, allowing rapid
-statistical testing and visualization of data, which would have taken
-considerably longer if done manually. This capability enabled real-time
-adjustments to the experimental technique during live microscopy sessions,
-integrating raw data tables directly into Python scripts for immediate analysis.
-Such an agile and adaptive work environment, facilitated by python tools and
-\texttt{seaborn}, proved invaluable for refining the \textit{in vitro} methods
-being developed. Additionally, the simplicity offered by \texttt{seaborn} for
-complex data plotting, such as the cell cycle profiling shown in
-\apdxref{subapdx:figs}{fig:S3}, which required minimal code to produce a
-detailed series of 24 histograms, underscores the utility of semi-automation in
-enhancing laboratory efficiency. While this work does not quantify the full
-benefits of semi-automation, the author's experiences suggest significant
+quanbeckApplyingConceptsRapid2022}. This adaptive approach was particularly
+crucial during the development of the V-Well adhesion assay in this study. This
+experiment was planned such that the author performed fluorescent readout using
+microscopy and preliminry analysis, while a technical assistant prepared the
+samples for the next timepoint. Semi-automation accelerated the preliminary data
+analysis and visualization to a point that results were reviewable before the
+next sample timepoint was prepared and ready for fluorescent readout. This
+enabled immediate adjustments to the experimental protocol inbetween sample
+measurements, allowing for quick troubleshooting of small and avoidable problems
+that are often unforeseeable when establishing new methodologies. Without such
+agility, these problems would have been identified after the experiment,
+requiring a complete re-run of a very work-intensive experiment that included cell
+cycle synchronization. Such an agile and adaptive work environment, facilitated
+by python tools and \texttt{seaborn}, proved invaluable for refining the
+\textit{in vitro} methods being developed.
+
+Additionally, the simplicity
+offered by \texttt{seaborn} for complex data plotting, such as the cell cycle
+profiling shown in \apdxref{subapdx:figs}{fig:S3}, which required minimal code
+to produce a detailed series of 24 histograms, underscores the utility of
+semi-automation in enhancing laboratory efficiency. While this work does not
+quantify the full benefits of semi-automation, the author's experiences suggest
 potential impacts on the speed and adaptability of method development in
 biomedical research.
 
@@ -541,7 +550,7 @@ Modern journal standards increasingly demand the representation of individual
 datapoints alongside aggregated data, for example plotting datapoints above a
 bar- or boxplots. \texttt{seaborn} does not automate this, but can require
 calling two plotting functions in sequence, e.g. \texttt{sns.boxplot()} followed
-by \texttt{sns.swarmplot()}. This can be can get repetitive, as adjusting the
+by \texttt{sns.swarmplot()}. This can get repetitive, as adjusting the
 style of these plots to match each other, e.g. defining the point
 size or transparency of individual data points to fit into a barplot.
 \texttt{plotastic} was designed for multi-layered plotting, offering single-line

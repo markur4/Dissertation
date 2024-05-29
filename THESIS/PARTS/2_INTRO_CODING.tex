@@ -943,7 +943,7 @@ single table \cite{santosCOVID19ScholarlyProduction2020}.
 
 \textbf{\texttt{matplotlib}:} \texttt{matplotlib} is a plotting library that
 provides a wide range of static, animated, and interactive plots and graphs
-\autoref{lst:matplotlib} \cite{hunterMatplotlib2DGraphics2007}. It serves as the
+(\autoref{lst:matplotlib}) \cite{hunterMatplotlib2DGraphics2007}. It serves as the
 foundation for many visualization tools and is particularly valued for its
 flexibility and customization options. For example, \texttt{Pandas} uses
 \texttt{matplotlib} to plot column datapoints directly from a \texttt{DataFrame}
@@ -998,6 +998,16 @@ development, runtime performance and integration with other tools (like
 including performant C++ code), \texttt{Pingouin} is an attractive standard for
 future statistical analyses in biomedicine
 \cite{gorelickHighPerformancePython2020}.
+
+\textbf{\texttt{statannotations}:} While \texttt{seaborn} and
+\texttt{matplotlib} offer a wide range of statistical plots, they lack the
+ability to automatically annotate plots with $p$-values often abreviated by
+stars. \texttt{statannotations} is a package that extends \texttt{seaborn} by
+providing an interface to add statistical annotations to plots, but also perform
+simple statistical tests \cite{charlierTrevismdStatannotationsV02022}. It is
+limited to only pairwise comparisons such as t-tests and can not perform omnibus
+tests like ANOVA.
+
 
 Together, these python packages form the backbone of modern data analysis in Python,
 often times combining software from different languages to accelerate certain
