@@ -734,15 +734,18 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 \bibliographystyle{apacite}
 
-\let\fullcite\cite % > Rename \cite to \fullcite
-% \let\cite\shortcite % > Rename \shortcite to \cite
-
+% ## Make \cite look like (Kuric et. al. 2024)
+\let\fullcite\cite % > Rename \cite to \fullcite to keep the original
 \let\cite\citep % > Rename \citep to \cite
 % > Examples:
 % ' \citeauthor*{jon90} --> Jones, Baker, and Williams
 % ' \citet{jon90} --> Jones, Baker, and Williams (1990)
 % ' \citep{jon90} --> (Jones, Baker, and Williams, 1990)
 % ' \citealt{jon90} --> Jones, Baker, and Williams, 1990
+
+% ## Make citation references smaller 
+\let\oldcite\cite % > Rename \cite to \oldcite to keep the original
+\renewcommand{\cite}[1]{{\small \oldcite{#1}}}
 
 % ## Define the bibliography style
 \let\oldthebibliography=\thebibliography
