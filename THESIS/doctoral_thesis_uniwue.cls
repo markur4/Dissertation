@@ -65,6 +65,7 @@
 % == General Packages 
 \usepackage{xparse} % > For advanced command definitions
 \usepackage{xstring} % > For string processing e.g. \IfStrEq
+\usepackage{xspace} % > For adding spaces after commands
 \usepackage{etoolbox} % > List processing
 
 % == Document Layout 
@@ -95,20 +96,21 @@
 \usepackage{tocloft} % > For customizing the table of contents
 \usepackage{titlesec} % > For customizing sections
 \usepackage{abstract} % > For customizing abstracts
-\usepackage{appendix}  % > For appendices
+\usepackage{appendix} % > For appendices
 
 
 % == Page Head and Foot 
 \usepackage{fancyhdr} % > For customizing headers and footers
 
-% == Raw Text 
-\usepackage{xspace} % > For adding spaces after commands
-\usepackage{xstring} % > For string processing
+% == Abbreviations 
+\usepackage[printonlyused]{acronym}
+
 
 % == Items
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
 \setlist[enumerate]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+
 
 % == Special Formats: Math, Units, etc. ================================
 \usepackage{amsmath}  % > Enhances math handling in LaTeX

@@ -38,11 +38,11 @@
 % :: Include only one part to work on for quicker compilation
 % \includeonly{PARTS/0_ACKNOWLEDGEMENTS}
 % \includeonly{PARTS/1_SUMMARY}
-% \includeonly{PARTS/2_INTRO_CANCER}
+\includeonly{PARTS/2_INTRO_CANCER}
 % \includeonly{PARTS/2_INTRO_CODING}
 % \includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/4_CHAPTER2}
-\includeonly{PARTS/5_SUMMARISING_DISCUSSION}
+% \includeonly{PARTS/5_SUMMARISING_DISCUSSION}
 % \includeonly{PARTS/6_APPENDIX_CHAPTER1_FIGURES}
 % \includeonly{PARTS/6_APPENDIX_CHAPTER1_TABLES}
 % \includeonly{PARTS/6_APPENDIX_CHAPTER1_METHODS}
@@ -51,18 +51,19 @@
 
 % > Preamble ends here
 % ======================
-\begin{document} 
+\begin{document}
 % ======================
 % > Document starts here
 
 
 
 % ======================================================================
-% == Title page, acknowledgements, abstract, etc.
+% == Title page + Acknoweldgements
 % ======================================================================
+
+% == Title Page ========================================================
 \include{PARTS/0_TITLEPAGE}
 \newpage
-
 
 % ## Change page numbering to roman numerals
 \setcounter{page}{1} % > Reset page counter to 1
@@ -74,14 +75,25 @@
 \newpage
 
 
-% == Abstract ==========================================================
-% > Include ABSTRACT.tex
+
+% ======================================================================
+% == Summary, TOC, Glossary
+% ======================================================================
+
+% == Summary ==========================================================
+% > Include SUMMARY.tex
 \include{PARTS/1_SUMMARY}
 \newpage
 
 
-% == Table of Contents =================================================
+% == Table of Contents (TOC) ===========================================
 {\footnotesize \tableofcontents}
+\newpage
+
+
+% == Glossary ==========================================================
+% ## Abbreviations are defined in PARTS/1_ABBREVIATIONS.tex
+\input{PARTS/1_ABBREVIATIONS} % > input = always Include Abbreviations
 \newpage
 
 
@@ -166,7 +178,7 @@
     % ## Figures
     \subsection{Figures}\label{subapdx:figs}
     \newpage
-    \include{PARTS/6_APPENDIX_CHAPTER1_FIGURES}
+    \include{PARTS/6_APPENDIX_CHAPTER1_FIGURES}̉
     \newpage
 
     % ## Tables
