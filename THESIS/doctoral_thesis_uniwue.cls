@@ -117,7 +117,7 @@
 % == Items
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
-\setlist[enumerate]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt}
+\setlist[enumerate]{noitemsep, topsep=0pt, parsep=-2pt, partopsep=0pt}
 
 
 % == Special Formats: Math, Units, etc. ================================
