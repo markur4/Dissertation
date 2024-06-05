@@ -103,7 +103,15 @@
 \usepackage{fancyhdr} % > For customizing headers and footers
 
 % == Abbreviations 
-\usepackage[printonlyused]{acronym}
+\usepackage[
+    printonlyused,
+    withpage % > Print the page number where the abbreviation was used
+    % footnote, % > First abbreviations as footnotes
+    % smaller,
+    % nohyperlinks,
+    % nolist, % > Don't list the abbreviations
+]{acronym}
+
 
 
 % == Items
@@ -160,8 +168,8 @@
 % == Layout ============================================================
 % ## Set the general layout of the document
 \geometry{
-    left = 2cm,
-    right = 2cm,
+    left = 1.5cm,
+    right = 1.5cm,
     top = 2cm,
     bottom = 2cm,
     bindingoffset = 5mm}
@@ -338,7 +346,7 @@
 \newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
 
 \newcommand{\facetparams}{\texttt{x},\,\texttt{hue},\,%
-\texttt{col},\,\texttt{row}\xspace}
+    \texttt{col},\,\texttt{row}\xspace}
 
 
 % == Sentence ==========================================================
