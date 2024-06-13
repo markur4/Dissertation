@@ -128,113 +128,115 @@
 \label{sec:summarising_discussion}%
 % 
 % ======================================================================
+% == Discussion: Cancer
+% ======================================================================
+% 
 \unnsubsection{Time-Lapse Microscopy is Essential for Exploratory Cell Biology}%
 \label{sec:discussion_potential_breakthroughs}%
-Exploratory cell biology emphasizes discovering and characterizing novel
-cellular phenomena. This field often leverages emerging technologies to
-visualize and analyze the mechanisms of cell behavior dynamically. Such
-approaches allow real-time observations that can lead to unexpected insights and
-breakthroughs. In this project, the application of time-lapse microscopy proved
-pivotal.
+Exploratory cell biology, as a field, emphasizes the discovery and
+characterization of novel cellular phenomena, often utilizing emerging
+technologies to visualize and analyze the underlying mechanisms of cell
+behavior. This approach is powerful because it allows scientists to observe and
+hypothesize about cellular processes in real-time, which can lead to unexpected
+insights and breakthroughs. Here, the author shares his experience with
+utilizing modern microscopy techniques \dashedsentence{time-lapse microscopy and
+image cytometry}. 
 
 
-\textbf{Direct Observation of Complexity and Novelty:}
-Initially, the project did not focus on \textit{in vitro} myeloma cell
-dissemination. The project's research focus shifted when making the unexpected
+% Reviews like those in Nature Reviews Molecular Cell
+% Biology highlight how these explorations can redefine understanding in various
+% biological domains (source).
+
+\textbf{Direct Observation of Complexity and Novelty:} In this project,
+time-lapse microscopy was transformative: The initial research focus shifted
+towards \textit{in vitro} myeloma cell dissemination when making the unexpected
 \dashedsentence{or argueably insignificant} observation of cancer cells
-detaching from aggregates. This shows the transformative power of time-lapse
-microscopy. For the author, time-lapse microscopy provides an
+detaching from aggregates. For the author, time-lapse microscopy provides an
 observation method that's unmatched in intuition and directness. Unlike RNA
-sequencing, which can obscure biological processes behind cryptic
+sequencing, which can obscure biological processes behind complex and cryptic
 data, time-lapse microscopy offers a clear view into the dynamic cellular events
-as they unfold.
+as they unfold. This method was particularly effective in revealing the
+detachment of cells following division, a phenomenon that might be overlooked in
+static analyses. Multiple parameters can be read out in parallel, such as both
+time and aggregate size for detachments to begin. Also, complex cellular
+behavior can be deduced from movement, as the lack of movement was interpreted
+as re-attachment of \INA daughter cells to the \ac{hMSC} monolayer. This
+allowed for measuring the duration of \nMAina existing until re-attaching and
+turning into \MAina. This information was helpful when designing experiments to
+prove that cell division is a key mechanism for dissemination initiation,
+requiring precise timing to capture the detachment of daughter cells after cell
+division. Together, live cell imaging enabled key mechanistic insights in
+understanding the dynamics involved in multicellular interactions by integrating
+the study of multiple phenomena at once.
 
-Such clarity was particularly effective in revealing the detachment of cells
-following division, a phenomenon that might be overlooked in static analyses.
-Multiple parameters can be read out in parallel, such as both time and aggregate
-size for detachments to begin. Also, complex cellular behavior can be deduced
-from movement, or rather lack thereof, which was interpreted as re-attachment of
-\INA daughter cells to the \ac{hMSC} monolayer. This allowed for measuring the
-duration of \nMAina existing until re-attaching and turning into \MAina. This
-information was helpful when designing experiments to prove that dissemination
-is initiated by cell division, requiring precise timing to capture the detached
-daughter cells right after cell division. Together, live cell imaging enabled
-key mechanistic insights in understanding the dynamics involved in multicellular
-interactions by integrating the study of multiple phenomena at once.
-
-\textbf{\textit{The cells are doing ...that thing again!}} Exploring video data
-begins with the search of scientific novelties. In order to correctly identify
-cellular phenomena relevant to the research question, a deep
-understanding of cell biology is required, e.g. in field of cell dynamics to
-read migratory behavior \cite{nalbantExploratoryCellDynamics2018}. This is a
-challenge for both students and experienced researchers, since finding the
-academically correct terms to describe observations is difficult, especially for
-novel phenomena or a sequence of events that can overlap. After all, cell
-biology is taught using textbooks, not videos. For this project in particular,
-the used terminology was revised frequently, being caused by the constant
-struggle of finding the middle-ground between the precice description of
-observations, the compatibility with results from other experiments,
-comprehensability, and memorability. Ultimately, comprehensability and
-memorability were prioritized to maximize adoption of the new terminology by
-other researchers. For instance, \emph{non MSC adherence} was chosen over
-\emph{mobile interaction}, \emph{aggregation} over \emph{homotypic interaction},
-and \emph{detachment event} over \emph{in vitro metastasis}. In general, the gap
-between observations and their description remains a challenge in exploratory
-cell biology that might be overlooked. This gap could be bridged by currently
-available multimodal \acp{LLM} like \texttt{ChatGPT-4o}: These models could
-match recorded phenomena with descriptions and images that were amassed in the
-literature over decades. By doing so, researchers not only use established
-terminology instead of inventing new terms, but also minimize the risk of
-missing potential discoveries.
+\textbf{\textit{The cells are doing ...that thing again!}} The exploratory
+assessment of video data begins with the search of scientific novelties. In
+order to correctly identify cellular phenomena that are relevant to the research
+question, a deep understanding of cell biology is required, e.g. in field of
+cell dynamics to read migratory behavior
+\cite{nalbantExploratoryCellDynamics2018}. This is a challenge for both students
+and experienced researchers, since finding the academically correct terms to
+describe observations is difficult, especially for novel phenomena or a sequence
+of events that can overlap. After all, cell biology is taught using textbooks,
+not videos. For this project in particular, the used terminology was revised
+frequently, being caused by the constant struggle of finding the middle-ground
+between the precice description of observations, the compatibility with results
+from other experiments, comprehensability, and memorability. Ultimately,
+comprehensability and memorability were prioritized to maximize adoption of the
+new terminology by other researchers. For instance, \emph{non MSC adherence} was
+chosen over \emph{mobile interaction}, \emph{aggregation} over
+\emph{homotypic interaction}, and \emph{detachment event} over \emph{in vitro
+    metastasis}. In general, the gap between observations and their description
+remains a challenge in exploratory cell biology that might be overlooked. This
+gap could be bridged by currently available multimodal \acp{LLM} like
+\texttt{ChatGPT-4o}: These models could match recorded phenomena with
+descriptions and images that were amassed in the literature over decades. By
+doing so, researchers not only use established terminology instead of inventing
+new terms, but also minimize the risk of missing potential discoveries.
 
 \textbf{Why Hide Videos in the Supplementary?} A major challenge remains in how
 to effectively present these dynamic observations in a publishable format, as
-traditional scientific publications are not equipped to display video data, but
-require manual download of supplementary data. Although supplementary data is
-downloaded often, most biomedical researchers favor a presentation of additional
-figures and tables directly on the journal's website
-\cite{priceRoleSupplementaryMaterial2018}. In fact, the journal \emph{Nature}
-allows embedding video content into their website \cite{NatureVideoContent}, but
-it is rarely used. Instead, it is common practice to assemble video frames into
-static figures, presumably to support both online and printed reading habits
-\cite{perasDigitalPaperReading2023}. Nevertheless, there is no reason why
-representative example videos should not be made available on the article's
-website alongside figures and tables. Current practice potentially reduces the
-impact of videos, as accessibility is hindered by the need to navigate to
-download links. Hence, the author encourages journals and scientists to make
-videos as accessible as figures and tables.
-
-Time-lapse microscopy has proven indispensable in exploratory cell biology,
-uncovering dynamic cellular phenomena that static analyses often miss. This
-technique shifted the project’s focus by revealing unexpected cell behaviors,
-like detachment during division, emphasizing the need for integrating real-time
-observations with molecular data. By making such dynamic processes visible,
-time-lapse microscopy not only enriches our understanding but also challenges us
-to enhance how scientific findings are presented, advocating for greater
-accessibility of video data in scholarly publications.
+traditional scientific publications are not equipped to display video data.
+Although supplementary data is downloaded often, most biomedical researchers
+favor a presentation of additional figures and tables directly on the journal's
+website \cite{priceRoleSupplementaryMaterial2018}. In fact, the journal
+\emph{Nature} allows embedding video content into their website
+\cite{NatureVideoContent}. 
 
 
-% ======================================================================
-\unnsubsection{Challenges in Quantifying Microscopy Data}%
+
+or understanding cryptic
+descriptions of complex phenomena. Hence, the author encourages journals and
+scientists to make videos accessible and remove unnecessary barriers for video
+data. These barriers include manual download of videos, or making the reader
+go through cryptic-but-precise descriptions of video content. 
+
+ support both online and printed reading habits, the standard of
+assembling static figures from video frames shall remain
+\cite{perasDigitalPaperReading2023}. Effectively, there is no reason why representative
+example videos should not be shown alongside figures and tables. 
+
+\unnsubsection{Quantification of Microscopy Data Remain a Challenge}%
 \label{sec:discussion_potential_breakthroughs}%
-Quantifying microscopy data is critical for both analytic and exploratory
+Quantification of microscopy data is vital for both analytic and exploratory
 approaches to microscopy: For instance, microscopic assessment of live/dead
 cells should result in a bar chart representing the viability of the cells
 \cite{spaepenDigitalImageProcessing2011}, whereas describing novel phenomena
 should be supported by charts that prove the reproducibility of claimed
-observations.
+observations. 
 
 
-\textbf{Technical Requirements for Robust Statistics:} 
-In order to capture rare cellular events with a frequency sufficient for
-statistical analysis, this study chose high temporal and spatial resolution. We
-utilized \SI{1}{frame} every \SI{15}{\minute}, suitable for tracking cell
-migration \cite{huthSignificantlyImprovedPrecision2010}, but too slow for
-intricate movements or intracellular processes, higher temporal resolution is
-required. Predicting the observed total surface area can be difficult prior to
-the experiment. We acquired a large surface area of up to
+\textbf{Technical Requirements for Robust Statistics:} The utility of time-lapse
+microscopy in our study required high-resolution temporal and spatial imaging to
+capture rare cellular events with sufficient frequency to distinguish between
+singular occurrences and reproducible phenomena. We utilized \SI{1}{frame} every
+\SI{15}{\minute}, which is a  time resolution to capture cell migration
+\cite{huthSignificantlyImprovedPrecision2010}, but for analyzing more intricate
+movements or intracellular processes, higher temporal resolution is required.
+Predicting the observed total surface area can be difficult prior to the
+experiment. We acquired a large surface area of up to
 \SI{13}{\milli\meter\squared}, of which we manually assessed approximately a
-quarter until enough events were gathered for each time bin. Such
+quarter to gather enough events for statistical analysis for each time bin. Such
 extensive automated video acquisition poses high demands on microscopy
 equipment, including an incubation setup and motorized stage top. The total size
 of video files can also complicate storage, transfer and analysis. The raw video
@@ -249,32 +251,24 @@ effects that complicated the choice of the surface area for phase contrasting.
 
 
 
-
-
 \textbf{Manual vs. Automated Quantification:}
-This project employed both manual and automated data analysis methods to ensure
-comprehensive and accurate data interpretation. Manual analysis, though
-time-consuming, allowed for detailed characterization of cell behaviors such as
-attachment, detachment, and division dynamics. Conversely, automated analysis,
-facilitated by the machine learning software \textit{Intellesis}, enabled
-high-throughput and precise quantification necessary for tasks like cell cycle
-profiling in fluorescence microscopy. This hybrid approach leveraged
-\textit{Intellesis}’s capabilities to segment and quantify tens of thousands of
-DNA-stained nuclei efficiently, aligning this project with advanced image
-cytometry techniques \cite{guptaDeepLearningImage2019}.
-
-
+% Quantification of microscopy data is vital for both analytic and exploratory
+% approaches to microscopy: For instance, microscopic assessment of live/dead
+% cells should result in a bar chart representing the viability of the cells
+% \cite{spaepenDigitalImageProcessing2011}, whereas describing novel phenomena
+% should be supported by charts that prove the reproducibility of claimed
+% observations. 
 
 This project used both manual and automated approaches for this
 bar chart representing the frequency of the observed
 
 no matter if counting live/dead cells, or describing
 novel phenomena, in the end, we require a barchart describing either the result
-or the frequency of the observed phenomena, proving
+or the frequency of the observed phenomena, proving 
 
 . This project used both manual
 
-analytic microscopy
+analytic microscopy 
 both for analytic approaches measuring live/dead cells, but also for
 exploratory
 Video phenomena must be quantified such that it becomes clear that it is
