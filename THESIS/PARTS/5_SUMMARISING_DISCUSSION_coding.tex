@@ -1,0 +1,459 @@
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% ======================================================================
+% == Discussion: Coding
+% ======================================================================
+
+% ======================================================================
+\unnsubsection{Semi-Automation was Critical for Establishing \textit{in vitro} Methods}%
+\label{sec:discussion_semi_automated_analysis}%
+\textit{In vitro} research is valued for their speed at creating precise data
+\cite{moleiroCriticalAnalysisAvailable2017}. In this work, the development and
+publication of innovative \textit{in vitro} methodologies necessitated the adoption of
+semi-automated data analysis tools. These novel methods introduced complexities
+that span multiple experimental parameters, making the results multidimensional.
+This demanded precise, efficient and standardized data handling capabilities
+which were facilitated by Python tools like \texttt{seaborn} and
+\texttt{plotastic} \cite{waskomSeabornStatisticalData2021,kuricPlotasticBridgingPlotting2024}.
+
+
+\textbf{Inherent Multidimensionality of Adhesion Studies:}
+Cell adhesion studies often involve multiple independent parameters, posing
+significant analytical challenges. Two critical dimensions are particularly
+notable: \emph{`Subpopulation'} and \emph{`Time'}. Analyzing cell adhesion often
+involves isolation of adherent and non-adherent subpopulations, effectively
+introducing \textit{`Subpopulation'} as a vital dimension in the dataset
+\cite{dziadowiczBoneMarrowStromaInduced2022}. This study specifically
+categorized cells into three levels of MSC-interaction: \CMina, \nMAina, and
+\MAina, representing \INA cells incubating in MSC-conditioned medium, \INA cells
+not adhering to MSCs, and \INA cells adhering to MSCs, respectively.
+Furthermore, the dynamic nature of cell adhesion processes is profoundly
+influenced by the factor \emph{`Time'}, making it a crucial experimental
+parameter for investigation \cite{reblTimedependentMetabolicActivity2010,
+    mckayCellcellAdhesionMolecules1997,
+    bolado-carrancioPeriodicPropagatingWaves2020a}. This work includes extensive
+time-lapse microscopy experiments utilizing a high time resolution
+(\SI{1}{frame} every \SI{15}{\minute}), similar to those time resolutions used
+by \citet{purschkePhototoxicityHoechst333422010}. This precision was required
+for key mechanistic insights on hMSC-\INA interaction dynamics. These included
+identifying rolling movements of \nMAina daughter cells around \MAina mother
+cells, measuring the minimum time for \INA detachments to begin, and measuring
+the time required for daughter cells to re-attach to the hMSC monolayer, etc.
+Next to mechanistic insights, adhesion time played a crucial methodological role
+in this study as well: During the V-Well adhesion experiments, we did not know
+initially how long \INA cells required to form strong adhesion with hMSCs before
+pelleting \nMAina, but required a timepoint with hour precision to capture
+detachments after cell division that was accelerated through prior cell cycle
+synchronization at M-Phase.
+
+The extensive facetting features of \texttt{seaborn} and \texttt{plotastic} were
+essential for visualizing these multidimensional datasets, allowing for quick
+exploration of the data \cite{waskomSeabornStatisticalData2021}.
+
+
+\textbf{Further Contributions and Remedies to Multidimensional Complexity:}
+In addition to \textit{`Subpopulation'} and \textit{`Time'}, this study faced
+additional layers of complexity that were managed through semi-automated
+analysis.
+
+Experiments typically involved at least three biological replicates and
+corresponding technical replicates. Although replicates were not treated as
+independent variables \dashedsentence{instead serving for displaying variance}
+they can add substantially to the data management workload. In this work,
+semi-automation nullified the manual burdens of handling technical replicates:
+\texttt{pandas} was used to automate aggregation of technical replicates into
+means after removing technical outliers thorugh z-score thresholding, while the
+jupyter notebook format allowed for reviewing filtered data for specific data
+losses. The removal of technical noise was especially relevant for qPCR data,
+where low gene expression can lead to sudden increase in Ct value (non-detects).
+In fact, the decision to remove or impute non-detects is under active
+discussion, however, available algorithms are hard to understand for non
+bioinformaticians, but also do not separate biological from technical variance,
+which is considered bad practice by
+\citet{motulskyIntuitiveBiostatisticsNonmathematical2018}
+\cite{mccallNondetectsQPCRData2014, sherinaMultipleImputationDirect2020}.
+Semi-automation also nullified the burden of handling biological replicates: The
+automatic aggregation of datapoints during plotting is a key feature of
+\texttt{seaborn}, on which \texttt{plotastic} was built. Without such
+automation, calculating means and standard deviations for simple barplots would
+have required extensive manual computation in \textit{Microsoft Excel}, or
+tedious plot configurations in \textit{GraphPad Prism} due to limited facetting
+functionality of multiple variable tables \cite{GraphPadPrism102024}.
+
+Replicates can expand datasets as this factor comprises a lot of levels.
+Similarly, the factor \textit{`Gene'} multiplied the dataset by a total of 30
+genes when validating RNAseq data with RT-qPCR. With three subpopulations, one
+timepoint, eleven biological replicates, and three technical replicates, the
+qPCR dataset used in this study grew to 2970 datapoints to be statistically
+analyzed and visualized. This is a manageable size for manual analysis, but the
+effort involved illustrates the definition of semi-big data.
+
+Methodological variability also introduced additional dimensions: The Well Plate
+Sandwich Centrifugation (WPSC) used two different techniques to dissociate
+\MAina cells from the hMSC monolayer: Strong pipetting
+(\emph{`Wash'}) and repeated Accutase treatment followed by magnetic activated
+cell sorting (\emph{`MACS'}). These variations, recorded as the factor
+\textit{`method'}, further complicated the dataset. Although this distinction is
+not discussed in this work \dashedsentence{rather pooled into one group}, this
+showcases how protocol changes can add dimensions to the dataset that are
+not necessarily relevant for the biological question but essential for
+method optimizations and validation.
+
+
+
+\textbf{Agility During Establishment of V-Well Assay:}
+The concept of agility in laboratory research, inspired by the Agile Manifesto's
+principle of \emph{``Responding to change over following a plan''}
+\cite{ManifestoAgileSoftware2001}, is increasingly relevant in biomedical
+research \cite{westReinventingResearchAgile2018,
+    quanbeckApplyingConceptsRapid2022}. This adaptive approach was particularly
+crucial during the development of the V-Well adhesion assay in this study. This
+experiment was planned such that the author performed fluorescent readout using
+microscopy and preliminry analysis, while a technical assistant prepared the
+samples for the next timepoint. Semi-automation accelerated the preliminary data
+analysis and visualization to a point that results were reviewable before the
+next sample timepoint was prepared and ready for fluorescent readout. This
+enabled immediate adjustments to the experimental protocol inbetween sample
+measurements, allowing for quick troubleshooting of small and avoidable problems
+that are often unforeseeable when establishing new methodologies. Without such
+agility, these problems would have been identified after the experiment,
+requiring a complete re-run of a very work-intensive experiment that included cell
+cycle synchronization. Such an agile and adaptive work environment, facilitated
+by python tools and \texttt{seaborn}, proved invaluable for refining the
+\textit{in vitro} methods being developed.
+
+Additionally, the simplicity
+offered by \texttt{seaborn} for complex data plotting, such as the cell cycle
+profiling shown in \apdxref{subapdx:figs}{fig:S3}, which required minimal code
+to produce a detailed series of 24 histograms, underscores the utility of
+semi-automation in enhancing laboratory efficiency. While this work does not
+quantify the full benefits of semi-automation, the author's experiences suggest
+potential impacts on the speed and adaptability of method development in
+biomedical research.
+
+
+
+
+
+
+% ======================================================================
+\unnsubsection{\texttt{plotastic} Exceled in Re-Doing Statistical Analyses and Plots}%
+\label{sec:discussion_plotastic}%
+Establishing new methods of \textit{in vitro} dissemination required not just
+innovative experimental protocols, but also adaptive ways to visually present
+complex data. This need for adaptability is crucial during the publication
+process, where researchers must often experiment with different ways to visually
+represent their findings to best convey their significance. This process
+typically involves frequent adjustments to how data is displayed in plots. Such
+adjustments become especially cumbersome when subsequent adjustments are
+involved. Traditional tools (\textit{Microsoft Excel} or \textit{Graphpad
+    Prism}) fail at handling semi-big data, while Python packages like
+\textit{seaborn} reach their limits in terms of adaptability, making the
+development of \texttt{plotastic} a critical step in this work.
+
+\texttt{plotastic} addresses these challenges by not only automating statistics,
+but also by enhancing the adaptability of data visualization as well, making it
+easier to modify how data is presented without repetitive manual adjustments.
+The author saw four key steps that required streamlining through \texttt{plotastic}:
+\begin{enumerate}
+    \item {Re-arranging facets}
+    \item {Plotting multiple layers of different plot types}
+    \item {Statistical Re-Analysis and Re-Annotation}
+    \item {Fine-Tuning for publication grade quality}
+\end{enumerate}
+
+These adjustment steps made re-plotting tedious, since a change in prior steps
+required a complete re-work of following steps, something which
+\texttt{plotastic} prevented. Its key design feature is the centralized
+storage of facetting parameters (\facetparams). These parameters define which
+data points are shown on the x-axis, what categories are highlighted by color
+(\texttt{hue}), and how data is grouped into separate plots (by columns and/or
+rows) into separate plots. This centralization means that once these parameters
+are set, they not only automate statistical analysis, but also can be
+automatically applied across all subsequent adjustments made to the plot. This
+contrasts with \texttt{seaborn}, where changing these parameters
+required adjusting multiple lines of subsequent code.
+
+\textbf{Re-arranging Facets:} \texttt{plotastic}'s \texttt{.switch()} method
+allowed for easily shifting the arrangement of plots \dashedsentence{for
+    example, switching the data represented on the x-axis with that represented by
+    color} to explore different perspectives of the data quickly. This proved
+particularly useful when trying to find the most effective way to illustrate
+complex interactions or trends that might not be immediately apparent. In
+\texttt{seaborn}, changing facets is easy and proved useful during
+intermediate data analysis, but unfeasable when plots involved multiple
+layers, sophisticated style edits or statistical annotations, as this can
+require re-writing subsequent adjustments.
+
+
+\textbf{Plotting Multiple Layers of Different Plot Types:}
+Modern journal standards increasingly demand the representation of individual
+datapoints alongside aggregated data, for example plotting datapoints above a
+bar- or boxplots. \texttt{seaborn} does not automate this, but can require
+calling two plotting functions in sequence, e.g. \texttt{sns.boxplot()} followed
+by \texttt{sns.swarmplot()}. This can get repetitive, as adjusting the
+style of these plots to match each other, e.g. defining the point
+size or transparency of individual data points to fit into a barplot.
+\texttt{plotastic} was designed for multi-layered plotting, offering single-line
+functions for plot combinations with pre-configured style-parameters.
+
+\textbf{Statistical Re-Analysis and Re-Annotation}
+To the author's knowledge, \texttt{plotastic}'s capability of streamlining
+statistical re-analysis is unique and unmatched. \texttt{seaborn} alone can not
+perform this without multiple lines of \texttt{statannotations}
+\cite{charlierTrevismdStatannotationsV02022}. \texttt{plotastic} automates the
+inclusion of statistical annotations directly into plots. This is a significant
+enhancement because it ensures that any statistical significance noted in the
+data is immediately visible and correctly updated whenever the data presentation
+is changed. This feature proved particularly useful during the peer review
+process of \citet{kuricModelingMyelomaDissemination2024}, where a reviewer asked
+for a complete statistical analysis of Chapter\,1\,\ref{fig:5}\,D, which at that
+time included only paired t-tests between selected groups.
+
+\textbf{Fine-Tuning for Publication Grade Quality:}
+\texttt{plotastic} simplified the creation of publication-quality figures by
+automating style adjustments that are typically manually coded with
+\texttt{matplotlib} when using \texttt{seaborn}. These include adjustments like
+angled x-axis labels or consistent visual styles across multiple figures, which
+are important for maintaining the professional appearance of published data.
+
+
+\textbf{Outlook: Could \texttt{plotastic} Address a Re-Analysis Bottleneck?}
+Re-doing analyses and plots is often overlooked bottlenecks in the
+reproducibility of scientific research, although it does overlap with two
+principles of the FAIR-guidelines for scientific data management and
+stewardship: Interoperability\footnotequote{Interoperability\,—\,the ability of
+    data or tools from non-cooperating resources to integrate or work together with
+    minimal effort.}{wilkinsonFAIRGuidingPrinciples2016} and Re-Usability
+\cite{wilkinsonFAIRGuidingPrinciples2016}. This challenge was exemplified during
+this work's experiments using RT-qPCR. The field of qPCR, where reproducibility
+issues have been notoriously prevalent. As
+\citet{bustinReproducibilityBiomedicalResearch2014} noted, many publications
+using PCR-based methods have been seriously flawed, underscoring the need for
+updated approaches \cite{bustinNeedTransparencyGood2013,
+    ruiz-villalbaUseMisuseCq2021}. Furthermore, the evolution of the
+$\Delta\Delta$Ct formula over recent years highlights the dynamic nature of data
+analysis standards in biomedicine \cite{pfafflNewMathematicalModel2001a,
+    ramakersAssumptionfreeAnalysisQuantitative2003,
+    ruijterEfficiencyCorrectionRequired2021}. Despite these challenges, current data
+analysis infrastructures seldom facilitate a smooth revision or complete redoing
+of figures, which could hamper efforts to re-analyse and apply the latest
+techniques to existing datasets, which could be requested e.g. during
+peer-review \cite{wilkinsonFAIRGuidingPrinciples2016}. In response,
+\texttt{plotastic} was specifically designed to streamline the reconfiguration
+and reanalysis of data visualizations. This work serves as a case study showing
+that \dashedsentence{according to the author's experiences} the manual effort
+involved was effectively reduced, making the task of re-analysis seem a lot more
+inviting, especially for handling semi-big data.
+
+
+% % ======================================================================
+% \unnsubsection{\texttt{R} \textit{vs.} \texttt{plotastic}}%
+% \label{sec:discussion_plotastic_vs_R}%
+% Why R became popular:
+% - R was the first language to offer a comprehensive statistical package
+% - R is open-source and has a large community of users
+% - R has a large number of packages available for data analysis and visualization
+
+% Python provides all of that, except for the vast number of statistical packages, although with
+% \texttt{pingouin}, it is catching up.
+
+
+% Benefits of Python:
+% - Better software development
+% - Better Syntax
+% - Faster, with options for parallel computing, both CPU and GPU, with ongoing plans to
+%  break GIL, libraries that are parallel like \texttt{polars}
+% - Overall, Python has much brighter future than R, and statistical packages are expected to migrate to Python
+% - RNAseq is already possible in both python and R
+
+% ggplot2 vs plotastic:
+% - 
+ 
+
+
+% ======================================================================
+\unnsubsection{Conclusion 2: Demonstrating the Advantages of Semi-Automation in
+    Biomedical Research Methodologies}%
+\label{sec:discussion_conclusion_semi_automation}%
+This thesis illustrates the challenges and solutions associated with managing
+the inherent complexity of adhesion studies and related methodologies, such as
+Cell Cycle profiling. These methodologies necessitate sophisticated data
+handling tools to address two primary challenges: (1) the multidimensionality of
+semi-big data and (2) the rapid iterative loop of results evaluation and protocol
+adjustments, a process for which \textit{in vitro} methods are valued.
+
+\texttt{seaborn} and \texttt{plotastic} have been instrumental in addressing
+these challenges. \texttt{seaborn} facilitated the rapid processing of
+intermediate results during method development, while \texttt{plotastic} was
+crucial for crafting publication-grade analyses and figures, filling in the
+capabilities that \texttt{seaborn} lacks. This includes facilitating the easy
+(re-)design of visualizations and statistical analyses, which are critical for
+late-stage data processing.
+
+Though this work does not provide empirical evidence quantifying the benefits of
+semi-automation, it serves as a practical case study demonstrating the
+transformative potential of such technologies in biomedical research. The
+integration of semi-automation tools streamlined complex \textit{in vitro}
+methodologies, significantly enhancing operational agility. This case study
+bridges biomedical research with bioinformatics, highlighting how
+semi-automation can reduce data analysis workloads and enable researchers to
+focus more on exploratory research within the laboratory setting.
+
+To the author's experience, the gained efficiencies not only saved valuable time
+but also enhanced the clarity and communicative power of the research findings.
+This is particularly crucial in fields like myeloma dissemination, where precise
+and transparent data presentation is essential for advancing understanding and
+treatment strategies. This conclusion suggests a need for further empirical
+research to validate these benefits more broadly and encourage wider adoption of
+semi-automation tools in biomedical research.
+
+However, adopting \texttt{plotastic} poses its own set of challenges,
+particularly in the realm of biomedicine where researchers may prefer graphical
+user interfaces (GUIs) over command-line interfaces (CLIs). While
+\texttt{plotastic} offers a powerful CLI that is efficient and capable of
+handling complex data manipulation and visualization tasks, the transition from
+GUIs to CLIs can be intimidating for those accustomed to more visual interaction
+with software. This barrier can be mitigated by the integration of tools like
+ChatGPT, which can facilitate the use of CLIs by offering context understanding,
+code assistance, and error identification.
+
+
+
+% % ======================================================================
+
+% \unnsubsection{Challenges of Integrating \texttt{plotastic} into Biomedicine}
+% \label{sec:challenges_plotastic_cancer}
+% Although \texttt{plotastic} is designed for the overall scientific community and
+% has passed peer-review, time will tell if the single author's vision of an
+% optimized automated statistical workflow can be extrapolated to biomedicine. The
+% author's himself continues to use \texttt{plotastic} in future projects that
+% require visualizing single datapoints and statistical rigor.
+
+% For biomedicine overall, the author sees the greatest challenge in adopting
+% \texttt{plotastic} since it is a tool based on a command line interface (CLI),
+% whereas the majority of biologists prefer graphical user interfaces (GUI). The
+% author argues that a CLI can perform everything that a GUI can, but better,
+% faster, and more efficiently, provided that one is willing to undergo the
+% switch, which can be intimidating. However, many python tools already provide
+% extremely easy commands (e.g. \texttt{seaborn}), and \texttt{plotastic} further
+% lowers the barrier to entry. The author also argues that ChatGPT is a strong
+% argument to switch to CLI, since large language models are highly compatible
+% with text, which is the main format of CLIs. This allows for understanding
+% context, providing code drafts, identifying errors, adding and changing
+% analyses, autocompletion of repetitive commands, follow-up questions and many
+% more.
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% \unnsubsection{Plotastic and Jupyter Notebooks as a Standard for Research Documentation}
+% \label{dis:discussion_plotastic_jupyter}
+
+
+% \unnsubsection{How Biosciences can Benefit from Standards of Software Development}
+% \label{dis:code_quality}
+% %%%%%%%
+% chapter 2 has laid down the benefits of using plotastic in combination with
+% jupyter notebooks
+
+
+% It is important to note that  GitHub are not reserved for software development.
+% Bioscientists are encouraged to use these tools as well which are available with
+% free, robust well-designed and intuitive graphical user interfaces developed by
+% the distinguished experts of the open source community. Its robustness is
+% unparalleled and have withstood the test of time.
+
+% It is a database that documents every minor change thoroughly, noting every little
+% change in text, providing unmatched flexibility but also replicability.
+% Researchers can
+
+% GitHub encourages the use by Scientists.
+
+
+
+
+
+
+% \unnsubsection{Transfer Effects of Coding on Bioscientific Research}
+
+
+
+% Finally, the author makes the argument that basic coding skills not only allows
+% for efficient usage of common software tools, but could also enhance the
+% interaction with computers in general. Intriguingly, there is a long-lasting
+% discussion if coding has benefits on overall cognitive
+% capability~\cite{schererEvidenceCognitiveBenefits2021,schererTechnologyMindDoes2018}.
+% These so-called \textit{``transfer effects''} are similar to those surrounding
+% e.g. chess, Latin, video gaming and brain training.
+% \cite{salaDoesFarTransfer2017}, assuming that learning to code also improves
+% problem-solving in other areas, such as mathematics or science. Although the
+% author does not have a stand in this discussion, it is reasonable to state that
+% coding improves a general understanding of computers and software tools. Since
+% most software tools in the biosciences are black boxes with intimidating
+% complexity. Still, when confronted with issues, researchers must determine if
+% the error is on their side or the software's in order to assess possible
+% troubleshooting strategies. It is reasonable to argue that a good understanding
+% of the software is crucial to facilitate that decision-making process.
+
+% a solid understanding of computers facilitates the decision-making process when
+% confronted with issues, allowing researchers to determine if the error is on
+% their side or the software's. This is only possible if the researcher has a good
+% understanding of the software.
+
+
+% Learning to code has been hypothesized to have generalizable benefits for
+% cognitive function and problem
+% solving~\cite{schererEvidenceCognitiveBenefits2021}. Here the author reflects on
+% his own experience with coding and how it has benefitted his research beyond the
+% development of plotastic
+
+% Coding skills enhance a researcher's understanding of the software they use.
+% This understanding allows them to decipher the underlying algorithms and
+% assumptions of the software. Complex proprietary software like Zen, Imaris,
+% FlowJo, etc., often operate as black boxes. When confronted with issues,
+% researchers must determine if the error is on their side or the software's. This
+% decision-making process is facilitated by a good understanding of the software.
+% Basic coding skills also open the door to open-source software, which offers
+% state-of-the-art analysis techniques not available in proprietary software.
+
+% - In general, coding skills help improve a researchers general understanding of
+% every software he uses. This is because the researcher can understand the
+% underlying algorithms and assumptions of the software. Complex proprietary
+% software to use state-of-the-art equipment (Zen, Imaris, FlowJo, etc.) are often
+% black boxes. The researcher will be confronted with issues and has to make
+% constant decisions if the error is on his side, or on the software side in order
+% to think of feasable troubleshooting strategies. This is only possible if the
+% researcher has a good understanding of the software. A basic understanding of
+% code also opens the door to open-source software, allowing for state-of-the-art
+% analysis techniques that are not available in proprietary software, but their
+% installation and usage is often overestimated by researchers without coding
+% skills, while coding skills allow for adaptations of this software to the
+% specific needs of the researcher.
+
+
+
+
+% In conclusion, as bioscience continues to generate increasingly complex datasets,
+% the distinction between biologists and bioinformaticians blurs, emphasizing the
+% need for all researchers to adopt computational tools. The development of new
+% software to handle semi-big data effectively is not just an enhancement but a
+% necessity to ensure the future reliability and efficiency of scientific
+% research. This thesis proposes a framework for understanding and addressing the
+% semi-big data challenges, setting the stage for a discussion on innovative
+% solutions like the software tools described in subsequent chapters.
+
+% In conclusion, the integration of coding in bioscience research is not just a
+% trend but a necessity. As the field continues to evolve, the demarcation between
+% biologists and computational scientists blurs, underscoring the importance of
+% coding skills for the next generation of researchers. The ability to code is
+% fast becoming an indispensable asset, as integral to bioscience as traditional
+% laboratory skills.
+
+
