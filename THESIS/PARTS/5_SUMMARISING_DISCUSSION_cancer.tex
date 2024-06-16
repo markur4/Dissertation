@@ -233,7 +233,7 @@ cell morphology; organelle count, shape, and distribution; membrane and lipid
 distribution; protein localization, DNA content, et cetera. However, leveraging
 this information has always been limited by the ability to extract quantitative
 data from microscopy images \cite{galbraithPumpingVolume2023}. This extraction
-process is the essence of image cytometry, a field that has seen significant
+process is the essence of \emph{image cytometry}, a field that has seen significant
 advances by integrating machine learning for automating image analysis tasks.
 \cite{guptaDeepLearningImage2019}. The following sections discuss the
 experiences gained from this project in quantifying microscopy data and outlines
@@ -242,39 +242,12 @@ potentials and challenges of image cytometry.
 
 
 
-% This led to many advances
-% spanning multiple fields of biology, image processing and machine learning,
-% potentially ushering a new era of \emph{image cytometry}
-% \cite{guptaDeepLearningImage2019}. The definition of image cytometry is
-% broadly defined as extracting measurements from microscopy images of cells or
-% subcellular structures and has great potential for automated approaches to
-% quantitative microscopy \cite{guptaDeepLearningImage2019}.
 
-
-
-
-\textbf{Manual Analysis Remains Robust for Complex and Unique Phenomena:}
-Most biologists lack the computational expertise to automate analysis of
-microscopy data, often reverting to manual analysis. This project also utilized
-manual strategies for the detailed characterization of dynamic intercellular
-interactions such as attachment, aggregation, detachment, and division. This was
-very time-consuming and required a thoughtful categorization strategy and a
-disciplined, bias-free execution. However, some analysis tasks are simply
-unfeasable for automation. For example, this work manually counted if two \INA
-cells interacted homotypically due to coming into contact with each other, or by
-staying connected as two daughter cells after cell division. Automating such a
-task would require a very sophisticated algorithm and unfeasable for such unique
-task. Hence, manual analysis is unmatched in terms of flexibility and complexity
-of categorizations, when compared to computational techniques of image
-processing.
-
-
-% \textbf{Live-Cell Image Analysis Computational Tools for Future Live-Cell Image Analysis:}
 \textbf{Considering Automated Analysis for Future Live-Cell Imaging:}
-Despite the benefits of manual analyses, this work would have benefited from
-computational automation for the analysis of live-cell imaging. For example, the
-task of associating \INA cell detachment with \INA aggregate size and time could
-have been automated: Manual analysis consisted of zooming in closely and
+This work would have benefited from
+computational automation for the analysis of live-cell imaging, for example, the
+task of associating \INA cell detachment with \INA aggregate size and time:
+Manual analysis consisted of zooming in closely and
 watching the time-lapse over and over again until a detachment event was found.
 A very tedious task that had to be repeated approx. 50 times for every one of
 four independent videos. Instead of manually counting the number of single \INA
@@ -309,17 +282,19 @@ The workload of manual video analysis motivated the purchase of
 \texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}
 microscopy software ecosystem. \texttt{Intellesis} is a machine learning-based
 pixel segmentation software \cite{ZeissOADFeature}. As a feature
-extractor\footnote{\label{foot:image_features}\imagefeatures}, it uses the
-first convolution layers of VGG19, which is convolutional neural network\footnote{\cnn}
-\cite{simonyanVeryDeepConvolutional2015}. \texttt{Intellesis} does not
-contain a deep neural network for segmentation, but instead classifies pixel
-features using a \emph{random forest classifier}. Random forest is a machine
-learning algorithm that \dashedsentence{for small sets of training images}
-performs almost as well as deep neural networks, but are computationally far
-less demanding \cite{breimanRandomForests2001,
+extractor\footnote{\label{foot:image_features}\imagefeatures}, it uses the first
+convolution layers of VGG19, which is convolutional neural
+network\footnote{\cnn} \cite{simonyanVeryDeepConvolutional2015}.
+\texttt{Intellesis} does not contain a deep neural network for segmentation, but
+instead classifies pixel features using a \emph{random forest classifier}.
+Random forest is a machine learning algorithm that \dashedsentence{for small
+    sets of training images} performs almost as well as deep neural networks, but
+are computationally far less demanding \cite{breimanRandomForests2001,
     richardsonDenseNeuralNetwork2023}. A comparable hybrid approach was also used by
 \citet{qamarHybridCNNRandomForest2023} to segment images of bacterial spores
-into eight distinct pixel classes using only 50 training images.
+into eight distinct pixel classes using only 50 training images. Also, free
+alternatives to \texttt{Intellesis} exist, such as Ilastik
+\cite{bergIlastikInteractiveMachine2019}.
 
 \texttt{Intellesis} proved useful for segmenting single multi-channel images.
 However, live cell imaging adds another layer of complexity to image analysis:
@@ -342,71 +317,75 @@ recently, as summarised in \citet{pylvanainenLivecellImagingDeep2023}.
 
 
 % ========
-\textbf{Image Cytometry Achieved Competitive Precision and Throughput:}
-In particular, this project required validation of recent cell divisions within
-the \nMAina cell population by fluorescently profiling their DNA content.
-\ac{FACS} is a common method for this task, especially for suspension cells like
-\INA \cite{darzynkiewiczDNAContentMeasurement1997}. However, this experiment
-included up to 24 samples for each independent experiment, combining three
-subpopulations, four timepoints, and two experimental conditions
-(\apdxref{subapdx:figs}{fig:S3}). Although automated \ac{FACS} allow for high
-throughput and are available at the university of Würzburg, the author sought to
-challenge the limits of microscopy equipment available in his laboratory,
-especially when such technique is applicable to adherent cells
-\cite{roukosCellCycleStaging2015}.
+\textbf{Image Cytometry is Precise, Fast, Flexible and Accessible:}
+In this study, image cytometry was indispensable for validating prior cell
+divisions within the \nMAina cell population by profiling their DNA content. The
+complexity of this experiment required a method capable of managing a high
+throughput across three subpopulations, four timepoints, and two conditions,
+involving up to 24 samples per trial (\apdxref{subapdx:figs}{fig:S3}). Despite
+having access to automated \ac{FACS} equipment offered by the Core Unit FACS at
+the University of Würzburg, the author saw a more time- and cost-effective
+solution in the laboratory microscope equipped with motorized stage top and
+\texttt{Intellesis}. This setup scanned 96 different samples in \SI{1.5}{\hour},
+and resulting large scans were processed by \texttt{Intellesis} overnight,
+quantifying thousands of DNA-stained nuclei. This demonstrated that image
+cytometry could match the throughput and precision of \ac{FACS} with modern
+standard microscopy equipment (\apdxref{subapdx:figs}{fig:S2}).
 
-This method enabled the automated extraction and quantification of
-fluorescence brightness across tens of thousands of DNA-stained nuclei,
-simplifying the subsequent data analysis like plotting DNA content
-distributions.
+The advantages of image cytometry could have of great impact for the future of
+cell biology: It is applicable to adherent cell cultures
+\cite{roukosCellCycleStaging2015} and provides diverse readouts like structure,
+brightness, size, and shape. Moreover, image cytometry’s capacity to evaluate
+cell viability without the need for staining or expensive analytical chemicals
+makes it an exceptionally cost-efficient approach for drug screening, reducing
+operational costs to cell culturing and electricity for microscopy
+\cite{pattaroneLearningDeepFeatures2021}.  However, challenges such as the need
+for sophisticated automation in microscopic scans, including autofocus and
+shading adjustments, and the computational demands of AI processing remain.
 
-achieving
-high levels of automation along with a single-cell precision that's comparable
-to flow cytometry (\apdxref{subapdx:figs}{fig:S2}). Although this work has not
-applied \textit{Intellesis} to live-cell imaging, this exemplifies the vast
-quantitative potential of microscopy \dashedsentence{or rather image cytometry}
-in general.
 
-
-% ========
-\textbf{Making Image Cytometry Accessible to Biology?}
-Computational approaches to image analysis, such as those provided by
-\textit{Intellesis}, are invaluable as they offer unmatched objectivity and
-throughput in data interpretation. At the time of this project, the author had
-no prior experience with image processing. Still, using \textit{Intellesis} was
-straightforward, as it integrates well with \texttt{Zen}, the software used for
-image acquisition using microscopes by \textit{Zeiss}. This allowed the
-conversion of complex image data into quantifiable outputs.
-
-Achieving high throughput and precision using \textit{Intellesis}, this project
-effectively entered the field of \emph{image cytometry}
-\cite{guptaDeepLearningImage2019}. Image cytometry distinguishes itself from
-other microscopy techniques by achieving high levels of automation along with a
-single-cell precision that's comparable to flow cytometry
+Interestingly, the author’s initial unfamiliarity with image cytometry and
+limited experience in image processing did not prevent the effective use of this
+technology. This underscores the accessibility of current imaging tools to
+biologists without specialized training in image analysis. As confirmed by
+recent advancements \cite{nittaRapidHighthroughputCell2023}, image cytometry is
+becoming increasingly competitive with established techniques like \ac{FACS}.
+Despite its limitations, the simplicity and efficiency of image cytometry could
+be pivotal for its broader acceptance and integration into biological research.
+The exclusivity of \texttt{Intellesis} to \textit{Zeiss} microscopes could be a
+major hurdle, however there are free alternatives offering the same
+accessibility \cite{bergIlastikInteractiveMachine2019}.
 
 
 
+\textbf{Manual Analysis Remains Robust for Complex and Unique Phenomena:}
+Many biologists lack the access to tools like \texttt{Intellesis}, or the
+computational expertise to automate analysis of microscopy data, often reverting
+to manual analysis. This project also utilized manual strategies for the
+detailed characterization of dynamic intercellular interactions such as
+attachment, aggregation, detachment, and division. This was very time-consuming
+and required a thoughtful categorization strategy and a disciplined, bias-free
+execution. However, some analysis tasks are simply unfeasable for automation.
+For example, this work manually counted if two \INA cells interacted
+homotypically due to coming into contact with each other, or by staying
+connected as two daughter cells after cell division. Automating such a task
+would require a very sophisticated algorithm and developing such would be
+unfeasable for a task that unique. Hence, manual analysis is unmatched in terms
+of flexibility and complexity of categorizations, when compared to computational
+techniques of image processing.
 
-Together, this work exemplifies the quantitative potential of image cytometry
-\cite{guptaDeepLearningImage2019}, achieving high levels of automation and
-single-cell precision without dedicated education in image analysis.
-Such accessibility could prove crucial for a generalized adoption of automated
-image analysis among biologists.
 
-Benefits of Image Cytometry over FACS:
-High throughput (96 Samples scanned in 1.5h)
-Applicable to adherent cultures (compared to FACS) \cite{roukosCellCycleStaging2015}
-Staining often unnecessary
-No analytic chemicals needed
-AI-assisted detection of structures + removal of false positives
-„Infinite“ types of readouts (Structure, Brightness, Size, Shape, etc.)
->> Researching diagnostic value of cell characteristics accelerated by Artificial Intelligence
 
-Challenges:
-Sophisticated Automation of Microscopic Scans (Autofocus, Shading, etc.)
-AI is Computation Intensive
-Spread cells evenly
-Intellesis is only available for Zeiss microscopses
+
+
+
+In summary, image cytometry significantly enhanced this project by merging the
+precision of \ac{FACS} with the cost-efficiency of modern microscopy. Utilizing
+\texttt{Intellesis} simplified complex image analyses, making advanced
+cytometric techniques more accessible. While challenges like automation and
+software availability persist, the potential of image cytometry to advance
+biomedical research and discovery remains substantial.
+
 
 
 
@@ -414,7 +393,6 @@ Intellesis is only available for Zeiss microscopses
 % ======================================================================
 \unnsubsection{Technical Considerations for Image Cytometry}%
 \label{sec:discussion_quantifying_microscopy}%
-
 
 \textbf{Acquiring Accurate Image Data:}
 In order to capture rare cellular events with a frequency sufficient for
@@ -447,131 +425,123 @@ accessible.
 
 
 \textbf{Generating Training Datasets:}
-% either requires know-how of
-% image-processing or expensive software. Using expensive software based on machine
-% learning assisted 
-This project has invested a lot of time in training the machine learning
-software \textit{Intellesis} to segment images.
+In this project, considerable effort was dedicated to training the machine
+learning software \textit{Intellesis} for image segmentation, particularly for
+fluorescent images. It was also utilized for phase contrast, yet training
+required far more effort in generating annotated training images. Phase contrast
+or brightfield images often display low contrast between cell edges and the
+background, complicating the task of differentiating individual cells from their
+surroundings. Such complexity necessitates extensive annotation of training
+images --\,a process that can be both time-consuming and demanding.
 
-Some image types remain challenging for machine learning-based software
-like \textit{Intellesis}, such as
+To address these challenges and enhance the efficacy of \textit{Intellesis},
+pre-processing steps could be incorporated to emphasize essential image features
+and reduce irrelevant ones. For instance, edge-enhancing filters are applicable to
+clarify cell boundaries, while median filters can suppress noise and
+unnecessary details while preserving edges. These filters, available within the \texttt{Zen} software
+suite, help simplify the machine learning task by focusing the algorithm’s
+learning on pertinent features, thereby reducing the volume of data needed for
+effective training.
 
-phase contrast images, which have low contrast
-between cell edges and the background, making cell separation difficult during
-pixel segmentation.
-
-phase
-contrast images are more challenging for machine learning based software like
-\textit{Intellesis}, since cell edges have low contrast to the background and
-single cells are hard to distinguish. This can require extensive annotation of
-training images, which can be time-consuming and frustrating. This could be
-alleviated by introducing pre-processing steps that emphasize the features of
-interest and/or reduce image features that are irrelevant for the analysis. For
-example when discerning cell morphology, cell edges can be enhanced using edge
-enhancing filters, while noise and irrelevant small details can be removed by
-applying a median filter that preserves edges. Both filters are available in
-\texttt{Zen}. This approach simplifies the task for machine learning algorithms
-and reduces the amount of training data required by avoiding the classifier to
-learn irrelevant image features.
-
-% . In summary, the implementation
-
-
-% applying a median filter to reduce
-
-% e.g. by applying
-
-% intentionally removing details from the images that
-% are otherwise extracted as features from the machine learning algorithm, but
-
-
-% , e.g. by
-% applying
-
-% Pre-processing
-% images to reduce features extracted by the machine learning algorithm could
-% alleviate this problem, for example applying a median filter blurs details while
-% preserving edges
-
-
-
-% with a median filter could alleviate this problem by blurring details
-% while preserving sharp edges, reducing the feature amount
-
-% simplifying the task for machine learning algorithm
-
-
-% , such as applying blurring details  an edge-preserving median filters, could alleviate
-% this problem by simplifying the task for machine learning algorithms and reducing
-
-% This could be alleviated by applying
-
-% require a larger training dataset  of
-% \textit{Intellesis}. 
-
-% experienced annotation
-
-
-% can be more efficient, but it requires
-% the generation of proper training data.
-
-% Advances in digital image processing, like \textit{Intellesis}, offer solutions
-% by making machine learning accessible to biologists, enabling the conversion of
-% video data into analyzable quantitative outputs. This approach allows
-% the extraction of meaningful scientific metrics from time-lapse experiments,
-% turning dynamic observation into static scientific reporting.
-
-
-% applying median filters to
-% reduce noise, thus simplifying the task for machine learning algorithms during
-% post-processing, enhance the analysis without the extensive generation of
-% training data.
-
-
-
-% In summary, the implementation of live-cell imaging in this project not only
-% enhanced our understanding of myeloma cell behavior but also emphasized the need
-% for innovative solutions to integrate dynamic cellular data into the rigid
-% frameworks of scientific communication. The evolution of microscopy and image
-% analysis into image cytometry continues to push the boundaries of what can be
-% observed and understood about cell dynamics in disease and health.
-
-
-% \textbf{Lack of Translation Between Machine Learning Experts and Biologists?:}
-
-% Current opinions on machine learning speak of training neural networks, without mentioning
-% random-forest classifiers.
-% To the author's know
-
-
-% A comparable hybrid approach was also used by \citet{qamarHybridCNNRandomForest2023}
-% to segment images of bacterial spores
-% into eight distinct pixel classes using 50 training images.
-
-% , which is a very low number compared to the
-% hundreds of images required for neural networks.
+This approach streamlines the training process for \textit{Intellesis}, enabling
+more efficient and accurate segmentation of complex microscopy images. By
+refining the feature extraction phase, the project could have improved the
+performance of the segmentation algorithm but also significantly cut down on the
+labor and frustration typically associated with preparing large sets of
+annotated training data.
 
 
 
 
-% - Biggest current challenge: How to present observations in a publishable form? After
-% all, videos can not be printed into Journals Usage of modern Pixel segmentation
-% techniques? In the end, we need something like bar plots to document
-% observations by scientific standards! Advances has been made through Intellesis,
-% making Machine learning extremely accessible even for biologists, but still,
-% phase contrast acquisitions require experienced annotation techniques, or
-% generating training data can get very time consuming and even frustrating. Using
-% Pre-processing could alleviate this problem, e.g. when only cell morphology is
-% required, a median filter can be applied to reduce salt-and-pepper noise while
-% preserving edges. This simplifies the task for the machine learning algorithm
-% and reduces the amount of training data required. Manual analysis is also a very viable
-% option, yet it is very time consuming and requires development of a ver thoughtful
-% categorization strategy and disciplined and bias-free application of it. 
 
-\unnsubsection{Conclusion 1: Microscopy On the Brink of Breakthrough, if Image Analysis is Becoming more Available}%
+\unnsubsection{Conclusion 1: Harnessing Automation and Image Cytometry for
+Advanced Insights into \INA and hMSC Dynamics}%
 \label{sec:discussion_conclusion_microscopy}%
+This study utilized live-cell imaging and image cytometry to investigate the
+complex interactions between \INA cells and hMSCs, offering significant insights
+into myeloma cell behavior. The findings underscored the critical role of the
+tumor microenvironment in shaping cell behavior, where \INA cells showed a
+preference for heterotypic interactions with hMSCs. These techniques revealed
+dynamic processes, such as cell detachment and migration, which are pivotal for
+understanding disease mechanisms and developing therapeutic strategies.
+
+Live-cell imaging proved instrumental in capturing real-time cellular behaviors
+that static methods cannot, such as the detachment of \INA cells during
+division. This ability to directly observe dynamic processes provided a deeper
+understanding of the cellular mechanisms that may contribute to myeloma
+dissemination. However, this approach also posed challenges, including the need
+for extensive manual analysis and the difficulty of presenting dynamic data in
+traditional scientific formats, highlighting the potential benefits of
+integrating automated analysis tools in future research.
+
+Image cytometry facilitated high-throughput and precise analysis of cellular
+interactions, despite challenges related to automation and computational
+demands. The integration of manual and automated techniques in this study not
+only enabled a comprehensive analysis but also demonstrated the accessibility
+and potential of these advanced imaging technologies for broader applications in
+biomedical research. These findings underscore the importance of adopting
+innovative imaging techniques to enhance our understanding of cellular dynamics
+and inform the development of new therapeutic interventions.
 
 
+% The microscopy studies presented in this thesis have elucidated complex
+% interaction dynamics between INA cells and hMSCs, showcasing the substantial
+% potential and inherent challenges of advanced microscopy techniques. Live-cell
+% imaging, in particular, has proven pivotal, revealing preferences of INA cells
+% for heterotypic interactions over homotypic aggregation, influenced markedly by
+% hMSC density and the formation of cellular aggregates. These observations
+% underscore the nuanced role of the microenvironment in modulating myeloma cell
+% behaviors, affecting viability and apoptosis, which are critical for
+% understanding and potentially manipulating cancer progression.
+
+% However, the application of live-cell imaging has also highlighted significant
+% technical challenges, including the need for high temporal and spatial
+% resolution to capture dynamic intercellular events effectively. This study has
+% demonstrated that while live-cell imaging offers unprecedented insights into
+% cellular dynamics, it requires careful optimization of imaging parameters and
+% extensive data management due to the large volumes of generated data and
+% difficulties extracting data from images. Future advancements in image
+% processing and analysis, incorporating machine learning and automated
+% segmentation, hold great potential to these challenges, enhancing the efficiency
+% and depth of cellular studies. Ultimately, the integration of these advanced
+% microscopy techniques holds promise for not only exploring fundamental
+% biological interactions but also for developing targeted therapeutic strategies
+% in oncology and beyond.
+
+
+% The comprehensive microscopy studies conducted in this thesis have significantly
+% advanced our understanding of the interaction dynamics between INA cells and
+% hMSCs, highlighting the critical role of microenvironmental factors in cancer
+% biology. Through the application of live-cell imaging, this work has illuminated
+% the preference of INA cells for heterotypic interactions over homotypic
+% aggregations, a phenomenon that is profoundly influenced by the density of
+% hMSCs. This finding not only enhances our understanding of myeloma cell behavior
+% but also suggests potential therapeutic targets that manipulate
+% microenvironmental interactions to curb cancer progression.
+
+% Moreover, the challenges and potentials of advanced microscopy techniques, such
+% as live-cell imaging, have been brought to the forefront. Despite the technical
+% complexities and data management challenges associated with these methodologies,
+% their ability to capture dynamic cellular events in real-time provides
+% unparalleled insights that static analyses cannot. This has underscored the
+% necessity for ongoing technological enhancements, particularly in the realms of
+% automated image analysis and machine learning, to fully exploit the capabilities
+% of microscopy in biomedical research.
+
+% This thesis also demonstrates how integrating sophisticated microscopy
+% techniques can shift research paradigms by enabling the direct observation and
+% quantification of cellular phenomena that are crucial for both fundamental
+% biological understanding and the development of clinical interventions. By
+% bridging technological advancements with cellular biology, this work contributes
+% to a deeper comprehension of disease mechanisms and lays the groundwork for
+% future innovations in cancer therapy and diagnostic strategies.
+
+% In conclusion, the strategic application of advanced microscopy in this study
+% not only provided a detailed mechanistic insight into cell interaction dynamics
+% but also highlighted the essential role of technological integration in driving
+% scientific progress. The methodologies developed and findings obtained here
+% represent significant steps forward in the ongoing effort to harness cellular
+% interactions for therapeutic benefit in oncology and beyond.
 
 
 % ======================================================================
@@ -779,6 +749,11 @@ deadly graft-versus-host disease during allogeneic transplantation seems to be
 solvable \cite{qasimMolecularRemissionInfant2017}, hence, research groups and
 biotech companies are racing towards developing a safe allogeneic CAR-T Cell
 technology \cite{depilOfftheshelfAllogeneicCAR2020}.
+
+
+the list of genes could be good targets because the BM niche is highly hypoxic, car t cells
+are not well, but directing them to the BM niche could increase efficacy.
+
 
 
 % ======================================================================
