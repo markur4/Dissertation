@@ -128,7 +128,7 @@
 \label{sec:summarising_discussion}%
 % 
 % ======================================================================
-\unnsubsection{Potentials and Challenges of Live-Cell Imaging for Exploratory Cell Biology}%
+\unnsubsection{How Exploratory Live-Cell Imaging Transformed the Research Focus}%
 \label{sec:discussion_potential_breakthroughs}%
 Exploratory experimentation emphasizes discovering and characterizing novel
 phenomena \cite{mattigClassifyingExploratoryExperimentation2022}. Exploratory
@@ -161,7 +161,7 @@ daughter cells right after cell division. Together, live cell imaging enabled
 key mechanistic insights in understanding the dynamics involved in multicellular
 interactions by integrating the study of multiple phenomena at once.
 
-\textbf{\textit{The cells are doing ...that thing again!}} Exploring video data
+\textbf{Difficulties Connecting Observation with Acedemic Terminology} Exploring video data
 begins with the search of scientific novelties. In order to correctly identify
 cellular phenomena relevant to the research question, a deep
 understanding of cell biology is required, e.g. in field of cell dynamics to
@@ -196,8 +196,8 @@ relegated to supplementary data. Although supplementary data is downloaded
 often, most biomedical researchers favor a presentation of additional figures
 and tables directly on the journal's website
 \cite{priceRoleSupplementaryMaterial2018}. Given the increasing availability of
-video data\footnote{The number of \texttt{PubMed} articles with "live cell
-    imaging" doubled from 2011 to 2023.}, embedding video content next to figures
+video data\footnote{The number of \texttt{PubMed} articles with \emph{``live cell
+        imaging''} doubled from 2011 to 2023.}, embedding video content next to figures
 and tables on the article's website does make a compelling case. In fact, the
 journal \emph{Nature} does offer this feature already, but rarely used
 \cite{NatureVideoContent}. In the end, there is no reason to not present videos
@@ -207,17 +207,21 @@ provide the best medium for first aid, medical emergency and education
 \cite{guptaDatasetMedicalInstructional2023}.
 
 Overall, Live-cell imaging has proven indispensable in exploratory cell biology,
-uncovering dynamic cellular phenomena that static analyses often miss. This
-technique shifted the project’s focus by revealing unexpected cell behaviors,
-like detachment during division, emphasizing the need for integrating real-time
-observations with molecular data. By making such dynamic processes visible,
-live-cell imaging not only enriches our understanding but also challenges us
-to enhance how scientific findings are presented, advocating for greater
-accessibility of video data in scientific publications.
+uncovering dynamic cellular phenomena that static analyses often miss. This is
+exemplified in this work, where live-cell imaging shifted the research focus
+by revealing unexpected cell behaviors, like detachment during division,
+emphasizing the need for integrating real-time observations with molecular data.
+By making such dynamic processes visible, live-cell imaging not only enriches
+our understanding but also challenges us to enhance how scientific findings are
+presented, advocating for greater accessibility of video data in scientific
+publications.
+
+\newpage
 
 
 % ======================================================================
-\unnsubsection{Challenges in Quantifying Microscopy Data}%
+% ======================================================================
+\unnsubsection{Potential and Challenges of Image Cytometry}%
 \label{sec:discussion_quantifying_microscopy}%
 Quantifying microscopy data is critical for both analytic and exploratory
 approaches to microscopy: For instance, microscopic assessment of live/dead
@@ -228,14 +232,191 @@ observations. Microscopy data is source of vast amount and types of information:
 cell morphology; organelle count, shape, and distribution; membrane and lipid
 distribution; protein localization, DNA content, et cetera. However, leveraging
 this information has always been limited by the ability to extract quantitative
-data from images \cite{galbraithPumpingVolume2023}. This led to many advances
-spanning multiple fields of biology, image processing and machine learning,
-potentially ushering a new era of image cytometry
-\cite{guptaDeepLearningImage2019}.
+data from microscopy images \cite{galbraithPumpingVolume2023}. This extraction
+process is the essence of image cytometry, a field that has seen significant
+advances by integrating machine learning for automating image analysis tasks.
+\cite{guptaDeepLearningImage2019}. The following sections discuss the
+experiences gained from this project in quantifying microscopy data and outlines
+potentials and challenges of image cytometry.
 
 
 
-\textbf{Technical Considerations for Acquiring Accurate Image Data:}
+
+% This led to many advances
+% spanning multiple fields of biology, image processing and machine learning,
+% potentially ushering a new era of \emph{image cytometry}
+% \cite{guptaDeepLearningImage2019}. The definition of image cytometry is
+% broadly defined as extracting measurements from microscopy images of cells or
+% subcellular structures and has great potential for automated approaches to
+% quantitative microscopy \cite{guptaDeepLearningImage2019}.
+
+
+
+
+\textbf{Manual Analysis Remains Robust for Complex and Unique Phenomena:}
+Most biologists lack the computational expertise to automate analysis of
+microscopy data, often reverting to manual analysis. This project also utilized
+manual strategies for the detailed characterization of dynamic intercellular
+interactions such as attachment, aggregation, detachment, and division. This was
+very time-consuming and required a thoughtful categorization strategy and a
+disciplined, bias-free execution. However, some analysis tasks are simply
+unfeasable for automation. For example, this work manually counted if two \INA
+cells interacted homotypically due to coming into contact with each other, or by
+staying connected as two daughter cells after cell division. Automating such a
+task would require a very sophisticated algorithm and unfeasable for such unique
+task. Hence, manual analysis is unmatched in terms of flexibility and complexity
+of categorizations, when compared to computational techniques of image
+processing.
+
+
+% \textbf{Live-Cell Image Analysis Computational Tools for Future Live-Cell Image Analysis:}
+\textbf{Considering Automated Analysis for Future Live-Cell Imaging:}
+Despite the benefits of manual analyses, this work would have benefited from
+computational automation for the analysis of live-cell imaging. For example, the
+task of associating \INA cell detachment with \INA aggregate size and time could
+have been automated: Manual analysis consisted of zooming in closely and
+watching the time-lapse over and over again until a detachment event was found.
+A very tedious task that had to be repeated approx. 50 times for every one of
+four independent videos. Instead of manually counting the number of single \INA
+cells across time, a pixel segmentation algorithm could have been trained to
+detect cells and background. Single cells would be discernable from aggregates
+by filtering cells by size. The count of single cells would then be
+representative of detached cells, given that the vast majority of INA6 cells
+were part of aggregates.
+
+
+\def\imagefeatures{%
+    \emph{Features} are structural elements of an image, such as edges, corners,
+    directions, colors. These features are mathematically extractable using
+    \emph{filters} \dashedsentence{also referred to as \emph{convolution
+            kernels}}, which are functions or algorithms applied to the pixel values of
+    an image. For instance, \emph{gabor filters} can extract edges of one
+    particular direction, resulting in an image of the same size as the input,
+    but showing only edges of one direction. \emph{Feature extraction} is the
+    process of applying multiple filters, resulting in a stack of filtered
+    images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011,
+        guptaDeepLearningImage2019} }
+
+\def\cnn{%
+    \emph{Convolutional neural networks} (CNN) are algorithms that use the output of a
+    feature extractor\footref{foot:image_features} to feed
+    into a neural network. The network then learns to associate these feature
+    vectors with a label, such as \emph{cell} or \emph{background}. This is called
+    \emph{supervised learning}.
+}
+
+The workload of manual video analysis motivated the purchase of
+\texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}
+microscopy software ecosystem. \texttt{Intellesis} is a machine learning-based
+pixel segmentation software \cite{ZeissOADFeature}. As a feature
+extractor\footnote{\label{foot:image_features}\imagefeatures}, it uses the
+first convolution layers of VGG19, which is convolutional neural network\footnote{\cnn}
+\cite{simonyanVeryDeepConvolutional2015}. \texttt{Intellesis} does not
+contain a deep neural network for segmentation, but instead classifies pixel
+features using a \emph{random forest classifier}. Random forest is a machine
+learning algorithm that \dashedsentence{for small sets of training images}
+performs almost as well as deep neural networks, but are computationally far
+less demanding \cite{breimanRandomForests2001,
+    richardsonDenseNeuralNetwork2023}. A comparable hybrid approach was also used by
+\citet{qamarHybridCNNRandomForest2023} to segment images of bacterial spores
+into eight distinct pixel classes using only 50 training images.
+
+\texttt{Intellesis} proved useful for segmenting single multi-channel images.
+However, live cell imaging adds another layer of complexity to image analysis:
+The addition of a time axis encodes the motion of objects and other image
+features. This concept can be described with the term \emph{optical flow}
+\cite{niehorsterOpticFlowHistory2021}. Mathematically speaking, optical flow is
+a vector field that describes the motion of image
+features\footref{foot:image_features} between consecutive frames of a video. It
+can be used to train machine learning models on video data efficiently
+\cite{robitailleSelfsupervisedMachineLearning2022}. Without tricks like optical
+flow, machine learning algorithms like \texttt{Intellesis} segment the video
+frame by frame, ignoring the feature similarities between frames. This makes
+segmentation computationally inefficient, but not impossible
+\cite{pylvanainenLivecellImagingDeep2023}.
+
+Together, future analyses of live-cell imaging data could  benefit
+from the use of modern machine learning based tools that have been released
+recently, as summarised in \citet{pylvanainenLivecellImagingDeep2023}.
+
+
+
+% ========
+\textbf{Image Cytometry Achieved Competitive Precision and Throughput:}
+In particular, this project required validation of recent cell divisions within
+the \nMAina cell population by fluorescently profiling their DNA content.
+\ac{FACS} is a common method for this task, especially for suspension cells like
+\INA \cite{darzynkiewiczDNAContentMeasurement1997}. However, this experiment
+included up to 24 samples for each independent experiment, combining three
+subpopulations, four timepoints, and two experimental conditions
+(\apdxref{subapdx:figs}{fig:S3}). Although automated \ac{FACS} allow for high
+throughput and are available at the university of Würzburg, the author sought to
+challenge the limits of microscopy equipment available in his laboratory,
+especially when such technique is applicable to adherent cells
+\cite{roukosCellCycleStaging2015}.
+
+This method enabled the automated extraction and quantification of
+fluorescence brightness across tens of thousands of DNA-stained nuclei,
+simplifying the subsequent data analysis like plotting DNA content
+distributions.
+
+achieving
+high levels of automation along with a single-cell precision that's comparable
+to flow cytometry (\apdxref{subapdx:figs}{fig:S2}). Although this work has not
+applied \textit{Intellesis} to live-cell imaging, this exemplifies the vast
+quantitative potential of microscopy \dashedsentence{or rather image cytometry}
+in general.
+
+
+% ========
+\textbf{Making Image Cytometry Accessible to Biology?}
+Computational approaches to image analysis, such as those provided by
+\textit{Intellesis}, are invaluable as they offer unmatched objectivity and
+throughput in data interpretation. At the time of this project, the author had
+no prior experience with image processing. Still, using \textit{Intellesis} was
+straightforward, as it integrates well with \texttt{Zen}, the software used for
+image acquisition using microscopes by \textit{Zeiss}. This allowed the
+conversion of complex image data into quantifiable outputs.
+
+Achieving high throughput and precision using \textit{Intellesis}, this project
+effectively entered the field of \emph{image cytometry}
+\cite{guptaDeepLearningImage2019}. Image cytometry distinguishes itself from
+other microscopy techniques by achieving high levels of automation along with a
+single-cell precision that's comparable to flow cytometry
+
+
+
+
+Together, this work exemplifies the quantitative potential of image cytometry
+\cite{guptaDeepLearningImage2019}, achieving high levels of automation and
+single-cell precision without dedicated education in image analysis.
+Such accessibility could prove crucial for a generalized adoption of automated
+image analysis among biologists.
+
+Benefits of Image Cytometry over FACS:
+High throughput (96 Samples scanned in 1.5h)
+Applicable to adherent cultures (compared to FACS) \cite{roukosCellCycleStaging2015}
+Staining often unnecessary
+No analytic chemicals needed
+AI-assisted detection of structures + removal of false positives
+„Infinite“ types of readouts (Structure, Brightness, Size, Shape, etc.)
+>> Researching diagnostic value of cell characteristics accelerated by Artificial Intelligence
+
+Challenges:
+Sophisticated Automation of Microscopic Scans (Autofocus, Shading, etc.)
+AI is Computation Intensive
+Spread cells evenly
+Intellesis is only available for Zeiss microscopses
+
+
+
+% ======================================================================
+% ======================================================================
+\unnsubsection{Technical Considerations for Image Cytometry}%
+\label{sec:discussion_quantifying_microscopy}%
+
+
+\textbf{Acquiring Accurate Image Data:}
 In order to capture rare cellular events with a frequency sufficient for
 statistical analysis, this study chose high temporal resolution and spatial
 depth: We utilized \SI{1}{frame} every \SI{15}{\minute}, suitable for tracking
@@ -263,133 +444,9 @@ data is not. Hence, exploratory live cell imaging benefits from settings that
 are higher-than-required, if raw data is properly documented and remain
 accessible.
 
-\textbf{Manual Analysis for Complex and Unique Phenomena:}
-Most Biologists lack the computational expertise to automate analysis of
-microscopy data, often reverting to manual analysis. This project also utilized
-manual strategies for the detailed characterization of dynamic intercellular
-interactions such as attachment, aggregation, detachment, and division. This was
-very time-consuming and required a thoughtful categorization strategy and a
-disciplined, bias-free execution. However, some analysis tasks are simply unfeasable
-for automation. For example, this work
-manually counted if two \INA cells interacted homotypically due to coming into
-contact with each other, or by staying connected as two daughter cells after
-cell division. Automating such a task would require a very sophisticated
-algorithm and unfeasable for such unique task.
-Hence, manual analysis is unmatched in terms of flexibility and complexity of
-categorizations, when compared to computational techniques of image processing.
-
-\textbf{Computational Tools for Analysis of Live-Cell Imaging:}
-Despite the benefits of manual analyses, this work would have benefited from
-computational automation for the analysis of live-cell imaging. For example, the
-task of associating \INA cell detachment with \INA aggregate size and time could
-have been automated: Manual analysis consisted of zooming in closely and
-watching the time-lapse over and over again until a detachment event was found.
-A very tedious task that had to be repeated approx. 50 times for every one of
-four independent videos. Instead of manually counting the number of single \INA
-cells across time, a pixel segmentation algorithm could have been trained to
-detect cells and background. Single cells would be discernable from aggregates
-by filtering cells by size. The count of single cells would then be
-representative of detached cells, given that the vast majority of INA6 cells
-were part of aggregates.
-
-The workload of manual video analysis motivated the purchase of
-\texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}
-microscopy software ecosystem. \texttt{Intellesis} is a machine learning-based
-pixel segmentation software \cite{ZeissOADFeature}. As a feature extractor, it
-uses the first convolution layers of the convolutional neural network VGG19
-\cite{simonyanVeryDeepConvolutional2015}. \texttt{Intellesis} does not contain a
-deep neural network for segmentation, but instead classifies pixel features
-using a \emph{random forest classifier}. Random forest is a machine learning
-algorithm that \dashedsentence{for small sets of training images} performs
-almost as well as deep neural networks, but are computationally far less
-demanding \cite{breimanRandomForests2001, richardsonDenseNeuralNetwork2023}. A
-comparable hybrid approach was also used by
-\citet{qamarHybridCNNRandomForest2023} to segment images of bacterial spores
-into eight distinct pixel classes using only 50 training images.
 
 
-\texttt{Intellesis} proved useful for segmenting single multi-channel images.
-However, live cell imaging adds another layer of complexity to image analysis:
-The addition of a time axis encodes the motion of image features, a concept that
-can be described with the term \emph{optical flow}
-\cite{niehorsterOpticFlowHistory2021}. Mathematically speaking, optical flow is
-a vector field that describes the motion of image features between consecutive
-frames of a video. It can be used to efficiently train machine learning models
-on video data \cite{robitailleSelfsupervisedMachineLearning2022}. Without tricks
-like optical flow, machine learning algorithms like \texttt{Intellesis} segment
-the video frame by frame, ignoring the feature similarities between frames.
-This makes segmentation computationally inefficient, but not impossible
-\cite{pylvanainenLivecellImagingDeep2023}. 
-
-Together, this project's analses of live-cell imaging data could have benefited
-from the use of modern machine learning based tools that have been released in
-the past years \cite{pylvanainenLivecellImagingDeep2023}. 
-
-
-
-
-\textbf{Quantitative Potential of Image Cytometry:}
-
-Computational approaches to image analysis are attractive as they remove bias
-and increase throughput. However, few biologists have the expertise to develop
-and apply image processing pipelines. \textit{Intellesis} integrates well with 
-\texttt{Zen}, the software used for image acquisition and is designed to be
-accessible to biologists without expertise in image processing, enabling the
-conversion of image data into analyzable quantitative outputs.
-
-% facilitated by the machine learning software \textit{Intellesis}, enabled
-% high-throughput and precise quantification necessary for tasks like cell cycle
-% profiling in fluorescence microscopy. This hybrid approach leveraged
-% \textit{Intellesis}’s capabilities to segment and quantify tens of thousands of
-% DNA-stained nuclei efficiently, aligning this project with advanced image
-% cytometry techniques \cite{guptaDeepLearningImage2019}.
-
-
-For
-fluorescent cell cycle profiling however, an automated approach was necessary to
-reach throughput, precision and cell number. For this, \textit{Intellesis} was
-used, which is a machine learning-based pixel segmentation software.
-
-\textit{Intellesis} is not an artificial intelligence, as its segmentation algorithm
-does not contain a neural network. Instead, it uses a random forest classifier
-
-
-
-This approach allowed the automated
-extraction of fluorescence brightness for every single nucleus among tens of
-thousands of DNA-stained nuclei, followed by plotting the distribution of
-DNA-amounts. Using \textit{Intellesis}, this project effectively entered the
-field of \emph{image cytometry} \cite{guptaDeepLearningImage2019}, achieving
-high levels of automation along with a single-cell precision that's comparable
-to flow cytometry (\apdxref{subapdx:figs}{fig:S3}). Although this work has not
-applied \textit{Intellesis} to live-cell imaging, this exemplifies the vast
-quantitative potential of microscopy \dashedsentence{or rather image cytometry}
-in general.
-
-
-
-% Here, this project effectively
-% entered the field of \emph{image cytometry} \cite{guptaDeepLearningImage2019},
-% achieving high levels of automation along with a single-cell precision
-% comparable to flow cytometry when performing fluorescent cell cycle profiling.
-% This exemplifies the vast quantitative potential of microscopy in general.
-
-
-% Automated analysis, on the other hand, utilizes pixel segmentation techniques
-% either based on sophisticated image-processing pipelines and/or machine
-% learning. \textit{Intellesis}, offer solutions by making machine learning based
-% pixel segmentation accessible to biologists without expertise in image
-% processing, enabling the conversion of video data into analyzable quantitative
-% outputs. This approach allows the extraction of meaningful scientific metrics
-% from time-lapse experiments, turning dynamic observation into static scientific
-% reporting. Using \textit{Intellesis}, this project effectively entered the field
-% of \emph{image cytometry} \cite{guptaDeepLearningImage2019}, achieving high
-% levels of automation along with a single-cell precision that's comparable to
-% flow cytometry when performing fluorescent cell cycle profiling. This
-% exemplifies the vast quantitative potential of microscopy in general.
-
-
-\textbf{Make Intellesis Training Easier and more Robust:}
+\textbf{Generating Training Datasets:}
 % either requires know-how of
 % image-processing or expensive software. Using expensive software based on machine
 % learning assisted 
@@ -472,27 +529,27 @@ learn irrelevant image features.
 
 
 
-In summary, the implementation of live-cell imaging in this project not only
-enhanced our understanding of myeloma cell behavior but also emphasized the need
-for innovative solutions to integrate dynamic cellular data into the rigid
-frameworks of scientific communication. The evolution of microscopy and image
-analysis into image cytometry continues to push the boundaries of what can be
-observed and understood about cell dynamics in disease and health.
+% In summary, the implementation of live-cell imaging in this project not only
+% enhanced our understanding of myeloma cell behavior but also emphasized the need
+% for innovative solutions to integrate dynamic cellular data into the rigid
+% frameworks of scientific communication. The evolution of microscopy and image
+% analysis into image cytometry continues to push the boundaries of what can be
+% observed and understood about cell dynamics in disease and health.
 
 
-\textbf{Lack of Translation Between Machine Learning Experts and Biologists?:}
+% \textbf{Lack of Translation Between Machine Learning Experts and Biologists?:}
 
-Current opinions on machine learning speak of training neural networks, without mentioning
-random-forest classifiers.
-To the author's know
+% Current opinions on machine learning speak of training neural networks, without mentioning
+% random-forest classifiers.
+% To the author's know
 
 
-A comparable hybrid approach was also used by \citet{qamarHybridCNNRandomForest2023}
-to segment images of bacterial spores
-into eight distinct pixel classes using 50 training images.
+% A comparable hybrid approach was also used by \citet{qamarHybridCNNRandomForest2023}
+% to segment images of bacterial spores
+% into eight distinct pixel classes using 50 training images.
 
-, which is a very low number compared to the
-hundreds of images required for neural networks.
+% , which is a very low number compared to the
+% hundreds of images required for neural networks.
 
 
 

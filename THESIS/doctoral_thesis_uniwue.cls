@@ -86,11 +86,20 @@
 % ## adjust float spacing
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
-% ## Define marings
+% ## Define lengths for margins
 \newlength{\leftm}
 \setlength{\leftm}{1.5cm}
 \newlength{\rightm}
 \setlength{\rightm}{1.5cm}
+
+% ## Set the general layout of the document
+\geometry{
+    left = \leftm,
+    right = \rightm,
+    top = 2cm,
+    bottom = 2cm,
+    bindingoffset = 5mm}
+
 
 % == Sections ==========================================================
 \usepackage{tocloft} % > For customizing the table of contents
@@ -164,16 +173,8 @@
 % == Document Layout
 % ======================================================================
 
-
 % == Layout ============================================================
-% ## Set the general layout of the document
-\geometry{
-    left = 1.5cm,
-    right = 1.5cm,
-    top = 2cm,
-    bottom = 2cm,
-    bindingoffset = 5mm}
-
+    
 % ## For empty pages
 \newcommand{\blankpage}{
     \clearpage
@@ -598,8 +599,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m}{%
     \vspace{\vfull}
     {%
-        \begin{minipage}{\textwidth}
-            \centering
+        \noindent%
+        \begin{minipage}{\textwidth}%
+            \centering%
             \IfStrEq{#2}{}
             {\includegraphics[width=#1\textwidth]{#3}}
             {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
