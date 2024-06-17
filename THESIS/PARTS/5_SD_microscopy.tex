@@ -1,0 +1,506 @@
+
+
+
+
+% ======================================================================
+% From Paper 1 (AACR):
+
+% In this study, we developed an in vitro model to investigate the
+% attachment/detachment dynamics of INA-6 cells to/from hMSCs and
+% established methods to isolate the attached and detached intermediates
+% nMA-INA6 and MA-INA6. Second, we characterized a cycle of
+% (re)attachment, division, and detachment, linking cell division to the
+% switch that causes myeloma cells to detach from hMSC adhesion (Fig. 7).
+% Thirdly, we identified clinically relevant genes associated with patient
+% survival, in which better or worse survival was based on the adherence
+% status of INA­6 to hMSCs.
+
+% INA-6 cells emerged as a robust choice for studying myeloma
+% dissemination in vitro, showing rapid and strong adherence, as well as
+% aggregation exceeding MSC saturation. The IL-6 dependency of INA-6
+% enhanced the resemblance of myeloma cell lines to patient samples, with
+% INA-6 ranking 13th among 66 cell lines (46). Despite variations in bone
+% marrow MSCs between multiple myeloma (MM) and healthy states, we
+% anticipated the robustness of our results, given the persistent strong
+% adherence and growth signaling from MSCs to INA-6 during co-cultures
+% (47).
+
+% We acknowledge that INA-6 cells alone cannot fully represent the
+% complexity of myeloma aggregation and detachment dynamics. However, the
+% diverse adhesive properties of myeloma cell lines pose a challenge. We
+% reasoned that attempting to capture this complexity within a single
+% publication would not be possible. Our focus on INA-6 interactions with
+% hMSCs allowed for a detailed exploration of the observed phenomena, such
+% as the unique aggregation capabilities that facilitate the easy
+% detection of detaching cells in vitro. The validity of our data was
+% demonstrated by matching the in vitro findings with the gene expression
+% and survival data of the patients (e.g. CXCL12, DCN, and TGM2
+% expression, n=873), ensuring biological consistency and generalizability
+% regardless of the cell line used. 
+
+% The protocols presented in this study offer a cost-efficient and
+% convenient solution, making them potentially valuable for a broader
+% study of cell interactions. We encourage optimizations to meet the
+% varied adhesive properties of the samples, such as decreasing the number
+% of washing steps if the adhesive strength is low. We caution against
+% strategies that average over multiple cell lines without prior
+% understanding their diverse attachment/detachment dynamics, such as
+% homotypic aggregation. Such detailed insights may prove instrumental
+% when considering the diversity of myeloma patient samples across
+% different disease stages (34,35).
+
+% The intermediates, nMA-INA6 and MA-INA6, were distinct but shared
+% similarities in response to cell stress, intrinsic apoptosis, and
+% regulation by p53. Unique regulatory patterns were related to central
+% transcription factors: E2F1 for nMA-INA6; and NF-κB, SRF, and JUN for
+% MA-INA6. This distinction may have been established through antagonism
+% between p53 and the NF-κB subunit RELA/p65 (38,39). Similar regulatory
+% patterns were found in transwell experiments with RPMI1-8226 myeloma
+% cells, where direct contact with the MSC cell line HS5 led to NF-κB
+% signaling and soluble factors to E2F signaling (20).
+
+% The first subpopulation, nMA-INA6, represented proliferative and
+% disseminative cells; nMA-INA6 drove detachment through cell division,
+% which was regulated by E2F, p53, and likely their crosstalk (48). They
+% upregulate cell cycle progression genes associated with worse prognosis,
+% because proliferation is a general risk factor for an aggressive disease
+% course (49). Additionally, nMA-INA6 survived IL-6 withdrawal better than
+% CM-INA6 and MA-INA6, implying their ability to proliferate independently
+% of the bone marrow (2). Indeed, xenografted INA-6 cells developed
+% autocrine IL-6 signaling but remained IL-6-dependent after explantation
+% (24). The increased autonomy of nMA-INA-6 cells can be explained by the
+% upregulation of IGF-1, being the major growth factor for myeloma cell
+% lines (43). Other reports characterized disseminating cells differently:
+% Unlike nMA-INA6, circulating myeloma tumor cells were reported to be
+% non-proliferative and bone marrow retentive (50). In contrast to
+% circulating myeloma tumor cells, nMA-INA6 were isolated shortly after
+% detachment and therefore these cells are not representative of further
+% steps of dissemination, such as intravasation, circulation or
+% intravascular arrest (3). Furthermore, Brandl et al. described
+% proliferative and disseminative myeloma cells as separate entities,
+% depending on the surface expression of CD138 or JAM-C (4,51). Although
+% CD138 was not differentially regulated in nMA-INA6 or MA-INA6, both
+% subpopulations upregulated JAM-C, indicating disease progression (51). 
+
+% Furthermore, nMA-INA6 showed that cell division directly contributed to
+% dissemination. This was because INA-6 daughter cells emerged from the
+% mother cell with distance to the hMSC plane in the 2D setup. A similar
+% mechanism was described in an intravasation model in which tumor cells
+% disrupt the vessel endothelium through cell division and detach into
+% blood circulation (52). Overall, cell division offers key mechanistic
+% insights into dissemination and metastasis.
+
+% The other subpopulation, MA-INA6, represented cells retained in the bone
+% marrow; MA-INA6 strongly adhered to MSCs, showed NF-κB signaling, and
+% upregulated several retention, adhesion, and ECM factors. The production
+% of ECM-associated factors has recently been described in MM.1S and
+% RPMI-8226 myeloma cells (53). Another report did not identify the
+% upregulation of such factors after direct contact with the MSC cell line
+% HS5; hence, primary hMSCs may be crucial for studying myeloma-MSC
+% interactions (20). Moreover, MA-INA6 upregulated adhesion genes
+% associated with prolonged patient survival and showed decreased
+% expression in relapsed myeloma. As myeloma progression implies the
+% independence of myeloma cells from the bone marrow (2,46), we
+% interpreted these adhesion genes as mediators of bone marrow retention,
+% decreasing the risk for dissemination and thereby potentially prolonging
+% patient survival. However, the overall impact of cell adhesion and ECM
+% on patient survival remains unclear. Several adhesion factors have been
+% proposed as potential therapeutic targets (51,54). Recent studies have
+% described the prognostic value of multiple ECM genes, such as those
+% driven by NOTCH (53). Another study focused on ECM gene families, of
+% which only six of the 26 genes overlapped with our gene set (Tab. S2)
+% (55). The expression of only one gene (COL4A1) showed a different
+% association with overall survival than that in our cohort. The lack of
+% overlap and differences can be explained by dissimilar definitions of
+% gene sets (homology vs. gene ontology), methodological discrepancies,
+% and cohort composition.
+
+% In summary, our in vitro model provides a starting point for
+% understanding the initiation of dissemination and its implications for
+% patient survival, providing innovative methods, mechanistic insights
+% into attachment/detachment, and a set of clinically relevant genes that
+% play a role in bone marrow retention. These results and methods might
+% prove useful when facing the heterogeneity of disseminative behaviors
+% among myeloma cell lines and primary materials.
+
+
+% ======================================================================
+% ======================================================================
+\unnsection{Summarising Discussion}%
+\label{sec:summarising_discussion}%
+The following paragraphs will discuss the previously presented chapters both in
+terms of how they integrate within current scientific fields, but also outlay
+technical and academic challenges that were faced during the course of this
+project. Given the broad scope of the shown topics, this discussion is
+structured into three main sections: Microscopy, Molecular Biology, and Data
+Analysis. Each section will explain key experiments that
+% ======================================================================
+% ======================================================================
+
+
+
+% 
+% ======================================================================
+\unnsubsection{How Exploratory Live-Cell Imaging Transformed the Research Focus}%
+\label{sec:discussion_potential_breakthroughs}%
+Exploratory experimentation emphasizes discovering and characterizing novel
+phenomena \cite{mattigClassifyingExploratoryExperimentation2022}. Exploratory
+cell biology often leverages emerging technologies to visualize and analyze the
+mechanisms of cell behavior dynamically. Such approaches allow real-time
+observations that can lead to unexpected insights and breakthroughs. In this
+project, the application of live-cell imaging proved pivotal.
+
+\textbf{Direct Observation of Complexity and Novelty:}
+Initially, the project did not focus on \textit{in vitro} myeloma cell
+dissemination. The project's research focus shifted when making the unexpected
+\dashedsentence{or argueably insignificant} observation of cancer cells
+detaching from aggregates. This shows the transformative power of time-lapse
+microscopy or live cell imaging \cite{coleLivecellImaging2014}. For the author,
+live-cell imaging provides an observation method that's unmatched in intuition
+and directness. Unlike RNA sequencing, which can obscure biological processes
+behind cryptic data, live-cell imaging offers a clear view into the dynamic
+cellular events as they unfold.
+
+Such clarity was particularly effective in revealing the detachment of cells
+following division, a phenomenon that might be overlooked in static analyses.
+Multiple parameters can be read out in parallel, such as both time and aggregate
+size for detachments to begin. Also, complex cellular behavior can be deduced
+from movement, or rather lack thereof, which was interpreted as re-attachment of
+\INA daughter cells to the \ac{hMSC} monolayer. This allowed for measuring the
+duration of \nMAina existing until re-attaching and turning into \MAina. This
+information was helpful when designing experiments to prove that dissemination
+is initiated by cell division, requiring precise timing to capture the detached
+daughter cells right after cell division. Together, live cell imaging enabled
+key mechanistic insights in understanding the dynamics involved in multicellular
+interactions by integrating the study of multiple phenomena at once.
+
+\textbf{Difficulties Connecting Observation with Acedemic Terminology} Exploring video data
+begins with the search of scientific novelties. In order to correctly identify
+cellular phenomena relevant to the research question, a deep
+understanding of cell biology is required, e.g. in field of cell dynamics to
+read migratory behavior \cite{nalbantExploratoryCellDynamics2018}. This is a
+challenge for both students and experienced researchers, since finding the
+academically correct terms to describe observations is difficult, especially for
+novel phenomena or a sequence of events that can overlap. After all, cell
+biology is taught using textbooks, not videos. For this project in particular,
+the used terminology was revised frequently, being caused by the constant
+struggle of finding the middle-ground between the precice description of
+observations, the compatibility with results from other experiments,
+comprehensability, and memorability. Ultimately, comprehensability and
+memorability were prioritized to maximize adoption of the new terminology by
+other researchers. For instance, \emph{non MSC adherence} was chosen over
+\emph{mobile interaction}, \emph{aggregation} over \emph{homotypic interaction},
+and \emph{detachment event} over \emph{in vitro metastasis}. In general, the gap
+between observations and their description remains a challenge in exploratory
+cell biology that might be overlooked. This gap could be bridged by currently
+available multimodal \acp{LLM} like \texttt{ChatGPT-4o}: These models could
+match recorded phenomena with descriptions and images that were amassed in the
+literature over decades. By doing so, researchers not only use established
+terminology instead of inventing new terms, but also minimize the risk of
+missing potential discoveries.
+
+\textbf{Why Hide Videos Behind a Download Link?} A major challenge remains in how
+to effectively present these dynamic observations in a publishable format, as
+traditional scientific publications and websites are not equipped to display
+video data. Instead, it is common practice to assemble video frames into static
+figures, presumably to support both online and printed reading habits
+\cite{perasDigitalPaperReading2023}. Representative example videos are then
+relegated to supplementary data. Although supplementary data is downloaded
+often, most biomedical researchers favor a presentation of additional figures
+and tables directly on the journal's website
+\cite{priceRoleSupplementaryMaterial2018}. Given the increasing availability of
+video data\footnote{The number of \texttt{PubMed} articles with \emph{``live cell
+        imaging''} doubled from 2011 to 2023.}, embedding video content next to figures
+and tables on the article's website does make a compelling case. In fact, the
+journal \emph{Nature} does offer this feature already, but rarely used
+\cite{NatureVideoContent}. In the end, there is no reason to not present videos
+alongsife figures and tables, as they can be as informative, and potentially
+more so. Such new standards can benefit other fields of medicine, as videos
+provide the best medium for first aid, medical emergency and education
+\cite{guptaDatasetMedicalInstructional2023}.
+
+Overall, Live-cell imaging has proven indispensable in exploratory cell biology,
+uncovering dynamic cellular phenomena that static analyses often miss. This is
+exemplified in this work, where live-cell imaging shifted the research focus
+by revealing unexpected cell behaviors, like detachment during division,
+emphasizing the need for integrating real-time observations with molecular data.
+By making such dynamic processes visible, live-cell imaging not only enriches
+our understanding but also challenges us to enhance how scientific findings are
+presented, advocating for greater accessibility of video data in scientific
+publications.
+
+\newpage
+
+
+% ======================================================================
+% ======================================================================
+\unnsubsection{Potential and Challenges of Image Cytometry}%
+\label{sec:discussion_quantifying_microscopy}%
+Quantifying microscopy data is critical for both analytic and exploratory
+approaches to microscopy: For instance, microscopic assessment of live/dead
+cells should produce bar charts presenting cell viabilities
+\cite{spaepenDigitalImageProcessing2011}, whereas describing novel phenomena
+should be supported by charts proving the reproducibility of claimed
+observations. Microscopy data is source of vast amount and types of information:
+cell morphology; organelle count, shape, and distribution; membrane and lipid
+distribution; protein localization, DNA content, et cetera. However, leveraging
+this information has always been limited by the ability to extract quantitative
+data from microscopy images \cite{galbraithPumpingVolume2023}. This extraction
+process is the essence of \emph{image cytometry}, a field that has seen significant
+advances by integrating machine learning for automating image analysis tasks.
+\cite{guptaDeepLearningImage2019}. The following sections discuss the
+experiences gained from this project in quantifying microscopy data and outlines
+potentials and challenges of image cytometry.
+
+
+
+
+
+\textbf{Considering Automated Analysis for Future Live-Cell Imaging:}
+This work would have benefited from
+computational automation for the analysis of live-cell imaging, for example, the
+task of associating \INA cell detachment with \INA aggregate size and time:
+Manual analysis consisted of zooming in closely and
+watching the time-lapse over and over again until a detachment event was found.
+A very tedious task that had to be repeated approx. 50 times for every one of
+four independent videos. Instead of manually counting the number of single \INA
+cells across time, a pixel segmentation algorithm could have been trained to
+detect cells and background. Single cells would be discernable from aggregates
+by filtering cells by size. The count of single cells would then be
+representative of detached cells, given that the vast majority of INA6 cells
+were part of aggregates.
+
+
+\def\imagefeatures{%
+    \emph{Features} are structural elements of an image, such as edges, corners,
+    directions, colors. These features are mathematically extractable using
+    \emph{filters} \dashedsentence{also referred to as \emph{convolution
+            kernels}}, which are functions or algorithms applied to the pixel values of
+    an image. For instance, \emph{gabor filters} can extract edges of one
+    particular direction, resulting in an image of the same size as the input,
+    but showing only edges of one direction. \emph{Feature extraction} is the
+    process of applying multiple filters, resulting in a stack of filtered
+    images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011,
+        guptaDeepLearningImage2019} }
+
+\def\cnn{%
+    \emph{Convolutional neural networks} (CNN) are algorithms that use the output of a
+    feature extractor\footref{foot:image_features} to feed
+    into a neural network. The network then learns to associate these feature
+    vectors with a label, such as \emph{cell} or \emph{background}. This is called
+    \emph{supervised learning}.
+}
+
+The workload of manual video analysis motivated the purchase of
+\texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}
+microscopy software ecosystem. \texttt{Intellesis} is a machine learning-based
+pixel segmentation software \cite{ZeissOADFeature}. As a feature
+extractor\footnote{\label{foot:image_features}\imagefeatures}, it uses the first
+convolution layers of VGG19, which is convolutional neural
+network\footnote{\cnn} \cite{simonyanVeryDeepConvolutional2015}.
+\texttt{Intellesis} does not contain a deep neural network for segmentation, but
+instead classifies pixel features using a \emph{random forest classifier}.
+Random forest is a machine learning algorithm that \dashedsentence{for small
+    sets of training images} performs almost as well as deep neural networks, but
+are computationally far less demanding \cite{breimanRandomForests2001,
+    richardsonDenseNeuralNetwork2023}. A comparable hybrid approach was also used by
+\citet{qamarHybridCNNRandomForest2023} to segment images of bacterial spores
+into eight distinct pixel classes using only 50 training images. Also, free
+alternatives to \texttt{Intellesis} exist, such as Ilastik
+\cite{bergIlastikInteractiveMachine2019}.
+
+\texttt{Intellesis} proved useful for segmenting single multi-channel images.
+However, live cell imaging adds another layer of complexity to image analysis:
+The addition of a time axis encodes the motion of objects and other image
+features. This concept can be described with the term \emph{optical flow}
+\cite{niehorsterOpticFlowHistory2021}. Mathematically speaking, optical flow is
+a vector field that describes the motion of image
+features\footref{foot:image_features} between consecutive frames of a video. It
+can be used to train machine learning models on video data efficiently
+\cite{robitailleSelfsupervisedMachineLearning2022}. Without tricks like optical
+flow, machine learning algorithms like \texttt{Intellesis} segment the video
+frame by frame, ignoring the feature similarities between frames. This makes
+segmentation computationally inefficient, but not impossible
+\cite{pylvanainenLivecellImagingDeep2023}.
+
+Together, future analyses of live-cell imaging data could  benefit
+from the use of modern machine learning based tools that have been released
+recently, as summarised in \citet{pylvanainenLivecellImagingDeep2023}.
+
+
+
+% ========
+\textbf{Image Cytometry is Precise, Fast, Flexible and Accessible:}
+In this study, image cytometry was indispensable for validating prior cell
+divisions within the \nMAina cell population by profiling their DNA content. The
+complexity of this experiment required a method capable of managing a high
+throughput across three subpopulations, four timepoints, and two conditions,
+involving up to 24 samples per trial (\apdxref{subapdx:figs}{fig:S3}). Despite
+having access to automated \ac{FACS} equipment offered by the Core Unit FACS at
+the University of Würzburg, the author saw a more time- and cost-effective
+solution in the laboratory microscope equipped with motorized stage top and
+\texttt{Intellesis}. This setup scanned 96 different samples in \SI{1.5}{\hour},
+and resulting large scans were processed by \texttt{Intellesis} overnight,
+quantifying thousands of DNA-stained nuclei. This demonstrated that image
+cytometry could match the throughput and precision of \ac{FACS} with modern
+standard microscopy equipment (\apdxref{subapdx:figs}{fig:S2}).
+
+The advantages of image cytometry could have of great impact for the future of
+cell biology: It is applicable to adherent cell cultures
+\cite{roukosCellCycleStaging2015} and provides diverse readouts like structure,
+brightness, size, and shape. Moreover, image cytometry’s capacity to evaluate
+cell viability without the need for staining or expensive analytical chemicals
+makes it an exceptionally cost-efficient approach for drug screening, reducing
+operational costs to cell culturing and electricity for microscopy
+\cite{pattaroneLearningDeepFeatures2021}.  However, challenges such as the need
+for sophisticated automation in microscopic scans, including autofocus and
+shading adjustments, and the computational demands of AI processing remain.
+
+
+Interestingly, the author’s initial unfamiliarity with image cytometry and
+limited experience in image processing did not prevent the effective use of this
+technology. This underscores the accessibility of current imaging tools to
+biologists without specialized training in image analysis. As confirmed by
+recent advancements \cite{nittaRapidHighthroughputCell2023}, image cytometry is
+becoming increasingly competitive with established techniques like \ac{FACS}.
+Despite its limitations, the simplicity and efficiency of image cytometry could
+be pivotal for its broader acceptance and integration into biological research.
+The exclusivity of \texttt{Intellesis} to \textit{Zeiss} microscopes could be a
+major hurdle, however there are free alternatives offering the same
+accessibility \cite{bergIlastikInteractiveMachine2019}.
+
+
+
+\textbf{Manual Analysis Remains Robust for Complex and Unique Phenomena:}
+Many biologists lack the access to tools like \texttt{Intellesis}, or the
+computational expertise to automate analysis of microscopy data, often reverting
+to manual analysis. This project also utilized manual strategies for the
+detailed characterization of dynamic intercellular interactions such as
+attachment, aggregation, detachment, and division. This was very time-consuming
+and required a thoughtful categorization strategy and a disciplined, bias-free
+execution. However, some analysis tasks are simply unfeasable for automation.
+For example, this work manually counted if two \INA cells interacted
+homotypically due to coming into contact with each other, or by staying
+connected as two daughter cells after cell division. Automating such a task
+would require a very sophisticated algorithm and developing such would be
+unfeasable for a task that unique. Hence, manual analysis is unmatched in terms
+of flexibility and complexity of categorizations, when compared to computational
+techniques of image processing.
+
+
+
+
+
+
+In summary, image cytometry significantly enhanced this project by merging the
+precision of \ac{FACS} with the cost-efficiency of modern microscopy. Utilizing
+\texttt{Intellesis} simplified complex image analyses, making advanced
+cytometric techniques more accessible. While challenges like automation and
+software availability persist, the potential of image cytometry to advance
+biomedical research and discovery remains substantial.
+
+
+
+
+% ======================================================================
+% ======================================================================
+\unnsubsection{Technical Considerations for Image Cytometry}%
+\label{sec:discussion_quantifying_microscopy}%
+
+\textbf{Acquiring Accurate Image Data:}
+In order to capture rare cellular events with a frequency sufficient for
+statistical analysis, this study chose high temporal resolution and spatial
+depth: We utilized \SI{1}{frame} every \SI{15}{\minute}, suitable for tracking
+cell migration \cite{huthSignificantlyImprovedPrecision2010}, but too slow for
+intricate movements or intracellular processes. Spatial resolution is a
+compromise between detail and the total observed surface area. We favored the
+latter to allow the exploration of potentially rare events, and acquired a
+\dashedsentence{somewhat arbitrarily} large surface area of up to
+\SI{13}{\milli\meter\squared}. Ultimately, we assessed only approx. a quarter of
+the acuired surface area, as that was sufficient to gather enough events for
+each time bin. Such extensive automated video acquisition poses high demands on
+microscopy equipment, including an incubation setup and motorized stage top. The
+total size of video files can also complicate storage, transfer and analysis.
+The raw video data from chapter 1 comprises \SI{80}{GB}
+\cite{biostudiesBioStudiesEuropeanBioinformatics}; however, far more data was
+acquired due to protocol optimizations and treatments not shown in this work.
+File size could have been reduced by acquiring in an 8-bit image format,
+although a larger bit-depth could be necessary for precise and/or sensitive
+fluorescence microscopy. Minimizing the acquired surface area could have reduced
+file size as well, however the meniskus of the medium led to significant shading
+effects that complicated the choice of the surface area for phase contrasting.
+Also, archiving large surface scans allows for the search of very rare events in
+the course of future projects. After all, HDD space is cheap, while re-acquiring
+data is not. Hence, exploratory live cell imaging benefits from settings that
+are higher-than-required, if raw data is properly documented and remain
+accessible.
+
+
+
+\textbf{Generating Training Datasets:}
+In this project, considerable effort was dedicated to training the machine
+learning software \textit{Intellesis} for image segmentation, particularly for
+fluorescent images. It was also utilized for phase contrast, yet training
+required far more effort in generating annotated training images. Phase contrast
+or brightfield images often display low contrast between cell edges and the
+background, complicating the task of differentiating individual cells from their
+surroundings. Such complexity necessitates extensive annotation of training
+images --\,a process that can be both time-consuming and demanding.
+
+To address these challenges and enhance the efficacy of \textit{Intellesis},
+pre-processing steps could be incorporated to emphasize essential image features
+and reduce irrelevant ones. For instance, edge-enhancing filters are applicable to
+clarify cell boundaries, while median filters can suppress noise and
+unnecessary details while preserving edges. These filters, available within the \texttt{Zen} software
+suite, help simplify the machine learning task by focusing the algorithm’s
+learning on pertinent features, thereby reducing the volume of data needed for
+effective training.
+
+This approach streamlines the training process for \textit{Intellesis}, enabling
+more efficient and accurate segmentation of complex microscopy images. By
+refining the feature extraction phase, the project could have improved the
+performance of the segmentation algorithm but also significantly cut down on the
+labor and frustration typically associated with preparing large sets of
+annotated training data.
+
+
+
+
+
+\unnsubsection{Conclusion 1: Harnessing Automation and Image Cytometry for
+    Advanced Insights into \INA and hMSC Dynamics}%
+\label{sec:discussion_conclusion_microscopy}%
+This study utilized live-cell imaging and image cytometry to investigate the
+complex interactions between \INA cells and hMSCs, offering significant insights
+into myeloma cell behavior. The findings underscored the critical role of
+MSC-interactions in shaping cell behavior, e.g. \INA cells showed a preference
+for heterotypic interactions with hMSCs. These techniques revealed dynamic
+processes, such as cell detachment and migration, which are pivotal for
+understanding disease mechanisms and developing therapeutic strategies.
+
+Live-cell imaging proved instrumental in capturing real-time cellular behaviors
+that static methods cannot, such as the detachment of \INA cells during
+division. This ability to directly observe dynamic processes provided a deeper
+understanding of the cellular mechanisms that may contribute to myeloma
+dissemination. However, this approach also posed challenges, including the need
+for extensive manual analysis and the difficulty of presenting dynamic data in
+traditional scientific formats, highlighting the potential benefits of
+integrating automated analysis tools in future research.
+
+Image cytometry facilitated high-throughput and precise analysis of cellular
+interactions, despite challenges related to automation and computational
+demands. The integration of manual and automated techniques in this study not
+only enabled a comprehensive analysis but also demonstrated the accessibility
+and potential of these advanced imaging technologies for broader applications in
+biomedical research. These findings underscore the importance of adopting
+innovative imaging techniques to enhance our understanding of cellular dynamics
+and multicellular interactions.
+
+
+
+
+
+
+
+
+

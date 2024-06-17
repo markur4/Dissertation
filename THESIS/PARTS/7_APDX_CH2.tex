@@ -1,0 +1,85 @@
+
+% ======================================================================
+% == Appendices for Chapter 2
+% ======================================================================
+
+
+
+
+% == Class Diagramm of plotastic =======================================
+\subsection{Class Diagram}
+\label{subapdx:classdiagr}
+
+% ## Save re-used text in a macro
+\def\umlconvention{Arrow shapes follow the UML (unified modeling
+    language): A hollow triangle indicates inheritance (\textit{``is~a''}) and a
+    filled diamond indicates composition (\textit{``has~a''}). }
+
+% ## Upper part
+\includeimage[0.422]{
+    APPENDIX_CHAPTER2/classdiagr_dataframe.png
+}\captionof{figure}{
+    \textbf{Class diagram of \texttt{plotastic} (upper part):} The
+    architecture of \texttt{plotastic} begins with classes that are related to
+    handling a \texttt{pandas.DataFrame} object which stores the data, and defining
+    dimensions to group the data (y, x, hue, col, row). This diagram ends with the
+    classes \texttt{SubPlot} and \texttt{StatTest} and is continued on the next
+    page. \umlconvention
+}\label{fig:S_classdiagr}
+
+
+% ## Lower Part
+\includeimagecontinued[0.8][][%
+    The architecture of \texttt{plotastic} continues after the class
+    \texttt{DataIntegrity} with classes for plotting (\texttt{SubPlot}) and
+    statistical testing (\texttt{StatTest}) and ends with the class
+    \texttt{DataAnalysis}, which serves as the main user interface.
+    \umlconvention ]{
+    APPENDIX_CHAPTER2/classdiagr_plot+stats.png
+}\label{fig:S_classdiagr_cont}
+
+% \def\mycap{\textbf{(continued)} The architecture of \texttt{plotastic}
+%     continues after the class \texttt{DataIntegrity} with classes for plotting
+%     (\texttt{SubPlot}) and statistical testing (\texttt{StatTest}) and end with
+%     the class \texttt{DataAnalysis}, which serves as the main user interface.
+%     \umlconvention }
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics*[scale=.20]{APPENDIX_CHAPTER2/classdiagr_plot+stats.png}
+%     \caption{\mycap}
+% \end{figure}
+
+
+
+% == Readme from plotastic (PyPi) ======================================
+% > Make an empty page with the section title
+\def\mytitle{Readme}
+\subsection{\mytitle}
+\label{subapdx:readme}
+\ %
+The following pages are the \texttt{README.md} of \texttt{plotastic} found in
+the Python Package Index (PyPi) (\url{pypi.org/project/plotastic}), and on
+GitHub (\url{github.com/markur4/plotastic}).
+
+\addpdf*[.93]{\mytitle}{APPENDIX_CHAPTER2/README_pypi.pdf}
+\newpage
+
+
+
+
+% == Example Analyses plotastic =======================================
+% > Make an empty page with the section title
+\def\mytitle{Example Analysis ``qpcr''}
+% \markboth{Appendix}{: \mytitle}
+\subsection{\mytitle}
+\label{subapdx:example_analysis}
+\ %
+The following pages are a jupyter notebook from an example analysis using
+\texttt{plotastic}. This notebook and further analyses examples are found on
+GitHub (\url{github.com/markur4/plotastic}). The qPCR dataset was derived from
+the experiments described in Chapter 1 \autoref{fig:4} and was changed into a public test
+dataset by exchanging the original gene names with random ones while preserving
+gene classes and quantitative fold changes.
+
+\addpdf*[.97]{\mytitle}{APPENDIX_CHAPTER2/qpcr.pdf}
+\newpage

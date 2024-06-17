@@ -38,16 +38,16 @@
 % :: Include only one part to work on for quicker compilation
 % \includeonly{PARTS/0_ACKNOWLEDGEMENTS}
 % \includeonly{PARTS/1_SUMMARY}
-% \includeonly{PARTS/2_INTRO_cancer}
-% \includeonly{PARTS/2_INTRO_coding}
+% \includeonly{PARTS/2_INT_cancer}
+% \includeonly{PARTS/2_INT_coding}
 % \includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/4_CHAPTER2}
-\includeonly{PARTS/5_SUMMARISING_DISCUSSION_cancer}
-% \includeonly{PARTS/5_SUMMARISING_DISCUSSION_coding}
-% \includeonly{PARTS/6_APPENDIX_CHAPTER1_FIGURES}
-% \includeonly{PARTS/6_APPENDIX_CHAPTER1_TABLES}
-% \includeonly{PARTS/6_APPENDIX_CHAPTER1_METHODS}
-% \includeonly{PARTS/7_APPENDIX_CHAPTER2}
+% \includeonly{PARTS/5_SD_microscopy}
+% \includeonly{PARTS/5_SD_cancer}
+% \includeonly{PARTS/5_SD_coding}
+% \includeonly{PARTS/6_APDX_FIGURES}
+% \includeonly{PARTS/6_APDX_TABLES}
+% \includeonly{PARTS/6_APDX_METHODS}
 
 
 % > Preamble ends here
@@ -112,14 +112,14 @@
 \label{sec:intro}%
 
 % > Include 2_INTRO_CANCER.tex
-\include{PARTS/2_INTRO_cancer}
+\include{PARTS/2_INT_cancer}
 
 % > Include 2_INTRO_CODING.tex
-\include{PARTS/2_INTRO_coding}
+\include{PARTS/2_INT_coding}
 \newpage
 
 % ## Aims of this Thesis
-\input{PARTS/2_INTRO_AIMS}
+\input{PARTS/2_INT_AIMS}
 \newpage
 
 
@@ -134,9 +134,11 @@
 % == Summarising Discussion ============================================
 % > Include SUMMARISING_DISCUSSION.tex
 
-\include{PARTS/5_SUMMARISING_DISCUSSION_cancer}
+\include{PARTS/5_SD_microscopy}
 
-\include{PARTS/5_SUMMARISING_DISCUSSION_coding}
+\include{PARTS/5_SD_cancer}
+
+\include{PARTS/5_SD_coding}
 
 \newpage
 
@@ -181,19 +183,19 @@
     % ## Figures
     \subsection{Figures}\label{subapdx:figs}
     \newpage
-    \include{PARTS/6_APPENDIX_CHAPTER1_FIGURES}̉
+    \include{PARTS/6_APDX_FIGURES}̉
     \newpage
 
     % ## Tables
     \subsection{Tables}\label{subapdx:tabs}
     \newpage
-    \include{PARTS/6_APPENDIX_CHAPTER1_TABLES}
+    \include{PARTS/6_APDX_TABLES}
     \newpage
 
     % ## Materials & Methods
     \subsection{Materials \& Methods}\label{subapdx:methods}
     \newpage
-    \include{PARTS/6_APPENDIX_CHAPTER1_METHODS}
+    \include{PARTS/6_APDX_METHODS}
     \newpage
 
 
@@ -202,12 +204,12 @@
     \section{Documentation of \texttt{plotastic}}\label{apdx:plotastic_docs}
     \resetcounters % > Reset fig and tab counter
 
-    \include{PARTS/7_APPENDIX_CHAPTER2}
+    \include{PARTS/7_APDX_CH2}
     \newpage
 
 
     % == Forms =========================================================
-    \include{PARTS/8_APPENDIX_FORMS}
+    \include{PARTS/8_APDX_FORMS}
     \newpage
 
 \end{appendices}

@@ -1,0 +1,1017 @@
+
+
+\unnsubsection{Multidimensional Data in Biomedical Research}%
+\label{sec:intro_multidimensional_data}%
+As modern biosciences advance, researchers increasingly encounter datasets that
+are influenced by a variety of independent variables, such as time, dosage, and
+environmental conditions. These variables introduce multidimensional complexity
+into datasets, challenging traditional analysis methods. For instance, cell
+adhesion studies, which are crucial for understanding cellular interactions and
+cancer metastasis, often require analyses across multiple time points and
+varying adhesion molecule concentrations, demonstrating a time-dependent
+variability that significantly impacts biological interpretations
+\cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997,bolado-carrancioPeriodicPropagatingWaves2020a}.
+
+
+Multidimensional data encompass datasets where multiple \emph{independent
+    variables} (here reffered to as \emph{factors}) can influence one
+\emph{dependent variables} (\emph{outcomes}) \cite{krzywinskiMultidimensionalData2013}.
+% Statistically speaking, an experiment assesses if an \emph{independent variable}
+% (here reffered to as \emph{factors}) has an influence on a \emph{dependent
+% variable} (\emph{outcome}), e.g. ``Does \emph{Time} influence \emph{Gene
+% Expression}?'' \cite{motulskyIntuitiveBiostatisticsNonmathematical2018}. 
+In biomedicine, dependent variables are often continuous (intervals or ratios),
+whereas independent variables are often categorical (ordinal or nominal),
+respectively. Categorical variables comprise discrete values called categories
+or \emph{levels}, which are assigned to experimental conditions or measurement
+modalities, for example the factor \textit{`time'} could comprise three
+\linebreak levels: \textit{`\SI{0}{\hour}'}, \textit{`\SI{24}{\hour}'}, and
+\textit{`\SI{48}{\hour}'}. Such setups are attractive, because they are
+compatible with common hypothesis tests, such as ANOVA etc.
+\cite{motulskyIntuitiveBiostatisticsNonmathematical2018}: If the levels of one
+factor are associated with a different outcome, that factor is considered to
+have an influence on the dependent variable. Multiple factors address multiple
+hypotheses, including the influence from each individual factor, but also
+potential interactions between factors. This makes it crucial to design analysis
+strategies that can reveal the true structure and value of the data
+\cite{krzywinskiMultidimensionalData2013}.
+
+
+% TODO: Add examples of multidimensional data in biosciences
+% (put the following examples into discussion? Use one example, rest into discussion?)
+
+A primary example of multidimensional data is multiplex RT-qPCR, where the
+expression levels of various genes are measured across different samples under
+varying conditions \cite{bustinReproducibilityBiomedicalResearch2014}. Here, the
+dependent variable is typically the fold change expression values derived from
+$\Delta\Delta$Ct calculations
+\cite{brankatschkSimpleAbsoluteQuantification2012}. The independent variables
+include the genes being measured and the experimental conditions under which the
+samples are processed.
+
+Microscopy data further illustrate the complexity of multidimensional datasets
+\cite{ruedenImageJ2ImageJNext2017}. In this context, the dependent variable
+might be a quantifiable feature, such as cell count or morphological metrics
+extracted from image analyses. The independent variables can expand immensely to
+include factors such as well-plate coordinates in a 96-well plate, Z-positions
+in confocal microscopy, and time points in time-lapse studies.
+
+Lastly, big-data aggregation tools like \texttt{Metascape} provide a rich source
+of multidimensional data by integrating various dependent variables, such as
+gene expression fold changes and associated $p$-values, with independent variables
+spanning gene identifiers, gene ontology terms, and ontology classes derived from
+multiple databases \cite{zhouMetascapeProvidesBiologistoriented2019}. Despite
+the provision of summarized graphical outputs, the raw data often remain in
+complex, nested formats within Excel sheets, posing significant challenges for
+hypothesis-driven research.
+
+This extensive integration of multiple dimensions requires sophisticated
+visualization and analysis techniques. While basic statistical visualizations
+suffice for one- or two-dimensional data, more complex data sets necessitate
+advanced techniques, which allow researchers to visualize and interact with data
+in ways that elucidate the underlying patterns and relationships
+\cite{dunnExploringVisualizingMultidimensional2017}. However, the gap between
+available visualization tools and the needs of clinicians or biologists without
+extensive bioinformatics training remains wide, emphasizing the need for
+intuitive, user-friendly tools that bridge this knowledge gap and enhance the
+accessibility of complex data analyses
+\cite{dunnExploringVisualizingMultidimensional2017}.
+
+
+
+
+% \unnsubsection{Multidimensional Data in Biomedical Research}%
+% \label{sec:multidimensional_data}%
+% - This is the first paragraph after the sections describing cancer dissemination
+
+% - Introduce why multidimensional data
+% Modern biosciences describe processes (e.g. cell-adhesion) that are highly
+% dependent on multiple experimental conditions, like time and concentration
+% \cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997}
+% - Go into more detail how and why cell adhesion is highly time-dependent, providing real citable sources for these claims  
+% - The awareness for complex datasets is rising in biosciences, as tutorials for
+% multidimensional data are available
+% \cite{krzywinskiMultidimensionalData2013, dunnExploringVisualizingMultidimensional2017}.
+
+% - What is multidimensional data
+% - Explain in detail, introduce terms like dependent variable, independent variable, factors
+
+% - Describe in three examples on methods how multidimensional data is generated in biosciences
+% - Provide real citable sources that show examples for every example!
+
+% An example of multidimensional data is (multiplex) RT-qPCR, a method that
+% measures the expression of multiple genes in multiple samples. The data can be
+% structured with the dependent variable being the foldchange expression values
+% (resulting from delta delta Ct according to
+% \citet{brankatschkSimpleAbsoluteQuantification2012}), and the independent
+% variables being the genes and the samples. The data is grouped into foldchange
+% expression values as dependent variables, and
+
+% Another hallmark example for multidimensional data are microscopy data. Stacks
+% of images themselves are three-dimensional (single black-white channel),
+% however, multidimensional data refers mostly to the resulting data after image
+% analysis. For example, the dependent variable could a feature quantified from
+% each image (e.g. number of cells). The independent factors can increase
+% drastically, including experimental conditions grouped into well-plate
+% coordinates (e.g. 96 wellplates), or Z-position (confocal microscopy), or time
+% (time-lapse microscopy).
+
+
+% Another source of multidimensional data are aggregated big-data, such as the
+% result from GO-term enrichment analysis tools like \texttt{Metascape}
+% \cite{zhouMetascapeProvidesBiologistoriented2019}. This Data integrates multiple
+% dependent variables like foldchange expression and p-values, and the data is
+% grouped into factors like gene, gene ontology terms and ontology classes from
+% multiple online databases. Since these factors apply to every experimental
+% conditions, GO analysis can result in highly complex and nested datasets.
+% Although \texttt{Metascape} returns a graphical user interface with numerous
+% summarizing graphs, the supplied Excel sheets can be non-readable for
+% humans, making it difficult to extract the information that is relevant for
+% specific research hypotheses.
+
+
+% ======================================================================
+\unnsubsection{Nontransparencies in Biomedical Data Analyses}%
+\label{sec:intro_nontransparencies}%
+%%%%%%%%%%%%%
+The advent of advanced technologies in biosciences has ushered in an era of \emph{big
+    data}, characterized by unprecedented volumes and complexities of
+data~\cite{bubendorfHighthroughputMicroarrayTechnologies2001, yangScalabilityValidationBig2017,
+    ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
+by significant challenges in data analysis, particularly impacting the
+reproducibility of scientific research. Studies such as the
+\citet{baker500ScientistsLift2016} survey revealed that more than
+\SI{70}{\percent} of researchers have tried and failed to reproduce another
+scientist's experiments, highlighting a reproducibility crisis that questions
+the reliability of scientific findings
+\cite{begleyReproducibilityScienceImproving2015, ioannidisWhyMostPublished2005}.
+
+\emph{Reproducibility} is considered foundational to scientific research,
+ensuring that findings are reliable and verifiable. Still, its meaning requires
+precise definition \cite{goodmanWhatDoesResearch2016}. The common understanding
+of scientific reproduction implies not only that detailed information is
+provided to enable independent repetition (\emph{transparency}), but also that
+time and effort is invested into repeating the experiments
+(\emph{corroboration}). However, since modern biomedical journals are demanding
+novelty research, and since experiments have become highly specialized and
+time-intensive, repeating someone else's work is considered neither interesting%
+\footnotequote{There are no scientists with the interest, resources, or
+    incentives to “repeat” or confirm this vast sea of published work, so whether
+    the findings they report are reproducible will simply never be assessed.}{flierProblemIrreproducibleBioscience2022}
+nor possible for most publications \cite{flierProblemIrreproducibleBioscience2022,
+    pengReproducibleResearchComputational2011}. Hence, the meaning of
+reproducibility is confined to \emph{transparency}, a concept that has
+been applied to many fields, including clinical trials
+\cite{goodmanWhatDoesResearch2016,
+    committeeonstrategiesforresponsiblesharingofclinicaltrialdataSharingClinicalTrial2015}.
+
+Nevertheless, there is a surprising amount of evidence for nontransparencies in
+biomedical data analyses: For Microarray-based miRNA profiling, raw data was not
+reported in more than \SI{40}{\percent} of 127 articles, making independent
+verification impossible \cite{witwerDataSubmissionQuality2013}. The same study
+also found that re-analysis of data often times did not support the original
+conclusions. Furthermore, \SI{44}{\percent} of 233 preclinical articles describe
+statistical tests insufficiently, while few don't describe them at all
+\cite{gosselinInsufficientTransparencyStatistical2021}. Another study reviewed
+147 papers in the field of optometrics and found that \SI{91}{\percent} did not
+discuss their rationale of correcting $p$-values for multiple comparisons (e.g.
+Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, given
+that the exact use of multiple comparisons corrections has been under debate for
+decades, it is reasonable to assume that researchers lack the confidence to
+report their technique in detail \cite{pernegerWhatWrongBonferroni1998,
+    moranArgumentsRejectingSequential2003, sullivanFactsFictionsHandling2021}. In
+general, $p$-values are target of extreme scrutiny and also the cause of many
+arguments, which themselves are of questionable statistical reasoning%
+\footnotequote{Arguing about the P value is like focusing on a single
+    misspelling, rather than on the faulty logic of a
+    sentence}{leekStatisticsValuesAre2015}%
+\cite{leekStatisticsValuesAre2015}. Additionally, statistical illiteracy is a
+well-known problem among clinicians
+\cite{lakhlifiIllusionKnowledgeStatistics2023}. Among biomedical researchers,
+\SI{77}{\percent} state that they have not received formal training in data
+literacy, including visualization and public deposition of data, although they
+understand its high relevance \cite{federerDataLiteracyTraining2016}.
+Correspondingly, it has been communicated that there is a lack of intuitive
+tools to embed computational work into publications, but also a lack of
+bioinformaticians to translate computation into clinics
+\cite{mesirovAccessibleReproducibleResearch2010, smithJournalOpenSource2018,gomez-lopezPrecisionMedicineNeeds2019}.
+Therefore, nontransparencies in biomedical analyses are not only caused by a
+habit%
+\footnotequote{[...] old habits die hard, and many will be unwilling to discard the
+    hours spent learning existing systems.}{pengReproducibleResearchComputational2011}%
+of insufficient reporting, but could be exacerbated by the confusions caused
+by currently available methodologies and the lack of proper training.
+
+
+
+\unnsubsection{Semi-Big Data: Big Enough to Cause Problems}%
+\label{sec:intro_semi_big_data}%
+Recent advances in big data analysis have significantly improved the
+standardization of both raw data availability and processing pipelines \cite{gomez-cabreroDataIntegrationEra2014}.
+Particularly in RNAseq analysis, automation and the use of sophisticated
+software have established standards that enhance reproducibility across
+studies. For example, tools such as \texttt{STAR} and \texttt{HISAT} for
+sequence alignment, and \texttt{Cufflinks} and \texttt{DESeq} for differential
+expression analysis, rely on scripts that standardize processing steps to
+produce repeatable and verifiable results \cite{dobinSTARUltrafastUniversal2013,
+    kimHISATFastSpliced2015,trapnellDifferentialGeneTranscript2012,loveModeratedEstimationFold2014}.
+These frameworks not only automate data handling but also ensure that data
+analysis protocols are followed consistently, reducing human error and
+variability between different users or laboratories.
+
+However, this level of standardization and automation has not been mirrored in
+the analysis of \emph{semi-big data}. Semi-big data, as introduced in this thesis,
+describes datasets that are on the cusp of manageability: substantial enough to
+overwhelm manual analysis methods yet not sufficiently large or uniform to
+justify the heavy computational frameworks developed for big
+data. Such data are frequently generated in experiments like automated
+microscopy or multiplex qPCR, where the scale and complexity of the data can
+vary significantly depending on the experimental design and objectives
+\cite{krzywinskiMultidimensionalData2013}.
+
+Researchers often revert to basic tools such as \textit{Microsoft Excel} for
+analyzing these semi-big datasets \cite{incertiYouStillUsing2019a}. While Excel
+provides familiarity and immediate accessibility, it lacks the sophisticated
+data handling capabilities necessary for efficient and error-free processing of
+complex (multidimensional) datasets. This reliance on manual methods not only
+makes the analysis laborious and prone to mistakes but also significantly
+impedes the reproducibility of research findings. The time and effort required
+to replicate analyses done manually mean that validating findings from semi-big
+data can be prohibitively challenging for peer reviewers and other researchers
+in the field.
+
+Given these challenges, there is a critical need for developing new tools and
+frameworks specifically tailored for semi-big data. These tools should bridge
+the gap between the simplicity of user-friendly software like Excel and the
+robust, script-based automation seen in big data frameworks. By providing
+standardized, repeatable, and easy-to-use methods for handling complex datasets,
+such tools could significantly enhance the reliability and efficiency of
+research involving semi-big data, ultimately supporting broader scientific
+inquiry and verification.
+
+
+
+
+
+\unnsubsection{The Shortcomings of Common Biomedical Analysis Tools}%
+\label{sec:intro_nontransparent_tools}%
+%%%%%%%%%%%%%%
+Interactive software systems commonly used for exploratory data analysis in
+biomedical research often lack mechanisms to track and reproduce the
+researcher's actions systematically. Even when analysis is performed using
+scripting languages, the integration of results from multiple packages without a
+coherent record of the commands and code used undermines reproducibility. This
+practice can obscure analysis, making it difficult, if not impossible, for other
+researchers to replicate the results \cite{leekStatisticsValuesAre2015,
+    pengReproducibleResearchComputational2011,
+    mesirovAccessibleReproducibleResearch2010, localioStatisticalCodeSupport2018}.
+
+A particularly illustrative example is \textit{GraphPad Prism}, a tool
+ubiquitously employed across biomedical disciplines for statistical analysis.
+Despite its widespread use, it does contribute to data analysis
+nontransparencies due to \textit{Prism}'s closed-source nature and the common
+journal practice of not requiring detailed methodological transparency in its
+usage, a practice that is common in biostatistics literature
+\cite{gosselinInsufficientTransparencyStatistical2021,
+    localioStatisticalCodeSupport2018}. Furthermore, \textit{GraphPad Prism} still
+requires manual data entry and lacks the robustness and automation necessary for
+handling multidimensional or semi-big data. Although, \textit{GraphPad Prism} is
+compatible \textit{``multiple variable tables''} \dashedsentence{similar to
+    long-form tables known from \citet{wickhamTidyData2014}}, but does not
+automatically graph these kinds of tables, but only user specified subsets
+\cite{GraphPadPrism102024}.
+
+Moreover, \textit{Microsoft Excel}, another staple in data processing in
+biomedicine, is notoriously inadequate for handling multidimensional data and
+complex statistical analyses. Its limitations include poor error tracking,
+absence of change documentation (audit trails), and a propensity for introducing
+errors that often go unnoticed, such as converting gene names to dates
+\cite{ziemannGeneNameErrors2016}. To compensate for these shortcomings,
+\textit{Microsoft} has recently integrated a Python interpreter into
+\textit{Excel}, allowing researchers to automate tasks and analyze data
+efficiently and correctly \cite{microsoftexcelAnnouncingPythonExcel2023}.
+
+Indeed, many common tools in biomedicine allow for scripting or automation to
+handle semi-big data more effectively. For example, \texttt{Fiji/ImageJ}, a
+popular image processing platform, supports extensive macro and scripting
+capabilities \cite{ruedenImageJ2ImageJNext2017}. These features enable researchers to automate batch processing of
+image data, streamlining tasks that would otherwise require laborious manual
+input. Similarly, \texttt{PyMOL}, a leading tool in protein structural biology,
+utilizes Python scripting to automate complex tasks, allowing for detailed
+molecular modeling and visualization that are reproducible and scalable across
+datasets \cite{PyMOL2024, rigsbyUsingPyMOLApplication2016}.
+
+Although automation scripts used in tools like \texttt{Fiji/ImageJ} and
+\texttt{PyMOL} improve transparency for publishing singular data analysis
+pipelines, they still face challenges that can impede their reproducibility
+\cite{pengReproducibleResearchComputational2011, sandveTenSimpleRules2013}:
+These scripts sometimes require specialized software environments, where setting
+up dependencies and configurations can be complex enough to discourage
+replication efforts. Additionally, these scripts do not always provide
+comprehensive outputs of intermediate steps, which is crucial for verifying and
+understanding the progression of data analysis \cite{sandveTenSimpleRules2013}.
+
+On the other hand, when scripts are designed to be more generalized and
+distributed \linebreak\dashedsentence{for instance, as a \texttt{Fiji/ImageJ}
+    plugin or a standalone application} they can make substantial contributions to
+scientific research by enabling other researchers to apply these tools to their
+own data sets
+\cite{narztReusabilityConceptProcess1998,wilkinsonFAIRGuidingPrinciples2016}.
+However, this approach also comes with its own set of challenges
+\cite{sandveTenSimpleRules2013}. These generalized tools often lack
+comprehensive user-manuals (\emph{documentation}) and are not thoroughly tested
+across different platforms or data sets, which can lead to unexpected errors
+that can not be fixed by the user. Moreover, even when these tools are
+available, they frequently suffer from low adoption rates, meaning that few
+people are familiar with the details of such tools, further decreasing the
+confidence and reproducibility in the final results.
+
+Given these complexities, there is a pressing need for new analytical tools
+specifically designed for semi-big data. These tools must strike a balance
+between the ease of use found in basic software and the robust, analytical
+capabilities of more sophisticated systems. By providing standardized workflows,
+comprehensive documentation, and ensuring cross-platform compatibility, these
+tools can significantly enhance reproducibility. They not only allow researchers
+to perform analyses more efficiently but also ensure that these analyses are
+robust, transparent, and easily verifiable by the broader scientific community.
+
+This thesis presents a software environment developed in Python, designed to
+bridge this gap. It demonstrates that even minimal coding skills can be
+leveraged to create powerful tools that standardize and accelerate the analysis
+of semi-big data, ultimately fostering more reproducible and trustworthy
+scientific research.
+
+
+
+
+
+
+
+% ======================================================================
+\unnsubsection{Modern Standards of Software Development}
+\label{sec:intro_code_quality}
+%%%%%%%
+A main reason to write software is to define reusable instructions for task
+automation~\cite{narztReusabilityConceptProcess1998}.
+The complexity of software code makes it prone to errors, which can prevent
+its usage by persons other than the author himself. This is a problem for the
+general scientific community, as the software is often essential for
+reproduction~\cite{sandveTenSimpleRules2013}. Hence, modern journals aim to
+enforce standards to software development, including software written and used
+by biological researchers~\cite{smithJournalOpenSource2018}. Here, we provide a
+brief overview of the standards utilized by \texttt{plotastic} that ensure
+its reliability and reproducibility by the scientific
+community~\cite{pengReproducibleResearchComputational2011}.
+
+
+Modern software development is a long-term commitment of maintaining and
+improving code after initial release~\cite{boswellArtReadableCode2011}. Hence,
+it is good practice to write the software such that it is \emph{scalable},
+\emph{maintainable} and \emph{usable}. \emph{Scalability} or, to be precise,
+\emph{structural scalability} means that the software can easily be expanded
+with new features without major modifications to its architecture
+\cite{bondiCharacteristicsScalabilityTheir2000}. This is achieved by writing the
+software in a modular fashion, where each module is responsible for a single
+function. \emph{Maintainability} means that the software can easily be fixed
+from bugs and adapted to new requirements \cite{kazmanMaintainability2020}. This
+is achieved by writing the code in a clear and readable manner, and by writing
+tests that ensure that the code works as
+expected~\cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
+define~\cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable
+if the commands have intuitive names and if the software's manual, termed
+\emph{documentation}, is up-to-date and easy to understand for new users with
+minimal coding experience. A software package that has not received an update
+for a long time (approx. one year) could be considered abandoned. Abandoned
+software is unlikely to be fully functional, since it relies on other software
+(dependencies) that has changed in functionality or introduce bugs that were not
+expected by the developers of all dependencies. Together, software that's
+scalable, maintainable and usable requires continuous changes to its codebase.
+There are best practices that standardize the continuous change of the codebase,
+including version control, continuous integration (often referred to as CI), and
+software testing.
+
+Version control is a system that records changes to the codebase line by line,
+documenting of the detailed history of the codebase, including the person and
+timepoint of every change. This is required to isolate new and experimental
+features into newer versions and away from the stable version that's known to
+work. The most popular version control system is \texttt{Git}, which is
+considered the industry standard for software
+development~\cite{chaconGitBook2024}. \texttt{Git} can use GitHub.com as a
+platform to store and host codebases in the form of software repositories.
+GitHub's most famous feature is called ``pull request''. A pull request is a
+request from anyone registered on GitHub to include changes to the codebase (as
+in \textit{``please pull this into your main code''}). One could see pull
+requests as the identifying feature of the open source community, since it
+exposes the codebase to potentially thousands of independent developers,
+reaching a workforce that is impossible to achieve with closed source models
+used by paid software companies.
+
+\emph{Continuous integration} (CI) is a software development practice in which
+developers integrate code changes into a shared repository several times a
+day~\cite{duvall2007continuous}. Each integration triggers the test suite,
+aiming to detect errors as soon as possible. The test suite includes building
+the software, setting up an environment for the software to run, and then
+executing the programmed tests, ensuring that the software runs as a whole.
+Continuous integration is often used together with software branches. Branches
+are independent copies of the codebase that are meant to be merged back into the
+original code once the changes are finished. Since branches accumulate multiple
+changes over time, this can lead to minor incompatibilities between the branches
+of all developers (integration conflicts), which is something that CI helps to
+prevent.
+
+Continuous integration especially relies on a thorough software testing suite.
+Software testing is the practice of writing code that checks if the codebase
+works as expected~\cite{10.5555/2161638}. The main type of software testing is
+unit testing, which tests the smallest units of the codebase (functions and
+classes) in isolation (\autoref{lst:unit_test}). Software testing is automated
+by specialized frameworks that execute the tests and report the results, a
+popular example being \texttt{pytest}, which is utilized by
+\texttt{plotastic}~\cite{pytestx.y}.
+
+\def\mycaption{ Example of an arbitrary Python function and its respective unit
+    test function. The first function simply returns the number 5. The second
+    function tests if the first function indeed returns the number 5. The test
+    function is named with the prefix ``\texttt{test\_}'' and is placed in a
+    file that ends with the suffix ``\texttt{\_test.py}''. Testing frameworks
+    such as \texttt{pytest} scan the repository for files that end with
+    ``\texttt{\_test.py}'' and execute the functions that start with
+    ``\texttt{test\_}''. Note that code after ``\texttt{\#}'' is considered a
+    comment and won't be executed.}
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    label=lst:unit_test, 
+    caption=\mycaption,
+    ]
+# Define a function called "give_me_five" that returns the number 5
+def give_me_five():
+    return 5
+# Define a test function asserting that "give_me_five" returns 5
+def test_give_me_five():
+    assert give_me_five() == 5 
+\end{lstlisting}
+
+\pagebreak
+
+The quality of the software testing suite is measured by the code coverage, the
+precision of the tests, and the number of test-cases that are checked. The code
+coverage is the percentage of the codebase that is called by the testing
+functions, which should be as close to 100\% as possible, although it does not
+measure how well the code is tested. The precision of the test is not a
+measurable quantity, but it represents if the tests truly checks if the code
+works as expected. The number of test-cases is the number of different scenarios
+that are checked by the testing functions, for example testing every possible
+option or combinations of options for functions that offer multiple options.
+
+Together, the standards of software development, including version control,
+continuous integration, and software testing, ensure that the software is
+scalable, maintainable, and usable. This is especially important for software
+that is used by the scientific community, as it ensures that the software is
+working as expected at defined versions years after publishing scientific
+results.
+
+% ======================================================================
+% ======================================================================
+\unnsubsection{What makes Python an ``Easy'' Programming Language?}%
+\label{sec:intro_python}%
+%%%%%%%%%%
+Here, we provide a general overview of the Python programming language,
+explaining terms like \textit{``type''}, \textit{``method''}, etc., in order to
+prepare readers without prior programming experience for the following chapters.
+We also describe the design principles of Python to lay out the key concepts
+that differentiate Python compared to other programming languages. A more
+detailed tutorial on Python that's specialized for bioscientists is found
+in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}
+
+
+Languages such as Python are considered \textit{``high-level''}, which means
+that it is designed to be easy to read and write, but also independent of
+hardware by hiding (\textit{``abstracting''}) underlying
+details~\cite{PythonLanguageReference2024}. A key principle of Python is the
+emphasis on implementing a syntax that is concise and close to human language
+(\autoref{lst:readable}, \autoref{lst:not_readable}).
+
+\def\mycaption{ Example of
+    readable Python code. This one-line code returns the words (string)
+    \texttt{"Hello, World!"} when executed. The command is straightforward and easy
+    to understand.}
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    label=lst:readable,
+    caption=\mycaption
+    ]
+print("Hello, World!")
+# Expected output: Hello, World!
+\end{lstlisting}
+
+\def\mycaption{ Example of less readable code written in the low-level
+    programming language C. This code is doing exactly the same as the Python
+    code in \autoref{lst:readable}, but is harder to understand because more
+    steps are needed, including the import of a library \texttt{stdio.h} and the
+    definition of a function called \texttt{main}. Note that C uses \texttt{//}
+    to begin comment sections.}
+\begin{lstlisting}[
+    language=C, 
+    style=defaultstyle,
+    label=lst:not_readable, 
+    caption=\mycaption
+    ]
+#include <stdio.h>          // Import functions for standard input & output
+int main() {                // Define a function called 'main'
+    printf("Hello, World!");
+    return 0;
+}
+// Expected output: Hello, World!
+\end{lstlisting}
+
+Furthermore, Python is an \textit{interpreted} language, which means that the
+code is executed line by line. This makes coding easier because the programmer
+can see the results of the code immediately after writing it, and error messages
+point to the exact line where the error occurred (\autoref{lst:errormessage}). This is in contrast to
+\textit{compiled} languages, where the code has to be compiled into machine code
+before it can be executed. The advantage of compiled languages is that the code
+runs faster, because the machine code is optimized for the hardware.
+
+\def\mycaption{Example of an error message. Since Python is case-sensitive, the
+    error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
+    The error message begins with the type of error (\texttt{NameError}),
+    followed by a traceback that shows the sequence of function calls that led
+    to the error. The traceback located the source of the error in the file
+    \texttt{errormessage.py} and points to the line that caused the error.
+    Finally, the error message explains the error, stating that \texttt{'Hi'} is
+    undefined. }
+\begin{lstlisting}[
+    language=Python, 
+    style=pythonstyle,
+    label=lst:errormessage,
+    caption=\mycaption
+    ]
+hi = "Hello World"  # Define a variable 'hi' with the value "Hello World"
+print(Hi)           # Print the value of the undefined variable 'Hi'
+
+# Expected Output:
+# ---------------------------------------------------------------------------
+# NameError                                 Traceback (most recent call last)
+# File /Users/martinkuric/Documents/errormessage.py:2
+#       1 hi = "Hello World"
+# ----> 2 print(Hi)
+
+# NameError: name 'Hi' is not defined
+\end{lstlisting}
+
+Python automates tasks that would otherwise require an advanced understanding of
+computer hardware, like the need for manual allocation of memory space. This is
+achieved by using a technique called \textit{``garbage collection''}, which
+automatically frees memory space that is no longer needed by the program. This
+is a feature that is not present in low-level programming languages like C or
+C++, that were designed to maximize control over hardware.
+
+Another hallmark of Python is its \textit{dynamic typing system}. In Python the
+type is inferred automatically during code execution
+(\autoref{lst:dynamic_typing}). This is in contrast to \textit{statically} typed
+languages like C, where the type of a variable has to be declared explicitly and
+cannot be changed during code execution
+(\autoref{lst:static_typing})~\cite{PythonLanguageReference2024}.
+
+\def\mycaption{ Example of dynamic typing in Python. The variable ``\texttt{a}''
+    is assigned the value 5, which is of type integer. The variable
+    ``\texttt{a}'' is then overwritten with the value ``\texttt{Hello,
+        World!}'', which is of type string. Python allows dynamic re-assignment of
+    variables with different types. Note that code after ``\texttt{\#}'' is
+    considered a comment and won't be executed.}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyleNonbreaking,
+    label=lst:dynamic_typing,
+    caption=\mycaption,
+    belowskip=-\vhalf % > Remove space because two listings are close
+    ]
+a = 5  # Type integer
+a = 5.0  # Type float
+a = 'Hello, World!'  # Type string
+a = True  # Type boolean
+a = False  # Type boolean
+a = [1, 2, 3]  # Type list of integers
+a = {'name': 'Regina'}  # Type dictionary
+\end{lstlisting}
+
+\def\mycaption{ Example of static typing in C. The variable ``\texttt{a}'' is
+    declared as an integer (\texttt{int}), and can only store integers. The
+    variable ``\texttt{a}'' is then assigned the value 5, which is an integer.
+    The variable ``\texttt{a}'' is then assigned the value \texttt{'Hello,
+        World!'}, which is a string. This results in a compilation error, because
+    the variable ``\texttt{a}'' can only store integers. Note that code after
+    ``\texttt{//}'' is considered a comment and won't be executed. }
+\begin{lstlisting}[
+    language=C,
+    style=defaultstyleNonbreaking,
+    label=lst:static_typing,
+    caption=\mycaption,
+    ]
+int a;  // Declare type as integer
+a = 5;
+a = 'Hello, World!';  // Compilation error!
+\end{lstlisting}
+
+Dynamic typing makes Python a very beginner-friendly language, since one does
+not have to keep track of the type of each variable. However, this also makes
+Python a slower language, because the interpreter has to check the type of each
+variable during code execution. Also, developing code with dynamic typing
+systems is prone to introducing bugs (\texttt{TypeError}), because it allows
+unexperienced developers to convert variables from one type to another without
+noticing, leading to unexpected behavior. Hence, larger Python projects require
+disciplined adherence to programming conventions. One such convention is
+\textit{type hinting}, which is a way to explicitly note the type of a
+variable. Type hinting does not have an effect on the code, but it makes the
+code more readable and understandable for other developers, and allows for
+development environments to detect type errors before execution
+(\autoref{lst:type_hint})~\cite{vanrossumPEP484Type2014}.
+
+\def\mycaption{ Example of type hints used in Python. Explicitly stating the
+    type of the variable is optional and does not change the behavior of the
+    code, but behaves exactly as shown in \autoref{lst:dynamic_typing}.}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyleNonbreaking,
+    label=lst:type_hint,
+    caption=\mycaption,
+    ]
+a: int = 5
+a: str = 'Hello, World!'
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+To make Python as easy as possible, python packages aim to reduce the amount of
+code that has to be written by the user. For example, the package
+\texttt{matplotlib} is a plotting library where every command is written such
+that the user immediately understands its purpose, like plotting a line or
+labeling an axis (\autoref{lst:matplotlib}). Hence \texttt{matplotlib} code is a
+sequence of simple function calls, where the state of the plot is modified and
+saved in the background line by line.
+
+\def\mycaption{ Example of using pre-written functions of a Python package. The
+    functions of the package \texttt{matplotlib.pyplot} become accessable by
+    importing the package as \texttt{plt}, where plt serves as an alias (or rather
+    shortcut) to access the functions of the package. Then, two arbitrary lists are
+    defined, \texttt{x} and \texttt{y}. These datapoints are plotted (scatterplot)
+    using the function \texttt{plot} The plots x- and y-axes are then labeled and
+    saved as an image. The code is written in a sequence of function calls, where
+    the state of the plot is saved in the background. The plot is then displayed
+    using the function \texttt{show}. }
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyleNonbreaking,
+    label=lst:matplotlib,
+    caption=\mycaption,
+    ]
+import matplotlib.pyplot as plt  # Make functions accessible via plt
+x = [1, 2, 3, 4, 5]              # Define arbitrary x values
+y = [1, 4, 9, 16, 25]            # Define arbitrary y values
+plt.plot(x, y)                   # Plot x against y
+plt.xlabel('Timepoint')          # Add a label to the x axis
+plt.ylabel('Foldchange')         # Add a label to the y axis
+plt.title('Gene Expression')     # Add a title above the plot
+plt.savefig('plot.png')          # Save plot as image onto harddrive
+plt.show()                       # Show the plot preview
+    
+\end{lstlisting}
+
+However, when no pre-written functions or packages are available, Python offers
+the tools of a general purpose programming language to write and deploy custom
+code easily. Programming styles can be classified into two main paradigms:
+\emph{functional} and \emph{object-oriented} programming, which can be
+understood as different ways to structure code. Python supports both paradigms.
+In \emph{functional} programming, the code is written in a way that the program
+is a sequence of function calls, where each function call returns a value that
+is used in the next function call (\autoref{lst:functional}). This approach is
+useful when multiple actions have to be performed on the same data and the
+structure of the data is relatively simple, for example a string of a DNA
+sequence.
+
+\def\mycaption{ Example of functional programming in Python. The code
+    defines a function called ``\texttt{find\_restriction\_site}'' that
+    finds the position of a restriction site in a DNA sequence. The function
+    ``\texttt{cut}'' uses the function ``\texttt{find\_restriction\_site}''
+    to cut the sequence at the restriction site. To execute both functions,
+    we first define an arbitrary DNA sequence and then call the function
+    \texttt{cut} passing the sequence as an argument.
+}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyleNonbreaking,
+    label=lst:functional,
+    caption=\mycaption,
+    ]
+def find_restriction_site(sequence: str):  # Define a function
+    return sequence.find('GCGC')           # Find the position of 'GCGC'
+    
+def cut(sequence: str):                        # Define another function
+    position = find_restriction_site(sequence) # Use the function above
+    return sequence[position:]                 # Cut sequence at the position
+    
+seq1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'  # Define an arbitrary sequence
+seq1_cut = cut(seq1)                     # Cut the sequence
+print(seq1_cut)                          # Show the result
+# Expected output: GCGCTATATTTAGGCG
+    
+    
+\end{lstlisting}
+
+
+When the data itself gains in complexity, for example when storing not just the
+gene sequence, but also the promoter sequence, an \emph{object-oriented}
+approach is more suitable (\autoref{lst:oop}). Object-oriented programming is a
+programming paradigm that uses objects and classes. An object is a collection of
+both data and functions, and a class is a blueprint for creating objects. The
+data of an object is stored as \emph{attributes}. Functions that are associated
+with an object are called \emph{methods}. A major benefit of using an object
+oriented versus a functional approach is that the data itself programmable,
+enabling the programmer to define the behavior of the data through methods. This
+is achieved by using `\texttt{self}' to reference the objects themselves inside
+the class. \texttt{self} can be understood as \textit{``this object''}, and is a
+placeholder for objects that are to be created from the blueprint. \texttt{self}
+is required to access attributes and methods before specific objects are created
+in order to program how the objects are to be changed when calling methods.
+
+
+% and acts
+% as a placeholder within the blueprint (class) for the object , allowing the
+% programmer to access the attributes and methods of the object without knowing
+% the object's name that is assigned by the user when creating the object.
+
+% allowing
+% the programmer to access the attributes and methods of the object without knowing
+
+% to program how the object is to be changed during creation or calling
+% methods. ``\texttt{self}'' can be understood as \textit{``this object''},
+% allowing the programmer to access the attributes and methods of the object
+% without knowing the object's name that is assigned by the user when creating the
+% object.
+
+
+\def\mycaption{ Example of object oriented programming in Python. The class is
+    called ``\texttt{Gene}'' and acts as a blueprint to create \texttt{Gene}
+    objects. \texttt{Gene} has four methods, ``\texttt{\_\_init\_\_}'',
+    ``\texttt{find\_promoter}'', ``\texttt{find\_restriction\_site}'' and
+    ``\texttt{cut}''. The method ``\texttt{\_\_init\_\_}'' is called when
+    creating (``initializing'') an object, which fills the object with
+    user-defined data. The parameter ``\texttt{self}'' is a placeholder for the
+    objects that are to be created. ``\texttt{find\_promoter}'' is a method that
+    finds the position of the promoter in the gene and is called during object
+    initialization. }
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyleNonbreaking,
+    label=lst:oop,
+    caption=\mycaption,
+    ]
+class Gene:                               # Define a Gene class
+    def __init__(self, sequence: str):    # Define how a Gene object is created
+        self.sequence: str = sequence     # Save sequence as attribute
+        self.promoter: str = self.find_promoter()  # Automatically find promoter
+        # Add further Gene attributes here
+    def find_promoter(self):              # Define how to find the promoter
+        return self.sequence.find('TATA')
+    def find_restriction_site(self):      # Define how to find restriction site
+        return self.sequence.find('GCGC') # Find the position of 'GCGC'
+    def cut(self):                        # Define how to cut the DNA sequence
+        position = self.find_restriction_site()   # Call the method above
+        return self.sequence[position:]   # Cut the gene at the position
+
+gene1 = Gene(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG')   # Create Gene object
+print(gene1.cut())                        # Cut gene and show result 
+# Expected output: GCGCTATATTTAGGCG
+\end{lstlisting}
+
+
+
+When designing software, both functional and object oriented programming can be
+used together, where object oriented programming is often used to design the
+program's overall architecture, and functional programming is used to implement
+the algorithms of the program's features. This allows for scalability of the
+software, as every single class is extended through the addition of new methods.
+
+
+Furthermore, classes can be expanded in their functionalities through
+\emph{inheritance} (\autoref{lst:inheritance}). Inheritance is a feature of
+object-oriented programming that allows a class to access every attribute and
+method of a parent class. For example, one could extend the class
+``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by writing a class
+``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
+
+\vspace{\vhalf}
+
+\def\mycaption{ Example of inheritance in Python. The class ``\texttt{mRNA}''
+    inherits from the class ``\texttt{Gene}'', and has
+    two methods, ``\texttt{\_\_init\_\_}'' and ``\texttt{find\_stopcodon}''. ``\texttt{find\_stopcodon}'' loops through a list of stop codons (\texttt{for x in list}):
+    For each stop codon, the position is found. If a codon
+    wasn't found, the \texttt{.find()} method returns -1, which leads to a
+    different print message. Note that \texttt{f""} formats strings
+    to include variables.}
+\begin{lstlisting}[
+    language=Python,
+    style=pythonstyle,
+    label=lst:inheritance,
+    caption=\mycaption,
+    ]
+class mRNA(Gene):          # Define the mRNA class, inheriting from Gene class
+    def __init__(self, sequence: str):   # Define how an mRNA object is created
+        super().__init__(sequence)       # Get attributes from parent class
+        self.sequence = self.sequence.replace('T', 'U')  # Replace T with Uracil
+    def find_stopcodons(self):           # Define how to find stop codons
+        for stopcodon in ['UGA','UAA','UAG']:   # Loop over stop codons
+            position: int = self.sequence.find(stopcodon)   # Find the position
+            if position == -1:           # If position is -1, codon wasn't found
+                print(f"{stopcodon} not found") # Message if not found
+            else:                        # If position isn't -1, codon was found
+                print(f"{stopcodon} found at {position}")         
+            
+mrna1 = mRNA(sequence='TGAGCTGAGCTGATGCGCTATATTTAGGCG')  # Create an mRNA object
+mrna1.find_stopcodons()                  # Show the position of stop codons
+# Expected outputs: 
+# UGA found at 0
+# UAA not found
+# UAG found at 24
+\end{lstlisting}
+
+
+Together, Python is not just beginner-friendly, but also well respected for its
+ease in development, which is why it is widely used in professional settings for
+web development, data analysis, machine learning, biosciences and more
+\cite{ekmekciIntroductionProgrammingBioscientists2016,rayhanRisePythonSurvey2023}.
+
+
+% ======================================================================
+\unnsubsection{The Potential of Python Data Science Packages for Biomedicine}%
+\label{sec:intro_python_packages}%
+%%%
+Python includes a vast number of built-in packages used for basic data-types,
+software development, simple math operations, etc.,
+\cite{PythonLanguageReference2024}. Still, Python relies on packages developed
+by its users to provide specialized tools for data analysis. A Python package
+consists of multiple Python \emph{modules}, where each module is a text-file
+with~a~\texttt{.py} ending containing Python code. Famous examples of such
+packages are \texttt{pytorch} and \texttt{tensorflow}, that are used to build
+models of artificial intelligence, including \textit{ChatGPT}
+\cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
+    radfordLanguageModelsAre2019}. Here, we outlay the most important packages used
+for \texttt{plotastic} in Chapter 2 and present examples how these packages are
+utilized in modern biomedical research.
+
+\textbf{\texttt{\textbf Interactive Python}:} The standard Python interface is
+insufficient for data science, because it lacks the tools to quickly and
+conveniently visualize and explore data. \texttt{IPython} can be understood as
+an enhanced version of the standard Python interpreter, designed to improve the
+interactivity of Python code execution \cite{perezIPythonSystemInteractive2007}.
+\texttt{IPython} introduces features like rich media support to display
+graphics, but also helps users to use correct python data types through dynamic
+type introspection, detecting errors in the code. This functionality is akin to
+what \textit{MATLAB} and \textit{RStudio} provide through their advanced
+graphical user interfaces and extensive debugging tools. \texttt{IPython} is most
+often utilized in the form of \emph{Jupyter Notebooks}.
+
+
+
+\textbf{\texttt{Jupyter}:} \texttt{Jupyter} is an evolution of \texttt{IPython},
+introducing the \emph{Jupyter notebook} format, which has the
+file-ending~\texttt{.ipynb} \cite{kluyverJupyterNotebooksPublishing2016}.
+Jupyter Notebooks are documents that combine both code and text structured as
+\emph{code cells} and \emph{markdown cells}, respectively. Markdown cells allow
+the author to provide additional information with text formatting, for example
+structuring the document with headings and subheadings, adding hyperlinks,
+images and mathematical formulas. Code cells can be executed individually,
+displaying the output directly below the cell. This allows for an interactive
+exploration of data, but also makes Jupyter Notebooks a very human-readable
+format that outlays data analysis in a clear manner with precise and
+reproducible documentation of all data processing steps. Another major benefit
+of Jupyter Notebooks are interchangable \textit{Kernels}, allowing the execution
+of code in different programming languages, such as R, Julia, and C++
+\cite{giorgiLanguageEngineBioinformatics2022}. Today, Jupyter Notebooks have
+become a standard format compatible with collaborative platforms like
+\textit{Google Colab} and \textit{JupyterLab}, but also professional software
+development tools like \textit{VS Code}, and \textit{PyCharm}. For biomedical
+research, Jupyter Notebooks are a powerful solution for improving
+reproducibility: They elegantly combine both documentation and code execution
+into a concise presentation of the data analysis process, hence being an
+intuitive tool to both capture and embed computational work directly into
+papers, a requirement postulated by
+\citet{mesirovAccessibleReproducibleResearch2010}. Jupyter notebooks are
+increasingly found in the supplemental of modern publications of both
+bioinformatics and wet-lab research
+\cite{taskiranCelltypedirectedDesignSynthetic2024,
+    bosch-queraltFluorescenceMicroscopybasedProtocol2022,
+    howeChallengesOpportunitiesUnderstanding2015}.
+
+
+
+\textbf{\texttt{NumPy}:} Central processing units (CPU) usually execute one
+instruction on one data point at a time. For manipulating tabular data, this is
+inefficient as the same instruction must be repeatedly loaded for every data
+point. \texttt{NumPy} accelerates the mathematical capabilities of Python by
+enabling large-scale operations on multi-dimensional arrays and matrices with
+high efficiency \cite{harrisArrayProgrammingNumPy2020}. One key feature of
+\texttt{NumPy} is the implementation of ``vectorization'' or SIMD (Single
+Instruction, Multiple Data) instructions. SIMD allows multiple data points to be
+processed simultaneously, significantly speeding up operations that are
+inherently parallelizable, such as matrix addition or multiplication.
+\texttt{NumPy}’s syntax and functional approach to array manipulation have set a
+standard for matrix computation, influencing the design of advanced AI
+frameworks such as \texttt{PyTorch} and \texttt{mlx}, which mirrors several of
+\texttt{NumPy’s} functionalities to facilitate ease of use for those familiar
+with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,mlx2023}.
+This standardization has made \texttt{NumPy} an attractive tool not only in
+genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also for modern
+clinical applications like imaging technologies and augmented-reality in
+surgery \cite{thompsonSciKitSurgeryCompactLibraries2020}.
+
+
+\textbf{\texttt{Pandas}:} Tables are the most common way to store experimental
+results. \texttt{Pandas} extends Python with a tabular datatype, called
+\texttt{DataFrame}, which allows for easy data manipulation with integrated
+indexing \cite{mckinneyPandasFoundationalPython2011}. The intuitive interface of
+Pandas can be likened to \textit{Microsoft Excel}; however, it is vastly more
+powerful due to its speed, functionality, and ability to handle larger datasets,
+e.g. by running efficient \texttt{numpy} vectorization in the background. Unlike
+\textit{Excel}, Pandas enables automation by summarizing processing commands
+into scripts, documenting each step, and ensuring reproducibility.
+\texttt{Pandas} is used in biomedicine for data wrangling, data cleaning, and
+data analysis, as it allows for the integration of multiple data sources into a
+single table \cite{santosCOVID19ScholarlyProduction2020}.
+
+\textbf{\texttt{matplotlib}:} \texttt{matplotlib} is a plotting library that
+provides a wide range of static, animated, and interactive plots and graphs
+(\autoref{lst:matplotlib}) \cite{hunterMatplotlib2DGraphics2007}. It serves as the
+foundation for many visualization tools and is particularly valued for its
+flexibility and customization options. For example, \texttt{Pandas} uses
+\texttt{matplotlib} to plot column datapoints directly from a \texttt{DataFrame}
+object, creating histograms or scatter plots, which is useful for preliminary
+data analysis and checking data distributions. However, \texttt{matplotlib} uses
+a low-level syntax, hence plots generated by \texttt{matplotlib} can be
+cumbersome to format and customize.
+
+
+\textbf{\texttt{seaborn}:} While the low-level syntax of \texttt{matplotlib} is
+valued for its flexibility, formatting publication grade plots can be laborious,
+and its inconsistent syntax can make it difficult to remember the correct
+commands for different plot types. \texttt{seaborn} is a high-level interface on
+top of \texttt{matplotlib} that offers a more intuitive and highly standardized
+syntax across a wide array of plot types
+\cite{waskomSeabornStatisticalData2021}. \texttt{seaborn} also integrates
+closely with \texttt{Pandas} data structures: It automatically groups
+datapoints, calculates measures of both central tendency (e.g. mean, median) and
+variance (e.g. standard deviation), and displays them into the plot (e.g. error
+bars). This completely replaces manual calculation of descriptive statistics.
+\texttt{seaborn} also offers intuitive grouping (\textit{facetting}) of data
+points, which simplifies the creation of complex visualizations involving
+multidimensional data, making it easier to reveal patterns and relationships via
+color encoding, faceting, and automated statistical fits. This is particularly
+useful in biomedical research for visualizing and understanding complex
+datasets, such as large quantities of protein data
+\cite{krzywinskiMultidimensionalData2013,weissVisualizingProteinBig2022}.
+\texttt{seaborn} could indirectly contribute to improving reproducibility in
+biomedical research by making visualizations of complex data very accessible
+through an easy and standardized syntax.
+
+
+
+\textbf{\texttt{Pingouin}:} Integrating both data visualization and statistical
+analysis is beneficial for researchers who wish to conduct advanced statistical
+analysis without switching between different software environments.
+\texttt{Pingouin} is designed to be a user-friendly statistical tool that offers
+a straightforward syntax for performing statistical tests, which are commonly
+implemented in R \cite{vallatPingouinStatisticsPython2018}. Unlike R,
+\texttt{Pingouin} integrates seamlessly within the Python ecosystem, which
+allows combining data manipulation, analysis, and visualization all in one
+platform. This improves reproducibility by reducing the number of software tools
+required to analyze data. Despite its potential to streamline the data analysis
+process, \texttt{Pingouin} has not been widely adopted by biomedical research,
+yet. One example of a study that utilized \texttt{Pingouin} is the work of
+\citet{kellyEthicalMatrixMethod2023} in the field of Patient Public Involvement
+(PPI), producing an ethical matrix that allows for the inclusion of stakeholder
+opinion in medical research design. This lack of \texttt{Pingouin}'s adoption in
+biomedicine could be due to recent development and the dominance of R in the
+field. However, since Python offers multiple benefits over R in syntax, software
+development, runtime performance and integration with other tools (like
+including performant C++ code), \texttt{Pingouin} is an attractive standard for
+future statistical analyses in biomedicine
+\cite{gorelickHighPerformancePython2020}.
+
+\textbf{\texttt{statannotations}:} While \texttt{seaborn} and
+\texttt{matplotlib} offer a wide range of statistical plots, they lack the
+ability to automatically annotate plots with $p$-values often abreviated by
+stars. \texttt{statannotations} is a package that extends \texttt{seaborn} by
+providing an interface to add statistical annotations to plots, but also perform
+simple statistical tests \cite{charlierTrevismdStatannotationsV02022}. It is
+limited to only pairwise comparisons such as t-tests and can not perform omnibus
+tests like ANOVA.
+
+
+Together, these python packages form the backbone of modern data analysis in Python,
+often times combining software from different languages to accelerate certain
+features, while retaining the ease of use and readability that Python is known
+for. This is particularly advantageous in the field of biomedicine, where the
+requirements of modern data analysis are often complex and require a high degree
+of flexibility and customization.
