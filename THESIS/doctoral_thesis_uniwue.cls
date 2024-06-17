@@ -174,7 +174,7 @@
 % ======================================================================
 
 % == Layout ============================================================
-    
+
 % ## For empty pages
 \newcommand{\blankpage}{
     \clearpage
@@ -221,10 +221,10 @@
 
 
 
-% == Table of Contents =================================================
-\renewcommand{\cftbeforesecskip}{1.1ex} % Adjust this value as needed
-\renewcommand{\cftbeforesubsecskip}{0.0ex} % Adjust this value as needed
-\renewcommand{\cftbeforesubsubsecskip}{0.0ex} % Adjust this value as needed
+% == Table of Contents (TOC) ===========================================
+\renewcommand{\cftbeforesecskip}{0.5ex} % > Linespacing before sections
+\renewcommand{\cftbeforesubsecskip}{-0.2ex} % > Linespacing before subsections
+\renewcommand{\cftbeforesubsubsecskip}{0.0ex} % >
 
 
 
@@ -262,7 +262,7 @@
     % > #3 argument is the abstract text
     \phantomsection % > Create a new, invisible section
     \label{#1} % > Create a unique identifier for the abstract
-    \addcontentsline{toc}{subsection}{#2} % > Add the header name to the table of contents
+    % \addcontentsline{toc}{subsection}{#2} % > Add the header name to the table of contents
     \renewcommand{\abstractname}{#2} % > Rename the abstract
     \begin{abstract}
         #3 % > Insert the abstract text
@@ -597,16 +597,17 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % >     pathtopicture
 % > }
 \NewDocumentCommand{\includeimage}{O{0.99} O{} m}{%
-    \vspace{\vfull}
+    % \vspace{\vfull}
     {%
-        \noindent%
-        \begin{minipage}{\textwidth}%
-            \centering%
-            \IfStrEq{#2}{}
-            {\includegraphics[width=#1\textwidth]{#3}}
-            {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
-        \end{minipage} %
-    }%
+            % \vspace*{-1cm} % > Remove space before image if latex needs it
+            \noindent%
+            \begin{minipage}{\textwidth}%
+                \centering%
+                \IfStrEq{#2}{}
+                {\includegraphics[width=#1\textwidth]{#3}}
+                {\includegraphics[width=#1\textwidth, trim=#2, clip]{#3}}
+            \end{minipage} %
+        }%
 }
 
 
@@ -654,8 +655,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > Example:
 % > \figcaption[label]{caption}
 \NewDocumentCommand{\figcaption}{O{} m}{%
+    \nopagebreak
     \begin{figure}[H]
-        \vspace{\vfigcaption}
+        % \vspace{\vfigcaption}
         \caption{#2}
         \label{#1}
     \end{figure}
@@ -668,12 +670,14 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > Example:
 % > \splitcaption[label]{caption1}{caption2}
 \NewDocumentCommand{\splitcaption}{O{} m m}{%
-    \figcaption[#1]{#2 -- \continuestartmsg}
-    \begin{figure}[!htb]
-        \ContinuedFloat
-        \phantomsection
-        \caption*{\textbf{Figure \thefigure}: \continueendmsg -- #3}
-    \end{figure}
+    \nopagebreak%
+    \figcaption[#1]{#2 -- \continuestartmsg}%
+    \pagebreak%
+    \begin{figure}[!htb]%
+        \ContinuedFloat%
+        \phantomsection%
+        \caption*{\textbf{Figure \thefigure}: \continueendmsg -- #3}%
+    \end{figure}%
 }
 
 

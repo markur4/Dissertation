@@ -300,6 +300,8 @@ The following code demonstrates how \texttt{plotastic} analyzes the
 example dataset ``fmri'', similar to \citet{waskomSeabornStatisticalData2021}
 (\autoref{fig:examplefmri}).
 
+\vspace{\vfull} 
+
 \begin{lstlisting}[
     language=Python, 
     style=pythonstyle,
@@ -342,14 +344,34 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 
 
 
+
+
+
+% ======================================================================
+% == Overview
+% ======================================================================
+\unnsubsection{Overview}%
+\label{sec:C2_overview}%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+The functionality of \texttt{plotastic} revolves around a seamless integration
+of statistical analysis and plotting, leveraging the capabilities of
+\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
+\texttt{statannotations} \cite{vallatPingouinStatisticsPython2018,
+waskomSeabornStatisticalData2021, hunterMatplotlib2DGraphics2007,
+charlierTrevismdStatannotationsV02022}. It utilizes long-format \texttt{pandas}
+\texttt{DataFrames} as its primary input, aligning with the conventions of
+\texttt{seaborn} and ensuring compatibility with existing data
+structures~\cite{wickhamTidyData2014, reback2020pandas,
+mckinneyDataStructuresStatistical2010}.
+
+
+
 \includeimage[0.9]{
       FIGS/C2_fmri2.png
 }\figcaption[fig:examplefmri]{
       Example figure of \texttt{plotastic} (version 0.1). Image style was set
       by \texttt{plt.style.use(`ggplot')}
 }
-
-
 
 \begin{table}[H]
       \small
@@ -401,22 +423,7 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 \end{table}
 
 
-% ======================================================================
-% == Overview
-% ======================================================================
-\unnsubsection{Overview}%
-\label{sec:C2_overview}%
-%%%%%%%%%%%%%%%%%%%%%%%%%
-The functionality of \texttt{plotastic} revolves around a seamless integration
-of statistical analysis and plotting, leveraging the capabilities of
-\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
-\texttt{statannotations} \cite{vallatPingouinStatisticsPython2018,
-      waskomSeabornStatisticalData2021, hunterMatplotlib2DGraphics2007,
-      charlierTrevismdStatannotationsV02022}. It utilizes long-format \texttt{pandas}
-\texttt{DataFrames} as its primary input, aligning with the conventions of
-\texttt{seaborn} and ensuring compatibility with existing data
-structures~\cite{wickhamTidyData2014, reback2020pandas,
-      mckinneyDataStructuresStatistical2010}.
+
 
 \texttt{plotastic} was inspired by \texttt{seaborn} using the same set of intuitive
 and consistent parameters (y, x, hue, row, col) found in each of its
