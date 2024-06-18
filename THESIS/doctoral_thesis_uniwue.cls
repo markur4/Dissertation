@@ -208,12 +208,18 @@
 % \setlength{\parindent}{0pt} % > No indentation for paragraphs
 
 % ## Define variables to be reused for vertical spacing
-\newlength{\vdouble}
-\setlength{\vdouble}{1.4cm}
 \newlength{\vfull}
 \setlength{\vfull}{.7cm}
+\newlength{\vdouble}
+\setlength{\vdouble}{2\vfull}
+\newlength{\vthreequarter}
+\setlength{\vthreequarter}{.75\vfull}
 \newlength{\vhalf}
-\setlength{\vhalf}{.35cm}
+\setlength{\vhalf}{.5\vfull}
+\newlength{\vthird}
+\setlength{\vthird}{.33\vfull}
+\newlength{\vquarter}
+\setlength{\vquarter}{.25\vfull}
 
 
 % == Horizontal Spacing ================================================
@@ -221,36 +227,65 @@
 
 
 
-% == Table of Contents (TOC) ===========================================
-\renewcommand{\cftbeforesecskip}{0.5ex} % > Linespacing before sections
-\renewcommand{\cftbeforesubsecskip}{-0.2ex} % > Linespacing before subsections
-\renewcommand{\cftbeforesubsubsecskip}{0.0ex} % >
-
-
 
 
 % ======================================================================
-% == Sections
+% == Section Formatting
 % ======================================================================
+
+
+% == Page Head and Foot =================================================
+
+% ## Default Page Style
+\fancypagestyle{headersfooters}{
+    \fancyhf{} % > Clear all headers and footers
+    % \fancyhead[C]{\nouppercase{\leftmark}\nouppercase{\rightmark}} % > Centered header
+    \fancyhead[C]{\nouppercase{\leftmark}} % > Centered header
+    \fancyfoot[C]{\thepage} % > Centered footer with page number
+    \renewcommand{\headrulewidth}{0.3pt} % > Adjust header line width
+    \renewcommand{\footrulewidth}{0.3pt} % > Add line above footer
+    }
+    % ## Set the pagestyle
+    \pagestyle{headersfooters} % > Set the new page style as default
+    \setlength{\headheight}{15pt} % > Adjust headheight to avoid warnings
+    
+    
+    % ## Pagestyle for Appendix
+    \fancypagestyle{appendix}{
+        % > Reuse the default page style
+        % > Add APPENDIX to the header
+        % \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
+        % \fancyhead[C]{APPENDIX \nouppercase{\leftmark} \nouppercase{\rightmark}} 
+        \fancyhead[L]{APPENDIX \nouppercase{\leftmark}} % Left-aligned
+        \fancyhead[R]{\nouppercase{\rightmark}} % Right-aligned
+        \fancyhead[C]{} % Clear center header
+        }
+        
+        % ## Keeping track of the current pagestyle for multipage pdf imports
+        \newcommand{\currentpagestyle}{plain} % > Initialize with the default page style
+        % > Redefine \pagestyle to also update \currentpagestyle
+        \let\oldpagestyle\pagestyle
+        \renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
+        
 
 % == Main Sections =====================================================
 % > Unnumbered
 
 % ## Main Sections 
 \newcommand{\unnsection}[1]{%
-    \section*{#1}%
-    \addcontentsline{toc}{section}{#1}%
-    \mbox{}% > Add empty line to avoid warnings
-    \markboth{#1}{}% > Mark section manually for headers
+\section*{#1}%
+\addcontentsline{toc}{section}{#1}%
+\mbox{}% > Add empty line to avoid warnings
+\markboth{#1}{}% > Mark section manually for headers
 }
 
 
 % == Sub Sections ======================================================
 
 \newcommand{\unnsubsection}[1]{%
-    \subsection*{#1}% > Create a new unnumbered subsection with the same name #1
-    \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
-    \mbox{}% > Add an empty line to avoid warnings
+\subsection*{#1}% > Create a new unnumbered subsection with the same name #1
+\addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
+\mbox{}% > Add an empty line to avoid warnings
 }
 
 
@@ -267,42 +302,24 @@
     \begin{abstract}
         #3 % > Insert the abstract text
     \end{abstract}
+    }
+    
+    
+
+% == Table of Contents (TOC) ===========================================
+\renewcommand{\cftbeforesecskip}{0.5ex} % > Linespacing before sections
+\renewcommand{\cftbeforesubsecskip}{-0.2ex} % > Linespacing before subsections
+\renewcommand{\cftbeforesubsubsecskip}{0.0ex} % >
+
+
+% == Acknowledgements ==================================================
+\newcommand{\acknowledge}[2]{%
+    % > #1 is the name of the person
+    % > #2 is the text of the acknowledgement
+    \noindent \textbf{#1}, \\
+    #2
+    \vspace{\vthird}
 }
-
-
-
-% == Page Head and Foot =================================================
-
-% ## Default Page Style
-\fancypagestyle{headersfooters}{
-    \fancyhf{} % > Clear all headers and footers
-    % \fancyhead[C]{\nouppercase{\leftmark}\nouppercase{\rightmark}} % > Centered header
-    \fancyhead[C]{\nouppercase{\leftmark}} % > Centered header
-    \fancyfoot[C]{\thepage} % > Centered footer with page number
-    \renewcommand{\headrulewidth}{0.3pt} % > Adjust header line width
-    \renewcommand{\footrulewidth}{0.3pt} % > Add line above footer
-}
-% ## Set the pagestyle
-\pagestyle{headersfooters} % > Set the new page style as default
-\setlength{\headheight}{15pt} % > Adjust headheight to avoid warnings
-
-
-% ## Pagestyle for Appendix
-\fancypagestyle{appendix}{
-    % > Reuse the default page style
-    % > Add APPENDIX to the header
-    % \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
-    % \fancyhead[C]{APPENDIX \nouppercase{\leftmark} \nouppercase{\rightmark}} 
-    \fancyhead[L]{APPENDIX \nouppercase{\leftmark}} % Left-aligned
-    \fancyhead[R]{\nouppercase{\rightmark}} % Right-aligned
-    \fancyhead[C]{} % Clear center header
-}
-
-% ## Keeping track of the current pagestyle for multipage pdf imports
-\newcommand{\currentpagestyle}{plain} % > Initialize with the default page style
-% > Redefine \pagestyle to also update \currentpagestyle
-\let\oldpagestyle\pagestyle
-\renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
 
 
 
@@ -803,5 +820,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
         pagecommand={\eachpage{#3}}, % > Execute command for each page
     ]{#4}
 }
+
 
 

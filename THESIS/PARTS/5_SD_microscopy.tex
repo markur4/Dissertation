@@ -128,12 +128,13 @@
 % ======================================================================
 \unnsection{Summarising Discussion}%
 \label{sec:summarising_discussion}%
-The following paragraphs will discuss the previously presented chapters both in
-terms of how they integrate within current scientific fields, but also outlay
-technical and academic challenges that were faced during the course of this
-project. Given the broad scope of the shown topics, this discussion is
-structured into three main sections: Microscopy, Molecular Biology, and Data
-Analysis. Each section will explain key experiments that
+The subsequent sections will discuss the chapters presented earlier, focusing on
+how they fit within current scientific fields and the technical and academic
+challenges encountered during this project. Given the extensive scope of the
+topics covered, this discussion is divided into three main sections: Microscopy,
+Molecular Biology, and Data Analysis. Each section will detail key experiments
+that led to shifts in understanding and present intermediary conclusions to
+ensure clarity on broad topics.
 % ======================================================================
 % ======================================================================
 
@@ -209,7 +210,7 @@ relegated to supplementary data. Although supplementary data is downloaded
 often, most biomedical researchers favor a presentation of additional figures
 and tables directly on the journal's website
 \cite{priceRoleSupplementaryMaterial2018}. Given the increasing availability of
-video data\footnote{The number of \texttt{PubMed} articles with \emph{``live cell
+video data\footnote{\label{foot:articles_livecellimaging}The number of \texttt{PubMed} articles with \emph{``live cell
         imaging''} doubled from 2011 to 2023.}, embedding video content next to figures
 and tables on the article's website does make a compelling case. In fact, the
 journal \emph{Nature} does offer this feature already, but rarely used
@@ -391,7 +392,6 @@ techniques of image processing.
 
 
 
-
 In summary, image cytometry significantly enhanced this project by merging the
 precision of \ac{FACS} with the cost-efficiency of modern microscopy. Utilizing
 \texttt{Intellesis} simplified complex image analyses, making advanced
@@ -404,8 +404,13 @@ biomedical research and discovery remains substantial.
 
 % ======================================================================
 % ======================================================================
-\unnsubsection{Technical Considerations for Image Cytometry}%
+\unnsubsection{Technical Considerations for Automated Microscopy}%
 \label{sec:discussion_quantifying_microscopy}%
+Live-cell imaging and image cytometry leverage hardware and software automation
+to capture large amounts of potentially unknown complexity. Careful
+consideration of technical aspects is crucial to ensure successful data
+acquisition and analysis. This section discusses additional challenges and
+considerations encountered in this project.
 
 \textbf{Acquiring Accurate Image Data:}
 In order to capture rare cellular events with a frequency sufficient for
@@ -449,12 +454,15 @@ images --\,a process that can be both time-consuming and demanding.
 
 To address these challenges and enhance the efficacy of \textit{Intellesis},
 pre-processing steps could be incorporated to emphasize essential image features
-and reduce irrelevant ones. For instance, edge-enhancing filters are applicable to
-clarify cell boundaries, while median filters can suppress noise and
-unnecessary details while preserving edges. These filters, available within the \texttt{Zen} software
-suite, help simplify the machine learning task by focusing the algorithm’s
-learning on pertinent features, thereby reducing the volume of data needed for
-effective training.
+and reduce irrelevant ones. For instance, edge-enhancing filters can
+clarify cell boundaries, or a median filter to suppress noise and
+unnecessary details while preserving edges. Especially noise reducing filters
+can normalize different sets of images, since machine learning models are
+very sensitive to variations in image quality.
+These filters, available within the
+\texttt{Zen} software suite, help simplify the machine learning task by focusing
+the algorithm’s learning on pertinent features, thereby potentially reducing the
+volume of data needed for effective training.
 
 This approach streamlines the training process for \textit{Intellesis}, enabling
 more efficient and accurate segmentation of complex microscopy images. By
@@ -467,35 +475,46 @@ annotated training data.
 
 
 % ======================================================================
-\unnsubsection{\textit{Conclusion\,1: Facing the Challenges of Automated Microscopy}}%
+\unnsubsection{\textit{\textbf{Conclusion\,1:} Automating Microscopy,
+        an Emerging Trend for Exploring Unknown Cell Phenomena?}}%
 \label{sec:discussion_conclusion_microscopy}%
-This study utilized live-cell imaging and image cytometry to investigate the
-complex interactions between \INA cells and hMSCs, offering significant insights
-into myeloma cell behavior. The findings underscored the critical role of
-MSC-interactions in shaping cell behavior, e.g. \INA cells showed a preference
-for heterotypic interactions with hMSCs. These techniques revealed dynamic
-processes, such as cell detachment and migration, which are pivotal for
-understanding disease mechanisms and developing therapeutic strategies.
+This study employed two methods that rely heavily on both hard- and software
+automation: live-cell imaging and image cytometry. These methods were
+instrumental in investigating the complex interactions between \INA cells and
+hMSCs, offering significant insights into myeloma cell behavior. The findings
+underscored the critical role of MSC-interactions in shaping cell behavior, for
+instance the observed preference of \INA cells for heterotypic interactions with
+hMSCs. Live-cell imaging and image cytometry revealed dynamic processes, such as
+\INA cell growing into clonal aggregates and subsequent cell detachments. These
+processes were pivotal for understanding cryptic RNAseq data, exemplifying how
+such techniques complement molecular approaches to understand disease mechanisms
+like dissemination.
 
 Live-cell imaging proved instrumental in capturing real-time cellular behaviors
 that static methods cannot, such as the detachment of \INA cells during
 division. This ability to directly observe dynamic processes provided a deeper
 understanding of the cellular mechanisms that may contribute to myeloma
-dissemination. However, this approach also posed challenges, including the need
-for extensive manual analysis and the difficulty of presenting dynamic data in
-traditional scientific formats, highlighting the potential benefits of
-integrating automated analysis tools in future research.
+dissemination.  However, it also presented challenges, such as the extensive
+manual analysis required, difficulties in identifying observed phenomena, and
+the complexities of extracting quantitative data and presenting dynamic
+observations in traditional scientific formats. These limitations highlight the
+potential benefits of incorporating automation and machine learning in future
+research to streamline data analysis \cite{guptaDeepLearningImage2019,
+    chengFrontiersDevelopmentLivecell2023}.
 
 Image cytometry facilitated high-throughput and precise analysis of cellular
 interactions, despite challenges related to automation and computational
-demands. The integration of manual and automated techniques in this study not
-only enabled a comprehensive analysis but also demonstrated the accessibility
-and potential of these advanced imaging technologies for broader applications in
-biomedical research. These findings underscore the importance of adopting
-innovative imaging techniques to enhance our understanding of cellular dynamics
-and multicellular interactions.
+requirements. The integration of manual and automated techniques in this study
+facilitated complex analyses, combining the precision of automation with the
+flexibility of manual approaches. The accessibility and availability of
+live-cell imaging equipment and machine learning software suggest a promising
+potential for broader adoption in biomedical research. This could lead to new
+discoveries of complex cellular dynamics and multicellular interactions.
 
-
+These findings underscore a potentially emerging trend of innovative imaging and
+analyses techniques which could be driven my recent breakthroughs in machine
+learning. This trend could mark a significant advancement over molecular
+and static approaches of cell biological research questions.
 
 
 
