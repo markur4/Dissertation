@@ -3,82 +3,166 @@
 
 
 % ======================================================================
-\unnsubsection{Isolating Subpopulations within Cells in Direct Contact with MSCs}%
+\unnsubsection{Isolating \& Quantifying Subpopulations within Cells in Direct Contact with MSCs}%
 \label{sec:discussion_novel_methods}%
-In this work, we developed innovative \textit{in vitro} methodologies, namely
-\acf{WPSC} and the V-Well adhesion assay, to address
-the challenges associated with isolating myeloma cell subpopulations.
-Traditional cell isolation techniques, such as manual washing, often introduce
-variability due to user-dependent factors like the position of the cells within
-the well and the depth and angle of the pipette tip during washing. This
-variability can significantly affect the reproducibility and accuracy of the
-isolation process.
+This project aimed to develop methodologies for isolating cells after direct
+contact with \acp{hMSC}. The primary challenge was the scarcity of \textit{in
+    vitro} methods that could effectively separate and isolate adhering cell
+subpopulations for subsequent molecular analysis. Most available techniques
+predominantly focus on the quantification of cell adhesion
+\cite{khaliliReviewCellAdhesion2015, kashefQuantitativeMethodsAnalyzing2015},
+and often employ indirect contact setups, complex micromanipulation, or are
+unsuitable for using live \acp{hMSC} as the immobilizing surface. To address the
+limitations of current adhesion assays, we developed and enhanced innovative
+methodologies, specifically the \acf{WPSC} and V-Well adhesion assays.
 
-\textbf{Challenges in Traditional Methods}: It is evident that both direct and
-indirect contact with multiple myeloma (MM) can have varying effects on
-mesenchymal stromal cells (hMSCs) and myeloma cells, which are crucial for
-understanding changes in the bone marrow microenvironment (BMME) during MM
-progression \cite{fairfieldMultipleMyelomaCells2020,
-dziadowiczBoneMarrowStromaInduced2022}. Traditional methods, such as turning
-around well plates, are limited as they allow only for quantification and not
-the actual isolation of cells. Moreover, manual washing is highly inconsistent,
-as it depends on the cell’s position on the well bottom and the precise
-technique used, which can lead to incomplete or biased cell isolation.
-
-\textbf{Development of Reproducible Methods}: To overcome these limitations, we
-explored more reproducible methods. The WPSC technique, while effective for
-isolating cells, is not well-suited for precise quantification due to its
-reliance on centrifugation, which does not accommodate detailed cell count
-measurements. Recognizing the need for a method that could accurately quantify
-and isolate cells, we developed the V-Well adhesion assay. This method allows
-for the ultra-precise quantification and isolation of small cell populations
-with \dashedsentence{to the author's knowledge} theoretically unmatched accuracy
-through centrifugation, eliminating the need for washing and reducing user bias.
-
-\textbf{Implementation and Impact}: The V-Well adhesion assay provides a
-significant advantage in precision; however, it requires numerous technical
-replicates and meticulous pipetting, highlighting the need for an untiring and
-consistent approach to ensure accuracy. The WPSC method involved two distinct
-techniques to dissociate MA-INA6 cells from the hMSC monolayer: strong pipetting
-(termed `Wash') and repeated Accutase treatment followed by \acf{MACS}. Despite the additional time and cost associated with MACS,
-including the need for cell cold-treatment, it was essential for maintaining
-consistent isolation protocols and minimizing antibody bias.
-
-These novel methodologies represent a significant advancement in the field,
-providing reliable and reproducible techniques for studying the interactions
-between hMSCs and myeloma cells, and offering valuable insights into the
-mechanisms of MM progression.
+\textbf{Variability of Washing Steps}: Given the complexity of
+the requirements, this project first attempts relied on simple and traditional
+adhesion assays that rely on manual washing steps
+\cite{humphriesCellAdhesionAssays2009}. Washing involves aspirating the medium,
+dispensing washing buffer, and potentially repeating these steps multiple times.
+This introduces variability due to differences in pipetting techniques, which
+affect the accuracy of volume transfer \cite{guanAssessingVariationsManual2023,
+    pushparajRevisitingMicropipettingTechniques2020}. However, adhesion assays don't
+rely on precise volume transfer, but accurate detachment of cells adhering at
+the well bottom. This introduces a new set of considerations for the pipetting
+technique, especially since cells are highly sensitive to shear forces applied
+by fluid flow. From the author's experience with washing experiments and
+subsequent microscopic evaluations (data not shown), several factors contribute
+to the variability of washing steps:
+\begin{enumerate}
+    \item The distance of the pipette tip from the well bottom, which decreases during aspiration.
+    \item The position of the pipette tip relative to the well bottom (center or edge).
+    \item The angle of the pipette tip.
+    \item The speed of aspiration.
+    \item Accidental contact between the pipette tip and the cell layer.
+    \item The residual volume left after aspiration.
+    \item \textit{The same considerations apply when dispensing the washing buffer.}
+\end{enumerate}
 
 
-% In this work, innovative \textit{in vitro} methodologies (Well Plate Sandwich
-% Centrifugation and V-Well adhesion Assay) were developed. this was required to
-% fill in gaps of isolating cells with minimized variability introduced by
-% user-bias to clearly separate subpopulations and precisely quantify them.
+In addition to user-dependent factors, other variables such as the cells'
+position on the well bottom can significantly impact the outcome. To the
+author's experience, cells located at the edge of the well don't detach as
+easily as those in the center, while cells touching the edge are almost
+impossible to remove. This phenomenon is likely related to the \textit{boundary
+    layer effect}, where fluids slow down near the edges of the well
+\cite{weyburneNewThicknessShape2014}.
+
+Together, since both user-dependent and independent factors can affect the
+outcome of washing steps, adhesive assays that replace washing are highly
+desirable. Still, since washing is straightforward and some variability is
+alleviated by the disciplined execution of washing protocols, it remains a
+common method for adhesion assays.
 
 
-% It is evident that direct or indirect contact with MM can have different effects
-% on both hMSCs and Myeloma cells and methods to differentiate between those are
-% crucial for understanding the change of the \ac{BMME} during \ac{MM} progression
-% \cite{fairfieldMultipleMyelomaCells2020, dziadowiczBoneMarrowStromaInduced2022}
 
-% cite all those methods for cell isolation!
-% - Turning around wellplates: Doesn't allow isolation, just quantification
-% - The author did not show all his washing experiments
-% - Washing is very bad (data not shown): Highly dependent on user:
-% position of cell on well bottom (border cells receive less force), position of
-% pipette tip in well (depth, angle and position on bottom)
-% - This motivated us to explore more reproducible methods
+\textbf{Directly Interacting Cells Contain Unexplored Interaction Scenarios}: It
+is evident that direct and indirect contact to \acp{MSC} have varying effects on
+myeloma cells. That difference is crucial for understanding changes in the bone
+marrow microenvironment (BMME) during MM progression
+\cite{fairfieldMultipleMyelomaCells2020, dziadowiczBoneMarrowStromaInduced2022}.
+These studies utilize well-inserts to co-culture myeloma cells in close
+\dashedsentence{indirect} contact with MSCs. However, such comparison of
+indirect \textit{vs.} direct co-culturing methods does not fully represent the
+complexity of intercellular interactions scenarios. This is exemplified by this
+project, as it relied on the complex growth behavior of \INA cells. These
+aggregated homotypically in direct proximity to those adhering heterotypically
+to \acp{hMSC}. Furthermore, such methods fail to capture the subtle variations
+in paracrine signaling concentrations, where even a few micrometers of distance
+could significantly alter cellular responses.
 
-% It's a challenge: either quantify cell population, or isolate them!
-% - It's better to specialize in one method, than to do both poorly
-% - Well Plate Sandwich Centrifugation is badly suited for quantification, but possible
-% - we switched to developing V-well adhesion assay for quantification
-% - We realized, V-well isolation allows both ultra precise quantification and
-% isolation of small amounts of cells!
-% - unmatched precision through centrifugation, no washing
-% - But V-well pellets comprise only few cells requiring a lot of technical
-% replicates and an untiring pipetting hand % Please use the word untiring to commend Doris!
+Such knowledge shifted this project's point of view as well: Initially, our
+hypothesis focused on direct heterotypic interactions, not expecting a \nMAina
+population, but rather subpopulations within \MAina cells that are separable by
+varying adhesion strengths. Hence, our assay employed strict conditions favoring
+one growth scenario, with co-cultures providing unlimited hMSC-surface
+availability causing predominantly heterotypic adhesion, while the short
+incubation time prevented the formation of aggregates. Despite these measures,
+our assay still captured cells emerging from recent cell divisions rather than
+from weak heterotypic adherence as initially hypothesized. This demonstrates the
+robustness of our method in separating subpopulations that arising from unexpected
+intercellular interaction scenarios. This can be a major an advantage over
+methods that summarize direct interactions as one population. Analysing the
+non-adhering subpopulation within directly interacting cells could provide
+valuable insights not just in multiple myeloma, but also metastasis of other
+cancer types.
 
+
+\textbf{Minimizing Variability}:
+There are innovative adhesion assays that both
+support the isolation of nonadherent subpopulations from directly interacting
+cells, and avoid variability introduced by washing steps.
+
+One simple method involves flipping over a 96-well plate, with surface tension
+preventing medium spills as non-adhering cells fall to the surface for
+collection \cite{zepeda-morenoInnovativeMethodQuantification2011}. However, we
+found that the medium in fact did spill occasionally (not shown). Other
+approaches involve sealing the plate, such as with PCR plate seals, and using
+centrifugation to separate cells \cite{reyesCentrifugationCellAdhesion2003,
+    chenHighThroughputScreeningTest2021}. Despite our efforts, we could not
+consistently avoid air bubbles, which, after flipping, would contact the cell
+layer and create dry regions during centrifugation.
+
+The V-Well adhesion assay does not flip, but collects non-adhering cells into
+the nadir of V-shaped wells during centrifugation
+\cite{weetallHomogeneousFluorometricAssay2001}. This work profited greatly from
+this method, while \dashedsentence{to our knowledge} being the first to use cell
+monolayers as the immobilizing surface. We value this method for its precision,
+as centrifugation applies a uniform and configurable force, while the readout
+remains straightforward, relying on the total fluorescent brightness rather than
+individual cell counting.
+
+
+
+
+\textbf{Specializing in Quantifying Adhesion or Isolating Subpopulations}: All
+these methods primarily focus on quantification rather than isolation. While we
+were able to isolate cell pellets from the V-well plate, the process was tedious
+and required multiple technical replicates to achieve sufficient cell numbers
+for analysis. The author summarizes the key differences between quantification
+and isolation approaches as such:
+\begin{enumerate}
+    \item Isolation methods manipulate cell  for collect, whereas
+          quantification methods could manipulate cells to simplify readout.
+    \item Isolation methods optimize for collecting large cell numbers, whereas
+          quantification methods optimize for precise separation.
+    \item Isolation methods return at least two different readouts generated
+          from adherent and non-adherent populations. Quantification methods
+          return one output (population size), allowing higher throughput and different
+          treatments.
+\end{enumerate}
+
+Thus, we adopted two distinct techniques for isolating and quantifying directly
+interacting subpopulations, each allowing the development of complex direct
+interactions.
+
+
+
+
+
+
+% \textbf{Challenges of Wellplate Sandwich Centrifugation}:
+% - Inspired by both
+% flipping and V-Well adhesion assays, we developed the \acf{WPSC} method for
+% isolation.
+% - For Collecting cells, we can risk the involvement of pipette, by
+% returning medium through pipetting.
+% - Variance of washing is reduced by replacing
+% the aspiration step with centrifugation.
+% - This represents a compromise between
+% precision and isolating larger quantities cells.
+% - We use a 96 well plate format
+% as it allows for both flipping with reduced risk of medium spilling, but also
+% reducing variability, as within-experiment variability is reduced by performing
+% the same washing procedure 96 times.
+% - In fact, the author assumes that the force
+% causing detachment is not directly caused by centrifugation, but rather surface
+% tension of the medium pulling cells along as the medium is centirifuged into the
+% catching plate.
+
+
+% - Major challenge solved different ways: How to dissociate \MAina from \ac{MSC} monolayr?
 
 % The Well Plate
 % Sandwich Centrifugation (WPSC) used two different techniques to dissociate
@@ -86,9 +170,73 @@ mechanisms of MM progression.
 % isolated \MAina to \nMAina, since \nMAina isolation was performed prior to
 % dissociation using the same protocol consistently. We tried this to test if MACS
 % was really necessary, after all it is costly, time-consuming, introduces an antibody bias
-% and requires cell cold-treatment during antibody: Strong pipetting
-% (\emph{`Wash'}) and repeated Accutase treatment followed by magnetic activated
-% cell sorting (\emph{`MACS'}).
+% and requires cell cold-treatment during antibody: 
+% - First: repeated Accutase treatment followed by magnetic activated
+% cell sorting (called \emph{`MACS'}).
+% - Second: Strong pipetting (called \emph{`Wash'}) 
+
+
+
+\textbf{Challenges of Well Plate Sandwich Centrifugation}: Inspired by the
+principles of both flipping and V-Well adhesion assays, we developed the Well
+Plate Sandwich Centrifugation (\acf{WPSC}) method to address the challenges of
+isolating cell populations. This method innovatively combines elements from both
+techniques to provide a more reliable approach to cell isolation. One of the key
+advantages of WPSC is its ability to reduce the variability commonly introduced
+by manual pipetting. Instead of relying on aspiration, which introduce
+variability in cell collection and requires touching the well bottom for
+complete removal of medium, WPSC employs centrifugation to collect cells. Medium
+is then returned by pipetting to repeat the process and maximize \nMAina
+collection. The 96 Well plate format also has advantages, reducing spilling when
+flipping the sandwich, but also reducing technical variability by performing the
+same washing procedure up to 96 times.
+
+At this point, the author is unsure what exactly causes cell detachment during
+centrifugation. While centrifugal force is an obvious factor, the medium could
+also be the main driver of detachment, with its surface tension pulling
+cells along as it is centrifuged into the catching plate.
+
+% is not directly caused by centrifugation, but rather surface
+% tension of the medium pulling cells along as the medium is centrifuged into the
+% catching plate.
+
+The WPSC method represents a compromise between precision and the ability to
+isolate larger quantities of cells. 
+
+% By using a 96-well plate format, the method
+% benefits from the reduced risk of medium spilling associated with flipping,
+% while also allowing for repeated washing procedures to be performed 96 times
+% within a single experiment. This approach not only reduces variability within an
+% experiment but also ensures that the same conditions are applied across all
+% wells, enhancing the reproducibility of the results. The author hypothesizes
+% that the force causing cell detachment in WPSC is not directly due to
+% centrifugation, but rather the surface tension of the medium, which pulls the
+% cells along as it is centrifuged into the catching plate.
+
+One of the significant challenges addressed by WPSC is the dissociation of
+mesenchymal stromal cell (hMSC)-interacting myeloma cells (MA-INA) from the hMSC
+monolayer. WPSC employs two distinct techniques to achieve this dissociation
+without affecting the ratio of isolated MA-INA to non-interacting myeloma cells
+(nMA-INA). This consistency is crucial as the isolation of nMA-INA is performed
+prior to dissociation using a standard protocol. The first technique involves
+repeated treatment with Accutase followed by magnetic-activated cell sorting
+(\emph{`MACS'}), which, despite being effective, is costly, time-consuming, and
+introduces potential biases due to the use of antibodies and the requirement for
+cell cold-treatment. The s
+
+
+
+
+
+
+Together, these novel methodologies represent a significant advancement in the
+field, providing cost-effective, precise, reliable, and reproducible techniques
+for studying the interactions between \acp{hMSC} and myeloma cells. They offer
+valuable insights into the mechanisms of MM detachment and potentially
+contribute to a deeper understanding of the dynamic interplay within the BMME.
+
+
+
 
 % ======================================================================
 \unnsubsection{Dynamic Regulation of Adhesion Factors During Dissemination}%

@@ -129,12 +129,17 @@
 \setlist[enumerate]{noitemsep, topsep=0pt, parsep=-2pt, partopsep=0pt}
 
 
-% == Special Formats: Math, Units, etc. ================================
+% == Special Formats: Math, Units, Dates, etc. ================================
 \usepackage{amsmath}  % > Enhances math handling in LaTeX
 \usepackage{siunitx} % > For units
 % \usepackage{mhchem} % > For chemical equations
 \usepackage[normalem]{ulem} % > For underlining with dots for handwriting
 \usepackage[hidelinks]{hyperref} % > For clickable links, [remove boxes]
+\usepackage[
+    style=ddmmyyyy,
+    datesep={.}
+    ]{datetime2} % > Confifure date formats
+
 
 % == Captions 
 \usepackage[ % ## Customize captions
