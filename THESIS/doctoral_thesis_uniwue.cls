@@ -471,12 +471,12 @@
 \DeclareCaptionFont{oneandhalfspacing}{\setstretch{1}}
 
 % ## Caption styles
-\DeclareCaptionLabelFormat{listing}{\textbf{Listing #2}}
-\DeclareCaptionLabelFormat{figure}{\textbf{Figure #2}}
-\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesection~Figure #2}}
+\DeclareCaptionLabelFormat{listing}{\textbf{Listing\,#2}}
+\DeclareCaptionLabelFormat{figure}{\textbf{Figure\,#2}}
+\DeclareCaptionLabelFormat{appendixfigure}{\textbf{Appendix \thesubsection~Figure\,#2}}
 % \DeclareCaptionLabelFormat{appendixfigurecontinued}{Appendix \thesection~Figure #2}
-\DeclareCaptionLabelFormat{table}{\textbf{Table #2}}
-\DeclareCaptionLabelFormat{appendixtable}{\textbf{Appendix \thesection~Table #2}}
+\DeclareCaptionLabelFormat{table}{\textbf{Table\,#2}}
+\DeclareCaptionLabelFormat{appendixtable}{\textbf{Appendix \thesubsection~Table\,#2}}
 
 
 % ## Set Default Caption formats
