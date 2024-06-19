@@ -286,7 +286,6 @@
 
 
 % == Sub Sections ======================================================
-
 \newcommand{\unnsubsection}[1]{%
 \subsection*{#1}% > Create a new unnumbered subsection with the same name #1
 \addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
@@ -295,7 +294,6 @@
 
 
 % == Abstracts =========================================================
-
 \newcommand{\customabstract}[3]{
     % > #1 argument is the label
     % > #2 argument is the header name
@@ -374,7 +372,9 @@
 
 % == Sentence ==========================================================
 % ## Command to nest a sentence with dashes, e.g. for appositives
-\newcommand{\dashedsentence}[1]{—\,#1\,—} % this is a longer dash—
+% > This is a longer dash: —
+% > This is a shorter dash: --
+\newcommand{\dashed}[1]{--\,#1\,--}
 
 
 % == Math ==============================================================

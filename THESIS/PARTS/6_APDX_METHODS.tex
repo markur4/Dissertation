@@ -495,7 +495,16 @@ strainer.
               \setcounter{enumi}{46}
               \item After the last centrifugation step, add hMSC-medium to each well of the co-culture plate to reach a volume of \SI{150}{\micro\liter}.
                     \begin{itemize}
-                        \item[a.] Since the yield of \MAina was large, we dissociated \MAina cells from hMSCs by vigorous pipetting (for further samples after RNAseq, see Supplementary Table 1). Since no enzymatic digestion is used, we reckoned that there would be no need for MAC sorting. Confluent hMSCs withstand this procedure and don’t dissociate as single cells, which can be removed by straining cells (\SI{30}{\micro\meter}). We reached similar purities as for MAC-sorting (data not shown).
+                        \item[a.] Since the yield of \MAina was large, we
+                              dissociated \MAina cells from hMSCs by vigorous
+                              pipetting (for further samples after RNAseq, see
+                              \apdxref{subapdx:tabs}{tab:S1}). Since no enzymatic
+                              digestion is used, we reckoned that there would be no
+                              need for MAC sorting. Confluent hMSCs withstand this
+                              procedure and don’t dissociate as single cells, which
+                              can be removed by straining cells
+                              (\SI{30}{\micro\meter}). We reached similar purities as
+                              for MAC-sorting (data not shown).
                     \end{itemize}
               \item Using a multi-channel pipette (\SI{100}{\micro\liter}), gently raise \SI{90}{\micro\liter} into the tips.
               \item Lean pipette tip on the upper well-border and roughly pipette up and down once.
@@ -633,23 +642,23 @@ enrichment analysis with \texttt{Metascape}
 \subsubsection*{RT-qPCR}
 For cDNA synthesis, \SI{1}{\micro\gram} of total RNA was reverse transcribed
 with Oligo(dT)15 primers and Random Primers (both Promega GmbH) and
-\textit{Superscript IV} reverse transcriptase (Thermo Fisher
-Scientific) according to the manufacturer’s instructions. For quantitative PCR,
-the cDNA was diluted 1:10, and qPCR was performed in \SI{20}{\micro\liter} using
+\textit{Superscript IV} reverse transcriptase (Thermo Fisher Scientific)
+according to the manufacturer’s instructions. For quantitative PCR, the cDNA was
+diluted 1:10, and qPCR was performed in \SI{20}{\micro\liter} using
 \SI{2}{\micro\liter} of cDNA, \SI{10}{\micro\liter} of \textit{GoTaq qPCR Master
-    Mix} (Promega GmbH), and \SI{5}{pmol} of sequence-specific primers
-obtained from biomers.net GmbH (Ulm, Germany) or Qiagen GmbH
-(Hilden, Germany) (see Supplementary Table 3 for primer sequences and PCR
-conditions). qPCR conditions were as follows: \SI{95}{\degreeCelsius} for
+Mix} (Promega GmbH), and \SI{5}{pmol} of sequence-specific primers obtained from
+biomers.net GmbH (Ulm, Germany) or Qiagen GmbH (Hilden, Germany) (see
+\apdxref{subapdx:tabs}{tab:S3} for primer sequences and
+PCR conditions). qPCR conditions were as follows: \SI{95}{\degreeCelsius} for
 \SI{3}{minutes}; 40 cycles: \SI{95}{\degreeCelsius} for \SI{10}{seconds};
 respective annealing temperature for \SI{10}{seconds}; \SI{72}{\degreeCelsius}
 for \SI{10}{seconds}; followed by melting curve analysis for the specificity of
 qPCR products using an \textit{TOptical Gradient 96 PCR Thermal Cycler}
-(Analytik Jena AG, Jena, Germany). Samples that showed unspecific
-byproducts were discarded. Ct values were measured in three technical replicates
+(Analytik Jena AG, Jena, Germany). Samples that showed unspecific byproducts
+were discarded. Ct values were measured in three technical replicates
 (triplicates). Non-detects were discarded. One of three technical replicates was
-treated as an outlier and excluded if its z-score crossed 1.5 $\sigma$
-technical variation. We normalized expression by the housekeeping gene \textit{36B4}.
+treated as an outlier and excluded if its z-score crossed 1.5 $\sigma$ technical
+variation. We normalized expression by the housekeeping gene \textit{36B4}.
 Efficiencies were determined in each reaction by linear regression of
 log-transformed amplification curves
 \cite{ramakersAssumptionfreeAnalysisQuantitative2003}. Differential expression
@@ -733,7 +742,7 @@ using \texttt{seaborn} \cite{waskomSeabornStatisticalData2021} and \texttt{plota
 test. Normality was checked with the Shapiro-Wilk test for \(n > 3\).
 
 Data points were log10 transformed to convert the scale from multiplicative
-("fold change") to additive, or to fulfill sphericity requirements. \(P\)-values
+("fold change") to additive, or to fulfill sphericity requirements. \(p\)-values
 derived from patient survival data were corrected using the Benjamini-Hochberg
 procedure. For other post-hoc analyses, \(p\)-values were not adjusted for
 family-wise error rate in order to minimize type I errors. To prevent type II
@@ -775,6 +784,6 @@ statistics by the \texttt{maxstat} package in R
 \cite{hothornMaximallySelectedRank}. PFS and OS were analyzed for high
 vs. low expression with the Kaplan-Meier method \cite{kaplanNonparametricEstimationIncomplete1958}.
 Significant differences between the curves were analyzed with log-rank tests
-\cite{harringtonClassRankTest1982}. \(P\)-values were corrected for multiple testing
+\cite{harringtonClassRankTest1982}. \(p\)-values were corrected for multiple testing
 by the Benjamini-Hochberg method. Analyses were performed with R version 3.6.3
 \cite{rcoreteamLanguageEnvironmentStatistical2018}.

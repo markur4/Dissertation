@@ -16,26 +16,26 @@ unsuitable for using live \acp{hMSC} as the immobilizing surface. To address the
 limitations of current adhesion assays, we developed and enhanced innovative
 methodologies, specifically the \acf{WPSC} and V-Well adhesion assays.
 
-\textbf{Variability of Washing Steps}: Given the complexity of
-the requirements, this project first attempts relied on simple and traditional
-adhesion assays that rely on manual washing steps
-\cite{humphriesCellAdhesionAssays2009}. Washing involves aspirating the medium,
-dispensing washing buffer, and potentially repeating these steps multiple times.
-This introduces variability due to differences in pipetting techniques, which
-affect the accuracy of volume transfer \cite{guanAssessingVariationsManual2023,
+\textbf{Variability of Washing Steps}: Given the complexity of the requirements,
+this project first attempts relied on simple and traditional adhesion assays
+that rely on manual washing steps \cite{humphriesCellAdhesionAssays2009}.
+Washing involves aspirating the medium, dispensing washing buffer, and
+potentially repeating these steps multiple times. This introduces variability
+due to differences in pipetting techniques, which affect the accuracy of volume
+transfer \cite{guanAssessingVariationsManual2023,
     pushparajRevisitingMicropipettingTechniques2020}. However, adhesion assays don't
 rely on precise volume transfer, but accurate detachment of cells adhering at
 the well bottom. This introduces a new set of considerations for the pipetting
 technique, especially since cells are highly sensitive to shear forces applied
 by fluid flow. From the author's experience with washing experiments and
-subsequent microscopic evaluations (data not shown), several factors contribute
-to the variability of washing steps:
+subsequent microscopic evaluations (data not shown), several factors could
+contribute to the variability of washing steps:
 \begin{enumerate}
     \item The distance of the pipette tip from the well bottom, which decreases during aspiration.
     \item The position of the pipette tip relative to the well bottom (center or edge).
     \item The angle of the pipette tip.
     \item The speed of aspiration.
-    \item Accidental contact between the pipette tip and the cell layer.
+    \item Accidental or intended contact between the pipette tip and the cell layer.
     \item The residual volume left after aspiration.
     \item \textit{The same considerations apply when dispensing the washing buffer.}
 \end{enumerate}
@@ -57,26 +57,27 @@ common method for adhesion assays.
 
 
 
+
 \textbf{Directly Interacting Cells Contain Unexplored Interaction Scenarios}: It
 is evident that direct and indirect contact to \acp{MSC} have varying effects on
-myeloma cells. That difference is crucial for understanding changes in the bone
-marrow microenvironment (BMME) during MM progression
-\cite{fairfieldMultipleMyelomaCells2020, dziadowiczBoneMarrowStromaInduced2022}.
-These studies utilize well-inserts to co-culture myeloma cells in close
-\dashedsentence{indirect} contact with MSCs. However, such comparison of
-indirect \textit{vs.} direct co-culturing methods does not fully represent the
-complexity of intercellular interactions scenarios. This is exemplified by this
-project, as it relied on the complex growth behavior of \INA cells. These
-aggregated homotypically in direct proximity to those adhering heterotypically
-to \acp{hMSC}. Furthermore, such methods fail to capture the subtle variations
-in paracrine signaling concentrations, where even a few micrometers of distance
-could significantly alter cellular responses.
+myeloma cells. That difference is crucial for understanding changes in the
+\ac{BMME} during MM progression \cite{fairfieldMultipleMyelomaCells2020,
+    dziadowiczBoneMarrowStromaInduced2022}. These studies utilize well-inserts to
+co-culture myeloma cells in close \dashed{indirect} contact with MSCs.
+However, such comparison of indirect \textit{vs.} direct co-culturing methods
+might not fully represent the complexity of intercellular interactions scenarios
+found in the \ac{BMME}. This is exemplified by this project, as it relied on the
+complex growth behavior of \INA cells. These aggregated homotypically in direct
+proximity to those adhering heterotypically to \acp{hMSC}. Furthermore, such
+methods fail to capture the subtle variations in paracrine signaling
+concentrations, where even a few micrometers of distance could significantly
+alter cellular responses.
 
 Such knowledge shifted this project's point of view as well: Initially, our
 hypothesis focused on direct heterotypic interactions, not expecting a \nMAina
 population, but rather subpopulations within \MAina cells that are separable by
 varying adhesion strengths. Hence, our assay employed strict conditions favoring
-one growth scenario, with co-cultures providing unlimited hMSC-surface
+one growth scenario \dashed{heterotypic interactions}, with co-cultures providing unlimited hMSC-surface
 availability causing predominantly heterotypic adhesion, while the short
 incubation time prevented the formation of aggregates. Despite these measures,
 our assay still captured cells emerging from recent cell divisions rather than
@@ -107,7 +108,7 @@ layer and create dry regions during centrifugation.
 The V-Well adhesion assay does not flip, but collects non-adhering cells into
 the nadir of V-shaped wells during centrifugation
 \cite{weetallHomogeneousFluorometricAssay2001}. This work profited greatly from
-this method, while \dashedsentence{to our knowledge} being the first to use cell
+this method, while \dashed{to our knowledge} being the first to use cell
 monolayers as the immobilizing surface. We value this method for its precision,
 as centrifugation applies a uniform and configurable force, while the readout
 remains straightforward, relying on the total fluorescent brightness rather than
@@ -116,26 +117,27 @@ individual cell counting.
 
 
 
-\textbf{Specializing in Quantifying Adhesion or Isolating Subpopulations}: All
-these methods primarily focus on quantification rather than isolation. While we
-were able to isolate cell pellets from the V-well plate, the process was tedious
-and required multiple technical replicates to achieve sufficient cell numbers
-for analysis. The author summarizes the key differences between quantification
-and isolation approaches as such:
-\begin{enumerate}
-    \item Isolation methods manipulate cell  for collect, whereas
-          quantification methods could manipulate cells to simplify readout.
+\textbf{Specializing in Quantifying Adhesion or Isolating Subpopulations}: Most
+adhesion methods primarily focus on quantification rather than isolation. While
+we were able to isolate cell pellets from the V-well plate, the process was
+tedious and required multiple technical replicates to achieve sufficient cell
+numbers for analysis. The author summarizes the key differences between
+quantification and isolation approaches as such:
+\begin{itemize}
+    \item Isolation methods manipulate cells for collect, whereas quantification
+          methods could manipulate cells to simplify readout. For instance, the
+          V-well assay pellets cells for one pooled fluorescence readout.
     \item Isolation methods optimize for collecting large cell numbers, whereas
           quantification methods optimize for precise separation.
     \item Isolation methods return at least two different readouts generated
           from adherent and non-adherent populations. Quantification methods
-          return one output (population size), allowing higher throughput and different
-          treatments.
-\end{enumerate}
+          return one output (population size), allowing higher throughput and
+          different treatments.
+\end{itemize}
 
 Thus, we adopted two distinct techniques for isolating and quantifying directly
-interacting subpopulations, each allowing the development of complex direct
-interactions.
+interacting subpopulations, each optimizing for different outcomes while
+allowing the development of direct intercellular interactions.
 
 
 
@@ -201,7 +203,7 @@ cells along as it is centrifuged into the catching plate.
 % catching plate.
 
 The WPSC method represents a compromise between precision and the ability to
-isolate larger quantities of cells. 
+isolate larger quantities of cells.
 
 % By using a 96-well plate format, the method
 % benefits from the reduced risk of medium spilling associated with flipping,
@@ -299,7 +301,7 @@ This has great implications for targeting adhesion factors for therapy, as it
 suggests that different adhesion factors should either be antagonized or
 agonized depending on the function of the adhesion factor. According to this
 assumption, adhesion factors involved in intra- and extravasation adhesion should be
-antagonized, while adhesion factors involved in BM adhesion \dashedsentence{as
+antagonized, while adhesion factors involved in BM adhesion \dashed{as
     identified in Chapter 2} should be agonized. Indeed, Adhesion factors for endothelium
 were shown to decrease tumour burden in mouse models \cite{asosinghUniquePathwayHoming2001a,mrozikTherapeuticTargetingNcadherin2015}
 
@@ -340,7 +342,7 @@ great potential for breakthroughs in myeloma research.
 This thesis has discussed the pro-tumor effects of MSCs. However, MSCs have also
 been shown to have anti-tumor effects \cite{galderisiMyelomaCellsCan2015}. This
 work has also shown that primary \acp{hMSC} can induce apoptosis in \INA6 cells
-initially \dashedsentence{probably through the action of death domain receptors},
+initially \dashed{probably through the action of death domain receptors},
 but inhibit apoptosis during prolonged culturing.
 
 This shows that hMSCs could be leveraged
