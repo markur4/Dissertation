@@ -250,40 +250,17 @@ on multicellular interactions and complex growth scenarios.
 %%%%%%%%%%%%
 
 
-% \def\footattachdetachdynamics{1}{ \footnote{\emph{Attachment/Detachment
-%                   Dynamics} = The Observation and Measurement of time-dependent changes in
-%             cell adhesion. The time required for attachment, detachment, and migration
-%             of cells gives insight about its disseminative potential. This term
-%             differentiates itself from cell adhesion through the time component and an
-%             emphasis on explaining detachment events
-%       }\label{foot:attachdetach_dynamics} }
 
-% \newcommand{\footattachdetachdynamics}{%
-%       \footnote{\emph{Attachment/Detachment Dynamics} = The Observation and
-%             Measurement of time-dependent changes in cell adhesion. The
-%             time required for attachment, detachment, and migration of
-%             cells gives insight about its disseminative potential. This
-%             term differentiates itself from cell adhesion through the time
-%             component and an emphasis on explaining detachment
-%             events}\label{foot:attachdetach_dynamics}
-% }%
 
-% % > Define the footnote and its mark manually
-% \newcommand{\definefootattachdetachdynamics}{%
-%     \footnotetext[1]{\emph{Attachment/Detachment Dynamics} = The Observation and
-%     Measurement of time-dependent changes in cell adhesion. The time required
-%     for attachment, detachment, and migration of cells gives insight about its
-%     disseminative potential. This term differentiates itself from cell adhesion
-%     through the time component and an emphasis on explaining detachment
-%     events}\label{foot:attachdetach_dynamics}%
-% }
-% % > Command to reference the footnote by its mark
-% \newcommand{\footattachdetachdynamics}{%
-%     \footnotemark[1]%
-% }
-
-% \definefootattachdetachdynamics
-
+\newcommand{\footattachdetachdynamics}{%
+      \emph{\ac{CAD} Dynamics}: The observation and measurement of
+      time-dependent changes in cell adhesion. This includes the time required
+      for attachment, detachment, and migration of cells. This
+      term\dashed{defined in this work}expands traditional \emph{cell adhesion}
+      by an emphasis on the time component and further characterization of
+      detachment events.} \newcommand{\footattachdetachbehaviour}{%
+      \emph{\ac{CAD} Behaviour}: The summary of all
+      \emph{\ac{CAD} dynamics} observable in a cell.}
 
 \unnsubsection{Constructing a Hypothetical Framework of Dissemination}%
 \label{sec:discussion_framework}%
@@ -292,18 +269,18 @@ lacking. \citet{zeissigTumourDisseminationMultiple2020} has described
 dissemination as a multistep process along the lifetime of a myeloma cell.
 However, since it provides evidence for only individual steps\dashed{each step
       being very complex itself}, the connection of these steps remains unproven and
-therefore a hypothetical construct. Scientific evidence for dissemination
-becomes \emph{fragmented}, with each piece contributing but a small part to the
-big picture. This includes the evidence gained from this work, especially since
-its validity is limited to the \INA cell line. To regain understanding of
-dissemination as a process, the following sections attempt to integrate the
-findings of this with available literature, and formulates hypotheses that could
-help design further experiments to validate commonalities in dissemination.
-Given the focus on direct observations of attachment/detachment
-% dynamics\footattachdetachdynamics, 
-this framework carries the name \emph{Dynamic
-      Adhesion Hypothetical Framework for Myeloma Dissemination}.
-      
+therefore a hypothetical construct. Scientific evidence for describing
+dissemination as a process becomes \emph{fragmented}, including the results
+gained in this work, especially since its validity is limited to the \INA cell
+line. To regain understanding of dissemination as a process, the following
+sections attempt to integrate the findings of this with available literature,
+and formulates hypotheses that could help design further experiments to validate
+commonalities in dissemination. Given this work's focus on direct observations of
+\emph{\ac{CAD}
+      dynamics}\footnote{\footattachdetachdynamics\label{foot:attachdetach_dynamics}},
+this framework carries the name \emph{Dynamic Adhesion Hypothetical Framework
+      for Myeloma Dissemination}.
+
 % asdf\footattachdetachdynamics
 
 % - Cell attachment/detachment dynamics = Time-dependent changes in adhesion, measuring time required
@@ -333,7 +310,7 @@ this framework carries the name \emph{Dynamic
 % \end{itemize}
 
 
-\textbf{Cell Attachment/Detachment Behavior and Predicting Dissemination}
+\textbf{\acf{CAD} Behavior and Predicting Dissemination}
 % Understanding the attachment and detachment dynamics of myeloma cells is crucial
 % for predicting how these cells disseminate throughout the body. Our observations
 % indicate that INA-6 myeloma cells dynamically regulate adhesion factors in
@@ -364,7 +341,7 @@ encapsulates not just the biochemical events of cell attachment but also the
 dynamic processes of cellular migration and detachment, crucial for
 understanding myeloma dissemination.
 
-
+\emph{behavior}\footnote{\footattachdetachbehaviour\label{foot:attachdetach_behaviour}}
 
 Dynamic observations of INA-6 cells have revealed that changes in adhesion
 factor expression are closely linked to cell-cell contact and environmental

@@ -157,6 +157,9 @@
 \usepackage{hhline} % > For better lines in tables
 \usepackage{multirow} % > For rows conatining two lines
 
+%== Footnotes
+\usepackage{bigfoot} % > For footnotes spanning multiple pages
+
 % == Citations 
 \usepackage{apacite} % > For citations
 \usepackage{natbib} % > For citations without parentheses
@@ -759,7 +762,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 % ======================================================================
-% == Citationsm, Footnotes
+% == Citations, Footnotes
 % ======================================================================
 
 \bibliographystyle{apacite}
@@ -795,6 +798,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \footnote{\citet{#2}: \textit{``#1''}}\xspace%
 }
 
+% Declare a new footnote type using bigfoot
+% \DeclareNewFootnote{default}
+% \DeclareNewFootnote{Repeated}[fnsymbol]
 
 
 % ======================================================================
