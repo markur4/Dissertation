@@ -291,7 +291,7 @@
 % == Sub Sections ======================================================
 \newcommand{\unnsubsection}[1]{%
 \subsection*{#1}% > Create a new unnumbered subsection with the same name #1
-\addcontentsline{toc}{subsection}{#1}% > Add the subsection to the table of contents
+\addcontentsline{toc}{subsection}{\ignorespaces#1}% > Add the subsection to the table of contents
 \mbox{}% > Add an empty line to avoid warnings
 }
 

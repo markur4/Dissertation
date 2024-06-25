@@ -254,7 +254,7 @@ on multicellular interactions and complex growth scenarios.
       \emph{\acf{CADD}} (defined in this work): The observation and measurement
       of time-dependent changes in cell adhesion and detachment events.
       \ac{CADD} characterizes the time cells spend attached, migrating or
-      detached and associates molecular signatures with these phases, such as
+      detached and associates these phases with molecular signatures, such as
       \ac{CAM} expression or cell signaling mediated by \acp{CAM} or the
       microenvironment. \ac{CADD} expands traditional \emph{cell adhesion} by a
       time component and implies an intention to predict attachment and
@@ -268,352 +268,195 @@ on multicellular interactions and complex growth scenarios.
 Until today, a mechanistic understanding of myeloma dissemination is still
 lacking. \citet{zeissigTumourDisseminationMultiple2020} has described
 dissemination as a multistep process along the lifetime of a myeloma cell.
-However, since evidence is collected mostly for individual steps
-\dashed{each step being very complex itself}, the connection of these steps
-remains unproven and therefore a hypothetical construct. A description of
-dissemination as a process hence becomes a rough patchwork of \emph{evidence
-      fragments}. In that sense, this work adds further fragments, especially since
-its validity is limited to the \INA cell line. To regain understanding of
-dissemination as a process, the following sections attempt to integrate the
-findings of this work with available literature, and formulates hypotheses that
-could help design further experiments to validate commonalities in
-dissemination. Given that direct observations of
+However, since evidence is collected mostly for individual steps \dashed{each
+      step being very complex itself}, the connection of these steps remains unproven
+and therefore a hypothetical construct. A description of dissemination as a
+process hence becomes a rough patchwork of \emph{evidence fragments}. In that
+sense, this work adds further fragments, especially since its validity is
+limited to the \INA cell line. To regain understanding of dissemination as a
+process, the following sections attempt to integrate the findings of this work
+with available literature, formulating specific hypotheses to face future
+experiments. Given that direct observations of
 \emph{\ac{CADD}}\footnote{\footcadd\label{foot:cadd}} have proven insightful,
 this framework carries the name \emph{Dynamic Adhesion Hypothetical Framework
       for Myeloma Dissemination}.
 
 
-\newcommand{\caddpredictions}{%
-      \textit{CADD Enabling Predictions:} \ac{CADD}
-}%
-\newcommand{\caddpredictionstitle}{%
-      \textit{Hypothesis 1}: CADD Predicts Dissemination %
-}%
+\textbf{Generating Hypotheses from CADD:}
+The following shows examples how hypotheses can be formed after \ac{CADD}
+observations:
+- What predictions can be made from these results for steps of
+dissemination (retention, release, Extra-/Intravasation, colonization), assuming
+that \INA  is representative for all myeloma?
+
+- Retention:
+
+Observation of CADD: \INA  cells attach fast and strongly to \acp{hMSC} and grow
+into stable aggregates.
+
+Hypothesis: Myeloma cells are retained through strong adhesion to the BM
+microenvironment and stable homotypic aggregation.
+
+Experiment: Inject \INA  into mice and make sections of Bone lesions, comparing
+the growth pattern to mice co-injected with an ICAM-1 or LFA-1$\alpha$/ITGB2
+antibody, as that was shown to dissolve homotypic aggregates \textit{in vitro}
+and prevent \INA growth \textit{in vivo}\cite{kawanoHomotypicCellAggregations1991a,
+      klauszNovelFcengineeredHuman2017}. If abrogating aggregation leads to a rather
+diffuse colonization of bone instead of fewer focal lesions, this would support
+that strong adhesion and aggregation are crucial for retention in the BMME.
+
+
+
+- Release:
+
+Observation: \INA  cells detach from \acp{hMSC} through cell division, and external forces can detach
+single myeloma cells from aggregates.
+
+Hypothesis: Myeloma cells detach from the BM microenvironment through
+cell division and external force after reaching a minimal aggregate size.
+
+Experiment: This could be tested by injecting \INA  into mice and comparing the
+cell cycle profile of circulating cells vs. cells in the BM. If circulating
+cells are enriched with G1/G0 cells, this would support that detachment is more
+likely shortly after cell division.
+
+
+- Intra-/Extravasation: CADD observations in this work did not make predictions, yet it could if MSCs were replaced by endothelial cells.
+
+
+- Colonization:
+
+Observation: Myeloma cells show quick attachment to MSCs within just
+\SI{1}{\hour} of contact and quick upregulation of a multitude of adhesion
+factors, including \ac{ECM} factors.
+
+Hypothesis: Quick attachment and fast expression of adhesion factors is a high
+potential to colonize new niches. This is reasonable especially since \INA were
+isolated from the pleura \cite{burgerGp130RasMediated2001c}, suggesting the
+capability to colonize extramedullary sites.
+
+Experiment: Inject INA-6 into mice and see if they colonize extramedullary
+sites. Compare that to INA-6 with decreased adaptability,
+
+
+This shows how CADD observations can lead to testable hypotheses using the
+results from this work alone. However, since these hypotheses are specialized on
+\INA, a more generalized framework is favorable.
+
+
+
+
+% \newcommand{\caddpredictions}{ %
+%       \acf{CADD} can predict steps within dissemination. %
+% }%
+% \newcommand{\caddpredictionstitle}{ %
+%       \textit{Hypothesis 1}: \acf{CADD} Can Predict Dissemination %
+% }%
 
 
 \newcommand{\caddadaptation}{ %
-      \textit{CADD Adaptation:} Myeloma cells adapt their \ac{CADD} in response to
-      interactions with different microenvironmental niches faced during
-      dissemination. %
+      \ac{CADD} is adapted in response to different microenvironments faced
+      during dissemination %
 }
 \newcommand{\caddadaptationtitle}{ %
-      \textit{Hypothesis 2}: CADD Adaptation %
-      % Myeloma Cells Adapt \ac{CADD} during
-      % Dissemination
+      \textit{Hypothesis 1}: \ac{CADD} Adaptations during Dissemination%
 }%
 
 
 \newcommand{\caddadaptibility}{ %
-      \textit{CADD Adaptability:} Highly adaptive \ac{CADD} is a hallmark of
-      aggressive myeloma %
+      High adaptability of \ac{CADD} is a hallmark of aggressive myeloma %
 }%
 \newcommand{\caddadaptabilitytitle}{ %
-      \textit{Hypothesis 3}: Dynamic Change in Cell Adhesion Behaviour is a Hallmark of
-      Aggressive Myeloma %
+      \textit{Hypothesis 2}: High Adaptability of \ac{CADD} and Myeloma
+      Aggressiveness %
 }%
 
 
 \newcommand{\cadddiversity}{%
-      \textit{CADD Diversity:} \ac{CADD} is highly diverse, both in patients and
-      cell lines %
+      \ac{CADD} is highly diverse within both patients and cell lines %
 }%
 \newcommand{\cadddiversitytitle}{ %
-      \textit{Hypothesis 4}: CADD is Highly Diverse %
+      \textit{Hypothesis 3}: \ac{CADD} is Highly Diverse Within both Patients
+      and Cell Lines%
 }%
 
 
 \newcommand{\caddtrigger}{%
-      \textit{CADD Triggering Detachment:} Detachment can be triggered by multiple
-      cues of varying nature, including external mechanical forces, cell
-      division, loss of \ac{CAM} expression, or even pure chance. }%    
+      Detachment is caused by multiple cues of varying nature, including
+      external mechanical forces, cell division, loss of \ac{CAM} expression, or
+      even pure chance. }%    
 \newcommand{\caddtriggertitle}{ %
-      \textit{Hypothesis 5}: Detachment Can be Triggered by  Multiple Cues of Varying
+      \textit{Hypothesis 4}: Detachment is Caused by Multiple Cues of Varying
       Nature %
 }%
 
 
-\textbf{Overview of Key Hypotheses:}
-The Dynamic Adhesion Hypothetical Framework is structured around five key
-hypotheses, each addressing a fundamental aspect of myeloma cell dissemination:
+
+
+\textbf{Key Hypotheses:}
+The Dynamic Adhesion Hypothetical Framework is structured around four key
+hypotheses, each addressing fundamental aspects of myeloma cell dissemination
+based on both literature and the results of this work. These hypotheses are as
+follows:
 \begin{enumerate}
-      \item \caddpredictions
+      % \item \caddpredictions
       \item \caddadaptation
       \item \caddadaptibility
       \item \cadddiversity
       \item \caddtrigger
 \end{enumerate}
 
-This introduction sets the stage for a detailed exploration of each hypothesis,
+This framework sets the stage for a detailed exploration of each hypothesis,
 linking empirical data with theoretical constructs to provide a comprehensive
-framework of myeloma cell dissemination that can inform both future research and
-clinical practice.
-
-
-% ======================================================================
-\unnsubsection{\caddpredictionstitle}%
-\label{sec:discussion_caddpredictions}%
-lorem ipsum
-
-% - Explain how this work established attachment/detachment dynamics 
-% - Explain how attachment/detachment dynamics is better captured by the term "cell adhesion behaviour", emphasising the direct observation of these processes
-% - Explain how attachment/detachment dynamics help predicting dissemination
-% - Give a short reminder how dissemination is hampering therapy
-
-
-
-% Understanding the attachment and detachment dynamics of myeloma cells is crucial
-% for predicting how these cells disseminate throughout the body. Our observations
-% indicate that INA-6 myeloma cells dynamically regulate adhesion factors in
-% response to direct contact with human mesenchymal stem cells (hMSCs),
-% highlighting the influence of microenvironmental interactions.
-% Predicting when and how myeloma cells
-% detach from the primary tumor and colonize new niches is essential for
-% understanding the progression of MM and developing therapeutic strategies to
-% prevent metastasis.
-% Dissemination is a major contributor to MM progression and
-% poor prognosis, enabling MM cells to colonize niches that favor survival,
-%  are less accessible to therapy, and develop
-% heterogenous subclones \cite{forsterMolecularImpactTumor2022,
-%       keatsClonalCompetitionAlternating2012}.
-
-
-
-This assumes that there are other mechanisms involved in dissemination
-next to an attached or detached state.
-
-m dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lore
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-um dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dol
-
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-um dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dol
-
-
-
-
-% The study of attachment and detachment dynamics, termed here as \textit{cell
-%       adhesion behavior}, provides a comprehensive view of the adaptive interactions
-% myeloma cells engage in within their microenvironment. This research has
-% established a detailed observational basis for these dynamics by directly
-% tracking the behavior of INA-6 myeloma cells in response to their interactions
-% with human mesenchymal stem cells (hMSCs). The term "cell adhesion behavior"
-% encapsulates not just the biochemical events of cell attachment but also the
-% dynamic processes of cellular migration and detachment, crucial for
-% understanding myeloma dissemination.
-
-% \emph{behavior}\footnote{\footattachdetachbehaviour\label{foot:attachdetach_behaviour}}
-
-% Dynamic observations of INA-6 cells have revealed that changes in adhesion
-% factor expression are closely linked to cell-cell contact and environmental
-% cues, thereby illustrating the plasticity of myeloma cells in modifying their
-% adhesive properties \cite{huDevelopmentCellAdhesionbased2024,
-%       mrozikTherapeuticTargetingNcadherin2015}. These insights into cell adhesion
-% behavior underscore the ability of myeloma cells to adapt rapidly to varying
-% microenvironments, facilitating their detachment and subsequent dissemination.
-
-% Predicting the detachment and dissemination of myeloma cells is pivotal for
-% understanding the progression of the disease. Dissemination allows myeloma cells
-% to colonize new niches favorable for survival, often in quiescent states that
-% are less accessible to therapeutic interventions. This poses significant
-% challenges for current treatment strategies, as disseminated myeloma cells can
-% evade systemic therapies and contribute to a poorer prognosis
-% \cite{forsterMolecularImpactTumor2022,
-%       keatsClonalCompetitionAlternating2012}. Understanding these attachment/detachment
-% dynamics through the lens of cell adhesion behavior not only provides insights
-% into the biological underpinnings of myeloma progression but also highlights the
-% importance of developing targeted therapies that can interfere with these
-% dynamic processes to prevent the spread of the disease.
+framework of myeloma cell dissemination that can inform both future research
+to identify commonalities in dissemination and inform the development of targeted
+therapies.
 
 
 
 % ======================================================================
 \unnsubsection{\caddadaptationtitle}%
 \label{sec:discussion_caddadaptation}%
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsor sit amet lorem ipsum dolor sit amet 
+However,  Chapter 1 shows that adhesion factors are
+lost during MM progression. INA-6 are highly adhesive to hMSCs.
+This is a contradiction that needs to be resolved.
+
+One explanation is the dynamic change of adhesion factor expression.
+
+% However, INA-6 do not express adhesion factors. They do that only in hMSC presence
+% Hence MAINA-6 could be a smaller fraction of MM cells, specialized on preparing a new niche
+% for the rest of the MM cells. This could be a reason why they are so adhesive.
+
+- One has to consider that intravasation and/or intra-/extravasation would require a different
+set of adhesion factors than adhesion to BM or extramedullary environments.
+
+Extravasation: Plasma cells are known to upregulate adhesion factors dynamically
+once they reach a target tissue (???).
+
+This work showed that \INA cells dynamically upregulate adhesion factors when in
+direct contact with \acp{hMSC}. Such adhesion factors are not expressed by \INA
+cells without contact to \acp{hMSC}, or by \INA cells emerging as daughter cells
+from \MAina cells. This implies that myeloma cells are capable of rapid changes in
+adhesion factor expression that are substantially dynamic.
+Predicting when a myeloma cell starts regulating adhesion factors is a key
+question in understanding dissemination.
+
+The following paragraphs
+discuss how the idea of dynamic adhesion factor expression holds up
+against current knowledge.
+
+What biological implications does CADD adaption have?
+1 Location of Myeloma Cells:
+- Different locations could require different adhesion factors:
+- Circulating MM cells do not need adhesion, probably losing adhesion factors
+- BM cells express adhesion factors to adhere to the Bone marrow microenvironment (MSCs, adipocytes, and osteoblasts)
+- Extravasating/intravasating cells need adhesion factors for endothelium
+- Extramedullary cells need adhesion factors for respective tissues
 
 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
+\citet{bouzerdanAdhesionMoleculesMultiple2022}: "Classically, the BMM has been
+divided into endosteal and vascular niches"
 
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-
-um dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet 
-lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet
-lorem ipsum dol
-
-
-
-
-
-\textbf{Cell Adhesion Behavior and Predicting Dissemination}
-ghjhjg
-
-
-% ======================================================================
-\unnsubsection{\caddadaptabilitytitle}%
-\label{sec:discussion_caddadaptability}%
-lorem ipsum
-
-
-% ======================================================================
-\unnsubsection{\cadddiversitytitle}%
-\label{sec:discussion_cadddiversity}%
-lorem ipsum
-- CXCL12 expresion varies from QM between QM
-
-
-% ======================================================================
-\unnsubsection{\caddtriggertitle}%
-\label{sec:discussion_caddtrigger}%
-lorem ipsum
-Detachment is triggered by external mechanical forces on cell
-conglomerates previously sensitized by changes in cell adhesion behaviour
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Hypothetical Framework
-
-% \unnsubsection{A Bottom-Up Approach to Modelling Adhesion Factor Regulation}%
-% \unnsubsection{Integrating Adhesion Factor Expression with Attachment/Detachment Events}%
-% \unnsubsection{How to Gain a Mechanistic Understanding of Dissemination..?}%
-% \unnsubsection{A Bottom Up Approach to Understanding Myeloma Dissemination}
-
-% The Dynamic Adhesion Hypothetical Framework for Myeloma Dissemination.
-
-% The need for integrating Aggression and Location into one Framework of Dissemination
-
-% \label{sec:discussion_order_adhesion}%
 Overall, cell adhesion play a pivotal role in the attachment/detachment dynamics of
 myeloma, hence influencing the dissemination of myeloma cells. This is
 exemplified in this work, where \INA cells dynamically upregulate adhesion
@@ -621,137 +464,15 @@ factors in direct contact with \acp{hMSC}. Predicting how and when myeloma cells
 regulate adhesion activity is a key question in understanding dissemination,
 since that
 
-potentially preventing it during therapy.
-
-Research on cell adhesion is progressing:
-Promising prognostic factors and therapeutic targets are being identified
-\cite{mrozikTherapeuticTargetingNcadherin2015,
-      solimandoJAMAPrognosticFactor2018}, as well as MM subpopulations that are both
-defined by adhesion gene expression and associated with dissemination
-\cite{akhmetzyanovaDynamicCD138Surface2020,
-      brandlJunctionalAdhesionMolecule2022}.
-
-
-A recent study by \citet{huDevelopmentCellAdhesionbased2024} developed a cell
-adhesion-based prognostic model for MM, calculating an adhesion-related risk
-score (ARRS) based on expression of only twelve adhesion related genes.
-
-However, a mechanistic understanding of dissemination is still lacking. This
-work did combine both molecular approaches with studying attachment/detachment
-dynamics, and found connections between adhesion factor expression and disease
-stage. The following paragraphs will discuss dynamic regulation of adhesion factors
-and the role of disease stage in this process, but also discusses the cues that trigger
-detachments.
-
-
-The author argues that under
-How adhesion
-factor regulation impacts the attachment/detachment dynamics of disseminating
-myeloma cells.
-
-The author argues that research
-is limited by the lack of integrating cell biological principles of niche
-interaction into the analysis of adhesion factor regulation.
-
-
-of adhesion factor regulation in MM
-The following sections attempt to model the dynamics of adhesion factor
-regulation based on the results of this work and the current literature.
-
-% Too many factors remain unexplored, such as the location of myeloma cells,
-% and the disease stage.
-
-
-% Such approach is reminiscent of the endeavor of identifying subtypes of MM for
-% improved risk stratification and potential personalized therapies. 
-
-
-
-% Using adhesion molecules as prognostic factors is far less advanced, yet their relevance
-% in preventing disease progression stands firm. 
-
-% Classifying MM subtypes based on
-% \acp{CAM} expression or adhesion behavior could be a similar approach, but isn't
-% nearly as advanced (??). However, 
-
-
-
-
-% However, a unifying model of adhesion
-% factor regulation in MM is still lacking.
-
-% Here, the author df
-
-% However, a unifying 
-
-%       A similar classification by adhesion
-% factors is nowhere near as advanced. 
-
-
-
-
-% but could curtain potential breakthroughs in
-% preventing dissemination.
-
-% Hence, the following discussion attempts to present
-% knowledge and challenges in the field of adhesion factors in MM, and how they
-% could be studied.
-% Advances in this field 
-
-
 Myeloma cells are isolated from patients at a certain stage from a certain
 location. As summarized by \citet{zeissigTumourDisseminationMultiple2020},
 dissemination could be a dynamic process during the lifetime of a myleoma cell
 that managed to exit the \ac{BMME} into blood circulation. This implies that
 myeloma cells could change their adhesion factors during their course of
 dissemination to adapt to their current location for specialized tasks like
-exiting the \ac{BMME} or intra-/extravasation. However, this work and evidence
-from the literature suggest that different disease stages handle the regulation
-of adhesion factors differently. Hence, this work defines not only location but
-also disease stage as two dimensions with different implications for adhesive
-behaviors.
+exiting the \ac{BMME} or intra-/extravasation.
 
-
-The following paragraphs construct a narrative and then later checks for every
-step if there is evidence for it in this work or the literature.
-
-First let's construct a framework that's at least reasonable, but not necessarily
-backed up by evidence:
-
-Three dimensions where changes in adhesion factors are expected. These dimensions
-make up a space, where every point describes an adhesive behavior of myeloma cells.
-1 Location of Myeloma Cells (BM, vascular)
-2 Disease Stage (asymptomatic MM, MM, MM relapse)
-3 Cues that might trigger changes, or processes associated with changes or detachment
-
-
-One important dimension that is missing here is the genetic background of the
-myeloma cells. These are based on recurrent patterns of chromosomal aberrations
-or mutational signatures, defining structural and single nucleotide variants
-\cite{kumarMultipleMyelomasCurrent2018a,
-      hoangMutationalProcessesContributing2019}. The prognostic value of genetic
-variants in MM is well established \cite{sharmaPrognosticRoleMYC2021}, and their
-identification is becoming precise and cost-effective using \emph{optical
-      genome mapping}, making progress towards personalized therapies
-\cite{zouComprehensiveApproachEvaluate2024,
-      budurleanIntegratingOpticalGenome2024}. The prognostic value of adhesion factor
-expression is nowhere nearly as advanced, with establishing cell adhesion as a
-reliable prognostic factor only recently
-\cite{huDevelopmentCellAdhesionbased2024}.
-
-
-% Research on adhesion factors is nowhere
-% near as advanced for classifying MM subtypes, although promising targets are
-% being identified \cite{mrozikTherapeuticTargetingNcadherin2015,
-% solimandoJAMAPrognosticFactor2018}, as well as subpopulations associated with
-% dissemination defined by adhesion factor expression
-% \cite{akhmetzyanovaDynamicCD138Surface2020,
-% brandlJunctionalAdhesionMolecule2022}. 
-
-
-
-
-Why are these dimensions important and how could they be studied?
+why important?
 
 1 Location: Knowing how an MM cell can change their adhesive properties during its course of
 dissemination is crucial for understanding the process itself. These changes
@@ -760,115 +481,12 @@ different locations in mouse models. For humans, designing studies that gather
 biopsies at different locations from the same patient, e.g. bone marrow and cirulating
 myeloma cells could be a starting point.
 
-2 Studying the adhesive changes during MM progression is
-interesting, as it could unravel a specialized treatment strategy
-that could maybe prevent dissemination.
-
-3 The cues that trigger the detachment of MM cells are not well understood. It
-could be that MM cells detach due to a combination of factors, such as loss of
-adhesion factors, changes in the BM microenvironment, or cell division or
-even completely random. Knowing specific dissemination signals helps preventing
-dissemination.
-
-
-How could these dimensions they be studied?
-
-1 Location: These changes could be studied by tracking the expression of adhesion factors in MM cells at
-different locations in mouse models. For humans, designing studies that gather
-biopsies at different locations from the same patient, e.g. bone marrow and cirulating
-myeloma cells could be a starting point.
-
-2 Progression: Databases of expression from Myeloma cells gathered from bone
-marrow \ac{MGUS}, \ac{aMM}, \ac{MM}, \ac{MMR} already exist
-\citet{akhmetzyanovaDynamicCD138Surface2020,
-      seckingerCD38ImmunotherapeuticTarget2018}. Going through such databases gives a
-good overview. One could categorize genelists using curated databases, get lists
-associated with extravasation, intravasation, Bone marrow adhesion. For every
-gene of these genelists, they could be filtered for significant differences
-between the stages. Further categorizations of pairwise comparisons of stages
-are required. but overall, these genelists could be a starting point for This
-approach is similar to the genelists published in chapter 1, with the difference
-that the genelist was furthere filtered by the RNAseq results of \textit{in
-      vitro} experiments.
-
-3 Cues: Identifying such signals might be challenging without
-having understood the other two dimensions first.
-
-
-How does limited understanding of one dimension prevent the understanding of the
-other dimensions?
-
-Location \& Progression: If we don't know the expression profile of an MM cell depending on their
-source, results become incomparable.
-
-Location \& Cues: If we don't know the cues that trigger detachment, we can't
-predict where the MM cells will detach.
-
-
-
-
-What biological implications do these dimensions have?
-
-1 Location of Myeloma Cells:
-- Different locations could require different adhesion factors:
-- Circulating MM cells do not need adhesion, probably losing adhesion factors
-- BM cells express adhesion factors to adhere to the Bone marrow microenvironment (MSCs, adipocytes, and osteoblasts)
-- Extravasating/intravasating cells need adhesion factors for endothelium
-- Extramedullary cells need adhesion factors for respective tissues
-
-2 Disease Stage:
-- Higher disease stages imply changes in adhesion factors that favor aggressiveness.
-- Aggressiveness includes:
-- Better Colonization of new niches, including extramedullary ones
-- This implies a more diverse set of available adhesion factors
-- Faster regulation to adapt to new niches
-- Better survival in circulation
-
-3 Cues or associated processes:
-- Different cues could trigger different adhesional changes
-- Soluble signals?
-- Loss of CD138 \cite{akhmetzyanovaDynamicCD138Surface2020}
-- Detachment through intercellular effects: cell division, Saturation of hMSC adhesion surface
-- Detachment with mechanical influence: External forces and instability after aggregate size
--
-
-
-What new implications do these dimensions have on targeting adhesion factors for
-therapy?
-
-1 Location of Myeloma cells
-- Inhibiting adhesion factors could inhibit dissemination at one location
-or niche, but also benefit dissemination at another location. Different subsets
-of  adhesion factors must be thoroughly evaluated
-
-
-2 Disease Stages:
-- Aggressive MM cells have potantial improved control over adhesion factor expression,
-regulating a more diverse set of adhesion factors faster. This poses further challenges to targeting.
-It could be smarter to not target effector-molecules, but rather upstream regulators of adhesion.
-THis work shows that NF-kappaB signaling, which by itself is not treatable, but regulators
-downstream of NF-kappaB were shown to be effective \cite{adamikEZH2HDAC1Inhibition2017,adamikXRK3F2InhibitionP62ZZ2018}
-
-3 Cues or associated processes:
-- It could represent a valid strategy to
-stimulate myeloma adhesion, provided that targeted adhesion molecule is proven
-to not be involved in other steps of dissemination, such as extravasation.
-Stimulating adhesion factor expression or activity is harder than inhibition,
-yet not impossible. For instance, the short polypeptide SP16 can activate the
-receptor LRP1 \dashed{its high expression being associated with improved
-      survival of MM patients in this work}, showing promising results during phase I
-clinical trial \cite{wohlfordPhaseClinicalTrial2021}, but could potentially
-increase survival of MM through PI3K/Akt signaling
-\cite{potereDevelopingLRP1Agonists2019, heinemannInhibitingPI3KAKT2022} -
-
-
-
-
-
-
-
-What evidence is there that supports this framework?
-
+How studied?
+1 Location: These changes could be studied by tracking the
+expression of adhesion factors in MM cells at different locations in mouse
+models. For humans, designing studies that gather biopsies at different
+locations from the same patient, e.g. bone marrow and cirulating myeloma cells
+could be a starting point.
 
 
 
@@ -899,7 +517,7 @@ What evidence is there that supports this framework?
             \begin{itemize}
                   \item Blocking Endothelial Adhesion through JAM-A decreases progression: \cite{solimandoHaltingViciousCycle2020}
                   \item N-Cadherin is upregulated in MM compared to healthy plasma cells, and has been shown to be a potential target for therapy \cite{mrozikTherapeuticTargetingNcadherin2015}
-
+                  \item - NONE of Them were shown in Chapter 1 of this study, (except for JAM-B)
             \end{itemize}
 
       \item \textbf{Circulating Myeloma Cells}
@@ -938,6 +556,59 @@ What evidence is there that supports this framework?
 
 \end{itemize}
 
+
+According to this, this thesis
+predicts a low expression of adhesion factors in circulating myeloma cells,
+but a high expression in adhesive cells, e.g. non-circulating, or rather those
+
+
+This has great implications for targeting adhesion factors for therapy, as it
+suggests that different adhesion factors should either be antagonized or
+agonized depending on the function of the adhesion factor. According to this
+assumption, adhesion factors involved in intra- and extravasation adhesion should be
+antagonized, while adhesion factors involved in BM adhesion \dashed{as
+      identified in Chapter 2} should be agonized. Indeed, Adhesion factors for endothelium
+were shown to decrease tumour burden in mouse models \cite{asosinghUniquePathwayHoming2001a,mrozikTherapeuticTargetingNcadherin2015}
+
+Together, a detailed mapping of the niches available in the bone marrow is required
+to understand the adhesion factors required for each niche. This is a highly
+complex task, as the bone marrow is a highly complex organ.
+
+
+% ======================================================================
+\unnsubsection{\caddadaptabilitytitle}%
+\label{sec:discussion_caddadaptability}%
+
+biological implications:
+2 Disease Stage:
+- Higher disease stages imply changes in adhesion factors that favor aggressiveness.
+- Aggressiveness includes:
+- Better Colonization of new niches, including extramedullary ones
+- This implies a more diverse set of available adhesion factors
+- Faster regulation to adapt to new niches
+- Better survival in circulation
+
+
+
+This assumption dictates that aggressive myeloma cells gain the ability
+to dynamically express adhesion factors.
+It could be that INA-6 has gained the capability to express adhesion factors
+fast in order to colonize new niches, such as pleura from which they were
+isolated.
+
+
+indeed, 3 temporal subtypes have been identified, associating higher risk with
+faster changes over time \cite{keatsClonalCompetitionAlternating2012}.
+
+Is Disease stage a proxy for tumor aggressiveness?
+
+
+yes, adhesion has prognostic value: A recent study by
+\citet{huDevelopmentCellAdhesionbased2024} developed a cell adhesion-based
+prognostic model for MM, calculating an adhesion-related risk score (ARRS) based
+on expression of only twelve adhesion related genes.
+
+
 \begin{enumerate}
       \item \textbf{Disease Stage}
             \begin{itemize}
@@ -971,6 +642,110 @@ What evidence is there that supports this framework?
                         ambiguous roles in \ac{MM} progression.
             \end{itemize}
 
+\end{enumerate}
+
+
+
+How could this be studied?
+
+2 Progression: Databases of expression from Myeloma cells gathered from bone
+marrow \ac{MGUS}, \ac{aMM}, \ac{MM}, \ac{MMR} already exist
+\citet{akhmetzyanovaDynamicCD138Surface2020,
+      seckingerCD38ImmunotherapeuticTarget2018}. Going through such databases gives a
+good overview. One could categorize genelists using curated databases, get lists
+associated with extravasation, intravasation, Bone marrow adhesion. For every
+gene of these genelists, they could be filtered for significant differences
+between the stages. Further categorizations of pairwise comparisons of stages
+are required. but overall, these genelists could be a starting point for This
+approach is similar to the genelists published in chapter 1, with the difference
+that the genelist was furthere filtered by the RNAseq results of \textit{in
+      vitro} experiments.
+
+
+
+What new implications do these dimensions have on targeting adhesion factors for
+therapy?
+
+
+2 Disease Stages:
+- Specialized treatment for each stage?
+- Aggressive MM cells have potantial improved control over adhesion factor expression,
+regulating a more diverse set of adhesion factors faster. This poses further challenges to targeting.
+It could be smarter to not target effector-molecules, but rather upstream regulators of adhesion.
+THis work shows that NF-kappaB signaling, which by itself is not treatable, but regulators
+downstream of NF-kappaB were shown to be effective \cite{adamikEZH2HDAC1Inhibition2017,adamikXRK3F2InhibitionP62ZZ2018}
+
+
+
+
+% ======================================================================
+\unnsubsection{\cadddiversitytitle}%
+\label{sec:discussion_cadddiversity}%
+lorem ipsum
+- CXCL12 expresion varies from QM between QM
+
+One important dimension that is missing here is the genetic background of the
+myeloma cells. These are based on recurrent patterns of chromosomal aberrations
+or mutational signatures, defining structural and single nucleotide variants
+\cite{kumarMultipleMyelomasCurrent2018a,
+      hoangMutationalProcessesContributing2019}. The prognostic value of genetic
+variants in MM is well established \cite{sharmaPrognosticRoleMYC2021}, and their
+identification is becoming precise and cost-effective using \emph{optical
+      genome mapping}, making progress towards personalized therapies
+\cite{zouComprehensiveApproachEvaluate2024,
+      budurleanIntegratingOpticalGenome2024}. The prognostic value of adhesion factor
+expression is nowhere nearly as advanced, with establishing cell adhesion as a
+reliable prognostic factor only recently
+\cite{huDevelopmentCellAdhesionbased2024}.
+
+
+
+% ======================================================================
+\unnsubsection{\caddtriggertitle}%
+\label{sec:discussion_caddtrigger}%
+
+biological implications:
+
+3 Cues or associated processes:
+- Different cues could trigger different adhesional changes
+- Soluble signals?
+- Loss of CD138 \cite{akhmetzyanovaDynamicCD138Surface2020}
+- Detachment through intercellular effects: cell division, Saturation of hMSC adhesion surface
+- Detachment with mechanical influence: External forces and instability after aggregate size
+-
+
+
+why is this important?
+3 The cues that trigger the detachment of MM cells are not well understood. It
+could be that MM cells detach due to a combination of factors, such as loss of
+adhesion factors, changes in the BM microenvironment, or cell division or
+even completely random. Knowing specific dissemination signals helps preventing
+dissemination.
+
+
+Papers like \citet{akhmetzyanovaDynamicCD138Surface2020} make it seem as if
+there is one molecule that decides if a myeloma cell is circulating or not.
+
+It's less about one clear (molecular) mechanism that decides that a myeloma cell
+decides to become a disseminating cell, but rather a indirect consequence of a combination of many
+processes.
+These processes are:
+- Loss of adhesion factors or dynamic expression of adhesion factors
+- Loss of dependency from bone marrow microenvironment
+- asdf
+
+Our thesis postulates that there is no big switch that decides if a myeloma cell
+detaches from the bone marrow, but rather a prolonged process of continuisly
+downregulating adhesion factors, a dynamic upregulation of adhesion factors when
+they're needed, but the ultimate event that triggers release is better
+explained by external mechanical forces intercellular effects (cell division,
+saturation of adhesive surface and rising instability of aggregates after
+reaching a minimum size).
+
+Detachment is triggered by external mechanical forces on cell
+conglomerates previously sensitized by changes in cell adhesion behaviour
+
+\begin{enumerate}
       \item \textbf{Cues or Processes}
             \begin{itemize}
                   \item This work showed that detachment happened mostly
@@ -992,193 +767,40 @@ What evidence is there that supports this framework?
 
 
 
+How can this be studied?
 
+3 Cues: Identifying such signals might be challenging without
+having understood the other two hypotheses about adaptability first.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-% ======================================================================
-% \unnsubsection{Dynamic and Niche-Dependent Regulation of Adhesion Factors}%
-% \label{sec:discussion_dynamic_regulation}%
+What new implications do these dimensions have on targeting adhesion factors for
+therapy?
 
+3 Cues or associated processes:
+- It could represent a valid strategy to
+strengthen myeloma adhesion, provided that targeted adhesion molecule is proven
+to not be involved in other steps of dissemination, such as extravasation.
+Stimulating adhesion factor expression or activity is harder than inhibition,
+yet not impossible. For instance, the short polypeptide SP16 can activate the
+receptor LRP1 \dashed{its high expression being associated with improved
+      survival of MM patients in this work}, showing promising results during phase I
+clinical trial \cite{wohlfordPhaseClinicalTrial2021}, but could potentially
+increase survival of MM through PI3K/Akt signaling
+\cite{potereDevelopingLRP1Agonists2019, heinemannInhibitingPI3KAKT2022} -
 
-% 1. Summarize Result
-% 2. Explain biological implication
-% 3. Summarize key literature that contributes to this implicat
-% 4. Judge if the implication hold up against current knowledge
-% 5. Name the explicit holes in the current knowledge
-% 6. Formulate a hypothesis that could fill these holes
+- One could also accept that many cues are simply not controllable, and hope for
+systemic therapies like CAR- T Cells
 
-Given the complexity of cell adhesion, and integrating direct observations from
-live-cell imaging, one requires to extend the definition of Cell adhesion
-to cell adhesion behavior:
 
-Cell Adhesion Behavior =
 
-• Dynamic Attachments, Detachments \& Migration: How and when cells form and
-break connections with each other and the ECM in various physiological contexts
-like development, wound healing, and immune responses.
 
-• Regulatory Mechanisms: How various signaling pathways and molecular regulators
-initiate attachment, detachment \& migration. This includies how cells adapt
-their adhesion characteristics in response to changes in their environment, such
-as variations in ECM composition or mechanical forces.
 
-• Changes Induced by attachments, detachments \& migration: How the cell
-adhesion process influences other cellular behaviors, such as cell migration,
-proliferation, and differentiation.
 
 
-% \textbf{Colonizing New Niches:}
-This work showed that \INA cells dynamically upregulate adhesion factors when in
-direct contact with \acp{hMSC}. Such adhesion factors are not expressed by \INA
-cells without contact to \acp{hMSC}, or by \INA cells emerging as daughter cells
-from \MAina cells. This implies that myeloma cells are capable of rapid changes in
-adhesion factor expression that are substantially dynamic.
-Predicting when a myeloma cell starts regulating adhesion factors is a key
-question in understanding dissemination.
 
-The following paragraphs
-discuss how the idea of dynamic adhesion factor expression holds up
-against current knowledge.
 
-
-
-This is in line
-substantial dynamics of
-myeloma cells to regulate adhesion factors according to their environment.
-
-
-
-This implies that myeloma cells
-dynamically regulate adhesion factors during colonization of new niches.
-
-
-
-
-INA-6 was initially isolated from plasma cell leukemia as an extramedullary
-plasmacytoma located in the pleura from a donor of age.
-
-
-
-
-% \textbf{Extrapolating Dynamic Adhesion Factor Expression onto other Disseminative Steps?:}
-
-For example,
-circulating MM cells show lower levels of integrin $\alpha4\beta1$
-compared to those residing in the BM. Furthermore, treatment with a syndecan-1 blocking antibody
-has been shown to rapidly induce the mobilization of MM cells from the BM to
-peripheral blood in mouse models, suggesting that alterations in adhesion
-molecule expression facilitate MM cell release
-\cite{zeissigTumourDisseminationMultiple2020}.
-
-
-
-% \textbf{Losing Adhesion Factors During Progression:}
-There is not much more information available on the background of that patient \cite{TwoNewInterleukin6,burgerGp130RasMediated2001}.
-But assuming that
-This is a highly advanced
-stage of myeloma.
-However,  Chapter 1 shows that adhesion factors are
-lost during MM progression. INA-6 are highly adhesive to hMSCs.
-This is a contradiction that needs to be resolved.
-
-
-
-
-
-% However, INA-6 do not express adhesion factors. They do that only in hMSC presence
-% Hence MAINA-6 could be a smaller fraction of MM cells, specialized on preparing a new niche
-% for the rest of the MM cells. This could be a reason why they are so adhesive.
-
-This assumption dictates that aggressive myeloma cells gain the ability
-to dynamically express adhesion factors.
-It could be that INA-6 has gained the capability to express adhesion factors
-fast in order to colonize new niches, such as pleura from which they were
-isolated.
-
-This shows that not just the stage of the disease, but also the location of the
-myeloma cells plays a role when considering adhesion factors.
-
-According to this, this thesis
-predicts a low expression of adhesion factors in circulating myeloma cells,
-but a high expression in adhesive cells, e.g. non-circulating, or rather those
-
-indeed CD138 paper isolated cells from circulating MM cells \cite{akhmetzyanovaDynamicCD138Surface2020}
-
-indeed, 3 temporal subtypes have been identified, associating higher risk with
-faster changes over time \cite{keatsClonalCompetitionAlternating2012}.
-
-% ======================================================================
-% \unnsubsection{Subsets of Adhesion Factors Contribute To Different Steps of Dissemination}%
-% \label{sec:discussion_subsets_adhesion_factors}% 
-
-Here: Myeloma adhesion to BMME
-
-Literature: Intra-/Extravasation has molecules
-
-This implies that different adhesion factors are required for different steps of
-dissemination.
-
-
-
-
-- adhesion molecules during vascular involvement have these adhesion molecules: JAM-C
-and CD138.
-- NONE of Them were shown in Chapter 2 of this study, (except for JAM-B)
-
-
-- One has to consider that intravasation and/or intra-/extravasation would require a different
-set of adhesion factors than adhesion to BM or extramedullary environments.
-
-This has great implications for targeting adhesion factors for therapy, as it
-suggests that different adhesion factors should either be antagonized or
-agonized depending on the function of the adhesion factor. According to this
-assumption, adhesion factors involved in intra- and extravasation adhesion should be
-antagonized, while adhesion factors involved in BM adhesion \dashed{as
-      identified in Chapter 2} should be agonized. Indeed, Adhesion factors for endothelium
-were shown to decrease tumour burden in mouse models \cite{asosinghUniquePathwayHoming2001a,mrozikTherapeuticTargetingNcadherin2015}
-
-\citet{bouzerdanAdhesionMoleculesMultiple2022}: "Classically, the BMM has been
-divided into endosteal and vascular niches"
-
-Together, a detailed mapping of the niches available in the bone marrow is required
-to understand the adhesion factors required for each niche. This is a highly
-complex task, as the bone marrow is a highly complex organ.
-
-
-
-% ======================================================================
-% \unnsubsection{What Triggers Release: One Master Switch, Many Small Switches, or is it just Random?}%
-% \label{sec:discussion_many_small_switches}%
-
-Papers like \citet{akhmetzyanovaDynamicCD138Surface2020} make it seem as if
-there is one molecule that decides if a myeloma cell is circulating or not.
-
-It's less about one clear (molecular) mechanism that decides that a myeloma cell
-decides to become a disseminating cell, but rather a indirect consequence of a combination of many
-processes.
-These processes are:
-- Loss of adhesion factors or dynamic expression of adhesion factors
-- Loss of dependency from bone marrow microenvironment
-- asdf
-
-Our thesis postulates that there is no big switch that decides if a myeloma cell
-detaches from the bone marrow, but rather a prolonged process of continuisly
-downregulating adhesion factors, a dynamic upregulation of adhesion factors when
-they're needed, but the ultimate event that triggers release is better
-explained by external mechanical forces intercellular effects (cell division,
-saturation of adhesive surface and rising instability of aggregates after
-reaching a minimum size).
-
-% Hence, \emph{detachment simply happens} once these processes are present. 
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ======================================================================
 \unnsubsection{Outlook: High-Value Research Topics for Myeloma Research Arising from this Work}
@@ -1269,12 +891,16 @@ between \ac{hMSC} and \INA cells.
 \unnsubsection{\textit{\textbf{Conclusion\,3:} The Dynamic Adhesion Hypothetical Framework for Myeloma Dissemination}}%
 \label{sec:discussion_conclusion_cancer}%
 
-lorem ipsum yes yes very bad
 
 
+How does limited understanding of one dimension prevent the understanding of the
+other dimensions?
 
+Location \& Progression: If we don't know the expression profile of an MM cell depending on their
+source, results become incomparable.
 
-
+Location \& Cues: If we don't know the cues that trigger detachment, we can't
+predict where the MM cells will detach.
 
 
 
