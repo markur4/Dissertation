@@ -43,7 +43,7 @@
 % \includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/4_CHAPTER2}
 % \includeonly{PARTS/5_SD_microscopy}
-\includeonly{PARTS/5_SD_cancer}
+% \includeonly{PARTS/5_SD_cancer}
 % \includeonly{PARTS/5_SD_coding}
 % \includeonly{PARTS/6_APDX_FIGURES}
 % \includeonly{PARTS/6_APDX_TABLES}
@@ -111,10 +111,8 @@
 \unnsection{Introduction}%
 \label{sec:intro}%
 
-% > Include 2_INTRO_CANCER.tex
+% > Include 2_INTRO_CANCER.tex & 2_INTRO_CODING.tex
 \include{PARTS/2_INT_cancer}
-
-% > Include 2_INTRO_CODING.tex
 \include{PARTS/2_INT_coding}
 \newpage
 
@@ -134,11 +132,24 @@
 % == Summarising Discussion ============================================
 % > Include SUMMARISING_DISCUSSION.tex
 
+\unnsection{Summarising Discussion}%
+\label{sec:summarising_discussion}%
+The subsequent sections will discuss the chapters presented earlier, focusing on
+how they fit within current scientific fields and the technical and academic
+challenges encountered during this project. Given the extensive scope of the
+topics covered, this discussion is divided into three main sections: Microscopy,
+Molecular Biology, and Data Analysis. Each section will detail key experiments
+that led to shifts in understanding and present intermediary conclusions to
+ensure clarity on broad topics.
+
+
+
+
+\include{PARTS/5_SD_coding}
 \include{PARTS/5_SD_microscopy}
 \include{PARTS/5_SD_cancer}
-\include{PARTS/5_SD_coding}
 \newpage
-\include{PARTS/5_SD_conclusion}
+\include{PARTS/5_SD_CONCLUSION}
 
 \newpage
 

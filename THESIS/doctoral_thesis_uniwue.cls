@@ -374,7 +374,9 @@
 % ## Command to nest a sentence with dashes, e.g. for appositives
 % > This is a longer dash: —
 % > This is a shorter dash: --
-\newcommand{\dashed}[1]{--\,#1\,--}
+% \newcommand{\dashed}[1]{--\,#1\,--}
+\newcommand{\dashed}[1]{\textemdash#1\textemdash}
+% \newcommand{\dashed}[1]{\ignorespaces--\,#1\,--\ignorespaces}
 
 
 % == Math ==============================================================
