@@ -158,7 +158,7 @@
 \usepackage{multirow} % > For rows conatining two lines
 
 %== Footnotes
-\usepackage{bigfoot} % > For footnotes spanning multiple pages
+% \usepackage{bigfoot} % > For footnotes spanning multiple pages
 
 % == Citations 
 \usepackage{apacite} % > For citations
@@ -375,11 +375,14 @@
 
 % == Sentence ==========================================================
 % ## Command to nest a sentence with dashes, e.g. for appositives
-% > This is a longer dash: —
+% > This is a longer dash: \textemdash
 % > This is a shorter dash: --
-% \newcommand{\dashed}[1]{--\,#1\,--}
-\newcommand{\dashed}[1]{\textemdash#1\textemdash}
-% \newcommand{\dashed}[1]{\ignorespaces--\,#1\,--\ignorespaces}
+\newcommand{\dashed}[1]{%
+  \unskip % > Removes the last space before the command, if it exists.
+  \textemdash#1\textemdash%
+  \ignorespaces % > Ignores the spaces following the command.
+}
+
 
 
 % == Math ==============================================================
@@ -798,9 +801,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \footnote{\citet{#2}: \textit{``#1''}}\xspace%
 }
 
-% Declare a new footnote type using bigfoot
-% \DeclareNewFootnote{default}
-% \DeclareNewFootnote{Repeated}[fnsymbol]
+
 
 
 % ======================================================================
