@@ -1,0 +1,983 @@
+
+
+
+
+% ======================================================================
+\unnsubsection{Isolating \& Quantifying Subpopulations within Cells in Direct
+      Contact with MSCs}%
+\label{sec:discussion_novel_methods}%
+This project aimed to develop methodologies for isolating cells after direct
+contact with \acp{hMSC}. The primary challenge was the scarcity of \textit{in
+      vitro} methods that could effectively separate and isolate adhering cell
+subpopulations for subsequent molecular analysis. Most available techniques
+predominantly focus on the quantification of cell adhesion
+\cite{khaliliReviewCellAdhesion2015, kashefQuantitativeMethodsAnalyzing2015},
+and often employ indirect contact setups, complex micromanipulation, or are
+unsuitable for using live \acp{hMSC} as the immobilizing surface. To address the
+limitations of current adhesion assays, we developed and enhanced innovative
+methodologies, specifically the \acf{WPSC} and V-Well adhesion assays.
+
+\textbf{Variability of Washing Steps}: Given the complexity of the requirements,
+this project first attempts relied on simple and traditional adhesion assays
+that rely on manual washing steps \cite{humphriesCellAdhesionAssays2009}.
+Washing involves aspirating the medium, dispensing washing buffer, and
+potentially repeating these steps multiple times. This introduces variability
+due to differences in pipetting techniques, which affect the accuracy of volume
+transfer \cite{guanAssessingVariationsManual2023,
+      pushparajRevisitingMicropipettingTechniques2020}. However, adhesion assays don't
+rely on precise volume transfer, but accurate detachment of cells adhering at
+the well bottom. This introduces a new set of considerations for the pipetting
+technique, especially since cells are highly sensitive to shear forces applied
+by fluid flow. From the author's experience with washing experiments and
+subsequent microscopic evaluations (data not shown), several factors could
+contribute to the variability of washing steps:
+\begin{enumerate}
+      \item The distance of the pipette tip from the well bottom, which
+            decreases during aspiration.
+      \item The position of the pipette tip relative to the well bottom (center or edge).
+      \item The angle of the pipette tip.
+      \item The speed of aspiration.
+      \item Accidental or intended contact between the pipette tip and the cell layer.
+      \item The residual volume left after aspiration.
+      \item \textit{The same considerations apply when dispensing the washing buffer.}
+\end{enumerate}
+
+
+In addition to user-dependent factors, other variables such as the cells'
+position on the well bottom can significantly impact the outcome. To the
+author's experience, cells located at the edge of the well don't detach as
+easily as those in the center, while cells touching the edge are almost
+impossible to remove. This phenomenon is likely related to the \textit{boundary
+      layer effect}, where fluids slow down near the edges of the well
+\cite{weyburneNewThicknessShape2014}.
+
+Together, since both user-dependent and independent factors can affect the
+outcome of washing steps, adhesive assays that replace washing are highly
+desirable. Still, since washing is straightforward and some variability is
+alleviated by the disciplined execution of washing protocols, it remains a
+common method for adhesion assays.
+
+
+
+
+\textbf{Directly Interacting Cells Contain Unexplored Interaction Scenarios}: It
+is evident that direct and indirect contact to \acp{MSC} have varying effects on
+myeloma cells. That difference is crucial for understanding changes in the
+\ac{BMME} during MM progression \cite{fairfieldMultipleMyelomaCells2020,
+      dziadowiczBoneMarrowStromaInduced2022}. These studies utilize well-inserts to
+co-culture myeloma cells in close \dashed{indirect} contact with MSCs. However,
+such comparison of indirect \textit{vs.} direct co-culturing methods might not
+fully represent the complexity of intercellular interactions scenarios found in
+the \ac{BMME}. This is exemplified by this project, as it relied on the complex
+growth behavior: \INA cells aggregated homotypically in direct
+proximity to those adhering heterotypically to \acp{hMSC}, and detached
+through cell division. Furthermore, such methods fail to capture the subtle
+variations in paracrine signaling concentrations, where even a few micrometers
+of distance could significantly alter cellular responses.
+
+Such knowledge shifted this project's point of view as well: Initially, our
+hypothesis focused on direct heterotypic interactions, not expecting a \nMAina
+population, but rather subpopulations within \MAina cells that are separable by
+varying adhesion strengths. Hence, our assay employed strict conditions favoring
+one growth scenario \dashed{heterotypic interactions}, with co-cultures
+providing unlimited hMSC-surface availability causing predominantly heterotypic
+adhesion, while the short incubation time prevented the formation of aggregates.
+Despite these measures, our assay still captured cells emerging from recent cell
+divisions rather than from weak heterotypic adherence as initially hypothesized.
+This demonstrates the robustness of our method in separating subpopulations that
+arising from unexpected intercellular interaction scenarios. This can be a major
+an advantage over methods that summarize direct interactions as one population.
+Analysing the non-adhering subpopulation within directly interacting cells could
+provide valuable insights not just in multiple myeloma, but also metastasis of
+other cancer types.
+
+
+\textbf{Minimizing Variability}:
+There are innovative adhesion assays that both
+support the isolation of nonadherent subpopulations from directly interacting
+cells, and avoid variability introduced by washing steps.
+
+One simple method involves flipping over a 96-well plate, with surface tension
+preventing medium spills as non-adhering cells fall to the surface for
+collection \cite{zepeda-morenoInnovativeMethodQuantification2011}. However, we
+found that the medium in fact did spill occasionally (not shown). Other
+approaches involve sealing the plate, such as with PCR plate seals, and using
+centrifugation to separate cells \cite{reyesCentrifugationCellAdhesion2003,
+      chenHighThroughputScreeningTest2021}. Despite our efforts, we could not
+consistently avoid air bubbles, which, after flipping, would contact the cell
+layer and create dry regions during centrifugation.
+
+The V-Well adhesion assay does not flip, but collects non-adhering cells into
+the nadir of V-shaped wells during centrifugation
+\cite{weetallHomogeneousFluorometricAssay2001}. This work profited greatly from
+this method, while \dashed{to our knowledge} being the first to use cell
+monolayers as the immobilizing surface. We value this method for its precision,
+as centrifugation applies a uniform and configurable force, while the readout
+remains straightforward, relying on the total fluorescent brightness rather than
+individual cell counting.
+
+
+
+
+\textbf{Specializing in Quantifying Adhesion or Isolating Subpopulations}: Most
+adhesion assays primarily focus on quantification rather than isolation. The
+author attempted to combine both quantification and isolation, but found that
+the two goals can be mutually exclusive. The author summarizes the key
+differences between quantification and isolation approaches as such:
+
+\begin{itemize}
+      \item Cell Manipulation for Harvest \textit{vs.} Readout:
+            \begin{itemize}
+                  \item Isolation methods are designed to manipulate cells for easy
+                        harvest. For instance, the \ac{WPSC} method uses a catching
+                        plate to collect non-adherent cells for subsequent analysis.
+                  \item Quantification methods, on the other hand, manipulate cells
+                        to simplify the readout process. For example, the V-Well
+                        assay, which pellets cells into a single location, allowing
+                        for a pooled fluorescence measurement without the need for
+                        extensive cell handling.
+            \end{itemize}
+
+      \item Optimization for Subsequent Analysis \textit{vs.} Sample Throughput:
+            \begin{itemize}
+                  \item Isolation methods are optimized for detailed subsequent
+                        analyses, such as RNA or protein analysis. For example,
+                        \ac{WPSC} minimizes the introduction of biases such as those
+                        from fluorescent staining, making it suitable for downstream
+                        molecular assays.
+                  \item Quantification methods are optimized for high sample
+                        throughput. The V-Well assay, as an end-point assay, is
+                        designed to efficiently handle multiple treatments
+                        simultaneously, providing quick and comparative results with
+                        lower cell numbers.
+            \end{itemize}
+      \item Handling of Cell Numbers:
+            \begin{itemize}
+                  \item Isolation methods, such as \ac{WPSC}, require multiple wells
+                        (e.g., 96 wells) to gather a sufficient amount of cells per
+                        subpopulation, which is crucial for robust downstream
+                        analyses.
+                  \item Quantification methods, exemplified by the V-Well assay, are
+                        highly efficient even with low cell numbers.
+            \end{itemize}
+\end{itemize}
+
+
+
+Thus, this adopted two distinct techniques for isolating and quantifying
+directly interacting subpopulations, each optimizing for different outcomes, but
+also supporting the separation of subpopulations within direct intercellular
+interactions.
+
+Still, it is theoretically possible to insert microscopy steps into the
+\ac{WPSC} method to scan the well bottom for later cell counting. Also, this
+work effectively isolated cell pellets from the V-well plate for subsequent
+fixation and cell cycle profiling. The process was
+tedious and required multiple technical replicates to achieve sufficient cell
+numbers for analysis. It also required removing \ac{hMSC} from the V-well nadir
+to prevent contamination during pellet aspiration.
+
+Together, while both methods can combine quantification and isolation, they
+are optimized towards either of them. Knowing these strengths and weaknesses
+could help to advance these methods in future studies.
+
+
+
+
+
+\textbf{Rationales of the Well Plate Sandwich Centrifugation}: Inspired by the
+principles of both flipping and V-Well adhesion assays, we developed the Well
+Plate Sandwich Centrifugation (\acf{WPSC}) method to address the challenges of
+isolating cell populations. This method innovatively combines elements from both
+techniques to provide a more reliable approach to cell isolation. One of the key
+advantages of WPSC is its ability to reduce the variability commonly introduced
+by manual pipetting. Instead of relying on aspiration, which introduce
+variability in cell collection and requires touching the well bottom for
+complete removal of medium, WPSC employs centrifugation to remove non-adhering
+cells. Medium is then returned by pipetting to repeat the process and maximize
+non-adhering cell collection, as the number of detachable cells plateau after
+few rounds of centrifugation. Hence, this approach compromises
+between minimizing washing variability and isolating larger quantities of cells.
+
+The 96 well plate format has advantages, reducing spilling when flipping the
+sandwich, as surface tension kept fluids in place. The 96 well plate format also
+reduces per-well variability by performing the same washing procedure up to 96
+times.
+
+The slow centrifugation speeds used during \ac{WPSC} are also decided after
+thorough consideration. For this, one has to discuss how exactly
+non-adhering cells detach during centrifugation. While centrifugal force is an
+obvious factor, the properties of cell adhesion are unclear under dry conditions
+during centrifugation. The author assumed that the cells are being pulled along
+by the medium as it is centrifuged into the catching plate. Hence, the centrifugation
+speed was chosen as fast enough to transfer the medium, without completely
+drying the co-culture plate and minimizing overall cell stress.
+
+A significant challenge in \ac{WPSC} is the dissociation of \MAina from the hMSC
+monolayer. WPSC employs two distinct techniques to achieve this dissociation.
+The first technique involves repeated treatment with the gentle digestive enzyme
+Accutase followed by \acp{MACS}. \ac{MACS}, despite being effective, is costly,
+time-consuming, reduces overall cell yield, and potentially introduces biases
+due to CD45 antibody selection and the requirement for cold-treatment. The
+second technique utilizes strong pipetting to physically detach non-adhering
+cells (termed \emph{`Wash'}). It is important to note that these techniques did
+not affect the protocol on detaching \nMAina from the co-culture, hence
+providing for a consistent ratio of isolated \MAina to \nMAina across all
+experiments. Ultimately, we preferred \emph{Wash}, as \ac{MACS} had to be performed
+on all samples to ensure comparability, reducing overall cell yield which became
+limiting for downstream applications, especially for \nMAina cells. Both methods
+achieved comparable purity of \MAina cells, with few hMSCs per $10e4$
+\MAina cells (purity assessment not shown). \emph{Wash} probably pofited from
+the highly durable nature of primary hMSC monolayers, whereas \emph{MACS}
+required dissociation of the co-culture.
+
+Together, \ac{WPSC} offers a versatile solution for isolating hMSC-interacting
+myeloma cells. It successfully balances the need for precision with the ability
+to handle larger cell quantities. \ac{WPSC} could be adapted to other cell types
+that combines monolayer forming and suspension cells.
+
+
+
+\textbf{Key Points:} Ultimately, this work established two methodologies
+that could represent a significant advancement in the field of adhesion assays,
+providing cost-effective, precise, reliable, and reproducible techniques for
+both isolating and quantifying subpopulations within co-cultures of directly
+interacting cell types. They offered valuable insights into the mechanisms of MM
+detachment and are potentially applicable to other research questions that focus
+on multicellular interactions and complex growth scenarios.
+
+
+
+
+%%%%%%%%%%%%
+% ======================================================================
+
+\newcommand{\footcadd}{%
+      \emph{\acf{CADD}} (defined in this work): The observation and measurement
+      of time-dependent changes in cell adhesion and detachment events.
+      \ac{CADD} characterizes the time cells spend attached, migrating or
+      detached and associates these phases with molecular signatures, such as
+      \ac{CAM} expression or cell signaling mediated by \acp{CAM} or the
+      microenvironment. \ac{CADD} expands traditional \emph{cell adhesion} by a
+      time component and implies an intention to predict attachment and
+      detachment events. A focus on dynamics is especially relevant for
+      suspension cells that exhibit intricate attachment and detachment
+      behavior.
+      %
+}
+
+
+% \unnsubsection{Constructing a Hypothetical Framework of Dissemination}%
+\unnsubsection{Integrating Evidence and Hypotheses for a Mechanistic
+      Understanding of Dissemination}%
+\label{sec:discussion_framework}%
+The results outlined in Chapter 1 encompass various aspects of multiple myeloma
+research, including colonization of the \ac{BMME}, myeloma-\ac{MSC}
+interactions, and the association of adhesion factor expression with patient
+survival and disease stages. Such a broad scope invites the formulation of
+generalized conclusions, potentially compromising scientific rigor. The
+following sections aim to clearly separate hypotheses from evidence to guide
+further research on dissemination.
+
+\textbf{Integrating Observations of \INA in the Multistep Dissemination Model:}
+The results gained in this work fit well into the multistep model proposed by
+\citet{zeissigTumourDisseminationMultiple2020}. For most steps, observations
+were made that could inspire further hypotheses and research:
+
+
+\begin{enumerate}
+      \item \textbf{Retention:}
+            \begin{itemize}
+                  \item \textit{Observation:} \INA cells attach quickly and
+                        strongly to \acp{hMSC}, forming stable aggregates.
+                  \item \textit{Hypothesis:} Myeloma cells are retained in the
+                        bone marrow microenvironment (BMME) through strong adhesion to
+                        \acp{hMSC} and stable homotypic aggregation.
+                  \item \textit{Experiment:} Inject \INA cells into mice and
+                        examine bone lesions. Compare the growth patterns in mice
+                        co-injected with an ICAM-1 or LFA-1$\alpha$ antibody, which
+                        dissolve homotypic aggregates \textit{in vitro} and prevent
+                        \INA growth \textit{in vivo}
+                        \cite{kawanoHomotypicCellAggregations1991a,
+                              klauszNovelFcengineeredHuman2017}. If disrupting aggregation
+                        leads to diffuse bone colonization rather than focal lesions,
+                        it supports the hypothesis that strong adhesion and
+                        aggregation are crucial for retention in the \ac{BMME}.
+            \end{itemize}
+      \item \textbf{Release:}
+            \begin{itemize}
+                  \item \textit{Observation:} \INA cells detach from \acp{hMSC}
+                        through cell division, and external forces can detach single
+                        cells from \INA aggregates.
+                  \item \textit{Hypothesis:} Myeloma cells detach from the BMME
+                        through cell division and external forces after reaching a
+                        minimal aggregate size.
+                  \item \textit{Experiment:} Inject \INA cells into mice and
+                        compare the cell cycle profiles of circulating cells versus
+                        those in the bone marrow. Enrichment of G1/G0 cells among
+                        circulating cells would support the hypothesis that detachment
+                        is more likely shortly after cell division.
+            \end{itemize}
+      \item \textbf{Intra-/Extravasation:}
+            \begin{itemize}
+                  \item This study did not make experiments to study for
+                        intra-/extravasation, but these phenomena could be
+                        explored with similar methods, if MSCs were replaced by
+                        endothelial cells.
+            \end{itemize}
+      \item \textbf{Colonization:}
+            \begin{itemize}
+                  \item \textit{Observation:} \INA cells exhibit quick
+                        attachment to \acp{hMSC} within one hour and rapidly
+                        upregulate numerous adhesion factors, including \ac{ECM}
+                        factors.
+                  \item \textit{Hypothesis:} Quick attachment and fast
+                        expression of adhesion factors enhance the potential to
+                        colonize new niches. This is particularly relevant as \INA
+                        cells were isolated from the pleura, indicating an ability to
+                        colonize extramedullary sites
+                        \cite{burgerGp130RasMediated2001c}.
+                  \item \textit{Experiment:} Inject \INA cells into mice and
+                        observe if they colonize extramedullary sites. Compare
+                        this to \INA cells with reduced adaptability to test the
+                        hypothesis. Research is required to find techniques to
+                        reduce such putative adaptability, one potential option
+                        is using XRK3F2 to inhibit p62, an upstream activator of
+                        NF-$\kappa$B \cite{adamikXRK3F2InhibitionP62ZZ2018}. In
+                        fact, NF-$\kappa$B signaling seems a robust target,
+                        given that it plays a role both in MM patients
+                        \cite{sarinEvaluatingEfficacyMultiple2020}, and inducing
+                        adhesion factor expression in \INA (this work).
+
+            \end{itemize}
+\end{enumerate}
+
+
+These hypotheses  \dashed{based on observations from \INA cells} provide a starting
+point for understanding myeloma dissemination. While these insights are
+specialized for the \INA cell line, they inspire the development of a more
+generalized framework applicable to a broader range of myeloma cases.
+
+\textbf{Constructing a Generalizable Hypothetical Framework of Dissemination:}
+A mechanistic understanding of myeloma dissemination remains elusive. Although
+\citet{zeissigTumourDisseminationMultiple2020} described dissemination as a
+multistep process, evidence is largely collected for individual steps, leaving
+the connections between these steps unproven. As a result, the process of
+dissemination is a patchwork of evidence fragments. The following sections aim
+to integrate such fragments, especially those derived from the \INA cell line in
+this work, to construct a more coherent understanding of myeloma dissemination.
+
+In this context, the author introduces the \emph{Dynamic Adhesion Hypothetical Framework for
+      Myeloma Dissemination}, which leverages direct observations of
+\acf{CADD}\footnote{\footcadd\label{foot:cadd}}. \ac{CADD} characterizes
+the time-dependent changes in cell adhesion and detachment, associating these
+phases with molecular signatures like \ac{CAM} expression or cell signaling
+mediated by \acp{CAM} and the microenvironment. By adding a temporal component,
+\ac{CADD} aims to predict attachment and detachment events.
+
+
+
+\newcommand{\caddadaptation}{ %
+      \ac{CADD} is adapted in response to different microenvironments faced
+      during dissemination %
+}
+\newcommand{\caddadaptationtitle}{ %
+      \textit{Hypothesis 1}: \acf{CADD} is Adapted during Dissemination%
+}%
+
+
+\newcommand{\caddadaptibility}{ %
+      High adaptability of \ac{CADD} is a hallmark of aggressive myeloma %
+}%
+\newcommand{\caddadaptabilitytitle}{ %
+      \textit{Hypothesis 2}: High Adaptability of \ac{CADD} is a Hallmark of
+      Aggressive Myeloma %
+}%
+
+
+\newcommand{\cadddiversity}{%
+      \ac{CADD} is highly diverse within both patients and cell lines %
+}%
+\newcommand{\cadddiversitytitle}{ %
+      \textit{Hypothesis 3}: \ac{CADD} is Highly Diverse Within both Patients
+      and Cell Lines%
+}%
+
+
+\newcommand{\caddtrigger}{%
+      Detachment is caused by multiple cues of varying nature, including
+      external mechanical forces, cell division, loss of \ac{CAM} expression, or
+      even pure chance. }%    
+\newcommand{\caddtriggertitle}{ %
+      \textit{Hypothesis 4}: Detachment is Caused by Multiple Cues of Varying
+      Nature %
+}%
+
+
+\textbf{Key Hypotheses:}
+The Dynamic Adhesion Hypothetical Framework is structured around four key
+hypotheses, each addressing fundamental aspects of myeloma cell dissemination
+based on both literature and the results of this work. These hypotheses are as
+follows:
+
+\begin{enumerate}[parsep=4pt]
+      \item \caddadaptation
+      \item \caddadaptibility
+      \item \cadddiversity
+      \item \caddtrigger
+\end{enumerate}
+
+
+This framework sets the stage for a detailed exploration of each hypothesis,
+linking empirical data with hypothetical constructs to provide a comprehensive
+framework that can help to identify commonalities in myeloma dissemination, but
+also inform the development of targeted therapies.
+
+
+
+
+% ======================================================================
+\unnsubsection{\caddadaptationtitle}%
+\label{sec:discussion_caddadaptation}%
+As presented in Chapter 1, \MAina cells exhibit rapid upregulation of both
+adhesion factors and chemoattractants, adapting their \textit{in vitro}
+\ac{CADD} from homotypic aggregation to colonizing \acp{MSC}. This dynamic
+behavior includes the loss of adhesion factor expression after cell division,
+suggesting that myeloma cells can rapidly change their adhesion factor
+expression in a highly dynamic manner. Given that \INA cells were isolated from
+an extramedullary site \dashed{the pleura}, such changes likely facilitate
+colonization of new microenvironments. This section explores the hypothesis that
+MM cells adapt their \ac{CADD} during each step of dissemination.
+
+% Predicting how and when
+% myeloma cells regulate \ac{CADD} could be key to understanding and preventing
+% dissemination.
+
+
+\textbf{\ac{CADD} Adaptation Assumes Distinguishable Niches:} The multistep
+model proposed by \citet{zeissigTumourDisseminationMultiple2020} posits that
+myeloma cells acquire regulatory mechanisms specialized for each step of
+dissemination. The author hypothesizes that the different niches involved in
+these steps are unique enough to trigger distinct \ac{CADD} adaptations. This
+requires thorough knowledge of separate niches.
+\citet{granataBoneMarrowNiches2022} categorizes the \ac{BM} into sinusoidal,
+arteriolar, and endosteal niches, each spatially and molecularly
+distinguishable. The endosteal niche is home to \ac{MSC} and a majority of
+plasma cells\footnotequote{We suggest that it is reasonable to approach the
+      notion of physical plasma cell survival niches with some skepticism. It is clear
+      that most BM plasma cells rely heavily on access to APRIL or BLyS (66, 70), and
+      it appears that mature plasma cells are relatively stationary (59). However to
+      us, that plasma cells must remain indefinitely in physical survival niches to
+      survive is less obvious.}{wilmoreHereThereAnywhere2017}, and the vascular niches
+\dashed{sinusoidal and arteriolar} include endothelial cells
+\cite{zehentmeierStaticDynamicComponents2014, wilmoreHereThereAnywhere2017}.
+Other niches encountered during dissemination include peripheral blood, lymph
+nodes, and extramedullary sites. Comprehensive mapping and characterization of
+these niches, including their adhesion molecules and soluble factors, is
+necessary to understand the adhesion requirements for each niche. This is a
+highly complex task, yet summarizing available information per niche could
+provide a powerful basis.
+
+
+\textbf{Distinct Adhesion Phenotypes Transitioning between Niches:}
+Adhesion processes are well-documented in MM progression, particularly within
+the \ac{BMME} \cite{bouzerdanAdhesionMoleculesMultiple2022}. However, the
+dynamism of these processes remains unclear. In other cancers, different
+adhesive phenotypes and transitions, such as those seen in
+epithelial-mesenchymal transition (EMT), are common
+\cite{gengDynamicSwitchTwo2014}. For myeloma, EMT-like phenotypes have been
+described, but a clear association with distinct adhesion behaviors is hindered
+by the cells maintaining their suspension state
+\cite{roccaroCXCR4RegulatesExtraMedullary2015,
+      qianSETDB1InducesLenalidomide2023}. This work might be the first to identify
+adhesive subtypes through functional separation of detachable myeloma cells. As
+presented earlier, expanding these findings could reveal transitions in adhesive
+phenotypes during MM dissemination, such as overcoming retention, initiating
+release, and establishing colonization.
+
+
+\textbf{Extramedullary Niche:}
+\ac{CADD} adaptation predicts a specialized set of adhesion factors for
+extramedullary niches. A distinct phenotype has been proposed for extramedullary
+myeloma\footnotequote{Our analysis concluded that the gain of CD44, loss of
+CD56, loss of very late antigen-4 (VLA-4), imbalance of the chemokine
+receptor-4-chemokine ligand-12 (CXCR4-CXCL12) axis, [...] show an increased
+propensity [...] to leave the bone marrow and hone in extramedullary sites
+giving rise to more aggressive extramedullary diseases.
+}{guptaExtramedullaryMultipleMyeloma2022}, characterized by changes in
+expression of CD44, CD56, VLA-4, and CXCR4
+\cite{guptaExtramedullaryMultipleMyeloma2022}. The role of CXCR4 in mediating
+adhesion factor expression is well established, particularly in extramedullary
+MM cells \cite{roccaroCXCR4RegulatesExtraMedullary2015,
+guptaExtramedullaryMultipleMyeloma2022}: Extramedullary myeloma cells
+overexpress CXCR4, making them more responsive to cues that induce adhesion
+factor expression, such as CD44/H-CAM.
+
+
+
+\textbf{Vascular Niche:} 
+\ac{CADD} adaptation predicts a specialized set of adhesion factors for
+endothelial interaction, supporting intravasation and extravasation. Although
+not assessed in this thesis, the vascular niche is a popular therapeutic
+target for preventing dissemination \cite{neriTargetingAdhesionMolecules2012}.
+Key adhesion factors like JAM-A and N-Cadherin have been highlighted as
+potential targets \cite{solimandoHaltingViciousCycle2020,
+mrozikTherapeuticTargetingNcadherin2015}. These factors were not differentially
+expressed between subpopulations isolated in Chapter\,1, suggesting distinct
+regulatory mechanisms for vascular versus \ac{MSC} interactions.
+
+\textbf{Circulating MM:} 
+An adaptive \ac{CADD} would predict that circulating MM cells lose adhesion
+factors. Studies confirm that \dashed{compared to BM-resident cells} circulating
+\ac{MM} cells exhibit reduced expression of multiple adhesion factors, including
+$\alpha4\beta1$ and CD138/Syndecan-1
+\cite{paivaDetailedCharacterizationMultiple2013,
+paivaCompetitionClonalPlasma2011, akhmetzyanovaDynamicCD138Surface2020}.
+Evidence suggests that a dynamic loss of CD138/Syndecan-1 and gain of JAM-C
+causes intravasation, circulation, and dissemination of MM cells
+\cite{akhmetzyanovaDynamicCD138Surface2020,
+brandlJunctionalAdhesionMolecule2022}. This thesis also shows that \nMAina
+cells, after emerging as daughter cells from \MAina, not only lose adhesion
+factor expression but also exhibit increased survival during IL-6 deprivation,
+potentially aiding survival in circulation.
+
+
+\textbf{\textit{Intermediary Conclusion:} Evidence for Adhesion Phenotypes Lacks Functional Characterization and Proof of Phenotypic Transitions:}
+The concept of \ac{CADD} adaptation is supported by the existence of distinct BM
+niches and the identification of separable adhesion phenotypes. However, most
+transitions between these phenotypes during dissemination are unexplored.
+Functional characterization of adhesive phenotypes and their transitions could
+provide a robust framework for understanding dissemination as a multistep
+process, reinforcing the dynamic adhesion hypothetical framework. Mapping
+adhesive properties for each involved niche could aid this endeavor.
+
+
+
+\textbf{Implications for Therapy:}
+Adhesion molecules have been targeted for therapy for over a decade
+\cite{nairChapterSixEmerging2012, neriTargetingAdhesionMolecules2012}.
+Especially inhibiting adhesion molecules involved in interaction with the
+endothelium effectively reduces tumor burden in mouse models
+\cite{asosinghUniquePathwayHoming2001a,
+mrozikTherapeuticTargetingNcadherin2015}. A deeper understanding of how myeloma
+cells regulate \ac{CADD} could be key to predicting and preventing
+dissemination. \ac{CADD} adaptation suggests that different adhesion factors
+should be either antagonized or agonized depending on their role. For instance,
+adhesion factors involved in intravasation and extravasation should be
+antagonized, while those facilitating BM retention should be
+agonized\,\textemdash\autoref{tab:1} provides a list of potential retention
+targets.
+
+
+
+\textbf{Considerations for Research on Myeloma Cell Adhesion:}
+Studying adhesion factors in MM \textit{in vitro} requires considering the
+specific microenvironmental context. Some adhesion factors are not present in MM
+cells but can be rapidly expressed with appropriate signals. Also, further
+studies should differentiate between initial adhesion and upregulated adhesion
+factors. For example, performing a \ac{WPSC} assay after 30 minutes of adhesion
+could separate \INA-6 cells based on initial adhesion capability, with RNAseq of
+\nMAina \textit{vs} \MAina identifying initial adhesion factors. This
+differentiation could be crucial for predicting colonization potential across
+niches, as initial adhesion is likely to be essential for subsequent growth in
+\ac{BM} or extramedullary environments.
+
+
+\textbf{\textit{Concluding Remarks:}} The exploration of \ac{CADD} adaptation
+across various niches reveals a complex interplay between myeloma cells and
+their environments, characterized by a dynamic regulation of adhesion factors.
+The evidence presented supports the hypothesis that myeloma cells modify their
+adhesion phenotype in response to the unique demands of each microenvironment
+they encounter during dissemination. This adaptive capability suggests that
+targeting these specific adhesion mechanisms could offer a promising strategy
+for therapeutic intervention, particularly in preventing the colonization of new
+niches. The distinctions between the adhesion phenotypes among the
+niches—vascular, bone marrow, and extramedullary—underscore the necessity for a
+targeted approach in therapy, which could involve modulation of specific
+adhesion factors to either promote retention or prevent dissemination.
+
+Despite these insights, the current understanding of the functional roles and
+transitions of these adhesion phenotypes during myeloma progression remains
+incomplete. Future research should focus on delineating these roles more clearly
+by functional assays and real-time imaging to capture the dynamic changes in
+adhesion factor expression during cell transition between niches. Such studies
+will be crucial for validating the \ac{CADD} adaptation hypothesis and for
+identifying potential therapeutic targets that could disrupt the dissemination
+process at various stages.
+
+\textbf{Future Directions:} It is imperative to further characterize these
+adhesion factors in a controlled \textit{in vitro} environment, where specific
+microenvironmental contexts are simulated. This approach will allow for a more
+nuanced understanding of how adhesion factors are upregulated and their role in
+niche-specific colonization. By integrating detailed molecular and cellular
+analyses, such as single-cell RNA sequencing and proteomics, researchers can
+identify critical adhesion factors that facilitate the initial colonization
+processes. This knowledge could then inform the development of interventions
+aimed at either enhancing or inhibiting these factors, thereby potentially
+providing a more strategic approach to the management and treatment of multiple
+myeloma.
+
+
+
+
+
+
+% ======================================================================
+\unnsubsection{\caddadaptabilitytitle}%
+\label{sec:discussion_caddadaptability}%
+
+Chapter 1 demonstrates one peculiar paradox of multiple myeloma
+(MM) progression: The expression of adhesion factors is decreased as the
+disease advances, but is swiftly increased in direct contact with \acp{MSC}
+in \INA cells \dashed{a cell line isolated from highly advanced \ac{PCL}}
+
+This assumption dictates that aggressive myeloma cells gain the ability
+to dynamically express adhesion factors.
+It could be that INA-6 has gained the capability to express adhesion factors
+fast in order to colonize new niches, such as pleura from which they were
+isolated.
+
+Disease Stage:
+
+- Higher disease stages imply changes in adhesion factors that favor
+aggressiveness. In fact, ECM from myeloma patients shows tumor-promoting
+properties compared to \ac{ECM} from healthy donors
+\cite{ibraheemBMMSCsderivedECMModifies2019}
+
+- Aggressiveness includes:
+
+- Better Colonization of new niches, including extramedullary ones such as the pleura
+
+- This implies a more diverse set of available adhesion factors
+
+- Faster regulation to adapt to new niches
+
+- Better survival in circulation
+
+
+Overall, it is known that plasma cells express different adhesion factors
+compared to healthy plasma cells, implying  \cite{cookRoleAdhesionMolecules1997,
+      bouzerdanAdhesionMoleculesMultiple2022}.
+
+indeed, 3 temporal subtypes have been identified, associating higher risk with
+faster changes over time \cite{keatsClonalCompetitionAlternating2012}.
+
+Is Disease stage a proxy for tumor aggressiveness?
+
+
+yes, adhesion has prognostic value: A recent study by
+\citet{huDevelopmentCellAdhesionbased2024} developed a cell adhesion-based
+prognostic model for MM, calculating an adhesion-related risk score (ARRS) based
+on expression of only twelve adhesion related genes.
+
+
+Supporting Literature:
+
+\begin{enumerate}
+      \item \textbf{Disease Stage}
+            \begin{itemize}
+                  \item THIS WORK: Expression decreases during progression from
+                        \ac{MGUS} to \ac{MMR} of adhesion factors involved in hMSC
+                        adhesion.
+                  \item The idea that MM pathogenesis involves transformative
+                        processes has been around for decades
+                        \cite{hallekMultipleMyelomaIncreasing1998}, but a
+                        detailed understanding of changing adhesive properties
+                        is still lacking, especially during the progression of
+                        MM.
+                  \item It is discussed that myeloma cell lines derived from
+                        advanced stages show different expression than newly
+                        diagnosed patients, discussing that they come from
+                        multiply relapsed patients
+                        \cite{sarinEvaluatingEfficacyMultiple2020}. This work
+                        also shows that Myeloma cell lines have the lowest
+                        expression of adhesion factors compared to all stages of
+                        \ac{MM} and \ac{MGUS}.
+                  \item For B-Cell Chronic Lymphocytic Leukemia, adhesion
+                        molecule expression patterns define distinct phenotypes in
+                        disease subsets \cite{derossiAdhesionMoleculeExpression1993}.
+                  \item \citet{terposIncreasedCirculatingVCAM12016} reported an
+                        increase in adhesion molecule expression of ICAM-1 and
+                        VCAM-1 in patients with \ac{MM} compared to those with
+                        \ac{MGUS} and \ac{aMM}.
+                  \item However, \citet{perez-andresClonalPlasmaCells2005}
+                        reported that CD40 is downregulated in \ac{PCL}
+                        patients. Hence, different \acp{CAM} could serve
+                        ambiguous roles in \ac{MM} progression.
+            \end{itemize}
+
+\end{enumerate}
+
+
+
+How could this be studied?
+
+Databases of expression from Myeloma cells gathered from bone
+marrow \ac{MGUS}, \ac{aMM}, \ac{MM}, \ac{MMR} already exist
+\citet{akhmetzyanovaDynamicCD138Surface2020,
+      seckingerCD38ImmunotherapeuticTarget2018}. Going through such databases gives a
+good overview. One could categorize genelists using curated databases, get lists
+associated with extravasation, intravasation, Bone marrow adhesion. For every
+gene of these genelists, they could be filtered for significant differences
+between the stages. Further categorizations of pairwise comparisons of stages
+are required. but overall, these genelists could be a starting point for This
+approach is similar to the genelists published in chapter 1, with the difference
+that the genelist was furthere filtered by the RNAseq results of \textit{in
+      vitro} experiments.
+
+
+
+What new implications do these dimensions have on targeting adhesion factors for
+therapy?
+
+- Specialized treatment for each stage?
+
+- Aggressive MM cells have potantial improved control over adhesion factor
+expression, regulating a more diverse set of adhesion factors faster. This poses
+further challenges to targeting. It could be smarter to not target
+effector-molecules, but rather upstream regulators of adhesion. THis work shows
+that NF-$\kappa$B signaling, which by itself is not treatable, but regulators
+downstream of NF-$\kappa$B were shown to be effective
+\cite{adamikEZH2HDAC1Inhibition2017,adamikXRK3F2InhibitionP62ZZ2018}
+
+
+
+
+% ======================================================================
+\unnsubsection{\cadddiversitytitle}%
+\label{sec:discussion_cadddiversity}%
+
+- Describe different cell lines: MM1.S being plastic adhering moderately
+MSC-adhering non-aggregating, INA-6 being non adhering aggregate forming and
+MSC-adhering, U266 being plastic adhering, non MSC-adhering and
+non-aggregating.
+
+- Results from this work: CXCL12 expresion varies from QM between QM
+
+One important dimension that is missing here is the genetic background of the
+myeloma cells. These are based on recurrent patterns of chromosomal aberrations
+or mutational signatures, defining structural and single nucleotide variants
+\cite{kumarMultipleMyelomasCurrent2018a,
+      hoangMutationalProcessesContributing2019}. The prognostic value of genetic
+variants in MM is well established \cite{sharmaPrognosticRoleMYC2021}, and their
+identification is becoming precise and cost-effective using \emph{optical
+      genome mapping}, making progress towards personalized therapies
+\cite{zouComprehensiveApproachEvaluate2024,
+      budurleanIntegratingOpticalGenome2024}. The prognostic value of adhesion factor
+expression is nowhere nearly as advanced, with establishing cell adhesion as a
+reliable prognostic factor only recently
+\cite{huDevelopmentCellAdhesionbased2024}.
+
+What markers can be used to categorize these differences?
+- Maybe IL-6 dependency/independency \cite{sprynskiRoleIGF1Major2009}?
+- \textit{in vitro} growth characteristics: Plastic adherence, MSC ahderence, aggregation
+
+% ======================================================================
+\unnsubsection{\caddtriggertitle}%
+\label{sec:discussion_caddtrigger}%
+
+biological implications:
+- Different cues could trigger different adhesional changes
+- Soluble signals?
+- Loss of CD138 \cite{akhmetzyanovaDynamicCD138Surface2020}
+- Detachment through intercellular effects: cell division, Saturation of hMSC adhesion surface
+- Detachment with mechanical influence: External forces and instability after aggregate size
+-
+
+
+why is this important?
+The cues that trigger the detachment of MM cells are not well understood. It
+could be that MM cells detach due to a combination of factors, such as loss of
+adhesion factors, changes in the BM microenvironment, or cell division or
+even completely random. Knowing specific dissemination signals helps preventing
+dissemination.
+
+
+Papers like \citet{akhmetzyanovaDynamicCD138Surface2020} make it seem as if
+there is one molecule that decides if a myeloma cell is circulating or not.
+
+It's less about one clear (molecular) mechanism that decides that a myeloma cell
+decides to become a disseminating cell, but rather a indirect consequence of a
+combination of many processes.
+These processes are:
+- Loss of adhesion factors or dynamic expression of adhesion factors
+- Loss of dependency from bone marrow microenvironment
+- asdf
+
+Our thesis postulates that there is no big switch that decides if a myeloma cell
+detaches from the bone marrow, but rather a prolonged process of continuisly
+downregulating adhesion factors, a dynamic upregulation of adhesion factors when
+they're needed, but the ultimate event that triggers release is better
+explained by external mechanical forces intercellular effects (cell division,
+saturation of adhesive surface and rising instability of aggregates after
+reaching a minimum size).
+
+Detachment is triggered by external mechanical forces on cell
+conglomerates previously sensitized by changes in cell adhesion behaviour
+
+Supporting Literature:
+
+\begin{enumerate}
+      \item \textbf{Cues or Processes}
+            \begin{itemize}
+                  \item This work showed that detachment happened mostly
+                        mechanically and cell biologically through cell
+                        division. - Detachment through intercellular effects:
+                        cell division, Saturation of hMSC adhesion surface -
+                        Detachment with mechanical influence: External forces
+                        and instability after aggregate size.
+                  \item Soluble signals within the BM microenvironment, such as
+                        cytokines and chemokines, play significant roles in
+                        modulating adhesion factor expression in MM cells
+                        \cite{aggarwalChemokinesMultipleMyeloma2006,
+                              alsayedMechanismsRegulationCXCR42007}.
+                  \item CD138 was proposed as a switch between adhesion and
+                        migration in MM cells, its blockage triggering migration
+                        and intravasation
+                        \cite{akhmetzyanovaDynamicCD138Surface2020}.
+            \end{itemize}
+\end{enumerate}
+
+
+
+How can this be studied?
+
+Identifying such signals might be challenging without
+having understood the other two hypotheses about adaptability first.
+
+
+
+
+What new implications do these dimensions have on targeting adhesion factors for
+therapy?
+
+
+- It could represent a valid strategy to
+strengthen myeloma adhesion, provided that targeted adhesion molecule is proven
+to not be involved in other steps of dissemination, such as extravasation.
+Stimulating adhesion factor expression or activity is harder than inhibition,
+yet not impossible. For instance, the short polypeptide SP16 can activate the
+receptor LRP1 \dashed{its high expression being associated with improved
+      survival of MM patients in this work}, showing promising results during phase I
+clinical trial \cite{wohlfordPhaseClinicalTrial2021}, but could potentially
+increase survival of MM through PI3K/Akt signaling
+\cite{potereDevelopingLRP1Agonists2019, heinemannInhibitingPI3KAKT2022} -
+
+- One could also accept that many cues are simply not controllable, and hope for
+systemic therapies like CAR- T Cells
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% ======================================================================
+\unnsubsection{Outlook: High-Value Research Topics for Myeloma Research Arising
+      from this Work}
+\label{sec:discussion_potential_breakthroughs}
+As an Outlook, the Author lists research topics arising from this work that have
+great potential for breakthroughs in myeloma research.
+
+\textbf{Anti tumor effects of MSCs:}
+This thesis has discussed the pro-tumor effects of MSCs. However, MSCs have also
+been shown to have anti-tumor effects \cite{galderisiMyelomaCellsCan2015}. This
+work has also shown that primary \acp{hMSC} can induce apoptosis in \INA6 cells
+initially \dashed{probably through the action of death domain receptors},
+but inhibit apoptosis during prolonged culturing.
+
+This shows that hMSCs could be leveraged
+as a therapeutic target that could prevent myloma progression.
+
+
+
+
+\textbf{Cell Division as a Mechanism for Dissemination Initiation:}
+The author describes how the detachment of daughter cells from the mother cell
+after a cycle of hMSC-(re)attachment and proliferation could be a key mechanism
+in myeloma dissemination. This mechanism was shown in other studies of
+intra-/extravasation. The author sees great potential in this mechanism as a
+target for future research. It is probably under-researched due to requirement
+of sophisticated time-lapse equipment, yet the simplicity of detachment through
+cell division is intriguing through its simplicity. It implies asymmetric cell
+division. Cancer cells are known to divide asymmetrically, e.g. moving miRNAs to
+one daughter cell.
+
+% \textbf{Time as a Key Parameter:}
+% The area Thermodynamics of started with scientists measuring how long it takes
+% for gases to cool down. The author claims, by measuring the time it takes for
+% cancer cells to detach could lead to breakthroughs in research of myeloma
+% dissemination.
+
+% - Cell adhesion is highly time-dependent.
+% - Cell detachment is required for metastasis and dissemination
+% -
+
+% key mechanistic insights
+
+% measuring the minimum time
+% for detachments to begin, or the time required for daughter cells to re-attach
+% to the hMSC monolayer. Such mechanistic insights
+
+
+
+% Time-resolution was mostly
+% limited by available disk space. Investing into more hard drives is worth it,
+% since
+
+\textbf{Lists of Adhesion Gene Associated With Prolonged Patient Survival:}
+The author lists adhesion genes that are associated with prolonged patient
+survival. These genes are highly expressed in myeloma samples from patients with
+longer overall
+
+At this time we could be on the verge of a new era of myeloma therapy,
+including bi-specific antibodies and cell based approaches
+\cite{moreNovelImmunotherapiesCombinations2023,
+      engelhardtFunctionalCureLongterm2024}. Currently, available CAR-T Cell therapies
+(ide-cel, cilta-cel) are extremely expensive, but show complete remission rates
+of up to \SI{80}{\percent} and a 18-month progression free survival rate of
+\SI{66}{\percent} \cite{bobinRecentAdvancesTreatment2022}. An affordable
+``off-the-shelf'' CAR-T Cell product could become reality since the problem of
+deadly graft-versus-host disease during allogeneic transplantation seems to be
+solvable \cite{qasimMolecularRemissionInfant2017}, hence, research groups and
+biotech companies are racing towards developing a safe allogeneic CAR-T Cell
+technology \cite{depilOfftheshelfAllogeneicCAR2020}.
+
+
+the list of genes could be good targets because the BM niche is highly hypoxic,
+car t cells are not well, but directing them to the BM niche could increase
+efficacy.
+
+
+\textbf{Find MSC and Myeloma crosstalk:}
+Do another GSEA analysis using the list from factors upregulated in
+\citet{dotterweichContactMyelomaCells2016}, since there, \INA and primary
+\ac{hMSC} were used as well. Redoing an analysis with the background of the
+associated procceses gained here could reveal insights on the communication
+between \ac{hMSC} and \INA cells.
+
+
+
+% ======================================================================
+\unnsubsection{\textit{\textbf{Conclusion\,3:} The Dynamic Adhesion Hypothetical
+            Framework for Myeloma Dissemination}}%
+\label{sec:discussion_conclusion_cancer}%
+
+
+
+How does limited understanding of one dimension prevent the understanding of the
+other dimensions?
+
+Location \& Progression: If we don't know the expression profile of an MM cell
+depending on their
+
+source, results become incomparable.
+
+Location \& Cues: If we don't know the cues that trigger detachment, we can't
+predict where the MM cells will detach.
+
+
+
