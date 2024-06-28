@@ -260,7 +260,9 @@ on multicellular interactions and complex growth scenarios.
       \ac{CAM} expression or cell signaling mediated by \acp{CAM} or the
       microenvironment. \ac{CADD} expands traditional \emph{cell adhesion} by a
       time component and implies an intention to predict attachment and
-      detachment events.
+      detachment events. A focus on dynamics is especially relevant for
+      suspension cells that exhibit intricate attachment and detachment
+      behavior.
       %
 }
 
@@ -380,7 +382,7 @@ mediated by \acp{CAM} and the microenvironment. By adding a temporal component,
       during dissemination %
 }
 \newcommand{\caddadaptationtitle}{ %
-      \textit{Hypothesis 1}: \ac{CADD} is Adapted during Dissemination%
+      \textit{Hypothesis 1}: \acf{CADD} is Adapted during Dissemination%
 }%
 
 
@@ -437,280 +439,187 @@ also inform the development of targeted therapies.
 % ======================================================================
 \unnsubsection{\caddadaptationtitle}%
 \label{sec:discussion_caddadaptation}%
-As mentioned before, Chapter 1 presented the intriguing observation of \MAina
-cells quickly upregulating both adhesion factors and chemoattractants, radically
-adapting their \textit{in vitro} \ac{CADD} from homotypic aggregation towards
-colonizing \acp{MSC}. Given that \INA cells were isolated from an extramedullary
-cite \dashed{the pleura}, this suggests that myeloma cells gain the ability to
-rapidly adapt their \ac{CADD} to new microenvironments. The following paragraphs
-explore the possibility of MM cells adapting their \ac{CADD} not only to
-colonize new niches, but also during each step duing the process of
-dissemination.
+As presented in Chapter 1, \MAina cells exhibit rapid upregulation of both
+adhesion factors and chemoattractants, adapting their \textit{in vitro}
+\ac{CADD} from homotypic aggregation to colonizing \acp{MSC}. This dynamic
+behavior includes the loss of adhesion factor expression after cell division,
+suggesting that myeloma cells can rapidly change their adhesion factor
+expression in a highly dynamic manner. Given that \INA cells were isolated from
+an extramedullary site \dashed{the pleura}, such changes likely facilitate
+colonization of new microenvironments. This section explores the hypothesis that
+MM cells adapt their \ac{CADD} during each step of dissemination.
+
+% Predicting how and when
+% myeloma cells regulate \ac{CADD} could be key to understanding and preventing
+% dissemination.
+
+
+\textbf{\ac{CADD} Adaptation Assumes Distinguishable Niches:} The multistep
+model proposed by \citet{zeissigTumourDisseminationMultiple2020} posits that
+myeloma cells acquire regulatory mechanisms specialized for each step of
+dissemination. The author hypothesizes that the different niches involved in
+these steps are unique enough to trigger distinct \ac{CADD} adaptations. This
+requires thorough knowledge of separate niches.
+\citet{granataBoneMarrowNiches2022} categorizes the \ac{BM} into sinusoidal,
+arteriolar, and endosteal niches, each spatially and molecularly
+distinguishable. The endosteal niche is home to \ac{MSC} and a majority of
+plasma cells\footnotequote{We suggest that it is reasonable to approach the
+      notion of physical plasma cell survival niches with some skepticism. It is clear
+      that most BM plasma cells rely heavily on access to APRIL or BLyS (66, 70), and
+      it appears that mature plasma cells are relatively stationary (59). However to
+      us, that plasma cells must remain indefinitely in physical survival niches to
+      survive is less obvious.}{wilmoreHereThereAnywhere2017}, and the vascular niches
+\dashed{sinusoidal and arteriolar} include endothelial cells
+\cite{zehentmeierStaticDynamicComponents2014, wilmoreHereThereAnywhere2017}.
+Other niches encountered during dissemination include peripheral blood, lymph
+nodes, and extramedullary sites. Comprehensive mapping and characterization of
+these niches, including their adhesion molecules and soluble factors, is
+necessary to understand the adhesion requirements for each niche. This is a
+highly complex task, yet summarizing available information per niche could
+provide a powerful basis.
+
+
+\textbf{Distinct Adhesion Phenotypes Transitioning between Niches:}
+Adhesion processes are well-documented in MM progression, particularly within
+the \ac{BMME} \cite{bouzerdanAdhesionMoleculesMultiple2022}. However, the
+dynamism of these processes remains unclear. In other cancers, different
+adhesive phenotypes and transitions, such as those seen in
+epithelial-mesenchymal transition (EMT), are common
+\cite{gengDynamicSwitchTwo2014}. For myeloma, EMT-like phenotypes have been
+described, but a clear association with distinct adhesion behaviors is hindered
+by the cells maintaining their suspension state
+\cite{roccaroCXCR4RegulatesExtraMedullary2015,
+      qianSETDB1InducesLenalidomide2023}. This work might be the first to identify
+adhesive subtypes through functional separation of detachable myeloma cells. As
+presented earlier, expanding these findings could reveal transitions in adhesive
+phenotypes during MM dissemination, such as overcoming retention, initiating
+release, and establishing colonization.
+
+
+\textbf{Extramedullary Niche:}
+\ac{CADD} adaptation predicts a specialized set of adhesion factors for
+extramedullary niches. A distinct phenotype has been proposed for extramedullary
+myeloma\footnotequote{Our analysis concluded that the gain of CD44, loss of
+CD56, loss of very late antigen-4 (VLA-4), imbalance of the chemokine
+receptor-4-chemokine ligand-12 (CXCR4-CXCL12) axis, [...] show an increased
+propensity [...] to leave the bone marrow and hone in extramedullary sites
+giving rise to more aggressive extramedullary diseases.
+}{guptaExtramedullaryMultipleMyeloma2022}, characterized by changes in
+expression of CD44, CD56, VLA-4, and CXCR4
+\cite{guptaExtramedullaryMultipleMyeloma2022}. The role of CXCR4 in mediating
+adhesion factor expression is well established, particularly in extramedullary
+MM cells \cite{roccaroCXCR4RegulatesExtraMedullary2015,
+guptaExtramedullaryMultipleMyeloma2022}: Extramedullary myeloma cells
+overexpress CXCR4, making them more responsive to cues that induce adhesion
+factor expression, such as CD44/H-CAM.
 
 
 
-% \citet{bouzerdanAdhesionMoleculesMultiple2022}: "Classically, the BMM has been
-% divided into endosteal and vascular niches"
+\textbf{Vascular Niche:} 
+\ac{CADD} adaptation predicts a specialized set of adhesion factors for
+endothelial interaction, supporting intravasation and extravasation. Although
+not assessed in this thesis, the vascular niche is a popular therapeutic
+target for preventing dissemination \cite{neriTargetingAdhesionMolecules2012}.
+Key adhesion factors like JAM-A and N-Cadherin have been highlighted as
+potential targets \cite{solimandoHaltingViciousCycle2020,
+mrozikTherapeuticTargetingNcadherin2015}. These factors were not differentially
+expressed between subpopulations isolated in Chapter\,1, suggesting distinct
+regulatory mechanisms for vascular versus \ac{MSC} interactions.
+
+\textbf{Circulating MM:} 
+An adaptive \ac{CADD} would predict that circulating MM cells lose adhesion
+factors. Studies confirm that \dashed{compared to BM-resident cells} circulating
+\ac{MM} cells exhibit reduced expression of multiple adhesion factors, including
+$\alpha4\beta1$ and CD138/Syndecan-1
+\cite{paivaDetailedCharacterizationMultiple2013,
+paivaCompetitionClonalPlasma2011, akhmetzyanovaDynamicCD138Surface2020}.
+Evidence suggests that a dynamic loss of CD138/Syndecan-1 and gain of JAM-C
+causes intravasation, circulation, and dissemination of MM cells
+\cite{akhmetzyanovaDynamicCD138Surface2020,
+brandlJunctionalAdhesionMolecule2022}. This thesis also shows that \nMAina
+cells, after emerging as daughter cells from \MAina, not only lose adhesion
+factor expression but also exhibit increased survival during IL-6 deprivation,
+potentially aiding survival in circulation.
 
 
-\textbf{Biological Implications of \ac{CADD} Adaptation:} The multistep model
-of \citet{zeissigTumourDisseminationMultiple2020} already assumes that myeloma
-acquires regulatory mechanisms specialized for every step during dissemination.
-This assumes that different niches provide different cues that trigger the
-adaptation of \ac{CADD}. \citet{granataBoneMarrowNiches2022} categorizes the
-\ac{BM} into three spacially and molecularly distinguishable niches: sinusoidal,
-arteriolar, and endosteal, with the former two being vascular niches and the
-endosteal niche being home to \ac{MSC}. Although plasma cells are assumed 
-stationary within the endosteal niche
-\cite{zehentmeierStaticDynamicComponents2014},
-\citet{wilmoreHereThereAnywhere2017} has expressed reasonable skepticism to this
-notion\footnotequote{We suggest that it is reasonable to approach the notion of
-physical plasma cell survival niches with some skepticism. It is clear that most
-BM plasma cells rely heavily on access to APRIL or BLyS (66, 70), and it appears
-that mature plasma cells are relatively stationary (59). However to us, that
-plasma cells must remain indefinitely in physical survival niches to survive is
-less obvious.}{wilmoreHereThereAnywhere2017}.
-
-Overall, the involvement of adhesional processes in MM progression is well
-established \cite{bouzerdanAdhesionMoleculesMultiple2022}, yet it remains to be
-seen how dynamic such processes really are.
-
-
-- Different locations could require different adhesion factors:
-- Circulating MM cells do not need adhesion, probably losing adhesion factors
-- BM cells express adhesion factors to adhere to the Bone marrow microenvironment (MSCs, adipocytes, and osteoblasts)
-- Extravasating/intravasating cells need adhesion factors for endothelium
-- Extramedullary cells need adhesion factors for respective tissues
-
-
-- The dynamic nature of adhesion factor expression in myeloma cells could be
-crucial for understanding dissemination. This work shows that \INA cells
-dynamically upregulate adhesion factors when in direct contact with \acp{hMSC},
-and subsequently lose adhesion factor expression after cell division. This
-implies that myeloma cells are capable of rapid changes in adhesion factor
-expression that are substantially dynamic. Predicting how and when myeloma
-cells regulate adhesion activity is a key question in understanding
-dissemination, as it could provide insights into the mechanisms of myeloma
-cell retention, release, and colonization in the bone marrow microenvironment
-(BMME).
-
-
-
-\textbf{Further Studies Hinting at \ac{CADD} Adaptation:}
-- df
+\textbf{\textit{Intermediary Conclusion:} Evidence for Adhesion Phenotypes Lacks Functional Characterization and Proof of Phenotypic Transitions:}
+The concept of \ac{CADD} adaptation is supported by the existence of distinct BM
+niches and the identification of separable adhesion phenotypes. However, most
+transitions between these phenotypes during dissemination are unexplored.
+Functional characterization of adhesive phenotypes and their transitions could
+provide a robust framework for understanding dissemination as a multistep
+process, reinforcing the dynamic adhesion hypothetical framework. Mapping
+adhesive properties for each involved niche could aid this endeavor.
 
 
 
 \textbf{Implications for Therapy:}
--
-
-
-
-\textbf{Implications for Further Research:}
-- Separate between initial adhesion and upregulated adhesion factors. \INA
-already adhere within the first hour, further upregulating adhesion factors
-after 24h. One could perform a \ac{WPSC} assay after 30 minutes of adhesion,
-separating INA-6 cells that adhere quickly from those that don't, and subsequent
-RNAseq would identify the adhesion factors required for initial adhesion. This
-way, one could differentiate between initial colonization. Assuming that an
-initial adhesion is essential for subsequent colonization processes, the
-identification of initial adhesion factors could be crucial for predicting
-colonization potential of different niches.
-
-
-
-\textbf{Conclusion: CADD Adaptation is Strongly Backed up by Literature}
--
-
-
-The implications for therapy are significant. Understanding the dynamic nature
-of adhesion factor expression suggests that targeting these factors could be
-beneficial. However, it requires a nuanced approach: adhesion factors involved
-in intravasation and extravasation should be antagonized, while those
-facilitating BM adhesion should be agonized. Studies have shown that targeting
-endothelial adhesion molecules can decrease tumor burden in mouse models,
-underscoring the therapeutic potential of this strategy
+Adhesion molecules have been targeted for therapy for over a decade
+\cite{nairChapterSixEmerging2012, neriTargetingAdhesionMolecules2012}.
+Especially inhibiting adhesion molecules involved in interaction with the
+endothelium effectively reduces tumor burden in mouse models
 \cite{asosinghUniquePathwayHoming2001a,
-      mrozikTherapeuticTargetingNcadherin2015}.
-
-In conclusion, the dynamic adaptation of \ac{CADD} during myeloma dissemination
-highlights the complexity and variability of adhesion factor expression. A
-detailed mapping of the BM niches and a comprehensive understanding of the
-required adhesion factors for each niche are essential. This work lays the
-foundation for future studies to explore these dynamics, ultimately informing
-targeted therapies aimed at disrupting myeloma dissemination.
-
-
-
-%%%
-
-
-However,  Chapter 1 shows that adhesion factors are
-lost during MM progression. INA-6 are highly adhesive to hMSCs.
-This is a contradiction that needs to be resolved.
-
-One explanation is the dynamic change of adhesion factor expression.
-
-However, INA-6 do not express adhesion factors. They do that only in hMSC presence
-Hence MAINA-6 could be a smaller fraction of MM cells, specialized on preparing a new niche
-for the rest of the MM cells. This could be a reason why they are so adhesive.
-
-- One has to consider that intravasation and/or intra-/extravasation would require a different
-set of adhesion factors than adhesion to BM or extramedullary environments.
-
-Extravasation: Plasma cells are known to upregulate adhesion factors dynamically
-once they reach a target tissue (???).
-
-This work showed that \INA cells dynamically upregulate adhesion factors when in
-direct contact with \acp{hMSC}. Such adhesion factors are not expressed by \INA
-cells without contact to \acp{hMSC}, or by \INA cells emerging as daughter cells
-from \MAina cells. This implies that myeloma cells are capable of rapid changes in
-adhesion factor expression that are substantially dynamic.
-Predicting when a myeloma cell starts regulating adhesion factors is a key
-question in understanding dissemination.
-
-The following paragraphs
-discuss how the idea of dynamic adhesion factor expression holds up
-against current knowledge.
+mrozikTherapeuticTargetingNcadherin2015}. A deeper understanding of how myeloma
+cells regulate \ac{CADD} could be key to predicting and preventing
+dissemination. \ac{CADD} adaptation suggests that different adhesion factors
+should be either antagonized or agonized depending on their role. For instance,
+adhesion factors involved in intravasation and extravasation should be
+antagonized, while those facilitating BM retention should be
+agonized\,\textemdash\autoref{tab:1} provides a list of potential retention
+targets.
 
 
 
-
-Overall, cell adhesion play a pivotal role in the attachment/detachment dynamics of
-myeloma, hence influencing the dissemination of myeloma cells. This is
-exemplified in this work, where \INA cells dynamically upregulate adhesion
-factors in direct contact with \acp{hMSC}. Predicting how and when myeloma cells
-regulate adhesion activity is a key question in understanding dissemination,
-since that
-
-Myeloma cells are isolated from patients at a certain stage from a certain
-location. As summarized by \citet{zeissigTumourDisseminationMultiple2020},
-dissemination could be a dynamic process during the lifetime of a myleoma cell
-that managed to exit the \ac{BMME} into blood circulation. This implies that
-myeloma cells could change their adhesion factors during their course of
-dissemination to adapt to their current location for specialized tasks like
-exiting the \ac{BMME} or intra-/extravasation.
-
-why important?
-
-Knowing how an MM cell can change their adhesive properties during its course of
-dissemination is crucial for understanding the process itself. These changes
-could be studied by tracking the expression of adhesion factors in MM cells at
-different locations in mouse models. For humans, designing studies that gather
-biopsies at different locations from the same patient, e.g. bone marrow and cirulating
-myeloma cells could be a starting point.
-
-How studied?
-These changes could be studied by tracking the
-expression of adhesion factors in MM cells at different locations in mouse
-models. For humans, designing studies that gather biopsies at different
-locations from the same patient, e.g. bone marrow and cirulating myeloma cells
-could be a starting point.
+\textbf{Considerations for Research on Myeloma Cell Adhesion:}
+Studying adhesion factors in MM \textit{in vitro} requires considering the
+specific microenvironmental context. Some adhesion factors are not present in MM
+cells but can be rapidly expressed with appropriate signals. Also, further
+studies should differentiate between initial adhesion and upregulated adhesion
+factors. For example, performing a \ac{WPSC} assay after 30 minutes of adhesion
+could separate \INA-6 cells based on initial adhesion capability, with RNAseq of
+\nMAina \textit{vs} \MAina identifying initial adhesion factors. This
+differentiation could be crucial for predicting colonization potential across
+niches, as initial adhesion is likely to be essential for subsequent growth in
+\ac{BM} or extramedullary environments.
 
 
-Literature:
+\textbf{\textit{Concluding Remarks:}} The exploration of \ac{CADD} adaptation
+across various niches reveals a complex interplay between myeloma cells and
+their environments, characterized by a dynamic regulation of adhesion factors.
+The evidence presented supports the hypothesis that myeloma cells modify their
+adhesion phenotype in response to the unique demands of each microenvironment
+they encounter during dissemination. This adaptive capability suggests that
+targeting these specific adhesion mechanisms could offer a promising strategy
+for therapeutic intervention, particularly in preventing the colonization of new
+niches. The distinctions between the adhesion phenotypes among the
+niches—vascular, bone marrow, and extramedullary—underscore the necessity for a
+targeted approach in therapy, which could involve modulation of specific
+adhesion factors to either promote retention or prevent dissemination.
 
-\textbf{1 Location of Myeloma Cells}
-\begin{itemize}
-      \item \textbf{Other Findings}
-            \begin{itemize}
-                  \item The review by
-                        \citet{zeissigTumourDisseminationMultiple2020} could be
-                        a starting point. She does not discuss adhesion factors,
-                        but seeing dissemination as a multistep process does
-                        imply different adhesion factors for different steps.
-                  \item Malignant Plasma Cells express different adhesion
-                        factors than normal plasma cells
-                        \cite{cookRoleAdhesionMolecules1997,
-                              bouzerdanAdhesionMoleculesMultiple2022}.
+Despite these insights, the current understanding of the functional roles and
+transitions of these adhesion phenotypes during myeloma progression remains
+incomplete. Future research should focus on delineating these roles more clearly
+by functional assays and real-time imaging to capture the dynamic changes in
+adhesion factor expression during cell transition between niches. Such studies
+will be crucial for validating the \ac{CADD} adaptation hypothesis and for
+identifying potential therapeutic targets that could disrupt the dissemination
+process at various stages.
 
-                  \item Adhesion molecules have been a popular target for
-                        therapy for a decade \cite{nairChapterSixEmerging2012}
-                  \item In other cancers different adhesive subtypes are common
-                        and are molecularly clearly separated through \ac{EMT}
-                        \cite{gengDynamicSwitchTwo2014}
-            \end{itemize}
-
-      \item \textbf{Extramedullary Involvement}
-            \begin{itemize}
-                  \item Extramedullary involvement:  dramatic upregulation of H-CAM/CD44 \cite{}
-                  \item CXCR4, the homing receptor, mediates production of
-                        adhesion factors in extramedullary MM cells
-                        \cite{roccaroCXCR4RegulatesExtraMedullary2015}
-            \end{itemize}
-
-      \item \textbf{Intra-/Extravasation of Myeloma Cells}
-            \begin{itemize}
-                  \item Blocking Endothelial Adhesion through JAM-A decreases
-                        progression: \cite{solimandoHaltingViciousCycle2020}
-                  \item N-Cadherin is upregulated in MM compared to healthy
-                        plasma cells, and has been shown to be a potential target for
-                        therapy \cite{mrozikTherapeuticTargetingNcadherin2015}
-                  \item - NONE of Them were shown in Chapter 1 of this study, (except for JAM-B)
-            \end{itemize}
-
-      \item \textbf{Circulating Myeloma Cells}
-            \begin{itemize}
-                  \item This work shows that \nMAina have increased survival
-                        during IL-6 deprivation, which could be a mechanism for
-                        surviving in circulation.
-                  \item Circulating plasma cells are rare, but detectable in
-                        peripheral blood
-                        \cite{witzigDetectionMyelomaCells1996}
-                  \item studies demonstrate that circulating \ac{MM} cells
-                        exhibit reduced levels of integrin $\alpha4\beta1$, in
-                        contrast to those located in the \ac{BM}
-                        \cite{paivaDetailedCharacterizationMultiple2013,
-                              paivaCompetitionClonalPlasma2011}
-                  \item circulating MM cells were CD138/Syndecan-1 negative
-                        \cite{akhmetzyanovaDynamicCD138Surface2020}
-
-            \end{itemize}
-
-      \item \textbf{BM-Resident Myeloma Cells}
-            \begin{itemize}
-                  \item The role of CXCL12 \dashed{which is highly expressed by
-                              MSCs} in inducing adhesion factors in MM is well established
-                        \cite{ullahRoleCXCR4Multiple2019}
-                  \item THIS WORK: INA-6 cells are highly adhesive to hMSCs, dynamically
-                        upregulating adhesion factors when in direct contact with
-                        hMSCs, and subsequently losing adhesion factor expression after
-                        cell division
-                  \item BM-resident MM cells maintain high levels of adhesion
-                        molecules to interact with MSCs, adipocytes, and
-                        osteoblasts within the BM niche
-                        \cite{bouzerdanAdhesionMoleculesMultiple2022,
-                              burgerGp130RasMediated2001,
-                              chatterjeePresenceBoneMarrow2002}.
-            \end{itemize}
-
-\end{itemize}
+\textbf{Future Directions:} It is imperative to further characterize these
+adhesion factors in a controlled \textit{in vitro} environment, where specific
+microenvironmental contexts are simulated. This approach will allow for a more
+nuanced understanding of how adhesion factors are upregulated and their role in
+niche-specific colonization. By integrating detailed molecular and cellular
+analyses, such as single-cell RNA sequencing and proteomics, researchers can
+identify critical adhesion factors that facilitate the initial colonization
+processes. This knowledge could then inform the development of interventions
+aimed at either enhancing or inhibiting these factors, thereby potentially
+providing a more strategic approach to the management and treatment of multiple
+myeloma.
 
 
-According to this, this thesis
-predicts a low expression of adhesion factors in circulating myeloma cells,
-but a high expression in adhesive cells, e.g. non-circulating, or rather those
 
 
-This has huge implications for studying adhesion factors in MM \textit{in
-      vitro}. Given that some factors are not present in MM cells, but are potentially
-rapidly expressed with the right signal. Hence, further studies focusing on
-adhesion factor expression \textit{in vitro} should provide one specific
-microenvironmental context, and not generalize to all available niches.
-
-
-This has great implications for targeting adhesion factors for therapy, as it
-suggests that different adhesion factors should either be antagonized or
-agonized depending on the function of the adhesion factor. According to this
-assumption, adhesion factors involved in intra- and extravasation adhesion
-should be antagonized, while adhesion factors involved in BM adhesion
-\dashed{as identified in Chapter 2} should be agonized. Indeed, Adhesion
-factors for endothelium were shown to decrease tumour burden in mouse models
-\cite{asosinghUniquePathwayHoming2001a,mrozikTherapeuticTargetingNcadherin2015}
-
-Together, a detailed mapping of the niches available in the bone marrow is required
-to understand the adhesion factors required for each niche. This is a highly
-complex task, as the bone marrow is a highly complex organ.
 
 
 % ======================================================================
@@ -729,14 +638,26 @@ fast in order to colonize new niches, such as pleura from which they were
 isolated.
 
 Disease Stage:
-- Higher disease stages imply changes in adhesion factors that favor aggressiveness.
+
+- Higher disease stages imply changes in adhesion factors that favor
+aggressiveness. In fact, ECM from myeloma patients shows tumor-promoting
+properties compared to \ac{ECM} from healthy donors
+\cite{ibraheemBMMSCsderivedECMModifies2019}
+
 - Aggressiveness includes:
+
 - Better Colonization of new niches, including extramedullary ones such as the pleura
+
 - This implies a more diverse set of available adhesion factors
+
 - Faster regulation to adapt to new niches
+
 - Better survival in circulation
 
 
+Overall, it is known that plasma cells express different adhesion factors
+compared to healthy plasma cells, implying  \cite{cookRoleAdhesionMolecules1997,
+      bouzerdanAdhesionMoleculesMultiple2022}.
 
 indeed, 3 temporal subtypes have been identified, associating higher risk with
 faster changes over time \cite{keatsClonalCompetitionAlternating2012}.
