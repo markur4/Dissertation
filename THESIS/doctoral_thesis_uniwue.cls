@@ -798,7 +798,12 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % > #1 is the citation
 % > #2 is the text of the footnote
 \newcommand{\footnotequote}[2]{%
-    \footnote{\citet{#2}: \textit{``#1''}}\xspace%
+    \footnote{\citet{#2}:~%
+    \textit{``\,%
+    \ignorespaces%
+    #1%
+    \nolinebreak%
+    \,''}}%
 }
 
 
