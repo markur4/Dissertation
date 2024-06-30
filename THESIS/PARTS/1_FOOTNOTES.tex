@@ -1,0 +1,117 @@
+
+
+
+% ======================================================================
+%  ## Define footnotes here
+
+
+\def\imagefeatures{%
+    \emph{Features} are structural elements of an image, such as edges, corners,
+    directions, colors. These features are mathematically extractable using
+    \emph{filters} \dashed{also referred to as \emph{convolution
+            kernels}}, which are functions or algorithms applied to the pixel values of
+    an image. For instance, \emph{gabor filters} can extract edges of one
+    particular direction, resulting in an image of the same size as the input,
+    but showing only edges of one direction. \emph{Feature extraction} is the
+    process of applying multiple filters, resulting in a stack of filtered
+    images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011,
+        guptaDeepLearningImage2019} }
+
+\def\cnn{%
+    \emph{Convolutional neural networks} (CNN) are algorithms that use the output of a
+    feature extractor\footref{foot:image_features} to feed
+    into a neural network. The network then learns to associate these feature
+    vectors with a label, such as \emph{cell} or \emph{background}. This is called
+    \emph{supervised learning}.
+}
+
+
+
+
+\newcommand{\footinteractionscenario}{%
+      \emph{Cell Interaction Scenario} (specified in this work): The type of
+      cellular interactions and adhesions between cells of the same type
+      (homotypic interaction), different types (heterotypic interaction), or between cells
+      and the substrate. Complex interaction scenarios can combine all these
+      types at the same time. When interaction scenarios emerge from cell
+      division, the term \emph{growth conformation} can be used as well (see
+      Chapter\,1)%
+}
+
+% \newcommand{\footcadd}{%
+%       \emph{\acf{CADD}} (defined in this work): The observation and measurement
+%       of time-dependent changes in cell adhesion and detachment events.
+%       \ac{CADD} expands traditional \emph{cell adhesion} by a time component and
+%       implies an intention to predict the timepoint of detachment
+%       events. Such focus on dynamics is especially relevant for suspension cells
+%       that exhibit intricate adhesion behaviors, that can not be explained by
+%       cell attachment alone. %
+% }
+
+\newcommand{\footcad}{%
+      \emph{\acf{CAD}} (specified in this work): The observation and measurement
+      of time-dependent changes in cell adhesion and detachment events.
+      \ac{CAD} expands traditional \emph{cell adhesion} by a time component and
+      implies an intention to predict the timepoint of detachment
+      events. Such focus on dynamics is especially relevant for suspension cells
+      that exhibit intricate adhesion behaviors, that can not be explained by
+      cell attachment alone. %
+}
+
+
+
+\newcommand{\footdramatype}{%
+      Environmental influences from the fertilization of an egg [...] through to
+      sexual maturity are referred to as the primary milieu. The interaction
+      between this milieu and the genotype will give rise to the phenotype. The
+      phenotypical properties will subsequently be influenced by the
+      pre-experiment conditions which are referred to as the secondary milieu.
+      As a result, the dramatype is formed. Furthermore the laboratory animal
+      will be affected by experimental procedures and treatments known as the
+      tertiary milieu. %
+      % \citet{zutphenPrinciplesLaboratoryAnimal2001}
+}
+
+% \newcommand{\footcaddramatype}{%
+%       \emph{CADD dramatype} (defined in this work): Specific \ac{CADD}
+%       characteristics determined by proximate environmental factors. This
+%       includes the time cells spend in an adhesive state \dashed{attached,
+%             migrating, or detached} or cell interaction scenario
+%       \footref{foot:interactionscenario} \dashed{homotypic, heterotypic, or
+%             substrate} and the cause of transitions between these states and
+%       scenarios. The CADD dramatype can be associated with molecular signatures,
+%       such as \ac{CAM} expression phenotype or signal transduction mediated by
+%       proximate environmental factors. It allows clear separation
+%       of developmental and proximate environments
+%       the term \emph{phenotype} \dashed{defining
+%             the } with
+%       processes on the protein level, such as conformational changes
+%       of integrins
+%       %
+% }
+
+\newcommand{\footcaddt}{%
+      \emph{CAD dramatype} (specified in this work): Specific \ac{CAD} behavior
+      caused by proximate environmental factors. A CAD dramatype is
+      characterized by the time cells spend in an adhesive state
+      \dashed{attached, migrating, or detached} or cell interaction
+      scenario\footref{foot:interactionscenario} \dashed{homotypic, heterotypic,
+            or substrate} and the cause of transitions between these states and
+      scenarios. The CAD dramatype can be associated with molecular signatures,
+      such as \ac{CAM} expression phenotype or signal transduction mediated by
+      proximate environmental factors.
+      % It allows clear separation
+      % of developmental and proximate environments
+      % the term \emph{phenotype} \dashed{defining
+      %       the } with
+      % processes on the protein level, such as conformational changes
+      % of integrins
+      %
+}
+
+
+% ======================================================================
+% ## Generate list of footnotes
+\addcontentsline{toc}{section}{Notes}%
+\theendnotes
+% \printfn

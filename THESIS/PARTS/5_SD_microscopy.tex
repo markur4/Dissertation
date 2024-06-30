@@ -257,25 +257,6 @@ representative of detached cells, given that the vast majority of INA6 cells
 were part of aggregates.
 
 
-\def\imagefeatures{%
-    \emph{Features} are structural elements of an image, such as edges, corners,
-    directions, colors. These features are mathematically extractable using
-    \emph{filters} \dashed{also referred to as \emph{convolution
-            kernels}}, which are functions or algorithms applied to the pixel values of
-    an image. For instance, \emph{gabor filters} can extract edges of one
-    particular direction, resulting in an image of the same size as the input,
-    but showing only edges of one direction. \emph{Feature extraction} is the
-    process of applying multiple filters, resulting in a stack of filtered
-    images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011,
-        guptaDeepLearningImage2019} }
-
-\def\cnn{%
-    \emph{Convolutional neural networks} (CNN) are algorithms that use the output of a
-    feature extractor\footref{foot:image_features} to feed
-    into a neural network. The network then learns to associate these feature
-    vectors with a label, such as \emph{cell} or \emph{background}. This is called
-    \emph{supervised learning}.
-}
 
 The workload of manual video analysis motivated the purchase of
 \texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}

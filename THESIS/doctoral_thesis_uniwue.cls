@@ -138,7 +138,7 @@
 \usepackage[
     style=ddmmyyyy,
     datesep={.}
-    ]{datetime2} % > Confifure date formats
+]{datetime2} % > Confifure date formats
 
 
 % == Captions 
@@ -252,47 +252,47 @@
     \fancyfoot[C]{\thepage} % > Centered footer with page number
     \renewcommand{\headrulewidth}{0.3pt} % > Adjust header line width
     \renewcommand{\footrulewidth}{0.3pt} % > Add line above footer
-    }
-    % ## Set the pagestyle
-    \pagestyle{headersfooters} % > Set the new page style as default
-    \setlength{\headheight}{15pt} % > Adjust headheight to avoid warnings
-    
-    
-    % ## Pagestyle for Appendix
-    \fancypagestyle{appendix}{
-        % > Reuse the default page style
-        % > Add APPENDIX to the header
-        % \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
-        % \fancyhead[C]{APPENDIX \nouppercase{\leftmark} \nouppercase{\rightmark}} 
-        \fancyhead[L]{APPENDIX \nouppercase{\leftmark}} % Left-aligned
-        \fancyhead[R]{\nouppercase{\rightmark}} % Right-aligned
-        \fancyhead[C]{} % Clear center header
-        }
-        
-        % ## Keeping track of the current pagestyle for multipage pdf imports
-        \newcommand{\currentpagestyle}{plain} % > Initialize with the default page style
-        % > Redefine \pagestyle to also update \currentpagestyle
-        \let\oldpagestyle\pagestyle
-        \renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
-        
+}
+% ## Set the pagestyle
+\pagestyle{headersfooters} % > Set the new page style as default
+\setlength{\headheight}{15pt} % > Adjust headheight to avoid warnings
+
+
+% ## Pagestyle for Appendix
+\fancypagestyle{appendix}{
+    % > Reuse the default page style
+    % > Add APPENDIX to the header
+    % \fancyhead[C]{APPENDIX \nouppercase{\leftmark}} 
+    % \fancyhead[C]{APPENDIX \nouppercase{\leftmark} \nouppercase{\rightmark}} 
+    \fancyhead[L]{APPENDIX \nouppercase{\leftmark}} % Left-aligned
+    \fancyhead[R]{\nouppercase{\rightmark}} % Right-aligned
+    \fancyhead[C]{} % Clear center header
+}
+
+% ## Keeping track of the current pagestyle for multipage pdf imports
+\newcommand{\currentpagestyle}{plain} % > Initialize with the default page style
+% > Redefine \pagestyle to also update \currentpagestyle
+\let\oldpagestyle\pagestyle
+\renewcommand{\pagestyle}[1]{\oldpagestyle{#1}\renewcommand{\currentpagestyle}{#1}}
+
 
 % == Main Sections =====================================================
 % > Unnumbered
 
 % ## Main Sections 
 \newcommand{\unnsection}[1]{%
-\section*{#1}%
-\addcontentsline{toc}{section}{#1}%
-\mbox{}% > Add empty line to avoid warnings
-\markboth{#1}{}% > Mark section manually for headers
+    \section*{#1}%
+    \addcontentsline{toc}{section}{#1}%
+    \mbox{}% > Add empty line to avoid warnings
+    \markboth{#1}{}% > Mark section manually for headers
 }
 
 
 % == Sub Sections ======================================================
 \newcommand{\unnsubsection}[1]{%
-\subsection*{#1}% > Create a new unnumbered subsection with the same name #1
-\addcontentsline{toc}{subsection}{\ignorespaces#1}% > Add the subsection to the table of contents
-\mbox{}% > Add an empty line to avoid warnings
+    \subsection*{#1}% > Create a new unnumbered subsection with the same name #1
+    \addcontentsline{toc}{subsection}{\ignorespaces#1}% > Add the subsection to the table of contents
+    \mbox{}% > Add an empty line to avoid warnings
 }
 
 
@@ -308,9 +308,9 @@
     \begin{abstract}
         #3 % > Insert the abstract text
     \end{abstract}
-    }
-    
-    
+}
+
+
 
 % == Table of Contents (TOC) ===========================================
 \renewcommand{\cftbeforesecskip}{0.5ex} % > Linespacing before sections
@@ -378,9 +378,9 @@
 % > This is a longer dash: \textemdash
 % > This is a shorter dash: --
 \newcommand{\dashed}[1]{%
-  \unskip % > Removes the last space before the command, if it exists.
-  \,\textemdash#1\textemdash\,%
-  \ignorespaces % > Ignores the spaces following the command.
+    \unskip % > Removes the last space before the command, if it exists.
+    \,\textemdash#1\textemdash\,%
+    \ignorespaces % > Ignores the spaces following the command.
 }
 
 
@@ -793,17 +793,25 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 % == Footnotes =========================================================
+\usepackage{endnotes}
+% \let\footnote=\endnote % > Rename \endnote to \endnote
+
+
+\let\oldfootnote\footnote % > Rename to keep the original
+% ## Redefine the footnote command to also add the footnote to the endnotes
+\renewcommand{\footnote}[1]{%
+    \endnote{#1}%
+    \oldfootnote{\small #1}%
+}
+
 
 % ## Define Command for footnotes containing quotes
 % > #1 is the citation
 % > #2 is the text of the footnote
 \newcommand{\footnotequote}[2]{%
     \footnote{\citet{#2}:~%
-    \textit{``\,%
-    \ignorespaces%
-    #1%
-    \nolinebreak%
-    \,''}}%
+        \textit{``\,\ignorespaces%
+            #1\nolinebreak\,''}}%
 }
 
 
