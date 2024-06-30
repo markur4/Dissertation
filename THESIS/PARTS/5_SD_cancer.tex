@@ -58,7 +58,64 @@ alleviated by the disciplined execution of washing protocols, it remains a
 common method for adhesion assays.
 
 
+\newcommand{\footinteractionscenario}{%
+      \emph{Cell Interaction Scenario} (specified in this work): The type of
+      cellular interactions and adhesions between cells of the same type
+      \dashed{homotypic}, different types \dashed{heterotypic}, or between cells
+      and the substrate. Complex interaction scenarios can combine all these
+      types at the same time. When interaction scenarios emerge from cell
+      division, the term \emph{growth conformation} can be used as well (see
+      Chapter\,1)%
+}
 
+\newcommand{\footcadd}{%
+      \emph{\acf{CADD}} (defined in this work): The observation and measurement
+      of time-dependent changes in cell adhesion and detachment events.
+      \ac{CADD} expands traditional \emph{cell adhesion} by a time component and
+      implies an intention to predict the timepoint of detachment
+      events. Such focus on dynamics is especially relevant for suspension cells
+      that exhibit intricate adhesion behaviors, that can not be explained by
+      cell attachment alone. %
+}
+
+\newcommand{\footdramatype}{%
+      Environmental influences from the fertilization of an egg [...] through to
+      sexual maturity are referred to as the primary milieu. The interaction
+      between this milieu and the genotype will give rise to the phenotype. The
+      phenotypical properties will subsequently be influenced by the
+      pre-experiment conditions which are referred to as the secondary milieu.
+      As a result, the dramatype is formed. Furthermore the laboratory animal
+      will be affected by experimental procedures and treatments known as the
+      tertiary milieu. %
+      % \citet{zutphenPrinciplesLaboratoryAnimal2001}
+}
+
+Where a phenotype summarizes both the genetic and environmental influences on
+cell behavior, a dramatype focuses on the proximate environmental factors that
+determine the cell's behavior, but excludes the developmental factors that led
+to the cell's current state.
+
+This distinction between phenotype and dramatype was also applied to renal cancer\cite{hinoStudiesFamilialTumors2004}
+
+This distinction is crucial for understanding
+
+\newcommand{\footcadddramatype}{%
+      \emph{CADD dramatype} (defined in this work): Specific \ac{CADD}
+      characteristics determined by proximate environmental factors. This
+      includes the time cells spend in an adhesive state \dashed{attached,
+            migrating, or detached} or cell interaction scenario
+      \footref{foot:interactionscenario} \dashed{homotypic, heterotypic, or
+            substrate} and the cause of transitions between these states and
+      scenarios. The CADD dramatype can be associated with molecular signatures,
+      such as \ac{CAM} expression phenotype or signal transduction mediated by
+      proximate environmental factors. It allows clear separation
+      of developmental and proximate environments
+      the term \emph{phenotype} \dashed{defining
+            the } with
+      processes on the protein level, such as conformational changes
+      of integrins
+      %
+}
 
 \textbf{Directly Interacting Cells Contain Unexplored Interaction Scenarios}: It
 is evident that direct and indirect contact to \acp{MSC} have varying effects on
@@ -67,13 +124,14 @@ myeloma cells. That difference is crucial for understanding changes in the
       dziadowiczBoneMarrowStromaInduced2022}. These studies utilize well-inserts to
 co-culture myeloma cells in close \dashed{indirect} contact with MSCs. However,
 such comparison of indirect \textit{vs.} direct co-culturing methods might not
-fully represent the complexity of intercellular interactions scenarios found in
-the \ac{BMME}. This is exemplified by this project, as it relied on the complex
-growth behavior: \INA cells aggregated homotypically in direct
-proximity to those adhering heterotypically to \acp{hMSC}, and detached
-through cell division. Furthermore, such methods fail to capture the subtle
-variations in paracrine signaling concentrations, where even a few micrometers
-of distance could significantly alter cellular responses.
+fully represent the complexity of intercellular interactions
+scenarios\footnote{\footinteractionscenario\label{foot:interactionscenario}}
+found in the \ac{BMME}. This is exemplified by this project, as it relied on the
+complex growth behavior: \INA cells aggregated homotypically in direct proximity
+to those adhering heterotypically to \acp{hMSC}, and detached through cell
+division. Furthermore, such methods fail to capture the subtle variations in
+paracrine signaling concentrations, where even a few micrometers of distance
+could significantly alter cellular responses.
 
 Such knowledge shifted this project's point of view as well: Initially, our
 hypothesis focused on direct heterotypic interactions, not expecting a \nMAina
@@ -244,7 +302,7 @@ providing cost-effective, precise, reliable, and reproducible techniques for
 both isolating and quantifying subpopulations within co-cultures of directly
 interacting cell types. They offered valuable insights into the mechanisms of MM
 detachment and are potentially applicable to other research questions that focus
-on multicellular interactions and complex growth scenarios.
+on growth and interaction scenarios involving multiple cell types.
 
 
 
@@ -252,22 +310,9 @@ on multicellular interactions and complex growth scenarios.
 %%%%%%%%%%%%
 % ======================================================================
 
-\newcommand{\footcadd}{%
-      \emph{\acf{CADD}} (defined in this work): The observation and measurement
-      of time-dependent changes in cell adhesion and detachment events.
-      \ac{CADD} characterizes the time cells spend attached, migrating or
-      detached and associates these phases with molecular signatures, such as
-      \ac{CAM} expression or cell signaling mediated by \acp{CAM} or the
-      microenvironment. \ac{CADD} expands traditional \emph{cell adhesion} by a
-      time component and implies an intention to predict attachment and
-      detachment events. A focus on dynamics is especially relevant for
-      suspension cells that exhibit intricate attachment and detachment
-      behavior.
-      %
-}
 
 
-% \unnsubsection{Constructing a Hypothetical Framework of Dissemination}%
+
 \unnsubsection{Integrating Evidence and Hypotheses for a Mechanistic
       Understanding of Dissemination}%
 \label{sec:discussion_framework}%
@@ -351,13 +396,11 @@ were made that could inspire further hypotheses and research:
                         Other targetable options are 28 genes that were proposed
                         to be master regulators of myeloma progression \cite{shenProgressionSignatureUnderlies2021}.
 
-
-
             \end{itemize}
 \end{enumerate}
 
 
-These hypotheses  \dashed{based on observations from \INA cells} provide a starting
+These hypotheses \dashed{based on observations from \INA cells} provide a starting
 point for understanding myeloma dissemination. While these insights are
 specialized for the \INA cell line, they inspire the development of a more
 generalized framework applicable to a broader range of myeloma cases.
@@ -371,13 +414,65 @@ dissemination is a patchwork of evidence fragments. The following sections aim
 to integrate such fragments, especially those derived from the \INA cell line in
 this work, to construct a more coherent understanding of myeloma dissemination.
 
-In this context, the author introduces the \emph{Dynamic Adhesion Hypothetical Framework for
-      Myeloma Dissemination}, which leverages direct observations of
-\acf{CADD}\footnote{\footcadd\label{foot:cadd}}. \ac{CADD} characterizes
-the time-dependent changes in cell adhesion and detachment, associating these
-phases with molecular signatures like \ac{CAM} expression or cell signaling
-mediated by \acp{CAM} and the microenvironment. By adding a temporal component,
-\ac{CADD} aims to predict attachment and detachment events.
+For this, we require to introduce new terms, the \ac{CADD} Dramatype.
+
+%TODO: 
+% - rename CADD to CAD (Cell Adhesion Dynamics) for simplification. Include 
+% that chapter 1 uset attachment/detachment dynamics
+% - Define what a CAD dramatype is.
+
+\textbf{Distinguishing Phenotype and Dramatype:}
+\INA cells exhibited great reactivity to \acp{hMSC}. Describing this new state
+as \emph{phenotype} would include the influence of 
+implies influence of both genetic and
+environmental factors. However, the term \emph{environmental factors} is
+overloaded, as it includes the history of the donor, decade-long culturing
+conditions, the \textit{in vitro} model simulating the \ac{BMME}, and
+experimental conditions such as the ratio of \acp{MSC} to \INA cells. Animal
+studies faced a similar issue and hence coined the term
+\emph{dramatype}\footnotequote{\footdramatype}{zutphenPrinciplesLaboratoryAnimal2001}
+\cite{zutphenPrinciplesLaboratoryAnimal2001}: The dramatype describes the state
+of the cells that is due to proximate environmental factors, emerging from
+phenotype that describes the overall background prior to the experiment.
+Except for few studies \cite{hinoStudiesFamilialTumors2004}, this term is rarely used
+in cancer. However, for myeloma dissemination, it could better capture 
+the changes introduced along the course of dissemination, as the diverse set of microenvironments faced play a crucial role. 
+This term is rarely used in cancer
+
+excluding the
+
+To distinguish between proximate environmental factors
+and an overall background phenotype, animal studies use the term
+\emph{dramatype}\footnotequote{\footdramatype}{zutphenPrinciplesLaboratoryAnimal2001}
+\cite{zutphenPrinciplesLaboratoryAnimal2001}.
+
+, cancer research using terms like \textit{phenotype switching} \cite{woutersRobustGeneExpression2020}
+
+In that sense, the adhesion phenotype of \INA cells describe the state
+
+% This is a similar problem faced in animal models,
+% where the term \emph{dramatype} was introduced
+% \cite{zutphenPrinciplesLaboratoryAnimal2001}
+
+to distinguish between
+given the focus on proximate environmental factors
+\dashed{\ac{MSC} interaction},
+
+the term
+
+In animal models, the term \emph{dramatype} was introduced to distinguish
+
+
+
+\textbf{Introducing the CADD Dramatypes:}
+In this context, the author introduces the \emph{Dynamic Adhesion Hypothetical
+      Framework for Myeloma Dissemination}, which leverages direct observations of
+\acf{CADD}\footnote{\footcadd\label{foot:cadd}}. \ac{CADD} characterizes the
+time-dependent changes in cell adhesion and detachment, associating these phases
+with molecular signatures like \ac{CAM} expression or cell signaling mediated by
+\acp{CAM} and the microenvironment. Focusing on a time component is especially
+useful for predicting the behavior of suspension cells with intricate attachment
+and detachment behaviors.
 
 
 
@@ -391,19 +486,13 @@ mediated by \acp{CAM} and the microenvironment. By adding a temporal component,
 
 
 \newcommand{\caddadaptibility}{ %
-      Rapid adaptability of \ac{CADD} is a hallmark of aggressive myeloma %
+      Rapid of \ac{CADD} adaptability is a hallmark of aggressive myeloma %
 }%
 \newcommand{\caddadaptabilitytitle}{ %
-      \textit{Hypothesis 2}: Rapid Adaptability of CADD is a Hallmark of
+      \textit{Hypothesis 2}: Rapid CADD Adaptability is a Hallmark of
       Aggressive Myeloma %
 }%
 
-% 1.	CADD Responsiveness: This term emphasizes the rapid response of CADD to changing conditions, which aligns with the focus on the quick adjustments in cell attachment and detachment dynamics.
-% 2.	CADD Reactivity: This captures the idea of a rapid and dynamic reaction to stimuli or environmental changes, suggesting a swift adaptation process within the myeloma dissemination context.
-% 3.	CADD Agility: Agility conveys a sense of both quickness and adaptability, emphasizing the ability to change quickly and effectively in response to external conditions.
-% 4.	CADD Dynamics: While somewhat broader, this term still captures the essence of ongoing changes and emphasizes the continuous and rapid nature of the adaptations.
-% 5.	Rapid CADD Adaptation: If specificity is crucial, directly stating “rapid” as an adjective could emphasize the speed of adaptation in your hypothesis.
-% 6.	CADD Adaptation Velocity: This term introduces a quantitative aspect, suggesting not just adaptability but also the speed at which adaptations occur, aligning closely with your focus on the rapidness of these processes.
 
 
 
@@ -451,15 +540,14 @@ also inform the development of targeted therapies.
 % ======================================================================
 \unnsubsection{\caddadaptationtitle}%
 \label{sec:discussion_caddadaptation}%
-As presented in Chapter 1, \MAina cells exhibit rapid upregulation of both
-adhesion factors and chemoattractants, adapting their \textit{in vitro}
-\ac{CADD} from homotypic aggregation to colonizing \acp{MSC}. This dynamic
-behavior includes the loss of adhesion factor expression after cell division,
-suggesting that myeloma cells can rapidly change their adhesion factor
-expression in a highly dynamic manner. Given that \INA cells were isolated from
-an extramedullary site \dashed{the pleura}, such changes likely facilitate
-colonization of new microenvironments. This section explores the hypothesis that
-MM cells adapt their \ac{CADD} during each step of dissemination.
+As presented in Chapter\,1, \MAina cells exhibited upregulation of both adhesion
+factors and chemoattractants, adapting their \textit{in vitro} \ac{CADD} from
+homotypic aggregation to \acp{MSC} adhesion. Given that \INA cells were isolated
+from an extramedullary site \dashed{the pleura}
+\cite{burgerGp130RasMediated2001}, such changes likely facilitate colonization
+of new microenvironments. This section explores the hypothesis that MM cells
+adapt their \ac{CADD} not only during colonization, but at each step of
+dissemination.
 
 % Predicting how and when
 % myeloma cells regulate \ac{CADD} could be key to understanding and preventing
@@ -494,7 +582,36 @@ provide a powerful basis.
 \textbf{Distinct Adhesion Phenotypes Transitioning between Niches:}
 Adhesion processes are well-documented in MM progression, particularly within
 the \ac{BMME} \cite{bouzerdanAdhesionMoleculesMultiple2022}. However, the
-dynamism of these processes remains unclear. In other cancers, different
+dynamism of these processes remains unclear.
+Overall, \citet{fredeDynamicTranscriptionalReprogramming2021} have shown that
+individual myeloma cells can switch between alternate transcriptional states
+through differential epigenetic regulation. Such transcriptioal states
+are reported to encompass widespread changes in surface markers and
+identify distinct signatures of endothelial progenitors and enhancers linked to
+CXCR4. 
+
+% for survival and treatment escape. They report
+%  widespread changes across such transcriptioal states,  of surface
+% markers, and identify signatures of endothelial progenitors and enhancers linked to
+% CXCR4 .
+
+This is indicative of myeloma cells
+having different \ac{CAD} dramatypes.
+
+
+
+% states co-exist in
+% individual myeloma cells
+
+% there are distinct alternate transcriptional states that myeloma cells  
+
+% regulon usage and enhancer rewiring
+% can switch between
+% distinct transcriptomic states 
+%   transcriptional plasticity and to for survival and
+%  treatment escape \cite{fredeDynamicTranscriptionalReprogramming2021}
+
+In other cancers, different
 adhesive phenotypes and transitions, such as those seen in
 epithelial-mesenchymal transition (EMT), are common
 \cite{gengDynamicSwitchTwo2014}. For myeloma, EMT-like phenotypes have been
@@ -512,10 +629,10 @@ release, and establishing colonization.
 \ac{CADD} adaptation predicts a specialized set of adhesion factors for
 extramedullary niches. A distinct phenotype has been proposed for extramedullary
 myeloma\footnotequote{Our analysis concluded that the gain of CD44, loss of
-CD56, loss of very late antigen-4 (VLA-4), imbalance of the chemokine
-receptor-4-chemokine ligand-12 (CXCR4-CXCL12) axis, [...] show an increased
-propensity [...] to leave the bone marrow and hone in extramedullary sites
-giving rise to more aggressive extramedullary diseases.
+      CD56, loss of very late antigen-4 (VLA-4), imbalance of the chemokine
+      receptor-4-chemokine ligand-12 (CXCR4-CXCL12) axis, [...] show an increased
+      propensity [...] to leave the bone marrow and hone in extramedullary sites
+      giving rise to more aggressive extramedullary diseases.
 }{guptaExtramedullaryMultipleMyeloma2022}, characterized by changes in
 expression of CD44, CD56, VLA-4, and CXCR4
 \cite{guptaExtramedullaryMultipleMyeloma2022}. In support of this,
@@ -524,7 +641,7 @@ myeloma cells to the BM, since ablating VLA-4 reduced medullary disease, but
 increased extramedullary involvement. Furthermore, the role of CXCR4 in
 mediating adhesion factor expression is well established, particularly in
 extramedullary MM cells \cite{roccaroCXCR4RegulatesExtraMedullary2015,
-guptaExtramedullaryMultipleMyeloma2022}: Extramedullary myeloma cells
+      guptaExtramedullaryMultipleMyeloma2022}: Extramedullary myeloma cells
 overexpress CXCR4, making them more responsive to cues that induce adhesion
 factor expression, such as CD44/H-CAM.
 
@@ -537,9 +654,9 @@ not assessed in this thesis, the vascular niche is a popular therapeutic target
 for preventing dissemination \cite{neriTargetingAdhesionMolecules2012}. Key
 adhesion factors like JAM-A and N-Cadherin have been highlighted as potential
 targets \cite{solimandoHaltingViciousCycle2020,
-mrozikTherapeuticTargetingNcadherin2015}. These factors were not differentially
+      mrozikTherapeuticTargetingNcadherin2015}. These factors were not differentially
 expressed between subpopulations isolated in Chapter\,1, suggesting distinct
-regulatory mechanisms for vascular versus \ac{MSC} interactions. 
+regulatory mechanisms for vascular versus \ac{MSC} interactions.
 \textbf{Circulating MM:}
 An adaptive \ac{CADD} would predict that circulating MM cells lose adhesion
 factors. Studies confirm that \dashed{compared to BM-resident cells} circulating
@@ -591,6 +708,9 @@ provide survival signals.
 
 
 \textbf{Considerations for Research on Myeloma Cell Adhesion:}
+The evidence presented here sets the stage for a more detailed exploration of
+adhesion factors in MM. Characterizations of bulk myeloma will not capture
+the dynamic changes in adhesion factor expression that occur during dissemination.
 Studying adhesion factors in MM \textit{in vitro} requires considering the
 specific microenvironmental context. Some adhesion factors are not present in MM
 cells but can be rapidly expressed with appropriate signals. Also, further
@@ -618,7 +738,12 @@ marrow, and extramedullary—underscore the necessity for a more targeted approa
 in therapy, which could involve modulation of specific adhesion factors to
 either promote retention or prevent dissemination. A dedicated project
 identifying BM retentive factors that do not cause survival signaling could be
-pivotal for this novel approach.
+pivotal for this novel approach. The gene-list presented in
+\apdxref{subapdx:tabs}{tab:S1} presents a robust starting point, as this work
+associated a high expression of these genes with both BM stromal adhesion and
+improved patient survival.
+
+Given that Myeloma must attach for
 
 Despite these insights, the current understanding of the functional roles and
 transitions of these adhesion phenotypes during myeloma progression remains
@@ -649,14 +774,38 @@ a more strategic approach to the management and treatment of multiple myeloma.
 % ======================================================================
 \unnsubsection{\caddadaptabilitytitle}%
 \label{sec:discussion_caddadaptability}%
-Chapter 1 demonstrates one peculiar paradox of multiple myeloma
-(MM) progression: The expression of adhesion factors is decreased as the
-disease advances, but is swiftly increased in direct contact with \acp{MSC}
-in \INA cells \dashed{a cell line derived from highly advanced \ac{PCL}}.
-This assumption dictates that aggressive myeloma cells gain the ability to
-dynamically express adhesion factors particularly fast. This section explores
-the hypothesis that rapid adaptability of \ac{CADD} is a hallmark of
-aggressive myeloma.
+Another intriguing observation presented in Chapter\,1 was the rapidness of
+\ac{CADD} adaptations in \INA cells: Within a time frame of only \SI{24}{\hour},
+\INA cells adapted their \ac{CADD} from homotypic aggregation to \ac{MSC}
+adhesion, then back to aggregation, followed by detachment of single cells.
+Since \INA were isolated from highly advanced \ac{PCL}
+\cite{burgerGp130RasMediated2001}, this rapid \ac{CADD} adaptability could be a
+hallmark of aggressive myeloma.
+
+% This
+% section explores the hypothesis that such rapid adaptability of \ac{CADD} is a
+% hallmark of aggressive myeloma.
+
+% Not only did \MAina upregulate adhesion
+% factors fast, but also generated daughter cells that lost \ac{MSC} attachment
+% and adhesion factor expression.
+% At the same time, \INA cells
+
+% This sugests that \ac{CADD} adaptations can occur extremely fast.
+
+
+% Chapter 1 demonstrates one peculiar paradox of multiple myeloma
+% (MM) progression:
+
+
+
+
+% This assumption dictates that aggressive myeloma cells gain the ability to
+% dynamically express adhesion factors particularly fast. 
+
+
+
+
 
 \textbf{Associating Adhesion Factors with Disease Progression \& Aggressiveness:}
 Rapid adaptability of \ac{CADD} is based on the assumption that adhesion factors
@@ -667,14 +816,14 @@ transformations have focused on resistance mechanisms acquired during
 chemotherapy, with cell adhesion factors being a well established driver of
 survival signaling via NF-$\kappa$B and selection of drug-resistance myeloma
 clones \cite{landowskiCellAdhesionmediatedDrug2003,
-solimandoDrugResistanceMultiple2022}. Also, adhesion and migration were
+      solimandoDrugResistanceMultiple2022}. Also, adhesion and migration were
 associated with a list of identified key regulators of myeloma
 progression\footnotequote{ A total of 28 genes were then computationally
-predicted to be master regulators (MRs) of MM progression. HMGA1 and PA2G4 were
-validated \textit{in vivo} [...], indicating their role in MM progression and
-dissemination. Loss of HMGA1 and PA2G4 also compromised the proliferation,
-migration, and adhesion abilities of MM cells \textit{in
-vitro}.}{shenProgressionSignatureUnderlies2021}
+      predicted to be master regulators (MRs) of MM progression. HMGA1 and PA2G4 were
+      validated \textit{in vivo} [...], indicating their role in MM progression and
+      dissemination. Loss of HMGA1 and PA2G4 also compromised the proliferation,
+      migration, and adhesion abilities of MM cells \textit{in
+            vitro}.}{shenProgressionSignatureUnderlies2021}
 \cite{shenProgressionSignatureUnderlies2021}. A recent study identified 18
 adhesion factors as a basis for a prognostic model identifying high-risk
 versions in newly diagnosed MM patients
@@ -704,49 +853,68 @@ drive aggressive dissemination, nor do they discuss the speed of adaptations in
 adhesion phenotypes.
 
 \textbf{Speed of Adaptability:}
-Rapid adaptability of \ac{CADD} predicts that aggressive myeloma cells can
-swiftly change their adhesion phenotype, similar to \INA cells upregulating
-adhesion factors in contact with \acp{MSC}. This rapidness is supposedly
-important for disease progression, since the potential of upregulating niche
-specialized adhesion factors alone might not be sufficient for succesful
-colonization, but also proper responsiveness to changing microenvironments. 
-After all, even \INA cells failed to adhere to \ac{MSC} during live-cell imaging,
-if the motorized stage top was moving too fast (data not shown), wich shows that
-even the fastest adhesion factor expression might not be sufficient for
-successful colonization.
+The speed of changes is often an overlooked dimension of cancer. Clonal dynamics
+have established that rapid mutations can drive aggressive progression on a
+genomic scale \citet{keatsClonalCompetitionAlternating2012}. The hypothesis
+of rapid \ac{CADD} adaptability expands this idea onto the plasticity of adhesion factor expression and adhesional phenotypes.
 
-Similar to Hypothesis\,1, the evidence for this hypothesis is limited by
-the knowledge on transitions between adhesive states. Not only is research lacking
-such knowledge, but one would also require speed measurements of adhesion factor
-expression to validate this hypothesis. 
-
-The
-evidence for this hypothesis is scarce.
-Rapid adjustments 
-
+However,
+on a genomic scale, mutational dynamics
 \citet{keatsClonalCompetitionAlternating2012} quantified the number of genomic
 changes per time and identified three temporal subtypes of MM: genetically
 stable, linearly evolving, or heterogeneous clonal mixtures with shifting
-predominant clones. Although this study did not adress the speed of adhesion
+predominant clones.
+
+Although this study did not adress the speed of adhesion
 factor expression changes, it shows that clonal heterogeneity is associated with
 gaining novel traits, which could include rapid adhesion factor expression.
 genes specifically, and did not describe the role of speed in MM progression is
 highlighted. This
 
-The molecular prerequisites  for a rapid adhesion changes might be met: 
+Rapid adaptability of \ac{CADD} predicts that aggressive myeloma cells can
+swiftly change their adhesion expression, similar to \INA cells upregulating
+adhesion factors in contact with \acp{MSC}, but then returning to homotypic
+aggregation and detachment. This rapidness is supposedly important for disease
+progression, since the capability of \ac{CADD} adaptation  alone might not be
+sufficient for succesful colonization, but should happen fast. After all, even
+\INA cells failed to adhere to \ac{MSC} during live-cell imaging, if the
+motorized stage top was moving too fast (data not shown), wich shows that even
+fast adhesion factor expression might not be sufficient for successful
+colonization.
+
+Similar to Hypothesis\,1, the evidence for this hypothesis is limited by
+the knowledge on transitions between adhesive states. Not only is research lacking
+such knowledge, but one would also require speed measurements of adhesion factor
+expression to validate this hypothesis.
+
+The
+evidence for this hypothesis is scarce.
+Rapid adjustments
+
+
+
+The molecular prerequisites  for a rapid adhesion changes might be met:
 The
 canonical NF-$\kappa$B signaling pathway is considered one of the fastest
 pathway overall \cite{gallego-sellesFastRegulationNFkB2022,
-zarnegarNoncanonicalNFkBActivation2008}. NF-$\kappa$B signaling is a
+      zarnegarNoncanonicalNFkBActivation2008}. NF-$\kappa$B signaling is a
 robust target in both MM patients and \INA cells,
 \cite{sarinEvaluatingEfficacyMultiple2020}.
 
-Integrins can undergo rapid conformational changes from active and inactive
+
+
+Other potential mechanisms for rapid change:
+- Asymmetric division of INA6!!
+- Integrins can undergo rapid conformational changes from active and inactive
 forms, which was utilized to cause detachments of B-cell leukemia cells
 using a small molecule \cite{ruanVitroVivoEffects2022}.
+- Shedding of adhesion factors with metalloproteases
+-
+
 
 
 \textbf{Implications for Future Research:}
+
 
 Databases of expression from Myeloma cells gathered from bone
 marrow \ac{MGUS}, \ac{aMM}, \ac{MM}, \ac{MMR} already exist
@@ -762,6 +930,21 @@ that the genelist was furthere filtered by the RNAseq results of \textit{in
       vitro} experiments.
 
 
+Rapid Adaptability of \ac{CADD} could explain the high variance of adhesion
+factor expression identified in myleoma patients, since even one stage and one
+niche implies different subsets of rapidly changing adhesion factors. This makes
+\textit{in vitro} studies of direct contact with stromal or endothelial cells
+more relevant, since they capture multiple possible adhesion phenotypes.
+
+It also explains the paradox of an overall decreasing adhesion factors during
+progression, whereas adhesion factors are established survival signals. Myeloma
+with the capability of rapis adhesional plasticity benefit from both worlds:
+Loss of adhesion factors for circulation, but rapid upregulation of adhesion
+once needed.
+
+but increasing them in contact with \acp{MSC}.
+
+
 \textbf{Implications for Therapy:}
 
 - Specialized treatment for each stage?
@@ -774,7 +957,14 @@ downstream of NF-$\kappa$B were shown to be effective
 \cite{adamikEZH2HDAC1Inhibition2017, adamikXRK3F2InhibitionP62ZZ2018}
 
 
+\textbf{Conclusion: Expect Anything}
 
+
+
+
+This hypothesis is supported by the association of adhesion
+factors with disease progression and aggressiveness, but lacks direct evidence
+for the speed of adaptability.
 
 
 
@@ -832,50 +1022,50 @@ downstream of NF-$\kappa$B were shown to be effective
 % Supporting Literature:
 
 % \begin{enumerate}
-      % \item \textbf{Disease Stage}
-            % \begin{itemize}
-                  % \item THIS WORK: Expression decreases during progression from
-                  %       \ac{MGUS} to \ac{MMR} of adhesion factors involved in hMSC
-                  %       adhesion.
-                  % \item The idea that MM pathogenesis involves transformative
-                  %       processes has been around for decades
-                  %       \cite{hallekMultipleMyelomaIncreasing1998}.
-                  %       Traditionally, it is believed that chemotherapy selects
-                  %       for resistant clones, including those that maximized
-                  %       cell survival signaling. Decriptions of changes during
-                  %       disease progression are rare.
+% \item \textbf{Disease Stage}
+% \begin{itemize}
+% \item THIS WORK: Expression decreases during progression from
+%       \ac{MGUS} to \ac{MMR} of adhesion factors involved in hMSC
+%       adhesion.
+% \item The idea that MM pathogenesis involves transformative
+%       processes has been around for decades
+%       \cite{hallekMultipleMyelomaIncreasing1998}.
+%       Traditionally, it is believed that chemotherapy selects
+%       for resistant clones, including those that maximized
+%       cell survival signaling. Decriptions of changes during
+%       disease progression are rare.
 
-                  %       However, \ac{CADD} adaptibilitye
-                  %       but a
-                  %       detailed understanding or categorization of progeression
-                  %       mechanisms is still lacking, especially during the
-                  %       progression of MM.
+%       However, \ac{CADD} adaptibilitye
+%       but a
+%       detailed understanding or categorization of progeression
+%       mechanisms is still lacking, especially during the
+%       progression of MM.
 
-                  %       Also, such transformations usually
-                  %       account for mechanisms of disease progression, not the
-                  %       speed of adaptibility
+%       Also, such transformations usually
+%       account for mechanisms of disease progression, not the
+%       speed of adaptibility
 
 
-                  % \item UNUSED: It is discussed that myeloma cell lines derived from
-                  %       advanced stages show different expression than newly
-                  %       diagnosed patients, discussing that they come from
-                  %       multiply relapsed patients
-                  %       \cite{sarinEvaluatingEfficacyMultiple2020}. This work
-                  %       also shows that Myeloma cell lines have the lowest
-                  %       expression of adhesion factors compared to all stages of
-                  %       \ac{MM} and \ac{MGUS}.
-                  % UNUSED \item For B-Cell Chronic Lymphocytic Leukemia, adhesion
-                  %       molecule expression patterns define distinct phenotypes in
-                  %       disease subsets \cite{derossiAdhesionMoleculeExpression1993}.
-                  % \item \citet{terposIncreasedCirculatingVCAM12016} reported an
-                  %       increase in adhesion molecule expression of ICAM-1 and
-                  %       VCAM-1 in patients with \ac{MM} compared to those with
-                  %       \ac{MGUS} and \ac{aMM}.
-                  % \item However, \citet{perez-andresClonalPlasmaCells2005}
-                  %       reported that CD40 is downregulated in \ac{PCL}
-                  %       patients. Hence, different \acp{CAM} could serve
-                  %       ambiguous roles in \ac{MM} progression.
-            % \end{itemize}
+% \item UNUSED: It is discussed that myeloma cell lines derived from
+%       advanced stages show different expression than newly
+%       diagnosed patients, discussing that they come from
+%       multiply relapsed patients
+%       \cite{sarinEvaluatingEfficacyMultiple2020}. This work
+%       also shows that Myeloma cell lines have the lowest
+%       expression of adhesion factors compared to all stages of
+%       \ac{MM} and \ac{MGUS}.
+% UNUSED \item For B-Cell Chronic Lymphocytic Leukemia, adhesion
+%       molecule expression patterns define distinct phenotypes in
+%       disease subsets \cite{derossiAdhesionMoleculeExpression1993}.
+% \item \citet{terposIncreasedCirculatingVCAM12016} reported an
+%       increase in adhesion molecule expression of ICAM-1 and
+%       VCAM-1 in patients with \ac{MM} compared to those with
+%       \ac{MGUS} and \ac{aMM}.
+% \item However, \citet{perez-andresClonalPlasmaCells2005}
+%       reported that CD40 is downregulated in \ac{PCL}
+%       patients. Hence, different \acp{CAM} could serve
+%       ambiguous roles in \ac{MM} progression.
+% \end{itemize}
 
 % \end{enumerate}
 
