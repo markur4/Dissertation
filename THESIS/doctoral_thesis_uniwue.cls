@@ -110,6 +110,7 @@
 
 % == Page Head and Foot 
 \usepackage{fancyhdr} % > For customizing headers and footers
+\usepackage{endnotes} % > For summarizing footnotes on a page
 
 % == Abbreviations 
 \usepackage[
@@ -793,7 +794,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 % == Footnotes =========================================================
-\usepackage{endnotes}
 % \let\footnote=\endnote % > Rename \endnote to \endnote
 
 
