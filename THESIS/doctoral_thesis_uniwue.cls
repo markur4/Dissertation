@@ -800,8 +800,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \let\oldfootnote\footnote % > Rename to keep the original
 % ## Redefine the footnote command to also add the footnote to the endnotes
 \renewcommand{\footnote}[1]{%
-    \endnote{#1}%
-    \oldfootnote{\small #1}%
+    \endnote{#1}% > Add the footnote to the endnotes
+    \addtocounter{footnote}{1}% > Increment the footnote counter
+    \footnotetext{\footnotesize #1}% > Add the footnote to the page footer
 }
 
 
