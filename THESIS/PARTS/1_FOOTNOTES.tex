@@ -5,7 +5,7 @@
 %  ## Define footnotes here
 
 
-\def\imagefeatures{%
+\def\footimagefeatures{%
     \emph{Features} are structural elements of an image, such as edges, corners,
     directions, colors. These features are mathematically extractable using
     \emph{filters} \dashed{also referred to as \emph{convolution
@@ -14,10 +14,10 @@
     particular direction, resulting in an image of the same size as the input,
     but showing only edges of one direction. \emph{Feature extraction} is the
     process of applying multiple filters, resulting in a stack of filtered
-    images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011,
+    images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011, 
         guptaDeepLearningImage2019} }
 
-\def\cnn{%
+\def\footcnn{%
     \emph{Convolutional neural networks} (CNN) are algorithms that use the output of a
     feature extractor\footref{foot:image_features} to feed
     into a neural network. The network then learns to associate these feature
@@ -27,47 +27,35 @@
 
 
 
-\newcommand{\footadhesionfactor}{%
-    \footnote{%
-        \emph{Adhesion Factor}: Any factor influencing cell adhesion, including
-        \acfp{CAM}, \acf{ECM} proteins, chemotactic factors associated with
-        inducing adhesion factor expression \dashed{such as CXCR4 or CXCL12},
-        and factors listed in Gene ontology terms \textit{“extracellular matrix
-            organization”}, \textit{“ECM proteoglycans”}, \textit{“cell-substrate
-            adhesion”}, and \textit{“negative regulation of cell-substrate
-            adhesion”}.
-        %
-        \label{foot:adhesionfactor}%
-    }%
+\def\footadhesionfactor{%
+    \emph{Adhesion Factor}: Any factor influencing cell adhesion, including
+    \acfp{CAM}, \acf{ECM} proteins, chemotactic factors associated with
+    inducing adhesion factor expression \dashed{such as CXCR4 or CXCL12},
+    and factors listed in Gene ontology terms \textit{“extracellular matrix
+        organization”}, \textit{“ECM proteoglycans”}, \textit{“cell-substrate
+        adhesion”}, and \textit{“negative regulation of cell-substrate
+        adhesion”}.
 }%
 
-\newcommand{\footretentiveadhesionfactors}{%
-    \footnote{%
-        \emph{Retentive Adhesion Factors}: The subset of adhesion factors that
-        promotes achorage of myeloma cell in the \ac{BMME}, and promote better
-        patient survival at high expression as shown in Chapter\,1.
-        %
-        \label{foot:retentiveadhesionfactors}%
-    }%
+\def\footretentiveadhesionfactors{%
+    \emph{Retentive Adhesion Factors}: The subset of adhesion factors that
+    promotes achorage of myeloma cell in the \ac{BMME}, and promote better
+    patient survival at high expression as shown in Chapter\,1.
 }
 
 
-\newcommand{\footinteractionscenario}{%
-    \footnote{%
-        \emph{Cell Interaction Scenario} (specified in this work): The type of
-        cellular interactions and adhesions between cells of the same type
-        (homotypic interaction), different types (heterotypic interaction), or
-        between cells and the substrate. Complex interaction scenarios can
-        combine all these types at the same time. When interaction scenarios
-        emerge from cell division, the term \emph{growth conformation} is
-        used as well (see Chapter\,1)%
-        %
-        \label{foot:interactionscenario}%
-    }%
+\def\footinteractionscenario{%
+    \emph{Cell Interaction Scenario} (specified in this work): The type of
+    cellular interactions and adhesions between cells of the same type
+    (homotypic interaction), different types (heterotypic interaction), or
+    between cells and the substrate. Complex interaction scenarios can
+    combine all these types at the same time. When interaction scenarios
+    emerge from cell division, the term \emph{growth conformation} is
+    used as well (see Chapter\,1)%
 }
 
 
-\newcommand{\footcad}{%
+\def\footcad{%
     \emph{\acf{CAD}} (specified in this work): The observation and measurement
     of time-dependent changes in cell adhesion and detachment events. \ac{CAD}
     expands traditional \emph{cell adhesion} by a time component and implies
@@ -79,7 +67,7 @@
 
 
 
-\newcommand{\footdramatype}{%
+\def\footdramatype{%
     Environmental influences from the fertilization of an egg [...] through to
     sexual maturity are referred to as the primary milieu. The interaction
     between this milieu and the genotype will give rise to the phenotype. The
@@ -93,7 +81,7 @@
 
 
 
-\newcommand{\footcaddt}{%
+\def\footcaddt{%
     \emph{CAD dramatype} (specified in this work): Specific \ac{CAD} behavior
     caused by proximate environmental factors. A CAD dramatype is characterized
     by the duration cells spend in distinct adhesive states or interaction
@@ -105,7 +93,7 @@
     mediated by proximate environmental factors. %
 }
 
-\newcommand{\footadhesiondt}{%
+\def\footadhesiondt{%
     \emph{Adhesion dramatype} (specified in this work): Short version for
     \ac{CAD} dramatype\footref{foot:caddt}. Since the term \emph{dramatype} implies dynamic changes,
     \emph{CAD dramatypes} and \emph{adhesion dramatypes} are interchangable.%

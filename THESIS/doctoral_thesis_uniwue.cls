@@ -159,7 +159,7 @@
 \usepackage{multirow} % > For rows conatining two lines
 
 %== Footnotes
-% \usepackage{bigfoot} % > For footnotes spanning multiple pages
+\usepackage{perpage} % > For resetting counters per page
 
 % == Citations 
 \usepackage{apacite} % > For citations
@@ -792,66 +792,87 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % == Footnotes =========================================================
 % \let\footnote=\endnote % > Rename \endnote to \endnote
 
-\let\oldfootnote\footnote % > Rename to keep the original
+% \let\oldfootnote\footnote % > Rename to keep the original
 % ## Redefine the footnote command to also add the footnote to the endnotes
-% \renewcommand{\footnote}[1]{%
-%     \addtocounter{footnote}{1}% > Increment the footnote counter
-%     \refstepcounter{footnote}
-%     \endnote{#1}% > Add the footnote to the endnotes
-%     \footnotetext{\footnotesize #1}% > Add the footnote to the page footer
-%     \xspace% > Add a space after the footnote
-% }
 
-% \renewcommand{\footnote}[1]{%
-%     \endnotetext{#1}% > Add the footnote to the endnotes
-%     \addtocounter{footnote}{1}% > Increment the footnote counter
-%     \footnotetext{\footnotesize #1}% > Add the footnote to the page footer
-%     \xspace% > Add a space after the footnote
-% }
-\renewcommand{\footnote}[1]{%
+
+
+% \newcounter{termcounter} % > Initialize the counter
+
+% ## Footnotes for explanations or specifications
+% > #1 is the text of the footnote
+% > #2 is the label of the footnote
+\newcommand{\footterm}[2]{%
+    % \footnote{#1}% !!  Breaks Latex!!!
     % \addtocounter{footnote}{1}% > Increment the footnote counter
-    % \refstepcounter{footnote}
-    % \footnote{#1}% !!  Add the footnote to the page footer
+    % \refstepcounter{footnote}% > Increment the footnote counter
     \footnotemark% > Add the mark into the text, and increment counter
-    \footnotetext[\thefootnote]{#1}% > Add the footnote to the page footer
-    \endnotetext[\thefootnote]{#1}% > Collect the footnote for "Notes" section
+    % \footnotemark[\thefootnote]% > Add the mark into the text, and increment counter
+    % \endnotetext{#1}% > Collect the footnote for "Notes" section
+    \endnote[\thefootnote]{#1}% > Collect the footnote for "Notes" section
+    % \endnote{#1}% > Collect the footnote for "Notes" section
+    \footnotetext[\thefootnote]{#1#2}% > Add the footnote to the page footer
+    % \footnotetext{#1#2}% > Add the footnote to the page footer
     \xspace% > Add a space after the footnote
 }
 
 
-% \renewcommand{\footnote}[1]{%
-%     \refstepcounter{footnote}% > Increment the footnote counter
-%     % \footnotemark[\thefootnote]% > Add the footnote 
-%     % \footnotemark
-%     \endnote{#1}% > Add the footnote to the endnotes
-%     % \addtocounter{footnote}{1}% > Increment the footnote counter
-%     \footnotetext[\thefootnote]{\footnotesize #1}% > Add the footnote to the page footer
-%     \xspace% > Add a space after the footnote
-% }
-
-% \renewcommand{\footnote}[1]{%
-%     % \refstepcounter{footnote}% > Increment the footnote counter
-%     % \footnotemark[\thefootnote]% > Add the footnote 
-%     % \footnotemark
-%     % \endnotetext{#1}% > Add the footnote to the endnotes
-%     % \addtocounter{footnote}{1}% > Increment the footnote counter
-%     \footnote{\footnotesize #1}% > Add the footnote to the page footer
-%     % \addtoendnotes{#1}% > Add the footnote to the endnotes
-%     \xspace% > Add a space after the footnote
-% }
 
 
 % ## Define Command for footnotes containing quotes
 % > #1 is the citation
 % > #2 is the text of the footnote
-\newcommand{\footnotequote}[2]{%
-    \footnote{\citet{#2}:~%
-        \textit{``\,\ignorespaces%
-            #1\nolinebreak\,''}}%
+% \newcommand{\footquote}[2]{%
+% \footnote{\citet{#2}:~%
+% \textit{``\,\ignorespaces%
+% #1\nolinebreak\,''}}%
+% }
+
+
+
+% == Dagger Footnotes
+\newcounter{daggercounter} % > Initialize the counter
+\MakePerPage{daggercounter} % > Make the counter reset on each new page
+
+% ## Make Marker that changes depending on counter
+\newcommand{\markerdaggeralph}{%
+    {\small% > Set the font size to small, which makes it bigger
+            \ifnum\value{daggercounter}=1 % > First footnote
+                \dag
+            \fi
+            \ifnum\value{daggercounter}=2 % > Second footnote
+                \ddag % > Double dagger
+            \fi
+            \ifnum\value{daggercounter}=3 % > Third footnote
+                {\footnotesize\dag\dag}
+                % \alph{daggercounter}% > Add the custom mark and counter into the text
+            \fi
+        }%
+}%
+
+% ## Command for footnotes with dagger markers
+\newcommand{\footdagger}[1]{%
+    {% ## Restrict changes to \thefootnote locally
+            \renewcommand{\thefootnote}{% > Update marker to dagger
+                \markerdaggeralph%
+            }%
+            \stepcounter{daggercounter}% > Increment the dagger footnote counter
+            \textsuperscript{% > Add the custom mark and counter into the text
+                \markerdaggeralph%
+            }%
+            \footnotetext{~#1}% > Add text
+        }%
+    \xspace% > Add a space after the footnote, but not before comma
 }
 
-
-
+% ## Footnote Quotes
+\newcommand{\footquote}[2]{%
+    \footdagger{%
+        \citet{#2}:~%
+        \textit{``\,\ignorespaces%
+            #1\nolinebreak\,''}% > Add the footnote text with the custom counter
+    }%
+}
 
 % ======================================================================
 % == Importing PDF Files

@@ -19,24 +19,24 @@
 % provides signals inducing myeloma cell cycle arrest or progression the cell
 % cycle (8,11). ECM is also prone to degradation, which is common in several
 % osteotropic cancers, and is the cause of osteolytic bone disease. This is
-% driven by a ‘vicious cycle’ that maximizes bone destruction by extracting
+% driven by a ‘vicious cycle' that maximizes bone destruction by extracting
 % growth factors (EGF and TGF-β) that are stored in calcified tissues (12).
 % Third, direct contact with MSCs physically anchors myeloma cells to the BM
 % (3,13). Fourth, to disseminate to distant sites, myeloma cells require, at
 % least partially, independence from essential growth and survival signals
 % provided by MSCs in the form of soluble factors or cell adhesion signaling
 % (5,14,15). For example, the VLA4 (Myeloma)–VCAM1 (MSC)-interface activates
-% NF-κB in both myeloma and MSCs, inducing IL-6 expression in MSCs. The
+% NF-$\kappa$B in both myeloma and MSCs, inducing IL-6 expression in MSCs. The
 % independence from MSCs is then acquired through autocrine survival signaling
 % (16,17). In short, anchorage of myeloma cells to MSCs or ECM is a
-% ‘double-edged sword’: adhesion counteracts dissemination, but also presents
+% ‘double-edged sword': adhesion counteracts dissemination, but also presents
 % signaling cues for growth, survival, and drug resistance (18).
 
 % To address this ambiguity, we developed an in vitro co-culture system modeling
 % diverse adhesion modalities to study dissemination, growth, and survival of
 % myeloma cells and hMSCs. Co-cultures of hMSCs and the myeloma cell line INA-6
 % replicated tight interactions and aggregate growth, akin to "microtumors" in
-% Ghobrial’s metastasis concept (19). We characterized the growth conformations
+% Ghobrial's metastasis concept (19). We characterized the growth conformations
 % of hMSCs and INA­6 as homotypic aggregation vs. heterotypic hMSC adherence and
 % their effects on myeloma cell survival. We tracked INA­6 detachments from
 % aggregates and hMSCs, thereby identifying a potential "disseminated"
@@ -68,7 +68,7 @@ transformation resulting in uncontrolled growth and disruption of normal bone
 marrow function \cite{yangPathogenesisTreatmentMultiple2022}. The prevalence of
 multiple myeloma has tripled across both europe and USA from 1980 to 2014 due to
 an ageing population \cite{ociasTrendsHematologicalCancer2016,
-      turessonRapidlyChangingMyeloma2018}. For 2024, 35780 new \ac{MM} cases and 12540
+    turessonRapidlyChangingMyeloma2018}. For 2024, 35780 new \ac{MM} cases and 12540
 deaths are estimated for the USA alone \cite{siegelCancerStatistics20242024}.
 
 To understand the progression of a healthy plasma cell to \ac{MM}, one can
@@ -76,7 +76,7 @@ review other \emph{monoclonal gammopathies}. These are defined by the presence
 of monoclonal immunoglobulin in the blood serum which is indicative of abnormal
 plasma cell clones overexpressing the same type of dysfunctional antibody.
 \cite{kyleMonoclonalGammopathyUndetermined1997,
-      fermandMonoclonalGammopathyClinical2018}. When no further disease manifestations
+    fermandMonoclonalGammopathyClinical2018}. When no further disease manifestations
 are present, the condition is termed \acfi{MGUS}, which is the most commonly
 diagnosed monoclonal gammopathy \cite{kyleMonoclonalGammopathyUndetermined1997}.
 \ac{MGUS} has a 1-\SI{5}{\percent} annual risk of progression to \ac{MM}
@@ -87,16 +87,16 @@ requires not only identification of a minimum of clonal plasma cells, but also a
 \emph{myeloma defining event} which is evidence of malignancy or end-organ
 damage, such as hypercalcemia, renal insufficiency, anemia, or bone lesions
 \cite{rajkumarInternationalMyelomaWorking2014}. A localized
-smaller\footnotequote{Solitary plasmacytoma with \SI{10}{\percent} or more
-      clonal plasma cells is regarded as multiple myeloma. [...] If bone marrow has
-      less than \SI{10}{\percent} clonal plasma cells, more than one bone lesion is
-      required to distinguish [\ac{MM}] from solitary plasmacytoma with minimal marrow
-      involvement.}{rajkumarInternationalMyelomaWorking2014} mass of clonal plasma
+smaller\footquote{Solitary plasmacytoma with \SI{10}{\percent} or more
+    clonal plasma cells is regarded as multiple myeloma. [...] If bone marrow has
+    less than \SI{10}{\percent} clonal plasma cells, more than one bone lesion is
+    required to distinguish [\ac{MM}] from solitary plasmacytoma with minimal marrow
+    involvement.}{rajkumarInternationalMyelomaWorking2014} mass of clonal plasma
 cells together with a singular primary bone lesion is diagnosed as \ac{SP}.
 \ac{SP} can progress to \ac{MM} in \SI{32}{\percent} of cases with a median
 follow-up of 9.7 years
 \cite{thumallapallySolitaryPlasmacytomaPopulationbased2017,
-      gaoSolitaryBonePlasmacytoma2024}. Studies from
+    gaoSolitaryBonePlasmacytoma2024}. Studies from
 \citet{kyleMonoclonalGammopathyUndetermined1997} show that \ac{SP} cases are
 rare, constituting only \SI{2.5}{\percent} of monoclonal gammopathy diagnoses,
 whereas \ac{MM} represent \SI{18}{\percent}. Another rare precursor of \ac{MM}
@@ -108,15 +108,15 @@ criteria for \ac{MM} diagnosis. \cite{rajkumarInternationalMyelomaWorking2014}.
 Recent reports show that if left untreated, \SI{72}{\percent} of \ac{aMM}
 patients progress to \ac{MM}, whereas early treatment can lower the progression
 rate to \SI{11}{\percent} within up to 7.6 years until last
-follow-up\footnote{For non-high risk \ac{aMM} patients, treatment lowered
-      \ac{MM} progression rate to \SI{9}{\percent}, compared to \SI{31}{\percent} for
-      untreated patients (within up to 6.7 and 7.6 years of follow-up, respectively).
-      For high-risk \ac{aMM} patiens, treatment lowered \ac{aMM} progression rate to
-      \SI{11}{\percent}, compared to \SI{72}{\percent} for untreated patients (within
-      up to 5.2 years of follow-up and median time to progression of 2.2 years,
-      respectively) \cite{abdallahModeProgressionSmoldering2024}.}
+follow-up\footdagger{For non-high risk \ac{aMM} patients, treatment lowered
+    \ac{MM} progression rate to \SI{9}{\percent}, compared to \SI{31}{\percent} for
+    untreated patients (within up to 6.7 and 7.6 years of follow-up, respectively).
+    For high-risk \ac{aMM} patiens, treatment lowered \ac{aMM} progression rate to
+    \SI{11}{\percent}, compared to \SI{72}{\percent} for untreated patients (within
+    up to 5.2 years of follow-up and median time to progression of 2.2 years,
+    respectively) \cite{abdallahModeProgressionSmoldering2024}.}
 \cite{abdallahModeProgressionSmoldering2024,
-      mateosmaria-victoriaLenalidomideDexamethasoneHighRisk2013}. \ac{MM} itself can
+    mateosmaria-victoriaLenalidomideDexamethasoneHighRisk2013}. \ac{MM} itself can
 progress to advanced stages, such as \emph{extramedullary involvement/disease}
 which describes colonization of soft tissues outside the bone marrow
 \cite{bladeExtramedullaryDiseaseMultiple2022}, but also \ac{PCL} which is
@@ -159,11 +159,11 @@ classified as \ac{MM} \cite{rajkumarInternationalMyelomaWorking2014}, the
 presence of multiple tumor lesions within the \ac{BM} is very common. More than
 one or 25 such lesions predict poor prognosis for asymptomatic and symptomatic
 \ac{MM} patients, respectively \cite{kastritisPrognosticImportancePresence2014,
-      maiMagneticResonanceImagingbased2015a}. Additionally, \ac{MM} cells can
+    maiMagneticResonanceImagingbased2015a}. Additionally, \ac{MM} cells can
 disseminate to extramedullary sites of virtually any tissue, highlighting
 \ac{MM} as a systemic disease with potential multi-organ impact
 \cite{rajkumarMultipleMyelomaCurrent2020,
-      bladeExtramedullaryDiseaseMultiple2022}. Hence, dissemination is a major
+    bladeExtramedullaryDiseaseMultiple2022}. Hence, dissemination is a major
 contributor to \ac{MM} progression and poor prognosis, enabling \ac{MM} cells to
 colonize new niches that favor survival, quiescent states or are less accessible
 for therapy, especially with high subclonal heterogeneity
@@ -189,11 +189,11 @@ Nevertheless, attempts to structure this process have been made by
 \citet{zeissigTumourDisseminationMultiple2020}, describing \ac{MM} dissemination in
 five steps:
 \begin{enumerate}
-      \item Retention in the \ac{BM}
-      \item Release from the \ac{BM}
-      \item Intravasation
-      \item Extravasation
-      \item Colonization.
+    \item Retention in the \ac{BM}
+    \item Release from the \ac{BM}
+    \item Intravasation
+    \item Extravasation
+    \item Colonization.
 \end{enumerate}
 
 % \emph{Retention in the \ac{BM}}, \emph{release from the \ac{BM}},
@@ -217,11 +217,11 @@ into one coherent context. For instance,
 processes are critical for succesful dissemination: Lowered adhesion to the \ac{BM},
 but increased adhesion to the endothelium to initiate extravasation
 \cite{asosinghUniquePathwayHoming2001a,
-      mrozikTherapeuticTargetingNcadherin2015}. This alone implies stringent
+    mrozikTherapeuticTargetingNcadherin2015}. This alone implies stringent
 separation of different adhesive processes during the dissemination process.
 Given that \acp{CAM} have become attractive targets for
 treating \ac{MM} \cite{bouzerdanAdhesionMoleculesMultiple2022,
-      katzAdhesionMoleculesLifelines2010}, such detailed understanding of cell
+    katzAdhesionMoleculesLifelines2010}, such detailed understanding of cell
 adhesion is crucial for developing successful therapies.
 
 
@@ -240,11 +240,11 @@ is bone tissue and \ac{ECM}, which could become important for
 \emph{Direct adhesion} of \ac{MM} cells to the \ac{BM} is mediated through
 \ac{ECM} components and cell adhesion to other \ac{BM} resident cells like
 osteoblasts, osteoclasts and \acp{BMSC} \cite{teohINTERACTIONTUMORHOST1997,
-      bouzerdanAdhesionMoleculesMultiple2022}. \ac{ECM} components include
+    bouzerdanAdhesionMoleculesMultiple2022}. \ac{ECM} components include
 fibronectin, collagens, and proteoglycans such as decorin
 \cite{huDecorinmediatedSuppressionTumorigenesis2021,
-      huangHigherDecorinLevels2015, katzAdhesionMoleculesLifelines2010,
-      kiblerAdhesiveInteractionsHuman1998}. \acp{BMSC} are vital in this niche,
+    huangHigherDecorinLevels2015, katzAdhesionMoleculesLifelines2010,
+    kiblerAdhesiveInteractionsHuman1998}. \acp{BMSC} are vital in this niche,
 supporting cell adhesion through \acp{CAM} but also by secretion of (\ac{ECM})
 components \cite{katzAdhesionMoleculesLifelines2010}. Such adhesion acts both as
 physical anchorage but also provides signaling cues for growth, survival, and
@@ -262,12 +262,12 @@ deleting BCMA \dashed{a receptor for survival factors} leads to loss of
 IGF-1,\,BAFF,\,APRIL,\,and\,VEGF, although IGF-1 has proven to be the primary
 survival factor \cite{sprynskiRoleIGF1Major2009}. These signals are secreted by
 \acp{BMSC} and adipocytes \cite{kiblerAdhesiveInteractionsHuman1998,
-      garcia-ortizRoleTumorMicroenvironment2021}. \emph{Chemotaxis} is also crucial
+    garcia-ortizRoleTumorMicroenvironment2021}. \emph{Chemotaxis} is also crucial
 for \ac{BM} retention \cite{ullahRoleCXCR4Multiple2019}. CXCL12 and CXCL8 are
 soluble chemotactic signals produced by \acp{BMSC} and attract \ac{MM} cells,
 but also primes their cytoskeleton and integrins for adhesion
 \cite{aggarwalChemokinesMultipleMyeloma2006,
-      alsayedMechanismsRegulationCXCR42007}.
+    alsayedMechanismsRegulationCXCR42007}.
 \citet{roccaroCXCR4RegulatesExtraMedullary2015} demonstrated that inhibiting
 CXC4R \dashed{the receptor of CXCL12/SDF-1$\alpha$} with the monoclonal antibody
 Ulocuplumab decreased \ac{MM} cell homing to the \ac{BM} and reduced
@@ -297,7 +297,7 @@ Studies suggest that \acp{CAM} expression indeed plays a role in \ac{MM}
 dissemination. For instance, studies demonstrate that circulating \ac{MM} cells
 exhibit reduced levels of integrin $\alpha4\beta1$, in contrast to those located
 in the \ac{BM} \cite{paivaDetailedCharacterizationMultiple2013,
-      paivaCompetitionClonalPlasma2011}. Given that dissemination can be induced in
+    paivaCompetitionClonalPlasma2011}. Given that dissemination can be induced in
 mice by overexpressing the \ac{CAM} shedding protease heparanase
 \cite{yangHeparanasePromotesSpontaneous2005}, it seems reasonable that dynamic
 loss of adhesive strength is causing release of \ac{MM} cells from the \ac{BM}.
@@ -327,7 +327,7 @@ independence from essential growth and survival signals provided by \ac{BMSC}.
 Autocrine signaling has been proposed as a key mechanism through which myeloma
 cells gain independence from essential survival factors such as IL-6
 \cite{frassanitoAutocrineInterleukin6Production2001,
-      urashimaCD40LigandTriggered1995}. Autocrine signaling could also disrupt
+    urashimaCD40LigandTriggered1995}. Autocrine signaling could also disrupt
 responsiveness to \ac{MSC}-derived chemotactic signals, since \ac{MM} cells from
 \ac{BM} biopsies were shown to express CXCL12 under hypoxic conditions induced
 by HIF-2$\alpha$ \cite{martinHypoxiainducibleFactor2Novel2010}. Since \ac{MM}
@@ -341,11 +341,11 @@ The degradation of bone tissue could also play a critical role in myeloma cell
 release by eliminating adhesive anchorage within the ECM, considering that
 \ac{ECM} is remodeled even at the \ac{MGUS} stage
 \citet{glaveyProteomicCharacterizationHuman2017}. This degradation is part of a
-‘vicious cycle’ that is well described in osteotropic cancer types and is the
+‘vicious cycle' that is well described in osteotropic cancer types and is the
 key pathway of bone destruction, dissolving bone-resident growth factors like
 TGF-$\beta$ that further drive tumor growth
 \cite{haradaMyelomaBoneInteraction2021, siclariMolecularInteractionsBreast2007,
-      wangProstateCancerPromotes2019}. Notably, it is reasonable to assume that bone
+    wangProstateCancerPromotes2019}. Notably, it is reasonable to assume that bone
 destruction drives dissemination by removing physical barriers, yet such concept
 was not proven yet.
 
@@ -388,7 +388,7 @@ for regeneration during adulthood. The classical definition of a stem cell is
 that of a relatively undifferentiated cell that divides asymmetrically,
 generating one daughter cell with maintained stemness, and one differentiated
 daughter cell \cite{cooperCellMolecularApproach2000,
-      shenghuiMechanismsStemCell2009}. Because of their significance in biology and
+    shenghuiMechanismsStemCell2009}. Because of their significance in biology and
 regenerative medicine, stem cells have become a prominent subject in modern
 research. \acp{hMSC} have been presented as promising candidate in the context
 of regeneration, given that they feature also intriguing immunomodulatory
@@ -408,7 +408,7 @@ Interestingly, it was shown nearly twenty years earlier that cells within adult
 bone marrow seemed to have mesenchymal properties as they were able to
 differentiate into bone tissue
 \cite{friedensteinOsteogenesisTransplantsBone1966,
-      friedensteinOsteogenicPrecursorCells1971, biancoMesenchymalStemCells2014}. This
+    friedensteinOsteogenicPrecursorCells1971, biancoMesenchymalStemCells2014}. This
 was the origin of the \emph{``mesengenic process''}-hypothesis: This concept
 states that mesenchymal stem cells serve as progenitors for multiple mesodermal
 tissues (bone, cartilage, muscle, marrow stroma, tendon, fat, dermis and
@@ -422,12 +422,12 @@ lineages~\cite{pittengerMultilineagePotentialAdult1999}. Since then, the term
 precursor to a couple of mesodermal tissues. \acp{MSC} derived from bone marrow
 (\acp{BMSC}) were shown to differentiate into osteocytes, chondrocytes, adipocytes
 and cardiomyocytes \cite{gronthosSTRO1FractionAdult1994,
-      muruganandanAdipocyteDifferentiationBone2009, xuMesenchymalStemCells2004}. Most
+    muruganandanAdipocyteDifferentiationBone2009, xuMesenchymalStemCells2004}. Most
 impressively, these cells also exhibited ectodermal and endodermal
 differentiation potential, as they produced neuronal cells, pancreatic cells and
 hepatocytes \cite{barzilayLentiviralDeliveryLMX1a2009,
-      wilkinsHumanBoneMarrowderived2009, gabrInsulinproducingCellsAdult2013,
-      stockHumanBoneMarrow2014}.
+    wilkinsHumanBoneMarrowderived2009, gabrInsulinproducingCellsAdult2013,
+    stockHumanBoneMarrow2014}.
 
 It was later established that cultures with MSC-like properties can be isolated
 from \textit{`virtually every post-natal organs and tissues'}, and not just bone
@@ -435,7 +435,7 @@ marrow \cite{dasilvameirellesMesenchymalStemCells2006}. However, depending on
 which tissue they originated from, \acp{MSC} can differ greatly in their
 transcription profile and \textit{in vivo} differentiation potential
 \cite{jansenFunctionalDifferencesMesenchymal2010,
-      sacchettiNoIdenticalMesenchymal2016}.
+    sacchettiNoIdenticalMesenchymal2016}.
 
 Since \acp{MSC} are a heterogenous group of cells, they were defined by their
 \textit{in vitro} characteristics. A minimal set of criteria are the following
@@ -451,7 +451,7 @@ immunomodulatory capabilities, which could be the reason why conventionally the
 \emph{`S'} in \ac{MSC} stands for \emph{Stromal} instead of \emph{Stem}.
 Althogh, \acp{MSC} are not yet established in routine clinical practice
 \dashed{despite thousands of clinical trials covering most of the human
-      body's organs}, they still are among the most studied cell types and are topic
+    body's organs}, they still are among the most studied cell types and are topic
 of vast research \cite{abdelrazikMesenchymalStemCells2023}. \acp{MSC} are valued
 for their very high treatment tolerance, but also as an adaptive platform for
 modifications to improve their therapeutic effects
@@ -460,10 +460,10 @@ modifications to improve their therapeutic effects
 modified \acp{MSC} into the clinical practice of treating ischemic strokes,
 whereas \citet{monivasgallegoMesenchymalStemCell2024} conclude that
 \emph{further studies are needed}, a statement that's ubiquitous in publications
-on \acp{MSC} based therapies\footnotequote{Altogether, the articles published in
-      this Special Issue raise more questions than they answer, given that most of the
-      conclusions carry the statement \textbf{‘further studies are
-            needed’}.}{abdelrazikMesenchymalStemCells2023}. Still, many fields of research
+on \acp{MSC} based therapies\footquote{Altogether, the articles published in
+    this Special Issue raise more questions than they answer, given that most of the
+    conclusions carry the statement \textbf{‘further studies are
+        needed'}.}{abdelrazikMesenchymalStemCells2023}. Still, many fields of research
 benefit from this vast general understanding of \acp{MSC} biology, including
 this work and the study of the \ac{BMME} in the context of cancer pathologies
 such as \ac{MM}.
@@ -484,7 +484,7 @@ bone marrow through e.g. cell adhesion and chemoattractaction
 cells on \acp{BMSC} is a lot more far-reaching, influencing cell cycle
 progression, immune response and bone metabolism
 \cite{dotterweichContactMyelomaCells2016,
-      fernandoTranscriptomeAnalysisMesenchymal2019}. Hence, \acp{BMSC} play a complex
+    fernandoTranscriptomeAnalysisMesenchymal2019}. Hence, \acp{BMSC} play a complex
 role in the overall pathology of \ac{MM} \cite{mangoliniBoneMarrowStromal2020}.
 Since bone tissue represents a sturdy physical barrier that \ac{MM} cells might
 have to overcome to disseminate, it is crucial to revisit the impact that
@@ -516,14 +516,14 @@ and is also a key driver of cell adhesion mediated drug resistance
 \acp{BMSC} however react with stress-induced senescence and secretion of
 multiple factors that drive \ac{MM} pathology, such as RANKL and components of
 the \ac{SASP} \cite{chauhanMultipleMyelomaCell1996,
-      fairfieldMultipleMyelomaCells2020}.
+    fairfieldMultipleMyelomaCells2020}.
 
 
 Another fundamental factor contributing to bone destruction is the suppresion of
 osteogenic differentiation of \acp{BMSC} by myeloma cells: \ac{MM} cells secrete
 DKK1, which inhibits Wnt signaling that otherwise induces the key osteogenic
 transcription factor RUNX2  \cite{gaurCanonicalWNTSignaling2005,
-      qiangDkk1inducedInhibitionWnt2008, zhouDickkopf1KeyRegulator2013}. Instead,
+    qiangDkk1inducedInhibitionWnt2008, zhouDickkopf1KeyRegulator2013}. Instead,
 \acp{BMSC} are driven towards the adipogenic lineage \ac{MM} by VCAM1 signaling,
 with MM cells stabilizing the adipogenic transcription factor PPAR-$\gamma$
 \cite{dotterweichContactMyelomaCells2016, liuMyelomaCellsShift2020}.
@@ -540,10 +540,10 @@ previously treated mice with the same inhibitor XRK3F2, which resulted in bone
 formation restricted to MM containing bones. This approach is intriguing, since
 NF-$\kappa$B has remained an untreatable target given its ubiquitous role in
 cell survival. However, a review by \citet{verzellaNFkBPharmacopeiaNovel2022}
-clearly disagrees with this notion\footnotequote{Collectively, this bulk of
-      evidence demonstrates that the safe and cancer-selective inhibition of the
-      NF-$\kappa$B pathway is clinically achievable and promises profound benefit to
-      patients with NF-$\kappa$B-driven cancers}{verzellaNFkBPharmacopeiaNovel2022},
+clearly disagrees with this notion\footquote{Collectively, this bulk of
+    evidence demonstrates that the safe and cancer-selective inhibition of the
+    NF-$\kappa$B pathway is clinically achievable and promises profound benefit to
+    patients with NF-$\kappa$B-driven cancers}{verzellaNFkBPharmacopeiaNovel2022},
 shifting the focus onto upstream activators and downstream effectors of
 NF-$\kappa$B signaling, a principle that was exemplified by the work of
 \citet{adamikXRK3F2InhibitionP62ZZ2018} on the GFI1/p62 interface. This
@@ -556,7 +556,7 @@ Overall, \acp{MSC} are pivotal within the \ac{BMME}, serving both structural and
 responsive roles in \ac{MM}. NF-$\kappa$B signaling, essential in MSC-myeloma
 interactions, plays a crucial role in myeloma survival and MSC function
 modification \cite{cippitelliRoleNFkBSignaling2023,
-      royNFkBActivatingPathways2018}. Direct contact is necessary to activate these
+    royNFkBActivatingPathways2018}. Direct contact is necessary to activate these
 pathways, exacerbating \ac{MM} pathology. Targeting components of NF-$\kappa$B
 signaling offers therapeutic potential, aiming to disrupt key interactions and
 inhibit myeloma progression. Deeper molecular understanding of the MSC--Myeloma

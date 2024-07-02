@@ -96,7 +96,7 @@ inducing myeloma cell cycle arrest or progression the cell cycle
 \ %
 ECM is also prone to degradation, which is common in several osteotropic
 cancers, and is the cause of osteolytic bone disease. This is driven by a
-‘vicious cycle’ that maximizes bone destruction by extracting growth factors
+‘vicious cycle' that maximizes bone destruction by extracting growth factors
 (EGF and TGF-$\beta$) that are stored in calcified tissues
 \cite{glaveyProteomicCharacterizationHuman2017}. Third, direct contact with MSCs
 physically anchors myeloma cells to the BM
@@ -111,7 +111,7 @@ both myeloma and MSCs, inducing IL-6 expression in MSCs. The independence from
 MSCs is then acquired through autocrine survival signaling
 \cite{frassanitoAutocrineInterleukin6Production2001,
     urashimaCD40LigandTriggered1995}. In short, anchorage of myeloma cells to MSCs
-or ECM is a ‘double-edged sword’: adhesion counteracts dissemination, but also
+or ECM is a ‘double-edged sword': adhesion counteracts dissemination, but also
 presents signaling cues for growth, survival, and drug resistance
 \cite{solimandoDrugResistanceMultiple2022}.
 
@@ -120,7 +120,7 @@ To address this ambiguity, we developed an \textit{in vitro} co-culture system
 modeling diverse adhesion modalities to study dissemination, growth, and
 survival of myeloma cells and hMSCs. Co-cultures of hMSCs and the myeloma cell
 line INA-6 replicated tight interactions and aggregate growth, akin to
-``microtumors'' in Ghobrial’s metastasis concept
+``microtumors'' in Ghobrial's metastasis concept
 \cite{ghobrialMyelomaModelProcess2012}. We characterized the growth
 conformations of hMSCs and INA-6 as homotypic aggregation \textit{vs.}
 heterotypic hMSC adherence and their effects on myeloma cell survival. We
@@ -147,8 +147,8 @@ patient survival, we analyzed publicly available datasets
 % ======================================================================
 % == METHODS
 
-\unnsubsection{Materials and Methods}\label{C1:methods}%
-\label{C1:methods}
+\unnsubsection{Materials and Methods}%
+\label{C1:methods}%
 %%%%%%%%%
 See \apdxref{subapdx:methods} for a complete method list and description.
 
@@ -323,7 +323,7 @@ diluted cDNA, and \SI{5}{pmol} of primers obtained from Biomers.net or Qiagen
 % 187 Statistics
 % 188 Inferential statistics were performed using Python (IPython, RRID:SCR_001658, link) (3.10)
 % 189 packages pingouin (0.5.1) and statsmodels (0.14.0) (29, 30). The figures were plotted using
-% 190 plotastic (0.0.1) (31). Normality (for n ≥ 4) and sphericity were ensured using Mauchly’s and
+% 190 plotastic (0.0.1) (31). Normality (for n ≥ 4) and sphericity were ensured using Mauchly's and
 % 191 Shapiro-Wilk tests, respectively. Data points were log10 transformed to convert the scale
 % 192 from multiplicative to additive or to fulfill sphericity requirements. p-value = 0.05 > * > 0.01 >
 % 193 ** > 10-3 > *** 10-4 > ****. P-values were either adjusted (p-adj) or not adjusted (p-unc) for
@@ -337,7 +337,7 @@ Inferential statistics were performed using Python (IPython,
 \cite{vallatPingouinStatisticsPython2018,seaboldStatsmodelsEconometricStatistical2010}.
 The figures were plotted using \texttt{plotastic} (0.0.1)
 \cite{kuricPlotasticBridgingPlotting2024}. Normality (for \( n \geq 4 \)) and
-sphericity were ensured using Mauchly’s and Shapiro-Wilk tests, respectively.
+sphericity were ensured using Mauchly's and Shapiro-Wilk tests, respectively.
 Data points were Log\(_{10}\) transformed to convert the scale from
 multiplicative to additive or to fulfill sphericity requirements. \( p = 0.05 >
 \text{*} > 0.01 > \text{**} > 10^{-3} > \text{***}> 10^{-4} > \text{****} \).
@@ -413,15 +413,14 @@ Therefore, most hMSCs provide an interaction surface for \INA cells.
 
 INA-6 exhibits homotypic aggregation when cultured alone, a phenomenon observed
 in some freshly isolated myeloma samples (up to \SI{100}{cells} after
-\SI{6}{hours})
-\cite{kawanoHomotypicCellAggregations1991,okunoVitroGrowthPattern1991}. Adding
-hMSCs at a 1:1 ratio led to smaller aggregates after \SI{24}{hours} (size
-\SIrange{1}{5}{cells}), all of which were distributed over
-\SIplusminus{52}{2}{\percent} of all hMSCs (\autoref{fig:1}A, B). Intriguingly,
-\INA aggregation was notably absent when grown on confluent hMSCs, and occurred
-only when heterotypic interactions were limited to 0.2 hMSCs per \INA cell
-(\autoref{fig:1}C). We concluded that \INA cells prioritize heterotypic over
-homotypic interactions.
+\SI{6}{hours}) \cite{kawanoHomotypicCellAggregations1991a,
+    okunoVitroGrowthPattern1991}. Adding hMSCs at a 1:1 ratio led to smaller
+aggregates after \SI{24}{hours} (size \SIrange{1}{5}{cells}), all of which were
+distributed over \SIplusminus{52}{2}{\percent} of all hMSCs (\autoref{fig:1}A,
+B). Intriguingly, \INA aggregation was notably absent when grown on confluent
+hMSCs, and occurred only when heterotypic interactions were limited to 0.2 hMSCs
+per \INA cell (\autoref{fig:1}C). We concluded that \INA cells prioritize
+heterotypic over homotypic interactions.
 
 To monitor the formation of such aggregates, we conducted live-cell imaging of
 hMSC/\INA co-cultures for \SI{63}{hours}. We observed that \INA cells adhered
@@ -655,7 +654,7 @@ correlated with those measured with qPCR for each pairwise comparison
 \versus{\nMAina}{\CMina} \omnibus{\rho}{16}{.803}{}{\scinot{6.09}{-5}},
 \versus{\MAina}{\CMina} \omnibus{\rho}{16}{.827}{}{\scinot{2.30}{-5}}, and
 \versus{\MAina}{\nMAina} \omnibus{\rho}{16}{.746}{}{\scinot{3.74}{-4}}
-(Spearman’s rank correlation). One of the \SI{18}{} genes (\textit{MUC1})
+(Spearman's rank correlation). One of the \SI{18}{} genes (\textit{MUC1})
 measured by qPCR showed a mean expression opposite to that obtained by RNAseq
 (\versus{\nMAina}{\CMina}), although the difference was insignificant
 (\autoref{fig:4}C). For \versus{\nMAina}{\CMina}, the difference in expression
@@ -880,7 +879,7 @@ chance of surviving IL-6 withdrawal.
     in (A), maxstat thresholds defining high and low expression were:
     \textit{CXCL12}: 81.08; \textit{DCN}: 0.75; \textit{TGM2}:
     \SI{0.66}{\normcounts}.
-    }{%
+}{%
     \tile{C} Gene expression (RNAseq, $n=873$) measured
     in normalized counts (\texttt{edgeR}) of \textit{CXCL12}, \textit{DCN} in Bone Marrow
     Plasma Cell (BMPC), Monoclonal Gammopathy of Undetermined Significance
@@ -1084,7 +1083,7 @@ caution against strategies that average over multiple cell lines without prior
 understanding their diverse attachment/detachment dynamics, such as homotypic
 aggregation. Such detailed insights may prove instrumental when considering the
 diversity of myeloma patient samples across different disease stages
-\cite{kawanoHomotypicCellAggregations1991, okunoVitroGrowthPattern1991}.
+\cite{kawanoHomotypicCellAggregations1991a, okunoVitroGrowthPattern1991}.
 
 The intermediates, \nMAina\ and \MAina, were distinct but shared similarities in
 response to cell stress, intrinsic apoptosis, and regulation by p53. Unique
@@ -1119,7 +1118,7 @@ signaling and soluble factors to E2F signaling \cite{dziadowiczBoneMarrowStromaI
     four population doublings. When heterotypic adhesion is saturated,
     subsequent daughter cells benefit from a homotypic interaction, since they
     stay close to growth-factor secreting MSCs and focus gene expression on
-    proliferation (e.g. driven by E2F) and not adhesion (driven by NF-κB).
+    proliferation (e.g. driven by E2F) and not adhesion (driven by NF-$\kappa$B).
     \tile{Critical Size} Homotypic interaction is weaker than heterotypic
     interaction, and each cell fission destabilizes the aggregate. Hence,
     detachment of myeloma cells may depend mostly on aggregate size.
@@ -1183,7 +1182,7 @@ mediators of bone marrow retention, decreasing the risk for dissemination and
 thereby potentially prolonging patient survival. However, the overall impact of
 cell adhesion and ECM on patient survival remains unclear. Several adhesion
 factors have been proposed as potential therapeutic targets
-\cite{brandlJunctionalAdhesionMolecule2022, bouzerdanAdhesionMoleculesMultiplea}. Recent studies
+\cite{brandlJunctionalAdhesionMolecule2022, bouzerdanAdhesionMoleculesMultiple2022}. Recent studies
 have described the prognostic value of multiple ECM genes, such as those driven
 by NOTCH \cite{maichlIdentificationNOTCHdrivenMatrisomeassociated2023}. Another study focused
 on ECM gene families, of which only six of the 26 genes overlapped with our gene

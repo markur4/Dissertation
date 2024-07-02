@@ -52,11 +52,11 @@
 % The intermediates, nMA-INA6 and MA-INA6, were distinct but shared
 % similarities in response to cell stress, intrinsic apoptosis, and
 % regulation by p53. Unique regulatory patterns were related to central
-% transcription factors: E2F1 for nMA-INA6; and NF-κB, SRF, and JUN for
+% transcription factors: E2F1 for nMA-INA6; and NF-$\kappa$B, SRF, and JUN for
 % MA-INA6. This distinction may have been established through antagonism
-% between p53 and the NF-κB subunit RELA/p65 (38,39). Similar regulatory
+% between p53 and the NF-$\kappa$B subunit RELA/p65 (38,39). Similar regulatory
 % patterns were found in transwell experiments with RPMI1-8226 myeloma
-% cells, where direct contact with the MSC cell line HS5 led to NF-κB
+% cells, where direct contact with the MSC cell line HS5 led to NF-$\kappa$B
 % signaling and soluble factors to E2F signaling (20).
 
 % The first subpopulation, nMA-INA6, represented proliferative and
@@ -91,7 +91,7 @@
 % insights into dissemination and metastasis.
 
 % The other subpopulation, MA-INA6, represented cells retained in the bone
-% marrow; MA-INA6 strongly adhered to MSCs, showed NF-κB signaling, and
+% marrow; MA-INA6 strongly adhered to MSCs, showed NF-$\kappa$B signaling, and
 % upregulated several retention, adhesion, and ECM factors. The production
 % of ECM-associated factors has recently been described in MM.1S and
 % RPMI-8226 myeloma cells (53). Another report did not identify the
@@ -195,15 +195,16 @@ relegated to supplementary data. Although supplementary data is downloaded
 often, most biomedical researchers favor a presentation of additional figures
 and tables directly on the journal's website
 \cite{priceRoleSupplementaryMaterial2018}. Given the increasing availability of
-video data\footnote{\label{foot:articles_livecellimaging}The number of \texttt{PubMed} articles with \emph{``live cell
-        imaging''} doubled from 2011 to 2023.}, embedding video content next to figures
-and tables on the article's website does make a compelling case. In fact, the
-journal \emph{Nature} does offer this feature already, but rarely used
-\cite{NatureVideoContent}. In the end, there is no reason to not present videos
-alongsife figures and tables, as they can be as informative, and potentially
-more so. Such new standards can benefit other fields of medicine, as videos
-provide the best medium for first aid, medical emergency and education
-\cite{guptaDatasetMedicalInstructional2023}.
+video data%
+\footdagger{The number of \texttt{PubMed} articles with \emph{``live cell
+        imaging''} has doubled from 2011 to 2023.}, %
+embedding video content next to figures and tables on the article's website does
+make a compelling case. In fact, the journal \emph{Nature} does offer this
+feature already, but rarely used \cite{NatureVideoContent}. In the end, there is
+no reason to not present videos alongsife figures and tables, as they can be as
+informative, and potentially more so. Such new standards can benefit other
+fields of medicine, as videos provide the best medium for first aid, medical
+emergency and education \cite{guptaDatasetMedicalInstructional2023}.
 
 \textbf{Key Points:} Overall, Live-cell imaging has proven indispensable in
 exploratory cell biology, uncovering dynamic cellular phenomena that static
@@ -221,7 +222,7 @@ accessibility of video data in scientific publications.
 % ======================================================================
 % ======================================================================
 \unnsubsection{Potential and Challenges of Image Cytometry}%
-\label{sec:discussion_quantifying_microscopy}%
+\label{sec:discussion_potential_microscopy}%
 Quantifying microscopy data is critical for both analytic and exploratory
 approaches to microscopy: For instance, microscopic assessment of live/dead
 cells should produce bar charts presenting cell viabilities
@@ -262,9 +263,9 @@ The workload of manual video analysis motivated the purchase of
 \texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}
 microscopy software ecosystem. \texttt{Intellesis} is a machine learning-based
 pixel segmentation software \cite{ZeissOADFeature}. As a feature
-extractor\footnote{\label{foot:image_features}\imagefeatures}, it uses the first
+extractor\footterm{\footimagefeatures}{\label{foot:image_features}}, it uses the first
 convolution layers of VGG19, which is convolutional neural
-network\footnote{\cnn} \cite{simonyanVeryDeepConvolutional2015}.
+network\footterm{\footcnn}{\label{foot:cnn}} \cite{simonyanVeryDeepConvolutional2015}.
 \texttt{Intellesis} does not contain a deep neural network for segmentation, but
 instead classifies pixel features using a \emph{random forest classifier}.
 Random forest is a machine learning algorithm that \dashed{for small
@@ -315,7 +316,7 @@ standard microscopy equipment (\apdxref{subapdx:figs}{fig:S2}).
 The advantages of image cytometry could have of great impact for the future of
 cell biology: It is applicable to adherent cell cultures
 \cite{roukosCellCycleStaging2015} and provides diverse readouts like structure,
-brightness, size, and shape. Moreover, image cytometry’s capacity to evaluate
+brightness, size, and shape. Moreover, image cytometry's capacity to evaluate
 cell viability without the need for staining or expensive analytical chemicals
 makes it an exceptionally cost-efficient approach for drug screening, reducing
 operational costs to cell culturing and electricity for microscopy
@@ -324,7 +325,7 @@ for sophisticated automation in microscopic scans, including autofocus and
 shading adjustments, and the computational demands of AI processing remain.
 
 
-Interestingly, the author’s initial unfamiliarity with image cytometry and
+Interestingly, the author's initial unfamiliarity with image cytometry and
 limited experience in image processing did not prevent the effective use of this
 technology. This underscores the accessibility of current imaging tools to
 biologists without specialized training in image analysis. As confirmed by
@@ -428,7 +429,7 @@ can normalize different sets of images, since machine learning models are
 very sensitive to variations in image quality.
 These filters, available within the
 \texttt{Zen} software suite, help simplify the machine learning task by focusing
-the algorithm’s learning on pertinent features, thereby potentially reducing the
+the algorithm's learning on pertinent features, thereby potentially reducing the
 volume of data needed for effective training.
 
 This approach streamlines the training process for \textit{Intellesis}, enabling
