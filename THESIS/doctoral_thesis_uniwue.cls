@@ -329,6 +329,13 @@
 }
 
 
+% == Referencing Sections ==============================================
+
+% > #1 is the label of the page
+\newcommand{\mypageref}[1]{%
+    page~\pageref{#1}%
+}
+
 
 % ======================================================================
 % == Raw Text
@@ -838,16 +845,17 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \newcommand{\markerdaggeralph}{%
     {\small% > Set the font size to small, which makes it bigger
             \ifnum\value{daggercounter}=1 % > First footnote
-                \dag
+                \dag% > Dagger
             \fi
             \ifnum\value{daggercounter}=2 % > Second footnote
-                \ddag % > Double dagger
+                \ddag% > Double dagger
             \fi
             \ifnum\value{daggercounter}=3 % > Third footnote
-                {\footnotesize\dag\dag}
+                {\footnotesize\dag\dag}%
                 % \alph{daggercounter}% > Add the custom mark and counter into the text
             \fi
         }%
+    \xspace% > Add a space after the footnote
 }%
 
 % ## Command for footnotes with dagger markers
@@ -858,7 +866,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
             }%
             \stepcounter{daggercounter}% > Increment the dagger footnote counter
             \textsuperscript{% > Add the custom mark and counter into the text
-                \markerdaggeralph%
+                \markerdaggeralph
             }%
             \footnotetext{~#1}% > Add text
         }%
