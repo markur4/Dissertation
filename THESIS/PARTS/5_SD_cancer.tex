@@ -63,17 +63,16 @@ common method for adhesion assays.
 is evident that direct and indirect contact to \acp{MSC} have varying effects on
 myeloma cells. That difference is crucial for understanding changes in the
 \ac{BMME} during MM progression \cite{fairfieldMultipleMyelomaCells2020,
-      dziadowiczBoneMarrowStromaInduced2022}. These studies utilize well-inserts to
+dziadowiczBoneMarrowStromaInduced2022}. These studies utilize well-inserts to
 co-culture myeloma cells in close \dashed{indirect} contact with MSCs. However,
 such comparison of indirect \textit{vs.} direct co-culturing methods might not
 fully represent the complexity of intercellular interactions
-scenarios\footnote{\footinteractionscenario\label{foot:interactionscenario}}
-found in the \ac{BMME}. This is exemplified by this project, as it relied on the
-complex growth behavior: \INA cells aggregated homotypically in direct proximity
-to those adhering heterotypically to \acp{hMSC}, and detached through cell
-division. Furthermore, such methods fail to capture the subtle variations in
-paracrine signaling concentrations, where even a few micrometers of distance
-could significantly alter cellular responses.
+scenarios\footinteractionscenario found in the \ac{BMME}. This is exemplified by
+this project, as it relied on the complex growth behavior: \INA cells aggregated
+homotypically in direct proximity to those adhering heterotypically to
+\acp{hMSC}, and detached through cell division. Furthermore, such methods fail
+to capture the subtle variations in paracrine signaling concentrations, where
+even a few micrometers of distance could significantly alter cellular responses.
 
 Such knowledge shifted this project's point of view as well: Initially, our
 hypothesis focused on direct heterotypic interactions, not expecting a \nMAina
@@ -85,11 +84,11 @@ adhesion, while the short incubation time prevented the formation of aggregates.
 Despite these measures, our assay still captured cells emerging from recent cell
 divisions rather than from weak heterotypic adherence as initially hypothesized.
 This demonstrates the robustness of our method in separating subpopulations that
-arising from unexpected intercellular interaction scenarios. This can be a major
-an advantage over methods that summarize direct interactions as one population.
-Analysing the non-adhering subpopulation within directly interacting cells could
-provide valuable insights not just in multiple myeloma, but also metastasis of
-other cancer types.
+arising from unexpected interaction scenarios\footref{foot:interactionscenario}.
+This can be a major an advantage over methods that summarize direct interactions
+as one population. Analysing the non-adhering subpopulation within directly
+interacting cells could provide valuable insights not just in multiple myeloma,
+but also metastasis of other cancer types.
 
 
 \textbf{Minimizing Variability}:
@@ -260,7 +259,10 @@ on growth and interaction scenarios involving multiple cell types.
 \label{sec:discussion_framework}%
 The results outlined in Chapter 1 encompass various aspects of multiple myeloma
 research, including colonization of the \ac{BMME}, myeloma-\ac{MSC}
-interactions, and the association of adhesion factor expression with patient
+interactions, and the association of adhesion factor%
+% \footnote{\footadhesionfactor\label{foot:adhesionfactor}}%
+\footadhesionfactor
+expression with patient
 survival and disease stages. Such a broad scope invites the formulation of
 generalized conclusions, potentially compromising scientific rigor. The
 following sections aim to clearly separate hypotheses from evidence to guide
@@ -490,7 +492,7 @@ literature and the results of this work:
       \item \cadplasticity
       \item \cadddiversity
       \item \caddtrigger
-      % \item \caddiversityandtrigger
+            % \item \caddiversityandtrigger
 \end{enumerate}
 
 
@@ -559,9 +561,9 @@ by the cells maintaining their suspension state
       qianSETDB1InducesLenalidomide2023}. This work might be the first to identify
 % adhesive subtypes
 adhesion dramatypes through functional separation of detachable myeloma cells.
-As presented earlier, expanding these findings could reveal transitions between
-adhesion dramatypes during MM dissemination, such as overcoming retention,
-initiating release, and establishing colonization.
+As presented earlier, exploring these findings further could reveal transitions
+between adhesion dramatypes during MM dissemination, such as attaching for
+colonization, or initiating release.
 
 
 \textbf{Extramedullary Niche:}
@@ -632,23 +634,6 @@ could aid this endeavor.
 
 
 
-\textbf{Implications for Therapy:}
-Adhesion molecules have been targeted for therapy for over a decade
-\cite{nairChapterSixEmerging2012, neriTargetingAdhesionMolecules2012}.
-Especially inhibiting adhesion molecules involved in interaction with the
-endothelium effectively reduces tumor burden in mouse models
-\cite{asosinghUniquePathwayHoming2001a,
-      mrozikTherapeuticTargetingNcadherin2015}. A deeper understanding of how myeloma
-cells regulate \ac{CAD} could be key to predicting and preventing
-dissemination. Changing adhesion dramatypes suggests that different adhesion factors
-should be either antagonized or agonized depending on their role. For instance,
-adhesion factors involved in intravasation and extravasation should be
-antagonized, while those facilitating BM retention should be
-agonized\,\textemdash\autoref{tab:1} provides a list of potential retention
-targets. However, care should be taken to not agonize adhesion factors that also
-provide survival signals.
-
-
 
 \textbf{Considerations for Research on Myeloma Cell Adhesion:}
 The evidence presented here sets the stage for a more detailed exploration of
@@ -659,12 +644,28 @@ specific microenvironmental context. Some adhesion factors are not present in MM
 cells but can be rapidly expressed with appropriate signals. Also, further
 studies should differentiate between initial adhesion and upregulated adhesion
 factors. For example, performing a \ac{WPSC} assay after 30 minutes of adhesion
-could separate \INA-6 cells based on initial adhesion capability, with RNAseq of
+could separate \INA cells based on initial adhesion capability, with RNAseq of
 \nMAina \textit{vs} \MAina identifying initial adhesion factors. This
 differentiation could be crucial for predicting colonization potential across
 niches, as initial adhesion is likely to be essential for subsequent growth in
 \ac{BM} or extramedullary environments.
 
+
+\textbf{Implications for Therapy:}
+Adhesion molecules have been targeted for therapy for over a decade
+\cite{nairChapterSixEmerging2012, neriTargetingAdhesionMolecules2012}.
+Especially inhibiting adhesion molecules involved in interaction with the
+endothelium effectively reduces tumor burden in mouse models
+\cite{asosinghUniquePathwayHoming2001a,
+mrozikTherapeuticTargetingNcadherin2015}. A deeper understanding of how myeloma
+cells regulate \ac{CAD} could be key to predicting and preventing dissemination.
+Changing adhesion dramatypes suggests that different adhesion factors should be
+either antagonized or agonized depending on their role. For instance, adhesion
+factors involved in intravasation and extravasation should be antagonized, while
+those facilitating BM retention\footretentiveadhesionfactors should be
+agonized\,\textemdash\autoref{tab:1} provides a list of potential retention
+targets. However, care should be taken to not agonize adhesion factors that also
+provide survival signals.
 
 
 \textbf{\textit{Concluding Remarks and Future Directions:}} The exploration of
@@ -867,7 +868,7 @@ terminology \cite{johnsenMyelomaStemCell2016, liAsymmetricCellDivision2022}.
 
 
 
-\textbf{Implications for Future Research:}
+\textbf{Implications for Research on Myeloma Cell Adhesion:}
 Rapid \ac{CAD} plasticity could explain the high variance of adhesion factor
 expression observed in myeloma patients. For instance, the interquartile range
 of CXCL12 fold-change expression spans more than one order of magnitude
@@ -878,13 +879,13 @@ contact with stromal or endothelial cells, as they can capture subpopulations
 with different adhesion dramatypes, akin to \MAina and \nMAina.
 
 Rapid \ac{CAD} plasticity also explains the paradoxical trend of decreasing
-retention factor expression during disease progression, as described in
-Chapter\,1. Myeloma cells with the ability to rapidly switch adhesion dramatypes
-benefit from this capability in several ways. They can lose adhesion factors to
-facilitate release into circulation, and then quickly upregulate these factors
-when needed for colonization. This dynamic switching supports both survival
-signaling and the detachment of less adhesive cells, providing a competitive
-advantage in various microenvironments.
+expression of retentive adhesion factors\footref{foot:retentiveadhesionfactor} during disease progression, as
+described in Chapter\,1. Myeloma cells with the ability to rapidly switch
+adhesion dramatypes benefit from this capability in several ways. They can lose
+adhesion factors to facilitate release into circulation, and then quickly
+upregulate these factors when needed for colonization. This dynamic switching
+supports both survival signaling and the detachment of less adhesive cells,
+providing a competitive advantage in various microenvironments.
 
 
 \textbf{Implications for Therapy:}

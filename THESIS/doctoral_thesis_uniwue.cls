@@ -792,14 +792,53 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % == Footnotes =========================================================
 % \let\footnote=\endnote % > Rename \endnote to \endnote
 
-
 \let\oldfootnote\footnote % > Rename to keep the original
 % ## Redefine the footnote command to also add the footnote to the endnotes
+% \renewcommand{\footnote}[1]{%
+%     \addtocounter{footnote}{1}% > Increment the footnote counter
+%     \refstepcounter{footnote}
+%     \endnote{#1}% > Add the footnote to the endnotes
+%     \footnotetext{\footnotesize #1}% > Add the footnote to the page footer
+%     \xspace% > Add a space after the footnote
+% }
+
+% \renewcommand{\footnote}[1]{%
+%     \endnotetext{#1}% > Add the footnote to the endnotes
+%     \addtocounter{footnote}{1}% > Increment the footnote counter
+%     \footnotetext{\footnotesize #1}% > Add the footnote to the page footer
+%     \xspace% > Add a space after the footnote
+% }
 \renewcommand{\footnote}[1]{%
-    \endnote{#1}% > Add the footnote to the endnotes
-    \addtocounter{footnote}{1}% > Increment the footnote counter
-    \footnotetext{\footnotesize #1}% > Add the footnote to the page footer
+    % \addtocounter{footnote}{1}% > Increment the footnote counter
+    % \refstepcounter{footnote}
+    % \footnote{#1}% !!  Add the footnote to the page footer
+    \footnotemark% > Add the mark into the text, and increment counter
+    \footnotetext[\thefootnote]{#1}% > Add the footnote to the page footer
+    \endnotetext[\thefootnote]{#1}% > Collect the footnote for "Notes" section
+    \xspace% > Add a space after the footnote
 }
+
+
+% \renewcommand{\footnote}[1]{%
+%     \refstepcounter{footnote}% > Increment the footnote counter
+%     % \footnotemark[\thefootnote]% > Add the footnote 
+%     % \footnotemark
+%     \endnote{#1}% > Add the footnote to the endnotes
+%     % \addtocounter{footnote}{1}% > Increment the footnote counter
+%     \footnotetext[\thefootnote]{\footnotesize #1}% > Add the footnote to the page footer
+%     \xspace% > Add a space after the footnote
+% }
+
+% \renewcommand{\footnote}[1]{%
+%     % \refstepcounter{footnote}% > Increment the footnote counter
+%     % \footnotemark[\thefootnote]% > Add the footnote 
+%     % \footnotemark
+%     % \endnotetext{#1}% > Add the footnote to the endnotes
+%     % \addtocounter{footnote}{1}% > Increment the footnote counter
+%     \footnote{\footnotesize #1}% > Add the footnote to the page footer
+%     % \addtoendnotes{#1}% > Add the footnote to the endnotes
+%     \xspace% > Add a space after the footnote
+% }
 
 
 % ## Define Command for footnotes containing quotes
