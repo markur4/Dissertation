@@ -335,7 +335,7 @@
 
 % > #1 is the label of the page
 \newcommand{\mypageref}[1]{%
-    page~\pageref{#1}%
+    p.\,\pageref{#1}%
 }
 
 
@@ -771,7 +771,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 % ======================================================================
-% == Citations, Footnotes
+% == Citations
 % ======================================================================
 
 \bibliographystyle{apacite}
@@ -797,10 +797,16 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \footnotesize
 }
 
+% ======================================================================
+% == Footnotes
+% ======================================================================
 
-% == Footnotes =========================================================
+% ## Define the size of the endnotes section (Glossary)
+\def\enotesize{\small}
+
+
 %  ## Change name of the endnotes section
-\newcommand{\notessectionname}{Terms and Definitions}
+\newcommand{\notessectionname}{Glossary}
 \renewcommand{\notesname}{\notessectionname}
 
 % \let\footnote=\endnote % > Rename \endnote to \endnote
