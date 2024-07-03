@@ -680,7 +680,7 @@ those facilitating BM retention%
 % \footterm{\footretentiveadhesionfactors\label{foot:retentiveadhesionfactors}}%
 \footterm{\footretentiveadhesionfactors}{\label{foot:retentiveadhesionfactors}}%
 % \label{foot:retentiveadhesionfactors}
-should be agonized\,\textemdash\autoref{tab:1} provides a list of potential
+should be agonized\,\textemdash\autoref{tab:S2} (\mypageref{tab:S2}) provides a list of potential
 retention targets. However, care should be taken to not agonize adhesion factors
 that also provide survival signals.
 
@@ -804,32 +804,34 @@ adaptations in adhesion phenotypes.
 \textbf{Adhesional Plasticity and Speed:}
 Clonal dynamics have established that rapid mutations can drive aggressive
 progression on a genomic scale \cite{keatsClonalCompetitionAlternating2012,
-      eversPrognosticValueExtracellular2023}. The hypothesis of adhesional plasticity
-extends this idea to the activity of adhesion factors, encompassing dynamic
-(post-)transcriptional regulation and adhesion kinetics regulated at the protein
-level. In solid cancers, sufficient information on regulatory dynamics exists to
-train deep learning models that infer transcriptional changes over time from
-static single-cell RNAseq data \cite{tongLearningTranscriptionalRegulatory2023}.
-This study demonstrates that dynamic phenotypic changes can be projected along
-\ac{EMT} and MET (Mesenchymal to Epithelial Transition) trajectories, aiding in
-the prediction of future detachment dynamics.
+eversPrognosticValueExtracellular2023}. The hypothesis of rapid adhesional
+plasticity extends this idea to the activity of adhesion factors, encompassing
+dynamic (post-)transcriptional regulation and adhesion kinetics regulated at the
+protein level. In solid cancers, sufficient information on regulatory dynamics
+of \ac{EMT} exists to train a deep learning model
+\cite{tongLearningTranscriptionalRegulatory2023}. This model infers
+transcriptional changes over time from static single-cell RNAseq data,
+demonstrating that dynamic phenotypic changes can be projected along selected
+transcriptional trajectories \dashed{in this case \ac{EMT}}, and aiding in the
+prediction of future detachment dynamics.
 
 
-However, for hematological cancers such as MM, high time resolutions of up to minutes or
-even seconds might be required. The speed of phenotypic changes is often an
+However, for hematological cancers such as MM, high time resolutions of up to
+minutes or even seconds might be required. As previously discussed, the speed of
+dynamic changes is inherent to adhesional processes
+(\mypageref{sec:discussion_semi_automated_analysis}), but time remains an often
 overlooked dimension in molecular cancer research%
 \footquote{These predominant snapshot approaches are fundamental limiting
       factors in the advancement of precision oncology since they are causal
       agnostic, i.e., they remove the notion of time (dynamics) from cancer
       datasets. [...] The lack of time-series measurements in single-cell
-      multi-omics (e.g., gene expression dynamics, protein oscillations, histone
-      marks spreading, etc.) and cell population fluctuations (i.e., ecological
+      multi-omics [...] and cell population fluctuations (i.e., ecological
       dynamics), in patient-derived tumor and liquid biopsies, remains a central
       roadblock in reconstructing cancer networks as complex dynamical
       systems.%
 }{uthamacumaranReviewMathematicalComputational2022}
 \cite{uthamacumaranReviewMathematicalComputational2022}. The author hypothesizes
-that this rapidness is crucial for colonizing new sites. adhesional plasticity
+that this rapidness is crucial for colonizing new sites. Adhesional plasticity
 alone might not be sufficient for successful attachment or survival: \INA cells
 failed to adhere to \ac{MSC} during live-cell imaging if the motorized stage top
 was moving too fast, necessitating decelerated microscopy configuration (data

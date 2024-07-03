@@ -11,12 +11,13 @@
 \label{sec:discussion_semi_automated_analysis}%
 \textit{In vitro} research is valued for their speed at creating precise data
 \cite{moleiroCriticalAnalysisAvailable2017}. In this work, the development and
-publication of innovative \textit{in vitro} methodologies necessitated the adoption of
-semi-automated data analysis tools. These novel methods introduced complexities
-that span multiple experimental parameters, making the results multidimensional.
-This demanded precise, efficient and standardized data handling capabilities
-which were facilitated by Python tools like \texttt{seaborn} and
-\texttt{plotastic} \cite{waskomSeabornStatisticalData2021,kuricPlotasticBridgingPlotting2024}.
+publication of innovative \textit{in vitro} methodologies necessitated the
+adoption of semi-automated data analysis tools. These novel methods introduced
+complexities that span multiple experimental parameters, making the results
+multidimensional. This demanded precise, efficient and standardized data
+handling capabilities which were facilitated by Python tools like
+\texttt{seaborn} and \texttt{plotastic} \cite{waskomSeabornStatisticalData2021,
+    kuricPlotasticBridgingPlotting2024}.
 
 
 \textbf{Inherent Multidimensionality of Adhesion Studies:}
@@ -32,9 +33,19 @@ not adhering to MSCs, and \INA cells adhering to MSCs, respectively.
 Furthermore, the dynamic nature of cell adhesion processes is profoundly
 influenced by the factor \emph{`Time'}, making it a crucial experimental
 parameter for investigation \cite{reblTimedependentMetabolicActivity2010,
-    mckayCellcellAdhesionMolecules1997,
-    bolado-carrancioPeriodicPropagatingWaves2020a}. This work includes extensive
-time-lapse microscopy experiments utilizing a high time resolution
+mckayCellcellAdhesionMolecules1997,
+bolado-carrancioPeriodicPropagatingWaves2020a}. In fact, the lack of time-series
+measurements was brought forward as a central roadblock%
+\footquote{The lack of time-series measurements in single-cell
+    multi-omics (e.g., gene expression dynamics, protein oscillations, histone
+    marks spreading, etc.) and cell population fluctuations (i.e., ecological
+    dynamics), in patient-derived tumor and liquid biopsies, remains a central
+    roadblock in reconstructing cancer networks as complex dynamical
+    systems.%
+}{uthamacumaranReviewMathematicalComputational2022}%
+for understanding cancer as a dynamic system.
+\cite{uthamacumaranReviewMathematicalComputational2022}. This work includes
+extensive time-lapse microscopy experiments utilizing a high time resolution
 (\SI{1}{frame} every \SI{15}{\minute}), similar to those time resolutions used
 by \citet{purschkePhototoxicityHoechst333422010}. This precision was required
 for key mechanistic insights on hMSC-\INA interaction dynamics. These included

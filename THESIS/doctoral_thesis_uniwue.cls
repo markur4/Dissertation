@@ -282,7 +282,8 @@
 
 % ## Main Sections 
 \newcommand{\unnsection}[1]{%
-    \section*{#1}%
+    \phantomsection% > Hyperref needs this
+    \section*{#1}% > make an unnumbered and unlisted section
     \addcontentsline{toc}{section}{#1}%
     \mbox{}% > Add empty line to avoid warnings
     \markboth{#1}{}% > Mark section manually for headers
@@ -291,6 +292,7 @@
 
 % == Sub Sections ======================================================
 \newcommand{\unnsubsection}[1]{%
+    \phantomsection% > Hyperref needs this
     \subsection*{#1}% > Create a new unnumbered subsection with the same name #1
     \addcontentsline{toc}{subsection}{\ignorespaces#1}% > Add the subsection to the table of contents
     \mbox{}% > Add an empty line to avoid warnings
@@ -797,15 +799,13 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 
 % == Footnotes =========================================================
+%  ## Change name of the endnotes section
+\newcommand{\notessectionname}{Terms and Definitions}
+\renewcommand{\notesname}{\notessectionname}
+
 % \let\footnote=\endnote % > Rename \endnote to \endnote
 
-% \let\oldfootnote\footnote % > Rename to keep the original
-% ## Redefine the footnote command to also add the footnote to the endnotes
-
-
-
-% \newcounter{termcounter} % > Initialize the counter
-
+% == Footnotes with term specifications (numbered)
 % ## Footnotes for explanations or specifications
 % > #1 is the text of the footnote
 % > #2 is the label of the footnote
@@ -815,17 +815,53 @@ literate={ ( }{{{\color{parentheses}(}}}1
     % \refstepcounter{footnote}% > Increment the footnote counter
     \footnotemark% > Add the mark into the text, and increment counter
     % \footnotemark[\thefootnote]% > Add the mark into the text, and increment counter
-    % \endnotetext{#1}% > Collect the footnote for "Notes" section
-    \endnote[\thefootnote]{#1}% > Collect the footnote for "Notes" section
+    \endnotetext[\thefootnote]{#1}% > Collect the footnote for "Notes" section
+    % \endnote[\thefootnote]{#1}% > Collect the footnote for "Notes" section
     % \endnote{#1}% > Collect the footnote for "Notes" section
-    \footnotetext[\thefootnote]{#1#2}% > Add the footnote to the page footer
+    \footnotetext[\thefootnote]{#1#2}% > Add the footnote to the page footer and label
     % \footnotetext{#1#2}% > Add the footnote to the page footer
     \xspace% > Add a space after the footnote
 }
 
 
 
+% == Footnotes with literature (daggered)
+\newcounter{daggercounter} % > Initialize the counter
+\MakePerPage{daggercounter} % > Make the counter reset on each new page
 
+% ## Make Marker that changes depending on counter
+\newcommand{\markerdaggeralph}{%
+{\small% > Set the font size to small, which makes it bigger
+\ifnum\value{daggercounter}=1 % > First footnote
+\dag% > Dagger
+\fi
+\ifnum\value{daggercounter}=2 % > Second footnote
+\ddag% > Double dagger
+\fi
+\ifnum\value{daggercounter}=3 % > Third footnote
+{\footnotesize\dag\dag}%
+% \alph{daggercounter}% > Add the custom mark and counter into the text
+\fi
+}%
+\xspace% > Add a space after the footnote
+}%
+
+% ## Command for footnotes with dagger markers
+\newcommand{\footdagger}[1]{%
+{% ## Restrict changes to \thefootnote locally
+\renewcommand{\thefootnote}{% > Update marker to dagger
+\markerdaggeralph%
+}%
+\stepcounter{daggercounter}% > Increment the dagger footnote counter
+\textsuperscript{% > Add the custom mark and counter into the text
+\markerdaggeralph
+}%
+\footnotetext{~#1}% > Add text
+}%
+\xspace% > Add a space after the footnote, but not before comma
+}
+
+% ## Footnote Quotes
 % ## Define Command for footnotes containing quotes
 % > #1 is the citation
 % > #2 is the text of the footnote
@@ -834,46 +870,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % \textit{``\,\ignorespaces%
 % #1\nolinebreak\,''}}%
 % }
-
-
-
-% == Dagger Footnotes
-\newcounter{daggercounter} % > Initialize the counter
-\MakePerPage{daggercounter} % > Make the counter reset on each new page
-
-% ## Make Marker that changes depending on counter
-\newcommand{\markerdaggeralph}{%
-    {\small% > Set the font size to small, which makes it bigger
-            \ifnum\value{daggercounter}=1 % > First footnote
-                \dag% > Dagger
-            \fi
-            \ifnum\value{daggercounter}=2 % > Second footnote
-                \ddag% > Double dagger
-            \fi
-            \ifnum\value{daggercounter}=3 % > Third footnote
-                {\footnotesize\dag\dag}%
-                % \alph{daggercounter}% > Add the custom mark and counter into the text
-            \fi
-        }%
-    \xspace% > Add a space after the footnote
-}%
-
-% ## Command for footnotes with dagger markers
-\newcommand{\footdagger}[1]{%
-    {% ## Restrict changes to \thefootnote locally
-            \renewcommand{\thefootnote}{% > Update marker to dagger
-                \markerdaggeralph%
-            }%
-            \stepcounter{daggercounter}% > Increment the dagger footnote counter
-            \textsuperscript{% > Add the custom mark and counter into the text
-                \markerdaggeralph
-            }%
-            \footnotetext{~#1}% > Add text
-        }%
-    \xspace% > Add a space after the footnote, but not before comma
-}
-
-% ## Footnote Quotes
 \newcommand{\footquote}[2]{%
     \footdagger{%
         \citet{#2}:~%

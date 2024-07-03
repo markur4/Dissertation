@@ -5,8 +5,10 @@
 %  ## Define footnotes here
 
 
+% == Imagery ===========================================================
+
 \def\footimagefeatures{%
-    \emph{Features} are structural elements of an image, such as edges, corners,
+    \emph{Image Features:} Discernable elements of an image, such as edges, corners,
     directions, colors. These features are mathematically extractable using
     \emph{filters} \dashed{also referred to as \emph{convolution
             kernels}}, which are functions or algorithms applied to the pixel values of
@@ -18,7 +20,7 @@
         guptaDeepLearningImage2019} }
 
 \def\footcnn{%
-    \emph{Convolutional Neural Networks} (CNN) are algorithms that use the output of a
+    \emph{Convolutional Neural Networks (CNN):} Machine learning algorithms that use the output of a
     feature extractor\footref{foot:image_features} to feed
     into a neural network. The network then learns to associate these feature
     vectors with a label, such as \emph{cell} or \emph{background}. This is called
@@ -26,6 +28,7 @@
 }
 
 
+% == Adhesion Factors ==================================================
 
 \def\footadhesionfactor{%
     \emph{Adhesion Factor}: Any factor influencing cell adhesion, including
@@ -44,19 +47,24 @@
 }
 
 
+% == Cell Adhesion Dynamics & Dramatypes ===============================
+
+
 \def\footinteractionscenario{%
-    \emph{Cell Interaction Scenario} (specified in this work): The type of
-    cellular interactions and adhesions between cells of the same type
-    (homotypic interaction), different types (heterotypic interaction), or
-    between cells and the substrate. Complex interaction scenarios can
-    combine all these types at the same time. When interaction scenarios
-    emerge from cell division, the term \emph{growth conformation} is
-    used as well (see Chapter\,1)%
+    \emph{Cell Interaction Scenario} (defined in this work): A combination of
+    cellular interaction types describing direct contact or adhesion between
+    cells. Cellular interaction types include those between similar cell types
+    (homotypic interaction), different cell types (heterotypic interaction), or
+    between cells and substrate. A cell interaction scenario usually implies
+    that multiple cell interaction types occur simultaneously or in rapid succession,
+    for instance, myeloma cells interacting with both other myeloma cells and
+    \ac{MSCs}. When interaction scenarios emerge from cell division, the term
+    \emph{growth conformation} is also used (see Chapter\,1)%
 }
 
 
 \def\footcad{%
-    \emph{\acf{CAD}} (specified in this work): The observation and measurement
+    \emph{\acf{CAD}}: The observation and measurement
     of time-dependent changes in cell adhesion and detachment events. \ac{CAD}
     expands traditional \emph{cell adhesion} by a time component and implies
     an intention to predict the timepoint of detachment events. Such focus on
@@ -82,31 +90,33 @@
 
 
 \def\footcaddt{%
-    \emph{CAD Dramatype} (specified in this work): Specific \ac{CAD} behavior
-    caused by proximate environmental factors. A CAD dramatype is characterized
-    by the duration cells spend in distinct adhesive states or interaction
-    scenarios\footref{foot:interactionscenario}, and the cause of transitions
-    between these states and scenarios. Adhesive states include attached,
-    migrating, or detached; interaction scenarios include homotypic, heterotypic
-    or substrate interactions. CAD dramatypes are associated with molecular
-    signatures, such as \ac{CAM} expression patterns or signal transduction
-    mediated by proximate environmental factors. %
+    \emph{CAD Dramatype} (defined in this work): Specific \ac{CAD} behavior
+    caused by proximate environmental factors. The term \emph{dramatype} was
+    inspired from laboratory animal science
+    \cite{zutphenPrinciplesLaboratoryAnimal2001}. A CAD dramatype is
+    characterized by the duration cells spend in distinct adhesive states or
+    interaction scenarios\footref{foot:interactionscenario}, and the cause of
+    transitions between these states and scenarios. Adhesive states include
+    attached, migrating, or detached; interaction scenarios include homotypic,
+    heterotypic or substrate interactions. CAD dramatypes are associated with
+    molecular signatures, such as \ac{CAM} expression patterns or signal
+    transduction mediated by proximate environmental factors. %
 }
 
 \def\footadhesiondt{%
-    \emph{Adhesion Dramatype} (specified in this work): Short version for
+    \emph{Adhesion Dramatype} (defined in this work): Short version for
     \ac{CAD} dramatype\footref{foot:caddt}. Since the term \emph{dramatype} implies dynamic changes,
     \emph{CAD dramatypes} and \emph{adhesion dramatypes} are interchangable.%
 }
 
 \def\footadhesionplasticity{%
-    \emph{Adhesional Plasticity} (specified in this work): The overall
+    \emph{Adhesional Plasticity}: The overall
     repertoire of adhesion dramatypes\footref{foot:adhesiondt} that individual
     myeloma cells can deploy. }
 
 
 % ======================================================================
 % ## Generate list of footnotes
-\addcontentsline{toc}{section}{Notes}%
-\theendnotes
+\addcontentsline{toc}{section}{\notessectionname}%
+\theendnotes\label{sec:footnotes}%
 % \printfn
