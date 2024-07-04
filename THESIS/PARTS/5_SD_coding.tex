@@ -33,8 +33,8 @@ not adhering to MSCs, and \INA cells adhering to MSCs, respectively.
 Furthermore, the dynamic nature of cell adhesion processes is profoundly
 influenced by the factor \emph{`Time'}, making it a crucial experimental
 parameter for investigation \cite{reblTimedependentMetabolicActivity2010,
-mckayCellcellAdhesionMolecules1997,
-bolado-carrancioPeriodicPropagatingWaves2020a}. In fact, the lack of time-series
+    mckayCellcellAdhesionMolecules1997,
+    bolado-carrancioPeriodicPropagatingWaves2020a}. In fact, the lack of time-series
 measurements was brought forward as a central roadblock%
 \footquote{The lack of time-series measurements in single-cell
     multi-omics (e.g., gene expression dynamics, protein oscillations, histone
@@ -260,29 +260,6 @@ involved was effectively reduced, making the task of re-analysis seem a lot more
 inviting, especially for handling semi-big data.
 
 
-% % ======================================================================
-% \unnsubsection{\texttt{R} \textit{vs.} \texttt{plotastic}}%
-% \label{sec:discussion_plotastic_vs_R}%
-% Why R became popular:
-% - R was the first language to offer a comprehensive statistical package
-% - R is open-source and has a large community of users
-% - R has a large number of packages available for data analysis and visualization
-
-% Python provides all of that, except for the vast number of statistical packages, although with
-% \texttt{pingouin}, it is catching up.
-
-
-% Benefits of Python:
-% - Better software development
-% - Better Syntax
-% - Faster, with options for parallel computing, both CPU and GPU, with ongoing plans to
-%  break GIL, libraries that are parallel like \texttt{polars}
-% - Overall, Python has much brighter future than R, and statistical packages are expected to migrate to Python
-% - RNAseq is already possible in both python and R
-
-% ggplot2 vs plotastic:
-% - 
-
 
 
 % ======================================================================
@@ -334,137 +311,5 @@ code assistance, and error identification.
 
 
 % % ======================================================================
-
-% \unnsubsection{Challenges of Integrating \texttt{plotastic} into Biomedicine}
-% \label{sec:challenges_plotastic_cancer}
-% Although \texttt{plotastic} is designed for the overall scientific community and
-% has passed peer-review, time will tell if the single author's vision of an
-% optimized automated statistical workflow can be extrapolated to biomedicine. The
-% author's himself continues to use \texttt{plotastic} in future projects that
-% require visualizing single datapoints and statistical rigor.
-
-% For biomedicine overall, the author sees the greatest challenge in adopting
-% \texttt{plotastic} since it is a tool based on a command line interface (CLI),
-% whereas the majority of biologists prefer graphical user interfaces (GUI). The
-% author argues that a CLI can perform everything that a GUI can, but better,
-% faster, and more efficiently, provided that one is willing to undergo the
-% switch, which can be intimidating. However, many python tools already provide
-% extremely easy commands (e.g. \texttt{seaborn}), and \texttt{plotastic} further
-% lowers the barrier to entry. The author also argues that ChatGPT is a strong
-% argument to switch to CLI, since large language models are highly compatible
-% with text, which is the main format of CLIs. This allows for understanding
-% context, providing code drafts, identifying errors, adding and changing
-% analyses, autocompletion of repetitive commands, follow-up questions and many
-% more.
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-% \unnsubsection{Plotastic and Jupyter Notebooks as a Standard for Research Documentation}
-% \label{dis:discussion_plotastic_jupyter}
-
-
-% \unnsubsection{How Biosciences can Benefit from Standards of Software Development}
-% \label{dis:code_quality}
-% %%%%%%%
-% chapter 2 has laid down the benefits of using plotastic in combination with
-% jupyter notebooks
-
-
-% It is important to note that  GitHub are not reserved for software development.
-% Bioscientists are encouraged to use these tools as well which are available with
-% free, robust well-designed and intuitive graphical user interfaces developed by
-% the distinguished experts of the open source community. Its robustness is
-% unparalleled and have withstood the test of time.
-
-% It is a database that documents every minor change thoroughly, noting every little
-% change in text, providing unmatched flexibility but also replicability.
-% Researchers can
-
-% GitHub encourages the use by Scientists.
-
-
-
-
-
-
-% \unnsubsection{Transfer Effects of Coding on Bioscientific Research}
-
-
-
-% Finally, the author makes the argument that basic coding skills not only allows
-% for efficient usage of common software tools, but could also enhance the
-% interaction with computers in general. Intriguingly, there is a long-lasting
-% discussion if coding has benefits on overall cognitive
-% capability~\cite{schererEvidenceCognitiveBenefits2021,schererTechnologyMindDoes2018}.
-% These so-called \textit{``transfer effects''} are similar to those surrounding
-% e.g. chess, Latin, video gaming and brain training.
-% \cite{salaDoesFarTransfer2017}, assuming that learning to code also improves
-% problem-solving in other areas, such as mathematics or science. Although the
-% author does not have a stand in this discussion, it is reasonable to state that
-% coding improves a general understanding of computers and software tools. Since
-% most software tools in the biosciences are black boxes with intimidating
-% complexity. Still, when confronted with issues, researchers must determine if
-% the error is on their side or the software's in order to assess possible
-% troubleshooting strategies. It is reasonable to argue that a good understanding
-% of the software is crucial to facilitate that decision-making process.
-
-% a solid understanding of computers facilitates the decision-making process when
-% confronted with issues, allowing researchers to determine if the error is on
-% their side or the software's. This is only possible if the researcher has a good
-% understanding of the software.
-
-
-% Learning to code has been hypothesized to have generalizable benefits for
-% cognitive function and problem
-% solving~\cite{schererEvidenceCognitiveBenefits2021}. Here the author reflects on
-% his own experience with coding and how it has benefitted his research beyond the
-% development of plotastic
-
-% Coding skills enhance a researcher's understanding of the software they use.
-% This understanding allows them to decipher the underlying algorithms and
-% assumptions of the software. Complex proprietary software like Zen, Imaris,
-% FlowJo, etc., often operate as black boxes. When confronted with issues,
-% researchers must determine if the error is on their side or the software's. This
-% decision-making process is facilitated by a good understanding of the software.
-% Basic coding skills also open the door to open-source software, which offers
-% state-of-the-art analysis techniques not available in proprietary software.
-
-% - In general, coding skills help improve a researchers general understanding of
-% every software he uses. This is because the researcher can understand the
-% underlying algorithms and assumptions of the software. Complex proprietary
-% software to use state-of-the-art equipment (Zen, Imaris, FlowJo, etc.) are often
-% black boxes. The researcher will be confronted with issues and has to make
-% constant decisions if the error is on his side, or on the software side in order
-% to think of feasable troubleshooting strategies. This is only possible if the
-% researcher has a good understanding of the software. A basic understanding of
-% code also opens the door to open-source software, allowing for state-of-the-art
-% analysis techniques that are not available in proprietary software, but their
-% installation and usage is often overestimated by researchers without coding
-% skills, while coding skills allow for adaptations of this software to the
-% specific needs of the researcher.
-
-
-
-
-% In conclusion, as bioscience continues to generate increasingly complex datasets,
-% the distinction between biologists and bioinformaticians blurs, emphasizing the
-% need for all researchers to adopt computational tools. The development of new
-% software to handle semi-big data effectively is not just an enhancement but a
-% necessity to ensure the future reliability and efficiency of scientific
-% research. This thesis proposes a framework for understanding and addressing the
-% semi-big data challenges, setting the stage for a discussion on innovative
-% solutions like the software tools described in subsequent chapters.
-
-% In conclusion, the integration of coding in bioscience research is not just a
-% trend but a necessity. As the field continues to evolve, the demarcation between
-% biologists and computational scientists blurs, underscoring the importance of
-% coding skills for the next generation of researchers. The ability to code is
-% fast becoming an indispensable asset, as integral to bioscience as traditional
-% laboratory skills.
 
 
