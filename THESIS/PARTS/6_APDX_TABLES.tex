@@ -7,7 +7,7 @@
 {
 \footnotesize
 
-\newcommand{\myheader}{
+\def\myheader{
     \hline
     \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} & \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} & \textbf{Experiment(s)}                                                                                   & \textbf{Figures}                        \\
     \hline
@@ -124,7 +124,7 @@
 \begin{spacing}{1}
     {
         \scriptsize
-        \newcommand{\myheader}{
+        \def\myheader{
             \hline
             \textbf{Regulation during disease progression} & \textbf{Gene} & \textbf{Ensemble ID} & \textbf{Progression Free / Overall Survival} & \textbf{Better Prognosis with high/low expression} & \multicolumn{2}{p{3cm}|}{\textbf{Association of expression with survival}} \\
             \hhline{~~~~~--}
@@ -587,7 +587,7 @@
 % ## Tab S3: Primer list
 \begin{spacing}{1}{
         \footnotesize
-        \newcommand{\myheader}{%
+        \def\myheader{%
             \hline
             \textbf{Primer} & \textbf{Sequence 5' - 3'}  & \textbf{base pairs [bp]} & \textbf{annealing temp. [°C]}      \\
             \hline
