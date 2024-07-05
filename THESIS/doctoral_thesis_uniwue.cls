@@ -388,7 +388,10 @@
     \,\textemdash#1\textemdash\,%
     \ignorespaces % > Ignores the spaces following the command.
 }
-
+\newcommand{\dashleft}[1]{%
+    \unskip % > Removes the last space before the command, if it exists.
+    \,\textemdash#1\xspace%
+}
 
 
 % == Math ==============================================================
