@@ -567,15 +567,16 @@ manufacturer's instructions.
 
 
 
-\subsubsection*{RNAseq, Differential Expression and Functional Enrichment Analysis of \INA cells}
+\subsubsection*{RNAseq, Differential Expression and Functional Enrichment Analysis of \INA cells}%
 FASTQ files were merged to the respective sample. The quality of FASTQ files was
-assessed with \texttt{FastQC} \cite{Andrews:2010tn} and a joint report was
-created with \texttt{MultiQC} \cite{ewelsMultiQCSummarizeAnalysis2016}. FASTQ
-files were aligned with \texttt{STAR} \cite{dobinSTARUltrafastUniversal2013} to
-the GRCh38 reference genome build \cite{zerbinoEnsembl20182018}. Quality and
-alignment statistics of final BAM files were assessed with \texttt{samtools
-    stats} \cite{liSequenceAlignmentMap2009}, and a joint report with
-\texttt{FastQC} reports by \texttt{MultiQC} was generated.
+assessed with \texttt{FastQC} \cite{andrewsFastQCQualityControl2010} and a joint
+report was created with \texttt{MultiQC}
+\cite{ewelsMultiQCSummarizeAnalysis2016}. FASTQ files were aligned with
+\texttt{STAR} \cite{dobinSTARUltrafastUniversal2013} to the GRCh38 reference
+genome build \cite{zerbinoEnsembl20182018}. Quality and alignment statistics of
+final BAM files were assessed with \texttt{samtools stats}
+\cite{liSequenceAlignmentMap2009}, and a joint report with \texttt{FastQC}
+reports by \texttt{MultiQC} was generated.
 
 Raw read counts were generated with \texttt{HTSeq}
 \cite{andersHTSeqPythonFramework2015} using the union method. \texttt{HTSeq}

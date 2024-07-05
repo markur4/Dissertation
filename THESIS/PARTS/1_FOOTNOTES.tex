@@ -8,41 +8,39 @@
 % == Imagery ===========================================================
 
 \def\footimagefeatures{%
-    \emph{Image Features:} Discernable elements of an image, such as edges, corners,
-    directions, colors. These features are mathematically extractable using
-    \emph{filters} \dashed{also referred to as \emph{convolution
-            kernels}}, which are functions or algorithms applied to the pixel values of
+    \emph{Image Features:} Discernable elements of an image, such as edges,
+    corners, directions, colors. These features are mathematically extractable
+    using \emph{filters} \dashed{also referred to as \emph{convolution
+    kernels}}, which are functions or algorithms applied to the pixel values of
     an image. For instance, \emph{gabor filters} can extract edges of one
     particular direction, resulting in an image of the same size as the input,
     but showing only edges of one direction. \emph{Feature extraction} is the
     process of applying multiple filters, resulting in a stack of filtered
     images called a feature vector. \cite{szeliskiFeatureDetectionMatching2011,
-        guptaDeepLearningImage2019} }
+    guptaDeepLearningImage2019} }
 
 \def\footcnn{%
-    \emph{Convolutional Neural Networks (CNN):} Machine learning algorithms that use the output of a
-    feature extractor\footref{foot:image_features} to feed
+    \emph{Convolutional Neural Networks (CNN):} Machine learning algorithms that
+    use the output of a feature extractor\footref{foot:image_features} to feed
     into a neural network. The network then learns to associate these feature
-    vectors with a label, such as \emph{cell} or \emph{background}. This is called
-    \emph{supervised learning}.
-}
+    vectors with a label, such as \emph{cell} or \emph{background}. This is
+    called \emph{supervised learning}. }
 
 
 % == Adhesion Factors ==================================================
 
 \def\footadhesionfactor{%
     \emph{Adhesion Factor}: Any factor influencing cell adhesion, including
-    \acfp{CAM}, \acf{ECM} proteins, chemotactic factors associated with
-    inducing adhesion factor expression \dashed{such as CXCR4 or CXCL12},
-    and factors listed in Gene ontology terms \textit{“extracellular matrix
-        organization”}, \textit{“ECM proteoglycans”}, \textit{“cell-substrate
-        adhesion”}, and \textit{“negative regulation of cell-substrate
-        adhesion”}.
-}%
+    \acl{CAM} (\acs{CAM}), \acl{ECM} (\acs{ECM}) proteins, chemotactic factors
+    associated with inducing adhesion factor expression \dashed{such as CXCR4 or
+    CXCL12}, and factors listed in Gene ontology terms \textit{“extracellular
+    matrix organization”}, \textit{“ECM proteoglycans”}, \textit{“cell-substrate
+    adhesion”}, and \textit{“negative regulation of cell-substrate adhesion”}.
+    }%
 
 \def\footretentiveadhesionfactors{%
     \emph{Retentive Adhesion Factors}: The subset of adhesion factors that
-    promotes achorage of myeloma cell in the \ac{BMME}, and promote better
+    promotes achorage of myeloma cell in the \acs{BMME}, and promote better
     patient survival at high expression as shown in Chapter\,1.
 }
 
@@ -56,16 +54,16 @@
     cells. Cellular interaction types include those between similar cell types
     (homotypic interaction), different cell types (heterotypic interaction), or
     between cells and substrate. A cell interaction scenario usually implies
-    that multiple cell interaction types occur simultaneously or in rapid succession,
-    for instance, myeloma cells interacting with both other myeloma cells and
-    \acsp{MSC}. When interaction scenarios emerge from cell division, the term
-    \emph{growth conformation} is also used (see Chapter\,1)%
+    that multiple cell interaction types occur simultaneously or in rapid
+    succession, for instance, myeloma cells interacting with both other myeloma
+    cells and \acsp{MSC}. When interaction scenarios emerge from cell division,
+    the term \emph{growth conformation} is also used (see Chapter\,1)%
 }
 
 
 \def\footcad{%
-    \emph{\acf{CAD}}: The observation and measurement
-    of time-dependent changes in cell adhesion and detachment events. \ac{CAD}
+    \emph{\acl{CAD} (\acs{CAD})}: The observation and measurement
+    of time-dependent changes in cell adhesion and detachment events. \acs{CAD}
     expands traditional \emph{cell adhesion} by a time component and implies
     an intention to predict the timepoint of detachment events. Such focus on
     dynamics is especially relevant for suspension cells that exhibit
@@ -99,7 +97,7 @@
     transitions between these states and scenarios. Adhesive states include
     attached, migrating, or detached; interaction scenarios include homotypic,
     heterotypic or substrate interactions. CAD dramatypes are associated with
-    molecular signatures, such as \ac{CAM} expression patterns or signal
+    molecular signatures, such as \acs{CAM} expression patterns or signal
     transduction mediated by proximate environmental factors. The term dramatype
     distinguishes itself from \emph{phenotype} by focusing on dynamic and transient
     states available within transcriptional plasticity, while \emph{phenotypes} 
@@ -110,8 +108,9 @@
 
 \def\footadhesiondt{%
     \emph{Adhesion Dramatype} (defined in this work): Short version for
-    \ac{CAD} dramatype\footref{foot:caddt}. Since the term \emph{dramatype} implies dynamic changes,
-    \emph{CAD dramatypes} and \emph{adhesion dramatypes} are interchangable.%
+    \acs{CAD} dramatype\footref{foot:caddt}. Since the term \emph{dramatype}
+    implies dynamic changes, \emph{CAD dramatypes} and \emph{adhesion
+    dramatypes} are interchangable.%
 }
 
 \def\footadhesionplasticity{%
@@ -119,6 +118,10 @@
     repertoire of adhesion dramatypes\footref{foot:adhesiondt} that individual
     myeloma cells can deploy. }
 
+    
+    
+    
+% \acresetall
 
 % ======================================================================
 % ## Generate list of footnotes
