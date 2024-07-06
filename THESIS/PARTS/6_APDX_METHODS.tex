@@ -370,6 +370,7 @@ replacing culture medium with \SI{100}{\micro\liter} of medium. MSC-adherent
 \INA were manually detached by rapid pipetting and equally pelleted, analyzed,
 and isolated.
 
+
 \subsubsection*{Cell Cycle Profiling}
 \INA cells were fixed in \SI{70}{\percent} ice-cold ethanol, washed,
 resuspended in PBS, distributed in 96-well plates, and stained with Hoechst
@@ -388,7 +389,7 @@ nuclei with extreme size (within the range of
 nucleus intensities within the G0/G1 peak. To retrieve frequencies of cells
 cycling in G0/G1, S, and G2 phase, the brightness distribution of all single
 nuclei was fitted to the sum of three Gaussian curves (“Skewed Gaussian Model”
-for G0G1 and G2 phase, and “Rectangle Model” for S phase) using the python
+for G0/G1 and G2 phase, and “Rectangle Model” for S phase) using the python
 package LMFIT \cite{newvilleLMFITNonLinearLeastSquare2014} (\apdxref{apdx:supplemental}{fig:S4}).
 The Gaussian curves were used to calculate the cell frequencies for each cell
 cycle phase by integration using the composite trapezoidal rule implemented by
@@ -567,6 +568,8 @@ manufacturer's instructions.
 
 
 
+
+
 \subsubsection*{RNAseq, Differential Expression and Functional Enrichment Analysis of \INA cells}%
 FASTQ files were merged to the respective sample. The quality of FASTQ files was
 assessed with \texttt{FastQC} \cite{andrewsFastQCQualityControl2010} and a joint
@@ -586,7 +589,7 @@ performed with \texttt{edgeR} \cite{Robinson:2010:Bioinformatics:19910308} in R
 
 Counts were merged and genes with zero counts in all samples were removed
 (number of genes: 36380). The whole count table was annotated with R
-Bioconductor \cite{gentlemanBioconductorBiocViews} human annotation data package
+Bioconductor human annotation data package
 \texttt{org.Hs.eg.db} \cite{carlsonOrgHsEg2016}. A DGEList Element was created
 with the raw counts, gene information, i.e., Ensembl GeneIDs, HUGO Symbol,
 Genename, and ENTREZ GeneIDs and a sample grouping metadata table.
@@ -781,9 +784,11 @@ previously untreated symptomatic myeloma patients. For delineating “high” an
 “low” expression of target adhesion (\(n=101\)) and cell cycle (\(n=173\))
 genes, thresholds per gene were calculated with maximally selected rank
 statistics by the \texttt{maxstat} package in R
-\cite{hothornMaximallySelectedRank}. PFS and OS were analyzed for high
+\cite{hothornMaximallySelectedRank2017}. PFS and OS were analyzed for high
 vs. low expression with the Kaplan-Meier method \cite{kaplanNonparametricEstimationIncomplete1958}.
 Significant differences between the curves were analyzed with log-rank tests
 \cite{harringtonClassRankTest1982}. \(p\)-values were corrected for multiple testing
 by the Benjamini-Hochberg method. Analyses were performed with R version 3.6.3
 \cite{rcoreteamLanguageEnvironmentStatistical2018}.
+
+

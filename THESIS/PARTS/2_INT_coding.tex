@@ -19,7 +19,7 @@ Multidimensional data encompass datasets where multiple \emph{independent
 % Statistically speaking, an experiment assesses if an \emph{independent variable}
 % (here reffered to as \emph{factors}) has an influence on a \emph{dependent
 % variable} (\emph{outcome}), e.g. ``Does \emph{Time} influence \emph{Gene
-% Expression}?'' \cite{motulskyIntuitiveBiostatisticsNonmathematical2018}. 
+% Expression}?'' \cite{motulskyIntuitiveBiostatisticsNonmathematical2017}. 
 In biomedicine, dependent variables are often continuous (intervals or ratios),
 whereas independent variables are often categorical (ordinal or nominal),
 respectively. Categorical variables comprise discrete values called categories
@@ -28,7 +28,7 @@ modalities, for example the factor \textit{`time'} could comprise three
 \linebreak levels: \textit{`\SI{0}{\hour}'}, \textit{`\SI{24}{\hour}'}, and
 \textit{`\SI{48}{\hour}'}. Such setups are attractive, because they are
 compatible with common hypothesis tests, such as ANOVA etc.
-\cite{motulskyIntuitiveBiostatisticsNonmathematical2018}: If the levels of one
+\cite{motulskyIntuitiveBiostatisticsNonmathematical2017}: If the levels of one
 factor are associated with a different outcome, that factor is considered to
 have an influence on the dependent variable. Multiple factors address multiple
 hypotheses, including the influence from each individual factor, but also
@@ -299,7 +299,7 @@ image data, streamlining tasks that would otherwise require laborious manual
 input. Similarly, \texttt{PyMOL}, a leading tool in protein structural biology,
 utilizes Python scripting to automate complex tasks, allowing for detailed
 molecular modeling and visualization that are reproducible and scalable across
-datasets \cite{PyMOL2024, rigsbyUsingPyMOLApplication2016}.
+datasets \cite{PyMOL, rigsbyUsingPyMOLApplication2016}.
 
 Although automation scripts used in tools like \texttt{Fiji/ImageJ} and
 \texttt{PyMOL} improve transparency for publishing singular data analysis
@@ -316,7 +316,7 @@ distributed \linebreak\dashed{for instance, as a \texttt{Fiji/ImageJ}
     plugin or a standalone application} they can make substantial contributions to
 scientific research by enabling other researchers to apply these tools to their
 own data sets
-\cite{narztReusabilityConceptProcess1998,wilkinsonFAIRGuidingPrinciples2016}.
+\cite{pichlerReusabilityConceptProcess1998,wilkinsonFAIRGuidingPrinciples2016}.
 However, this approach also comes with its own set of challenges
 \cite{sandveTenSimpleRules2013}. These generalized tools often lack
 comprehensive user-manuals (\emph{documentation}) and are not thoroughly tested
@@ -352,7 +352,7 @@ scientific research.
 \label{sec:intro_code_quality}
 %%%%%%%
 A main reason to write software is to define reusable instructions for task
-automation~\cite{narztReusabilityConceptProcess1998}.
+automation~\cite{pichlerReusabilityConceptProcess1998}.
 The complexity of software code makes it prone to errors, which can prevent
 its usage by persons other than the author himself. This is a problem for the
 general scientific community, as the software is often essential for
@@ -376,8 +376,8 @@ function. \emph{Maintainability} means that the software can easily be fixed
 from bugs and adapted to new requirements \cite{kazmanMaintainability2020}. This
 is achieved by writing the code in a clear and readable manner, and by writing
 tests that ensure that the code works as
-expected~\cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
-define~\cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable
+expected \cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
+define \cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable
 if the commands have intuitive names and if the software's manual, termed
 \emph{documentation}, is up-to-date and easy to understand for new users with
 minimal coding experience. A software package that has not received an update
@@ -396,7 +396,7 @@ timepoint of every change. This is required to isolate new and experimental
 features into newer versions and away from the stable version that's known to
 work. The most popular version control system is \texttt{Git}, which is
 considered the industry standard for software
-development~\cite{chaconGitBook2024}. \texttt{Git} can use GitHub.com as a
+development~\cite{chaconProGit2014}. \texttt{Git} can use GitHub.com as a
 platform to store and host codebases in the form of software repositories.
 GitHub's most famous feature is called ``pull request''. A pull request is a
 request from anyone registered on GitHub to include changes to the codebase (as
@@ -408,7 +408,7 @@ used by paid software companies.
 
 \emph{Continuous integration} (CI) is a software development practice in which
 developers integrate code changes into a shared repository several times a
-day~\cite{duvall2007continuous}. Each integration triggers the test suite,
+day~\cite{duvallContinuousIntegrationImproving2007}. Each integration triggers the test suite,
 aiming to detect errors as soon as possible. The test suite includes building
 the software, setting up an environment for the software to run, and then
 executing the programmed tests, ensuring that the software runs as a whole.
@@ -844,6 +844,7 @@ web development, data analysis, machine learning, biosciences and more
 \cite{ekmekciIntroductionProgrammingBioscientists2016,rayhanRisePythonSurvey2023}.
 
 
+
 % ======================================================================
 \unnsubsection{The Potential of Python Data Science Packages for Biomedicine}%
 \label{sec:intro_python_packages}%
@@ -857,7 +858,7 @@ with~a~\texttt{.py} ending containing Python code. Famous examples of such
 packages are \texttt{pytorch} and \texttt{tensorflow}, that are used to build
 models of artificial intelligence, including \textit{ChatGPT}
 \cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
-    radfordLanguageModelsAre2019}. Here, we outlay the most important packages used
+OpenaiGpt22024}. Here, we outlay the most important packages used
 for \texttt{plotastic} in Chapter 2 and present examples how these packages are
 utilized in modern biomedical research.
 
@@ -921,7 +922,7 @@ inherently parallelizable, such as matrix addition or multiplication.
 standard for matrix computation, influencing the design of advanced AI
 frameworks such as \texttt{PyTorch} and \texttt{mlx}, which mirrors several of
 \texttt{NumPy's} functionalities to facilitate ease of use for those familiar
-with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,mlx2023}.
+with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,hannunMLX2023}.
 This standardization has made \texttt{NumPy} an attractive tool not only in
 genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also for modern
 clinical applications like imaging technologies and augmented-reality in
@@ -998,6 +999,8 @@ development, runtime performance and integration with other tools (like
 including performant C++ code), \texttt{Pingouin} is an attractive standard for
 future statistical analyses in biomedicine
 \cite{gorelickHighPerformancePython2020}.
+
+
 
 \textbf{\texttt{statannotations}:} While \texttt{seaborn} and
 \texttt{matplotlib} offer a wide range of statistical plots, they lack the
