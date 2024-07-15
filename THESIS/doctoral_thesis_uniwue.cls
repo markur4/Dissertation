@@ -862,9 +862,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \markerdaggeralph%
 }%
 \stepcounter{daggercounter}% > Increment the dagger footnote counter
-\textsuperscript{% > Add the custom mark and counter into the text
-\markerdaggeralph
-}%
+\textsuperscript{\markerdaggeralph}% > Add the custom mark and counter into the text
 \footnotetext{~#1}% > Add text
 }%
 \xspace% > Add a space after the footnote, but not before comma
