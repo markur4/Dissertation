@@ -63,23 +63,24 @@ literature over decades. By doing so, researchers not only use established
 terminology instead of inventing new terms, but also minimize the risk of
 missing potential discoveries.
 
-\textbf{Why Hide Videos Behind a Download Link?} A major challenge remains in how
-to effectively present these dynamic observations in a publishable format, as
-traditional scientific publications and websites are not equipped to display
+\textbf{Why Hide Videos Behind a Download Link?} A major challenge remains in
+how to effectively present these dynamic observations in a publishable format,
+as traditional scientific publications and websites are not equipped to display
 video data. Instead, it is common practice to assemble video frames into static
 figures, presumably to support both online and printed reading habits
 \cite{perasDigitalPaperReading2023}. Representative example videos are then
-relegated to supplementary data. Although supplementary data is downloaded
-often, most biomedical researchers favor a presentation of additional figures
-and tables directly on the journal's website
+relegated to supplementary data, similar to the publication from Chapter\,1
+\cite{kuricModelingMyelomaDissemination2024}. Although supplementary data is
+downloaded often, most biomedical researchers favor a presentation of additional
+figures and tables directly on the journal's website
 \cite{priceRoleSupplementaryMaterial2018}. Given the increasing availability of
 video data%
-\footdagger{The number of \texttt{PubMed} articles with \emph{``live cell
-        imaging''} has doubled from 2011 to 2023.}, %
+\footdagger{The total number of \texttt{PubMed} articles with \emph{``live cell
+        imaging''} has doubled from 1012 in the year 2011 to 1967 in 2023}. %
 embedding video content next to figures and tables on the article's website does
 make a compelling case. In fact, the journal \emph{Nature} does offer this
 feature already, but rarely used \cite{NatureVideoContent}. In the end, there is
-no reason to not present videos alongsife figures and tables, as they can be as
+no reason to not present videos alongside figures and tables, as they can be as
 informative, and potentially more so. Such new standards can benefit other
 fields of medicine, as videos provide the best medium for first aid, medical
 emergency and education \cite{guptaDatasetMedicalInstructional2023}.
@@ -122,18 +123,17 @@ potentials and challenges of image cytometry.
 
 
 \textbf{Considering Automated Analysis for Future Live-Cell Imaging:}
-This work would have benefited from
-computational automation for the analysis of live-cell imaging, for example, the
-task of associating \INA cell detachment with \INA aggregate size and time:
-Manual analysis consisted of zooming in closely and
-watching the time-lapse over and over again until a detachment event was found.
-A very tedious task that had to be repeated approx. 50 times for every one of
-four independent videos. Instead of manually counting the number of single \INA
-cells across time, a pixel segmentation algorithm could have been trained to
-detect cells and background. Single cells would be discernable from aggregates
-by filtering cells by size. The count of single cells would then be
-representative of detached cells, given that the vast majority of INA6 cells
-were part of aggregates.
+This work would have benefited from computational automation for the analysis of
+live-cell imaging, for example, the task of associating \INA cell detachment
+with \INA aggregate size and time: Manual analysis consisted of zooming in
+closely and watching the time-lapse over and over again until a detachment event
+was found. A very tedious and error-prone task that had to be repeated approx.
+50 times for every one of four independent videos. Instead of manually counting
+the number of single \INA cells across time, a pixel segmentation algorithm
+could have been trained to detect cells and background. Single cells would be
+discernable from aggregates by filtering cells by size. The count of single
+cells would then be representative of detached cells, given that the vast
+majority of INA6 cells were part of aggregates.
 
 
 
@@ -212,8 +212,8 @@ becoming increasingly competitive with established techniques like \ac{FACS}.
 Despite its limitations, the simplicity and efficiency of image cytometry could
 be pivotal for its broader acceptance and integration into biological research.
 The exclusivity of \texttt{Intellesis} to \textit{Zeiss} microscopes could be a
-major hurdle, however there are free alternatives offering the same
-accessibility \cite{bergIlastikInteractiveMachine2019}.
+major hurdle, however there are free alternatives offering potentially comparable
+accessibility, such as \texttt{ilastik} \cite{bergIlastikInteractiveMachine2019}.
 
 
 
