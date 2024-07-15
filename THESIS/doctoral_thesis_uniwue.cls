@@ -75,7 +75,7 @@
 % == Fonts 
 \usepackage{fontspec} % > For custom fonts
 \usepackage{xcolor} % > Required for \definecolor
-% \usepackage{microtype} % > For better font rendering
+% \usepackage{microtype} % > For better font rendering, like narrow characters
 
 % == Vertical/Horizontal Spacing 
 \usepackage{float} % > For e.g. forced precise image positioning
@@ -362,7 +362,7 @@
 % ## Command to replace all spaces with shortspaces
 \newcommand{\shortspaces}[1]{%
     \StrSubstitute{#1}{ }{\,}[\temp]%
-    \temp
+    \temp%
 }
 
 
@@ -789,15 +789,19 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ' \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
 % ## Make citation references smaller 
+
+% \newcommand\narrowstyle{\SetTracking{encoding=*}{-50}\lsstyle}
+
+
 \let\oldcite\cite % > Rename \cite to \oldcite to keep the original
-\renewcommand{\cite}[1]{{\small \oldcite{#1}}}
+\renewcommand{\cite}[1]{{\small\oldcite{#1}}}
 
 % ## Define the bibliography style
 \let\oldthebibliography=\thebibliography
-\renewcommand{\thebibliography}[1]{
-    \oldthebibliography{#1}
-    \setlength{\itemsep}{0pt}
-    \footnotesize
+\renewcommand{\thebibliography}[1]{%
+    \oldthebibliography{#1}%
+    \setlength{\itemsep}{0pt}%
+    \footnotesize%
 }
 
 % ======================================================================
@@ -840,32 +844,32 @@ literate={ ( }{{{\color{parentheses}(}}}1
 
 % ## Make Marker that changes depending on counter
 \newcommand{\markerdaggeralph}{%
-{\small% > Set the font size to small, which makes it bigger
-\ifnum\value{daggercounter}=1 % > First footnote
-\dag% > Dagger
-\fi
-\ifnum\value{daggercounter}=2 % > Second footnote
-\ddag% > Double dagger
-\fi
-\ifnum\value{daggercounter}=3 % > Third footnote
-{\footnotesize\dag\dag}%
-% \alph{daggercounter}% > Add the custom mark and counter into the text
-\fi
-}%
-\xspace% > Add a space after the footnote
+    {\small% > Set the font size to small, which makes it bigger
+            \ifnum\value{daggercounter}=1 % > First footnote
+                \dag% > Dagger
+            \fi
+            \ifnum\value{daggercounter}=2 % > Second footnote
+                \ddag% > Double dagger
+            \fi
+            \ifnum\value{daggercounter}=3 % > Third footnote
+                {\footnotesize\dag\dag}%
+                % \alph{daggercounter}% > Add the custom mark and counter into the text
+            \fi
+        }%
+    \xspace% > Add a space after the footnote
 }%
 
 % ## Command for footnotes with dagger markers
 \newcommand{\footdagger}[1]{%
-{% ## Restrict changes to \thefootnote locally
-\renewcommand{\thefootnote}{% > Update marker to dagger
-\markerdaggeralph%
-}%
-\stepcounter{daggercounter}% > Increment the dagger footnote counter
-\textsuperscript{\markerdaggeralph}% > Add the custom mark and counter into the text
-\footnotetext{~#1}% > Add text
-}%
-\xspace% > Add a space after the footnote, but not before comma
+    {% ## Restrict changes to \thefootnote locally
+            \renewcommand{\thefootnote}{% > Update marker to dagger
+                \markerdaggeralph%
+            }%
+            \stepcounter{daggercounter}% > Increment the dagger footnote counter
+            \textsuperscript{\markerdaggeralph}% > Add the custom mark and counter into the text
+            \footnotetext{~#1}% > Add text
+        }%
+    \xspace% > Add a space after the footnote, but not before comma
 }
 
 % ## Footnote Quotes
@@ -879,9 +883,11 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % }
 \newcommand{\footquote}[2]{%
     \footdagger{%
-        \citet{#2}:~%
-        \textit{``\,\ignorespaces%
-            #1\nolinebreak\,''}% > Add the footnote text with the custom counter
+        \citet{#2}:\\
+        \strut\hfill% > Align the text to the right
+        \begin{minipage}{.95\linewidth}%
+            \textit{``\,#1\nolinebreak\,''}% > Add the footnote text with the custom counter
+        \end{minipage}%
     }%
 }
 
