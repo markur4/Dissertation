@@ -32,19 +32,27 @@
 % von den Doktorierenden den Willen, die Arbeit in einer
 % interdisziplinären Form in der Thesis zu präsentieren.
 
-\unnsection{Chapter 2: Semi-Automating Data Analysis with \texttt{plotastic}}
-\label{sec:C2}
-%%%%%%%%%%
-\vspace{-\baselineskip} % > Remove space made by empty lines
-
 % ## Reset reference counters of figs, tabs, so each chapter starts at 1
 \setcounter{figure}{0}
 \setcounter{table}{0}
 
-
+\unnsection{Chapter 2: Semi-Automating Data Analysis with \texttt{plotastic}}%
+\label{sec:C2}%
+%%%%%%%%%%
+\vspace{-\baselineskip} % > Remove space made by empty lines
+%
 % ======================================================================
 % == Abstract
 % ======================================================================
+% 
+% \noindent The following chapter was taken as is from
+% \citet{kuricPlotasticBridgingPlotting2024}, which was published in the
+% \textit{Journal of Open Source Software} under the \texttt{CC BY 4.0} license.
+
+\noindent The following chapter has been taken with slight adjustments from
+\citet{kuricPlotasticBridgingPlotting2024}, published in \textit{Journal of Open
+Source Software} under the \texttt{CC BY 4.0} license, and was expanded with
+introduction and discussion sections.
 
 \customabstract{sec:C2_abstract}{Abstract}{
     \texttt{plotastic} addresses the challenges of transitioning from
@@ -364,7 +372,7 @@ of statistical analysis and plotting, leveraging the capabilities of
 \texttt{DataFrames} as its primary input, aligning with the conventions of
 \texttt{seaborn} and ensuring compatibility with existing data
 structures~\cite{wickhamTidyData2014, reback2020pandas,
-mckinney-proc-scipy-2010}.
+    mckinney-proc-scipy-2010}.
 
 
 
@@ -372,7 +380,7 @@ mckinney-proc-scipy-2010}.
     FIGS/C2_fmri2.png
 }\figcaption[fig:examplefmri]{
     Example figure of \texttt{plotastic} (version 0.1). Image style was set
-    by \texttt{plt.style.use(`ggplot')}
+    by \texttt{plt.style.use(`ggplot')}. \selfplagiarismtwo
 }
 
 \begin{table}[H]
@@ -382,7 +390,7 @@ mckinney-proc-scipy-2010}.
         assesses sphericity after grouping the data by all grouping dimensions
         (hue, row, col). For example, \texttt{DA.check\_sphericity()} grouped the
         `fmri' dataset by ``region'' (col) and ``event'' (hue), performing four
-        subsequent sphericity tests for four datasets.}
+        subsequent sphericity tests for four datasets. \selfplagiarismtwo}
     \begin{tabular}{llcccccc}
         \hline
         `region', `event'  & spher & W        & chi2   & dof & pval & group count & n per group \\
@@ -407,7 +415,7 @@ mckinney-proc-scipy-2010}.
         \texttt{DA.omnibus\_rm\_anova()} grouped the `fmri' dataset by ``region''
         (col), performing two subsequent two-factor RM-ANOVAs. Within-factors are
         ``timepoint'' (x) and ``event'' (hue). For conciseness, GG-Correction and
-        effect sizes are not shown.}
+        effect sizes are not shown. \selfplagiarismtwo}
     \begin{tabular}{llccccccc}
         \hline
         `region'   & Source            & SS    & ddof1 & ddof2 & MS    & F      & p-unc    & stars \\

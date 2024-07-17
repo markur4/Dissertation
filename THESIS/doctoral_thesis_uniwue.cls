@@ -804,6 +804,21 @@ literate={ ( }{{{\color{parentheses}(}}}1
     \footnotesize%
 }
 
+% == Anti self-Plagiarism Spell ========================================
+% ## Pre-define sentences to include in figure captions to avoid self-plagiarism
+
+\newcommand{\selfplagiarismone}{
+    This content has been taken as is from
+    \citet{kuricModelingMyelomaDissemination2024}, published in \textit{Cancer
+    Research Communications} under the \texttt{CC BY 4.0} license. 
+}
+
+\newcommand{\selfplagiarismtwo}{
+    This content has been taken as is from
+    \citet{kuricPlotasticBridgingPlotting2024}, published in \textit{Journal of
+    Open Source Software} under the \texttt{CC BY 4.0} license.
+}
+
 % ======================================================================
 % == Footnotes
 % ======================================================================
