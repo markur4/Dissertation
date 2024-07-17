@@ -810,13 +810,13 @@ literate={ ( }{{{\color{parentheses}(}}}1
 \newcommand{\selfplagiarismone}{
     This content has been taken as is from
     \citet{kuricModelingMyelomaDissemination2024}, published in \textit{Cancer
-    Research Communications} under the \texttt{CC BY 4.0} license. 
+        Research Communications} under the \texttt{CC BY 4.0} license.
 }
 
 \newcommand{\selfplagiarismtwo}{
     This content has been taken as is from
     \citet{kuricPlotasticBridgingPlotting2024}, published in \textit{Journal of
-    Open Source Software} under the \texttt{CC BY 4.0} license.
+        Open Source Software} under the \texttt{CC BY 4.0} license.
 }
 
 % ======================================================================
@@ -877,6 +877,7 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ## Command for footnotes with dagger markers
 \newcommand{\footdagger}[1]{%
     {% ## Restrict changes to \thefootnote locally
+            % \footnotesize%
             \renewcommand{\thefootnote}{% > Update marker to dagger
                 \markerdaggeralph%
             }%

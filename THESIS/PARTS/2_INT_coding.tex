@@ -451,7 +451,7 @@ def test_give_me_five():
     assert give_me_five() == 5 
 \end{lstlisting}
 
-\pagebreak
+% \pagebreak
 
 The quality of the software testing suite is measured by the code coverage, the
 precision of the tests, and the number of test-cases that are checked. The code
@@ -528,10 +528,17 @@ int main() {                // Define a function called 'main'
 Furthermore, Python is an \textit{interpreted} language, which means that the
 code is executed line by line. This makes coding easier because the programmer
 can see the results of the code immediately after writing it, and error messages
-point to the exact line where the error occurred (\autoref{lst:errormessage}). This is in contrast to
-\textit{compiled} languages, where the code has to be compiled into machine code
-before it can be executed. The advantage of compiled languages is that the code
-runs faster, because the machine code is optimized for the hardware.
+point to the exact line where the error occurred (\autoref{lst:errormessage}).
+This is in contrast to \textit{compiled} languages, where the code has to be
+compiled into machine code before it can be executed. The advantage of compiled
+languages is that the code runs faster, because the machine code is optimized
+for the hardware.
+Python automates tasks that would otherwise require an advanced understanding of
+computer hardware, like the need for manual allocation of memory space. This is
+achieved by using a technique called \textit{``garbage collection''}, which
+automatically frees memory space that is no longer needed by the program. This
+is a feature that is not present in low-level programming languages like C or
+C++, that were designed to maximize control over hardware.
 
 \def\mycaption{Example of an error message. Since Python is case-sensitive, the
     error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
@@ -543,7 +550,7 @@ runs faster, because the machine code is optimized for the hardware.
     undefined. }
 \begin{lstlisting}[
     language=Python, 
-    style=pythonstyle,
+    style=pythonstyleNonbreaking,
     label=lst:errormessage,
     caption=\mycaption
     ]
@@ -560,12 +567,7 @@ print(Hi)           # Print the value of the undefined variable 'Hi'
 # NameError: name 'Hi' is not defined
 \end{lstlisting}
 
-Python automates tasks that would otherwise require an advanced understanding of
-computer hardware, like the need for manual allocation of memory space. This is
-achieved by using a technique called \textit{``garbage collection''}, which
-automatically frees memory space that is no longer needed by the program. This
-is a feature that is not present in low-level programming languages like C or
-C++, that were designed to maximize control over hardware.
+
 
 Another hallmark of Python is its \textit{dynamic typing system}. In Python the
 type is inferred automatically during code execution
@@ -582,10 +584,10 @@ cannot be changed during code execution
     considered a comment and won't be executed.}
 \begin{lstlisting}[
     language=Python,
-    style=pythonstyleNonbreaking,
+    style=pythonstyle,
     label=lst:dynamic_typing,
     caption=\mycaption,
-    belowskip=-\vhalf % > Remove space because two listings are close
+    % belowskip=-\vhalf % > Remove space because two listings are close
     ]
 a = 5  # Type integer
 a = 5.0  # Type float
@@ -613,6 +615,8 @@ int a;  // Declare type as integer
 a = 5;
 a = 'Hello, World!';  // Compilation error!
 \end{lstlisting}
+
+
 
 Dynamic typing makes Python a very beginner-friendly language, since one does
 not have to keep track of the type of each variable. However, this also makes
