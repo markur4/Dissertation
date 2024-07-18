@@ -33,7 +33,7 @@
 % == Preamble
 % ======================================================================
 
-\documentclass[12pt]{doctoral_thesis_uniwue} 
+\documentclass[12pt, twoside]{doctoral_thesis_uniwue} 
 
 % :: Include only one part to work on for quicker compilation
 % \includeonly{PARTS/0_TITLEPAGE}
@@ -66,16 +66,18 @@
 
 % == Title Page ========================================================
 \include{PARTS/0_TITLEPAGE}
-\newpage
+\blankpage
 
-% ## Change page numbering to roman numerals
-\setcounter{page}{1} % > Reset page counter to 1
-\pagenumbering{roman}
+% == Prüfungskommitee ==================================================
+\include{PARTS/0_SUBMISSION}
+\blankpage % > Two blank pages to make institute and project period on even page
+\blankpage % > ... and acknowlegements on odd page
 
 
-% == Acknowledgements ==================================================
-\include{PARTS/0_ACKNOWLEDGEMENTS}
-\newpage
+
+% == Frontmatter =======================================================
+\include{PARTS/0_FRONTMATTER}
+\cleardoublepage % > Ensure next part is on right page (double-sided print)
 
 
 
@@ -83,26 +85,35 @@
 % == Summary, TOC, Abbreviations, Footnotes
 % ======================================================================
 
+% ## Change page numbering to roman numerals
+\setcounter{page}{1} % > Reset page counter to 1
+\pagenumbering{roman}
+
+
 % == Summary ==========================================================
 % > Include SUMMARY.tex
 \include{PARTS/1_SUMMARY}
-\newpage
+% \cleardoublepage % > Adds blank pages until next pages are odd
 
 
 % == Table of Contents (TOC) ===========================================
 {\footnotesize \tableofcontents}
+
 \newpage
+% \cleardoublepage % > Adds blank pages until next pages are odd
 
 
 % == Glossary ==========================================================
 % ## Abbreviations are defined in PARTS/1_ABBREVIATIONS.tex
 \input{PARTS/1_ABBREVIATIONS} % > input = always Include Abbreviations
-\newpage
+\cleardoublepage % > Footnotes are only 1 page, so it's on a 
 
 
 % == Footnotes =========================================================
 \input{PARTS/1_FOOTNOTES}
-\newpage
+
+\blankpage
+\cleardoublepage
 
 
 % ======================================================================
@@ -171,8 +182,12 @@ conclusions to ensure clarity on broad topics.
 
 % > Handle page head and References
 \fancyhead[C]{References} % > Override \bibliography messing with page heads
-%\bibliography{bibliography/extracted.bib}
-\bibliography{/Users/martinkuric/Zotero/BetterBibtex_updated_Library/MK_Zotero_Library.bib}
+
+% > Local bibliography
+\bibliography{bibliography/extracted.bib}
+% > Complete Zotero bibliography
+% \bibliography{/Users/martinkuric/Zotero/BetterBibtex_updated_Library/MK_Zotero_Library.bib}
+
 \pagestyle{headersfooters} % > Reset the page style to headersfooters
 \markboth{References}{} % > For some reason, the last page need this
 

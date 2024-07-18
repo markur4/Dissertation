@@ -186,7 +186,8 @@
 
 % ## For empty pages
 \newcommand{\blankpage}{
-    \clearpage
+    % \clearpage
+    \newpage
     \thispagestyle{empty}
     \hfill
     \clearpage
