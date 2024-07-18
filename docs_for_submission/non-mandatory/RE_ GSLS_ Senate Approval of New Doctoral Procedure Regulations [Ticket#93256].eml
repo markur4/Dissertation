@@ -1,0 +1,256 @@
+Received: from vmail043.uni-wuerzburg.eu (10.101.19.43) by
+ vmail042.uni-wuerzburg.eu (10.101.19.42) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1258.34 via Mailbox Transport; Mon, 10 Jun 2024 10:13:08 +0200
+Received: from vmail044.uni-wuerzburg.eu (10.101.19.44) by
+ vmail043.uni-wuerzburg.eu (10.101.19.43) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.2.1258.34; Mon, 10 Jun 2024 10:13:08 +0200
+Received: from virusscan-slb.rz.uni-wuerzburg.de (10.101.19.3) by
+ vmail044.uni-wuerzburg.eu (10.101.19.44) with Microsoft SMTP Server id
+ 15.2.1258.34 via Frontend Transport; Mon, 10 Jun 2024 10:13:08 +0200
+Received: from localhost (localhost [127.0.0.1])
+	by virusscan-slb.rz.uni-wuerzburg.de (Postfix) with ESMTP id 715691C0038;
+	Mon, 10 Jun 2024 10:13:08 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at uni-wuerzburg.de
+Received: from mailmaster.uni-wuerzburg.de ([127.0.0.1])
+	by localhost (vmail003.slb.uni-wuerzburg.de [127.0.0.1]) (amavisd-new, port 10225)
+	with ESMTP id PROwTQ4rjiVZ; Mon, 10 Jun 2024 10:13:07 +0200 (CEST)
+Received: from ticket.lgl.uni-wuerzburg.de (wrzh229.rzhousing.uni-wuerzburg.de [132.187.226.229])
+	by mailmaster.uni-wuerzburg.de (Postfix) with ESMTPSA id 9B7D414005A;
+	Mon, 10 Jun 2024 10:13:07 +0200 (CEST)
+Date: Mon, 10 Jun 2024 08:13:07 +0000
+From: Jennifer Ritzer via GSLS <gsls-info@uni-wuerzburg.de>
+To: <martin.kuric@uni-wuerzburg.de>
+CC: <gsls-submission@uni-wuerzburg.de>
+Message-ID: <20240610081306.256.d65a7a28-d761-40f6-9360-e81b4aeca849@ticket.lgl.uni-wuerzburg.de>
+In-Reply-To: <0D964A0D-AFFE-4A90-A274-860E4E9A5857@uni-wuerzburg.de>
+References: <182f2f62292e4dafa4bc51235ea07668@vmail041.uni-wuerzburg.eu>
+ <8988e6eed8ab443aaf3e4839bcc0cd55@wklex11v.klinik.uni-wuerzburg.de>
+ <ecacc350e9894dc9b4e862cec3498f02@vmail041.uni-wuerzburg.eu>
+ <ff3483b99bc34d1cbaf436226938e5b2@vmail042.uni-wuerzburg.eu>
+ <d1fef22440bd414aa59ced955b423940@wklex14v.klinik.uni-wuerzburg.de>
+ <ac6155fd189a42c28ed7b85f3ee95069@vmail041.uni-wuerzburg.eu>
+ <5aa73675600044e28d86f6a75c2352ac@uni-wuerzburg.de>
+ <738e6c92-ab32-444c-b6f9-4120165150de@vmail046.uni-wuerzburg.eu>
+ <9a78c8f4a04f47368fca84ed285732ad@uni-wuerzburg.de>
+ <38311642096f4ac4a8c83191d3e14f03@vmail044.uni-wuerzburg.eu>
+ <2ae927621d88415cb5bc8a0b1968b83d@vmail045.uni-wuerzburg.eu>
+ <80e0acaa7d884f22baed2f7df821d851@vmail042.uni-wuerzburg.eu>
+ <11d0aad793c84a0894ff0c3e6e855883@HZI-BSMAIL04.helmholtz-hzi.de>
+ <dcf6cc27-5660-4f67-be10-0d5e57497b00@vmail046.uni-wuerzburg.eu>
+ <6247c712d8e04688be277fe9970d4302@wklex11v.klinik.uni-wuerzburg.de>
+ <2a4550e40add4a1aa68ff3ed26552e41@uni-wuerzburg.de>
+ <ac27293b220a4a24b407e66a2e35c117@HZI-BSMAIL04.helmholtz-hzi.de>
+ <881ace43-4bd6-421a-8d20-4ba76f10b099@vmail042.uni-wuerzburg.eu>
+ <a38e21b1-1993-4323-ade5-82912cddd3c5@vmail042.uni-wuerzburg.eu>
+ <a0c549684ada42f68b72849c41cf933d@wklex11v.klinik.uni-wuerzburg.de>
+ <7983fcb6fdec4f6cb569d039f966be54@wklex14v.klinik.uni-wuerzburg.de>
+ <400df3a43aa64cd58af79af059cb98a4@wklex15v.klinik.uni-wuerzburg.de>
+ <3917023ea7f0472d9f48d76cca39de21@wklex12v.klinik.uni-wuerzburg.de>
+ <f5c1ac705c3c4a05b95b85eaf56afd23@wklex14v.klinik.uni-wuerzburg.de>
+ <ed7a71f6eced4c9791cc1c0817ca74d3@wklex11v.klinik.uni-wuerzburg.de>
+ <1d6fe5cabd6e4ca9bd02c951c64c7ca2@wklex15v.klinik.uni-wuerzburg.de>
+ <88af3109516f4e68b6c087ea91670cc5@wklex12v.klinik.uni-wuerzburg.de>
+ <159ab44ee5ef48889621026ec5cea639@wklex15v.klinik.uni-wuerzburg.de>
+ <d68a7a372ae544819502024a7053c4d5@BE1P281MB3079.DEUP281.PROD.OUTLOOK.COM>
+ <97b753b24ac74573b75d92334b3b5e8c@BE1P281MB3060.DEUP281.PROD.OUTLOOK.COM>
+ <94048703-7B7D-4EF9-8F76-C9CDE7D20A5B@uni-wuerzburg.de>
+ <0D964A0D-AFFE-4A90-A274-860E4E9A5857@uni-wuerzburg.de>
+ <0D964A0D-AFFE-4A90-A274-860E4E9A5857@uni-wuerzburg.de>
+Subject: RE: GSLS: Senate Approval of New Doctoral Procedure Regulations
+ [Ticket#93256]
+Content-Type: multipart/mixed;
+	boundary="--==_mimepart_6666b5938e761_3022466c734c7"; charset="UTF-8"
+Content-Transfer-Encoding: 7bit
+Organization: =?UTF-8?Q?GSLS_Universit=C3=A4t_W=C3=BCrzburg?=
+X-Powered-By: Zammad - Helpdesk/Support (https://zammad.org/)
+X-Mailer: Zammad Mail Service
+Return-Path: gsls-info@uni-wuerzburg.de
+X-MS-Exchange-Organization-Network-Message-Id: 4ef3de0a-caca-4908-82b5-08dc8925299d
+X-MS-Exchange-Organization-AuthSource: vmail044.uni-wuerzburg.eu
+X-MS-Exchange-Organization-AuthAs: Anonymous
+X-MS-Exchange-Transport-EndToEndLatency: 00:00:00.1760922
+X-MS-Exchange-Processed-By-BccFoldering: 15.02.1258.034
+MIME-Version: 1.0
+
+----==_mimepart_6666b5938e761_3022466c734c7
+Content-Type: multipart/alternative;
+	boundary="--==_mimepart_6666b5938dd78_3022466c73245"
+Content-Transfer-Encoding: 7bit
+
+----==_mimepart_6666b5938dd78_3022466c73245
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Lieber Herr Kuric,
+
+Ihr Antrag, nach der Promotionsordnung vom 4. M=C3=A4rz 2013 gepr=C3=BCft=
+ zu werden, ist bei uns eingegangen.
+
+Wir best=C3=A4tigen Ihnen hiermit, dass Ihre Pr=C3=BCfung nach der alten =
+Promotionsordnung vom 4. M=C3=A4rz 2013 durchgef=C3=BChrt wird. Dies betr=
+ifft die folgenden Punkte:
+
+=C2=A712: Abgabe der Dissertation in acht gleichen Exemplaren sowie in el=
+ektronischer Form (CD/DVD).
+
+=C2=A715: Promotionskolloquium:(2) Ist ein ausw=C3=A4rtiges Mitglied des =
+Promotionskomitees aus triftigen Gr=C3=BCnden nicht zur Teilnahme am Prom=
+otionskolloquium in der Lage, so kann der Direktor oder die Direktorin de=
+r Graduiertenschule dessen Aufgaben auf ein vom ausw=C3=A4rtigen Gutachte=
+r oder von der ausw=C3=A4rtigen Gutachterin vorgeschlagenes habilitiertes=
+ Mitglied der Klasse der Graduiertenschule, der der Promotionsstudent ode=
+r die Promotionsstudentin angeh=C3=B6rt, =C3=BCbertragen.
+
+=C2=A717: Ver=C3=B6ffentlichung der Dissertation:Der Ver=C3=B6ffentlichun=
+gspflicht ist auch gen=C3=BCge getan, wenn an die Universit=C3=A4tsbiblio=
+thek f=C3=BCnf Exemplare der Dissertation, die auf alterungsbest=C3=A4ndi=
+gem, holz- und s=C3=A4urefreiem Papier gedruckt und dauerhaft haltbar geb=
+unden sind, abgeliefert werden.
+
+Bei Fragen oder Unklarheiten stehen wir Ihnen gerne zur Verf=C3=BCgung.
+
+Mit freundlichen Gr=C3=BC=C3=9Fen,
+
+Jennifer Ritzer
+
+--
+Graduate School of Life Sciences
+Campus Hubland Nord
+Beatrice-Edgell-Weg 21
+97074 W=C3=BCrzburg=
+
+----==_mimepart_6666b5938dd78_3022466c73245
+Content-Type: multipart/related;
+	boundary="--==_mimepart_6666b5938e517_3022466c7336f"
+Content-Transfer-Encoding: 7bit
+
+----==_mimepart_6666b5938e517_3022466c7336f
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html><html dir=3D"auto"><head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+    <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+    <style type=3D"text/css">
+      body {
+        font-family:'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;=
+ font-size: 12px;;
+      }
+      img {
+        outline: none;
+        text-decoration: none;
+        -ms-interpolation-mode: bicubic;
+      }
+      a img {
+        border: none;
+      }
+      table td {
+        border-collapse: collapse;
+      }
+      table {
+        border-collapse: collapse;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        border: none;
+        table-layout: auto;
+        display: block;
+        width: 100%;
+        overflow: auto;
+        word-break: keep-all;
+      }
+      table,
+      pre,
+      blockquote {
+        margin: 0 0 16px;
+      }
+      td, th {
+        padding: 7px 12px;
+      }
+      th {
+        font-weight: bold;
+        text-align: center;
+      }
+      col {
+        width: auto;
+      }
+      p {
+        margin: 0;
+      }
+      code {
+        border: none;
+        background: hsl(0,0%,97%);
+        white-space: pre-wrap;
+      }
+      blockquote {
+        padding: 8px 12px;
+        border-left: 5px solid #eee;
+      }
+      pre {
+        padding: 12px 15px;
+        font-size: 13px;
+        line-height: 1.45;
+        background: hsl(0,0%,97%);
+        white-space: pre-wrap;
+        border-radius: 3px;
+        border: none;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body style=3D"font-family:'Helvetica Neue', Helvetica, Arial, Geneva, sa=
+ns-serif; font-size: 12px;;">Lieber Herr Kuric,<div><br></div><div>Ihr Antr=
+ag, nach der Promotionsordnung vom 4. M=C3=A4rz 2013 gepr=C3=BCft zu werden=
+, ist bei uns eingegangen.&nbsp;</div><div><span style=3D"background-color:=
+ initial; color: var(--text-normal);"><br></span></div><div><span style=3D"=
+background-color: initial; color: var(--text-normal);">Wir best=C3=A4tigen =
+Ihnen hiermit, dass Ihre Pr=C3=BCfung nach der alten Promotionsordnung vom =
+4. M=C3=A4rz 2013 durchgef=C3=BChrt wird. Dies betrifft die folgenden Punkt=
+e:&nbsp;</span></div><div><span style=3D"background-color: initial; color: =
+var(--text-normal);"><br></span></div><div><span style=3D"background-color:=
+ initial; color: var(--text-normal);">=C2=A712: Abgabe der Dissertation in =
+acht gleichen Exemplaren sowie in elektronischer Form (CD/DVD).&nbsp;</span=
+></div><div><span style=3D"background-color: initial; color: var(--text-nor=
+mal);"><br></span></div><div><span style=3D"background-color: initial; colo=
+r: var(--text-normal);">=C2=A715: Promotionskolloquium:
+(2) Ist ein ausw=C3=A4rtiges Mitglied des Promotionskomitees aus triftigen =
+Gr=C3=BCnden nicht zur Teilnahme am Promotionskolloquium in der Lage, so ka=
+nn der Direktor oder die Direktorin der Graduiertenschule dessen Aufgaben a=
+uf ein vom ausw=C3=A4rtigen Gutachter oder von der ausw=C3=A4rtigen Gutacht=
+erin vorgeschlagenes habilitiertes Mitglied der Klasse der Graduiertenschul=
+e, der der Promotionsstudent oder die Promotionsstudentin angeh=C3=B6rt, =
+=C3=BCbertragen.&nbsp;</span></div><div><span style=3D"background-color: in=
+itial; color: var(--text-normal);"><br></span></div><div><span style=3D"bac=
+kground-color: initial; color: var(--text-normal);">=C2=A717: Ver=C3=B6ffen=
+tlichung der Dissertation:
+Der Ver=C3=B6ffentlichungspflicht ist auch gen=C3=BCge getan, wenn an die U=
+niversit=C3=A4tsbibliothek f=C3=BCnf Exemplare der Dissertation, die auf al=
+terungsbest=C3=A4ndigem, holz- und s=C3=A4urefreiem Papier gedruckt und dau=
+erhaft haltbar gebunden sind, abgeliefert werden.&nbsp;</span></div><div><s=
+pan style=3D"background-color: initial; color: var(--text-normal);"><br></s=
+pan></div><div><span style=3D"background-color: initial; color: var(--text-=
+normal);">Bei Fragen oder Unklarheiten stehen wir Ihnen gerne zur Verf=C3=
+=BCgung.&nbsp;</span></div><div><span style=3D"background-color: initial; c=
+olor: var(--text-normal);"><br></span></div><div><span style=3D"background-=
+color: initial; color: var(--text-normal);">Mit freundlichen Gr=C3=BC=C3=9F=
+en,&nbsp;&nbsp;</span></div><div>
+<br><div data-signature=3D"true" data-signature-id=3D"3">
+<p style=3D"margin: 0;">Jennifer Ritzer<br></p>
+<p style=3D"margin: 0;">--</p>
+<p style=3D"margin: 0;">Graduate School of Life Sciences </p>
+
+<p style=3D"margin: 0;">Campus Hubland Nord </p>
+
+<p style=3D"margin: 0;">Beatrice-Edgell-Weg 21 </p>
+
+<p style=3D"margin: 0;">97074 W=C3=BCrzburg&nbsp;</p>
+</div>
+</div></body>
+</html>
+
+----==_mimepart_6666b5938e517_3022466c7336f--
+
+----==_mimepart_6666b5938dd78_3022466c73245--
+
+----==_mimepart_6666b5938e761_3022466c734c7--
