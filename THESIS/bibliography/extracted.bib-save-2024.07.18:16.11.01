@@ -1,0 +1,86 @@
+
+
+@incollection{Szeliski2011,
+  address =       {London},
+  author =        {Szeliski, Richard},
+  booktitle =     {Computer Vision: {{Algorithms}} and Applications},
+  pages =         {181--234},
+  publisher =     {Springer London},
+  title =         {Feature Detection and Matching},
+  year =          {2011},
+  abstract =      {Feature detection and matching are an essential
+                   component of many computer vision applications.
+                   Consider the two pairs of images shown in Figure 4.2.
+                   For the first pair, we may wish to align the two
+                   images so that they can be seamlessly stitched into a
+                   composite mosaic (Chapter 9). For the second pair, we
+                   may wish to establish a dense set of correspondences
+                   so that a 3D model can be constructed or an
+                   in-between view can be generated (Chapter 11). In
+                   either case, what kinds of features should you detect
+                   and then match in order to establish such an
+                   alignment or set of correspondences? Think about this
+                   for a few moments before reading on.},
+  doi =           {10.1007/978-1-84882-935-0_4},
+  isbn =          {978-1-84882-935-0},
+  url =           {https://link.springer.com/chapter/10.1007/978-1-84882-935-
+                  0_4},
+}
+
+@article{guptaDeepLearningImage2019,
+  author =        {Gupta, Anindya and Harrison, Philip J. and
+                   Wieslander, H{\aa}kan and Pielawski, Nicolas and
+                   Kartasalo, Kimmo and Partel, Gabriele and
+                   Solorzano, Leslie and Suveer, Amit and Klemm, Anna H. and
+                   Spjuth, Ola and Sintorn, Ida-Maria and
+                   W{\"a}hlby, Carolina},
+  journal =       {Cytometry Part A},
+  number =        {4},
+  pages =         {366--380},
+  title =         {Deep {{Learning}} in {{Image Cytometry}}: {{A
+                   Review}}},
+  volume =        {95},
+  year =          {2019},
+  abstract =      {Artificial intelligence, deep convolutional neural
+                   networks, and deep learning are all niche terms that
+                   are increasingly appearing in scientific
+                   presentations as well as in the general media. In
+                   this review, we focus on deep learning and how it is
+                   applied to microscopy image data of cells and tissue
+                   samples. Starting with an analogy to neuroscience, we
+                   aim to give the reader an overview of the key
+                   concepts of neural networks, and an understanding of
+                   how deep learning differs from more classical
+                   approaches for extracting information from image
+                   data. We aim to increase the understanding of these
+                   methods, while highlighting considerations regarding
+                   input data requirements, computational resources,
+                   challenges, and limitations. We do not provide a full
+                   manual for applying these methods to your own data,
+                   but rather review previously published articles on
+                   deep learning in image cytometry, and guide the
+                   readers toward further reading on specific networks
+                   and methods, including new methods not yet applied to
+                   cytometry data. {\copyright} 2018 The Authors.
+                   Cytometry Part A published by Wiley Periodicals, Inc.
+                   on behalf of International Society for Advancement of
+                   Cytometry.},
+  doi =           {10.1002/cyto.a.23701},
+  issn =          {1552-4930},
+  url =           {https://onlinelibrary.wiley.com/doi/abs/10.1002/
+                  cyto.a.23701},
+}
+
+@book{zutphenPrinciplesLaboratoryAnimal2001,
+  address =       {Amsterdam ; New York},
+  edition =       {Rev. ed},
+  editor =        {van Zutphen, L. F. M. and Baumans, Vera and
+                   Beynen, Anton C.},
+  publisher =     {Elsevier},
+  title =         {Principles of Laboratory Animal Science: A
+                   Contribution to the Humane Use and Care of Animals
+                   and to the Quality of Experimental Results},
+  year =          {2001},
+  isbn =          {978-0-444-50612-2},
+}
+
