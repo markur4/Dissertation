@@ -322,7 +322,7 @@
     \label{#1} % > Create a unique identifier for the abstract
     % \addcontentsline{toc}{subsection}{#2} % > Add the header name to the table of contents
     \renewcommand{\abstractname}{#2} % > Rename the abstract
-    \begin{abstract}
+    \begin{abstract}%
         #3 % > Insert the abstract text
     \end{abstract}
 }

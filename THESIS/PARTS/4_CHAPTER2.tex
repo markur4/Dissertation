@@ -49,10 +49,10 @@
 % \citet{kuricPlotasticBridgingPlotting2024}, which was published in the
 % \textit{Journal of Open Source Software} under the \texttt{CC BY 4.0} license.
 
-\noindent The following chapter has been taken with slight adjustments from
+{\footnotesize \noindent The following chapter has been taken with slight adjustments from
 \citet{kuricPlotasticBridgingPlotting2024}, published in \textit{Journal of Open
 Source Software} under the \texttt{CC BY 4.0} license, and was expanded with
-introduction and discussion sections.
+introduction and discussion sections.}
 
 \customabstract{sec:C2_abstract}{Abstract}{
     \texttt{plotastic} addresses the challenges of transitioning from
@@ -221,7 +221,7 @@ intermediate outputs, a concept the author refers to as \textit{semi-automation}
     \end{tabular}
 \end{table}
 
-
+\pagebreak
 
 The need for \texttt{plotastic} in this specific project is described in detail
 in the summarizing discussion
@@ -376,12 +376,55 @@ structures~\cite{wickhamTidyData2014, reback2020pandas,
 
 
 
-\includeimage[0.9]{
+\includeimage[0.85][2mm 2mm 2mm 2mm]{
     FIGS/C2_fmri2.png
 }\figcaption[fig:examplefmri]{
     Example figure of \texttt{plotastic} (version 0.1). Image style was set
     by \texttt{plt.style.use(`ggplot')}. \selfplagiarismtwo
 }
+
+
+
+
+
+\texttt{plotastic} was inspired by \texttt{seaborn} using the same set of intuitive
+and consistent parameters (y, x, hue, row, col) found in each of its
+plotting functions \cite{waskomSeabornStatisticalData2021}. These parameters
+intuitively delineate the data dimensions plotted, yielding `facetted'
+subplots, each presenting y against x. This allows for rapid and
+insightful exploration of multidimensional relationships.~\texttt{plotastic}
+extends this principle to statistical analysis by storing these
+\texttt{seaborn} parameters (referred to as dimensions) in a \texttt{DataAnalysis}
+object and intelligently passing them to statistical functions of the
+\texttt{pingouin} library. This approach is based on the impression that most
+decisions during statistical analysis can be derived from how the user
+decides to arrange the data in a plot. This approach also prevents code
+repetition and streamlines statistical analysis. For example, the
+subject keyword is specified only once during \texttt{DataAnalysis}
+initialisation, and \texttt{plotastic} selects the appropriate paired or
+unpaired version of the test. Using \texttt{pingouin} alone requires the user
+to manually pick the correct test and to repeatedly specify the subject
+keyword in each testing function.
+
+In essence, \texttt{plotastic} translates plotting parameters into their
+statistical counterparts. This translation minimizes user input and also
+ensures a coherent and logical connection between plotting and
+statistical analysis. The goal is to allow the user to focus on choosing
+the correct statistical test (e.g. parametric vs. non-parametric) and
+worry less about specific implementations.
+
+At its core, \texttt{plotastic} employs iterators to systematically group data
+based on various dimensions, aligning the analysis with the distinct
+requirements of tests and plots. Normality testing is performed on each
+individual sample, which is achieved by splitting the data by all
+grouping dimensions and also the x-axis (hue, row, col, x). Sphericity
+and homoscedasticity testing is performed on a complete sampleset listed
+on the x-axis, which is achieved by splitting the data by all grouping
+dimensions (hue, row, col)  (\autoref{tab:sphericity}). For omnibus and
+posthoc analyses, data is grouped by the row and col dimensions in
+parallel to the \texttt{matplotlib} axes, before performing one two-factor
+analysis per axis using x and hue as the within/between-factors.
+(\autoref{tab:RMANOVA}).
 
 \begin{table}[H]
     \small
@@ -431,48 +474,6 @@ structures~\cite{wickhamTidyData2014, reback2020pandas,
     \label{tab:RMANOVA}
     \vspace{\vfull} % > Add vertical space since a caption is next
 \end{table}
-
-
-
-
-\texttt{plotastic} was inspired by \texttt{seaborn} using the same set of intuitive
-and consistent parameters (y, x, hue, row, col) found in each of its
-plotting functions \cite{waskomSeabornStatisticalData2021}. These parameters
-intuitively delineate the data dimensions plotted, yielding `facetted'
-subplots, each presenting y against x. This allows for rapid and
-insightful exploration of multidimensional relationships.~\texttt{plotastic}
-extends this principle to statistical analysis by storing these
-\texttt{seaborn} parameters (referred to as dimensions) in a \texttt{DataAnalysis}
-object and intelligently passing them to statistical functions of the
-\texttt{pingouin} library. This approach is based on the impression that most
-decisions during statistical analysis can be derived from how the user
-decides to arrange the data in a plot. This approach also prevents code
-repetition and streamlines statistical analysis. For example, the
-subject keyword is specified only once during \texttt{DataAnalysis}
-initialisation, and \texttt{plotastic} selects the appropriate paired or
-unpaired version of the test. Using \texttt{pingouin} alone requires the user
-to manually pick the correct test and to repeatedly specify the subject
-keyword in each testing function.
-
-In essence, \texttt{plotastic} translates plotting parameters into their
-statistical counterparts. This translation minimizes user input and also
-ensures a coherent and logical connection between plotting and
-statistical analysis. The goal is to allow the user to focus on choosing
-the correct statistical test (e.g. parametric vs. non-parametric) and
-worry less about specific implementations.
-
-At its core, \texttt{plotastic} employs iterators to systematically group data
-based on various dimensions, aligning the analysis with the distinct
-requirements of tests and plots. Normality testing is performed on each
-individual sample, which is achieved by splitting the data by all
-grouping dimensions and also the x-axis (hue, row, col, x). Sphericity
-and homoscedasticity testing is performed on a complete sampleset listed
-on the x-axis, which is achieved by splitting the data by all grouping
-dimensions (hue, row, col)  (\autoref{tab:sphericity}). For omnibus and
-posthoc analyses, data is grouped by the row and col dimensions in
-parallel to the \texttt{matplotlib} axes, before performing one two-factor
-analysis per axis using x and hue as the within/between-factors.
-(\autoref{tab:RMANOVA}).
 
 \texttt{DataAnalysis} visualizes data through predefined plotting functions
 designed for drawing multi-layered plots. A notable emphasis within

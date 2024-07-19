@@ -41,7 +41,7 @@
 % \includeonly{PARTS/1_SUMMARY}
 % \includeonly{PARTS/2_INT_cancer}
 % \includeonly{PARTS/2_INT_coding}
-% \includeonly{PARTS/3_CHAPTER1}
+\includeonly{PARTS/3_CHAPTER1}
 % \includeonly{PARTS/4_CHAPTER2}
 % \includeonly{PARTS/5_SD_coding}
 % \includeonly{PARTS/5_SD_microscopy}
@@ -143,6 +143,8 @@
 \label{sec:intro}
 % > Include 2_INTRO_CANCER.tex & 2_INTRO_CODING.tex
 \include{PARTS/2_INT_cancer}
+
+\cleardoublepageleft
 \include{PARTS/2_INT_coding}
 
 % ## Aims of this Thesis
@@ -163,8 +165,7 @@
 % == Summarising Discussion ============================================
 % > Include SUMMARISING_DISCUSSION.tex
 
-\blankpage
-\cleardoublepage % > Ensure next part is on right page (double-sided print)
+\cleardoublepageleft % > Ensure next part is on right page (double-sided print)
 \unnsection{Summarizing Discussion}%
 \label{sec:summarising_discussion}%
 The subsequent sections will discuss the chapters presented earlier, focusing on
@@ -179,7 +180,9 @@ conclusions to ensure clarity on broad topics.
 
 
 \include{PARTS/5_SD_coding}
+\cleardoublepageleft
 \include{PARTS/5_SD_microscopy}
+\cleardoublepageleft
 \include{PARTS/5_SD_cancer}
 
 \cleardoublepageleft % > Ensure next part is on right page (double-sided print)

@@ -19,10 +19,12 @@
 % \citet{kuricModelingMyelomaDissemination2024}, which was published in
 % \textit{Cancer Research Communications} under the \texttt{CC BY 4.0} license.
 
-\noindent The following chapter \dashed{including referenced appendices} has
+{\footnotesize \noindent The following chapter \dashed{including referenced appendices} has
 been taken with slight adjustments from
 \citet{kuricModelingMyelomaDissemination2024}, published in \textit{Cancer
-    Research Communications} under the \texttt{CC BY 4.0} license.
+    Research Communications} under the \texttt{CC BY 4.0} license.}
+
+\vspace{-\vquarter}
 
 % > First argument is the label
 % > Second argument is the header name
@@ -34,32 +36,33 @@ been taken with slight adjustments from
     stimulate myeloma cell expansion (e.g., IL-6) and simultaneously retain
     myeloma cells via chemokines (e.g., CXCL12) and adhesion factors. Hence, we
     hypothesized that the imbalance between cell division and retention drives
-    dissemination. We present an \textit{in vitro} model using primary hMSCs co-cultured
-    with INA-6 myeloma cells. Time-lapse microscopy revealed proliferation and
-    attachment/detachment dynamics. Separation techniques (V-well adhesion assay
-    and well plate sandwich centrifugation) were established to isolate
-    MSC-interacting myeloma subpopulations that were characterized by RNAseq,
-    cell viability and apoptosis. Results were correlated with gene expression
-    data ($n=837$) and survival of myeloma patients ($n=536$). On dispersed
-    hMSCs, INA-6 saturate hMSC-surface before proliferating into large homotypic
-    aggregates, from which single cells detached completely. On confluent hMSCs,
-    aggregates were replaced by strong heterotypic hMSC-INA-6 interactions,
-    which modulated apoptosis time-dependently. Only INA-6 daughter cells
-    (\nMAina) detached from hMSCs by cell division but sustained adherence to
-    hMSC-adhering mother cells (\MAina). Isolated \nMAina indicated
-    hMSC-autonomy through superior viability after IL-6 withdrawal and
-    upregulation of proliferation-related genes. \MAina upregulated adhesion and
-    retention factors (CXCL12), that, intriguingly, were highly expressed in
-    myeloma samples from patients with longer overall and progression-free
-    survival, but their expression decreased in relapsed myeloma samples.
-    Altogether, \textit{in vitro} dissemination of INA-6 is driven by detaching daughter
-    cells after a cycle of hMSC-(re)attachment and proliferation, involving
-    adhesion factors that represent a bone marrow-retentive phenotype with
-    potential clinical relevance. %
+    dissemination. We present an \textit{in vitro} model using primary hMSCs
+    co-cultured with INA-6 myeloma cells. Time-lapse microscopy revealed
+    proliferation and attachment/detachment dynamics. Separation techniques
+    (V-well adhesion assay and well plate sandwich centrifugation) were
+    established to isolate MSC-interacting myeloma subpopulations that were
+    characterized by RNAseq, cell viability and apoptosis. Results were
+    correlated with gene expression data ($n=837$) and survival of myeloma
+    patients ($n=536$). On dispersed hMSCs, INA-6 saturate hMSC-surface before
+    proliferating into large homotypic aggregates, from which single cells
+    detached completely. On confluent hMSCs, aggregates were replaced by strong
+    heterotypic hMSC-INA-6 interactions, which modulated apoptosis
+    time-dependently. Only INA-6 daughter cells (\nMAina) detached from hMSCs by
+    cell division but sustained adherence to hMSC-adhering mother cells
+    (\MAina). Isolated \nMAina indicated hMSC-autonomy through superior
+    viability after IL-6 withdrawal and upregulation of proliferation-related
+    genes. \MAina upregulated adhesion and retention factors (CXCL12), that,
+    intriguingly, were highly expressed in myeloma samples from patients with
+    longer overall and progression-free survival, but their expression decreased
+    in relapsed myeloma samples. Altogether, \textit{in vitro} dissemination of
+    INA-6 is driven by detaching daughter cells after a cycle of
+    hMSC-(re)attachment and proliferation, involving adhesion factors that
+    represent a bone marrow-retentive phenotype with potential clinical
+    relevance. %
 }
 
 % ## Statement of Significance
-\subsection*{Statement of Significance}
+\subsubsection*{Statement of Significance}
 Novel methods describe \textit{in vitro} dissemination of myeloma cells as detachment of
 daughter cells after cell division. Myeloma adhesion genes were identified that
 counteract \textit{in vitro} detachment with potential clinical relevance.
@@ -468,11 +471,12 @@ without direct hMSC contact (\autoref{fig:1}E,\,left).
     hMSCs were evaluated per technical replicate.
     \tile{C} Interaction of INA-6 with hMSCs at different hMSC densities (constant
     INA-6 densities). Scale bar = \SI{300}{\um}.
-}{%
     \tile{D} Two types of homotypic interaction: Attachment after cell contact
     and sustained attachment of daughter cells after cell division. Datapoints
     represent one of four independent time-lapse recordings, each evaluating 116
-    interaction events. \tile{E} Effects of hMSC-density on the viability (ATP,
+    interaction events. 
+}{%
+    \tile{E} Effects of hMSC-density on the viability (ATP,
     top) and apoptosis (Caspase3/7 activity, bottom). INA-6:MSC ratio = 4:1;
     \mbox{Technical replicates = four per datapoint}; \tile{E\,left} Signals
     were measured in INA-6 washed off from hMSCs and normalized by INA-6
@@ -771,7 +775,7 @@ overlap.
 % == Fig. 5 ============================================================
 \newpage
 \vspace*{-1.4cm}
-\includeimage[.95][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
+\includeimage[1][{\fmleft} {\fmbottom} {\fmright} {\fmtop}]{
     FIGS/figures9_5.pdf
 }\figcaption[fig:5]{ %
     Functional analysis of MSC-interacting subpopulations \tile{(A-C)}
@@ -968,20 +972,28 @@ respectively) (\autoref{fig:6}B).
     % == Tab. 1 ============================================================
 
     {
-        \footnotesize
+        \footnotesize\raggedright
         \def\myheader{
             \hline
             \textbf{Regulation during disease progression} & \textbf{Gene} &
             \textbf{Ensemble ID} & \textbf{Progression Free / Overall Survival}
             & \textbf{Better Prognosis with high/low expression} &
             \multicolumn{2}{p{3cm}|}{\textbf{Association of expression with
-            survival}}                    \\
+                    survival}}                    \\
             \hhline{~~~~~--}
             &               &                      &                                              &                                                    & \textbf{[p-unc]}                                                      & \textbf{[p-adj]} \\
             \hline
         }
 
-        \begin{longtable}{|>{\bfseries}p{3cm}|>{\bfseries}p{1.9cm}|p{3cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+        \begin{longtable}{
+            |>{\bfseries}p{3cm}|
+            >{\bfseries}p{1.9cm}|
+            >{\tiny}p{2cm}|
+            p{2cm}|
+            p{2cm}|
+            p{1.5cm}|
+            p{1.5cm}|
+            }
             \caption{Adhesion and ECM genes (shown in \autoref{fig:6}A) were
                 filtered by their association with patient survival (p-adj. < 0.01)
                 and were categorized as continuously downregulated during disease

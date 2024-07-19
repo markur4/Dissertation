@@ -481,7 +481,7 @@ prepare readers without prior programming experience for the following chapters.
 We also describe the design principles of Python to lay out the key concepts
 that differentiate Python compared to other programming languages. A more
 detailed tutorial on Python that's specialized for bioscientists is found
-in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}
+in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}.
 
 
 Languages such as Python are considered \textit{``high-level''}, which means
@@ -533,40 +533,42 @@ This is in contrast to \textit{compiled} languages, where the code has to be
 compiled into machine code before it can be executed. The advantage of compiled
 languages is that the code runs faster, because the machine code is optimized
 for the hardware.
-Python automates tasks that would otherwise require an advanced understanding of
-computer hardware, like the need for manual allocation of memory space. This is
-achieved by using a technique called \textit{``garbage collection''}, which
-automatically frees memory space that is no longer needed by the program. This
-is a feature that is not present in low-level programming languages like C or
-C++, that were designed to maximize control over hardware.
+
 
 \def\mycaption{Example of an error message. Since Python is case-sensitive, the
-    error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
-    The error message begins with the type of error (\texttt{NameError}),
-    followed by a traceback that shows the sequence of function calls that led
-    to the error. The traceback located the source of the error in the file
-    \texttt{errormessage.py} and points to the line that caused the error.
-    Finally, the error message explains the error, stating that \texttt{'Hi'} is
-    undefined. }
+error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
+The error message begins with the type of error (\texttt{NameError}),
+followed by a traceback that shows the sequence of function calls that led
+to the error. The traceback located the source of the error in the file
+\texttt{errormessage.py} and points to the line that caused the error.
+Finally, the error message explains the error, stating that \texttt{'Hi'} is
+undefined. }
 \begin{lstlisting}[
     language=Python, 
     style=pythonstyleNonbreaking,
     label=lst:errormessage,
     caption=\mycaption
     ]
-hi = "Hello World"  # Define a variable 'hi' with the value "Hello World"
-print(Hi)           # Print the value of the undefined variable 'Hi'
-
-# Expected Output:
-# ---------------------------------------------------------------------------
-# NameError                                 Traceback (most recent call last)
-# File /Users/martinkuric/Documents/errormessage.py:2
-#       1 hi = "Hello World"
-# ----> 2 print(Hi)
-
-# NameError: name 'Hi' is not defined
+    hi = "Hello World"  # Define a variable 'hi' with the value "Hello World"
+    print(Hi)           # Print the value of the undefined variable 'Hi'
+    
+    # Expected Output:
+    # ---------------------------------------------------------------------------
+    # NameError                                 Traceback (most recent call last)
+    # File /Users/martinkuric/Documents/errormessage.py:2
+    #       1 hi = "Hello World"
+    # ----> 2 print(Hi)
+    
+    # NameError: name 'Hi' is not defined
 \end{lstlisting}
 
+
+Python automates tasks that would otherwise require an advanced understanding of
+computer hardware, like the need for manual allocation of memory space. This is
+achieved by using a technique called \textit{``garbage collection''}, which
+automatically frees memory space that is no longer needed by the program. This
+is a feature that is not present in low-level programming languages like C or
+C++, that were designed to maximize control over hardware.
 
 
 Another hallmark of Python is its \textit{dynamic typing system}. In Python the
