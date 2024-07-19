@@ -64,22 +64,36 @@
 % == Title page + Acknoweldgements
 % ======================================================================
 
+% ## Optimized for Double sized print!
+% - Latex expects: 
+%   - Title page = page 1 (right side)
+%   - Right page = Odd page number (1, 3, 5, ...)
+%   - Left page = Even page number (2, 4, 6, ...)
+% - Inner margins (near the gutter) are smaller than outer margins, because 
+% ' but after printing, the inner margins are combined to a larger center margin!
+
+
 % == Title Page ========================================================
-\include{PARTS/0_TITLEPAGE}
+% ## Change page numbering to roman numerals 
+\pagenumbering{roman}
+
+
+\input{PARTS/0_TITLEPAGE}
+\blankpage % > For double-sided print: Back of title page is blank
 
 
 % == Prüfungskommitee ==================================================
-% \blankpage
-% \setcounter{page}{1} % > Reset page counter to 1
-\include{PARTS/0_SUBMISSION}
+\newpage
+% \setcounter{page}{1} % > Submission page is first page of document
+\input{PARTS/0_SUBMISSION}
+\blankpage % > Two blank pages, so that submission page could be ...
+\blankpage % > ...  removed after printing
 
 
 
 % == Frontmatter =======================================================
-\blankpage % > Two blank pages to make institute and project period on even page
-\blankpage % > ... and acknowlegements on odd page
 \newpage
-\include{PARTS/0_FRONTMATTER}
+\input{PARTS/0_FRONTMATTER}
 % \cleardoublepage % > Ensure next part is on right page (double-sided print)
 
 
@@ -87,46 +101,44 @@
 % ======================================================================
 % == Summary, TOC, Abbreviations, Footnotes
 % ======================================================================
-
-% ## Change page numbering to roman numerals ###########################
-\setcounter{page}{1} % > Reset page counter to 1
-\pagenumbering{roman}
+\cleardoublepageleft % > Ensure next part starts on left page (double-sided print)
 
 
 % == Summary ==========================================================
 % > Include SUMMARY.tex
-\include{PARTS/1_SUMMARY}
+\input{PARTS/1_SUMMARY}
 
 
 % == Table of Contents (TOC) ===========================================
+\cleardoublepageleft
 {\footnotesize \tableofcontents}
 
 
 
 % == Glossary ==========================================================
 % ## Abbreviations are defined in PARTS/1_ABBREVIATIONS.tex
-\newpage
+\cleardoublepageleft
 \input{PARTS/1_ABBREVIATIONS} % > input = always Include Abbreviations
 
 
 % == GLOSSARY =========================================================
-% \cleardoublepage % > Ensure next part is on right page (double-sided print)
-\newpage
+\cleardoublepageleft
 \input{PARTS/1_GLOSSARY}
+
 
 
 
 % ======================================================================
 % == Main Body
 % ======================================================================
-
-% ## Change page numbering to arabic numerals ##########################
-\pagenumbering{arabic}
+% ## Change page numbering to arabic numerals 
+% \cleardoublepageleft % > Ensure next part starts on left page (double-sided print)
 \setcounter{page}{1} % > Reset page counter to 1
+\pagenumbering{arabic}
 
 % == Introduction ======================================================
-% \blankpage
-% \cleardoublepage
+\cleardoublepageleft
+
 \unnsection{Introduction}
 \label{sec:intro}
 % > Include 2_INTRO_CANCER.tex & 2_INTRO_CODING.tex
@@ -140,13 +152,11 @@
 
 
 % == Chapters =========================================================
-\blankpage
-\cleardoublepage % > Ensure next part is on right page (double-sided print)
+\cleardoublepageleft % > Ensure next part is on right page (double-sided print)
 \include{PARTS/3_CHAPTER1}
 
 
-\blankpage
-\cleardoublepage % > Ensure next part is on right page (double-sided print)
+\cleardoublepageleft % > Ensure next part is on right page (double-sided print)
 \include{PARTS/4_CHAPTER2}
 
 
@@ -172,17 +182,16 @@ conclusions to ensure clarity on broad topics.
 \include{PARTS/5_SD_microscopy}
 \include{PARTS/5_SD_cancer}
 
-\blankpage
-\cleardoublepage % > Ensure next part is on right page (double-sided print)
+\cleardoublepageleft % > Ensure next part is on right page (double-sided print)
 \include{PARTS/5_SD_CONCLUSION}
 
-\newpage
 
 
 
 % ======================================================================
 % == References
 % ======================================================================
+\newpage
 
 \unnsection{References}
 \renewcommand{\refname}{} % > Replace \bibliography heading with nothing
@@ -199,12 +208,13 @@ conclusions to ensure clarity on broad topics.
 \pagestyle{headersfooters} % > Reset the page style to headersfooters
 \markboth{References}{} % > For some reason, the last page need this
 
-\newpage
 
 
 % ======================================================================
 % == Appendix
 % ======================================================================
+\newpage
+
 \appendix
 \label{apdx}
 \appendixpage

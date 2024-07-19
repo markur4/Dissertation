@@ -88,14 +88,18 @@
 
 % ## Define lengths for margins
 \newlength{\leftm}
-\setlength{\leftm}{1.5cm}
+\setlength{\leftm}{2cm} % > Inner Margin 
 \newlength{\rightm}
-\setlength{\rightm}{1.5cm}
+\setlength{\rightm}{3cm} % > Outer Margin (near the gutter)
+
+% \setlength{\oddsidemargin}{3in} 
 
 % ## Set the general layout of the document
 \geometry{
-    left = \leftm,
-    right = \rightm,
+    % left = \leftm, % > For one-sided layout
+    % right = \rightm, % > For one-sided layout
+    inner = \leftm, % > For two-sided layout
+    outer= \rightm, % > For two-sided layout
     top = 2cm,
     bottom = 2cm,
     bindingoffset = 5mm}
@@ -191,6 +195,15 @@
     \thispagestyle{empty}
     \hfill
     \clearpage
+}
+
+% ## Function that inserts blank pages until the next even page
+% ## similar to \cleardoublepage, which inserts blank pages until next odd page
+\newcommand{\cleardoublepageleft}{%
+    \newpage
+    \ifodd\value{page}
+        \blankpage
+    \fi
 }
 
 
@@ -326,9 +339,8 @@
 \newcommand{\acknowledge}[2]{%
     % > #1 is the name of the person
     % > #2 is the text of the acknowledgement
-    \noindent \textbf{#1}, \\
-    #2
-    \vspace{\vthird}
+    \noindent \textbf{#1}, #2%
+    \vspace{\vthird}%
 }
 
 
@@ -568,8 +580,8 @@
 % ## Define the default listing style
 \lstdefinestyle{defaultstyle}{
 frame=single, % > add a frame
-xleftmargin=\leftm,
-xrightmargin=\rightm,
+xleftmargin=1cm,
+xrightmargin=1cm,
 basewidth=0.5em, % > Reduce the width of each characters
 belowskip=3pt, % > Space after listing
 abovecaptionskip=0pt, % > Remove space before caption

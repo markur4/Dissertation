@@ -1,12 +1,5 @@
 
 
-% ======================================================================
-% == Abstract
-% ======================================================================
-
-% ## Treat this like a section (\section would add a header)
-\addcontentsline{toc}{section}{Summary / Zusammenfassung} % Add to Table of Contents
-\markboth{Summary / Zusammenfassung}{} % > Mark this section for headers
 
 % == from paper ========================================================
 % Abstract 1st paper (AACR):
@@ -87,22 +80,21 @@
 % smooth workflow, from data import to hypothesis testing and
 % visualization
 
+% ======================================================================
+% == Abstract
+% ======================================================================
+
+% ## Treat this like a section (\section would add a header)
+\addcontentsline{toc}{section}{Summary / Zusammenfassung} % > Add to Table of Contents
+\markboth{Summary / Zusammenfassung}{} % > Mark this section for headers
+
+
 
 % == English ===========================================================
 \renewcommand{\abstractname}{Summary}
 \begin{abstract}
     \label{Summary}%
-    %
-
-    % This PhD thesis integrates biomedical research and
-    % data science, focusing on the development of an \textit{in vitro} model for
-    % studying myeloma cell dissemination and the creation of a software tool for
-    % semi-automated analysis of multidimensional datasets. The work addresses
-    % critical challenges in biomedical research, including (1) understanding the
-    % early steps of myeloma dissemination and (2) improving the efficiency of
-    % data analysis, which \dashed{shown in this thesis} represents a
-    % reproducibility bottleneck in biomedical research.
-
+    \vspace{-\vquarter}
     This thesis integrates biomedical research and data science, focusing on
     an \textit{in vitro} model for studying myeloma cell dissemination and a
     Python-based tool, \texttt{plotastic}, for semi-automated analysis of
@@ -140,7 +132,7 @@
     methodologies and advanced data analysis tools. The \textit{in vitro} model
     provides a robust platform for studying myeloma dissemination, while
     \texttt{plotastic} addresses the need for efficient data analysis. Combined,
-    they offer a comprehensive approach to handling complex experiments,
+    they offer an approach to handling complex experiments,
     advancing both cancer biology and research practices, in support of
     exploratory and transparent analysis of challenging phenomena.
 \end{abstract}
@@ -154,10 +146,11 @@
 % == German ============================================================
 \renewcommand{\abstractname}{Zusammenfassung}
 \begin{abstract}
-    \label{Zusammenfassung}
+    \label{Zusammenfassung}%
+    \vspace{-\vquarter}
     Diese Doktorarbeit integriert biomedizinische Forschung und
     Datenwissenschaften und konzentriert sich auf ein \textit{in vitro}-Modell
-    zur Untersuchung der Dissemination von \linebreak Myelomzellen sowie ein
+    zur Untersuchung der Dissemination von Myelomzellen sowie ein
     Python-basiertes Werkzeug, \texttt{plotastic}, zur semi-automatisierten
     Analyse multidimensionaler Datensätze. Zwei Hauptprobleme werden bearbeitet:
     (1) das Verständnis der frühen Schritte der Myelomdissemination und (2) die
@@ -166,7 +159,7 @@
     Reproduzierbarkeit zu adressieren.
 
     Im experimentellen Teil werden primäre menschliche mesenchymale Stromazellen
-    \linebreak (hMSCs) mit INA-6-Myelomzellen kokultiviert, um Zellproliferation,
+     (hMSCs) mit INA-6-Myelomzellen kokultiviert, um Zellproliferation,
     Anhaftung und Ablösung mittels Zeitraffer-Mikroskopie zu untersuchen.
     Zentrale Erkenntnisse zeigen, dass die Ablösung oft auf die Zellteilung
     folgt und vorwiegend von Tochterzellen angetrieben wird. Neue
@@ -180,7 +173,7 @@
     die Entwicklung neuer Therapeutika relevant sein könnte.
 
     Zur Verwaltung komplexer Daten wurde eine Python-basierte Software namens
-    \linebreak \texttt{plotastic} entwickelt, welche die Analyse und Visualisierung
+     \texttt{plotastic} entwickelt, welche die Analyse und Visualisierung
     multidimensionaler Datensätze optimiert. \texttt{plotastic} basiert auf der
     Idee, dass statistische Analysen basierend darauf durchgeführt werden, wie
     die Daten visualisiert werden. Dieser Ansatz vereinfacht nicht nur die
@@ -198,7 +191,7 @@
     Das \textit{in vitro}-Modell bietet eine robuste Plattform für die
     Untersuchung der Myelomdissemination, während \texttt{plotastic} den Bedarf
     an effizienter Datenanalyse adressiert. Zusammen bieten sie einen
-    umfassenden Ansatz für die Bearbeitung komplexer Experimente, fördern sowohl
+    Ansatz für die Bearbeitung komplexer Experimente, fördern sowohl
     die Krebsbiologie als auch die Forschungspraktiken und unterstützen die
     explorative und transparente Analyse herausfordernder Phänomene.
 
