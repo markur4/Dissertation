@@ -66,18 +66,21 @@
 
 % == Title Page ========================================================
 \include{PARTS/0_TITLEPAGE}
-\blankpage
+
 
 % == Prüfungskommitee ==================================================
+% \blankpage
+% \setcounter{page}{1} % > Reset page counter to 1
 \include{PARTS/0_SUBMISSION}
-\blankpage % > Two blank pages to make institute and project period on even page
-\blankpage % > ... and acknowlegements on odd page
 
 
 
 % == Frontmatter =======================================================
+\blankpage % > Two blank pages to make institute and project period on even page
+\blankpage % > ... and acknowlegements on odd page
+\newpage
 \include{PARTS/0_FRONTMATTER}
-\cleardoublepage % > Ensure next part is on right page (double-sided print)
+% \cleardoublepage % > Ensure next part is on right page (double-sided print)
 
 
 
@@ -85,7 +88,7 @@
 % == Summary, TOC, Abbreviations, Footnotes
 % ======================================================================
 
-% ## Change page numbering to roman numerals
+% ## Change page numbering to roman numerals ###########################
 \setcounter{page}{1} % > Reset page counter to 1
 \pagenumbering{roman}
 
@@ -93,62 +96,65 @@
 % == Summary ==========================================================
 % > Include SUMMARY.tex
 \include{PARTS/1_SUMMARY}
-% \cleardoublepage % > Adds blank pages until next pages are odd
 
 
 % == Table of Contents (TOC) ===========================================
 {\footnotesize \tableofcontents}
 
-\newpage
-% \cleardoublepage % > Adds blank pages until next pages are odd
 
 
 % == Glossary ==========================================================
 % ## Abbreviations are defined in PARTS/1_ABBREVIATIONS.tex
+\newpage
 \input{PARTS/1_ABBREVIATIONS} % > input = always Include Abbreviations
-\cleardoublepage % > Footnotes are only 1 page, so it's on a 
 
 
-% == Footnotes =========================================================
-\input{PARTS/1_FOOTNOTES}
+% == GLOSSARY =========================================================
+% \cleardoublepage % > Ensure next part is on right page (double-sided print)
+\newpage
+\input{PARTS/1_GLOSSARY}
 
-\blankpage
-\cleardoublepage
 
 
 % ======================================================================
 % == Main Body
 % ======================================================================
 
-% ## Change page numbering to arabic numerals
+% ## Change page numbering to arabic numerals ##########################
 \pagenumbering{arabic}
 \setcounter{page}{1} % > Reset page counter to 1
 
 % == Introduction ======================================================
-\unnsection{Introduction}%
-\label{sec:intro}%
-
+% \blankpage
+% \cleardoublepage
+\unnsection{Introduction}
+\label{sec:intro}
 % > Include 2_INTRO_CANCER.tex & 2_INTRO_CODING.tex
 \include{PARTS/2_INT_cancer}
 \include{PARTS/2_INT_coding}
-\newpage
 
 % ## Aims of this Thesis
-\input{PARTS/2_INT_AIMS}
 \newpage
+\input{PARTS/2_INT_AIMS}
+
 
 
 % == Chapters =========================================================
+\blankpage
+\cleardoublepage % > Ensure next part is on right page (double-sided print)
 \include{PARTS/3_CHAPTER1}
-\newpage
 
+
+\blankpage
+\cleardoublepage % > Ensure next part is on right page (double-sided print)
 \include{PARTS/4_CHAPTER2}
-\newpage
 
 
 % == Summarising Discussion ============================================
 % > Include SUMMARISING_DISCUSSION.tex
 
+\blankpage
+\cleardoublepage % > Ensure next part is on right page (double-sided print)
 \unnsection{Summarizing Discussion}%
 \label{sec:summarising_discussion}%
 The subsequent sections will discuss the chapters presented earlier, focusing on
@@ -165,7 +171,9 @@ conclusions to ensure clarity on broad topics.
 \include{PARTS/5_SD_coding}
 \include{PARTS/5_SD_microscopy}
 \include{PARTS/5_SD_cancer}
-\newpage
+
+\blankpage
+\cleardoublepage % > Ensure next part is on right page (double-sided print)
 \include{PARTS/5_SD_CONCLUSION}
 
 \newpage

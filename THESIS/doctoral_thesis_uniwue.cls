@@ -731,11 +731,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ## For cells spanning multiple rows
 % > \multirowcell{number of rows}{width}{content}
 \newcommand{\multirowcell}[3]{
-    % \begin{spacing}{1}
     \multirow{#1}{*}[-0.5ex]{
         \parbox{#2}{\noindent #3}
     }
-    % \end{spacing}
 }
 
 
@@ -789,13 +787,9 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ' \citep{jon90} --> (Jones, Baker, and Williams, 1990)
 % ' \citealt{jon90} --> Jones, Baker, and Williams, 1990
 
-% ## Make citation references smaller 
-
-% \newcommand\narrowstyle{\SetTracking{encoding=*}{-50}\lsstyle}
-
-
 \let\oldcite\cite % > Rename \cite to \oldcite to keep the original
 \renewcommand{\cite}[1]{{\small\oldcite{#1}}}
+
 
 % ## Define the bibliography style
 \let\oldthebibliography=\thebibliography
@@ -893,11 +887,6 @@ literate={ ( }{{{\color{parentheses}(}}}1
 % ## Define Command for footnotes containing quotes
 % > #1 is the citation
 % > #2 is the text of the footnote
-% \newcommand{\footquote}[2]{%
-% \footnote{\citet{#2}:~%
-% \textit{``\,\ignorespaces%
-% #1\nolinebreak\,''}}%
-% }
 \newcommand{\footquote}[2]{%
     \footdagger{%
         \citet{#2}:\\
