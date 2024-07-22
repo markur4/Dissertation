@@ -230,15 +230,22 @@ were harvested for measuring viability and apoptosis.
         duration; MSC-adh. surface: adhesion surface provided by hMSCs; vol.:
         volume. \selfplagiarismone}
     \label{tab:co_culture_conditions}
-    \begin{tabular}{|p{2cm}|p{2cm}|p{2cm}|p{3.5cm}|p{2cm}|p{3cm}|}
+    \begin{tabular}{%
+        |p{1.7cm}|
+        p{2cm}|
+        p{2cm}|
+        p{3.5cm}|
+        p{1.6cm}|
+        p{2.7cm}|
+        }
         \hline
-        \textbf{Co-cult. dur. [h]} & \textbf{hMSC density [1000 hMSC/cm\textsuperscript{2}]} & \textbf{\INA density [1000 INA6/cm\textsuperscript{2}]} & \textbf{Ratios INA : MSC (adh. surface)} & \textbf{Seeding vol. [\textmu L]} & \textbf{End vol. [\textmu L]}                                        \\
+        \textbf{Co-cult. dur. [h]} & \textbf{hMSC density [1000 hMSC/cm\textsuperscript{2}]} & \textbf{\INA density [1000 INA6/cm\textsuperscript{2}]} & \textbf{Ratios INA : MSC (adh. surface)} & \textbf{Seeding vol. [\textmu L]} & \textbf{End vol. [\textmu L]}                                                                    \\
         \hline
-        24                         & 2, 10, 40                                               & 10                                                      & 1:0.2, 1:1, 1:confluent                  & 200                               & 200                                                                  \\
+        24                         & 2, 10, 40                                               & 10                                                      & 1:0.2, 1:1, 1:confluent                  & 200                               & 200                                                                                              \\
         \hline
-        48                         & 1, 5, 40                                                & 5                                                       & 1:0.2, 1:1, 1:confluent                  & 200                               & 200                                                                  \\
+        48                         & 1, 5, 40                                                & 5                                                       & 1:0.2, 1:1, 1:confluent                  & 200                               & 200                                                                                              \\
         \hline
-        72                         & 1, 5, 40                                                & 5                                                       & 1:0.2, 1:1, 1:confluent                  & 200                               & 300 \newline [after 24 h: +100], \newline [after 48 h: exchange 100] \\
+        72                         & 1, 5, 40                                                & 5                                                       & 1:0.2, 1:1, 1:confluent                  & 200                               & 300 \newline {\scriptsize [after 24 h: +100]}, \newline {\scriptsize [after 48 h: exchange 100]} \\
         \hline
     \end{tabular}
 \end{table}
@@ -547,13 +554,13 @@ medium to account for biological variance. However, this could take long
 incubation times of up to \SI{60}{minutes}  \cite{laiDifferentMethodsDetaching2022}.
 
 \subsubsection*{Track Cell Number During WPSC}
-To track the cell count during WPSC, \INA cells were stained with \textit{CellTracker
-    green}, and both co-culturing and catching plates were scanned after each
-centrifugation step. For each round of centrifugation, an empty catching plate
-was used. A pre-trained convolutional neural network (\textit{Intellesis}, Zeiss) was
-fine-tuned to segment the scans into background, cells, and cell borders. Single
-cells were counted, and the cumulative sum for each catching plate was
-calculated.
+To track the cell count during WPSC, \INA cells were stained with
+\textit{CellTracker green}, and both co-culturing and catching plates were
+scanned after each centrifugation step. For each round of centrifugation, an
+empty catching plate was used. A pre-trained convolutional neural network
+(\textit{Intellesis}, Zeiss) was fine-tuned to segment the scans into
+background, cells, and cell borders. Single cells were counted, and the
+cumulative sum for each catching plate was calculated.
 
 \subsubsection*{Sub-Culturing After WPSC of MSC-Interacting \INA Subpopulations}
 After \CMina, \nMAina, and \MAina were isolated, they were counted with a
@@ -582,17 +589,16 @@ report was created with \texttt{MultiQC}
 genome build \cite{zerbinoEnsembl20182018}. Quality and alignment statistics of
 final BAM files were assessed with \texttt{samtools stats}
 \cite{liSequenceAlignmentMap2009}, and a joint report with \texttt{FastQC}
-reports by \texttt{MultiQC} was generated.
+reports by \texttt{MultiQC} was generated. 
 
 Raw read counts were generated with \texttt{HTSeq}
 \cite{andersHTSeqPythonFramework2015} using the union method. \texttt{HTSeq}
 runs internally in \texttt{STAR}. Differential gene expression analysis was
 performed with \texttt{edgeR} \cite{Robinson:2010:Bioinformatics:19910308} in R
-3.6.3 \cite{rcoreteamLanguageEnvironmentStatistical2018}, according to the \texttt{edgeR} manual.
-
-Counts were merged and genes with zero counts in all samples were removed
-(number of genes: 36380). The whole count table was annotated with R
-Bioconductor human annotation data package
+3.6.3 \cite{rcoreteamLanguageEnvironmentStatistical2018}, according to the
+\texttt{edgeR} manual. Counts were merged and genes with zero counts in all
+samples were removed (number of genes: 36380). The whole count table was
+annotated with R Bioconductor human annotation data package
 \texttt{org.Hs.eg.db} \cite{carlsonOrgHsEg2016}. A DGEList Element was created
 with the raw counts, gene information, i.e., Ensembl GeneIDs, HUGO Symbol,
 Genename, and ENTREZ GeneIDs and a sample grouping metadata table.
@@ -601,7 +607,10 @@ Genename, and ENTREZ GeneIDs and a sample grouping metadata table.
 y <- DGEList(counts=ct2[,-1:4], group=meta.data$group, genes=ct2[,1:4])
 \end{lstlisting}
 
-Counts were filtered to keep only those genes which have at least 1 read per
+
+% \newpage % > Corrective
+
+\noindent Counts were filtered to keep only those genes which have at least 1 read per
 million in at least 2 samples (number of genes: 14136). Afterwards,
 normalization factors were recalculated.
 
@@ -611,15 +620,15 @@ y <- y[keep, , keep.lib.size=FALSE]
 y1 <- calcNormFactors(y)
 \end{lstlisting}
 
-A design matrix was created with the grouping factor by treatment condition
-(group=F1, F2, F3, which are abbreviations for \CMina, \nMAina, \MAina,
+\noindent A design matrix was created with the grouping factor by treatment condition
+(\texttt{group=F1, F2, F3}, which are abbreviations for \CMina, \nMAina, \MAina,
 respectively)
 
 \begin{lstlisting}[language=R,style=defaultstyle]
 design = model.matrix(~0+group)
 \end{lstlisting}
 
-Dispersion was estimated, the resulting coefficient of biological variation
+\noindent Dispersion was estimated, the resulting coefficient of biological variation
 (BCV) is 0.135, i.e., BCV expression values vary up and down by 13.5\% between
 samples.
 
@@ -628,22 +637,23 @@ y1.1 <- estimateDisp(y1, design)
 BCV <- sqrt(model.F$y1.1$common.dispersion)
 \end{lstlisting}
 
-A generalized linear model (\texttt{glmQLFit} function) was fitted.
+\noindent A generalized linear model (\texttt{glmQLFit} function) was fitted.
 
 \begin{lstlisting}[language=R,style=defaultstyle]
 fit <- glmQLFit(y1.1, design)
 \end{lstlisting}
 
-and pairwise comparisons were made, e.g.
+\noindent and pairwise comparisons were made, e.g.
 
 \begin{lstlisting}[language=R,style=defaultstyle]
 F1vsF2 <- glmQLFTest(fit, contrast=makeContrasts(groupF1 - groupF2, levels=design))
 DE.F1vsF2 <- topTags(F1vsF2, n=nrow(F1vsF2), p.value=0.05)
 \end{lstlisting}
 
-Afterwards, gene list of differentially expressed genes were used for functional
+\noindent Afterwards, gene list of differentially expressed genes were used for functional
 enrichment analysis with \texttt{Metascape}
 \cite{zhouMetascapeProvidesBiologistoriented2019}.
+
 
 
 \subsubsection*{RT-qPCR}

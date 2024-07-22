@@ -9,11 +9,22 @@
 
 \def\myheader{
     \hline
-    \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} & \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} & \textbf{Experiment(s)}                                                                                   & \textbf{Figures}                        \\
+    \textbf{Cell Type} & \textbf{Donor / Line} & \textbf{Donor Ages} &
+    \textbf{Donor Sex} & \textbf{Date of negative Mycoplasma test} &
+    \textbf{\footnotesize Experiment(s)}
+    & \textbf{Figures}                        \\
     \hline
 }
 
-\begin{longtable}{|>{\bfseries}p{1.5cm}|>{\bfseries}p{1.2cm}|p{1.2cm}|p{1cm}|p{2.3cm}|p{6cm}|p{1.7cm}|}
+\begin{longtable}{%
+    |>{\bfseries}p{1.5cm}|
+    >{\bfseries}p{1.2cm}|
+    p{1.2cm}|
+    p{1cm}|
+    p{2.3cm}|
+    >{\tiny}p{4cm}|
+    p{1.7cm}|
+    }
     \caption{%
         List of hMSC donors, myeloma cell lines, and their mycoplasma test
         status. If no unique donors were available, hMSC donors were used twice
@@ -122,19 +133,33 @@
 \newpage
 
 
+
+
 % ## Tab S2
 \begin{spacing}{1}
     {
         \scriptsize
         \def\myheader{
             \hline
-            \textbf{Regulation during disease progression} & \textbf{Gene} & \textbf{Ensemble ID} & \textbf{Progression Free / Overall Survival} & \textbf{Better Prognosis with high/low expression} & \multicolumn{2}{p{3cm}|}{\textbf{Association of expression with survival}} \\
+            \textbf{Regulation during disease progression} & \textbf{Gene} &
+            \textbf{\scriptsize Ensemble ID} & \textbf{Progression Free /
+                Overall Survival} & \textbf{Better Prognosis with high/low
+                expression} & \multicolumn{2}{p{3cm}|}{\textbf{Association of
+                    expression with survival}} \\
             \hhline{~~~~~--}
             & & & & & \textbf{[p-unc]} & \textbf{[p-adj]} \\
             \hline
         }
 
-        \begin{longtable}{|>{\bfseries}p{2cm}|>{\bfseries}p{1.9cm}|p{2.8cm}|p{2cm}|p{2cm}|p{1.5cm}|p{1.5cm}|}
+        \begin{longtable}{%
+            |>{\bfseries}p{2cm}|
+            >{\bfseries}p{1.9cm}|
+            >{\tiny}p{1.9cm}|
+            p{2cm}|
+            p{2cm}|
+            p{1.5cm}|
+            p{1.5cm}|
+            }
             \caption{ %
                 Adhesion genes (from \autoref{fig:6}A) categorized by a
                 continuous downregulation across disease progression. Bone
@@ -142,7 +167,7 @@
                 Significance (MGUS), Smoldering Multiple Myeloma (sMM), Multiple
                 Myeloma (MM), Multiple Myeloma Relapse (MMR). p-adj. = adjusted
                 p-values (Benj.-Hoch.). \selfplagiarismone }%
-            \label{tab:S2}                        \\
+            \label{tab:S2}                                                          \\
             \myheader
             \endfirsthead
 

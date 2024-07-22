@@ -87,6 +87,7 @@
 \setlength{\textfloatsep}{5pt plus 1.0pt minus 2.0pt}
 
 % ## Define lengths for margins
+% https://tex.stackexchange.com/questions/191697/twoside-margin-width-how-to-take-into-account-binding
 \newlength{\leftm}
 \setlength{\leftm}{2cm} % > Inner Margin 
 \newlength{\rightm}
