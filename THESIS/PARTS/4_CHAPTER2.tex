@@ -54,11 +54,11 @@
 Source Software} under the \texttt{CC BY 4.0} license, and was expanded with
 introduction and discussion sections.
 
-Writing of this thesis involved the use of generative AI models (ChatGPT4,
-ChatGPT4o and GitHub Copilot) to improve phrasing and assist with programming,
-both within the limits described in \apdxref{apdx:ai_usage}
-(\mypageref{apdx:ai_usage}). Generated chat logs are available in the digital
-version of this thesis at \linebreak\texttt{github.com/markur4/Dissertation}.}
+% Writing of this thesis involved the use of generative AI models (\textit{ChatGPT4},
+% ChatGPT4o and \textit{GitHub Copilot}) to improve phrasing and assist with programming,
+% both within the limits described in \apdxref{apdx:ai_usage}
+% (\mypageref{apdx:ai_usage}). Generated chat logs are available in the digital
+% version of this thesis at \linebreak\texttt{github.com/markur4/Dissertation}.}
 
 \customabstract{sec:C2_abstract}{Abstract}{
     \texttt{plotastic} addresses the challenges of transitioning from
@@ -227,7 +227,7 @@ intermediate outputs, a concept the author refers to as \textit{semi-automation}
     \end{tabular}
 \end{table}
 
-\pagebreak
+% \pagebreak
 
 The need for \texttt{plotastic} in this specific project is described in detail
 in the summarizing discussion
@@ -242,14 +242,15 @@ datapoints spread over four dimensions: three subpopulations, one timepoint,
 eleven biological replicates, and three technical replicates. Such complexity
 was necessary, since establishing new methods required extensive controls and
 creative variation of the experimental setup. Data analysis had to be automated
-somehow, since the lab-work itself was already time-intensive. The second
-challenge was to accept the potential of plot-configured statistical analyses.
-The author believes that the way data is visualized is often the way it should
-be analyzed, e.g. accomplishing both plot and ANOVA in parallel for every gene
-when showing qPCR results. This vision is not limited to biomedical application,
-but a general principle that could benefit the scientific community overall.
-Making \texttt{plotastic} a generalized tool was a conscious decision to
-maximize its adoption rate and ensure its long-term relevance and quality, of
+somehow, since the lab-work itself was already time-intensive. 
+
+The second challenge was to accept the potential of plot-configured statistical
+analyses. The author believes that the way data is visualized is often the way
+it should be analyzed, e.g. accomplishing both plot and ANOVA in parallel for
+every gene when showing qPCR results. This vision is not limited to biomedical
+application, but a general principle that could benefit the scientific community
+overall. Making \texttt{plotastic} a generalized tool was a conscious decision
+to maximize its adoption rate and ensure its long-term relevance and quality, of
 which biomedical research will also benefit.
 
 
@@ -672,8 +673,8 @@ applied, and consult professionals to validate their findings, ensuring that
 Despite the advantages of \texttt{plotastic}, its adoption among non-programmers
 in biomedicine may be challenging due to its reliance on a \ac{CLI}, which is
 less intuitive for those accustomed to \ac{GUI}. However, the integration of
-\acp{LLM}, such as \texttt{ChatGPT}, presents a compelling case for embracing CLI.
-Indeed, ChatGPT is believed to potentially revolutionize medical research
+\acp{LLM}, such as \textit{ChatGPT}, presents a compelling case for embracing CLI.
+Indeed, \textit{ChatGPT} is believed to potentially revolutionize medical research
 \cite{ruksakulpiwatUsingChatGPTMedical2023}.
 
 Unlike GUIs, CLIs are highly compatible with text-based AI technologies, which
@@ -694,9 +695,9 @@ on how to proceed with a statistical analysis and how to implement new features
 (e.g. editing a plot). Attempts to integrate AI into GUIs however have proven
 challenging \cite{gaoASSISTGUITaskOrientedDesktop2024}.
 
-Still, \texttt{ChatGPT} requires responsible use, as it is not sufficient as a standalone
+Still, \textit{ChatGPT} requires responsible use, as it is not sufficient as a standalone
 tool for statistical analysis \cite{ordakChatGPTSkillsStatistical2023}. It
-should also be noted that \texttt{plotastic} is not yet known to \texttt{ChatGPT}, but
+should also be noted that \texttt{plotastic} is not yet known to \textit{ChatGPT}, but
 could be included in future versions, depending on the popularity of
 \texttt{plotastic}.
 

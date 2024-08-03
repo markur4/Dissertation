@@ -331,8 +331,8 @@
 
 
 % == Table of Contents (TOC) ===========================================
-\renewcommand{\cftbeforesecskip}{0.5ex} % > Linespacing before sections
-\renewcommand{\cftbeforesubsecskip}{-0.2ex} % > Linespacing before subsections
+\renewcommand{\cftbeforesecskip}{0.1ex} % > Linespacing before sections
+\renewcommand{\cftbeforesubsecskip}{-0.3ex} % > Linespacing before subsections
 \renewcommand{\cftbeforesubsubsecskip}{0.0ex} % >
 
 
