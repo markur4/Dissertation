@@ -134,16 +134,16 @@ accessibility of complex data analyses
 \unnsubsection{Nontransparencies in Biomedical Data Analyses}%
 \label{sec:intro_nontransparencies}%
 %%%%%%%%%%%%%
-The advent of advanced technologies in biosciences has ushered in an era of \emph{big
-    data}, characterized by unprecedented volumes and complexities of
-data~\cite{bubendorfHighthroughputMicroarrayTechnologies2001, yangScalabilityValidationBig2017,
-    ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
+The advent of advanced technologies in biosciences has ushered in an era of
+\emph{big data}, characterized by unprecedented volumes and complexities of
+data~\cite{bubendorfHighthroughputMicroarrayTechnologies2001,
+yangScalabilityValidationBig2017,
+ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
 by significant challenges in data analysis, particularly impacting the
-reproducibility of scientific research. Studies such as the
-\citet{baker500ScientistsLift2016} survey revealed that more than
-\SI{70}{\percent} of researchers have tried and failed to reproduce another
-scientist's experiments, highlighting a reproducibility crisis that questions
-the reliability of scientific findings
+reproducibility of scientific research. \SI{70}{\percent} of researchers confirm
+to have attempted and failed to reproduce published experiments
+\cite{baker500ScientistsLift2016}, highlighting a reproducibility crisis that
+questions the reliability of scientific findings
 \cite{begleyReproducibilityScienceImproving2015, ioannidisWhyMostPublished2005}.
 
 \emph{Reproducibility} is considered foundational to scientific research,
@@ -406,12 +406,12 @@ exposes the codebase to potentially thousands of independent developers,
 reaching a workforce that is impossible to achieve with closed source models
 used by paid software companies.
 
-\emph{Continuous integration} (CI) is a software development practice in which
-developers integrate code changes into a shared repository several times a
-day~\cite{duvallContinuousIntegrationImproving2007}. Each integration triggers the test suite,
-aiming to detect errors as soon as possible. The test suite includes building
-the software, setting up an environment for the software to run, and then
-executing the programmed tests, ensuring that the software runs as a whole.
+\emph{Continuous integration} (CI) is a practice of software development where
+code changes are integrated several times a day into a shared repository
+\cite{duvallContinuousIntegrationImproving2007}. Each integration triggers the
+test suite, aiming to detect errors as soon as possible. The test suite includes
+building the software, setting up an environment for the software to run, and
+then executing the programmed tests, ensuring that the software runs as a whole.
 Continuous integration is often used together with software branches. Branches
 are independent copies of the codebase that are meant to be merged back into the
 original code once the changes are finished. Since branches accumulate multiple
@@ -484,7 +484,7 @@ detailed tutorial on Python that's specialized for bioscientists is found
 in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}.
 
 
-Languages such as Python are considered \textit{``high-level''}, which means
+Languages such as Python are considered \textit{``high-level''}, meaning
 that it is designed to be easy to read and write, but also independent of
 hardware by hiding (\textit{``abstracting''}) underlying
 details~\cite{PythonLanguageReference2024}. A key principle of Python is the
@@ -730,7 +730,7 @@ print(seq1_cut)                          # Show the result
 When the data itself gains in complexity, for example when storing not just the
 gene sequence, but also the promoter sequence, an \emph{object-oriented}
 approach is more suitable (\autoref{lst:oop}). Object-oriented programming is a
-programming paradigm that uses objects and classes. An object is a collection of
+paradigm that uses objects and classes. An object is a collection of
 both data and functions, and a class is a blueprint for creating objects. The
 data of an object is stored as \emph{attributes}. Functions that are associated
 with an object are called \emph{methods}. A major benefit of using an object
@@ -903,7 +903,7 @@ development tools like \textit{VS Code}, and \textit{PyCharm}. For biomedical
 research, Jupyter Notebooks are a powerful solution for improving
 reproducibility: They elegantly combine both documentation and code execution
 into a concise presentation of the data analysis process, hence being an
-intuitive tool to both capture and embed computational work directly into
+intuitive tool that directly captures and embeds computational work into
 papers, a requirement postulated by
 \citet{mesirovAccessibleReproducibleResearch2010}. Jupyter notebooks are
 increasingly found in the supplemental of modern publications of both
@@ -997,14 +997,13 @@ required to analyze data. Despite its potential to streamline the data analysis
 process, \texttt{Pingouin} has not been widely adopted by biomedical research,
 yet. One example of a study that utilized \texttt{Pingouin} is the work of
 \citet{kellyEthicalMatrixMethod2023} in the field of Patient Public Involvement
-(PPI), producing an ethical matrix that allows for the inclusion of stakeholder
-opinion in medical research design. This lack of \texttt{Pingouin}'s adoption in
-biomedicine could be due to recent development and the dominance of R in the
-field. However, since Python offers multiple benefits over R in syntax, software
-development, runtime performance and integration with other tools (like
-including performant C++ code), \texttt{Pingouin} is an attractive standard for
-future statistical analyses in biomedicine
-\cite{gorelickHighPerformancePython2020}.
+(PPI), producing an ethical matrix to organize stakeholder opinion in medical
+research design. This lack of \texttt{Pingouin}'s adoption in biomedicine could
+be due to recent development and the dominance of R in the field. However, since
+Python offers multiple benefits over R in syntax, software development, runtime
+performance and integration with other tools (like including performant C++
+code), \texttt{Pingouin} is an attractive standard for future statistical
+analyses in biomedicine \cite{gorelickHighPerformancePython2020}.
 
 
 
