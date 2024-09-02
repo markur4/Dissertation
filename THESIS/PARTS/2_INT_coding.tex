@@ -14,27 +14,27 @@ variability that significantly impacts biological interpretations
 
 
 Multidimensional data encompass datasets where multiple \emph{independent
-    variables} (here reffered to as \emph{factors}) can influence one
-\emph{dependent variables} (\emph{outcomes}) \cite{krzywinskiMultidimensionalData2013}.
+    variables} \dashed{also reffered to as \emph{factors}} can influence one
+\emph{dependent variables} or \emph{outcomes} \cite{krzywinskiMultidimensionalData2013}.
 % Statistically speaking, an experiment assesses if an \emph{independent variable}
 % (here reffered to as \emph{factors}) has an influence on a \emph{dependent
 % variable} (\emph{outcome}), e.g. ``Does \emph{Time} influence \emph{Gene
 % Expression}?'' \cite{motulskyIntuitiveBiostatisticsNonmathematical2017}. 
-In biomedicine, dependent variables are often continuous (intervals or ratios),
-whereas independent variables are often categorical (ordinal or nominal),
-respectively. Categorical variables comprise discrete values called categories
-or \emph{levels}, which are assigned to experimental conditions or measurement
-modalities, for example the factor \textit{`time'} could comprise three
-levels: \textit{`\SI{0}{\hour}'}, \textit{`\SI{24}{\hour}'}, and
-\textit{`\SI{48}{\hour}'}. Such setups are attractive, because they are
-compatible with common hypothesis tests, such as ANOVA
-\cite{motulskyIntuitiveBiostatisticsNonmathematical2017}: If the levels of one
-factor are associated with a different outcome, that factor is considered to
-have an influence on the dependent variable. Multiple factors address multiple
-hypotheses, including the influence from each individual factor, but also
-potential interactions between factors. This makes it crucial to design analysis
-strategies that can reveal the true structure and value of the data
-\cite{krzywinskiMultidimensionalData2013}.
+In biomedicine, dependent variables are often \emph{continuous}
+\dashed{intervals or ratios}, whereas independent variables are often
+\emph{categorical} \dashleft{ordinal or nominal}. Categorical variables comprise
+discrete values called categories or \emph{levels}, which are assigned to
+experimental conditions or measurement modalities, for example the factor
+\textit{`time'} could comprise three levels: \textit{`\SI{0}{\hour}'},
+\textit{`\SI{24}{\hour}'}, and \textit{`\SI{48}{\hour}'}. Such setups are
+attractive, because they are compatible with common hypothesis tests, such as
+ANOVA \cite{motulskyIntuitiveBiostatisticsNonmathematical2017}: If the levels of
+one factor lead to a (significantly) different outcome, that factor is
+considered to have an influence on the dependent variable. Multiple factors
+address multiple hypotheses, including the influence from each individual
+factor, but also potential interactions between factors. This makes it crucial
+to design analysis strategies that can reveal the true structure and value of
+the data \cite{krzywinskiMultidimensionalData2013}.
 
 
 % TODO: Add examples of multidimensional data in biosciences
@@ -45,9 +45,9 @@ expression levels of various genes are measured across different samples under
 varying conditions \cite{bustinReproducibilityBiomedicalResearch2014}. Here, the
 dependent variable is typically the fold change expression values derived from
 $\Delta\Delta$Ct calculations
-\cite{brankatschkSimpleAbsoluteQuantification2012}. The independent variables
-include the genes being measured and the experimental conditions under which the
-samples are processed.
+\cite{brankatschkSimpleAbsoluteQuantification2012}, and the independent
+variables include the genes being measured and the experimental conditions under
+which the samples are processed.
 
 Microscopy data further illustrate the complexity of multidimensional datasets
 \cite{ruedenImageJ2ImageJNext2017}. In this context, the dependent variable

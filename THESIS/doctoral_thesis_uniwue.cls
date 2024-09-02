@@ -401,13 +401,15 @@
 % > This is a longer dash: \textemdash
 % > This is a shorter dash: --
 \newcommand{\dashed}[1]{%
-    \unskip % > Removes the last space before the command, if it exists.
-    \,\textemdash#1\textemdash\,%
-    \ignorespaces % > Ignores the spaces following the command.
+    % \unskip % > Removes the last space before the command, if it exists.
+    % \,\textemdash#1\textemdash\,%
+    ---\hspace*{1pt}#1\hspace*{1pt}---%
+    % \ignorespaces % > Ignores the spaces following the command.
 }
 \newcommand{\dashleft}[1]{%
-    \unskip % > Removes the last space before the command, if it exists.
-    \,\textemdash#1\xspace%
+    % \unskip % > Removes the last space before the command, if it exists.
+    % \,\textemdash#1\xspace%
+    ---\hspace*{1pt}#1\xspace%
 }
 
 
