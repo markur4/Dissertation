@@ -62,6 +62,9 @@
 % ======================================================================
 % == IMPORTS 
 
+\usepackage[ngerman]{babel} % > Use 'german' for old spelling rules
+
+
 % == General Packages 
 \usepackage{xparse} % > For advanced command definitions
 \usepackage{xstring} % > For string processing e.g. \IfStrEq

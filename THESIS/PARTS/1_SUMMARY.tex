@@ -98,43 +98,44 @@
     This thesis integrates biomedical research and data science, focusing on
     an \textit{in vitro} model for studying myeloma cell dissemination and a
     Python-based tool, \texttt{plotastic}, for semi-automated analysis of
-    multidimensional datasets. Two major challenges are adressed: (1)
-    understanding the early steps of myeloma dissemination and (2) improving
+    multidimensional datasets. Two major challenges are approached: (1)
+    understanding the steps of myeloma dissemination and (2) improving
     data analysis efficiency to address the complexity- and reproducibility
     bottlenecks currently present in biomedical research.
 
     In the experimental component, primary human mesenchymal stromal cells
-    (hMSCs) are co-cultured with INA-6 myeloma cells to study cell
-    proliferation, attachment, and detachment via time-lapse microscopy. Key
-    findings reveal that detachment often follows cell division, predominantly
-    driven by daughter cells. Novel separation techniques were developed to
-    isolate myeloma subpopulations for further characterization by RNAseq, cell
-    viability, and apoptosis assays. Differential expression of adhesion and
-    retention factors upregulated by INA-6 cells correlates with patient
-    survival. Overall, this work provides insights into myeloma dissemination
-    mechanisms and identifies genes that potentially counteract dissemination
-    through adhesion, which could be relevant for the design of new
-    therapeutics.
+    (hMSCs) are co-cultured with INA-6 myeloma cells to study their cell
+    proliferation, attachment, and detachment. Time-lapse microscopy reveal that
+    predominantly myeloma daughter cells detach from hMSCs after cell division.
+    Novel separation techniques were developed to isolate myeloma subpopulations
+    for further characterization by RNAseq, cell viability, and apoptosis
+    assays. Adhesion and retention genes are upregulated by MSC adhering INA-6
+    cells, which correlates with patient survival. Overall, this work provides
+    insights into myeloma dissemination mechanisms and identifies genes that
+    potentially counteract dissemination through adhesion, which could be
+    relevant for the design of new therapeutics.
 
-    To manage complex data, a Python-based software named \texttt{plotastic} was
-    developed that streamlines analysis and visualization of multidimensional
-    datasets. \texttt{plotastic} is built on the idea that statistical analyses
-    are performed based on how the data is visualized. This approach not only
-    simplifies data analysis, but semi-automates analysis in a standardized
-    statistical protocol. The thesis becomes a case study as it reflects on the
-    application of \texttt{plotastic} to the \textit{in vitro} model,
-    demonstrating how the software facilitates rapid adjustments and refinements
-    in data analysis and presentation. Such efficiency is crucial for handling
-    semi-big data transparently, which \dashed{despite being managable}
-    is complex enough to complicate analysis and reproducibility.
+    To manage the complex data resulting from the \textit{in vitro} model, a
+    Python-based software named \texttt{plotastic} was developed that
+    streamlines analysis and visualization of multidimensional datasets.
+    \texttt{plotastic} is built on the idea that statistical analyses are
+    performed based on how the data is visualized. This approach simplifies data
+    analysis and semi-automates it in a standardized statistical protocol. The
+    thesis becomes a case study as it reflects on the application of
+    \texttt{plotastic} to the \textit{in vitro} model, demonstrating how the
+    software facilitates rapid adjustments and refinements in data analysis and
+    presentation. Such efficiency could be crucial for handling semi-big
+    datasets transparently, which \dashed{despite being managable} are complex
+    enough to complicate analysis and reproducibility.
 
     Together, this thesis illustrates the synergy between experimental
-    methodologies and advanced data analysis tools. The \textit{in vitro} model
+    methodologies and new data analysis tools. The \textit{in vitro} model
     provides a robust platform for studying myeloma dissemination, while
     \texttt{plotastic} addresses the need for efficient data analysis. Combined,
-    they offer an approach to handling complex experiments,
-    advancing both cancer biology and research practices, in support of
-    exploratory and transparent analysis of challenging phenomena.
+    they provide an approach for handling complex cell biological experiments
+    and could advance both cancer biology and other research practices by
+    supporting the exploratory investigation of challenging phenomena while
+    communicating results transparently.
 \end{abstract}
 
 \newpage
@@ -148,52 +149,54 @@
 \begin{abstract}
     \label{Zusammenfassung}%
     \vspace{-\vquarter}
-    Diese Doktorarbeit integriert biomedizinische Forschung und
-    Datenwissenschaften und konzentriert sich auf ein \textit{in vitro}-Modell
-    zur Untersuchung der Dissemination von Myelomzellen sowie ein
-    Python-basiertes Werkzeug, \texttt{plotastic}, zur semi-automatisierten
-    Analyse multidimensionaler Datensätze. Zwei Hauptprobleme werden bearbeitet:
-    (1) das Verständnis der frühen Schritte der Myelomdissemination und (2) die
-    Verbesserung der Effizienz der Datenanalyse, um die derzeit in der
-    biomedizinischen Forschung vorhandenen Engpässe bezüglich Komplexität und
-    Reproduzierbarkeit zu adressieren.
 
-    Im experimentellen Teil werden primäre menschliche mesenchymale Stromazellen
-     (hMSCs) mit INA-6-Myelomzellen kokultiviert, um Zellproliferation,
-    Anhaftung und Ablösung mittels Zeitraffer-Mikroskopie zu untersuchen.
-    Zentrale Erkenntnisse zeigen, dass die Ablösung oft auf die Zellteilung
-    folgt und vorwiegend von Tochterzellen angetrieben wird. Neue
-    Trennungstechniken wurden entwickelt, um Myelom-Subpopulationen für weitere
-    Charakterisierungen durch RNAseq, Zellviabilität und Apoptose-Assays zu
-    isolieren. Die differentielle Expression von Adhäsions- und
-    Retentionsfaktoren, die durch INA-6 Zellen hochreguliert werden, korreliert
-    mit dem Überleben der Patienten. Insgesamt liefert diese Arbeit Einblicke in
-    die Mechanismen der Myelomdissemination und identifiziert Gene, die
-    potenziell die Dissemination durch Adhäsion konterkarieren könnten, was für
-    die Entwicklung neuer Therapeutika relevant sein könnte.
+    Diese Doktorarbeit kombiniert biomedizinische Forschung und
+    Datenwissenschaften und fokussiert sich auf ein \textit{in vitro}-Modell zur
+    Untersuchung der Dissemination von Myelomzellen sowie auf die
+    Python-Software \texttt{plotastic} zur semi-automatisierten Analyse
+    multidimensionaler Datensätze. Zwei Hauptfragen werden behandelt: (1) das
+    Verständnis der Schritte der Myelomdissemination und (2) die
+    Steigerung der Effizienz der Datenanalyse, um die in der biomedizinischen
+    Forschung bestehenden Herausforderungen hinsichtlich Komplexität und
+    Reproduzierbarkeit zu bewältigen.
 
-    Zur Verwaltung komplexer Daten wurde eine Python-basierte Software namens
-     \texttt{plotastic} entwickelt, welche die Analyse und Visualisierung
-    multidimensionaler Datensätze optimiert. \texttt{plotastic} basiert auf der
-    Idee, dass statistische Analysen basierend darauf durchgeführt werden, wie
-    die Daten visualisiert werden. Dieser Ansatz vereinfacht nicht nur die
-    Datenanalyse, sondern automatisiert sie auch teilweise in einem
-    standardisierten statistischen Protokoll. Die Arbeit wird zu einer
-    Fallstudie, da sie die Anwendung von \texttt{plotastic} auf das \textit{in
-        vitro}-Modell reflektiert und zeigt, wie die Software schnelle Anpassungen
-    und Verfeinerungen in der Datenanalyse und -präsentation erleichtert. Eine
-    solche Effizienz ist entscheidend für den transparenten Umgang mit
-    Semi-Big-Data, die trotz ihrer Handhabbarkeit komplex genug ist, um die
-    Analyse und Reproduzierbarkeit zu erschweren.
-
-    Zusammengefasst veranschaulicht diese Dissertation die Synergie zwischen
-    experimentellen Methoden und fortgeschrittenen Werkzeugen der Datenanalyse.
-    Das \textit{in vitro}-Modell bietet eine robuste Plattform für die
-    Untersuchung der Myelomdissemination, während \texttt{plotastic} den Bedarf
-    an effizienter Datenanalyse adressiert. Zusammen bieten sie einen
-    Ansatz für die Bearbeitung komplexer Experimente, fördern sowohl
-    die Krebsbiologie als auch die Forschungspraktiken und unterstützen die
-    explorative und transparente Analyse herausfordernder Phänomene.
+    Im experimentellen Teil werden primäre humane mesenchymale Stromazellen
+    (hMSCs) mit INA-6-Myelomzellen kokultiviert, um ihre Proliferation,
+    Anhaftung und Ablösung zu untersuchen. Zeitraffer-Mikroskopie zeigt, dass
+    sich überwiegend Myelom-Tochterzellen nach Zellteilung von hMSCs ablösen.
+    Neue Trennmethoden wurden entwickelt, um Myelom-Subpopulationen für weitere
+    Charakterisierungen durch RNAseq, Zellviabilitäts- und Apoptose-Assays zu
+    isolieren. Adhäsions- und Retentionsgene werden von MSC-adhärierenden INA-6
+    hochreguliert, was mit Patientenüberleben korreliert. Insgesamt bietet
+    diese Arbeit Einblicke in die Mechanismen der Myelomdissemination und
+    identifiziert Gene, die potenziell die Dissemination durch Adhäsion
+    behindern könnten, was für die Entwicklung neuer Therapien von Bedeutung
+    sein könnte.
+    
+    Zur Handhabung der komplexen Daten, die bei dem \textit{in
+    vitro}-Modell entstanden sind, wurde eine Python-basierte Software namens
+    \texttt{plotastic} entwickelt, welche die Analyse und Visualisierung der
+    multidimensionaler Datensätze optimiert. \texttt{plotastic} basiert auf dem Prinzip,
+    dass statistische Analysen abhängig davon durchgeführt werden, wie die Daten
+    visualisiert werden. Dieser Ansatz vereinfacht die Datenanalyse nicht nur,
+    sondern semi-automatisiert sie auch als standardisiertes statistisches
+    Protokoll. Diese Arbeit fungiert als Fallstudie, da sie die Anwendung von
+    \texttt{plotastic} auf das \textit{in vitro}-Modell beleuchtet und zeigt,
+    wie die Software schnelle Anpassungen und Verfeinerungen in der Datenanalyse
+    und -präsentation ermöglicht. Eine solche Effizienz könnte entscheidend für
+    den transparenten Umgang mit semi-großen Datenmengen sein, die trotz ihrer
+    Handhabbarkeit komplex genug sind, um die Analyse und Reproduzierbarkeit zu
+    erschweren.
+    
+    Zusammenfassend zeigt diese Dissertation die Synergie zwischen
+    experimentellen Methoden und neuen Werkzeugen der Datenanalyse. Das
+    \textit{in vitro}-Modell bietet eine robuste Plattform für die Untersuchung
+    der Myelomdissemination, während \texttt{plotastic} den Bedarf an
+    effizienter Datenanalyse unterstützt. Zusammen stellen sie einen Ansatz für
+    die Bewältigung komplexer zellbiologischer Experimente dar, und könnten
+    sowohl die Krebsbiologie als auch andere Forschungspraktiken förden, indem
+    sie die explorative Untersuchung anspruchsvoller
+    Phänomene unterstützen und dabei Ergebnisse transparent kommunizieren.
 
 
 \end{abstract}
