@@ -62,7 +62,10 @@
 % ======================================================================
 % == IMPORTS 
 
-\usepackage[ngerman]{babel} % > Use 'german' for old spelling rules
+% \usepackage[english, ngerman]{babel}
+\usepackage[english, ngerman]{babel} % > Use 'german' for old spelling rules
+\selectlanguage{english} % > Set the default language to english
+% \usepackage[english]{babel} % >reset back to english?
 
 
 % == General Packages 
@@ -881,6 +884,10 @@ literate={ ( }{{{\color{parentheses}(}}}1
             \fi
             \ifnum\value{daggercounter}=3 % > Third footnote
                 {\footnotesize\dag\dag}%
+                % \alph{daggercounter}% > Add the custom mark and counter into the text
+            \fi
+            \ifnum\value{daggercounter}=4 % > Third footnote
+                {\footnotesize\ddag\ddag}%
                 % \alph{daggercounter}% > Add the custom mark and counter into the text
             \fi
         }%

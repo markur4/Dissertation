@@ -13,9 +13,10 @@ variability that significantly impacts biological interpretations
 \cite{reblTimedependentMetabolicActivity2010, mckayCellcellAdhesionMolecules1997,bolado-carrancioPeriodicPropagatingWaves2020a}.
 
 
-Multidimensional data encompass datasets where multiple \emph{independent
-    variables} \dashed{also reffered to as \emph{factors}} can influence one
-\emph{dependent variables} or \emph{outcomes} \cite{krzywinskiMultidimensionalData2013}.
+\emph{Multidimensional data\footterm{\footmultidimensionaldata}{\label{foot:multidimensionaldata}}}
+encompass datasets where multiple \emph{independent variables} \dashed{also
+    reffered to as \emph{factors}} can influence one \emph{dependent variables}
+or \emph{outcomes} \cite{krzywinskiMultidimensionalData2013}.
 % Statistically speaking, an experiment assesses if an \emph{independent variable}
 % (here reffered to as \emph{factors}) has an influence on a \emph{dependent
 % variable} (\emph{outcome}), e.g. ``Does \emph{Time} influence \emph{Gene
@@ -58,23 +59,24 @@ in confocal microscopy, and time points in time-lapse studies.
 
 Lastly, big-data aggregation tools like \texttt{Metascape} provide a rich source
 of multidimensional data by integrating various dependent variables, such as
-gene expression fold changes and associated $p$-values, with independent variables
-spanning gene identifiers, gene ontology terms, and ontology classes derived from
-multiple databases \cite{zhouMetascapeProvidesBiologistoriented2019}. Despite
-the provision of summarized graphical outputs, the raw data often remain in
-complex, nested formats within Excel sheets, posing significant challenges for
-hypothesis-driven research.
+gene expression fold changes and associated $p$-values, with independent
+variables spanning gene identifiers, gene ontology terms, and ontology classes
+derived from multiple databases
+\cite{zhouMetascapeProvidesBiologistoriented2019}. Despite  \texttt{Metascape}
+returning user-friendly summaries and graphical outputs, the raw data often
+remains in complex, nested formats within \textit{Excel} sheets, posing significant
+challenges for hypothesis-driven research.
 
 This extensive integration of multiple dimensions requires sophisticated
 visualization and analysis techniques. While basic statistical visualizations
-suffice for one- or two-dimensional data, more complex data sets necessitate
-advanced techniques, which allow researchers to visualize and interact with data
-in ways that elucidate the underlying patterns and relationships
-\cite{dunnExploringVisualizingMultidimensional2017}. However, the gap between
-available visualization tools and the needs of clinicians or biologists without
-extensive bioinformatics training remains wide, emphasizing the need for
-intuitive, user-friendly tools that bridge this knowledge gap and enhance the
-accessibility of complex data analyses
+suffice for one- or two-dimensional data\footref{foot:multidimensionaldata},
+more complex data sets necessitate advanced techniques, which allow researchers
+to visualize and interact with data in ways that elucidate the underlying
+patterns and relationships \cite{dunnExploringVisualizingMultidimensional2017}.
+However, the gap between available visualization tools and the needs of
+clinicians or biologists without extensive bioinformatics training remains wide,
+emphasizing the need for intuitive, user-friendly tools that bridge this
+knowledge gap and enhance the accessibility of complex data analyses
 \cite{dunnExploringVisualizingMultidimensional2017}.
 
 
@@ -125,7 +127,7 @@ accessibility of complex data analyses
 % multiple online databases. Since these factors apply to every experimental
 % conditions, GO analysis can result in highly complex and nested datasets.
 % Although \texttt{Metascape} returns a graphical user interface with numerous
-% summarizing graphs, the supplied Excel sheets can be non-readable for
+% summarizing graphs, the supplied \textit{Excel} sheets can be non-readable for
 % humans, making it difficult to extract the information that is relevant for
 % specific research hypotheses.
 
@@ -137,8 +139,8 @@ accessibility of complex data analyses
 The advent of advanced technologies in biosciences has ushered in an era of
 \emph{big data}, characterized by unprecedented volumes and complexities of
 data~\cite{bubendorfHighthroughputMicroarrayTechnologies2001,
-yangScalabilityValidationBig2017,
-ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
+    yangScalabilityValidationBig2017,
+    ekmekciIntroductionProgrammingBioscientists2016}. This rise has been paralleled
 by significant challenges in data analysis, particularly impacting the
 reproducibility of scientific research. \SI{70}{\percent} of researchers confirm
 to have attempted and failed to reproduce published experiments
@@ -156,7 +158,7 @@ time and effort is invested into repeating the experiments
 novelty research, and since experiments have become highly specialized and
 time-intensive, repeating someone else's work is considered neither interesting%
 \footquote{There are no scientists with the interest, resources, or
-    incentives to “repeat” or confirm this vast sea of published work, so whether
+    incentives to `repeat' or confirm this vast sea of published work, so whether
     the findings they report are reproducible will simply never be assessed.}{flierProblemIrreproducibleBioscience2022}
 nor possible for most publications \cite{flierProblemIrreproducibleBioscience2022,
     pengReproducibleResearchComputational2011}. Hence, the meaning of
@@ -174,8 +176,8 @@ conclusions. Furthermore, \SI{44}{\percent} of 233 preclinical articles describe
 statistical tests insufficiently, while few don't describe them at all
 \cite{gosselinInsufficientTransparencyStatistical2021}. Another study reviewed
 147 papers in the field of optometrics and found that \SI{91}{\percent} did not
-discuss their rationale of correcting $p$-values for multiple comparisons (e.g.
-Bonferroni correction) \cite{armstrongWhenUseBonferroni2014}. However, given
+discuss their rationale of correcting $p$-values for multiple comparisons \dashleft{for instance using the Bonferroni Correction}
+\cite{armstrongWhenUseBonferroni2014}. However, given
 that the exact use of multiple comparisons corrections has been under debate for
 decades, it is reasonable to assume that researchers lack the confidence to
 report their technique in detail \cite{pernegerWhatWrongBonferroni1998,
@@ -184,19 +186,21 @@ general, $p$-values are target of extreme scrutiny and also the cause of many
 arguments, which themselves are of questionable statistical reasoning%
 \footquote{Arguing about the P value is like focusing on a single
     misspelling, rather than on the faulty logic of a
-    sentence}{leekStatisticsValuesAre2015}%
-\cite{leekStatisticsValuesAre2015}. Additionally, statistical illiteracy is a
-well-known problem among clinicians
-\cite{lakhlifiIllusionKnowledgeStatistics2023}. Among biomedical researchers,
-\SI{77}{\percent} state that they have not received formal training in data
-literacy, including visualization and public deposition of data, although they
-understand its high relevance \cite{federerDataLiteracyTraining2016}.
-Correspondingly, it has been communicated that there is a lack of intuitive
-tools to embed computational work into publications, but also a lack of
-bioinformaticians to translate computation into clinics
-\cite{mesirovAccessibleReproducibleResearch2010, smithJournalOpenSource2018,gomez-lopezPrecisionMedicineNeeds2019}.
-Therefore, nontransparencies in biomedical analyses are not only caused by a
-habit%
+    sentence.}{leekStatisticsValuesAre2015}%
+\cite{leekStatisticsValuesAre2015}. Additionally, \emph{statistical
+    illiteracy}\footquote{Results evidenced an overall consistent poor proficiency
+    in statistics often combined with high confidence, even in incorrect
+    answers.}{lakhlifiIllusionKnowledgeStatistics2023} is a well-known problem among
+clinicians \cite{lakhlifiIllusionKnowledgeStatistics2023}. Among biomedical
+researchers, \SI{77}{\percent} state that they have not received formal training
+in data literacy, including visualization and public deposition of data,
+although they understand its high relevance
+\cite{federerDataLiteracyTraining2016}. Correspondingly, it has been
+communicated that there is a lack of intuitive tools to embed computational work
+into publications, but also a lack of bioinformaticians to translate computation
+into clinics \cite{mesirovAccessibleReproducibleResearch2010,
+    smithJournalOpenSource2018,gomez-lopezPrecisionMedicineNeeds2019}. Therefore,
+nontransparencies in biomedical analyses are not only caused by a habit%
 \footquote{[...] old habits die hard, and many will be unwilling to discard the
     hours spent learning existing systems.}{pengReproducibleResearchComputational2011}%
 of insufficient reporting, but could be exacerbated by the confusions caused
@@ -217,32 +221,32 @@ produce repeatable and verifiable results \cite{dobinSTARUltrafastUniversal2013,
     kimHISATFastSpliced2015,trapnellDifferentialGeneTranscript2012,loveModeratedEstimationFold2014}.
 These frameworks not only automate data handling but also ensure that data
 analysis protocols are followed consistently, reducing human error and
-variability between different users or laboratories.
+variability between different users or laboratories. However, this level of standardization and automation has not been mirrored in
+the analysis of \emph{semi-big data}. 
 
-However, this level of standardization and automation has not been mirrored in
-the analysis of \emph{semi-big data}. Semi-big data, as introduced in this thesis,
-describes datasets that are on the cusp of manageability: substantial enough to
-overwhelm manual analysis methods yet not sufficiently large or uniform to
-justify the heavy computational frameworks developed for big
-data. Such data are frequently generated in experiments like automated
-microscopy or multiplex qPCR, where the scale and complexity of the data can
-vary significantly depending on the experimental design and objectives
+\emph{Semi-Big Data\footterm{\footsemibigdata}{\label{semibigdata}}}, as
+introduced in this thesis, describes datasets that are on the cusp of
+manageability: substantial enough to overwhelm manual analysis methods yet not
+sufficiently large or uniform to justify the heavy computational frameworks
+developed for big data. Such data are frequently generated in experiments like
+automated microscopy or multiplex qPCR, where the scale and complexity of the
+data can vary significantly depending on the experimental design and objectives
 \cite{krzywinskiMultidimensionalData2013}.
 
 Researchers often revert to basic tools such as \textit{Microsoft Excel} for
-analyzing these semi-big datasets \cite{incertiYouStillUsing2019a}. While Excel
-provides familiarity and immediate accessibility, it lacks the sophisticated
-data handling capabilities necessary for efficient and error-free processing of
-complex (multidimensional) datasets. This reliance on manual methods not only
-makes the analysis laborious and prone to mistakes but also significantly
-impedes the reproducibility of research findings. The time and effort required
-to replicate analyses done manually mean that validating findings from semi-big
-data can be prohibitively challenging for peer reviewers and other researchers
-in the field.
+analyzing these semi-big datasets \cite{incertiYouStillUsing2019a}. While
+\textit{Excel} provides familiarity and immediate accessibility, it lacks the
+sophisticated data handling capabilities necessary for efficient and error-free
+processing of complex multidimensional\footref{foot:multidimensionaldata}
+datasets. This reliance on manual methods not only makes the analysis laborious
+and prone to mistakes but also significantly impedes the reproducibility of
+research findings. The time and effort required to replicate analyses done
+manually mean that validating findings from semi-big data can be prohibitively
+challenging for peer reviewers and other researchers in the field.
 
 Given these challenges, there is a critical need for developing new tools and
 frameworks specifically tailored for semi-big data. These tools should bridge
-the gap between the simplicity of user-friendly software like Excel and the
+the gap between the simplicity of user-friendly software like \textit{Excel} and the
 robust, script-based automation seen in big data frameworks. By providing
 standardized, repeatable, and easy-to-use methods for handling complex datasets,
 such tools could significantly enhance the reliability and efficiency of
@@ -332,14 +336,13 @@ between the ease of use found in basic software and the robust, analytical
 capabilities of more sophisticated systems. By providing standardized workflows,
 comprehensive documentation, and ensuring cross-platform compatibility, these
 tools can significantly enhance reproducibility. They not only allow researchers
-to perform analyses more efficiently but also ensure that these analyses are
+to perform analyses more efficiently, but also ensure that these analyses are
 robust, transparent, and easily verifiable by the broader scientific community.
 
 This thesis presents a software environment developed in Python, designed to
 bridge this gap. It demonstrates that even minimal coding skills can be
 leveraged to create powerful tools that standardize and accelerate the analysis
-of semi-big data, ultimately fostering more reproducible and trustworthy
-scientific research.
+of semi-big data, aiming to improve reproducibility of scientific research.
 
 
 
@@ -364,47 +367,46 @@ its reliability and reproducibility by the scientific
 community~\cite{pengReproducibleResearchComputational2011}.
 
 
-Modern software development is a long-term commitment of maintaining and
+High-quality software development is a long-term commitment of maintaining and
 improving code after initial release~\cite{boswellArtReadableCode2011}. Hence,
 it is good practice to write the software such that it is \emph{scalable},
-\emph{maintainable} and \emph{usable}. \emph{Scalability} or, to be precise,
-\emph{structural scalability} means that the software can easily be expanded
-with new features without major modifications to its architecture
-\cite{bondiCharacteristicsScalabilityTheir2000}. This is achieved by writing the
-software in a modular fashion, where each module is responsible for a single
+\emph{maintainable} and \emph{usable}. \emph{Scalability} or \emph{structural
+scalability} means that the software can easily be expanded with new features
+without major modifications to its architecture
+\cite{bondiCharacteristicsScalabilityTheir2000}. This can be achieved by writing
+the software in a modular fashion, where each module is responsible for a single
 function. \emph{Maintainability} means that the software can easily be fixed
 from bugs and adapted to new requirements \cite{kazmanMaintainability2020}. This
-is achieved by writing the code in a clear and readable manner, and by writing
-tests that ensure that the code works as
-expected \cite{boswellArtReadableCode2011}. \emph{Usability} is hard to
-define \cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable
-if the commands have intuitive names and if the software's manual, termed
-\emph{documentation}, is up-to-date and easy to understand for new users with
+can be achieved by writing the code in a clear and readable manner, and by
+writing tests that ensure that the code works as expected
+\cite{boswellArtReadableCode2011}. \emph{Usability} is hard to define
+\cite{brookeSUSQuickDirty1996}, yet one can consider a software as usable if the
+commands have intuitive names and if the software's manual \dashed{termed
+\emph{documentation}}, is up-to-date and easy to understand for new users with
 minimal coding experience. A software package that has not received an update
 for a long time (approx. one year) could be considered abandoned. Abandoned
-software is unlikely to be fully functional, since it relies on other software
-(dependencies) that has changed in functionality or introduce bugs that were not
-expected by the developers of all dependencies. Together, software that's
-scalable, maintainable and usable requires continuous changes to its codebase.
-There are best practices that standardize the continuous change of the codebase,
-including version control, continuous integration (often referred to as CI), and
-software testing.
+software can become nonfunctional since it relies on other software
+(dependencies) that has changed in functionality \dashed{such as security
+updates} or introduced bugs that were not expected by the developers of all
+dependencies. Together, software that's scalable, maintainable and usable
+requires continuous changes to its codebase. There are best practices that
+standardize the continuous change of the codebase, including version control,
+continuous integration (often referred to as CI), and software testing.
 
 Version control is a system that records changes to the codebase line by line,
 documenting of the detailed history of the codebase, including the person and
 timepoint of every change. This is required to isolate new and experimental
 features into newer versions and away from the stable version that's known to
 work. The most popular version control system is \texttt{Git}, which is
-considered the industry standard for software
-development~\cite{chaconProGit2014}. \texttt{Git} can use GitHub.com as a
-platform to store and host codebases in the form of software repositories.
-GitHub's most famous feature is called ``pull request''. A pull request is a
-request from anyone registered on GitHub to include changes to the codebase (as
-in \textit{``please pull this into your main code''}). One could see pull
-requests as the identifying feature of the open source community, since it
-exposes the codebase to potentially thousands of independent developers,
-reaching a workforce that is impossible to achieve with closed source models
-used by paid software companies.
+considered the industry standard for software development
+\cite{chaconProGit2014}. \texttt{Git} can use \texttt{GitHub.com} as a platform to store
+and host codebases in the form of software repositories. GitHub's most famous
+feature is called ``pull request''. A pull request is a request from anyone
+registered on GitHub to include changes to the codebase (as in \textit{``please
+pull this into your main code''}). One could see pull requests as the
+identifying feature of the \emph{open source} community, since it exposes the codebase
+to potentially thousands of independent developers, reaching a workforce that is
+impossible to achieve with closed source models used by paid software companies.
 
 \emph{Continuous integration} (CI) is a practice of software development where
 code changes are integrated several times a day into a shared repository
@@ -422,8 +424,8 @@ prevent.
 Continuous integration especially relies on a thorough software testing suite.
 Software testing is the practice of writing code that checks if the codebase
 works as expected~\cite{10.5555/2161638}. The main type of software testing is
-unit testing, which tests the smallest units of the codebase (functions and
-classes) in isolation (\autoref{lst:unit_test}). Software testing is automated
+unit testing, which tests the smallest units of the codebase (\emph{functions} and
+\emph{classes}) in isolation (\autoref{lst:unit_test}). Software testing is automated
 by specialized frameworks that execute the tests and report the results, a
 popular example being \texttt{pytest}, which is utilized by
 \texttt{plotastic}~\cite{pytestx.y}.
@@ -457,11 +459,12 @@ The quality of the software testing suite is measured by the code coverage, the
 precision of the tests, and the number of test-cases that are checked. The code
 coverage is the percentage of the codebase that is called by the testing
 functions, which should be as close to 100\% as possible, although it does not
-measure how well the code is tested. The precision of the test is not a
-measurable quantity, but it represents if the tests truly checks if the code
-works as expected. The number of test-cases is the number of different scenarios
-that are checked by the testing functions, for example testing every possible
-option or combinations of options for functions that offer multiple options.
+measure how well the code is tested. The precision of the test is hard to
+quantify, as it represents the test suite's capability of correctly simulating
+interactions that the software was designed for. The number of test-cases is the
+number of different scenarios that are checked by the testing functions, for
+example testing every possible option or combinations of options for functions
+that offer multiple interdependent options.
 
 Together, the standards of software development, including version control,
 continuous integration, and software testing, ensure that the software is
@@ -484,12 +487,12 @@ detailed tutorial on Python that's specialized for bioscientists is found
 in~\citealt{ekmekciIntroductionProgrammingBioscientists2016}.
 
 
-Languages such as Python are considered \textit{``high-level''}, meaning
-that it is designed to be easy to read and write, but also independent of
-hardware by hiding (\textit{``abstracting''}) underlying
-details~\cite{PythonLanguageReference2024}. A key principle of Python is the
-emphasis on implementing a syntax that is concise and close to human language
-(\autoref{lst:readable}, \autoref{lst:not_readable}).
+Languages such as Python are considered \textit{``high-level''}, meaning that it
+is designed to be easy to read and write. This is achieved by intentionally hiding
+and automating underlying details, such as hardware configurations \dashleft{a
+concept called \emph{abstraction}}. \cite{PythonLanguageReference2024}. A key
+principle of Python is the emphasis on implementing a syntax that is concise and
+close to human language (\autoref{lst:readable}, \autoref{lst:not_readable}).
 
 \def\mycaption{ Example of
     readable Python code. This one-line code returns the words (string)
@@ -526,23 +529,25 @@ int main() {                // Define a function called 'main'
 \end{lstlisting}
 
 Furthermore, Python is an \textit{interpreted} language, which means that the
-code is executed line by line. This makes coding easier because the programmer
-can see the results of the code immediately after writing it, and error messages
-point to the exact line where the error occurred (\autoref{lst:errormessage}).
-This is in contrast to \textit{compiled} languages, where the code has to be
-compiled into machine code before it can be executed. The advantage of compiled
-languages is that the code runs faster, because the machine code is optimized
-for the hardware.
+code is executed line by line. This is in contrast to \textit{compiled}
+languages such as C or Java, where the code has to be compiled into machine code
+before it can be executed. The advantage of compiled languages is that the code
+runs faster, because the machine code is optimized for the hardware. Interpreted
+languages, however, are more convenient, since the programmer can see the
+results of the code immediately after writing it and execute parts of the code
+independently. Also, error messages more reliably point to the exact
+line where the error occurred (\autoref{lst:errormessage}).
+
 
 
 \def\mycaption{Example of an error message. Since Python is case-sensitive, the
-error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
-The error message begins with the type of error (\texttt{NameError}),
-followed by a traceback that shows the sequence of function calls that led
-to the error. The traceback located the source of the error in the file
-\texttt{errormessage.py} and points to the line that caused the error.
-Finally, the error message explains the error, stating that \texttt{'Hi'} is
-undefined. }
+    error is caused by misspelling the variable name \texttt{hi} as \texttt{Hi}.
+    The error message begins with the type of error (\texttt{NameError}),
+    followed by a traceback that shows the sequence of function calls that led
+    to the error. The traceback located the source of the error in the file
+    \texttt{errormessage.py} and points to the line that caused the error.
+    Finally, the error message explains the error, stating that \texttt{'Hi'} is
+    undefined. }
 \begin{lstlisting}[
     language=Python, 
     style=pythonstyleNonbreaking,
@@ -565,17 +570,17 @@ undefined. }
 
 Python automates tasks that would otherwise require an advanced understanding of
 computer hardware, like the need for manual allocation of memory space. This is
-achieved by using a technique called \textit{``garbage collection''}, which
+achieved by using a technique called \emph{garbage collection}, which
 automatically frees memory space that is no longer needed by the program. This
-is a feature that is not present in low-level programming languages like C or
+is a feature that is not present in low-level programming languages such as C or
 C++, that were designed to maximize control over hardware.
 
 
-Another hallmark of Python is its \textit{dynamic typing system}. In Python the
-type is inferred automatically during code execution
-(\autoref{lst:dynamic_typing}). This is in contrast to \textit{statically} typed
-languages like C, where the type of a variable has to be declared explicitly and
-cannot be changed during code execution
+Another feature of Python is its \textit{dynamic typing system} \dashed{also
+found in Java}. In Python the type is inferred automatically during code
+execution (\autoref{lst:dynamic_typing}). This is in contrast to
+\textit{statically} typed languages such as C, where the type of a variable has
+to be declared explicitly and cannot be changed during code execution
 (\autoref{lst:static_typing})~\cite{PythonLanguageReference2024}.
 
 \def\mycaption{ Example of dynamic typing in Python. The variable ``\texttt{a}''
@@ -653,20 +658,21 @@ a: str = 'Hello, World!'
 To make Python as easy as possible, python packages aim to reduce the amount of
 code that has to be written by the user. For example, the package
 \texttt{matplotlib} is a plotting library where every command is written such
-that the user immediately understands its purpose, like plotting a line or
-labeling an axis (\autoref{lst:matplotlib}). Hence \texttt{matplotlib} code is a
-sequence of simple function calls, where the state of the plot is modified and
-saved in the background line by line.
+that the user understands its purpose upon reading its name, like plotting a
+line or labeling an axis (\autoref{lst:matplotlib}). Hence \texttt{matplotlib}
+code is a sequence of simple function calls, where the state of the plot is
+modified and saved in the background line by line.
 
 \def\mycaption{ Example of using pre-written functions of a Python package. The
     functions of the package \texttt{matplotlib.pyplot} become accessable by
-    importing the package as \texttt{plt}, where plt serves as an alias (or rather
-    shortcut) to access the functions of the package. Then, two arbitrary lists are
-    defined, \texttt{x} and \texttt{y}. These datapoints are plotted (scatterplot)
-    using the function \texttt{plot} The plots x- and y-axes are then labeled and
-    saved as an image. The code is written in a sequence of function calls, where
-    the state of the plot is saved in the background. The plot is then displayed
-    using the function \texttt{show}. }
+    importing the package as \texttt{plt}, where plt serves as an alias (or
+    rather shortcut) to access the functions of the package. Then, two arbitrary
+    lists are defined, \texttt{x} and \texttt{y}. These datapoints are plotted
+    using the function \texttt{plot}, which defaults to a scatter plot. The x-
+    and y-axes of the plot are then labeled and saved as an image. The code is
+    written in a sequence of function calls, where the state of the plot is
+    saved in the background. The plot is then displayed using the function
+    \texttt{show}. }
 \begin{lstlisting}[
     language=Python,
     style=pythonstyleNonbreaking,
@@ -687,7 +693,7 @@ plt.show()                       # Show the plot preview
 
 However, when no pre-written functions or packages are available, Python offers
 the tools of a general purpose programming language to write and deploy custom
-code easily. Programming styles can be classified into two main paradigms:
+code conveniently. Programming styles can be classified into two main paradigms:
 \emph{functional} and \emph{object-oriented} programming, which can be
 understood as different ways to structure code. Python supports both paradigms.
 In \emph{functional} programming, the code is written in a way that the program
@@ -719,7 +725,7 @@ def cut(sequence: str):                        # Define another function
     return sequence[position:]                 # Cut sequence at the position
     
 seq1 = 'TGAGCTGAGCTGATGCGCTATATTTAGGCG'  # Define an arbitrary sequence
-seq1_cut = cut(seq1)                     # Cut the sequence
+seq1_cut = cut(seq1)                     # Cut the sequence at restriciton site
 print(seq1_cut)                          # Show the result
 # Expected output: GCGCTATATTTAGGCG
     
@@ -730,17 +736,18 @@ print(seq1_cut)                          # Show the result
 When the data itself gains in complexity, for example when storing not just the
 gene sequence, but also the promoter sequence, an \emph{object-oriented}
 approach is more suitable (\autoref{lst:oop}). Object-oriented programming is a
-paradigm that uses objects and classes. An object is a collection of
-both data and functions, and a class is a blueprint for creating objects. The
-data of an object is stored as \emph{attributes}. Functions that are associated
-with an object are called \emph{methods}. A major benefit of using an object
-oriented versus a functional approach is that the data itself programmable,
-enabling the programmer to define the behavior of the data through methods. This
-is achieved by using `\texttt{self}' to reference the objects themselves inside
-the class. \texttt{self} can be understood as \textit{``this object''}, and is a
-placeholder for objects that are to be created from the blueprint. \texttt{self}
-is required to access attributes and methods before specific objects are created
-in order to program how the objects are to be changed when calling methods.
+paradigm that uses \emph{objects} and \emph{classes}. An \emph{object} is a
+collection of both data and functions, and a \emph{class} is a blueprint for
+creating objects. The data of an object is stored as \emph{attributes}.
+Functions that are associated with a class are called \emph{methods}. A major
+benefit of using an object oriented versus a functional approach is that the
+data itself programmable, enabling the programmer to define the behavior of the
+data through methods. This is achieved by using `\texttt{self}' to reference the
+objects themselves inside the class. \texttt{self} can be understood as
+\textit{``this object''}, and is a placeholder for objects that are to be
+created from the blueprint. Using \texttt{self} is required to access attributes
+and methods before specific objects are created in order to program how the
+objects are to be changed when calling methods.
 
 
 % and acts
@@ -776,13 +783,15 @@ in order to program how the objects are to be changed when calling methods.
     ]
 class Gene:                               # Define a Gene class
     def __init__(self, sequence: str):    # Define how a Gene object is created
-        self.sequence: str = sequence     # Save sequence as attribute
+        self.sequence: str = sequence     # Store a sequence as object attribute
         self.promoter: str = self.find_promoter()  # Automatically find promoter
-        # Add further Gene attributes here
+
     def find_promoter(self):              # Define how to find the promoter
         return self.sequence.find('TATA')
+        
     def find_restriction_site(self):      # Define how to find restriction site
         return self.sequence.find('GCGC') # Find the position of 'GCGC'
+        
     def cut(self):                        # Define how to cut the DNA sequence
         position = self.find_restriction_site()   # Call the method above
         return self.sequence[position:]   # Cut the gene at the position
@@ -797,8 +806,9 @@ print(gene1.cut())                        # Cut gene and show result
 When designing software, both functional and object oriented programming can be
 used together, where object oriented programming is often used to design the
 program's overall architecture, and functional programming is used to implement
-the algorithms of the program's features. This allows for scalability of the
-software, as every single class is extended through the addition of new methods.
+the algorithms of the program's features. This allows for \emph{scalability} of
+the software, as every single class is extended through the addition of new
+methods.
 
 
 Furthermore, classes can be expanded in their functionalities through
@@ -808,7 +818,7 @@ method of a parent class. For example, one could extend the class
 ``\texttt{Gene}'' with a class ``\texttt{mRNA}'', by writing a class
 ``\texttt{mRNA}'' that inherits from the class ``\texttt{Gene}''.
 
-\vspace{\vhalf}
+\vspace{\vquarter}
 
 \def\mycaption{ Example of inheritance in Python. The class ``\texttt{mRNA}''
     inherits from the class ``\texttt{Gene}'', and has
@@ -827,6 +837,7 @@ class mRNA(Gene):          # Define the mRNA class, inheriting from Gene class
     def __init__(self, sequence: str):   # Define how an mRNA object is created
         super().__init__(sequence)       # Get attributes from parent class
         self.sequence = self.sequence.replace('T', 'U')  # Replace T with Uracil
+        
     def find_stopcodons(self):           # Define how to find stop codons
         for stopcodon in ['UGA','UAA','UAG']:   # Loop over stop codons
             position: int = self.sequence.find(stopcodon)   # Find the position
@@ -864,21 +875,22 @@ with~a~\texttt{.py} ending containing Python code. Famous examples of such
 packages are \texttt{pytorch} and \texttt{tensorflow}, that are used to build
 models of artificial intelligence, including \textit{ChatGPT}
 \cite{paszkePyTorchImperativeStyle2019, abadiTensorFlowLargeScaleMachine2016,
-OpenaiGpt22024}. Here, we outlay the most important packages used
+    OpenaiGpt22024}. Here, we outlay the most important packages used
 for \texttt{plotastic} in Chapter 2 and present examples how these packages are
 utilized in modern biomedical research.
 
-\textbf{\texttt{\textbf Interactive Python}:} The standard Python interface is
-insufficient for data science, because it lacks the tools to quickly and
-conveniently visualize and explore data. \texttt{IPython} can be understood as
-an enhanced version of the standard Python interpreter, designed to improve the
-interactivity of Python code execution \cite{perezIPythonSystemInteractive2007}.
-\texttt{IPython} introduces features like rich media support to display
-graphics, but also helps users to use correct python data types through dynamic
-type introspection, detecting errors in the code. This functionality is akin to
-what \textit{MATLAB} and \textit{RStudio} provide through their advanced
-graphical user interfaces and extensive debugging tools. \texttt{IPython} is most
-often utilized in the form of \emph{Jupyter Notebooks}.
+\textbf{\texttt{\textbf IPython}:} The standard Python interface is insufficient
+for data science, because it lacks the tools to quickly and conveniently
+visualize and explore data. \texttt{IPython} \dashed{short for Interactive
+Python} can be understood as an enhanced version of the standard Python
+interpreter, designed to improve the interactivity of Python code execution
+\cite{perezIPythonSystemInteractive2007}. \texttt{IPython} introduces features
+like rich media support to display graphics, but also helps users to use correct
+python data types through dynamic type introspection, detecting errors in the
+code. This functionality is akin to what \textit{MATLAB} and \textit{RStudio}
+provide through their advanced graphical user interfaces and extensive debugging
+tools. \texttt{IPython} is most often utilized in the form of \emph{Jupyter
+Notebooks}.
 
 
 
@@ -893,7 +905,7 @@ images and mathematical formulas. Code cells can be executed individually,
 displaying the output directly below the cell. This allows for an interactive
 exploration of data, but also makes Jupyter Notebooks a very human-readable
 format that outlays data analysis in a clear manner with precise and
-reproducible documentation of all data processing steps. Another major benefit
+reproducible documentation of all processing steps. Another major benefit
 of Jupyter Notebooks are interchangable \textit{Kernels}, allowing the execution
 of code in different programming languages, such as R, Julia, and C++
 \cite{giorgiLanguageEngineBioinformatics2022}. Today, Jupyter Notebooks have
@@ -914,25 +926,27 @@ bioinformatics and wet-lab research
 
 
 
-\textbf{\texttt{NumPy}:} Central processing units (CPU) usually execute one
-instruction on one data point at a time. For manipulating tabular data, this is
-inefficient as the same instruction must be repeatedly loaded for every data
-point. \texttt{NumPy} accelerates the mathematical capabilities of Python by
-enabling large-scale operations on multi-dimensional arrays and matrices with
-high efficiency \cite{harrisArrayProgrammingNumPy2020}. One key feature of
-\texttt{NumPy} is the implementation of ``vectorization'' or SIMD (Single
-Instruction, Multiple Data) instructions. SIMD allows multiple data points to be
-processed simultaneously, significantly speeding up operations that are
-inherently parallelizable, such as matrix addition or multiplication.
+\textbf{\texttt{NumPy}:} Central processing units (CPU) were primarily designed
+to execute one instruction on one data point at a time. For manipulating tabular
+data, this is inefficient as the same instruction must be repeatedly loaded for
+every data point. \texttt{NumPy} accelerates the mathematical capabilities of
+Python by enabling large-scale operations on multi-dimensional arrays and
+matrices with high efficiency \cite{harrisArrayProgrammingNumPy2020}. One key
+feature of \texttt{NumPy} is the implementation of ``vectorization'' or SIMD
+(Single Instruction, Multiple Data) instructions. SIMD allows multiple data
+points to be processed in parallel, significantly speeding up operations that
+are inherently parallelizable, such as matrix addition or multiplication.
 \texttt{NumPy}'s syntax and functional approach to array manipulation have set a
 standard for matrix computation, influencing the design of advanced AI
-frameworks such as \texttt{PyTorch} and \texttt{mlx}, which mirrors several of
-\texttt{NumPy's} functionalities to facilitate ease of use for those familiar
-with \texttt{NumPy} \cite{paszkePyTorchImperativeStyle2019,hannunMLX2023}.
-This standardization has made \texttt{NumPy} an attractive tool not only in
-genomics \cite{dingPyComplexHeatmapPythonPackage2023}, but also for modern
-clinical applications like imaging technologies and augmented-reality in
-surgery \cite{thompsonSciKitSurgeryCompactLibraries2020}.
+frameworks such as \texttt{PyTorch} and \texttt{mlx} that offload
+parallel processing tasks to GPUs (Graphics Processing Units). These libraries 
+mirror several of \texttt{NumPy's} functionalities to facilitate ease of use
+for those familiar with \texttt{NumPy}
+\cite{paszkePyTorchImperativeStyle2019,hannunMLX2023}. This standardization has
+made \texttt{NumPy} an attractive tool not only in genomics
+\cite{dingPyComplexHeatmapPythonPackage2023}, but also for modern clinical
+applications like imaging technologies and augmented-reality in surgery
+\cite{thompsonSciKitSurgeryCompactLibraries2020}.
 
 
 \textbf{\texttt{Pandas}:} Tables are the most common way to store experimental
