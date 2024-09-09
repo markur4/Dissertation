@@ -63,9 +63,9 @@
 % == IMPORTS 
 
 % \usepackage[english, ngerman]{babel}
-\usepackage[english, ngerman]{babel} % > Use 'german' for old spelling rules
+\usepackage[main=english, ngerman]{babel} % > Use 'german' for spelling rules
 \selectlanguage{english} % > Set the default language to english
-% \usepackage[english]{babel} % >reset back to english?
+
 
 
 % == General Packages 
@@ -368,6 +368,9 @@
 
 % ## Tell Latex to never break these words at the end of a line
 \hyphenation{hMSC hMSCs MM}
+\hyphenation{me-di-um}
+\hyphenation{plo-tas-tic}
+
 % > Commands for words containing hyphens to not be broken
 \newcommand{\INA}{\mbox{INA-6}\xspace}
 \newcommand{\nMAina}{\mbox{nMA-INA6}\xspace}
@@ -393,7 +396,7 @@
 % == Special Combinations ==============================================
 \newcommand{\MAandCM}{\mbox{(MA\,\&\,CM)}\xspace}
 \newcommand{\nMAandCM}{\mbox{(nMA\,\&\,CM)}\xspace}
-\newcommand{\versus}[2]{#1\,\textit{vs.}\,#2}
+\newcommand{\versus}[2]{#1 \textit{vs.}\,#2}
 
 \newcommand{\facetparams}{\texttt{x},\,\texttt{hue},\,%
     \texttt{col},\,\texttt{row}\xspace}
@@ -459,7 +462,7 @@
     \stepcounter{@itemcount}%
     \textit{#1}%
     \ifnum\value{@itemcount}<\value{@listlen}%
-        ,\,\allowbreak%
+        \allowbreak,\,\allowbreak%
     \fi
 }
 
@@ -481,8 +484,8 @@
 % > #3 is the value of the omnibus statistic
 % > #4 (optional) is the kind of p-value, e.g. "p-unc", it defaults to empty
 % > #5 is the p-value
-\newcommand{\omnibus}[5]{[$#1(#2)$\,$=$\,$#3$, $p$#4\,$=$\,$#5$]}
-
+\newcommand{\omnibus}[5]{[$#1(#2)$\,$=$\,$#3$, $p$#4\,$=$ \hspace{-.17em}$#5$]}
+% \newcommand{\omnibus}[5]{[$#1(#2)$\,=\,#3\allowbreak,\,\allowbreak p#4\,=\,#5]}
 
 
 % == Chemical Equations ================================================

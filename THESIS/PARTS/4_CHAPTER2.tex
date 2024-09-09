@@ -52,7 +52,7 @@
 {\footnotesize \noindent The following chapter has been taken with slight adjustments from
 \citet{kuricPlotasticBridgingPlotting2024}, published in \textit{Journal of Open
 Source Software} under the \texttt{CC BY 4.0} license, and was expanded with
-introduction and discussion sections.
+introduction and discussion sections.}
 
 % Writing of this thesis involved the use of generative AI models (\textit{ChatGPT4},
 % ChatGPT4o and \textit{GitHub Copilot}) to improve phrasing and assist with programming,
@@ -185,17 +185,13 @@ intermediate outputs, a concept the author refers to as \textit{semi-automation}
          & Long-format \texttt{pandas} \texttt{DataFrames} are used as input
         \\
         \hline
-        2
-         & \textbf{Automation over flexibility:} If there is an obvious way
-        to do things, automate it and minimize user input. User options
-        should be added with good reason. Avoid situations where the user is
-        asked to pass the same parameter twice. This reduces the risk of
-        human error, confusion and time spent on configuration.
-         & E.g.
-        passing the parameter ``subject'' once makes the rest of the
-        pipeline switch automatically to the paired versions of statistical
-        tests.
-        \\
+        2 & \textbf{Automation over flexibility:} If there is an obvious way to
+         do things, it should be automated to minimize user input. User options
+         should be added with good reason. Avoid situations where the user is
+         asked to pass the same parameter twice. This reduces the risk of human
+         error, confusion and time spent on configuration. & E.g. passing the
+         parameter ``subject'' once makes the rest of the pipeline switch
+         automatically to the paired versions of statistical tests. \\
         \hline
         3%
          & \textbf{\emph{Out of the box} functionality:} The software's
@@ -372,7 +368,7 @@ DA.test_pairwise()     # Perform Posthoc Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%
 The functionality of \texttt{plotastic} revolves around a seamless integration
 of statistical analysis and plotting, leveraging the capabilities of
-\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and
+\texttt{pingouin}, \texttt{seaborn}, \texttt{matplotlib} and \allowbreak
 \texttt{statannotations} \cite{vallatPingouinStatisticsPython2018,
     waskomSeabornStatisticalData2021, hunterMatplotlib2DGraphics2007,
     charlierTrevismdStatannotationsV02022}. It utilizes long-format \texttt{pandas}
@@ -547,29 +543,29 @@ but also enhance the transparency and reproducibility of research findings.
 \textbf{Statistical Features:}
 A detailed list of implemented and planned features is provided on the GitHub
 page of the project \cite{kuricMarkur4Plotastic2024}. \texttt{plotastic} is
-comprehensive in its current scope, incorporating a robust suite of statistical
-tests that cater to a wide range of research needs. It includes assumption tests
-for normality, homoscedasticity, and sphericity, alongside classical statistical
-tests such as ANOVA and t-tests, available in both parametric and non-parametric
-forms, as well as paired and unpaired variants. However, its reliance on the
-\texttt{pingouin} library means that \texttt{plotastic} is subject to the same
-limitations as \texttt{pingouin} itself. For instance, it does not yet support
-survival analysis tools like log-rank tests and Kaplan-Meier plots, which are
-critical for certain biomedical applications. While there are external packages
-that offer these capabilities, integrating them into \texttt{plotastic} could
-significantly expand its utility and provide a more unified user experience
+comprehensive in its current scope, incorporating a robust suite of traditional
+statistical tests. It includes assumption tests for normality, homoscedasticity,
+and sphericity, alongside classical statistical tests such as ANOVA and t-tests,
+available in both parametric and non-parametric forms, as well as paired and
+unpaired variants. However, its reliance on the \texttt{pingouin} library means
+that \texttt{plotastic} is subject to the same limitations as \texttt{pingouin}
+itself. For instance, it does not yet support survival analysis tools like
+log-rank tests and Kaplan-Meier plots, which are critical for certain biomedical
+applications. While there are external packages that offer these capabilities,
+integrating them into \texttt{plotastic} could significantly expand its utility
+and provide a more unified user experience
 \cite{davidson-pilonLifelinesSurvivalAnalysis2019}.
 
 One known issue in \texttt{plotastic} is its handling of multiple testing
 corrections. Currently, \texttt{plotastic} might not correctly apply these
 corrections when the data is split across different facets with their own y-axes
 (facetted by \texttt{row} and \texttt{col} keywords), which can lead to
-potentially incorrect statistical inferences. This is a fixable issue, and plans
-are in place to address it in upcoming versions to ensure that corrections for
-multiple testing are appropriately applied across the complete dataset.
-Additionally, bivariate analysis tools like correlation and regression are not
-yet implemented, since \texttt{plotastic} focused on data with a categorical
-x-axis, which is more common in biomedical research.
+potentially incorrect statistical inferences. It is planned to address this
+issue in upcoming versions to ensure that corrections for multiple testing are
+appropriately applied across the complete dataset. Additionally, bivariate
+analysis tools like correlation and regression are not yet implemented, since
+\texttt{plotastic} focused on data with a categorical x-axis, which is more
+common in biomedical research.
 
 
 \textbf{Plotting Features:} The plotting capabilities of \texttt{plotastic}
@@ -587,7 +583,7 @@ backend. This level of flexibility is unique to \texttt{plotastic}, serving both
 beginners and advanced users.
 
 \textbf{Plot Annotation:} Annotating statistical results into plots (e.g. ***
-above barplots) is a key requirement in modern biomedical journals and could be
+above bar plots) is a key requirement in modern biomedical journals and could be
 key feature why researchers choose proprietary software like \textit{GraphPad
     Prism} over other solutions. \texttt{plotastic} automates this process as well,
 making it a strong competitor to other statistical software. This is especially
@@ -680,37 +676,37 @@ Indeed, \textit{ChatGPT} is believed to potentially revolutionize medical resear
 Unlike GUIs, CLIs are highly compatible with text-based AI technologies, which
 can significantly lower the barrier to entry. In fact, both \texttt{ChatGPT-3.5}
 and \texttt{4} demonstrate impressive performance in python
-\cite{arefinUnmaskingGiantComprehensive2024}. This is a game changer, since
-researchers can now use similair tools as programmers and are only limited by
-their methodological expertise to formulate a correct prompt
-\cite{qureshiAreChatGPTLarge2023}\footquote{You can now recognize and learn
-the language of almost anything with structure, and you can translate it to
-anything with structure — so text-protein, protein-text. [...] Everybody is a
-programmer, and the programming language of the future is called
-`human.'}{kelleherNVIDIACEOThis2024}. For instance, when a software is not
-working as intended, users of a GUI are likely to be stuck without help or
-further research. Users of a CLI however, could utilize \texttt{ChatGPT} to ask for
-code-corrections or explanations of the code line-by-line, but also for advice
-on how to proceed with a statistical analysis and how to implement new features
-(e.g. editing a plot). Attempts to integrate AI into GUIs however have proven
-challenging \cite{gaoASSISTGUITaskOrientedDesktop2024}.
+\cite{arefinUnmaskingGiantComprehensive2024}. This makes an intriguing case for
+CLIs, since researchers now have access to support for advanced
+informatic tools, but must be knowledgeable in terminology
+% are only limited by their methodological expertise to
+to formulate a correct prompt \cite{qureshiAreChatGPTLarge2023}\footquote{You can
+now recognize and learn the language of almost anything with structure, and you
+can translate it to anything with structure — so text-protein, protein-text.
+[...] Everybody is a programmer, and the programming language of the future is
+called `human.'}{kelleherNVIDIACEOThis2024}. For instance, when a software is
+not working as intended, users of a GUI are likely to be stuck without help or
+further research. Users of a CLI however, could utilize \texttt{ChatGPT} to ask
+for code-corrections or explanations of the code line-by-line, but also for
+advice on how to proceed with a statistical analysis and how to implement new
+features (e.g. editing a plot). The challenges to integrate AI into GUIs is
+summarized in \citet{gaoASSISTGUITaskOrientedDesktop2024}.
 
 Still, \textit{ChatGPT} requires responsible use, as it is not sufficient as a standalone
 tool for statistical analysis \cite{ordakChatGPTSkillsStatistical2023}. It
-should also be noted that \texttt{plotastic} is not yet known to \textit{ChatGPT}, but
-could be included in future versions, depending on the popularity of
-\texttt{plotastic}.
+should also be noted that \textit{ChatGPT 4o} knows of \texttt{plotastic}, but
+returns non-functional code, which could improve in future versions.
 
 Overall, the transition to a new data analysis software, especially one
 that incorporates coding, presents a learning curve. However, the advantages of
-plotastic in terms of analytical clarity, speed, and depth are anticipated to
+\texttt{plotastic} in terms of analytical clarity, speed, and depth are anticipated to
 outweigh these initial challenges.
 
 
 \textbf{Adoption and Open-Source Contributions:}
-The adoption rate of \texttt{plotastic} is a critical factor for its
+The adoption rate of \texttt{plotastic} is a factor for its
 sustainability, particularly in the open-source environment where community
-contributions can significantly support the author in improving and maintaining
+contributions can support the author in improving and maintaining
 the software. Between its publication in the Journal of Open Source Software on
 the 09.03.2024 and the print of this thesis on the \today, \texttt{plotastic}
 has garnered 10 \emph{stars} \dashed{similar to a
@@ -723,7 +719,7 @@ outline of the software's architecture as a class diagram in unified modeling
 language (UML) format, helping potential contributors orient themselves within
 \texttt{plotastic}'s several modules and classes (shown in
 \apdxref{subapdx:classdiagr}). But further efforts are required, e.g. only few
-functions are documented with docstrings, which help understanding the purpose
+functions are documented with docstrings, which help to understand the purpose
 and usage of each function. Still, \texttt{plotastic} is a general-purpose data
 analysis software designed not only for biologists but for a broad range of
 scientific disciplines, making it a versatile tool with promising potential for
@@ -743,10 +739,10 @@ possess a basic understanding of data analysis principles and be cautious about
 their reliance on scripting solutions like Python, which is less familiar to
 some biomedical researchers.
 
-Statistical literacy and lack of training is a well-documented challenge among
-clinicians and biomedical researchers, decreasing the confidence in
-presenting their analyses in detail
+Statistical illiteracy and lack of training is a well-documented challenge among
+clinicians and biomedical researchers
 \cite{lakhlifiIllusionKnowledgeStatistics2023, federerDataLiteracyTraining2016}.
+This could undermine the confidence in presenting statistical analyses in detail.
 Since \texttt{plotastic} alleviates some need for statistical knowledge by
 automating the configuration of statistical tests, the room for error is
 reduced, and the user can lay off some responsibility to the software, gaining
@@ -767,9 +763,9 @@ Notebooks provides a compelling solution to transparently integrate and document
 both intermediate results and analytical processes, thus furthering scientific
 rigor and replicability.
 
-Overall, \texttt{plotastic} is useful statistical tool with the potantial to
-improve methodological transparency and reproducibility of research in
-biomedicine.
+Overall, \texttt{plotastic} could be a useful statistical tool with the
+potential to improve methodological transparency and reproducibility of research
+in biomedicine.
 
 
 % \subsubsection*{Usage of generative models}
