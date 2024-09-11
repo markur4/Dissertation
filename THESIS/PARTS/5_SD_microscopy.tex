@@ -9,17 +9,18 @@
 \label{sec:discussion_potential_breakthroughs}%
 Exploratory experimentation emphasizes discovering and characterizing novel
 phenomena \cite{mattigClassifyingExploratoryExperimentation2022}. Exploratory
-cell biology often leverages emerging technologies to visualize and analyze the
-mechanisms of cell behavior dynamically. Such approaches allow real-time
-observations that can lead to unexpected insights and breakthroughs. In this
-project, the application of live-cell imaging proved pivotal.
+cell biology often leverages emerging imaging technologies to visualize and
+analyze the mechanisms of cell behavior dynamically. Such approaches allow
+real-time observations that can lead to unexpected insights and breakthroughs
+\cite{coleLivecellImaging2014}. In this project, the application of live-cell
+imaging proved pivotal.
 
 \textbf{Direct Observation of Complexity and Novelty:}
 Initially, the project did not focus on \textit{in vitro} myeloma cell
 dissemination. The project's research focus shifted when making the unexpected
 \dashed{or argueably insignificant} observation of cancer cells
 detaching from aggregates. This shows the transformative power of time-lapse
-microscopy or live cell imaging \cite{coleLivecellImaging2014}. For the author,
+microscopy or live-cell imaging \cite{coleLivecellImaging2014}. For the author,
 live-cell imaging provides an observation method that's unmatched in intuition
 and directness. Unlike RNA sequencing, which can obscure biological processes
 behind cryptic data, live-cell imaging offers a clear view into the dynamic
@@ -29,39 +30,42 @@ Such clarity was particularly effective in revealing the detachment of cells
 following division, a phenomenon that might be overlooked in static analyses.
 Multiple parameters can be read out in parallel, such as both time and aggregate
 size for detachments to begin. Also, complex cellular behavior can be deduced
-from movement, or rather lack thereof, which was interpreted as re-attachment of
-\INA daughter cells to the \ac{hMSC} monolayer. This allowed for measuring the
-duration of \nMAina existing until re-attaching and turning into \MAina. This
-information was helpful when designing experiments to prove that dissemination
-is initiated by cell division, requiring precise timing to capture the detached
-daughter cells right after cell division. Together, live cell imaging enabled
-key mechanistic insights in understanding the dynamics involved in multicellular
-interactions by integrating the study of multiple phenomena at once.
+from movement \dashed{or rather lack thereof} which was interpreted as
+re-attachment of \INA daughter cells to the \ac{hMSC} monolayer. This allowed
+for measuring the duration of \nMAina existing until re-attaching and turning
+into \MAina. This information was helpful when designing experiments to prove
+that dissemination is initiated by cell division, requiring precise timing to
+capture the detached daughter cells right after cell division. Together, live
+cell imaging enabled key mechanistic insights in understanding the dynamics
+involved in multicellular interactions by integrating the study of multiple
+phenomena at once.
 
-\textbf{Difficulties Connecting Observation with Acedemic Terminology} Exploring video data
-begins with the search of scientific novelties. In order to correctly identify
-cellular phenomena relevant to the research question, a deep
+\textbf{Difficulties Connecting Observation with Acedemic Terminology:}
+Exploring video data begins with the search of scientific novelties. In order to
+correctly identify cellular phenomena relevant to the research question, a deep
 understanding of cell biology is required, e.g. in field of cell dynamics to
 read migratory behavior \cite{nalbantExploratoryCellDynamics2018}. This is a
 challenge for both students and experienced researchers, since finding the
 academically correct terms to describe observations is difficult, especially for
 novel phenomena or a sequence of events that can overlap. After all, cell
 biology is taught using textbooks, not videos. For this project in particular,
-the used terminology was revised frequently, being caused by the constant
-struggle of finding the middle-ground between the precice description of
-observations, the compatibility with results from other experiments,
-comprehensability, and memorability. Ultimately, comprehensability and
-memorability were prioritized to maximize adoption of the new terminology by
-other researchers. For instance, \emph{non MSC adherence} was chosen over
-\emph{mobile interaction}, \emph{aggregation} over \emph{homotypic interaction},
-and \emph{detachment event} over \emph{in vitro metastasis}. In general, the gap
-between observations and their description remains a challenge in exploratory
-cell biology that might be overlooked. This gap could be bridged by currently
-available multimodal \acp{LLM} like \textit{ChatGPT-4o}: These models could
-match recorded phenomena with descriptions and images that were amassed in the
-literature over decades. By doing so, researchers not only use established
-terminology instead of inventing new terms, but also minimize the risk of
-missing potential discoveries.
+the used terminology was under frequent revision: 
+\emph{non MSC adherence} was chosen over \emph{mobile interaction},
+\emph{aggregation} over \emph{homotypic interaction}, and \emph{detachment
+event} over \emph{in vitro metastasis}. 
+These revisions were due to the constant struggle to
+find the middle-ground between the precise description of observations, the
+compatibility with results from other experiments, comprehensibility, and
+memorability. Ultimately, comprehensibility and memorability were prioritized to
+maximize adoption of the new terminology by other researchers. 
+In general, the gap between observations
+and their description remains a challenge in exploratory cell biology that might
+be overlooked. This gap could be bridged by currently available multimodal
+\acp{LLM} like \textit{ChatGPT-4o}: These models could match recorded phenomena
+with descriptions and images that were amassed in the literature over decades.
+By doing so, researchers not only use established terminology instead of
+inventing new terms, but also minimize the risk of missing potential
+discoveries.
 
 \textbf{Why Hide Videos Behind a Download Link?} A major challenge remains in
 how to effectively present these dynamic observations in a publishable format,
@@ -75,25 +79,26 @@ downloaded often, most biomedical researchers favor a presentation of additional
 figures and tables directly on the journal's website
 \cite{priceRoleSupplementaryMaterial2018}. Given the increasing availability of
 video data%
-\footdagger{The total number of \texttt{PubMed} articles with \emph{``live cell
-        imaging''} has doubled from 1012 in the year 2011 to 1967 in 2023}. %
-Embedding video content next to figures and tables on the article's website does
+\footdagger{The total number of \textit{PubMed} articles with \emph{``live cell
+        imaging''} has doubled from 1012 articles in the year 2011 to 1967
+        articles in 2023}, %
+embedding video content next to figures and tables on the article's website does
 make a compelling case. In fact, the journal \emph{Nature} does offer this
-feature already, but rarely used \cite{NatureVideoContent}. In the end, there is
+feature already, but is rarely used \cite{NatureVideoContent}. In the end, there is
 no reason to not present videos alongside figures and tables, as they can be as
 informative, and potentially more so. Such new standards can benefit other
 fields of medicine, as videos provide the best medium for first aid, medical
 emergency and education \cite{guptaDatasetMedicalInstructional2023}.
 
-\textbf{Key Points:} Overall, Live-cell imaging has proven indispensable in
+\textbf{Key Points:} Overall, live-cell imaging has proven indispensable in
 exploratory cell biology, uncovering dynamic cellular phenomena that static
-analyses often miss, probably. This is exemplified in this work, where live-cell
-imaging shifted the research focus by revealing unexpected cell behaviors, like
-detachment during division, emphasizing the need for integrating real-time
-observations with molecular data. By making such dynamic processes visible,
-live-cell imaging not only enriches our understanding but also challenges us to
-enhance how scientific findings are presented, advocating for greater
-accessibility of video data in scientific publications.
+analyses often miss \dashleft{probably}. This is exemplified in this work, where
+live-cell imaging shifted the research focus by revealing unexpected cell
+behaviors, like detachment during division, emphasizing the need for integrating
+real-time observations with molecular data. By making such dynamic processes
+visible, live-cell imaging not only enriches our understanding but also
+challenges us to enhance how scientific findings are presented, advocating for
+greater accessibility of video data in scientific publications.
 
 \newpage
 
@@ -112,7 +117,7 @@ cell morphology; organelle count, shape, and distribution; membrane and lipid
 distribution; protein localization, DNA content, et cetera. However, leveraging
 this information has always been limited by the ability to extract quantitative
 data from microscopy images \cite{galbraithPumpingVolume2023}. This extraction
-process is the essence of \emph{image cytometry}, a field that has seen significant
+process is the essence of \emph{image cytometry}, a field that has seen 
 advances by integrating machine learning for automating image analysis tasks.
 \cite{guptaDeepLearningImage2019}. The following sections discuss the
 experiences gained from this project in quantifying microscopy data and outlines
@@ -128,23 +133,23 @@ live-cell imaging, for example, the task of associating \INA cell detachment
 with \INA aggregate size and time: Manual analysis consisted of zooming in
 closely and watching the time-lapse over and over again until a detachment event
 was found. A very tedious and error-prone task that had to be repeated approx.
-50 times for every one of four independent videos. Instead of manually counting
-the number of single \INA cells across time, a pixel segmentation algorithm
-could have been trained to detect cells and background. Single cells would be
-discernable from aggregates by filtering cells by size. The count of single
-cells would then be representative of detached cells, given that the vast
-majority of INA6 cells were part of aggregates.
+50 times for every one of four independent video acquisitions. Instead of
+manually counting the number of single \INA cells across time, a pixel
+segmentation algorithm could have been trained to detect cells and background.
+Single cells would be discernable from aggregates by filtering cells by size.
+The count of single cells would then be representative of detached cells, given
+that the vast majority of INA6 cells were part of aggregates.
 
 
 
 The workload of manual video analysis motivated the purchase of
-\texttt{Intellesis}, a software package by \textit{Zeiss} for the \texttt{Zen}
-microscopy software ecosystem. \texttt{Intellesis} is a machine learning-based
+\textit{Intellesis}, a software package by \textit{Zeiss} for the \textit{Zen}
+microscopy software ecosystem. \textit{Intellesis} is a machine learning-based
 pixel segmentation software \cite{ZeissOADFeature}. As a feature
 extractor\footterm{\footimagefeatures}{\label{foot:image_features}}, it uses the first
-convolution layers of VGG19, which is convolutional neural
-network\footterm{\footcnn}{\label{foot:cnn}} \cite{simonyanVeryDeepConvolutional2015}.
-\texttt{Intellesis} does not contain a deep neural network for segmentation, but
+convolution layers of VGG19 \dashleft{a convolutional neural
+network\footterm{\footcnn}{\label{foot:cnn}}} \cite{simonyanVeryDeepConvolutional2015}.
+\textit{Intellesis} does not contain a deep neural network for segmentation, but
 instead classifies pixel features using a \emph{random forest classifier}.
 Random forest is a machine learning algorithm that \dashed{for small
     sets of training images} performs almost as well as deep neural networks, but
@@ -152,11 +157,11 @@ are computationally far less demanding \cite{breimanRandomForests2001,
     richardsonDenseNeuralNetwork2023}. A comparable hybrid approach was also used by
 \citet{qamarHybridCNNRandomForest2023} to segment images of bacterial spores
 into eight distinct pixel classes using only 50 training images. Also, free
-alternatives to \texttt{Intellesis} exist, such as Ilastik
+alternatives to \textit{Intellesis} exist, such as Ilastik
 \cite{bergIlastikInteractiveMachine2019}.
 
-\texttt{Intellesis} proved useful for segmenting single multi-channel images.
-However, live cell imaging adds another layer of complexity to image analysis:
+\textit{Intellesis} proved useful for segmenting single multi-channel images.
+However, live-cell imaging adds another layer of complexity to image analysis:
 The addition of a time axis encodes the motion of objects and other image
 features. This concept can be described with the term \emph{optical flow}
 \cite{niehorsterOpticFlowHistory2021}. Mathematically speaking, optical flow is
@@ -164,7 +169,7 @@ a vector field that describes the motion of image
 features\footref{foot:image_features} between consecutive frames of a video. It
 can be used to train machine learning models on video data efficiently
 \cite{robitailleSelfsupervisedMachineLearning2022}. Without tricks like optical
-flow, machine learning algorithms like \texttt{Intellesis} segment the video
+flow, machine learning algorithms like \textit{Intellesis} segment the video
 frame by frame, ignoring the feature similarities between frames. This makes
 segmentation computationally inefficient, but not impossible
 \cite{pylvanainenLivecellImagingDeep2023}.
@@ -180,27 +185,29 @@ recently, as summarised in \citet{pylvanainenLivecellImagingDeep2023}.
 In this study, image cytometry was indispensable for validating prior cell
 divisions within the \nMAina cell population by profiling their DNA content. The
 complexity of this experiment required a method capable of managing a high
-throughput across three subpopulations, four timepoints, and two conditions,
-involving up to 24 samples per trial (\apdxref{subapdx:figs}{fig:S3}). Despite
-having access to automated \ac{FACS} equipment offered by the Core Unit FACS at
-the University of Würzburg, the author saw a more time- and cost-effective
-solution in the laboratory microscope equipped with motorized stage top and
-\texttt{Intellesis}. This setup scanned 96 different samples in \SI{1.5}{\hour},
-and resulting large scans were processed by \texttt{Intellesis} overnight,
-quantifying thousands of DNA-stained nuclei. This demonstrated that image
-cytometry could match the throughput and precision of \ac{FACS} with modern
-standard microscopy equipment (\apdxref{subapdx:figs}{fig:S2}).
+throughput across three subpopulations, four timepoints, and two conditions
+\dashleft{involving up to 24 samples per trial
+(\apdxref{subapdx:figs}{fig:S3})}. Despite having access to automated \ac{FACS}
+equipment offered by the Core Unit FACS at the University of Würzburg, the
+author saw a more time- and cost-effective solution in the laboratory microscope
+equipped with motorized stage top and \textit{Intellesis}. This setup scanned 96
+wells in \SI{1.5}{\hour}, and resulting large scans were processed
+by \textit{Intellesis} overnight, quantifying thousands of DNA-stained nuclei.
+This demonstrated that image cytometry could match the throughput and precision
+of \ac{FACS} with modern standard microscopy equipment
+(\apdxref{subapdx:figs}{fig:S2}).
 
-The advantages of image cytometry could have of great impact for the future of
-cell biology: It is applicable to adherent cell cultures
-\cite{roukosCellCycleStaging2015} and provides diverse readouts like structure,
-brightness, size, and shape. Moreover, image cytometry's capacity to evaluate
-cell viability without the need for staining or expensive analytical chemicals
-makes it an exceptionally cost-efficient approach for drug screening, reducing
-operational costs to cell culturing and electricity for microscopy
+The advantages of image cytometry could impact the future of cell biology: It is
+applicable to adherent cell cultures \cite{roukosCellCycleStaging2015} and
+provides diverse readouts like structure, brightness, size, and shape. Moreover,
+image cytometry's capacity to evaluate cell viability without the need for
+staining or expensive analytical chemicals makes it an exceptionally
+cost-efficient approach for drug screening, reducing operational costs to cell
+culturing and electricity for microscopy
 \cite{pattaroneLearningDeepFeatures2021}.  However, challenges such as the need
 for sophisticated automation in microscopic scans, including autofocus and
-shading adjustments, and the computational demands of AI processing remain.
+shading adjustments, and the computational demands of machine learning-based
+processing remain.
 
 
 Interestingly, the author's initial unfamiliarity with image cytometry and
@@ -211,14 +218,14 @@ recent advancements \cite{nittaRapidHighthroughputCell2023}, image cytometry is
 becoming increasingly competitive with established techniques like \ac{FACS}.
 Despite its limitations, the simplicity and efficiency of image cytometry could
 be pivotal for its broader acceptance and integration into biological research.
-The exclusivity of \texttt{Intellesis} to \textit{Zeiss} microscopes could be a
+The exclusivity of \textit{Intellesis} to \textit{Zeiss} microscopes could be a
 major hurdle, however there are free alternatives offering potentially comparable
 accessibility, such as \texttt{ilastik} \cite{bergIlastikInteractiveMachine2019}.
 
 
 
 \textbf{Manual Analysis Remains Robust for Complex and Unique Phenomena:}
-Many biologists lack the access to tools like \texttt{Intellesis}, or the
+Many biologists lack the access to tools like \textit{Intellesis}, or the
 computational expertise to automate analysis of microscopy data, often reverting
 to manual analysis. This project also utilized manual strategies for the
 detailed characterization of dynamic intercellular interactions such as
@@ -237,9 +244,9 @@ techniques of image processing.
 
 
 
-\textbf{Key Points:} In summary, image cytometry significantly enhanced this
+\textbf{Key Points:} In summary, image cytometry enhanced this
 project by merging the precision of \ac{FACS} with the cost-efficiency of modern
-microscopy. Utilizing \texttt{Intellesis} simplified complex image analyses,
+microscopy. Utilizing \textit{Intellesis} simplified complex image analyses,
 making advanced cytometric techniques more accessible. Manual analysis of image
 data remains essential for unique and complex phenomena. While challenges like
 automation and software availability persist, the potential of image cytometry
@@ -268,7 +275,7 @@ compromise between detail and the total observed surface area. We favored the
 latter to allow the exploration of potentially rare events, and acquired a
 \dashed{somewhat arbitrarily} large surface area of up to
 \SI{13}{\milli\meter\squared}. Ultimately, we assessed only approx. a quarter of
-the acuired surface area, as that was sufficient to gather enough events for
+the acquired surface area, as that was sufficient to gather enough events for
 each time bin. Such extensive automated video acquisition poses high demands on
 microscopy equipment, including an incubation setup and motorized stage top. The
 total size of video files can also complicate storage, transfer and analysis.
@@ -278,11 +285,11 @@ acquired due to protocol optimizations and treatments not shown in this work.
 File size could have been reduced by acquiring in an 8-bit image format,
 although a larger bit-depth could be necessary for precise and/or sensitive
 fluorescence microscopy. Minimizing the acquired surface area could have reduced
-file size as well, however the meniskus of the medium led to significant shading
+file size as well, however the meniskus of the medium led to shading
 effects that complicated the choice of the surface area for phase contrasting.
 Also, archiving large surface scans allows for the search of very rare events in
 the course of future projects. After all, HDD space is cheap, while re-acquiring
-data is not. Hence, exploratory live cell imaging benefits from settings that
+data is not. Hence, exploratory live-cell imaging benefits from settings that
 are higher-than-required, if raw data is properly documented and remain
 accessible.
 
@@ -291,12 +298,13 @@ accessible.
 \textbf{Generating Training Datasets:}
 In this project, considerable effort was dedicated to training the machine
 learning software \textit{Intellesis} for image segmentation, particularly for
-fluorescent images. It was also utilized for phase contrast, yet training
-required far more effort in generating annotated training images. Phase contrast
-or brightfield images often display low contrast between cell edges and the
-background, complicating the task of differentiating individual cells from their
-surroundings. Such complexity necessitates extensive annotation of training
-images --\,a process that can be both time-consuming and demanding.
+fluorescent images. However, training with non-fluorescent images \dashed{e.g.
+phase contrast} required a far greater number of annotated training images to
+reach sufficient classification precision. Phase contrast or brightfield images
+often display low contrast between cell edges and the background, complicating
+the task of differentiating individual cells from their surroundings. Such
+complexity necessitates extensive annotation of training images --\,a process
+that can be both time-consuming and demanding.
 
 To address these challenges and enhance the efficacy of \textit{Intellesis},
 pre-processing steps could be incorporated to emphasize essential image features
@@ -306,16 +314,15 @@ unnecessary details while preserving edges. Especially noise reducing filters
 can normalize different sets of images, since machine learning models are
 very sensitive to variations in image quality.
 These filters, available within the
-\texttt{Zen} software suite, help simplify the machine learning task by focusing
+\textit{Zen} software suite, help simplify the machine learning task by focusing
 the algorithm's learning on pertinent features, thereby potentially reducing the
 volume of data needed for effective training.
 
 This approach streamlines the training process for \textit{Intellesis}, enabling
 more efficient and accurate segmentation of complex microscopy images. By
 refining the feature extraction phase, the project could have improved the
-performance of the segmentation algorithm but also significantly cut down on the
-labor and frustration typically associated with preparing large sets of
-annotated training data.
+performance of the segmentation algorithm but also cut down on the labor
+associated with preparing large sets of annotated training data.
 
 
 
@@ -328,7 +335,7 @@ annotated training data.
 This study employed two methods that rely heavily on both hard- and software
 automation: live-cell imaging and image cytometry. These methods were
 instrumental in investigating the complex interactions between \INA cells and
-hMSCs, offering significant insights into myeloma cell behavior. The findings
+hMSCs, offering insights into myeloma cell behavior. The findings
 underscored the critical role of MSC-interactions in shaping cell behavior, for
 instance the observed preference of \INA cells for heterotypic interactions with
 hMSCs. Live-cell imaging and image cytometry revealed dynamic processes, such as
@@ -360,7 +367,7 @@ discoveries of complex cellular dynamics and multicellular interactions.
 
 These findings underscore a potentially emerging trend of innovative imaging and
 analyses techniques which could be driven my recent breakthroughs in machine
-learning. This trend could mark a significant advancement over molecular
+learning. This trend could mark an advancement over molecular
 and static approaches of cell biological research questions.
 
 

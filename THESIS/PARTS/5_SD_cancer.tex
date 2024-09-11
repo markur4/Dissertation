@@ -19,7 +19,7 @@ current adhesion assays, we developed and enhanced innovative methodologies,
 specifically the \acf{WPSC} and V-Well adhesion assays.
 
 \textbf{Variability of Washing Steps}: Given the complexity of the requirements,
-this project first attempts relied on simple and traditional adhesion assays
+this project's first attempts relied on simple and traditional adhesion assays
 that rely on manual washing steps \cite{humphriesCellAdhesionAssays2009}.
 Washing involves aspirating the medium, dispensing washing buffer, and
 potentially repeating these steps multiple times. This introduces variability
@@ -40,7 +40,7 @@ contribute to the variability of washing steps:
       \item The speed of aspiration.
       \item Accidental or intended contact between the pipette tip and the cell layer.
       \item The residual volume left after aspiration.
-      \item \textit{The same considerations apply when dispensing the washing buffer.}
+      \item \textit{The same considerations apply for both aspiration and dispensing steps.}
 \end{enumerate}
 
 
@@ -55,7 +55,7 @@ impossible to remove. This phenomenon is likely related to the \textit{boundary
 Together, since both user-dependent and independent factors can affect the
 outcome of washing steps, adhesive assays that replace washing are highly
 desirable. Still, since washing is straightforward and some variability is
-alleviated by the disciplined execution of washing protocols, it remains a
+alleviated by a meticulous execution of washing protocols, it remains a
 common method for adhesion assays.
 
 
@@ -64,18 +64,18 @@ common method for adhesion assays.
 is evident that direct and indirect contact to \acp{MSC} have varying effects on
 myeloma cells. That difference is crucial for understanding changes in the
 \ac{BMME} during MM progression \cite{fairfieldMultipleMyelomaCells2020,
-      dziadowiczBoneMarrowStromaInduced2022}. These studies utilize well-inserts to
+      dziadowiczBoneMarrowStromaInduced2022}. Traditionally, studies utilize well-inserts to
 co-culture myeloma cells in close \dashed{indirect} contact with MSCs. However,
 such comparison of indirect \textit{vs.} direct co-culturing methods might not
 fully represent the complexity of intercellular interactions
 scenarios%
-\footterm{\footinteractionscenario}{\label{foot:interactionscenario}}
-found in the \ac{BMME}. This is exemplified by
-this project, as it relied on the complex growth behavior: \INA cells aggregated
-homotypically in direct proximity to those adhering heterotypically to
-\acp{hMSC}, and detached through cell division. Furthermore, such methods fail
-to capture the subtle variations in paracrine signaling concentrations, where
-even a few micrometers of distance could significantly alter cellular responses.
+\footterm{\footinteractionscenario}{\label{foot:interactionscenario}} found in
+the \ac{BMME}. This is exemplified by this project, as it relied on the complex
+growth behavior: \INA cells aggregated homotypically in direct proximity to
+those adhering heterotypically to \acp{hMSC}, and detached through cell
+division. Furthermore, such methods fail to capture the subtle variations in
+paracrine signal molecule concentrations, where even a few micrometers of
+distance could significantly alter cellular responses.
 
 Such knowledge shifted this project's point of view as well: Initially, our
 hypothesis focused on direct heterotypic interactions, not expecting a \nMAina
@@ -83,15 +83,16 @@ population, but rather subpopulations within \MAina cells that are separable by
 varying adhesion strengths. Hence, our assay employed strict conditions favoring
 one growth scenario \dashed{heterotypic interactions}, with co-cultures
 providing unlimited hMSC-surface availability causing predominantly heterotypic
-adhesion, while the short incubation time prevented the formation of aggregates.
-Despite these measures, our assay still captured cells emerging from recent cell
-divisions rather than from weak heterotypic adherence as initially hypothesized.
-This demonstrates the robustness of our method in separating subpopulations that
-arising from unexpected interaction scenarios\footref{foot:interactionscenario}.
-This can be a major advantage over methods that summarize direct interactions
-as one population. Analysing the non-adhering subpopulation within directly
-interacting cells could provide valuable insights not just in multiple myeloma,
-but also metastasis of other cancer types.
+adhesion, while the short incubation time of \SI{24}{\hour} prevented the
+formation of aggregates. Despite these measures, our assay still captured cells
+emerging from recent cell divisions rather than from weak heterotypic adherence
+as initially hypothesized. This demonstrates the robustness of the \ac{WPSC} in
+separating subpopulations that arising from unexpected interaction
+scenarios\footref{foot:interactionscenario}. This can be a major advantage over
+methods that summarize direct interactions as one population. Analysing the
+non-adhering subpopulation within directly interacting cells could provide
+valuable insights not just in multiple myeloma, but also metastasis of other
+cancer types.
 
 
 \textbf{Minimizing Variability}:
@@ -148,7 +149,7 @@ differences between quantification and isolation approaches as such:
                         from fluorescent staining, making it suitable for downstream
                         molecular assays.
                   \item Quantification methods are optimized for high sample
-                        throughput. The V-Well assay, as an end-point assay, is
+                        throughput. As an end-point assay, the V-Well assay is
                         designed to efficiently handle multiple treatments
                         simultaneously, providing quick and comparative results with
                         lower cell numbers.
@@ -186,32 +187,33 @@ could help to advance these methods in future studies.
 
 
 \textbf{Rationales of the Well Plate Sandwich Centrifugation}: Inspired by the
-principles of both flipping and V-Well adhesion assays, we developed the Well
-Plate Sandwich Centrifugation (\acf{WPSC}) method to address the challenges of
-isolating cell populations. This method innovatively combines elements from both
-techniques to provide a more reliable approach to cell isolation. One of the key
-advantages of WPSC is its ability to reduce the variability commonly introduced
-by manual pipetting. Instead of relying on aspiration, which introduce
-variability in cell collection and requires touching the well bottom for
-complete removal of medium, WPSC employs centrifugation to remove non-adhering
-cells. Medium is then returned by pipetting to repeat the process and maximize
-non-adhering cell collection, as the number of detachable cells plateau after
-few rounds of centrifugation. Hence, this approach compromises
-between minimizing washing variability and isolating larger quantities of cells.
+principles of both flipping and V-Well adhesion assays, we developed the
+\acf{WPSC} method to address the challenges of isolating cell populations. This
+method innovatively combines elements from both techniques to provide a more
+reliable approach to cell isolation. One of the key advantages of WPSC is its
+ability to reduce the variability commonly introduced by manual pipetting.
+Instead of relying on aspiration, which introduce variability in cell collection
+and requires touching the well bottom for complete removal of medium, WPSC
+employs centrifugation to remove non-adhering cells. Medium is then returned by
+pipetting to repeat the process and maximize non-adhering cell collection, as
+the number of detachable cells plateau after few rounds of centrifugation.
+Hence, this approach compromises between minimizing washing variability and
+isolating larger quantities of cells.
 
-The 96 well plate format has advantages, reducing spilling when flipping the
+The 96 well plate format is small enough to prevent spilling when flipping the
 sandwich, as surface tension kept fluids in place. The 96 well plate format also
 reduces per-well variability by performing the same washing procedure up to 96
 times.
 
 The slow centrifugation speeds used during \ac{WPSC} are also decided after
-thorough consideration. For this, one has to discuss how exactly
-non-adhering cells detach during centrifugation. While centrifugal force is an
-obvious factor, the properties of cell adhesion are unclear under dry conditions
-during centrifugation. The author assumed that the cells are being pulled along
-by the medium as it is centrifuged into the catching plate. Hence, the centrifugation
-speed was chosen as fast enough to transfer the medium, without completely
-drying the co-culture plate and minimizing overall cell stress.
+thorough consideration. For this, one has to discuss how exactly non-adhering
+cells detach during centrifugation. While centrifugal force is an obvious
+factor, the exact properties of cell adhesion are actually unclear under dry
+conditions during centrifugation. The author assumed that the cells are being
+pulled along by the medium as it is centrifuged into the catching plate. Hence,
+the centrifugation speed was chosen such that it is fast enough to transfer the
+medium, without completely drying the co-culture plate and minimizing overall
+cell stress.
 
 A challenge in \ac{WPSC} is the dissociation of \MAina from the hMSC
 monolayer. WPSC employs two distinct techniques to achieve this dissociation.
@@ -228,7 +230,7 @@ performed on all samples to ensure comparability, reducing overall cell yield
 which became limiting for downstream applications, especially for \nMAina cells.
 Both methods achieved comparable purity of \MAina cells, with few hMSCs per
 10\textsuperscript{4} \MAina cells (purity assessment not shown). \emph{Wash}
-probably pofited from the highly durable nature of primary hMSC monolayers,
+probably profited from the highly durable nature of primary hMSC monolayers,
 whereas \emph{MACS} required dissociation of the co-culture.
 
 Together, \ac{WPSC} offers a versatile solution for isolating hMSC-interacting
