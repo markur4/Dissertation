@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this dissertation and latex code, please cite it as below."
+authors:
+  - family-names: Kuric
+    given-names: Martin
+    orcid: https://orcid.org/0009-0009-7292-7714
+title: "Development and Semi-Automated Analysis of an *in vitro* Dissemination Model"
+identifiers:
+  - type: url
+    value: https://github.com/markur4/Dissertation
+date-released: 2024-09
