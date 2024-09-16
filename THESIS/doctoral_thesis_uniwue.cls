@@ -370,6 +370,7 @@
 \hyphenation{hMSC hMSCs MM}
 \hyphenation{me-di-um}
 \hyphenation{plo-tas-tic}
+\hyphenation{Mye-loma}
 
 % > Commands for words containing hyphens to not be broken
 \newcommand{\INA}{\mbox{INA-6}\xspace}
