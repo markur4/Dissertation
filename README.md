@@ -1,6 +1,7 @@
 # Doctoral Thesis Martin Kuric in Biomedicine
 
 [![License: CC BY 4.0](https://licensebuttons.net/l/by/4.0/80x15.png)](https://creativecommons.org/licenses/by/4.0/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 This work was conducted at the Department of Musculoskeletal Tissue
 Regeneration (Bernhard-Heine-Centre for Locomotive Research), University
@@ -14,9 +15,10 @@ Prof. Dr. rer. nat. Regina Ebert.
 
 ## Downloads
 
-[***Dissertation***](https://github.com/markur4/Dissertation/blob/main/THESIS/thesis.pdf)
+[***Dissertation***](https://github.com/markur4/Dissertation/blob/main/THESIS/thesis.pdf) (Licensed under CC BY 4.0)
 
-[***Latex Source Code***](https://github.com/markur4/Dissertation/blob/main/THESIS)
+[***Latex Source Code***](https://github.com/markur4/Dissertation/blob/main/THESIS) (Licensed under GPL 3.0)
+
 
 
 
