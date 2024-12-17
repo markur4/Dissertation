@@ -10,7 +10,8 @@ Prof. Dr. rer. nat. Regina Ebert.
 
 ## Title
 
-**Development and Semi-Automated Analysis of an *in vitro* Dissemination Model**
+**Development and Semi-Automated Analysis of an *in vitro* Dissemination Model
+for Myeloma Cells Interacting with Mesenchymal Stromal Cells**
 
 
 ## Downloads
